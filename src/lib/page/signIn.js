@@ -1,5 +1,5 @@
-const singIn = () => {
-    const viewSingIn = `<form>
+const signIn = () => {
+    const viewSignIn = `<form>
     <label for="name">Nombre y Apellido</label>
     <input type="text" id="name" placeholder="Escribe tu nombre y apellido">
 
@@ -19,7 +19,7 @@ const singIn = () => {
 
     </form>`
 
-    return viewSingIn;
+    return viewSignIn;
 };
 
-export default singIn;
+export default signIn;
