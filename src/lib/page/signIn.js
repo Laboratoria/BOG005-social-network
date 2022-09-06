@@ -1,5 +1,5 @@
 const signIn = () => {
-    const viewSignIn = `<section class="viewSignIn">
+  const viewSignIn = `<section class="viewSignIn">
     
         <figure class="logoSignIn">
         <img src="lib/img/LogoHorizontal.png" alt="LogoCICLAPP" class="logoHorizontal">     
@@ -35,9 +35,9 @@ const signIn = () => {
     
     <button type="submit" class="submitSignIn">Continuar</button>
     
-</section>`
+</section>`;
 
-    return viewSignIn;
+  return viewSignIn;
 };
 
 export default signIn;
