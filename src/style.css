@@ -1,30 +1,29 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Contrail+One&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
 
-:root{
---main-color-white:#FFFFFF;
---color-gray-opacity-80:#878787;
---b-main-color-blue:#042635; 
---b-color-blue-dark:#01131C;
---w-color-blue-medium:#014B6C;
---w-color-blue-medium-opacity-60-014B6C:#014B6C;
---w-color-blue-light-buttons:#80A5B6;
---w-hight-color-yellow:#FBFE5D;
---w-hover-color-yellow:#BDC000;
---w-active-color-yellow:#989B00;
---w-red-light: #F56F6F;
---w-red-intense:#EA4335;
---letters:'Noto Sans', sans-serif;
+:root {
+    --main-color-white: #FFFFFF;
+    --color-gray-opacity-80: #878787;
+    --b-main-color-blue: #042635;
+    --b-color-blue-dark: #01131C;
+    --w-color-blue-medium: #014B6C;
+    --w-color-blue-medium-opacity-60-014B6C: #014B6C;
+    --w-color-blue-light-buttons: #80A5B6;
+    --w-hight-color-yellow: #FBFE5D;
+    --w-hover-color-yellow: #BDC000;
+    --w-active-color-yellow: #989B00;
+    --w-red-light: #F56F6F;
+    --w-red-intense: #EA4335;
+    --letters: 'Noto Sans', sans-serif;
 
 
-/* Peso de Letras 
+    /* Peso de Letras 
 Titulos -> Bold
 Parrafos -> Regular
 */
 
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -33,23 +32,24 @@ Parrafos -> Regular
 
 }
 
-html{
-    font-size:16px;
+html {
+    font-size: 16px;
 }
 
-.body{
+/* Mobile inicio */
+.body {
     background-color: var(--w-color-blue-medium);
-    width:100vw;
-    height:100vh;
+    width: 100vw;
+    height: 100vh;
 }
 
-.logo{
-width:6.875rem;
-height:6.875rem;
+.logo {
+    width: 6.875rem;
+    height: 6.875rem;
 
 }
 
-.figureWelcome{
+ .figureWelcome{
     display: flex;
     justify-content: flex-end;
     width: 100vw;
@@ -58,78 +58,211 @@ height:6.875rem;
     background-image: url("lib/img/imagefondomobile.png");
     border-bottom-left-radius: 80% 35%;
     border-bottom-right-radius: 80% 35%;
+}  
+
+.title {
+    font-family: 'Contrail One', cursive;
+    color: var(--main-color-white);
+    font-weight: 400;
+    font-size: 1.5625rem;
 }
 
-.title{
-font-family:'Contrail One', cursive;
-color: var(--main-color-white);
-font-weight:400;
-font-size:1.5625rem;
+.articleWelcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    width: 100vw;
+    height: 35vh;
+    text-align: center;
 }
 
-.articleWelcome{
-display: flex;
-flex-direction:column;
-align-items:center;
-justify-content: space-evenly;
-color: var(--main-color-white);
-font-family: var(--letters);
-width:100vw;
-height:35vh;
-text-align: center;
-}
-
-.loginButton{
+.loginButton {
     display: flex;
     justify-content: center;
-    align-items:center;
-    background-color:var(--w-hight-color-yellow);
+    align-items: center;
+    background-color: var(--w-hight-color-yellow);
     color: var(--w-color-blue-medium);
-    font-size:1rem;
-    font-weight:700;
+    font-size: 1rem;
+    font-weight: 700;
     width: 18rem;
     height: 2.75rem;
-    border-radius:0.5625rem;
+    border-radius: 0.5625rem;
     letter-spacing: 0.0625rem;
 }
 
-.loginButton:hover{
-background-color: var(--w-hover-color-yellow);
-color: var(--b-main-color-blue);
+.loginButton:hover {
+    background-color: var(--w-hover-color-yellow);
+    color: var(--b-main-color-blue);
 }
 
-.loginButton:active{
-    background-color:var(--w-active-color-yellow);
+.loginButton:active {
+    background-color: var(--w-active-color-yellow);
     color: var(--main-color-white);
 }
-.signIn{
+
+.signIn {
     display: flex;
     justify-content: center;
-    align-items:center;
-    color:var(--main-color-white);
-    font-size:1rem;
+    align-items: center;
+    color: var(--main-color-white);
+    font-size: 1rem;
     width: 18rem;
     height: 2.75rem;
     border: solid 0.0625rem;
-    border-radius:0.5625rem;
+    border-radius: 0.5625rem;
     letter-spacing: 0.0625rem;
 }
-.signIn:hover{
+
+.signIn:hover {
     border: solid 0.0625rem;
-    background-color:var(--b-main-color-blue);
+    background-color: var(--b-main-color-blue);
     color: var(--main-color-white);
 }
-.signIn:active{
+
+.signIn:active {
     border: solid 0.0625rem;
-    background-color:var(--b-main-color-blue);
+    background-color: var(--b-main-color-blue);
     color: var(--main-color-white);
 }
-.continue{
+
+.continue {
     color: var(--main-color-white);
     text-decoration: underline;
     letter-spacing: 0.0625rem;
 }
 
-.continue:active{
+.continue:active {
     color: var(--color-gray-opacity-80);
 }
+
+
+/* Estilos página de registro*/
+
+.logoHorizontal {
+    width: 12.5rem;
+    display: flex;
+
+}
+
+.viewSignIn {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formSignIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    width: 100vw;
+    height: 40vh;
+    align-self: center;
+}
+
+
+
+#name,
+#user,
+#email,
+#password {
+    border: none;
+    border-bottom: solid 0.125rem var(--main-color-white);
+    width: 80vw;
+    display: flex;
+    background-color: var(--w-color-blue-medium);
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+::placeholder {
+    color: var(--main-color-white);
+    font-size: 0.8rem;
+    opacity: 0.3;
+}
+
+.o {
+    color: var(--main-color-white);
+    height: 5vh;
+}
+
+.GoogleIcon {
+    width: 1.2rem;
+
+}
+
+.googleSignIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background-color: var(--main-color-white);
+    width: 18rem;
+    height: 2.75rem;
+    border: solid 0.0625rem;
+    border-color: var(--main-color-white);
+    color: var(--w-color-blue-medium);
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+}
+
+.submitSignIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background-color: var(--w-color-blue-medium);
+    width: 18rem;
+    height: 2.75rem;
+    border: solid 0.0625rem;
+    border-color: var(--main-color-white);
+    color: var(--main-color-white);
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+}
+
+.submitSignIn:hover {
+    border: solid 0.0625rem;
+    background-color: var(--w-hight-color-yellow);
+    color: var(--w-color-blue-medium);
+    font-weight: bold;
+}
+
+.submitSignIn:active {
+    border: solid 0.0625rem;
+    background-color: var(--b-main-color-blue);
+    color: var(--b-main-color-blue);
+}
+/* Fin Mobile */
+
+/* Inicio desktop */
+@media (min-width: 1024px) and (max-width: 2000px){
+    .figureWelcome{
+        width: 100vw;
+        background-image: url("lib/img/image_desktop.png");
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; 
+        clip-path: circle(53.7% at 8% 49%);
+    }
+    
+    .body {
+        background-color:transparent;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .welcomeContainer{
+
+    }
+}
+
+
+/* Fin desktop */
