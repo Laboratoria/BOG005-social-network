@@ -55,7 +55,7 @@ height:6.875rem;
     width: 100vw;
     height: 60vh;
     background-repeat: no-repeat;
-    background-image: url(/src/lib/img/imagefondomobile.png);
+    background-image: url("lib/img/imagefondomobile.png");
     border-bottom-left-radius: 80% 35%;
     border-bottom-right-radius: 80% 35%;
 }
