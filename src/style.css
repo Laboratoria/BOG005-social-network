@@ -37,9 +37,9 @@ html {
 }
 
 .body {
-    background-color: var(--w-color-blue-medium);
     width: 100vw;
     height: 100vh;
+    background-color: var(--w-color-blue-medium);
 }
 
 .logo {
@@ -48,17 +48,22 @@ html {
 
 }
 
- .figureWelcome{
-    display: flex;
-    justify-content: flex-end;
-    width: 100vw;
-    height: 60vh;
-    background-repeat: no-repeat;
-    background-image: url("lib/img/imagefondomobile.png");
-    border-bottom-left-radius: 80% 35%;
-    border-bottom-right-radius: 80% 35%;
-}  
+.welcomeContainer{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 90vh;
+}
 
+.headerClass{
+    background-image: url("lib/img/imagenFondo.png");
+    background-repeat: no-repeat;
+    background-position: -100px -500px;
+    height: 80vh;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+ 
 .title {
     font-family: 'Contrail One', cursive;
     color: var(--main-color-white);
@@ -90,6 +95,7 @@ html {
     height: 2.75rem;
     border-radius: 0.5625rem;
     letter-spacing: 0.0625rem;
+    border: none;
 }
 
 .loginButton:hover {
@@ -113,6 +119,7 @@ html {
     border: solid 0.0625rem;
     border-radius: 0.5625rem;
     letter-spacing: 0.0625rem;
+    background-color: var(--w-color-blue-medium);
 }
 
 .signIn:hover {
