@@ -1,11 +1,11 @@
 const welcome = () => {
-  const view = `<article class="articleWelcome"> 
+  const view = `<section id="sectionWelcomeId" class="sectionWelcome"> <article class="articleWelcome"> 
       <h1 class="title">Bienvenidos a CICLAPP</h1>
-      <p>¿Te gusta el ciclismo? </p><p>¡Esta red social es para ti!</p>
-      <button type="button" class="loginButton">Registrate</button>
+      <p class="welcomeText">¿Te gusta el ciclismo? </p><p class="welcomeText">¡Esta red social es para ti!</p>
+      <button type="button" class="loginButton" id="loginButtonId">Registrate</button>
       <button type="button" class="signIn">Iniciar Sección</button>
       <a href="#" id="continue" class="continue">Continuar sin registrarse</a>
-      </article>`;
+      </article> </section>`;
   return view;
 };
 

@@ -1,12 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
+import routes from './lib/routes.js';
+import eventButtonSignIn from './lib/utils/eventButtonSignIn.js';
 
-import  welcome  from "./lib/page/welcome.js";
-import  signIn  from "./lib/page/signIn.js";
-import  userSignIn  from "./lib/page/userSignIn.js";
-//import header from ".lib/templates/header.js";
-
-
-document.querySelector("#welcome").innerHTML = welcome();
-//document.querySelector("#signIn").innerHTML = signIn();
-// document.querySelector("#userSignIn").innerHTML = userSignIn();
- 
+window.addEventListener('load', routes);
+window.addEventListener('load', eventButtonSignIn);

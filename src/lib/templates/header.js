@@ -1,9 +1,11 @@
-/* const header = () => {
-const viewHeader = `<header>
-<img src="lib/img/LogoHorizontal.png" alt="LogoCICLAPP" class="logoHorizontal">
-</header>`
+const header = () => {
+  const viewHeader = `<header id="header" class="headerClass">
+  <figure class="figureWelcome"> 
+  <img src="lib/img/Logo.png" alt="LogoCICLAPP" class="logo">
+</figure> 
+</header>`;
 
- return viewHeader;
-}
+  return viewHeader;
+};
 
-export default header; */
+export default header;
