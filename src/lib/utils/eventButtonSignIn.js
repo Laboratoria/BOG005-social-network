@@ -1,10 +1,13 @@
 import signIn from '../page/signIn.js';
 
+/**
+ * Esta función nos llevará a la siguiente página usando window.location
+ * en este momento esta ruta es provisional
+ */
 const eventButtonSignIn = () => {
-  //Agregar window.location para enrutar la pagina 
   const buttonSignIn = document.getElementById('loginButtonId');
   buttonSignIn.addEventListener('click', () => {
-    document.getElementById('welcome').innerHTML = signIn();
+    document.getElementById('contentPageId').innerHTML = signIn();
   });
 };
 
