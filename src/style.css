@@ -165,9 +165,7 @@ html {
 .textLogo{
     color: var(--main-color-white);
     font-family: 'Contrail One', cursive;
-    font-size: 2.1rem;
-    font-style: italic;
-    font-weight:medium;
+    font-size: 2.4rem;
     display: flex;
     align-items: center;
     transform: translateX(-28px);
