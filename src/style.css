@@ -153,11 +153,25 @@ html {
 
 /* Estilos página de registro*/
 
-.logoHorizontal {
-    width: 12.5rem;
+.logoSignIn{
+    width: 18rem;
     display: flex;
-
 }
+
+.logoHorizontal {
+    width:11.5rem;
+}
+
+.textLogo{
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    font-size: 2.1rem;
+    font-style: italic;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    transform: translateX(-28px);
+  }
 
 .viewSignIn {
     height: 90vh;
@@ -188,22 +202,28 @@ html {
     border: none;
     border-bottom: solid 0.125rem var(--main-color-white);
     width: 80vw;
+    height: 2.5rem;
     display: flex;
     background-color: var(--w-color-blue-medium);
     align-items: center;
     justify-content: space-around;
-
+    font-size: 1rem;
+    color: var(--main-color-white);
+    padding-left: 1rem;
 }
 
 ::placeholder {
+    width: 80%;
     color: var(--main-color-white);
-    font-size: 0.8rem;
+    font-size: 1rem;
     opacity: 0.3;
 }
+
 
 .o {
     color: var(--main-color-white);
     height: 5vh;
+    font-size: 1.5rem;
 }
 
 .GoogleIcon {
@@ -213,7 +233,7 @@ html {
 
 .googleSignIn {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     font-size: 1rem;
     background-color: var(--main-color-white);
@@ -253,11 +273,24 @@ html {
     background-color: var(--b-main-color-blue);
     color: var(--b-main-color-blue);
 }
+
+.itemsInput{
+    height: 5.3125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 /* Fin Mobile */
 
 /* Inicio desktop */
 @media (min-width: 1024px) and (max-width: 1440px){
     /* @media (min-width: 768px) and (max-width: 1024px){ */
+    .body {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--w-color-blue-medium);
+    }
+
     .contentPage {
        width: 100%;
        height: 100%;
@@ -278,9 +311,18 @@ html {
         overflow: hidden;
         width: 61%;
         height: 100vh;
+
         clip-path: circle(66.8% at -3% 50%);
         border-bottom-left-radius:0;
         border-bottom-right-radius:0; 
+
+        -webkit-clip-path: circle(66.8% at -3% 50%);
+        -webkit-border-bottom-left-radius:0;
+        -webkit-border-bottom-right-radius:0; 
+
+        -ms-clip-path: circle(66.8% at -3% 50%);
+        -ms-border-bottom-left-radius:0;
+        -ms-border-bottom-right-radius:0; 
     }
 
     .figureWelcome{
