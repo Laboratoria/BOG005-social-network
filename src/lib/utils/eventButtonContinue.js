@@ -1,3 +1,4 @@
+
 // import formValidator from './formValidator.js';
 import getFormData from './formValidator.js';
 
@@ -10,3 +11,4 @@ const eventButtonContinue = () => {
   });
 };
 export default eventButtonContinue;
+
