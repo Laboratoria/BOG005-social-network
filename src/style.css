@@ -29,7 +29,6 @@ Parrafos -> Regular
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-
 }
 
 html {
@@ -51,8 +50,8 @@ html {
     justify-content: space-between;
 }
 .logo {
-    width: 6.875rem;
-    height: 6.875rem;
+    width: 7.0625rem;
+    height: 7.0625rem;
 }
 
 .headerClass{
@@ -65,6 +64,12 @@ html {
     border-bottom-right-radius: 50% 20%;
 }
  
+.figureWelcome{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
 .sectionWelcome{
     width: 100vw;
     height: 39vh;
@@ -154,7 +159,6 @@ html {
 /* Estilos página de registro*/
 
 .logoSignIn{
-    width: 18rem;
     display: flex;
 }
 
@@ -281,15 +285,9 @@ html {
 /* Fin Mobile */
 
 /* Inicio desktop */
-@media (min-width: 1024px) and (max-width: 1440px){
+@media (min-width: 1024px) and (max-width: 2000px){
     /* @media (min-width: 768px) and (max-width: 1024px){ */
-    .body {
-      width: 100vw;
-      height: 100vh;
-      background-color: var(--w-color-blue-medium);
-    }
-
-    .contentPage {
+        .contentPage {
        width: 100%;
        height: 100%;
        display: flex;
@@ -299,35 +297,33 @@ html {
 
     .logo {
         width: 17.1875rem;
-    height: 17.1875rem;
+        height: 17.1875rem;
     }
     
     .headerClass{
         background-image: url("lib/img/imagenFondo.png");
         background-repeat: no-repeat;
-        background-position: -114px -117px;
-        overflow: hidden;
-        width: 61%;
+        background-position: -133px -276px;
+                
+        width: 48%;
+        height: 100%;
+        clip-path: circle(66.8% at 13% 50%);;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        /* width: 61%;
         height: 100vh;
-
-        clip-path: circle(66.8% at -3% 50%);
-        border-bottom-left-radius:0;
-        border-bottom-right-radius:0; 
-
-        -webkit-clip-path: circle(66.8% at -3% 50%);
-        -webkit-border-bottom-left-radius:0;
-        -webkit-border-bottom-right-radius:0; 
-
-        -ms-clip-path: circle(66.8% at -3% 50%);
-        -ms-border-bottom-left-radius:0;
-        -ms-border-bottom-right-radius:0; 
+        float: left;
+        shape-outside: circle(49% at 0 50%);
+        clip-path: circle(65% at 0 50%);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; */
     }
 
     .figureWelcome{
-        width: 100vw;
-        /* transform: translateX(500px); */
-        /* z-index: -1; */
-        
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
     }
      
     .sectionWelcome{
