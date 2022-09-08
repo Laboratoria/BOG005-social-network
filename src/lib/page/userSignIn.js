@@ -1,5 +1,5 @@
 const userSignIn = () => {
-    const viewUserSignIn = `<form>
+  const viewUserSignIn = `<form>
     <label for="userSi">Usuario</label>
     <input type="text" id="userSi" placeholder="Escribe tu usuario">
 
@@ -10,9 +10,9 @@ const userSignIn = () => {
     <a href="#">Registrate con Google</a>
     
     <button type="submit">Continuar</button>
-  </form>`
+  </form>`;
 
   return viewUserSignIn;
-}
+};
 
 export default userSignIn;

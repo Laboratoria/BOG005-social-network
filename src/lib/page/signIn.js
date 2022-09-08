@@ -9,7 +9,7 @@ const signIn = () => {
     <form class="formSignIn">
 <article class="itemsInput">
     <label for="name">Nombre y Apellido</label>
-    <input type="text" id="name" placeholder="Escribe tu nombre y apellido" value="" autocomplete="off">
+    <input type="text" id="name" placeholder="Escribe tu nombre y apellido" autocomplete="off">
 </article>
 
 <article class="itemsInput">
