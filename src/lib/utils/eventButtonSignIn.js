@@ -1,4 +1,4 @@
-// import signIn from '../page/signIn.js';
+import signIn from '../page/signIn.js';
 
 /**
  * Esta función nos llevará a la siguiente página usando window.location
@@ -8,7 +8,7 @@ const eventButtonSignIn = () => {
   const buttonSignIn = document.getElementById('loginButtonId');
   buttonSignIn.addEventListener('click', () => {
     console.log('Hay evento');
-    // document.getElementById('contentPageId').innerHTML = signIn();
+    document.getElementById('contentPageId').innerHTML = signIn();
   });
 };
 

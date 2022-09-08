@@ -1,17 +1,17 @@
 const getFormData = () => {
-  const name = null || document.getElementById('name');
-  const user = null || document.getElementById('user');
-  const email = null || document.getElementById('email');
-  const password = null || document.getElementById('password');
+  const name = document.getElementById('name');
+  const user = document.getElementById('user');
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
 
   return {
-    name,
-    user,
-    email,
-    password,
+    name: name.value,
+    user: user.value,
+    email: email.value,
+    password: password.value,
   };
 };
-console.log(getFormData());
+
 // const formValidator = () =>{
 //   const regex = {
 //     name: /[a-zA-ZÀ-ÿ\u00f1\u00d1]/,
