@@ -1,8 +1,8 @@
 //import formatDate from ''
 
-const getFormData = () =>{
-    const name = document.getElementById('name') 
-    const user = document.getElementById('user')
+const getFormData = () => {
+  const name = document.getElementById('name') 
+  const user = document.getElementById('user')
     const email = document.getElementById('email')
     const password = document.getElementById('password')
 
@@ -13,7 +13,7 @@ const getFormData = () =>{
         password: password.value,
     }
 
-}
+};
 
 
 

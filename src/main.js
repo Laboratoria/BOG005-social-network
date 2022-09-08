@@ -5,4 +5,10 @@ import eventButtonSignIn from './lib/utils/eventButtonSignIn.js';
 
 window.addEventListener('load', routes);
 window.addEventListener('load', eventButtonSignIn);
-//window.addEventListener('load', eventButtonContinue);
+
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    eventButtonContinue()
+  }, 2000);
+});
+
