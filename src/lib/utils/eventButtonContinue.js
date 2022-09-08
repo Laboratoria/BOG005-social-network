@@ -1,11 +1,10 @@
-import formValidator from './formValidator.js';
+import getFormData from './formValidator.js';
 
-const eventButtonContinue = () => {
-
+/* const eventButtonContinue = () => {
     const buttonContinue = document.getElementById('submitContinue');
-        buttonContinue.addEventListener('click', ()=> {
-            //document.getElementById('contentPageId').innerHTML =
-        
+
+        buttonContinue.addEventListener('change', ()=> {
+                 console.log("funciona");  
             const formData = getFormData()
             console.log(formData)
         })
@@ -14,4 +13,4 @@ const eventButtonContinue = () => {
 
 
 }
-export default eventButtonContinue;
+export default eventButtonContinue; */
