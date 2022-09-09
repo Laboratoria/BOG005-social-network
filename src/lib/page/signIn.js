@@ -37,7 +37,8 @@ const signIn = () => {
     <span>Registrate con Google</span>
     </button>
     
-    <button type="button" class="submitSignIn" id="submitContinue">Continuar</button>
+    <button type="button" class="submitSignIn" id="submitContinue">
+    Continuar</button>
     
 </section>`;
 

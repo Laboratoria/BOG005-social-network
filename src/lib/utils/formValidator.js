@@ -12,13 +12,14 @@ const getFormData = () => {
   };
 };
 
-// const formValidator = () =>{
-//   const regex = {
-//     name: /[a-zA-ZÀ-ÿ\u00f1\u00d1]/,
-//     user: /[a-zA-ZÀ-ÿ0-9_.\-\u00f1\u00d1]/,
-//     email: /[a-zA-Z0-9_.\-]+@[a-zA-Z0-9_.\-]+\.[a-zA-Z]+/,
-//     password: /[0-9]/,
-//   };
-// };
+// const formValidator = () => {
+//     const regex = {
+//         name: /[a-zA-ZÀ-ÿ\u00f1\u00d1]/,
+//         user: /[a-zA-ZÀ-ÿ0-9_.\-\u00f1\u00d1]/,
+//         email: /[a-zA-Z0-9_.\-]+@[a-zA-Z0-9_.\-]+\.[a-zA-Z]+/,
+//         password: /[0-9]/,
+//     }
+//    console.log(formData)
+// }
 
 export default getFormData;
