@@ -5,6 +5,7 @@ import eventButtonContinue from './lib/utils/eventButtonContinue.js';
 
 window.addEventListener('load', routes);
 window.addEventListener('load', eventButtonSignIn);
+
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     eventButtonContinue();
