@@ -7,6 +7,6 @@ window.addEventListener('load', routes);
 window.addEventListener('load', eventButtonSignIn);
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
-    eventButtonContinue()
+    eventButtonContinue();
   }, 2000);
 });
