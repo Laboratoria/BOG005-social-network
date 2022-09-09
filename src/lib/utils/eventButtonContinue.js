@@ -2,11 +2,20 @@
 import getFormData from './formValidator.js';
 
 const eventButtonContinue = () => {
-  const buttonContinue = document.getElementById('submitContinue');
-  buttonContinue.addEventListener('click', () => {
-  // document.getElementById('contentPageId').innerHTML =
-    const formData = getFormData();
-    console.log(formData);
-  });
+  const buttonContinue = document.getElementById('submitContinueButton');
+  if (buttonContinue){
+    buttonContinue.addEventListener('click', () => {
+      // document.getElementById('contentPageId').innerHTML =
+      // console.log(buttonContinue);
+      const formData = getFormData();
+      console.log(formData);
+    });
+  }
+  // buttonContinue?.addEventListener('click', () => {
+  //   // document.getElementById('contentPageId').innerHTML =
+  //   console.log(buttonContinue);
+  //   const formData = getFormData();
+  //   console.log(formData);
+  // });
 };
 export default eventButtonContinue;

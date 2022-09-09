@@ -5,7 +5,7 @@ const getFormData = () => {
   const user = document.getElementById('user');
   const email = document.getElementById('email');
   const password = document.getElementById('password');
-
+  // console.log(getFormData);
   return {
     name: name.value,
     user: user.value,
