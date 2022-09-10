@@ -7,6 +7,7 @@ const eventButtonContinue = () => {
     buttonContinue.addEventListener('click', () => {
       // document.getElementById('contentPageId').innerHTML =
       // console.log(buttonContinue);
+      console.log('si sirve')
       const formData = getFormData();
       console.log(formData);
     });

@@ -6,8 +6,14 @@ import eventButtonContinue from './lib/utils/eventButtonContinue.js';
 window.addEventListener('load', routes);
 window.addEventListener('load', eventButtonSignIn);
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   setTimeout(() => {
     eventButtonContinue();
   }, 2000);
 });
+
+  // window.addEventListener('DOMContentLoaded', () => {
+    // setTimeout(() => {
+      // eventButtonContinue();
+    // }, 2000);
+// });
