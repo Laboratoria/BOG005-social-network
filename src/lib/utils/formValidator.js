@@ -1,5 +1,3 @@
-// import formatDate from ''
-
 const getFormData = () => {
   const name = document.getElementById('name');
   const user = document.getElementById('user');
