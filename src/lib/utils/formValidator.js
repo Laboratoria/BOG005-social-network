@@ -1,14 +1,14 @@
 const getFormData = () => {
   const name = document.getElementById('name');
-  const user = document.getElementById('user');
-  const email = document.getElementById('email');
-  const password = document.getElementById('password');
+  // const user = document.getElementById('user');
+  // const email = document.getElementById('email');
+  // const password = document.getElementById('password');
   // console.log(getFormData);
   return {
     name: name.value,
-    user: user.value,
-    email: email.value,
-    password: password.value,
+    // user: user.value,
+    // email: email.value,
+    // password: password.value,
   };
 };
 

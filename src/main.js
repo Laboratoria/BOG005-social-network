@@ -7,8 +7,14 @@ window.addEventListener('load', router);
 window.addEventListener('hashchange', router);
 window.addEventListener('load', eventButtonSignIn);
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   setTimeout(() => {
     eventButtonContinue();
   }, 2000);
 });
+
+  // window.addEventListener('DOMContentLoaded', () => {
+    // setTimeout(() => {
+      // eventButtonContinue();
+    // }, 2000);
+// });
