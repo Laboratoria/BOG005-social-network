@@ -2,7 +2,7 @@ const welcome = () => {
   const view = `<section id="sectionWelcomeId" class="sectionWelcome"> <article class="articleWelcome"> 
       <h1 class="title">Bienvenidos a CICLAPP</h1>
       <p class="welcomeText">¿Te gusta el ciclismo? </p><p class="welcomeText">¡Esta red social es para ti!</p>
-      <button type="button" class="loginButton" id="loginButtonId">Registrate</button>
+      <a href="#signIn" class="loginButton" id="loginButtonId">Registrate</a>
       <button type="button" class="signIn">Iniciar Sección</button>
       <a href="#" id="continue" class="continue">Continuar sin registrarse</a>
       </article> </section>`;
@@ -10,3 +10,5 @@ const welcome = () => {
 };
 
 export default welcome;
+// Se saco momentaneamente para prueba
+/* <button type="button" class="loginButton" id="loginButtonId">Registrate</button> */
