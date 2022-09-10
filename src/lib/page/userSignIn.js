@@ -16,6 +16,5 @@ const userSignIn = () => {
 
   return viewUserSignIn;
 };
-/* <button type="submit" id="submitContinue" onclick=${getFormData()}>Continuar</button> */
 
 export default userSignIn;
