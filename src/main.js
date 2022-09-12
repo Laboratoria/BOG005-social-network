@@ -1,57 +1,34 @@
-// Este es el punto de entrada de tu aplicacion
-
-// import { myFunction } from './lib/index.js';
-// myFunction();
-
-const beginningnContent = '<h1> beginnig opened </h1>';
-const homeContent = '<h1> Home page </h1>';
-const wallContent = '<h1> wall opened </h1>';
-const profileContent = '<h1> profile opened </h1>';
-
-const linkContent = {
-  '#beginning': beginningnContent,
-  '#home': homeContent,
-  '#wall': wallContent,
-  '#profile': profileContent,
-};
+import { welcome } from './components/welcome.js';
+import { login } from './components/login.js';
+import { register } from './components/register.js';
+import { wall } from './components/wall.js';
 
 const root = document.getElementById('root');
-if (window.location.pathname === '/') {
-  root.innerHTML = beginningnContent;
-} else if (window.location.pathname === '/home') {
-  root.innerHTML = homeContent;
-} else if (window.location.pathname === '/wall') {
-  root.innerHTML = wallContent;
-} else if (window.location.pathname === '/profile') {
-  root.innerHTML = profileContent;
-}
 
-const changeRoute = (hash) => {
-  if (hash === '#beginning') {
-    window.history.replaceState({}, 'beginning', '/');
-  } else if (hash === '#home') {
-    window.history.replaceState({}, 'home', '/home');
-  } else if (hash === '#wall') {
-    window.history.replaceState({}, 'wall', '/wall');
-  } else if (hash === '#profile') {
-    window.history.replaceState({}, 'profile', '/profile');
-  }
+const routes = {
+  '/': welcome,//clave y valor
+  '/login': login,
+  '/register': register,
+  '/wall': wall,
 };
 
-window.addEventListener('hashchange', () => {
-  const hash = window.location.hash;
-  root.innerHTML = linkContent[hash];
-  changeRoute(hash);
-});
+//función para anexar un registro al historial del navegador (.pushState)
+export const onNavigate = (pathname) => {
+  window.history.pushState(
+    {},//estado vacio
+    pathname,//title
+    window.location.origin + pathname,// URL + (Ruta)
+  );
+  root.removeChild(root.firstChild);
+  root.appendChild(routes[pathname]());
+};
+// Renderiza sólo ésta parte de la ruta
+const component = routes[window.location.pathname];
 
+//onpopstate, se dispara realizando una acción en el navegador como volver
 window.onpopstate = () => {
-  if (window.location.pathname === '/') {
-    root.innerHTML = beginningnContent;
-  } else if (window.location.pathname === '/home') {
-    root.innerHTML = homeContent;
-  } else if (window.location.pathname === '/wall') {
-    root.innerHTML = wallContent;
-  } else if (window.location.pathname === '/profile') {
-    root.innerHTML = profileContent;
-  }
+  root.removeChild(root.firstChild);//borrando el primer nodo
+  root.append(component());//insertando el nuevo nodo
 };
+
+root.appendChild(component());
