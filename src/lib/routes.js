@@ -5,6 +5,8 @@ import header from './templates/header.js';
 import getHash from './utils/getHash.js';
 import { removeHashes, sendRoute } from './utils/clearHash.js';
 
+const containerPage = document.getElementById('contentPageId');
+
 const routes = {
   '/': welcome,
   '/signIn': signIn,
@@ -21,9 +23,12 @@ const router = () => {
   containerPage.innerHTML = render();
 };
 
-// const routes = () => {
-//   const containerPage = document.getElementById('contentPageId');
-//   containerPage.innerHTML = header();
-//   containerPage.innerHTML += welcome();
-// };
-export default router;
+const handlerHistorial = () => {
+  const pathName = window.location.pathname;
+  const render = routes[pathName] ? routes[pathName] : 'ERROR404';
+  containerPage.innerHTML = render();
+}
+
+
+
+export { router, handlerHistorial };
