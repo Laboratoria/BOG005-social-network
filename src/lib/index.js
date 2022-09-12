@@ -30,7 +30,7 @@ onAuthStateChanged(auth, user => {
 
 // export{auth,db};
 
-
+//Estamos probando otra rama
 
 
 /* // aqui exportaras las funciones que necesites
