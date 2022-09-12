@@ -1,0 +1,1 @@
+let welcome = 'soy la pagina de Bienvenida!'
