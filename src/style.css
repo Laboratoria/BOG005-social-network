@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+body{
+	background: rgb(147, 85, 147);
+	padding: 20px; 
+}
+main{
+	margin-top: 50px;
+	max-width: 1000px;
+	background: rgb(122, 81, 159);
+	padding: 20px;
+	border-radius: 10px;
+	margin-block-end: 20px;
+	display: flexbox;
+	flex-direction: column;
+	margin: auto;
+	
+}
+.content-heder{
+	width: 100%;
+	text-align: center;
+	max-width: 300px;
+	margin: auto;
+}
+.content-heder h1{
+	font-weight: 40px;
+	color: white;
+	margin-top: 10px;
+}
+.content-heder p{
+	margin-top: 10px ;
+	color: white;
+	font-size: 13px;
+}
+.content-heder a{
+	color: white ;
+}
+.content-logo{
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 3px solid white;
+	margin: auto;
+	margin-top: 20px;
+}
+.content-logo img{
+	width: 100%;
+	height: 100%;
+}
+nav.content-logo{
+	margin-top: 0px;
+}
+hr{
+	margin-top: 20px;
+
+}
+/* content1 */
+.content1{
+	width: 100%;
+	text-align: center;
+}
+.content1 h1{
+	margin-top: 10px;
+	font-size: 20px;
+	color: white;
+}
+.content1 h2{
+	margin-top: 10px;
+	font-size: 18px;
+	color: rgb(195, 171, 213);
+}
+/* content2 */
+.content2{
+	margin-top: 30px;
+	text-align: center;
+	align-items: center;
+}
+#name{
+	margin-top: 10px;
+	border-radius: 10px;
+	text-align: center;
+	width: 300px;
+	
+}
+#mail{
+	margin-top: 10px;
+	border-radius: 10px;
+	text-align: center;
+	width: 300px;
+}
+ #password{
+	margin-top: 10px;
+	border-radius: 10px;
+	text-align: center;
+	width: 300px;
+}
+#register{
+	margin-top: 10px;
+	border-radius: 10px;
+	text-align: center;
+	width: 130px;
+	margin-block-end: 10px;
+}
+.btn{
+	text-align: center;
+}
+@media screen and (max-width: 1000px) {
+	main{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	
+}
