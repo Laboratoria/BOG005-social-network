@@ -1,3 +1,11 @@
-/* const login = () => console.log('hace login');
+import { createUserWithEmailAndPassword } from './index.js';
 
-export { */
+const register = async(email, password)=> {
+    try {
+        await createUserWithEmailAndPassword(auth, email, password)
+    } catch(error) {
+        throw error.message
+    }
+}
+
+export { register }
