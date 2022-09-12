@@ -1,1 +1,1 @@
-let landing = "estaesla landing page"
+let landing = "Esta es la landing page"
