@@ -2,5 +2,4 @@
 
 import { myFunction } from './lib/index.js';
 
-myFunction();
-EXPORT 
+myFunction()
