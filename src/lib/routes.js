@@ -3,9 +3,9 @@ import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
 import header from './templates/header.js';
 import getHash from './utils/getHash.js';
+import wall from './page/wall.js';
 import { removeHashes, sendRoute } from './utils/clearHash.js';
 import eventButtonContinue from './utils/eventButtonContinue.js';
-import wall from './page/wall.js'
 
 const containerPage = document.getElementById('contentPageId');
 
@@ -28,9 +28,9 @@ const router = () => {
 };
 
 const handlerHistorial = () => {
-  const pathname = window.location.pathname;
-  const render = routes[pathname] ? routes[pathname] : 'ERROR404';
+  const pathName = window.location.pathname;
+  const render = routes[pathName] ? routes[pathName] : 'ERROR404';
   containerPage.innerHTML = render();
 }
 
-export {router, handlerHistorial} ;
+export { router, handlerHistorial };
