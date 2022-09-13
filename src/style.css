@@ -271,9 +271,9 @@ html {
 }
 
 .submitSignIn:active {
-    border: solid 0.0625rem;
-    background-color: var(--b-main-color-blue);
-    color: var(--b-main-color-blue);
+    border: none;
+    background-color: var(--w-active-color-yellow);
+    color: var(--main-color-white);
 }
 
 .itemsInput{
