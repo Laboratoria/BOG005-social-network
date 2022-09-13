@@ -1,119 +1,168 @@
 *{
 	margin: 0;
 	padding: 0;
+	height:100%;
 	box-sizing: border-box;
 	font-family: sans-serif;
 }
-body{
-	background: rgb(147, 85, 147);
-	padding: 20px; 
-}
-main{
-	margin-top: 50px;
-	max-width: 1000px;
-	background: rgb(122, 81, 159);
-	padding: 20px;
-	border-radius: 10px;
-	margin-block-end: 20px;
-	display: flexbox;
-	flex-direction: column;
-	margin: auto;
-	
-}
-.content-heder{
-	width: 100%;
-	text-align: center;
-	max-width: 300px;
-	margin: auto;
-}
-.content-heder h1{
-	font-weight: 40px;
-	color: white;
-	margin-top: 10px;
-}
-.content-heder p{
-	margin-top: 10px ;
-	color: white;
-	font-size: 13px;
-}
-.content-heder a{
-	color: white ;
-}
-.content-logo{
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	overflow: hidden;
-	border: 3px solid white;
-	margin: auto;
-	margin-top: 20px;
-}
-.content-logo img{
-	width: 100%;
+#root{
 	height: 100%;
 }
-nav.content-logo{
-	margin-top: 0px;
+.login{
+	background-color: rgba(72, 160, 160, 0.457);
+	height:100%;
 }
-hr{
+.titulo{
+	margin-top: 10px;
+}
+.imginInisioSesion{
+	width: 85px;
+	height: 85px;
+	border-radius: 50%;
+}
+.imagenDescripcion{
+	text-align: center;
+    width: 60%;
+    margin-top: 10px;
+}
+.camapoTexto{
+	height: 35px;
+    width: 100%;
+    border-radius: 15px;
 	margin-top: 20px;
+	text-align: center;
+}
+.containerDatos{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	margin-bottom: 50px;
 
 }
-/* content1 */
-.content1{
-	width: 100%;
-	text-align: center;
-}
-.content1 h1{
-	margin-top: 10px;
-	font-size: 20px;
-	color: white;
-}
-.content1 h2{
-	margin-top: 10px;
-	font-size: 18px;
-	color: rgb(195, 171, 213);
-}
-/* content2 */
-.content2{
-	margin-top: 30px;
-	text-align: center;
-	align-items: center;
-}
-#name{
-	margin-top: 10px;
-	border-radius: 10px;
-	text-align: center;
-	width: 300px;
+.container{
+	height: auto;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(185, 183, 189, 0.52);
+    align-items: center;
+    position: relative;
+    top: 40px;
+    left: 55px;
+    border-radius: 15px;
+    box-shadow: 2px 15px 20px 10px rgb(61, 60, 60);
+	border: 2px solid cornsilk;
+	
 	
 }
-#mail{
-	margin-top: 10px;
-	border-radius: 10px;
-	text-align: center;
-	width: 300px;
+.buttonIniciar{
+	margin-top: 15px;
+    width: 60%;
+    height: 30px;
+    border-radius: 5px;
+	margin-inline: auto;
 }
- #password{
-	margin-top: 10px;
-	border-radius: 10px;
-	text-align: center;
-	width: 300px;
+.inicioGogle{
+	height: auto;
+    margin-inline: auto;
+    margin-top: 15px;
 }
-#register{
-	margin-top: 10px;
-	border-radius: 10px;
-	text-align: center;
-	width: 130px;
-	margin-block-end: 10px;
+.registrarse{
+	margin-top:15px ;
+	margin-inline: auto;
+    height: auto;
+	text-align: center
 }
-.btn{
-	text-align: center;
+a{
+	text-decoration:none;
 }
-@media screen and (max-width: 1000px) {
-	main{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+    .login{
+		background-color: rgba(72, 160, 160, 0.457);
+		height:100%;
 	}
-	
+	.container{
+		top: 25px;
+        left: 100px;
+	}
+	.titulo{
+		margin-top: 20px;
+		font-size: 35px
+	}
+	.imagenDescripcion {
+		font-size: 15px;
+		
+	}
+	.imginInisioSesion {
+		width: 130px;
+		height: 130px;
+		
+	}
+	.camapoTexto{
+		height: 35px;
+		width: 70%;
+		margin-inline: auto;
+        font-size: 13px;
+	}
+	.buttonIniciar {
+		width: 35%;
+		height: 30px;
+		font-size: 12px;
+	}
+    .inicioGogle{
+		font-size: 16px;
+	}
+	.registrarse {
+		font-size: 16px;
+	}
+
 }
+
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+	.container{
+		top: 40px;
+		left: 125px;
+	}
+	.titulo{
+		margin-top: 20px;
+		font-size: 40px
+	}
+	.imagenDescripcion {
+		font-size: 15px;
+		
+	}
+	.imginInisioSesion {
+		width: 135px;
+		height: 135px;
+		
+	}
+	.camapoTexto{
+		height: 35px;
+		width: 70%;
+		margin-inline: auto;
+        font-size: 15px;
+		border-radius: 20px
+
+	}
+	.buttonIniciar {
+		width: 40%;
+		height: 30px;
+		font-size: 15px;
+		border-radius: 10px;
+	}
+    .inicioGogle{
+		font-size: 17px;
+		margin-top: 40px;
+	}
+	.registrarse {
+		font-size: 18px;
+		margin-top: 10px;
+	}
+
+}
+
+
+
