@@ -11,13 +11,11 @@ export default () => {
             <form id="singinform">
 
             <label for="name">Name</label>
-            <input id="name" type="text" name="name" placeholder="Name" required>
+                <input id="name" type="text" name="name" placeholder="Name" required>
                 <label for="usuario">Usuario</label>
                 <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
-
                 <label for="password">Contraseña</label>
                 <input id="password" type="password" placeholder="Contraseña" name="password" required>
-
                 <button type="submit" title="SingIn" name="SingIn">Sing In</button>
             </form>
 

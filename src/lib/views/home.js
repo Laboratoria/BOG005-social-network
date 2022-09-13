@@ -5,21 +5,26 @@ export default  () =>{
 
 
     const viewHome =
-`<main>
-    <article>   </article>
-    <div id="derecho">
-    <div class="titulo">
-        Welcome to Movie Mania
-    </div>
-    <hr>
-    <div class="pie-form">
-        <p> Un lugar exclusivo para los cinefilos. Compartir tus pelis favoritas, recomendaciones, dislike y hasta conocer otros cinefilos. ¡Registrate y pronto disfrutarás todo esto y más!  </p>
-        <a href="#/register">¿No tienes Cuenta? Registrate</a>
-        <hr>
+`    <section class="titleContainer">
+<h1 class="titleLandinPage">MovieManía</h1>
 
-    </div>
+<h2 class="textLandingPage">
+  Conéctate con tus amigos y habla sobre películas y series en común a
+  través de MovieManía
+</h2>
+</section>
+
+<figure class="imgLandinPageCont">
+<img alt="Cinema vector" class="imgLandinPage" src="img/mancha .png" />
+<div class="buttonContainer">
+  <button class="landingPageButton"><a href="#login">Entrar</a></button>
+  <button class="landingPageButton">
+    <a href="#register">Registrarse</a>
+  </button>
 </div>
-</main>`
+</figure>`
+
+
 homeSection.innerHTML=viewHome;
 return homeSection;
 
