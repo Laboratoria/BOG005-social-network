@@ -3,6 +3,7 @@ import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
 import header from './templates/header.js';
 import getHash from './utils/getHash.js';
+import wall from './page/wall.js';
 import { removeHashes, sendRoute } from './utils/clearHash.js';
 
 const containerPage = document.getElementById('contentPageId');
@@ -11,6 +12,7 @@ const routes = {
   '/': welcome,
   '/signIn': signIn,
   '/userSignIn': userSignIn,
+  '/wall': wall,
 };
 
 const router = () => {

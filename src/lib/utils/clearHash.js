@@ -5,6 +5,8 @@ const removeHashes = (hash) => {
     window.history.replaceState({}, '', '/signIn');
   } else if (hash === '#userSignIn') {
     window.history.replaceState({}, '', '/userSignIn');
+  } else if (hash === '#wall'){
+    window.history.replaceState({}, '', '/wall');
   }
 };
 

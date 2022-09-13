@@ -8,8 +8,8 @@ const welcome = () => {
       <h1 class="title">Bienvenidos a CICLAPP</h1>
       <p class="welcomeText">¿Te gusta el ciclismo? </p><p class="welcomeText">¡Esta red social es para ti!</p>
       <a href="#signIn" class="loginButton" id="loginButtonId">Registrate</a>
-      <button type="button" class="signIn">Iniciar Sección</button>
-      <a href="#" id="continue" class="continue">Continuar sin registrarse</a>
+      <a href="#userSignIn" type="button" class="signIn">Iniciar Sección</button>
+      <a href="#wall" id="continue" class="continue">Continuar sin registrarse</a>
       </article> </section>`;
   return view;
 };
