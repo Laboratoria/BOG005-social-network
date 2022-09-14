@@ -1,5 +1,21 @@
-// Este es el punto de entrada de tu aplicacion
+import { welcome} from './components/welcome.js';
+const divRoot= document.getElementById('root')
+const routes = {
+    '/': welcome,    
+};
 
-import { myFunction } from './lib/index.js';
+const onNavigate = (pathname) => {
+    window.history.pushState(
+        {},
+        pathname,
+        window.location.origin + pathname,
+    );
+    divRoot.appendChild(routes[pathname]());
+};
 
-myFunction()
+const component = routes[window.location.pathname];
+divRoot.appendChild(component());
+
+
+
+
