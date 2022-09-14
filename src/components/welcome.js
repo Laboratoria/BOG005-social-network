@@ -1,12 +1,12 @@
-import {onNavigate} from "../main.js";
+import { onNavigate } from '../main.js';
 
 export const welcome = () => {
   const div = document.createElement('div');
-  const title = document.createElement('h2')
+  const title = document.createElement('h2');
   const buttonLogin = document.createElement('button');
   const buttonRegister = document.createElement('button');
 
-  buttonLogin.textContent = 'inicia sesión';
+  buttonLogin.textContent = 'Inicia sesión';
   buttonRegister.textContent = 'Registrate';
   title.textContent = 'Somos la mejor red social de programadoras';
 
