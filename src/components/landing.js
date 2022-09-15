@@ -14,9 +14,15 @@ export const landing = () => {
     buttonLogin.textContent = 'Iniciar Sesión'
     buttonBack.textContent = 'Regresar'
 
-    buttonLogin.addEventListener('click', ()=>{
+    buttonRegister.addEventListener('click', ()=>{
         onNavigate('/register');
-    })
+    });
+    buttonLogin.addEventListener('click', ()=>{
+        onNavigate('/login');
+    });
+    buttonBack.addEventListener('click', ()=>{
+        onNavigate('/');
+    });
    
 
     div.append(title, buttonRegister, question, buttonLogin, buttonBack)
