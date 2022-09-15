@@ -1,5 +1,5 @@
-import { iniciarSesion } from './components/login.js';
-import { register } from './components/register.js';
+import { iniciarSesion } from './login.js';
+import { register } from './register.js';
 const routes = {
   '/' : iniciarSesion,
   '/register' : register,
