@@ -1,8 +1,8 @@
 const wall = () => {
-    const wallOffPublication = `<section id="wallOffPublication">
+  const wallOffPublication = `<section id="wallOffPublication">
     <h2 class="title">EN CONSTRUCCIÓN</h2>
-</section>`
-return wallOffPublication
+</section>`;
+  return wallOffPublication;
 };
 
 export default wall;

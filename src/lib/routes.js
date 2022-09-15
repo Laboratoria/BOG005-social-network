@@ -17,7 +17,6 @@ const routes = {
 };
 
 const router = () => {
-  
   containerPage.innerHTML = header();
   const hash = getHash();
   removeHashes(hash);
@@ -31,6 +30,6 @@ const handlerHistorial = () => {
   const pathName = window.location.pathname;
   const render = routes[pathName] ? routes[pathName] : 'ERROR404';
   containerPage.innerHTML = render();
-}
+};
 
 export { router, handlerHistorial };
