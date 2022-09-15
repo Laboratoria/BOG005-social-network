@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Contrail+One&family=Noto+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --main-color-white: #FFFFFF;
+    --color-gray-opacity-80: #878787;
+    --b-main-color-blue: #042635;
+    --b-color-blue-dark: #01131C;
+    --w-color-blue-medium: #014B6C;
+    --w-color-blue-medium-opacity-60-014B6C: #014B6C;
+    --w-color-blue-light-buttons: #80A5B6;
+    --w-hight-color-yellow: #FBFE5D;
+    --w-hover-color-yellow: #BDC000;
+    --w-active-color-yellow: #989B00;
+    --w-red-light: #F56F6F;
+    --w-red-intense: #EA4335;
+    --letters: 'Noto Sans', sans-serif;
+    --img-welcome: url("img/imagenFondo.png");
+
+
+    /* Peso de Letras 
+Titulos -> Bold
+Parrafos -> Regular
+*/
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 16px;
+}
+
+/* Mobile inicio */
+.body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--w-color-blue-medium);
+}
+
+.contentPage{
+    width: 100%;
+    height: 93%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.logo {
+    width: 7.0625rem;
+    height: 7.0625rem;
+}
+
+.headerClass{
+    background-image: var(--img-welcome);
+    background-repeat: no-repeat;
+    background-position: -100px -500px;
+    width: 100vw;
+    height: 55vh;
+    border-bottom-left-radius: 50% 20%;
+    border-bottom-right-radius: 50% 20%;
+}
+ 
+.figureWelcome{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.sectionWelcome{
+    width: 100vw;
+    height: 39vh;
+}
+
+.title {
+    font-family: 'Contrail One', cursive;
+    color: var(--main-color-white);
+    font-weight: 400;
+    font-size: 1.5625rem;
+}
+
+.articleWelcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    width: 100vw;
+    height: 35vh;
+    text-align: center;
+}
+
+.loginButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--w-hight-color-yellow);
+    color: var(--w-color-blue-medium);
+    font-size: 1rem;
+    font-weight: 700;
+    width: 18rem;
+    height: 2.75rem;
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+    border: none;
+}
+
+.loginButton:hover {
+    background-color: var(--w-hover-color-yellow);
+    color: var(--b-main-color-blue);
+}
+
+.loginButton:active {
+    background-color: var(--w-active-color-yellow);
+    color: var(--main-color-white);
+}
+
+.signIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color-white);
+    font-size: 1rem;
+    width: 18rem;
+    height: 2.75rem;
+    border: solid 0.0625rem;
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+    background-color: var(--w-color-blue-medium);
+}
+
+.signIn:hover {
+    border: solid 0.0625rem;
+    background-color: var(--b-main-color-blue);
+    color: var(--main-color-white);
+}
+
+.signIn:active {
+    border: solid 0.0625rem;
+    background-color: var(--b-main-color-blue);
+    color: var(--main-color-white);
+}
+
+.continue {
+    color: var(--main-color-white);
+    text-decoration: underline;
+    letter-spacing: 0.0625rem;
+}
+
+.continue:active {
+    color: var(--color-gray-opacity-80);
+}
+
+
+/* Estilos página de registro*/
+
+.logoSignIn{
+    display: flex;
+}
+
+.logoHorizontal {
+    width:11.5rem;
+}
+
+.textLogo{
+    color: var(--main-color-white);
+    font-family: 'Contrail One', cursive;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    transform: translateX(-28px);
+  }
+
+.viewSignIn {
+    height: 90vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formSignIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    width: 100vw;
+    height: 40vh;
+    font-size: 1.3rem;
+    align-self: center;
+}
+
+
+
+#name,
+#user,
+#email,
+#password {
+    border: none;
+    border-bottom: solid 0.125rem var(--main-color-white);
+    width: 80vw;
+    height: 2.5rem;
+    display: flex;
+    background-color: var(--w-color-blue-medium);
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1rem;
+    color: var(--main-color-white);
+    padding-left: 1rem;
+}
+
+::placeholder {
+    width: 80%;
+    color: var(--main-color-white);
+    font-size: 1.3rem;
+    opacity: 0.2;
+}
+
+
+.o {
+    color: var(--main-color-white);
+    height: 5vh;
+    font-size: 1.5rem;
+}
+
+.GoogleIcon {
+    width: 1.2rem;
+
+}
+
+.googleSignIn {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1rem;
+    background-color: var(--main-color-white);
+    width: 18rem;
+    height: 2.75rem;
+    border: solid 0.0625rem;
+    border-color: var(--main-color-white);
+    color: var(--w-color-blue-medium);
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+}
+
+.submitSignIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background-color: var(--w-color-blue-medium);
+    width: 18rem;
+    height: 2.75rem;
+    border: solid 0.0625rem;
+    border-color: var(--main-color-white);
+    color: var(--main-color-white);
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+}
+
+.submitSignIn:hover {
+    border: solid 0.0625rem;
+    background-color: var(--w-hight-color-yellow);
+    color: var(--w-color-blue-medium);
+    font-weight: bold;
+}
+
+.submitSignIn:active {
+    border: none;
+    background-color: var(--w-active-color-yellow);
+    color: var(--main-color-white);
+}
+
+.itemsInput{
+    height: 5.3125rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .userRegister{
+    font-family: var(--letters);
+    text-align: center;
+  }
+  
+/* Fin Mobile */
+
+/* Inicio desktop */
+@media (min-width: 1024px) and (max-width: 2000px){
+    /* @media (min-width: 768px) and (max-width: 1024px){ */
+        .contentPage {
+       width: 100%;
+       height: 100%;
+       display: flex;
+       flex-direction: row;
+       /* justify-content: space-between; */
+    }
+
+    .logo {
+        width: 17.1875rem;
+        height: 17.1875rem;
+    }
+    
+    .headerClass{
+        background-image: var(--img-welcome);
+        background-repeat: no-repeat;
+        background-position: -133px -276px;
+                
+        width: 48%;
+        height: 100%;
+        clip-path: circle(66.8% at 13% 50%);;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+
+        /* width: 61%;
+        height: 100vh;
+        float: left;
+        shape-outside: circle(49% at 0 50%);
+        clip-path: circle(65% at 0 50%);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0; */
+    }
+
+    .figureWelcome{
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
+    }
+     
+    .sectionWelcome{
+        width: 30%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .articleWelcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        color: var(--main-color-white);
+        font-family: var(--letters);
+        width: 16vw;
+        height: 45vh;
+        text-align: center;
+    }
+
+    .title{
+        font-family: 'Contrail One', cursive;
+        color: var(--main-color-white);
+        font-weight: 400;
+        font-size: 2.5rem;
+        width: 100vw;
+    }
+
+    .welcomeText{
+        width: 100vw;
+        font-size: 1.875rem;
+    }
+
+    .loginButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--w-hight-color-yellow);
+        color: var(--w-color-blue-medium);
+        font-size: 1.25rem;
+        font-weight: 700;
+        width: 25.1875rem;
+        height: 4rem;
+        border-radius: 0.5625rem;
+        letter-spacing: 0.0625rem;
+        border: none;
+    }
+
+    .signIn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--main-color-white);
+        font-size: 1.25rem;
+        width: 25.1875rem;
+        height: 4rem;
+        border: solid 0.0625rem;
+        border-radius: 0.5625rem;
+        letter-spacing: 0.0625rem;
+        background-color: var(--w-color-blue-medium);
+    }
+
+    .continue{
+        width: 100vw;
+        font-size: 1.25rem;
+    }
+}
+
+
+/* Fin desktop */
