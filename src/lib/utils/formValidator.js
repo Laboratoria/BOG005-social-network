@@ -4,8 +4,15 @@ const getFormData = () => {
   const email = document.getElementById('email');
   const password = document.getElementById('password');
 
-  formValidator(name.value, user.value, email.value, password.value);
-  formValidExpretion(email.value);
+  return {
+   //name: name.value,
+   //user: user.value, 
+   email: email.value,
+   password: password.value,
+  }
+
+  // formValidator(name.value, user.value, email.value, password.value);
+  // formValidExpretion(email.value);
 };
 ///[a-zA-Z0-9_.\-]+@[a-zA-Z0-9_.\-]+\.[a-zA-Z]+/
 const regex = {
