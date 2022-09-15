@@ -2,10 +2,18 @@ import { onNavigate } from '../main.js';
 
 export const Welcome = () => {
   // contenedor que almacenará los 2 botones y dará un solo return
-  const div = document.createElement('div');
+  const div = document.createElement('header');
+  div.className = 'container';
   // se crea titulo y parrafo
   const title = document.createElement('h1');
+  title.className = 'title';
   const paragraph = document.createElement('h2');
+  paragraph.className = 'paragraph';
+
+  // Mensaje Para iniciar Sesión
+  const signIn = document.createElement('h2');
+  signIn.className = 'signIn';
+  signIn.textContent = 'Iniciar Sesión';
   // Se crean 2 botones
   const buttonLogin = document.createElement('button');
   const buttonRegister = document.createElement('button');
@@ -22,7 +30,7 @@ export const Welcome = () => {
     onNavigate('/register');
   });
 
-  div.append(title, paragraph, buttonLogin, buttonRegister);
+  div.append(title, paragraph, signIn, buttonLogin, buttonRegister);
 
   return div;
 };
