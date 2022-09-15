@@ -1,0 +1,50 @@
+/*Estilos Globales*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-image: url("./imagenes/WelcomeBG.jpg");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    font-family: 'Lexend Giga', sans-serif;;
+}
+
+body img {
+    height: 612px ;
+}
+
+img {
+    width: 100%;
+}
+
+/*Estilos para el header*/
+
+.container {
+    margin: 15px;
+    text-align: center;
+}
+
+.title {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-top: 16px;
+}
+
+.paragraph {
+    margin-top: 15px;
+    color: #8B6767;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.signIn { 
+    margin-top: 15px; 
+    color: #8B6767;
+    font-weight: 100;
+    font-size: 14px;
+    text-shadow: 2px 1px 14px #000000;
+}
