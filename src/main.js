@@ -1,15 +1,21 @@
 import { welcome} from './components/welcome.js';
-const divRoot= document.getElementById('root')
-const routes = {
-    '/': welcome,    
-};
+import { landing } from './components/landing.js';
 
-const onNavigate = (pathname) => {
+const divRoot= document.getElementById('root')
+
+const routes = {
+    '/': welcome,
+    '/landing': landing,    
+};
+// funcion para trabajar la navegacion de la app
+export const onNavigate = (pathname) => {
     window.history.pushState(
         {},
         pathname,
         window.location.origin + pathname,
     );
+
+    divRoot.removeChild(divRoot.firstChild)
     divRoot.appendChild(routes[pathname]());
 };
 
