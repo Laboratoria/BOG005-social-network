@@ -8,7 +8,7 @@ const signIn = () => {
       <figcaption class="textLogo">CICLAPP</figcaption>
   </figure>
 
-  <form class="formSignIn">
+  <form class="formSignIn" id="formSignInId">
       <article class="itemsInput">
       <label for="name">Nombre y Apellido</label>
       <input type="text" id="name" placeholder=" Ingresa tu nombre"
@@ -31,7 +31,6 @@ const signIn = () => {
           <input type="password" id="password" placeholder="Ingresa contraseña"
           autocomplete="off">
       </article>
-  </form>
 
   <p class="o">- O -</p>
   <button type="button" class="googleSignIn">
@@ -39,10 +38,12 @@ const signIn = () => {
       <span>Registrate con Google</span>
   </button>
 
-  <button type="button" class="submitSignIn" id="submitContinueButton">Continuar</button>
+  <button class="submitSignIn" id="submitContinueButton">Continuar</button>
   <a href="#userSignIn" id="userRegisterId" class="continue userRegister">¿Ya tienes una cuenta? inicia sesión
   </a>
+  </form>
   </section>`;
+
 
   return viewSignIn;
 };
