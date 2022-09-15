@@ -11,24 +11,24 @@ const signIn = () => {
   <form class="formSignIn">
       <article class="itemsInput">
       <label for="name">Nombre y Apellido</label>
-      <input type="text" id="name" placeholder="Escribe tu nombre y apellido"
+      <input type="text" id="name" placeholder=" Ingresa tu nombre"
       value="" autocomplete="off">
       </article>
 
       <article class="itemsInput">
           <label for="user">Usuario</label>
-          <input type="text" id="user" placeholder="Escribe tu usuario" autocomplete="off">
+          <input type="text" id="user" placeholder=" Ingresa tu usuario" autocomplete="off">
       </article>
 
       <article class="itemsInput">
           <label for="email">Correo</label>
-          <input type="email" id="email" placeholder="Escribe tu correo" autocomplete="off">
+          <input type="email" id="email" placeholder="Ingresa tu correo" autocomplete="off">
 
       </article>
 
       <article class="itemsInput">
           <label for="password">Contraseña</label>
-          <input type="password" id="password" placeholder="Escribe tu contraseña"
+          <input type="password" id="password" placeholder="Ingresa contraseña"
           autocomplete="off">
       </article>
   </form>
