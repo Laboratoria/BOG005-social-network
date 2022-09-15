@@ -1,7 +1,7 @@
 const welcome = () => {
   const view = `<header id="header" class="headerClass">
   <figure class="figureWelcome"> 
-  <img src="lib/img/Logo.png" alt="LogoCICLAPP" class="logo">
+  <img src="img/Logo.png" alt="LogoCICLAPP" class="logo">
 </figure> 
 </header>
 <section id="sectionWelcomeId" class="sectionWelcome"> <article class="articleWelcome"> 

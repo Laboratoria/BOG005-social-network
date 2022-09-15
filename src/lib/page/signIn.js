@@ -4,7 +4,7 @@ const signIn = () => {
   const viewSignIn = `<section class="viewSignIn" id="signIn">
 
   <figure class="logoSignIn">
-      <img src="lib/img/Logo.png" alt="LogoCICLAPP" class="logoHorizontal">
+      <img src="img/Logo.png" alt="LogoCICLAPP" class="logoHorizontal">
       <figcaption class="textLogo">CICLAPP</figcaption>
   </figure>
 
@@ -35,11 +35,13 @@ const signIn = () => {
 
   <p class="o">- O -</p>
   <button type="button" class="googleSignIn">
-      <img src="lib/img/logo_google.svg" alt="GoogleIcon" class="GoogleIcon">
+      <img src="img/logo_google.svg" alt="GoogleIcon" class="GoogleIcon">
       <span>Registrate con Google</span>
   </button>
 
   <button type="button" class="submitSignIn" id="submitContinueButton">Continuar</button>
+  <a href="#userSignIn" id="userRegisterId" class="continue userRegister">¿Ya tienes una cuenta? inicia sesión
+  </a>
   </section>`;
 
   return viewSignIn;
