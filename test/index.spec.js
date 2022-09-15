@@ -1,6 +1,5 @@
 import { register } from '../src/lib/firebase-auth.js';
 import { auth, createUser, createUserWithEmailAndPassword } from '../src/lib/index.js';
-import { createUser } from '../lib/index.js';
 
 jest.mock('../src/lib/index.js', () => {
   return {

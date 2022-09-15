@@ -8,13 +8,13 @@ import config from './config.js'; // config es la llave de firebase
 // Creando una constante para cada servicio
 const firebaseApp = initializeApp(config);  /// inicializa
 const auth = getAuth(firebaseApp); // llama serv autenticacion
-const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);//////***preguntar yeimy */
+const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);//////***PREGUNTAR yeimy */
 //console.log(createUserWithEmailAndPassword());
-const singUser = (email, password) => signInWithEmailAndPassword(auth, email, password);//////***preguntar yeimy */
+const singUser = (email, password) => signInWithEmailAndPassword(auth, email, password);//////***PREGUNTAR yeimy */
 const loginOut = signOut(auth);
 
 // Detectando el estado de autenticación
-onAuthStateChanged(auth, (user) => { /// dice si estamos comctados/////
+onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNTAR!!!!!
   if (user != null) {
     console.log('Usuario Conectado');
   } else {
