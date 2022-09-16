@@ -1,5 +1,5 @@
 import { Welcome } from './components/Welcome.js';
-import { Login } from './components/Login.js';
+import { Wall } from './components/Wall.js';
 
 import { Register } from './components/Register.js';
 
@@ -9,7 +9,7 @@ const root = document.getElementById('root');
 // Variable que contendra un objeto que contiene la ruta y o que debe renderizar
 const routes = {
   '/': Welcome, // cuando entre en '/' debe renderizar la página inicial
-  '/login': Login,
+  '/wall': Wall,
   '/register': Register,
 };
 // recibe la ruta, despues utiliza el objeto window.history y lanza el pushState
