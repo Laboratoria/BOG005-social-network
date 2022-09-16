@@ -1,10 +1,22 @@
+import { welcome } from './components/welcome.js';
+import { register}  from './components/register.js';
+import { login } from './components/login.js';
+import { wall } from './components/wall.js';
 
-import { iniciarSesion } from './components/login.js';
-import { register } from './components/register.js';
-const routes = {
-  '/' : iniciarSesion,
-  '/register' : register,
+
+
+const template = {
+  '': welcome(),
+  '#register': register(),
+  '#login': login(),
+  '#estesadys': wall(),
 };
 
-const rootDiv = document.getElementById('root');
-rootDiv.innerHTML = routes[window.location.pathname];
+export const showSection = () => {
+  const root = document.getElementById('root');
+  const hash = window.location.hash;
+  root.replaceChildren(template[hash]);
+};
+
+window.addEventListener('load', showSection);
+window.addEventListener('hashchange', showSection);
