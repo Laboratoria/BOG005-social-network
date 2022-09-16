@@ -1,6 +1,6 @@
 import { onNavigate } from '../main.js';
 
-export const Login = () => {
+export const Wall = () => {
   // contenedor que almacenará los 2 botones y dará un solo return
   const div = document.createElement('div');
   // se crea titulo y parrafo

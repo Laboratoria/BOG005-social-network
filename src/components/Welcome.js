@@ -55,7 +55,7 @@ export const Welcome = () => {
   section2.append(account, linkRegister);
 
   buttonLogin.addEventListener('click', () => {
-    onNavigate('/login');
+    onNavigate('/wall');
   });
   linkRegister.addEventListener('click', () => {
     onNavigate('/register');
