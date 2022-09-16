@@ -20,10 +20,25 @@ img {
     width: 100%;
 }
 
+a {
+    font-size: 12px;
+}
+
+button{
+    margin: 10px; 
+    margin-left: 100px;   
+    justify-content:center; 
+    border-radius: 10px;
+    padding: 5px;
+    width: 100px;
+    background-color: #8B6767;
+    color: #FFFFFF;   
+}
 /*Estilos para el header*/
 
-.container {
+.header {    
     margin: 15px;
+    margin-top: 40px;
     text-align: center;
 }
 
@@ -48,3 +63,49 @@ img {
     font-size: 14px;
     text-shadow: 2px 1px 14px #000000;
 }
+
+/*Estilos para section1*/
+
+.section1 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color:#d3cccc;
+    margin: 30px 30px;
+    padding: 10px;
+}
+
+#emailLogin {
+    margin-top: 10px;
+}
+
+#passwordLogin{
+    margin-top: 10px;
+}
+
+.google {
+    border-style: ridge;
+    border-color: rgb(206, 198, 198);
+}
+
+.facebook {
+    margin-top: 10px;
+    border-style: ridge;
+    border-color: rgb(206, 198, 198);
+}
+
+/*Estilos para section2*/
+
+.section2 {
+    display: flex;
+    align-content: center;   
+    background-color:#d3cccc;
+    margin: 0px 30px;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.account {
+    font-size: 12px;
+}
+
