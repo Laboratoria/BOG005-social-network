@@ -291,6 +291,9 @@ html {
     text-align: center;
   }
   
+  .errorMessage {
+    visibility: hidden;
+  }
 /* Fin Mobile */
 
 /* Inicio desktop */

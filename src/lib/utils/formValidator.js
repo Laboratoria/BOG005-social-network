@@ -6,59 +6,66 @@ const getFormData = () => {
 
   return {
    //name: name.value,
-   user: user.value, 
+   user: user.value,
    email: email.value,
    password: password.value,
   }
-
-  // formValidator(name.value, user.value, email.value, password.value);
-  // formValidExpretion(email.value);
 };
 
+const showMessageError = (errorMessage) => {
+  const section = errorMessage.includes('email') ? 'email' : 'password';
+  console.log(section);
+  const emailContent = document.getElementById(`${section}Content`);
+  let contentErrorEmail = document.getElementById('paragraph1');
+  if (!contentErrorEmail) {
+    contentErrorEmail = document.createElement('p');
+    contentErrorEmail.setAttribute('id', 'paragraph1');
+  }
+  const inputEmail = document.getElementById('email');
+  const labelEmail = document.getElementById('labelEmailId');
+  inputEmail.style.borderColor = '#F56F6F';
+  labelEmail.style.color = '#F56F6F';
+  contentErrorEmail.style.color = '#F56F6F';
+  contentErrorEmail.style.fontSize = '0.9rem';
+  if (errorMessage === `auth/invalid-${section}`) {
+    emailContent.appendChild(contentErrorEmail);
+    contentErrorEmail.textContent = 'Dato Incorrecto';
+  } else if (errorMessage === `auth/${section}-already-in-use`) {
+    emailContent.appendChild(contentErrorEmail);
+    contentErrorEmail.textContent = 'Correo ya registrado, prueba otro';
+  }
 
-const messageValidator = (input, errorMessage) => {
-  if (errorMessage === `auth/invalid-${input}` || errorMessage === `auth/${input}-already-in-use`) {
+  if (errorMessage === `auth/weak-${section}`) {
+    const passwordContent = document.getElementById(`${section}Content`);
+    passwordContent.append(contentErrorEmail);
+    contentErrorEmail.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
 
-    const emailContent = document.getElementById(`${input}Content`);
-    const inputEmail = document.getElementById('email');
-    inputEmail.style.borderColor = '#F56F6F';
-
-    const labelEmail = document.getElementById('labelEmailId');
-    labelEmail.style.color = '#F56F6F';
-
-    const paragraph = document.createElement('p');
-    paragraph.style.color = '#F56F6F';
-    paragraph.style.fontSize = '0.9rem';
-    // paragraph.textContent = 'email, Dato Incorrecto';
-    paragraph.textContent = errorMessage === 'auth/invalid-email' ? 'Dato Incorrecto' : 'Correo ya registrado, prueba otro';
-    emailContent.append(paragraph);
-  } else if (errorMessage === `auth/weak-${input}`) {
-    console.log('input contraseña', input)
-    const passwordContent = document.getElementById(`${input}Content`);
     const inputPassword = document.getElementById('password');
     inputPassword.style.borderColor = '#F56F6F';
-
     const labelPassword = document.getElementById('labelPasswordId');
     labelPassword.style.color = '#F56F6F';
-
-    const paragraphP = document.createElement('p');
-    paragraphP.style.color = '#F56F6F';
-    paragraphP.style.fontSize = '0.9rem';
-    paragraphP.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
-    passwordContent.append(paragraphP);
+    contentErrorEmail.style.color = '#F56F6F';
+    contentErrorEmail.style.fontSize = '0.9rem';
   }
-  // if( errorMessage === `auth/invalid-${input}` && errorMessage === `auth/weak-${input}`){
-  //   console.log('sorey tiene razon')
-  // }
-//   if (errorMessage === 'auth/weak-password') {
-//     console.log('hay error en contraseña')
-//     const passwordContent = document.getElementById("passwordContent");
-//     const parrafop = document.createElement('p');
-//     parrafop.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
-//     passwordContent.append(parrafop);
-// } 
-}
+};
 
+const showSuccessfulResponse = () => {
+  let contentErrorEmail = document.getElementById('paragraph1');
+  if (contentErrorEmail) {
+    const emailContent = document.getElementById('emailContent');
+    contentErrorEmail = document.getElementById('paragraph1');
+    emailContent.removeChild(contentErrorEmail);
+    const inputEmail = document.getElementById('email');
+    const labelEmail = document.getElementById('labelEmailId');
+    inputEmail.style.borderColor = '#FFFFFF';
+    labelEmail.style.color = '#FFFFFF';
+
+    const inputPassword = document.getElementById('password');
+    const labelPassword = document.getElementById('labelPasswordId');
+    inputPassword.style.borderColor = '#FFFFFF';
+    labelPassword.style.color = '#FFFFFF';
+  }
+};
 
 
 ///[a-zA-Z0-9_.\-]+@[a-zA-Z0-9_.\-]+\.[a-zA-Z]+/
@@ -97,4 +104,4 @@ const formValidExpretion = (email) => {
 //y muestra el mensaje de error debajo del input
 
 // let input = document.querySelectorAll('input[name="formInput"]')
-export { getFormData, messageValidator};
+export { getFormData, showMessageError, showSuccessfulResponse };
