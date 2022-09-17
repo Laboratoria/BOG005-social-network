@@ -64,7 +64,7 @@ html {
     border-bottom-left-radius: 50% 20%;
     border-bottom-right-radius: 50% 20%;
 }
- 
+
 .figureWelcome{
     width: 100%;
     display: flex;
@@ -150,6 +150,7 @@ html {
     color: var(--main-color-white);
     text-decoration: underline;
     letter-spacing: 0.0625rem;
+    font-size: 0.9rem;
 }
 
 .continue:active {
@@ -192,7 +193,7 @@ html {
     color: var(--main-color-white);
     font-family: var(--letters);
     width: 100vw;
-    height: 40vh;
+    height: 70vh;
     font-size: 1.3rem;
     align-self: center;
 }

@@ -20,14 +20,14 @@ const signIn = () => {
           <input type="text" id="user" placeholder=" Ingresa tu usuario" autocomplete="off">
       </article>
 
-      <article class="itemsInput">
-          <label for="email">Correo</label>
-          <input type="email" id="email" placeholder="Ingresa tu correo" autocomplete="off">
-
+      <article class="itemsInput" id="emailContent">
+          <label for="email"  id="labelEmailId">Correo</label>
+          <img src="">
+          <input type="text" id="email" placeholder="Ingresa tu correo" autocomplete="off">
       </article>
 
-      <article class="itemsInput">
-          <label for="password">Contraseña</label>
+      <article class="itemsInput" id="passwordContent">
+          <label for="password" id="labelPasswordId" >Contraseña</label>
           <input type="password" id="password" placeholder="Ingresa contraseña"
           autocomplete="off">
       </article>
