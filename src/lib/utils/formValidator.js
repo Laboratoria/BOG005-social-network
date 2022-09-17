@@ -47,8 +47,6 @@ const messageValidator = (input, errorMessage) => {
     paragraphP.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
     passwordContent.append(paragraphP);
   }
-
-
   // if( errorMessage === `auth/invalid-${input}` && errorMessage === `auth/weak-${input}`){
   //   console.log('sorey tiene razon')
   // }
