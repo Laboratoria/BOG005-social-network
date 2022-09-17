@@ -17,7 +17,7 @@ const getFormData = () => {
 
 
 const messageValidator = (input, errorMessage) => {
-  if (errorMessage === `auth/invalid-${input}` || `auth/${input}-already-in-use`) {
+  if (errorMessage === `auth/invalid-${input}` || errorMessage === `auth/${input}-already-in-use`) {
 
     const emailContent = document.getElementById(`${input}Content`);
     const inputEmail = document.getElementById('email');
@@ -29,6 +29,7 @@ const messageValidator = (input, errorMessage) => {
     const paragraph = document.createElement('p');
     paragraph.style.color = '#F56F6F';
     paragraph.style.fontSize = '0.9rem';
+    // paragraph.textContent = 'email, Dato Incorrecto';
     paragraph.textContent = errorMessage === 'auth/invalid-email' ? 'Dato Incorrecto' : 'Correo ya registrado, prueba otro';
     emailContent.append(paragraph);
   } else if (errorMessage === `auth/weak-${input}`) {

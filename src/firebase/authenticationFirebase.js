@@ -13,8 +13,10 @@ const testCreate = (auth, email, password) => {
   .catch((error) => {
     const errorCode = error.code;
     console.log(errorCode)
-    // const errorMessage = error.message;
-    const errorInput = errorCode.includes('email') ? 'email' : 'password';
+    const errorMessage = error.message;
+    const email = 'email';
+    const password = 'password';
+    const errorInput = errorCode.includes(email) ? email : password;
     console.log(errorInput);
     messageValidator(errorInput, errorCode);
   });
