@@ -1,4 +1,4 @@
-import getFormData from './formValidator.js';
+import { getFormData } from './formValidator.js';
 import { auth, testCreate } from '../../firebase/authenticationFirebase.js';
 // const eventButtonContinue = () => {
 //   if (window.location.pathname === '/signIn') {
