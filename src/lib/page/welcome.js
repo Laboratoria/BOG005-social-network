@@ -7,7 +7,7 @@ const welcome = () => {
 <section id="sectionWelcomeId" class="sectionWelcome"> <article class="articleWelcome"> 
       <h1 class="title">Bienvenidos a CICLAPP</h1>
       <p class="welcomeText">¿Te gusta el ciclismo? </p><p class="welcomeText">¡Esta red social es para ti!</p>
-      <a href="#signIn" class="loginButton" id="loginButtonId">Registrate</a>
+      <a href="#signIn" class="loginButton" id="loginButtonId" autofocus="autofocus">Registrate</a>
       <a href="#userSignIn" type="button" class="signIn">Iniciar Sesión</a>
       <a href="#wall" id="continue" class="continue">Continuar sin registrarse</a>
       </article> </section>`;
