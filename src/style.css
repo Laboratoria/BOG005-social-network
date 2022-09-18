@@ -26,6 +26,10 @@ button {
   background-color: transparent;
 }
 
+a {
+  cursor: pointer;
+}
+
 .home {
   display: flex;
   background-color: #160a2d;
@@ -76,7 +80,7 @@ button {
   margin: 0px 40px;
 }
 
-.container > section {
+.container > form {
   width: 100%;
   height: 50%;
   display: flex;
@@ -205,49 +209,49 @@ button {
   }
 
   .container > article > h2 {
-    font-size: 16px !important;
+    font-size: 16px;
   }
 
-  .container > section {
+  .container > form {
     padding: 0px 10px;
   }
 
   .googleButton {
-    padding: 10px !important ;
+    padding: 10px;
   }
 
   .googleImg {
-    width: 22px !important;
-    height: 22px !important;
+    width: 22px;
+    height: 22px;
   }
 
   .googleText {
     height: 15px;
-    font-size: 18px !important;
+    font-size: 18px;
   }
 
   .inputMail,
   .inputPassword {
-    height: 28px !important;
-    font-size: 16px !important;
+    height: 28px;
+    font-size: 20px;
   }
 
   .inputPassword::placeholder,
   .inputMail::placeholder {
-    font-size: 15px !important;
+    font-size: 20px;
   }
 
   .loginButton {
-    padding: 13px !important;
+    padding: 13px;
   }
 
   .loginButton > h4 {
     height: 15px;
-    font-size: 18px !important;
+    font-size: 18px;
   }
 
   .registerButton > h4 {
-    font-size: 18px !important;
+    font-size: 18px;
   }
 
   .imgContainer {

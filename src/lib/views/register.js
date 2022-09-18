@@ -1,3 +1,4 @@
+import { registerWithEmail } from "./../../auth.js";
 export default () => {
   const registerSection = document.createElement("div");
 
@@ -13,7 +14,7 @@ export default () => {
             <label for="name">Name</label>
                 <input id="name" type="text" name="name" placeholder="Name" required>
                 <label for="usuario">Usuario</label>
-                <input id="usuario" type="text" name="usuario" placeholder="Usuario" required>
+                <input id="usuario" type="email" name="email" placeholder="Usuario" required>
                 <label for="password">Contraseña</label>
                 <input id="password" type="password" placeholder="Contraseña" name="password" required>
                 <button type="submit" title="SingIn" name="SingIn">Sing In</button>
@@ -25,5 +26,15 @@ export default () => {
 </section>
     </main>`;
   registerSection.innerHTML = viewRegister;
+
+  const form = registerSection.querySelector("#singinform");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    registerWithEmail(email, password);
+  });
+
   return registerSection;
 };

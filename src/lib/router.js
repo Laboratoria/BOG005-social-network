@@ -6,8 +6,10 @@ export const changeRoute = (hash, components) => {
       return containerRoot.appendChild(components.home());
     case "#register":
       return containerRoot.appendChild(components.register());
-    case "login":
+    case "#login":
       return containerRoot.appendChild(components.login());
+    case "#feed":
+      return containerRoot.appendChild(components.feed());
     default:
       return containerRoot.appendChild(components.error404());
   }

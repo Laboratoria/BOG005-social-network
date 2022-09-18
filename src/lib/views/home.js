@@ -1,8 +1,8 @@
+import { loginWithEmail, signInWithGoogle } from "../../auth.js";
+
 export default () => {
   const homeSection = document.createElement("div");
   homeSection.classList.add("home");
-
-  //homeSection.style.display="inline-flex"
 
   const viewHome = `<section class="container">
       <figure>
@@ -18,8 +18,8 @@ export default () => {
           través de K-drama Lovers
         </h2>
       </article>
-      <section>
-        <a  class="googleButton">
+      <form id="form">
+        <a class="googleButton">
           <img
             alt="Logo de google gmail"
             class="googleImg"
@@ -28,11 +28,11 @@ export default () => {
           <h4 class="googleText">Ingresa con Google</h4>
         </a>
 
-        <input type="text" placeholder="Usuario/Email" class="inputMail" />
-        <input type="password" placeholder="Contraseña" class="inputPassword" />
-        <a href="#wall" class="loginButton"><h4>Ingresar</h4></a>
+        <input type="email" name="email" placeholder="Usuario/Email" class="inputMail" required/>
+        <input type="password" name="password" placeholder="Contraseña" class="inputPassword" required/>
+        <button class="loginButton"><h4>Ingresar</h4></button>
         <a href="#register" class="registerButton"><h4>Regístrate</h4></a>
-      </section>
+      </form>
     </section>
     <figure class="imgContainer">
         <img src="img/tvs2.jfif" alt="Imagen de televisores" />
@@ -40,5 +40,19 @@ export default () => {
     `;
 
   homeSection.innerHTML = viewHome;
+
+  const form = homeSection.querySelector("#form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    loginWithEmail(email, password);
+  });
+
+  const googleButton = homeSection.querySelector(".googleButton");
+  googleButton.addEventListener("click", (e) => {
+    signInWithGoogle();
+  });
   return homeSection;
 };
