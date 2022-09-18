@@ -1,4 +1,5 @@
 import { registerWithEmail } from "./../../auth.js";
+import { saveData } from "./../../firestore.js";
 export default () => {
   const registerSection = document.createElement("div");
 
@@ -33,7 +34,9 @@ export default () => {
     const formData = new FormData(e.target);
     const email = formData.get("email");
     const password = formData.get("password");
+    const name = formData.get("name");
     registerWithEmail(email, password);
+    saveData(email, password, name);
   });
 
   return registerSection;
