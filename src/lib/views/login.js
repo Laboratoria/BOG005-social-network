@@ -1,6 +1,5 @@
 export default () => {
   const LoginSection = document.createElement("div");
-  LoginSection.style.width = "80vw";
   LoginSection.style.background = "red";
   const viewLogin = `
      <main>

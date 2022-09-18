@@ -1,10 +1,15 @@
-export default () => {
-  const homeSection = document.createElement("div");
-  homeSection.classList.add("home");
-
-  //homeSection.style.display="inline-flex"
-
-  const viewHome = `<section class="container">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/logoheart.png" />
+  </head>
+  <body>
+    <section class="container">
       <figure>
         <img
           alt="Logotipo de MovieManía"
@@ -19,7 +24,7 @@ export default () => {
         </h2>
       </article>
       <section>
-        <a  class="googleButton">
+        <a href="#wall" class="googleButton">
           <img
             alt="Logo de google gmail"
             class="googleImg"
@@ -33,12 +38,9 @@ export default () => {
         <a href="#wall" class="loginButton"><h4>Ingresar</h4></a>
         <a href="#register" class="registerButton"><h4>Regístrate</h4></a>
       </section>
-    </section>
-    <figure class="imgContainer">
+      <figure class="imgContainer">
         <img src="img/tvs2.jfif" alt="Imagen de televisores" />
-    </figure>
-    `;
-
-  homeSection.innerHTML = viewHome;
-  return homeSection;
-};
+      </figure>
+    </section>
+  </body>
+</html>

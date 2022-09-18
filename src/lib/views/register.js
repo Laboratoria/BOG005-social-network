@@ -1,6 +1,6 @@
 export default () => {
   const registerSection = document.createElement("div");
-  registerSection.style.width = "80vw";
+
   const viewRegister = `
     <main>
     <section id="contenedor">
