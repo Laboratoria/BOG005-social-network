@@ -23,14 +23,20 @@ const showMessageError = (errorMessage) => {
   }
   const inputEmail = document.getElementById('email');
   const labelEmail = document.getElementById('labelEmailId');
+  const inputPassword = document.getElementById('password');
+  const labelPassword = document.getElementById('labelPasswordId');
   inputEmail.style.borderColor = '#F56F6F';
   labelEmail.style.color = '#F56F6F';
   contentErrorEmail.style.color = '#F56F6F';
   contentErrorEmail.style.fontSize = '0.9rem';
   if (errorMessage === `auth/invalid-${section}`) {
+    inputPassword.style.borderColor = '#FFFFFF';
+    labelPassword.style.color = '#FFFFFF';
     emailContent.appendChild(contentErrorEmail);
     contentErrorEmail.textContent = 'Dato Incorrecto';
   } else if (errorMessage === `auth/${section}-already-in-use`) {
+    inputPassword.style.borderColor = '#FFFFFF';
+    labelPassword.style.color = '#FFFFFF';
     emailContent.appendChild(contentErrorEmail);
     contentErrorEmail.textContent = 'Correo ya registrado, prueba otro';
   }
@@ -39,10 +45,7 @@ const showMessageError = (errorMessage) => {
     const passwordContent = document.getElementById(`${section}Content`);
     passwordContent.append(contentErrorEmail);
     contentErrorEmail.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
-
-    const inputPassword = document.getElementById('password');
     inputPassword.style.borderColor = '#F56F6F';
-    const labelPassword = document.getElementById('labelPasswordId');
     labelPassword.style.color = '#F56F6F';
     contentErrorEmail.style.color = '#F56F6F';
     contentErrorEmail.style.fontSize = '0.9rem';
