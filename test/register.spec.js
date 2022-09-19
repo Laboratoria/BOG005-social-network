@@ -1,20 +1,20 @@
 import { register } from '../src/components/register.js';
-
-jest.mock('../src/lib/index.js', () => {
-  return {
+jest.mock('../src/lib/index.js');//MOCK A TRAVES DEL EMBUDO
+//jest.mock('../src/lib/index.js', () => {} /// en si mismo ya mock
+/*   return {
 /*     auth: jest.fn(() => {  // función jest.fn crea una función para jest (es de Jest)
       return { auth: 'TEST' }
     }), */
 
-    createUser: (email, password) => { // estoy declarando  un metodo// jest.fn empodera la funcion al añadirle metodos
+    //createUser: (email, password) => { // estoy declarando  un metodo// jest.fn empodera la funcion al añadirle metodos
       /* if (!email || !password) {
         throw new Error('ERROR');
       } */
-      return Promise.resolve({ user: 'admin' });
-    },
+     // return Promise.resolve({ user: 'admin' });
+   // },
 
-  }
-})
+  //}
+//}) */
 
 describe('Test for the register function', () => {
   const email = 'admin@test.com';

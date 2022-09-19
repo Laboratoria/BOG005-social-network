@@ -1,11 +1,24 @@
-// import { createPost } from '../lib/firebase.js';
-// import { login } from '../lib/firebase-auth.js';
-// import { createPost, login } from '../lib/index.js';
-
+import { onNavigate } from '../main.js';
+import { loginOut } from '../lib/index.js';
 export const wall = () => {
   const div = document.createElement('div');
   const title = document.createElement('h2');
   title.textContent = 'Welcome to the Wall';
-  div.append(title);
+
+  const button = document.createElement('button');
+  button.textContent = 'Cerrar sesión';
+
+  button.addEventListener('click', () => {
+    onNavigate('/login');
+  });
+
+
+  loginOut().then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+  div.append(title, button);
   return div;
+
 };

@@ -6,15 +6,18 @@ import { signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/fir
 import config from './config.js'; // config es la llave de firebase
 console.log(GoogleAuthProvider);
 
+
+
 // Creando una constante para cada servicio
 const firebaseApp = initializeApp(config);  /// inicializa
 const auth = getAuth(firebaseApp); // llama serv autenticacion
+auth.languageCode = "es";
 const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);//////**no testear
 //console.log(createUserWithEmailAndPassword());
 const singUser = (email, password) => signInWithEmailAndPassword(auth, email, password);//////***no testear
 const provider = new GoogleAuthProvider();
 const singUserGoogle = () => signInWithPopup(auth, provider);//////***no testear
-const loginOut = signOut(auth);
+const loginOut =  signOut(auth);
 
 
 // Detectando el estado de autenticación
