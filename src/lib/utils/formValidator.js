@@ -46,24 +46,34 @@ const showMessageError = (errorMessage) => {
     labelPassword.style.color = '#F56F6F';
     contentErrorEmail.style.color = '#F56F6F';
     contentErrorEmail.style.fontSize = '0.9rem';
+    inputEmail.style.borderColor = '#FFFFFF';
+    labelEmail.style.color = '#FFFFFF';
   }
 };
 
 const showSuccessfulResponse = () => {
-  let contentErrorEmail = document.getElementById('paragraph1');
-  if (contentErrorEmail) {
+  let contentError = document.getElementById('paragraph1');
+  if (contentError) {
     const emailContent = document.getElementById('emailContent');
-    contentErrorEmail = document.getElementById('paragraph1');
-    emailContent.removeChild(contentErrorEmail);
+    contentError = document.getElementById('paragraph1');
+    emailContent.removeChild(contentError);
     const inputEmail = document.getElementById('email');
     const labelEmail = document.getElementById('labelEmailId');
     inputEmail.style.borderColor = '#FFFFFF';
     labelEmail.style.color = '#FFFFFF';
-
+  }
+  if (contentError) {
+    const passwordContent = document.getElementById('passwordContent');
+    contentError = document.getElementById('paragraph1');
+    passwordContent.removeChild(contentError);
     const inputPassword = document.getElementById('password');
     const labelPassword = document.getElementById('labelPasswordId');
     inputPassword.style.borderColor = '#FFFFFF';
     labelPassword.style.color = '#FFFFFF';
+    const inputEmail = document.getElementById('email');
+    const labelEmail = document.getElementById('labelEmailId');
+    inputEmail.style.borderColor = '#FFFFFF';
+    labelEmail.style.color = '#FFFFFF';
   }
 };
 
