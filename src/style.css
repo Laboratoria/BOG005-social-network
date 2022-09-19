@@ -51,6 +51,7 @@ html {
     justify-content: space-between;
 }
 .logo {
+    display: block;
     width: 7.0625rem;
     height: 7.0625rem;
 }
@@ -297,113 +298,98 @@ html {
 /* Fin Mobile */
 
 /* Inicio desktop */
-@media (min-width: 1024px) and (max-width: 2000px){
-    /* @media (min-width: 768px) and (max-width: 1024px){ */
-        .contentPage {
-       width: 100%;
-       height: 100%;
-       display: flex;
-       flex-direction: row;
-       /* justify-content: space-between; */
-    }
-
-    .logo {
-        width: 17.1875rem;
-        height: 17.1875rem;
-    }
+/*@media (min-width: 1024px) and (max-width: 2000px){*/
+     @media (min-width: 768px) and (max-width: 1024px){ 
+ .body {
+   width: 100vw;
+   height: 100vh;
+   background-color:transparent;
     
-    .headerClass{
-        background-image: var(--img-welcome);
-        background-repeat: no-repeat;
-        background-position: -133px -276px;
-                
-        width: 48%;
-        height: 100%;
-        clip-path: circle(66.8% at 13% 50%);;
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
+ }
+        
+ .contentPage{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   background-color: var(--w-color-blue-medium); 
+ }
 
-        /* width: 61%;
-        height: 100vh;
-        float: left;
-        shape-outside: circle(49% at 0 50%);
-        clip-path: circle(65% at 0 50%);
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0; */
-    }
-
-    .figureWelcome{
-        width: 100%;
-        display: flex;
-        justify-content: space-between; 
-    }
-     
-    .sectionWelcome{
-        width: 30%;
-        height: 100vh;
-        display: flex;
-        align-items: center;
-    }
-
-    .articleWelcome {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-        color: var(--main-color-white);
-        font-family: var(--letters);
-        width: 16vw;
-        height: 45vh;
-        text-align: center;
-    }
-
-    .title{
-        font-family: 'Contrail One', cursive;
-        color: var(--main-color-white);
-        font-weight: 400;
-        font-size: 2.5rem;
-        width: 100vw;
-    }
-
-    .welcomeText{
-        width: 100vw;
-        font-size: 1.875rem;
-    }
-
-    .loginButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--w-hight-color-yellow);
-        color: var(--w-color-blue-medium);
-        font-size: 1.25rem;
-        font-weight: 700;
-        width: 25.1875rem;
-        height: 4rem;
-        border-radius: 0.5625rem;
-        letter-spacing: 0.0625rem;
-        border: none;
-    }
-
-    .signIn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--main-color-white);
-        font-size: 1.25rem;
-        width: 25.1875rem;
-        height: 4rem;
-        border: solid 0.0625rem;
-        border-radius: 0.5625rem;
-        letter-spacing: 0.0625rem;
-        background-color: var(--w-color-blue-medium);
-    }
-
-    .continue{
-        width: 100vw;
-        font-size: 1.25rem;
-    }
+   .headerClass {
+    background-image: var(--img-welcome);
+    background-repeat: no-repeat;
+    background-position: -133px -185px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    float: left;
+    clip-path: circle(67.8% at -29% 50%);
+    width: 50%;
+    height: 100%;
 }
 
+.figureWelcome{
+    width: 84vw;
+    height: 18.5rem;
+    display: flex;
+    align-items: flex-end;
+}
 
+.logo {
+    width: 9rem;
+    height: 9rem;
+}
+
+.sectionWelcome{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.articleWelcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    width: 100%;
+    height: 44%;
+    text-align: center;
+    
+ }
+
+ .title {
+    font-family: 'Contrail One', cursive;
+    color: var(--main-color-white);
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+
+.welcomeText{
+    font-size: 1.875rem;
+}
+
+.loginButton {
+    font-size: 1.125rem;
+    font-weight: 700;
+    width: 20.1875rem;
+    height: 3.5rem;
+}
+
+.signIn {
+   font-size: 1.125rem;
+   font-weight: 700;
+   width: 20.1875rem;
+   height: 3.5rem;
+}
+
+.continue {
+    letter-spacing: 0.0825rem;
+    font-size: 1.125rem;
+
+}
 /* Fin desktop */

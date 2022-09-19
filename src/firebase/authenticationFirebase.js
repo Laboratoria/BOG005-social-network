@@ -9,7 +9,7 @@ const testCreate = (auth, email, password) => {
     //Signed in
       showSuccessfulResponse();
       const user = userCredential.user;
-      console.log(user);
+      console.log(user.email);
     // ...
     })
     .catch((error) => {
