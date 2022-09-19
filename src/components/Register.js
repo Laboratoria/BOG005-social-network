@@ -51,10 +51,10 @@ export const Register = () => {
   section2.append(account, linkRegister);
 
   buttonSignUp.addEventListener('click', () => {
-    onNavigate('/Wall');
+    onNavigate('/register2');
   });
   linkRegister.addEventListener('click', () => {
-    onNavigate('/register');
+    onNavigate('/wall');
   });
 
   div.append(header, section1, section2);
