@@ -19,9 +19,8 @@ const eventButtonContinue = () => {
       formSignIn.addEventListener('submit', (e) => {
         e.preventDefault();
         const dataForm = getFormData();
-       // console.log(dataForm);
         testCreate(auth, dataForm.email, dataForm.password);
-        console.log('ya vamos a arreglar el css')
+        console.log('ya vamos a arreglar el css');
         // const formData = getFormData();
         // console.log(formData);
       });
