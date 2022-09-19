@@ -1,5 +1,6 @@
 import { register } from '../src/lib/firebase-auth.js';
-import { auth, createUserWithEmailAndPassword } from '../src/lib/index.js';
+import { auth, createUser, createUserWithEmailAndPassword } from '../src/lib/index.js';
+import { createUser } from '../lib/index.js';
 
 jest.mock('../src/lib/index.js', () => {
   return {
@@ -19,6 +20,7 @@ jest.mock('../src/lib/index.js', () => {
 
 describe('Test for the register function', () => {
   const email = 'admin@test.com';
+  const email1 = 'admintest.com'; /// email incorrecto
   const pass = 'admin456';
 
   it('Should call createUserWithEmailAndPassword', async () => {
@@ -36,5 +38,9 @@ describe('Test for the register function', () => {
     } catch (error) {
       expect(error).toMatch('ERROR');
     }
+  });
+  it('Should return the promise catch excecuted', async () => {
+    await register(email1, pass);// espera que register tenga un valor + o -
+    expect(createUser(email1, pass)).toBe('auth/invalid-email');// si se logró traer  then
   });
 });

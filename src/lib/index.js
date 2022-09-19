@@ -17,7 +17,7 @@ const provider = new GoogleAuthProvider();
 
 
 // Detectando el estado de autenticación
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, (user) => { /// dice si estamos comctados/////
   if (user != null) {
     console.log('Usuario Conectado');
   } else {
