@@ -1,9 +1,12 @@
 import { bienvenida } from "./contenido/bienvenida.js";
 import { registro } from "./contenido/registro.js";
+
 const root = document.getElementById ('root')
+console.log(bienvenida);
+console.log('registro: ', registro);
 const routes = {
-    '/':bienvenida,
-    '/registro':registro,
+    '/':bienvenida(),
+    '/registro':registro(),
 };
 export const onNavigate = (pathname) => {
     window.history.pushState (
@@ -11,7 +14,8 @@ export const onNavigate = (pathname) => {
         pathname,
         window.location.origin + pathname,
     );
-    root.appendChild(routes[pathname]());
+    root.appendChild(routes[pathname]);
 };
 const contenidoRuta = routes[window.location.pathname];
-root.appendChild(contenidoRuta());
+root.appendChild(contenidoRuta);
+// onNavigate(window.location.pathname);
