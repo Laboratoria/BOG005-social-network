@@ -43,8 +43,6 @@ const signIn = () => {
   </a>
   </form>
   </section>`;
-
-
   return viewSignIn;
 };
 
