@@ -1,9 +1,11 @@
 // aqui exportaras las funciones que necesites
 import Register from './lib/views/register.js'
-import home from './lib/views/home.js'
+import Home from './lib/views/home.js'
+import Wall from './lib/views/wall.js'
 const COMPONENTS ={
   register: Register,
-  home:home
+  home: Home,
+  wall: Wall
 
 }
 export {COMPONENTS}

@@ -9,7 +9,8 @@
 }
 
 * html body {
-  min-width: 100vw;
+  max-width: 100vw;
+
 }
 
 button {
@@ -18,64 +19,134 @@ button {
   cursor: pointer;
 }
 
-.hola {
-  display: none;
+html{
+  background-color: #2b192e;
 }
-
 body {
-  background-color: #f5ebd1;
   height: 100vh;
+
 }
 
-.titleContainer {
-  height: 40vh;
-  padding: 40px 40px;
-  display: flex;
-  flex-direction: column;
+
+/* REGISTER */
+
+.registercontent #headerregister{
+  padding-left: 8vh;
+
 }
 
-.titleLandinPage {
+#headerregister img{
+  width: 37vh;
+  margin-top: 6vh;
+  /* margin-left: 9vw; */
+
+}
+#headerregister h1{
   text-align: center;
-  font-family: "Elsie";
-  font-size: 40px;
-  color: #2b1327;
+  width: 37vh;
+  font-size: 4vh;
+  color: #cd8ba4;
+  /* margin-left: 10vw; */
+
+
+}
+#headerregister h2{
+  text-align: center;
+  width: 37vh;
+  font-size: 2.5vh;
+  color: #F5E8DA;
+  /* margin-left: 10vw; */
+
 }
 
-.textLandingPage {
-  text-align: justify;
-  padding: 20px 0px;
-  font-family: "manjari";
-  font-size: 17px;
-  color: #411d3b;
-}
 
-.polygonContainer {
-  clip-path: polygon(56% 0, 100% 38%, 89% 100%, 14% 100%, 3% 54%);
-  /* width: 100%; */
-  background-color: black;
-}
 
-.polygon {
-  clip-path: polygon(56% 0, 100% 38%, 89% 100%, 14% 100%, 3% 54%);
-  background-color: black;
-}
-
-.imgLandinPageCont {
-  height: 60vh;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.imgLandinPage {
+.registercontent #contenedor {
+  display: inline-block;
+  padding: 2vw;
   width: 100%;
+  height: 100%;
+
+
 }
 
-.buttonContainer {
-  position: absolute;
-  width: 50%;
-  height: 30px;
-  top: 20%;
-  left: 50%;
-  margin: -25px 0 0 -25px;
+
+
+/* formulario de login */
+#singin {
+  width: 100%;
+  max-width: 320px;
+  min-width: 320px;
+  padding-left: 10vh;
+}
+
+#singin label {
+  display: block;
+  font-family: 'Overpass', sans-serif;
+  font-size: 120%;
+  color:#3c4245;
+  margin-top: 15px;
+}
+
+#singin input {
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 5px 5px 5px 10px;
+  box-sizing: border-box;
+  border: solid;
+  border-color: #7c8082;
+  border-radius:15px;
+  -moz-border-radius:15px;
+  -webkit-border-radius:15px;
+  -ms-border-radius:15px;
+  -o-border-radius:15px;
+}
+
+#singin input::placeholder {
+  font-family: 'Overpass', sans-serif;
+  color: #E4E4E4;
+}
+
+#singin button {
+  font-family: 'Overpass', sans-serif;
+  font-size: 110%;
+  color:#1b262c;
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  background-color: #ce8ca5;
+  margin-top: 10px;
+  margin-left: 6vw;
+
+
+}
+
+#singin button:hover {
+  background-color: #3c4245;
+  color:#dfcdc3;
+}
+/* formulario de login */
+
+
+
+
+#singin a{
+color: #F5E8DA;
+text-align: center;
+display: inline-flex;
+margin-left: 17vw;
+margin-top: 1vh;
+}
+
+.registercontent .imgLandinPage {
+  width: 65vw;
+  padding-right: 6vw;
 }
