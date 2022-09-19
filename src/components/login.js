@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { singUser } from '../lib/index.js';
+import { singUser, singUserGoogle, GoogleAuthProvider } from '../lib/index.js';
 
 export const login = () => {
   const containLogin = document.createElement('section');
@@ -8,6 +8,11 @@ export const login = () => {
   const imgLogo = document.createElement('img');
   imgLogo.setAttribute('srcset', './image/ladyCodeLogo.jpg');
   imgLogo.classList.add('imgLogo');
+
+  const buttonGoogle = document.createElement('button'); /// botono google
+  buttonGoogle.setAttribute('id', 'buttonGoogle');
+  buttonGoogle.textContent = 'iniciar con google';
+
 
   const formLogin = document.createElement('form');
   const inputEmail = document.createElement('input');
@@ -59,10 +64,36 @@ export const login = () => {
       });
   });
 
-  containLogin.append(imgLogo, formLogin);
-  formLogin.append(inputEmail, inputPass, button, buttonBack, errorText);
+  buttonGoogle.addEventListener('click', (e) => {
 
- 
+    singUserGoogle() /// de firebase docs
+        .then((result) => {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
+            // The signed-in user info.
+            const user = result.user;
+            onNavigate('/wall');
+            // ...
+        }).catch((error) => {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // The email of the user's account used.
+            //const email = error.customData.email;
+            console.log(error);
+            // The AuthCredential type that was used.
+            //const credential = GoogleAuthProvider.credentialFromError(error);
+            // ...
+            if (errorCode == error.code){ console.log("upsi, hay error de " + error)}
+            if (errorCode == error.message){ console.log("upsi, hay error de " + error)}
+            //if (errorCode == error.customData.email){ console.log("upsi, hay error de " + error)}
+
+        });
+});
+
+  containLogin.append(imgLogo, buttonGoogle, formLogin);
+  formLogin.append(inputEmail, inputPass, button, buttonBack, errorText);
 
 
   return containLogin;

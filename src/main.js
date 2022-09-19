@@ -14,7 +14,7 @@ const routes = {
 
 // función para anexar un registro al historial del navegador (.pushState)
 export const onNavigate = (pathname) => {
-  window.history.pushState(
+  window.history.pushState(/// historial de rutas a alas que ha entrado
     {}, // estado vacio
     pathname, // title
     window.location.origin + pathname, // URL + (Ruta)
@@ -32,3 +32,4 @@ window.onpopstate = () => {
 };
 
 root.appendChild(component());
+ 

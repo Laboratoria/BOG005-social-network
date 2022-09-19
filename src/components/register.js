@@ -2,14 +2,14 @@ import { onNavigate } from '../main.js';
 import { createUser } from '../lib/index.js';
 
 export const register = () => {
-  const containRegis = document.createElement('section');
-  containRegis.classList.add('viewRegister');
+  const containRegister = document.createElement('section');
+  containRegister.classList.add('viewRegister');
 
   const imgLogo = document.createElement('img');
   imgLogo.setAttribute('srcset', './image/ladyCodeLogo.jpg');
   imgLogo.classList.add('imgLogo');
 
-  const formRegister = document.createElement('form');
+  const formRegister = document.createElement('form'); /// se debe envolver en formulario //***PREGUNTAR A YEIMY  
   // inputs de texto para mail y contraseña
   const inputEmail = document.createElement('input');
   inputEmail.classList.add('input');
@@ -26,14 +26,14 @@ export const register = () => {
   inputPass.setAttribute('required', ''); // se obliga como requerimiento
   // botones de registro y regresar
   const button = document.createElement('button');
-  button.setAttribute('class', 'btn registration');
+  button.setAttribute('class', 'btn registration'); ///////////////***PREGUNTAR POR LA DIRERENCIA CON .classList.add(
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('btn');
   button.textContent = 'Registrarse';
   buttonBack.textContent = 'Regresar';
 
   buttonBack.addEventListener('click', (e) => { // evento para regresar a inicio
-    e.preventDefault();
+    e.preventDefault();///// Evita que se recarge la pagina según el caso ////**PREGUNTAR */
     onNavigate('/');
   });
 
@@ -60,8 +60,8 @@ export const register = () => {
       });
   });
 
-  containRegis.append(imgLogo, formRegister);
+  containRegister.append(imgLogo, formRegister);
   formRegister.append(inputEmail, inputPass, button, buttonBack, errorText);
 
-  return containRegis;
+  return containRegister;
 };

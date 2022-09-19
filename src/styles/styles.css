@@ -75,7 +75,11 @@ form{
     text-align: center;
  }
 
-
-
-
+#buttonGoogle{
+    color: var(--color-text, #000);
+    border: 3px solid var(--color-border-strong, #000);
+    border-radius: 8px;
+    background-color: var(--color-bg, #ffffff);
+    font-size: 16px;
+}
 

@@ -1,18 +1,17 @@
-import { register } from '../src/lib/firebase-auth.js';
-import { auth, createUser, createUserWithEmailAndPassword } from '../src/lib/index.js';
+import { register } from '../src/components/register.js';
 
 jest.mock('../src/lib/index.js', () => {
   return {
-    auth: jest.fn(() => {  // función jest.fn crea una función para jest (es de Jest)
+/*     auth: jest.fn(() => {  // función jest.fn crea una función para jest (es de Jest)
       return { auth: 'TEST' }
-    }),
+    }), */
 
-    createUserWithEmailAndPassword: jest.fn((email, password) => {
-      if (!email || !password) {
+    createUser: (email, password) => { // estoy declarando  un metodo// jest.fn empodera la funcion al añadirle metodos
+      /* if (!email || !password) {
         throw new Error('ERROR');
-      }
+      } */
       return Promise.resolve({ user: 'admin' });
-    }),
+    },
 
   }
 })
@@ -42,4 +41,9 @@ describe('Test for the register function', () => {
     await register(email1, pass);// espera que register tenga un valor + o -
     expect(createUser(email1, pass)).toBe('auth/invalid-email');// si se logró traer  then
   });
+
+
+  it ('should navigate to home when clicking back button', ()=>{
+
+  })
 });
