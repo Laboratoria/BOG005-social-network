@@ -16,54 +16,67 @@ const showMessageError = (errorMessage) => {
   const section = errorMessage.includes('email') ? 'email' : 'password';
   console.log(section);
   const emailContent = document.getElementById(`${section}Content`);
-  let contentErrorEmail = document.getElementById('paragraph1');
-  if (!contentErrorEmail) {
-    contentErrorEmail = document.createElement('p');
-    contentErrorEmail.setAttribute('id', 'paragraph1');
+  let contentError = document.getElementById('paragraph1');
+  if (!contentError) {
+    contentError = document.createElement('p');
+    contentError.setAttribute('id', 'paragraph1');
   }
   const inputEmail = document.getElementById('email');
   const labelEmail = document.getElementById('labelEmailId');
+  const inputPassword = document.getElementById('password');
+  const labelPassword = document.getElementById('labelPasswordId');
   inputEmail.style.borderColor = '#F56F6F';
   labelEmail.style.color = '#F56F6F';
-  contentErrorEmail.style.color = '#F56F6F';
-  contentErrorEmail.style.fontSize = '0.9rem';
+  contentError.style.color = '#F56F6F';
+  contentError.style.fontSize = '0.9rem';
   if (errorMessage === `auth/invalid-${section}`) {
-    emailContent.appendChild(contentErrorEmail);
-    contentErrorEmail.textContent = 'Dato Incorrecto';
+    inputPassword.style.borderColor = '#FFFFFF';
+    labelPassword.style.color = '#FFFFFF';
+    emailContent.appendChild(contentError);
+    contentError.textContent = 'Dato Incorrecto';
   } else if (errorMessage === `auth/${section}-already-in-use`) {
-    emailContent.appendChild(contentErrorEmail);
-    contentErrorEmail.textContent = 'Correo ya registrado, prueba otro';
+    inputPassword.style.borderColor = '#FFFFFF';
+    labelPassword.style.color = '#FFFFFF';
+    emailContent.appendChild(contentError);
+    contentError.textContent = 'Correo ya registrado, prueba otro';
   }
 
   if (errorMessage === `auth/weak-${section}`) {
     const passwordContent = document.getElementById(`${section}Content`);
-    passwordContent.append(contentErrorEmail);
-    contentErrorEmail.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
-
-    const inputPassword = document.getElementById('password');
+    passwordContent.append(contentError);
+    contentError.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
     inputPassword.style.borderColor = '#F56F6F';
-    const labelPassword = document.getElementById('labelPasswordId');
     labelPassword.style.color = '#F56F6F';
-    contentErrorEmail.style.color = '#F56F6F';
-    contentErrorEmail.style.fontSize = '0.9rem';
+    contentError.style.color = '#F56F6F';
+    contentError.style.fontSize = '0.9rem';
+    inputEmail.style.borderColor = '#FFFFFF';
+    labelEmail.style.color = '#FFFFFF';
   }
 };
 
 const showSuccessfulResponse = () => {
-  let contentErrorEmail = document.getElementById('paragraph1');
-  if (contentErrorEmail) {
+  let contentError = document.getElementById('paragraph1');
+  if (contentError) {
     const emailContent = document.getElementById('emailContent');
-    contentErrorEmail = document.getElementById('paragraph1');
-    emailContent.removeChild(contentErrorEmail);
+    contentError = document.getElementById('paragraph1');
+    emailContent.removeChild(contentError);
     const inputEmail = document.getElementById('email');
     const labelEmail = document.getElementById('labelEmailId');
     inputEmail.style.borderColor = '#FFFFFF';
     labelEmail.style.color = '#FFFFFF';
-
+  }
+  if (contentError) {
+    const passwordContent = document.getElementById('passwordContent');
+    contentError = document.getElementById('paragraph1');
+    passwordContent.removeChild(contentError);
     const inputPassword = document.getElementById('password');
     const labelPassword = document.getElementById('labelPasswordId');
     inputPassword.style.borderColor = '#FFFFFF';
     labelPassword.style.color = '#FFFFFF';
+    const inputEmail = document.getElementById('email');
+    const labelEmail = document.getElementById('labelEmailId');
+    inputEmail.style.borderColor = '#FFFFFF';
+    labelEmail.style.color = '#FFFFFF';
   }
 };
 
