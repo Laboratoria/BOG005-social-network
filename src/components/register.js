@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { createUser } from '../lib/index.js';
+import { createUser, auth, provider, signInWithPopup, GoogleAuthProvider } from '../lib/index.js';
 
 export const register = () => {
   const containRegis = document.createElement('section');
@@ -24,11 +24,15 @@ export const register = () => {
   inputPass.setAttribute('placeholder', 'Introduce tu contraseña');
   inputPass.setAttribute('type', 'password');
   inputPass.setAttribute('required', ''); // se obliga como requerimiento
-  // botones de registro y regresar
+
+  // botones de google registro y regresar
+  const buttonGoogle = document.createElement('button');
+  buttonGoogle.setAttribute('class', 'btnGoogle');
   const button = document.createElement('button');
   button.setAttribute('class', 'btn registration');
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('btn');
+  buttonGoogle.textContent = 'Continuar con Google';
   button.textContent = 'Registrarse';
   buttonBack.textContent = 'Regresar';
 
@@ -60,7 +64,28 @@ export const register = () => {
       });
   });
 
-  containRegis.append(imgLogo, formRegister);
+  buttonGoogle.addEventListener('click', (e) => { // Botón para ingresar con google
+    e.preventDefault();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        onNavigate('/wall');
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        // const credential = provider.credentialFromError(error);
+      });
+  });
+
+  containRegis.append(imgLogo, buttonGoogle, formRegister);
   formRegister.append(inputEmail, inputPass, button, buttonBack, errorText);
 
   return containRegis;

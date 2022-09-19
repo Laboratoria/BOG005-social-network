@@ -1,16 +1,20 @@
 // importando los servicios de firebase
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
 import {
-  getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut,
+  getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithPopup,
+  signInWithEmailAndPassword, signOut, GoogleAuthProvider,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import config from './config.js'; // config es la llave de firebase
 
 // Creando una constante para cada servicio
 const firebaseApp = initializeApp(config);
 const auth = getAuth(firebaseApp);
+auth.languageCode = 'es';
 const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 const singUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 const loginOut = signOut(auth);
+const provider = new GoogleAuthProvider();
+
 
 // Detectando el estado de autenticación
 onAuthStateChanged(auth, (user) => {
@@ -22,5 +26,6 @@ onAuthStateChanged(auth, (user) => {
 });
 
 export {
-  initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, loginOut,
+  initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser,
+  loginOut, provider, signInWithPopup, GoogleAuthProvider,
 };
