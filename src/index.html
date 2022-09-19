@@ -1,12 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="signUpView.css">
   <title>Document</title>
 </head>
+
 <body>
+  <main>
+    <picture>
+      <img id="logo" src="./images/logo2.png" alt="logo">
+    </picture>
+    <div class="form-container-signUp">
+      <form>
+        <input class="inputForm" type="email" placeholder="Email" id="inputEmail">
+        <input class="inputForm" type="password" placeholder="Contraseña" id="inputPassword">
+        <button class="btnSignUp" id="btnSignUp" type="submit">Iniciar Sesión</button>
+        <hr>o
+        <hr>
+        <button class="btnGoogle" id="btnGoogle" type="submit"><img src="./images/google.png">Continuar con
+          Google</button>
+      </form>
+      <a href="#">No tienes una cuenta? Registrate</a>
+    </div>
+  </main>
+
   <script type="module" src="main.js"></script>
 </body>
+
 </html>
