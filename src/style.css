@@ -342,10 +342,10 @@ html {
 
 .sectionWelcome{
     width: 50%;
-    height: 100%;
+    height: 78%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
 
 }
 
@@ -357,7 +357,7 @@ html {
     color: var(--main-color-white);
     font-family: var(--letters);
     width: 100%;
-    height: 44%;
+    height: 47%;
     text-align: center;
     
  }
@@ -366,11 +366,11 @@ html {
     font-family: 'Contrail One', cursive;
     color: var(--main-color-white);
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
 }
 
 .welcomeText{
-    font-size: 1.875rem;
+    font-size: 1.775rem;
 }
 
 .loginButton {
