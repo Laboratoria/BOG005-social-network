@@ -6,11 +6,12 @@ const auth = getAuth(app);
 const testCreate = (auth, email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-    //Signed in
+      //Signed in
       showSuccessfulResponse();
       const user = userCredential.user;
-      console.log('Les mando el email', user.email);
-    // ...
+      // console.log(user.emal);
+      return user;
+      // ...
     })
     .catch((error) => {
       const errorCode = error.code;
