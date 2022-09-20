@@ -6,8 +6,8 @@ export const welcome = () =>{
     const mensage= document.createElement('h2')
     const buttonStart= document.createElement('button');
     
-    title.textContent='Enfiéstate todo el Año'
-    mensage.textContent='Disfruta de las diferentes festividades alrededor del mundo.'
+    title.textContent='Enjoy the World'
+    mensage.textContent='Disfruta las diversas festividades alrededor del mundo sin salir de casa y antójate de participar'
     buttonStart.textContent='Inicia tu viaje' 
 
     buttonStart.addEventListener('click', ()=>{

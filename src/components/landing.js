@@ -8,8 +8,8 @@ export const landing = () => {
     const buttonLogin = document.createElement('button');
     const buttonBack = document.createElement('button')
 
-    title.textContent = 'Festejando por el Mundo'
-    buttonRegister.textContent = 'Registrarse con Email'
+    title.textContent = 'Enjoy the World'
+    buttonRegister.textContent = 'Regístrate con Email'
     question.textContent = '¿Ya tienes una cuenta?'
     buttonLogin.textContent = 'Iniciar Sesión'
     buttonBack.textContent = 'Regresar'

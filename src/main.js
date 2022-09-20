@@ -11,7 +11,7 @@ const routes = {
     '/register': register,
     '/login': login,
 };
-// funcion para trabajar la navegacion de la app
+// funcion para trabajar la navegacion de la app anexando un registro al historial con .pushState
 export const onNavigate = (pathname) => {
     window.history.pushState(
         {},
@@ -33,7 +33,3 @@ window.onpopstate = () => {
 };
 
 divRoot.appendChild(component());
-
-
-
-
