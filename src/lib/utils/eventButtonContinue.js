@@ -23,12 +23,18 @@ const eventButtonContinue = () => {
         const dataForm = getFormData();
         const result = testCreate(auth, dataForm.email, dataForm.password);
         console.log(result);
-        if (result !== undefined) { //último intento de validación fué con gladys, la creó pero no entró en este if
-          console.log('No hay errores');
-          window.location.href = '#wall';
-        } else {
-          console.log('Si hay errores');
-        }
+        result.then((userCredential) => {
+          // window.location.href = '#wall';
+          console.log('ok', userCredential);
+        }).catch((error) => {
+          console.error(error.message, 'no ok');
+        })
+       // if (result !== undefined) { //último intento de validación fué con gladys, la creó pero no entró en este if
+          console.log('Evento botón continuar');
+          //window.location.href = '#wall';
+        // } else {
+        //   console.log('Si hay errores');
+        // }
         //window.location.href = '#wall'; // si redirecciona al muro pero no me permite ver el error
         // const formData = getFormData();
         // console.log(formData);
