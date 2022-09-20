@@ -57,7 +57,7 @@ body {
   color: #cd8ba4;
   /* margin-left: 10vw; */
 
-
+}
 
 a {
   cursor: pointer;
@@ -166,7 +166,7 @@ a {
   font-size: 110%;
   color: #1b262c;
   display: block;
-
+}
 .googleButton {
   display: flex;
   justify-content: center;
@@ -305,7 +305,7 @@ text-align: center;
 display: inline-flex;
 margin-left: 17vw;
 margin-top: 1vh;
-
+}
 .loginButton,
 .googleButton {
   transition: opacity 0.2s ease;

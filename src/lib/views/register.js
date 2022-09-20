@@ -6,9 +6,7 @@ export default () => {
   registerSection.style.width = "80vw";
   const viewRegister = `
 
-<main class="registercontent">
-  const viewRegister = `
-    <main>
+<main>
     <section id="contenedor">
     <article id="headerregister">
     <img src="/src/img/LOGO.png" alt="">
