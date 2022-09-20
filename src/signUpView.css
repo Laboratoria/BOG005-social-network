@@ -2,61 +2,80 @@ body {
     background-color: #CDF0EA;
 }
 
-input {
+img {
+    height: 150px;
+    margin-bottom: 10px; 
+}
+
+.form-container-signIn {
+    /* display: flex; 
+    flex-direction: column;
+    text-align: center; */
+    border: solid 2px black;
+}
+
+.formContainer{
+    border: solid 2px rgb(148, 53, 53);
+    display: flex; 
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.inputForm {
     background-color: #FBF6F0;
     border: solid 2px #65C7C7;
-    width: 90%;
-    height: 45%;
-    margin: 5%;
+    width: 260px;
+    height: 30px;
+    margin: 5px;
     border-radius: 15px;
 }
 
-button {
+.btnSignIn, .btnGoogle {
     background-color: #65C7C7;
     border: solid 2px #FBF6F0;
-    height: 9vh;
-    margin: 5%;
+    height: 38px;
     border-radius: 15px;
+    text-align: center;
+    color: #013b3b;
 }
-.btnSignUp {
-    width: 60%;
-    margin: 0 20%;
+ .btnSignIn {
+    margin-top: 15px;
+    width: 150px;
 }
 
 .btnGoogle {
-    width: 90%;
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+} 
 
 .btnGoogle img {
     height: 30px;
     width: 30px;
-}
+    padding: 10px 10px 0 0;
+    }
 
 a {
     color: #007878;
 }
 
-.form-container-signUp {
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
-form {
+
+/* form {
     display: grid;
     grid-template-columns: auto;
     height: 80vh;
     width: 100vw;
-}
+    justify-content: center;
+} */
 
-img {
-    width: 80%;
-    margin: 0 10%;
-}
 
-hr {
+/* hr {
     width: 100px;
     height: 1px;
     color: #007878;
     margin: 0%;
-}
+} */
