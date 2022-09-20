@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Social Network @ Laboratoria",
   "main": "src/index.html",
+  "type": "module",
   "keywords": [
     "javascript",
     "firebase",
@@ -34,5 +35,8 @@
   },
   "engines": {
     "node": ">=14"
+  },
+  "dependencies": {
+    "firebase": "^9.10.0"
   }
 }
