@@ -1,7 +1,6 @@
-const changeRoute = (hash, components) => {
-  const containerRoot = document.getElementById('content');
-  containerRoot.innerHTML = '';
-
+export const changeRoute = (hash, components) => {
+  const containerRoot = document.getElementById("content");
+  containerRoot.innerHTML = "";
   switch (hash) {
     case '#home':{
       return containerRoot.appendChild(components.home());}
@@ -14,7 +13,6 @@ const changeRoute = (hash, components) => {
 
     default: {
         return containerRoot.appendChild(components.error404());}
-
       }
 
     };
