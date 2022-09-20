@@ -1,4 +1,4 @@
-import { auth, createUser } from './firebase.js';
+import { auth, createUser } from './connection.js';
 
 const register = async (email, password) => {
   try {
@@ -7,5 +7,4 @@ const register = async (email, password) => {
     throw error.message;
   }
 };
-
 export { register };
