@@ -43,7 +43,7 @@ const signIn = () => {
       <span>Registrate con Google</span>
   </button>
 
-  <button class="submitSignIn" id="submitContinueButton">Continuar</button>
+  <button type="button" class="submitSignIn" id="submitContinueButton">Continuar</button>
   <a href="#userSignIn" id="userRegisterId" class="continue userRegister">¿Ya tienes una cuenta? inicia sesión
   </a>
   </form>
