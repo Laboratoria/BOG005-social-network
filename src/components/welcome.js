@@ -7,7 +7,7 @@ export const welcome = () => {
   const buttonRegister = document.createElement('button');
 
   buttonLogin.textContent = 'Inicia sesión';
-  buttonRegister.textContent = 'Registrate';
+  buttonRegister.textContent = 'Regístrate';
   title.textContent = 'Somos la mejor red social de programadoras';
 
   buttonLogin.addEventListener('click', () => {
@@ -16,6 +16,7 @@ export const welcome = () => {
   buttonRegister.addEventListener('click', () => {
     onNavigate('/register');
   });
+ 
 
   div.append(title, buttonLogin, buttonRegister);
   return div;

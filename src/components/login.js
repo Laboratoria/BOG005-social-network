@@ -28,14 +28,21 @@ export const login = () => {
   // botones de google registro y regresar
   const buttonGoogle = document.createElement('button');
   buttonGoogle.setAttribute('class', 'btnGoogle');
+  buttonGoogle.textContent = 'Ingresar con Google';
+
 
   const button = document.createElement('button');
   button.setAttribute('class', 'btn login');
-  const buttonRegis = document.createElement('button');
-  buttonRegis.classList.add('btn');
-  buttonGoogle.textContent = 'Continuar con Google';
   button.textContent = 'Ingresar';
-  buttonRegis.textContent = '¿No tienes cuenta? Registrate';
+
+  const containRegister = document.createElement('div');
+  containRegister.classList.add('contRegist');
+  const regisText = document.createElement('p');
+  regisText.textContent = '¿No tienes cuenta?';
+  const buttonRegis = document.createElement('button');
+  buttonRegis.classList.add('btnRegister');
+  buttonRegis.textContent = '¡Regístrate!';
+
 
   buttonRegis.addEventListener('click', (e) => { // evento para regresar a inicio
     e.preventDefault();
@@ -55,10 +62,10 @@ export const login = () => {
       })
       .catch((error) => { // si hubo un error en el registro, retorna según el caso
         const errorCode = error.code;
-        if (errorCode === 'auth/email-already-in-use') {
-          errorText.textContent = '*El correo ya existe';
-        } else if (errorCode === 'auth/weak-password') {
-          errorText.textContent = '*Contraseña débil, debe tener al menos 6 carácteres';
+        if (errorCode === 'auth/user-not-found') {
+          errorText.textContent = 'Usuario no encontrado...';
+        } else if (errorCode === 'auth/wrong-password') {
+          errorText.textContent = '¡Email o contraseña incorrectos!';
         } else if (errorCode === 'auth/invalid-email') {
           errorText.textContent = '*El correo es inválido';
         }
@@ -87,7 +94,8 @@ export const login = () => {
   });
 
   containLogin.append(imgLogo, buttonGoogle, formlogin);
-  formlogin.append(inputEmail, inputPass, errorText, button, buttonRegis);
+  containRegister.append(regisText, buttonRegis);
+  formlogin.append(inputEmail, inputPass, errorText, button, containRegister);
 
   return containLogin;
 };

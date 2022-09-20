@@ -1,19 +1,31 @@
 import { onNavigate } from '../main.js';
+import { loginOut } from '../lib/index.js';
 
 export const wall = () => {
-    const div = document.createElement('div');
-    const title = document.createElement('h2');
-    title.textContent = 'Welcome to the Wall';
+  const container = document.createElement('section');
 
-    const button = document.createElement('button');
-    button.textContent = 'Regresar';
-  
-    button.addEventListener('click', () => {
-        onNavigate('/login');
-      });
+  const header = document.createElement('header');
 
-    
-    div.append(title, button);
-  
-    return div;
-  };
+  const user = document.createElement('h2');
+  user.textContent = 'Wall';
+
+  const buttonClose = document.createElement('button');
+  buttonClose.textContent = 'Cerrar Sesión';
+  buttonClose.className = 'buttons';
+
+  const message = document.createElement('article');
+
+  const messageText = document.createElement('textarea');
+  messageText.placeholder = 'Escribe aquí tu post';
+  messageText.className = 'textUser';
+
+  buttonClose.addEventListener('click', () => {
+    loginOut.then(() => {
+      onNavigate('/');
+    });
+  });
+
+  container.append(header, user, buttonClose, message, messageText);
+
+  return container;
+};

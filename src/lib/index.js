@@ -27,5 +27,5 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos comctados/////
 
 export {
   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser,
-  loginOut, provider, signInWithPopup, GoogleAuthProvider,
+  loginOut, provider, signInWithPopup, GoogleAuthProvider, onAuthStateChanged,
 };
