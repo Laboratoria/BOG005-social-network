@@ -17,6 +17,7 @@ const sendRoute = (hash) => {
   if (route === '/welcome') {
     return '/';
   }
+  console.log(route)
   return route;
 };
 

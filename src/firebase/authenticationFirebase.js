@@ -4,19 +4,24 @@ import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValid
 
 const auth = getAuth(app);
 const testCreate = (auth, email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
+  // let isRegister;
+  if (email && password) {
+return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-    //Signed in
-      showSuccessfulResponse();
+      //Signed in
       const user = userCredential.user;
-      console.log('Les mando el email', user.email);
-    // ...
+      console.log(user.email);
+      showSuccessfulResponse();
+          // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
       showMessageError(errorCode);
+      
     });
+  }
+
 };
 
 export { auth, testCreate };

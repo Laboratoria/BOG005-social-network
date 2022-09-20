@@ -5,81 +5,85 @@ const getFormData = () => {
   const password = document.getElementById('password');
 
   return {
-   //name: name.value,
-   user: user.value,
-   email: email.value,
-   password: password.value,
-  }
+    name: name.value,
+    user: user.value,
+    email: email.value,
+    password: password.value,
+  };
 };
 
 const showMessageError = (errorMessage) => {
-  const section = errorMessage.includes('email') ? 'email' : 'password';
-  console.log(section);
-  const emailContent = document.getElementById(`${section}Content`);
-  let contentError = document.getElementById('paragraph1');
-  if (!contentError) {
-    contentError = document.createElement('p');
-    contentError.setAttribute('id', 'paragraph1');
-  }
+  const emailContent = document.getElementById('emailContent');
+  const passwordContent = document.getElementById('passwordContent');
   const inputEmail = document.getElementById('email');
   const labelEmail = document.getElementById('labelEmailId');
   const inputPassword = document.getElementById('password');
   const labelPassword = document.getElementById('labelPasswordId');
-  inputEmail.style.borderColor = '#F56F6F';
-  labelEmail.style.color = '#F56F6F';
-  contentError.style.color = '#F56F6F';
-  contentError.style.fontSize = '0.9rem';
-  if (errorMessage === `auth/invalid-${section}`) {
+  const contentErrorEmail = document.createElement('p');
+  contentErrorEmail.setAttribute('id', 'paragraph1');
+  const contentErrorPassword = document.createElement('p');
+  contentErrorPassword.setAttribute('id', 'paragraph2');
+  if (errorMessage === 'auth/invalid-email') {
     inputPassword.style.borderColor = '#FFFFFF';
     labelPassword.style.color = '#FFFFFF';
-    emailContent.appendChild(contentError);
-    contentError.textContent = 'Dato Incorrecto';
-  } else if (errorMessage === `auth/${section}-already-in-use`) {
+    inputEmail.style.borderColor = '#F56F6F';
+    labelEmail.style.color = '#F56F6F';
+    contentErrorEmail.style.color = '#F56F6F';
+    contentErrorEmail.style.fontSize = '0.9rem';
+    if (emailContent.lastElementChild.id !== 'paragraph1') {
+      emailContent.appendChild(contentErrorEmail);
+    }
+    document.querySelector('#paragraph1').textContent = 'Dato Incorrecto';
+  } else if (errorMessage === 'auth/email-already-in-use') {
     inputPassword.style.borderColor = '#FFFFFF';
     labelPassword.style.color = '#FFFFFF';
-    emailContent.appendChild(contentError);
-    contentError.textContent = 'Correo ya registrado, prueba otro';
-  }
-
-  if (errorMessage === `auth/weak-${section}`) {
-    const passwordContent = document.getElementById(`${section}Content`);
-    passwordContent.append(contentError);
-    contentError.textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
-    inputPassword.style.borderColor = '#F56F6F';
-    labelPassword.style.color = '#F56F6F';
-    contentError.style.color = '#F56F6F';
-    contentError.style.fontSize = '0.9rem';
+    inputEmail.style.borderColor = '#F56F6F';
+    labelEmail.style.color = '#F56F6F';
+    contentErrorEmail.style.color = '#F56F6F';
+    contentErrorEmail.style.fontSize = '0.9rem';
+    if (emailContent.lastElementChild.id !== 'paragraph1') {
+      emailContent.appendChild(contentErrorEmail);
+    }
+    document.querySelector('#paragraph1').textContent = 'Correo ya registrado, prueba otro';
+  } else {
+    // const contentErrorPassword = document.createElement('p');
+    // contentErrorPassword.setAttribute('id', 'paragraph2');
     inputEmail.style.borderColor = '#FFFFFF';
     labelEmail.style.color = '#FFFFFF';
+    inputPassword.style.borderColor = '#F56F6F';
+    labelPassword.style.color = '#F56F6F';
+    contentErrorPassword.style.color = '#F56F6F';
+    contentErrorPassword.style.fontSize = '0.9rem';
+    if (passwordContent.lastElementChild.id !== 'paragraph2') {
+      passwordContent.appendChild(contentErrorPassword);
+    }
+    document.querySelector('#paragraph2').textContent = 'Dato Incorrecto, escribe mas de 6 caracteres';
   }
 };
 
 const showSuccessfulResponse = () => {
-  let contentError = document.getElementById('paragraph1');
-  if (contentError) {
-    const emailContent = document.getElementById('emailContent');
-    contentError = document.getElementById('paragraph1');
-    emailContent.removeChild(contentError);
-    const inputEmail = document.getElementById('email');
-    const labelEmail = document.getElementById('labelEmailId');
+  const emailContent = document.getElementById('emailContent');
+  const passwordContent = document.getElementById('passwordContent');
+  const inputEmail = document.getElementById('email');
+  const labelEmail = document.getElementById('labelEmailId');
+  const inputPassword = document.getElementById('password');
+  const labelPassword = document.getElementById('labelPasswordId');
+  if (emailContent.lastElementChild.id === 'paragraph1') {
+    const contentErrorEmail = document.querySelector('#paragraph1');
+    emailContent.removeChild(contentErrorEmail);
     inputEmail.style.borderColor = '#FFFFFF';
     labelEmail.style.color = '#FFFFFF';
   }
-  if (contentError) {
-    const passwordContent = document.getElementById('passwordContent');
-    contentError = document.getElementById('paragraph1');
-    passwordContent.removeChild(contentError);
-    const inputPassword = document.getElementById('password');
-    const labelPassword = document.getElementById('labelPasswordId');
+
+  if (passwordContent.lastElementChild.id === 'paragraph2') {
+    const contentErrorPassword = document.querySelector('#paragraph2');
+    passwordContent.removeChild(contentErrorPassword);
     inputPassword.style.borderColor = '#FFFFFF';
     labelPassword.style.color = '#FFFFFF';
-    const inputEmail = document.getElementById('email');
-    const labelEmail = document.getElementById('labelEmailId');
-    inputEmail.style.borderColor = '#FFFFFF';
-    labelEmail.style.color = '#FFFFFF';
   }
 };
 
+//lastElementChild.localName
 
 ///[a-zA-Z0-9_.\-]+@[a-zA-Z0-9_.\-]+\.[a-zA-Z]+/
 const regex = {
