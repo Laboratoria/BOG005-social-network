@@ -15,13 +15,13 @@ export const register = () => {
   inputEmail.classList.add('input');
   inputEmail.setAttribute('type', 'email'); // para validar que sea un mail
   inputEmail.setAttribute('id', 'emailRegister');
-  inputEmail.setAttribute('placeholder', 'Introduce tu correo');
+  inputEmail.setAttribute('placeholder', 'Introduce Correo');
   inputEmail.setAttribute('required', ''); // se obliga como requerimiento
 
   const inputPass = document.createElement('input');
   inputPass.classList.add('input');
   inputPass.setAttribute('id', 'passRegister');
-  inputPass.setAttribute('placeholder', 'Introduce tu contraseña');
+  inputPass.setAttribute('placeholder', 'Introduce Contraseña');
   inputPass.setAttribute('type', 'password');
   inputPass.setAttribute('required', ''); // se obliga como requerimiento
 
