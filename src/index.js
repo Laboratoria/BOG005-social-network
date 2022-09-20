@@ -1,4 +1,5 @@
-// aqui exportaras las funciones que necesites
+export {COMPONENTS}
+
 import Register from "./lib/views/register.js";
 import Home from "./lib/views/home.js";
 import Feed from "./lib/views/feed.js";
@@ -8,3 +9,4 @@ const COMPONENTS = {
   feed: Feed,
 };
 export { COMPONENTS };
+
