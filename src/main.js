@@ -1,8 +1,6 @@
 import { Welcome } from './components/Welcome.js';
 import { Wall } from './components/Wall.js';
-
 import { Register } from './components/Register.js';
-import { Register2 } from './components/Register2.js';
 
 // variable que acceda al nodo en HTML llamado root
 const root = document.getElementById('root');
@@ -12,7 +10,6 @@ const routes = {
   '/': Welcome, // cuando entre en '/' debe renderizar la página inicial
   '/wall': Wall,
   '/register': Register,
-  '/register2': Register2,
 };
 // recibe la ruta, despues utiliza el objeto window.history y lanza el pushState
 export const onNavigate = (pathname) => {
