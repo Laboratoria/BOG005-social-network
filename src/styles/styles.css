@@ -26,7 +26,7 @@ form {
     margin-bottom: 70px;
 }
 
-.viewRegister {
+.viewRegister, .viewLogin {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -36,6 +36,7 @@ form {
     margin-top: 100px;
     padding: 20px;
 }
+
 
 .input {
     width: 250px;
@@ -53,6 +54,10 @@ form {
 .input::placeholder {
     color: rgb(197, 196, 196);
 }
+.input:focus {
+    border-color: #F9965E;
+    outline: 7px;
+}
 
 .btn {
     width: 200px;
@@ -67,7 +72,7 @@ form {
     padding-right: 10px;
 }
 
-.btn.registration {
+.btn.registration, button {
     margin-top: 80px;
 }
 
@@ -75,20 +80,53 @@ form {
     background-color: #F9965E;
 }
 
+.buttonBack{
+    margin-top: 20px;
+    color: rgb(127, 127, 127);
+    border: white;
+    background-color: white;
+    font-size: medium;
+    text-decoration: underline;  
+}
+
 p {
     text-align: center;
 }
 
 #buttonGoogle {
-    color: var(--color-text, #000);
-    border: 3px solid var(--color-border-strong, #000);
-    border-radius: 8px;
-    background-color: var(--color-bg, #ffffff);
-    font-size: 16px;
+    height: 45px;
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0px 10px 0px 3px;
+    font-size: medium;
+    color: rgb(93, 93, 93);
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+#buttonGoogle:before{
+    content: '';
+    width: 35px;
+    height: 35px;
+    display: flex;
+    margin-right: 10px;
+    background-image: url('../image/imgLogoGoogle.png');
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-color: white;
+    background-size: 20px 20px;
+    background-position: center center;
 }
 
 #wallContent {
-    /* display: flex; */
+/*     display: flex;
+    align-items: center;S
+    justify-content: space-between; */
 }
 
 #post {
@@ -108,7 +146,7 @@ p {
 #buttonsingout ,
 #buttonprofile {
     width: 79px;
-    height: auto;
+    height: 53px;
     font-family: 'Open Sans';
     font-style: normal;
     font-weight: 300;

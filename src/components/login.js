@@ -33,6 +33,7 @@ export const login = () => {
   button.setAttribute('class', 'btn login'); ///////////////***PREGUNTAR POR LA DIRERENCIA CON .classList.add(
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('btn');
+  buttonBack.setAttribute('class', 'buttonBack');
   button.textContent = 'Ingresar';
   buttonBack.textContent = 'Regresar';
 

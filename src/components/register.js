@@ -33,6 +33,7 @@ export const register = () => {
   button.setAttribute('class', 'btn registration'); ///////////////***PREGUNTAR POR LA DIRERENCIA CON .classList.add(
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('btn');
+  buttonBack.setAttribute('class', 'buttonBack');
   button.textContent = 'Registrarse';
   buttonBack.textContent = 'Regresar';
 
