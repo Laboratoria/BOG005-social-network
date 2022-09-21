@@ -4,15 +4,12 @@ import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValid
 
 const auth = getAuth(app);
 const testCreate = (auth, email, password) => {
-  // let isRegister;
-  if (email && password) {
 return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       //Signed in
       const user = userCredential.user;
-      console.log(user.email);
+      return user
       showSuccessfulResponse();
-          // ...
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -20,8 +17,6 @@ return createUserWithEmailAndPassword(auth, email, password)
       showMessageError(errorCode);
       
     });
-  }
-
-};
+  } 
 
 export { auth, testCreate };
