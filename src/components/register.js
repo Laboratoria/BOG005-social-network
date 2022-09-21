@@ -3,10 +3,28 @@ import { createUser } from '../firebase/connection.js';
 
 export const register = () => {
     const containerRegister = document.createElement('section');
-    containerRegister.classList.add('container')
-    
+    containerRegister.classList.add('container');
+
+    const title = document.createElement('h1');
+    title.textContent = 'REGISTRATE'
+    title.className = 'titleR';    
+
     const registerForm = document.createElement('section');
-    registerForm.classList.add('formRegister')
+    registerForm.classList.add('formRegister');
+
+    const inputName = document.createElement('input');
+    inputName.classList.add('input');
+    inputName.setAttribute ('type', 'text');
+    inputName.setAttribute ('id', 'inputName');
+    inputName.setAttribute ('placeholder', 'Nombre');
+    inputName.setAttribute ('required', '');
+
+    const inputLastName = document.createElement('input');
+    inputLastName.classList.add('input');
+    inputLastName.setAttribute ('type', 'text');
+    inputLastName.setAttribute ('id', 'inputLastName');
+    inputLastName.setAttribute ('placeholder', 'Apellido');
+    inputLastName.setAttribute ('required', '');
 
     const registerEmail = document.createElement('input');
     registerEmail.classList.add('input');
@@ -23,56 +41,54 @@ export const register = () => {
     registerPassword.setAttribute('required', '');
 
     const registerButton = document.createElement('button');
-    registerButton.textContent = 'Regístrate';
+    registerButton.textContent = 'Iniciar Sesión';
     registerButton.setAttribute('class', 'buttonRegister button');
+    
+    const question = document.createElement('h3');
+    question.textContent = '¿Olvidaste tu Contraseña?';
+    question.classList = 'question';
 
-    const buttonBack = document.createElement('button');
-    buttonBack.classList.add('button');
-    buttonBack.textContent = 'Regresar';
+    const session =document.createElement ('h3');
+    session.textContent = 'Aquí';
+    session.className = 'here';
 
     registerButton.addEventListener('click', () => {
         const emailR = registerEmail.value;
-    const passR = registerPassword.value;
-    console.log(createUser(emailR, passR))
-    createUser(emailR, passR)
-    .then(()=>{
-        console.log("dentroooo")
-        onNavigate("/login") // si ya se registreo que entre a muro
-    }).catch((error)=>{
-        
-    })
-        
-    });
-        
-    // })
-    buttonBack.addEventListener('click', (e)=>{
-        e.preventDefault();
-        onNavigate('/');
+        const passR = registerPassword.value;
+        console.log(createUser(emailR, passR))
+        createUser(emailR, passR)
+            .then(() => {
+                console.log("dentroooo")
+                onNavigate("/login") // si ya se registreo que entre a muro
+            }).catch((error) => {
+
+            })
+
     });
 
-const errorText = document.createElement('p');
-errorText.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const emailR = registerEmail.value;
-    const passR = registerPassword.value;
-    createUser(emailR, passR)
-        .then((userCredential) => {
-            onNavigate('/');
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            if(errorCode === 'auth/email-already-in-use'){
-                errorText.textContent = 'El e-mail ingresado ya existe';
-            } else if(errorCode === 'auth/weak-password'){
-                errorText.textContent = 'Su contraseña debe tener al menos 6 caracteres'
-            } else if(errorCode === 'auth/invalid-email'){
-                errorText.textContent = 'No es un e-mail válido'
-            }
-        });
+    const errorText = document.createElement('p');
+    errorText.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailR = registerEmail.value;
+        const passR = registerPassword.value;
+        createUser(emailR, passR)
+            .then((userCredential) => {
+                onNavigate('/');
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                if (errorCode === 'auth/email-already-in-use') {
+                    errorText.textContent = 'El e-mail ingresado ya existe';
+                } else if (errorCode === 'auth/weak-password') {
+                    errorText.textContent = 'Su contraseña debe tener al menos 6 caracteres'
+                } else if (errorCode === 'auth/invalid-email') {
+                    errorText.textContent = 'No es un e-mail válido'
+                }
+            });
     });
 
     containerRegister.append(registerForm);
-    registerForm.append(registerEmail, registerPassword, registerButton, buttonBack, errorText);
+    registerForm.append(title, inputName, inputLastName, registerEmail, registerPassword, registerButton, question, session, errorText);
 
     return containerRegister;
 };
