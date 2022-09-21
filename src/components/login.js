@@ -48,7 +48,7 @@ export const login = () => {
     e.preventDefault();
     const email = inputEmail.value; // Guardamos los valores de mail y password de los inputs
     const password = inputPass.value;
-    createUser(email, password)
+    singUser(email, password)
       .then((userCredential) => { // Si el usuario se acredita, será dirigido al muro
         onNavigate('/wall');
       })

@@ -1,4 +1,5 @@
-import { register } from '../src/components/register.js';
+import { register } from '../src/components/register.js';´
+import { createUser } from '../src/lib/index.js'
 jest.mock('../src/lib/index.js');//MOCK A TRAVES DEL EMBUDO
 //jest.mock('../src/lib/index.js', () => {} /// en si mismo ya mock
 /*   return {
@@ -31,6 +32,8 @@ describe('Test for the register function', () => {
     expect(createUserWithEmailAndPassword).toHaveBeenCalledWith(auth, email, pass);
   });
   it('Should throw an error if executed without arguments', async () => {
+    createUser.mockRejectedValueOnce(new Error('error'));
+    
     try {
       await register();
     } catch (error) {

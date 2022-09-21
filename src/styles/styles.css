@@ -4,7 +4,7 @@
     }
 }
 
-body{
+body {
     height: auto;
     width: auto;
     font-family: 'Poppins', sans-serif;
@@ -14,18 +14,19 @@ body{
     justify-content: center;
     align-items: center;
 }
-form{
+
+form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.imgLogo{
+.imgLogo {
     height: 180px;
     margin-bottom: 70px;
 }
 
-.viewRegister{
+.viewRegister {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -36,46 +37,49 @@ form{
     padding: 20px;
 }
 
-.input{
+.input {
     width: 250px;
     height: 37px;
     margin: 10px;
     padding: 5px;
-    color:rgb(93, 92, 92);
+    color: rgb(93, 92, 92);
     font-size: medium;
     text-align: center;
     border-radius: 10px;
     border-style: solid;
-    border-color:rgb(167, 167, 167);
+    border-color: rgb(167, 167, 167);
 }
 
 .input::placeholder {
-    color:rgb(197, 196, 196);
-  }
+    color: rgb(197, 196, 196);
+}
 
 .btn {
     width: 200px;
     height: 45px;
     color: white;
     margin: 5px;
-    font-size:large;
+    font-size: large;
     border-radius: 10px;
     align-items: center;
     background-color: #9697EF;
     border: white;
     padding-right: 10px;
 }
+
 .btn.registration {
     margin-top: 80px;
 }
+
 .btn:hover {
     background-color: #F9965E;
 }
- p{
-    text-align: center;
- }
 
-#buttonGoogle{
+p {
+    text-align: center;
+}
+
+#buttonGoogle {
     color: var(--color-text, #000);
     border: 3px solid var(--color-border-strong, #000);
     border-radius: 8px;
@@ -83,3 +87,58 @@ form{
     font-size: 16px;
 }
 
+#wallContent {
+    /* display: flex; */
+}
+
+#post {
+    width: 328px;
+    height: 210px;
+    background: #FFFFFF;
+    border: 1px solid #9697EF;
+    border-radius: 19px;
+}
+
+#imgLogomini {
+    width: 93px;
+    height: auto;
+
+}
+
+#buttonsingout ,
+#buttonprofile {
+    width: 79px;
+    height: auto;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    background-color: #ffffff;
+    color: #555555;
+    border:none;
+    mix-blend-mode: normal;
+}
+#writer{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    
+    color: #000000;
+    
+}
+
+#written{
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 22px;
+color: #000000;
+}
+#post{
+    display: block;
+}
