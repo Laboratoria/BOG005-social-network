@@ -2,41 +2,46 @@ import { onNavigate } from '../main.js';
 import { signInUser } from '../firebase/connection.js';
 
 export const login = () => {
-  const div = document.createElement('div');
+  const containerLogin = document.createElement('section');
+    containerLogin.classList.add('container');
 
-  const title = document.createElement('h1');
-  title.textContent = 'Enjoy the World';
+    const title = document.createElement('h1');
+    title.textContent = 'ENJOY THE WORLD'
 
-  const loginEmail = document.createElement('input');
-  loginEmail.classList.add('input');
-  loginEmail.setAttribute('type', 'email');
-  loginEmail.setAttribute('id', 'emailLogin');
-  loginEmail.setAttribute('placeholder', 'E-mail');
-  loginEmail.setAttribute('required', '');
+    const imgLogin = document.createElement('img');
+    imgLogin.className = 'img-login';
+    imgLogin.src = "/img/logo.png";
+    imgLogin.alt = 'logo';
 
-  const loginPassword = document.createElement('input');
-  loginPassword.classList.add('input');
-  loginPassword.setAttribute('type', 'password');
-  loginPassword.setAttribute('id', 'passwordLogin');
-  loginPassword.setAttribute('placeholder', 'contraseña');
-  loginPassword.setAttribute('required', '');
+    const loginForm = document.createElement('section');
+    loginForm.classList.add('form-login');
 
-  const loginButton = document.createElement('button');
-  loginButton.textContent = 'Iniciar Sesión';
-  loginButton.setAttribute('class', 'butonLogin button');
+    const loginEmail = document.createElement('input');
+    loginEmail.classList.add('input');
+    loginEmail.setAttribute('type', 'email');
+    loginEmail.setAttribute('id', 'email-login');
+    loginEmail.setAttribute('placeholder', 'E-mail');
+    loginEmail.setAttribute('required', '');
 
-  const question = document.createElement('h3');
-  question.textContent = '¿Olvidaste tu Contraseña?';
-  const here = document.createElement('h3');
-  here.textContent = 'Aquí';
-  const buttonBack = document.createElement('button');
-  buttonBack.textContent = 'Regresar';
+    const loginPassword = document.createElement('input');
+    loginPassword.classList.add('input');
+    loginPassword.setAttribute('type', 'password');
+    loginPassword.setAttribute('id', 'password-login');
+    loginPassword.setAttribute('placeholder', 'contraseña');
+    loginPassword.setAttribute('required', '');
+
+    const loginButton = document.createElement('button');
+    loginButton.textContent = 'Regístrate';
+    loginButton.setAttribute('class', 'button-login button');
+
+    const question = document.createElement('h3');
+    question.textContent = '¿Ya eres miembro?'
+
+    const session =document.createElement ('h3');
+    session.textContent = 'Inicia tu sesión'
 
   loginButton.addEventListener('click', () => {
     onNavigate('/'); // Debería dirigir al Home, muro o perfil
-  });
-  buttonBack.addEventListener('click', () => {
-    onNavigate('/');
   });
 
   const errorText = document.createElement('p');
@@ -47,15 +52,14 @@ export const login = () => {
     signInUser(emailL, passL);
   });
 
-  div.append(
+  containerLogin.append(
     title,
+    imgLogin,
     loginEmail,
     loginPassword,
     loginButton,
     question,
-    here,
-    buttonBack,
   );
 
-  return div;
+  return containerLogin;
 };
