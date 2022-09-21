@@ -1,4 +1,4 @@
-const changeRoute = (hash, components) => {
+export const changeRoute = (hash, components) => {
   const containerRoot = document.getElementById("content");
   containerRoot.innerHTML = "";
   switch (hash) {
