@@ -4,6 +4,6 @@ import Feed from "./lib/views/feed.js";
 const COMPONENTS = {
   register: Register,
   home: Home,
-  feed: Feed,
+  feed: Feed
 };
 export { COMPONENTS };
