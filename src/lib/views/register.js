@@ -2,29 +2,62 @@ import { registerWithEmail } from "./../../auth.js";
 import { saveData } from "./../../firestore.js";
 export default () => {
   const registerSection = document.createElement("div");
+  registerSection.classList.add("background2");
 
-  const viewRegister = `
-    <main>
-    <section id="contenedor">
-
-    <article id="contenedorcentrado">
+  const viewRegister = `<main class="registerContent">
+      <section id="ContainerRegister">
+        <article id="headerregister">
+          <img src="/src/img/title.png" alt="" />
+          <h1>Regístrate</h1>
+          <h2>
+            ¡Comparte entre amigos tus <br />
+            doramas favoritos!
+          </h2>
+        </article>
         <section id="singin">
-        <h1>SingIn</h1>
-            <form id="singinform">
+          <form id="singinform">
+            <label for="name">Nombre</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <label for="correo">Correo electrónico</label>
+            <input
+              id="correo"
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+            />
+            <label for="usuario">País</label>
+            <input
+              id="usuario"
+              type="text"
+              name="usuario"
+              placeholder="País"
+              required
+            />
+            <label for="password">Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Contraseña"
+              name="password"
+              required
+            />
+            <button type="submit" title="enviar" name="SingIn">
+              Crear cuenta
+            </button>
+            <br />
+          </form>
 
-            <label for="name">Name</label>
-                <input id="name" type="text" name="name" placeholder="Name" required>
-                <label for="usuario">Usuario</label>
-                <input id="usuario" type="email" name="email" placeholder="Usuario" required>
-                <label for="password">Contraseña</label>
-                <input id="password" type="password" placeholder="Contraseña" name="password" required>
-                <button type="submit" title="SingIn" name="SingIn">Sing In</button>
-            </form>
-
+          <a href="#home">Ya tengo cuenta</a>
+          
         </section>
-
-    </article>
-</section>
+      </section>
     </main>`;
   registerSection.innerHTML = viewRegister;
 
@@ -35,8 +68,7 @@ export default () => {
     const email = formData.get("email");
     const password = formData.get("password");
     const name = formData.get("name");
-    registerWithEmail(email, password);
-    saveData(email, password, name);
+    registerWithEmail(email, password, name);
   });
 
   return registerSection;
