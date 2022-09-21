@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--fontFamily);
+}
+
+:root {
+    --fontFamily: 'Exo 2', sans-serif;
+    --titleSize: 1.5rem;
+}
+
+@media screen and (max-width: 640px) {
+
+    /* vista del register */
+    .container {
+        display: flex;
+        position: absolute;
+        padding: auto;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-size: cover;
+        background-image: url("img/Fondo2.PNG");
+        font-family: var(--fontFamily);
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
+    }
+
+    .titleR {
+        text-align: center;
+        margin-top: 10vh;
+        font-size: var(--titleSize);
+    }
+
+    .img-register {
+        display: block;
+        margin: 0px auto;
+        position: relative;
+        text-align: center;
+    }
+
+    .input {
+        padding: 2vh;
+        position: relative;
+        width: 30vh;
+        height: 5vh;
+
+        background: rgba(217, 217, 217, 0.37);
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+    }
+
+    #passwordRegister,
+    #emailRegister,
+    #inputName,
+    #inputLastName {
+        margin-top: 6vh;
+    }
+
+    .button {
+        display: block;
+        margin: 0px auto;
+        margin-top: 8vh;
+        position: relative;
+        width: 25vh;
+        height: 5vh;
+
+        background: rgba(241, 108, 164, 0.89);
+        border: 1px solid #53370C;
+        border-radius: 15px;
+        font-size: 2.5vh;
+    }
+
+    .question {
+        margin-top: 4vh;
+        justify-content: center;
+        font-size: 2vh;
+    }
+
+    .here {
+        justify-content: center;
+    }
+
+    /* vista del login */
+
+    /* vista welcome */
+    .sectionWelcome {
+        margin: 10px;
+        background: #FFF8EE;
+        opacity: 0.8;
+        background-image: url("img/fondo1.PNG");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-around;
+        min-height: 850px;
+
+    }
+
+    .titleWelcome {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .imgWelcome {
+        min-height: 50px;
+
+    }
+
+    .container {
+        display: flex;
+        padding: auto;
+        width: 100%;
+        height: 90vh;
+        background-size: cover;
+        background-position: center center;
+        background-image: url("img/Fondo2.PNG");
+    }
+
+    .img-register {
+        align-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+
+}
