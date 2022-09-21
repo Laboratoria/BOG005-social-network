@@ -6,15 +6,25 @@ export const register = () => {
     containerRegister.classList.add('container');
 
     const title = document.createElement('h1');
-    title.textContent = 'ENJOY THE WORLD'
-
-    const imgRegister = document.createElement('img');
-    imgRegister.className = 'img-register';
-    imgRegister.src = "/img/logo.png";
-    imgRegister.alt = 'logo';
+    title.textContent = 'REGISTRATE'
+    title.className = 'titleR';    
 
     const registerForm = document.createElement('section');
     registerForm.classList.add('formRegister');
+
+    const inputName = document.createElement('input');
+    inputName.classList.add('input');
+    inputName.setAttribute ('type', 'text');
+    inputName.setAttribute ('id', 'inputName');
+    inputName.setAttribute ('placeholder', 'Nombre');
+    inputName.setAttribute ('required', '');
+
+    const inputLastName = document.createElement('input');
+    inputLastName.classList.add('input');
+    inputLastName.setAttribute ('type', 'text');
+    inputLastName.setAttribute ('id', 'inputLastName');
+    inputLastName.setAttribute ('placeholder', 'Apellido');
+    inputLastName.setAttribute ('required', '');
 
     const registerEmail = document.createElement('input');
     registerEmail.classList.add('input');
@@ -31,18 +41,16 @@ export const register = () => {
     registerPassword.setAttribute('required', '');
 
     const registerButton = document.createElement('button');
-    registerButton.textContent = 'Regístrate';
+    registerButton.textContent = 'Iniciar Sesión';
     registerButton.setAttribute('class', 'buttonRegister button');
-
+    
     const question = document.createElement('h3');
-    question.textContent = '¿Ya eres miembro?'
+    question.textContent = '¿Olvidaste tu Contraseña?';
+    question.classList = 'question';
 
     const session =document.createElement ('h3');
-    session.textContent = 'Inicia tu sesión'
-
-    const buttonBack = document.createElement('button');
-    buttonBack.classList.add('button');
-    buttonBack.textContent = 'Regresar';
+    session.textContent = 'Aquí';
+    session.className = 'here';
 
     registerButton.addEventListener('click', () => {
         const emailR = registerEmail.value;
@@ -56,12 +64,6 @@ export const register = () => {
 
             })
 
-    });
-
-    // })
-    buttonBack.addEventListener('click', (e) => {
-        e.preventDefault();
-        onNavigate('/');
     });
 
     const errorText = document.createElement('p');
@@ -86,7 +88,7 @@ export const register = () => {
     });
 
     containerRegister.append(registerForm);
-    registerForm.append(title, imgRegister, registerEmail, registerPassword, registerButton, question, session, buttonBack, errorText);
+    registerForm.append(title, inputName, inputLastName, registerEmail, registerPassword, registerButton, question, session, errorText);
 
     return containerRegister;
 };

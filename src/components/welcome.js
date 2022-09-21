@@ -1,20 +1,27 @@
 import { onNavigate } from '../main.js';
 
 export const welcome = () => {
-  const div = document.createElement('div');
-  const title = document.createElement('h1');
-  const mensage = document.createElement('h2');
-  const buttonStart = document.createElement('button');
+  const sectionWelcome = document.createElement('sectionWelcome');
+  sectionWelcome.className = 'sectionWelcome';
 
-  title.textContent = 'Enjoy the World';
-  mensage.textContent = 'Disfruta las diversas festividades alrededor del mundo sin salir de casa y antójate de participar';
-  buttonStart.textContent = 'Inicia tu viaje';
+  const title = document.createElement('h1');
+  title.className = 'titleWelcome';
+  title.textContent = 'Enfiéstate todo el Año'
+
+  const mensage = document.createElement('h2')
+  mensage.className = 'description';
+  mensage.textContent = 'Disfruta de las diferentes festividades alrededor del mundo.'
+
+  const buttonStart = document.createElement('button');
+  buttonStart.className = 'button';
+  buttonStart.textContent = 'Inicia tu viaje'
+
 
   buttonStart.addEventListener('click', () => {
     onNavigate('/landing');
-  });
+  })
 
-  div.append(title, mensage, buttonStart);
+  sectionWelcome.append(title, mensage, buttonStart,)
 
-  return div;
+  return sectionWelcome;
 };
