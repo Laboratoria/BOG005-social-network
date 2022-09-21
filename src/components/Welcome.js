@@ -26,6 +26,7 @@ export const Welcome = () => {
   inputEmail.setAttribute('requiered', '');
   inputEmail.setAttribute('placeholder', 'Correo electrónico');
   inputEmail.setAttribute('id', 'emailLogin');
+  inputEmail.setAttribute('type', 'email');
   const inputPass = document.createElement('input');
   inputPass.setAttribute('requiered', '');
   inputPass.type = 'password';
