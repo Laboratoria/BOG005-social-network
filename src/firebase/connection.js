@@ -18,13 +18,18 @@ const firebaseConfig = {
 
 // Creando una constante para cada servicio
 initializeApp(firebaseConfig);
-const auth = getAuth();
-const createUser = (email, password) => {
-  console.log(email, password);
-  //
+export const auth = getAuth();
+export const createUser = (email, password) => {
+  // console.log(email, password);
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      console.log(userCredential);
+      // console.log(userCredential);
+      swal({
+        title: "Genial!",
+        text: "Conseguiste registrarte!",
+        icon: "success",
+        button: "Inicia tu viaje!",
+      });
     })
     .catch((error) => {
       // console.error(error.message)
@@ -37,14 +42,16 @@ const createUser = (email, password) => {
           icon: 'error',
         });
         errorText.textContent = 'El e-mail ingresado ya existe';
-      } else if (errorCode === 'auth/weak-password') {
+      } 
+      else if (errorCode === 'auth/weak-password') {
         errorText.textContent = 'Su contraseña debe tener al menos 6 caracteres';
-      } else if (errorCode === 'auth/invalid-email') {
+      } 
+      else if (errorCode === 'auth/invalid-email') {
         errorText.textContent = 'No es un e-mail válido';
       }
     });
 };
-const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
+export const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 // const loginOut = signOut(auth);
 
 // Detectando el estado de autenticación
@@ -56,4 +63,4 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
-export { createUser, signInUser, auth };
+// export { createUser, signInUser, auth };
