@@ -139,12 +139,13 @@ p {
 
 #imgLogomini {
     width: 93px;
-    height: auto;
+    height: 93px;
 
 }
 
 #buttonsingout ,
-#buttonprofile {
+#buttonprofile,
+#buttonwall {
     width: 79px;
     height: 53px;
     font-family: 'Open Sans';
@@ -179,4 +180,10 @@ color: #000000;
 }
 #post{
     display: block;
+}
+#menu{
+    display: flex;
+}
+#header{
+ display: flex;
 }
