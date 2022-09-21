@@ -3,9 +3,6 @@
 #content {
   height: 100vh;
 }
-.imgContainer {
-  display: none;
-}
 
 * {
   padding: 0;
@@ -17,7 +14,6 @@
 
 * html body {
   max-width: 100vw;
-
 }
 
 button {
@@ -27,51 +23,46 @@ button {
   background-color: transparent;
 }
 
-
-html{
+html {
   background-color: #2b192e;
 }
 body {
   height: 100vh;
-
 }
-
 
 /* REGISTER */
 
-.registercontent #headerregister{
+.registercontent #headerregister {
   padding-left: 8vh;
-
 }
 
-#headerregister img{
+#headerregister img {
   width: 37vh;
   margin-top: 6vh;
   /* margin-left: 9vw; */
-
 }
-#headerregister h1{
+#headerregister h1 {
   text-align: center;
   width: 37vh;
   font-size: 4vh;
   color: #cd8ba4;
   /* margin-left: 10vw; */
-
 }
 
 a {
   cursor: pointer;
 }
 
-.home {
+.background {
   display: flex;
-  background-color: #160a2d;
-  background-image: url("img/tvs.png");
+  flex-direction: column;
+  background-color: #2b192e;
+  /* background-image: url("img/tvs.png"); */
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-  background-position: bottom;
+  /* background-position: bottom; */
 }
 
 .container {
@@ -107,7 +98,7 @@ a {
   width: fit-content;
   height: fit-content;
   font-family: "Manjari";
-  font-size: clamp(1rem, 0.5862rem + 2.069vw, 1.75rem);
+  font-size: clamp(1.375rem, 0.9267rem + 2.2414vw, 2.1875rem);
   text-align: center;
   color: rgb(204, 148, 233);
   margin: 0px 40px;
@@ -120,63 +111,25 @@ a {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 10px;
-
-}
-#headerregister h2{
-  text-align: center;
-  width: 37vh;
-  font-size: 2.5vh;
-  color: #F5E8DA;
-  /* margin-left: 10vw; */
-
-
-}
-
-
-
-.registercontent #contenedor {
-  display: inline-block;
-  padding: 2vw;
-  width: 100%;
-  height: 100%;
-
-
-}
-
-
-
-/* formulario de login */
-#singin {
-  width: 100%;
-  max-width: 320px;
-  min-width: 320px;
-  padding-left: 10vh;
-}
-
-#singin label {
-  display: block;
-  font-family: 'Overpass', sans-serif;
-  font-size: 120%;
-  color:#3c4245;
-  margin-top: 15px;
 }
 
 #singin input {
-  font-family: 'Overpass', sans-serif;
+  font-family: "Overpass", sans-serif;
   font-size: 110%;
   color: #1b262c;
   display: block;
 }
+
 .googleButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #30175c;
+  background-color: #5e376d;
   padding: clamp(0.3125rem, 0.0446rem + 1.3393vw, 1.25rem);
   margin: 0px 40px;
   border-radius: 10px;
   font-family: "Manjari";
-  color: rgb(204, 148, 233);
+  color: #fff;
   gap: clamp(0.3125rem, -0.0323rem + 1.7241vw, 0.9375rem);
 }
 
@@ -219,7 +172,7 @@ a {
 }
 
 .loginButton {
-  background-color: #30175c;
+  background-color: #5e376d;
   margin: 0px 40px;
   padding: clamp(0.625rem, -0.0647rem + 3.4483vw, 1.875rem);
   border-radius: 10px;
@@ -235,7 +188,7 @@ a {
 
 .registerButton {
   font-family: "Manjari";
-  color: #543689;
+  color: #5e376d;
   display: flex;
   justify-content: center;
 }
@@ -250,62 +203,15 @@ a {
 
 .registerButton > h4::after {
   content: "";
-  background-color: #543689;
+  background-color: #5e376d;
   position: absolute;
   top: calc(100% + 4px);
   left: 0px;
   height: 2px;
 
   width: 100%;
-  height: 40px;
-  margin-bottom: 10px;
-  padding: 5px 5px 5px 10px;
-  box-sizing: border-box;
-  border: solid;
-  border-color: #7c8082;
-  border-radius:15px;
-  -moz-border-radius:15px;
-  -webkit-border-radius:15px;
-  -ms-border-radius:15px;
-  -o-border-radius:15px;
 }
 
-#singin input::placeholder {
-  font-family: 'Overpass', sans-serif;
-  color: #E4E4E4;
-}
-
-#singin button {
-  font-family: 'Overpass', sans-serif;
-  font-size: 110%;
-  color:#1b262c;
-  width: 80%;
-  height: 40px;
-  border: none;
-  border-radius: 12px;
-  -moz-border-radius: 12px;
-  -webkit-border-radius: 12px;
-  background-color: #ce8ca5;
-  margin-top: 10px;
-  margin-left: 6vw;
-
-
-}
-
-#singin button:hover {
-  background-color: #3c4245;
-  color:#dfcdc3;
-}
-/* formulario de login */
-
-
-#singin a{
-color: #F5E8DA;
-text-align: center;
-display: inline-flex;
-margin-left: 17vw;
-margin-top: 1vh;
-}
 .loginButton,
 .googleButton {
   transition: opacity 0.2s ease;
@@ -317,8 +223,24 @@ margin-top: 1vh;
   transition: opacity 0.2s ease;
 }
 
+.imgContainer {
+  display: flex;
+  justify-content: center;
+  height: 30%;
+  width: 100%;
+}
+
+.imgContainer > img {
+  width: auto;
+  height: 100%;
+}
+
 /* responsive */
 @media (min-width: 900px) {
+  .background {
+    flex-direction: row;
+  }
+
   .container {
     width: 50%;
     padding: 80px 0px;
@@ -326,16 +248,12 @@ margin-top: 1vh;
     height: 100%;
   }
 
-  .home {
-    background-image: none;
-  }
-
   .container > figure > img {
     padding: 0px 100px;
   }
 
   .container > article > h2 {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .container > form {
@@ -381,18 +299,132 @@ margin-top: 1vh;
   }
 
   .imgContainer {
-    display: block;
-    width: 100%;
+    width: 45%;
     height: 100%;
-    padding: 80px 0px;
-    padding-right: clamp(5rem, -3.3333rem + 14.8148vw, 10rem);
+    /* padding: 80px 0px; */
+    /* padding-right: clamp(5rem, -3.3333rem + 14.8148vw, 10rem); */
   }
 
   .imgContainer > img {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
+}
 
+/* register view */
+
+.background2 {
+  display: flex;
+  background-color: #2b192e;
+  background-image: url("img/tvs.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  background-position: bottom;
+}
+
+.registerContent {
+  width: 100%;
+}
+
+#ContainerRegister {
+  height: 70%;
+}
+
+#headerregister img {
+  width: 100%;
+  padding: 10px 50px;
+}
+
+#headerregister h1 {
+  text-align: center;
+  width: 100%;
+  font-size: 4vh;
+  color: #5e376d;
+  font-family: "Manjari";
+}
+
+#headerregister h2 {
+  text-align: center;
+  width: 100%;
+  font-size: 2.5vh;
+  color: #f5e8da;
+  font-family: "Manjari";
+}
+
+.registercontent #contenedor {
+  display: inline-block;
+  padding: 2vw;
+  width: 100%;
+  height: 100%;
+}
+
+#singin {
+  width: 100%;
+  max-width: 320px;
+  min-width: 320px;
+  padding-left: 10vh;
+}
+
+#singin label {
+  display: block;
+  font-family: "Overpass", sans-serif;
+  font-size: 120%;
+  color: #3c4245;
+  margin-top: 15px;
+}
+
+#singin input {
+  font-family: "Overpass", sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 5px 5px 5px 10px;
+  box-sizing: border-box;
+  border: solid;
+  border-color: #7c8082;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+#singin input::placeholder {
+  font-family: "Overpass", sans-serif;
+  color: #e4e4e4;
+}
+
+#singin button {
+  font-family: "Overpass", sans-serif;
+  font-size: 110%;
+  color: #1b262c;
+  width: 80%;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  background-color: #5e376d;
+  margin-top: 10px;
+  margin-left: 6vw;
+}
+
+#singin button:hover {
+  background-color: #3c4245;
+  color: #dfcdc3;
+}
+
+#singin a {
+  color: #f5e8da;
+  text-align: center;
+  display: inline-flex;
+  margin-left: 17vw;
+  margin-top: 1vh;
 }
 
 .registercontent .imgLandinPage {

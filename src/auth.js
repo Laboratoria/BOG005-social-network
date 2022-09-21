@@ -6,14 +6,16 @@ import {
   signInWithPopup,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { app } from "./firebase.js";
+import { saveData } from "./firestore.js";
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-export function registerWithEmail(email, password) {
+export function registerWithEmail(email, password, name) {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      saveData(email, password, name);
       window.location.hash = "";
     })
     .catch((error) => {

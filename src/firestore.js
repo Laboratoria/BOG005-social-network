@@ -7,14 +7,14 @@ import { app } from "./firebase.js";
 
 const db = getFirestore(app);
 
-export async function saveData(email, name, password) {
-  console.log("lkasjdsakljdaslkjd");
+export async function saveData(email, password, name) {
   try {
     const docRef = await addDoc(collection(db, "usuarios"), {
       name: name,
       email: email,
       password: password,
     });
+
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     console.log(e);

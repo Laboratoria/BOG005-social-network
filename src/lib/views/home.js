@@ -3,20 +3,20 @@ import { loginWithEmail, signInWithGoogle } from "../../auth.js";
 
 export default () => {
   const homeSection = document.createElement("div");
-  homeSection.classList.add("home");
+  homeSection.classList.add("background");
 
   const viewHome = `<section class="container">
       <figure>
         <img
           alt="Logotipo de MovieManía"
           class="titleImg"
-          src="img/movie.png"
+          src="img/title.png"
         />
       </figure>
       <article>
         <h2 class="textLandingPage">
-          Conéctate con tus amigos y habla sobre películas y series coreanas a
-          través de K-drama Lovers
+          ¡Comparte entre amigos tus  doramas favoritos!
+
         </h2>
       </article>
       <form id="form">
@@ -36,7 +36,7 @@ export default () => {
       </form>
     </section>
     <figure class="imgContainer">
-        <img src="img/tvs2.jfif" alt="Imagen de televisores" />
+        <img src="img/tvs.png" alt="Imagen de televisores" />
     </figure>
     `;
 

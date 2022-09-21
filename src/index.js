@@ -7,4 +7,3 @@ const COMPONENTS = {
   feed: Feed
 };
 export { COMPONENTS };
-

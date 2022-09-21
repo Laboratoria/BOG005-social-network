@@ -2,37 +2,62 @@ import { registerWithEmail } from "./../../auth.js";
 import { saveData } from "./../../firestore.js";
 export default () => {
   const registerSection = document.createElement("div");
+  registerSection.classList.add("background2");
 
-  registerSection.style.width = "80vw";
-  const viewRegister = `
-
-<main>
-    <section id="contenedor">
-    <article id="headerregister">
-    <img src="/src/img/LOGO.png" alt="">
-    <h1>Registrate</h1>
-    <h2>¡Comparte entre amigos tus <br> doramas favoritos!</h2>
-  </article>
+  const viewRegister = `<main class="registerContent">
+      <section id="ContainerRegister">
+        <article id="headerregister">
+          <img src="/src/img/title.png" alt="" />
+          <h1>Regístrate</h1>
+          <h2>
+            ¡Comparte entre amigos tus <br />
+            doramas favoritos!
+          </h2>
+        </article>
         <section id="singin">
-            <form id="singinform">
-                <label for="name">Nombre</label>
-                <input id="name" type="text" name="name" placeholder="Name" required>
-                <label for="correo">Correo electrónico</label>
-                <input id="correo" type="text" name="name" placeholder="Correo electrónico" required>
-                <label for="usuario">Usuario</label>
-                <input id="usuario" type="email" name="email" placeholder="Usuario" required>
-                <label for="password">Contraseña</label>
-                <input id="password" type="password" placeholder="Contraseña" name="password" required>
-                <button type="submit" title="enviar" name="SingIn">Crear cuenta</button> <br>
-            </form>
-          <a href="#home"> Ya tengo cuenta</a>
-          <figure class="imgLandinPageCont">
-          <section id="background">
-          <img alt="Cinema vector" class="imgLandinPage" src="/src/img/tvs sin fondo (2).png" />
-          </section>
-        </figure>
+          <form id="singinform">
+            <label for="name">Nombre</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+            <label for="correo">Correo electrónico</label>
+            <input
+              id="correo"
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+            />
+            <label for="usuario">País</label>
+            <input
+              id="usuario"
+              type="text"
+              name="usuario"
+              placeholder="País"
+              required
+            />
+            <label for="password">Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Contraseña"
+              name="password"
+              required
+            />
+            <button type="submit" title="enviar" name="SingIn">
+              Crear cuenta
+            </button>
+            <br />
+          </form>
+
+          <a href="#home">Ya tengo cuenta</a>
+          
         </section>
-    </section>
+      </section>
     </main>`;
   registerSection.innerHTML = viewRegister;
 
@@ -43,8 +68,7 @@ export default () => {
     const email = formData.get("email");
     const password = formData.get("password");
     const name = formData.get("name");
-    registerWithEmail(email, password);
-    saveData(email, password, name);
+    registerWithEmail(email, password, name);
   });
 
   return registerSection;
