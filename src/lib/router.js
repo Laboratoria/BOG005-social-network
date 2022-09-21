@@ -3,20 +3,22 @@ const changeRoute = (hash, components) => {
   containerRoot.innerHTML = '';
 
   switch (hash) {
-    case '':{
-      return containerRoot.appendChild(components.home());}
+    case '': {
+      return containerRoot.appendChild(components.home());
+    }
 
-    case '#/register':{
-      return containerRoot.appendChild(components.register());}
+    case '#register': {
+      return containerRoot.appendChild(components.register());
+    }
 
-    case '#/login':{
-      return containerRoot.appendChild(components.login());}
+    case '#wall': {
+      return containerRoot.appendChild(components.wall());
+    }
 
-    default: {
-        return containerRoot.appendChild(components.error404());}
+    // default: {
+    //   return containerRoot.appendChild(components.error404());
+    // }
+  }
+};
 
-      }
-
-    };
-
-      export{changeRoute}
+export { changeRoute };

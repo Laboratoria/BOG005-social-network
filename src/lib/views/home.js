@@ -1,11 +1,8 @@
-export default  () =>{
-    const homeSection = document.createElement('div');
-    homeSection.style.width='80vw';
-    //homeSection.style.display="inline-flex"
+export default () => {
+  const homeSection = document.createElement("div");
+  homeSection.style.width = "80vw";
 
-
-    const viewHome =
-`    <section class="titleContainer">
+  const viewHome = `<section class="titleContainer">
 <h1 class="titleLandinPage">MovieManía</h1>
 
 <h2 class="textLandingPage">
@@ -15,19 +12,18 @@ export default  () =>{
 </section>
 
 <figure class="imgLandinPageCont">
-<img alt="Cinema vector" class="imgLandinPage" src="img/mancha .png" />
+
 <div class="buttonContainer">
   <button class="landingPageButton"><a href="#login">Entrar</a></button>
   <button class="landingPageButton">
     <a href="#register">Registrarse</a>
   </button>
+  <button class="landingPageButton"><a href="#wall">WALL</a></button>
+ 
 </div>
 </figure>`
+;
 
-
-homeSection.innerHTML=viewHome;
-return homeSection;
-
-
-
-}
+  homeSection.innerHTML = viewHome;
+  return homeSection;
+};
