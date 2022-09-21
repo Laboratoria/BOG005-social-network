@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-//import { loginOut } from '../lib/index.js';
+import { loginOut } from '../lib/index.js';
 export const wall = () => {
   const wallContent = document.createElement('section');
   wallContent.setAttribute('id', 'wallContent');
@@ -32,18 +32,17 @@ export const wall = () => {
   buttonprofile.setAttribute('id', 'buttonprofile');
 
    buttonsingout.addEventListener('click', () => {
-    onNavigate('/login');
+  
+    loginOut().then(() => {
+      onNavigate('/');
+    }).catch((error) => {
+     console.log("there are an error: "+ error)
+    });
   }); 
 
 
- /*  loginOut().then(() => {
-    // Sign-out successful.
-  }).catch((error) => {
-    // An error happened.
-  });
-  div.append(title, button);
-  return div;
- */post.append(writer, written);
+
+post.append(writer, written);
   wallContent.append( imgLogomini , buttonprofile, buttonsingout, post);
 
   return wallContent;

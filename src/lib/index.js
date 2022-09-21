@@ -17,7 +17,7 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
 const singUser = (email, password) => signInWithEmailAndPassword(auth, email, password);//////***no testear
 const provider = new GoogleAuthProvider();
 const singUserGoogle = () => signInWithPopup(auth, provider);//////***no testear
-const loginOut =  signOut(auth);
+const loginOut =  () => signOut(auth);
 
 
 // Detectando el estado de autenticación
