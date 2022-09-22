@@ -2,7 +2,7 @@ export default () => {
   const feedSection = document.createElement("div");
   feedSection.classList.add("feed");
 
-  const viewFeed = `<h1> hola, esto es una prueba para ver si funciona el merge </h1>`;
+  const viewFeed = `<h1> hola </h1>`;
 
   feedSection.innerHTML = viewFeed;
   return feedSection;

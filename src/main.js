@@ -11,13 +11,3 @@ const init = () => {
   });
 };
 window.addEventListener("load", init);
-
-// BOTON MENU HAMBURGUESA  -----------  No funciona
-
-// const navToggle = document.querySelector(".nav-toggle");
-// const navMenu = document.querySelector(".nav-menu");
-
-// navToggle.addEventListener("click", () => {
-//   navMenu.classList.toggle(".nav-menu_visible")
-// });
-
