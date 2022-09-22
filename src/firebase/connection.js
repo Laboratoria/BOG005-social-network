@@ -18,17 +18,18 @@ const firebaseConfig = {
 
 // Creando una constante para cada servicio
 initializeApp(firebaseConfig);
-export const auth = getAuth();
-export const createUser = (email, password) => {
-  // console.log(email, password);
-  return createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+const auth = getAuth();
+const createUser = (email, password) => {
+  // console.log(email, password);}
+  createUserWithEmailAndPassword(auth, email, password)
+    .then(() => {
       // console.log(userCredential);
+      // eslint-disable-next-line no-undef
       swal({
-        title: "Genial!",
-        text: "Conseguiste registrarte!",
-        icon: "success",
-        button: "Inicia tu viaje!",
+        title: 'Genial!',
+        text: 'Conseguiste registrarte!',
+        icon: 'success',
+        button: 'Inicia tu viaje!',
       });
     })
     .catch((error) => {
@@ -36,22 +37,21 @@ export const createUser = (email, password) => {
 
       const errorCode = error.code;
       if (errorCode === 'auth/email-already-in-use') {
+        // eslint-disable-next-line no-undef
         swal({
           title: 'Verifica',
           text: 'El usuario ya existe',
           icon: 'error',
         });
-        errorText.textContent = 'El e-mail ingresado ya existe';
-      } 
-      else if (errorCode === 'auth/weak-password') {
-        errorText.textContent = 'Su contraseña debe tener al menos 6 caracteres';
-      } 
-      else if (errorCode === 'auth/invalid-email') {
-        errorText.textContent = 'No es un e-mail válido';
+        // errorText.textContent = 'El e-mail ingresado ya existe';
+      } else if (errorCode === 'auth/weak-password') {
+        // errorText.textContent = 'Su contraseña debe tener al menos 6 caracteres';
+      } else if (errorCode === 'auth/invalid-email') {
+        // errorText.textContent = 'No es un e-mail válido';
       }
     });
 };
-export const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
+const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 // const loginOut = signOut(auth);
 
 // Detectando el estado de autenticación
@@ -62,5 +62,4 @@ onAuthStateChanged(auth, (user) => {
     console.log('No se encuentra el usuario');
   }
 });
-
-// export { createUser, signInUser, auth };
+export { createUser, signInUser, auth };
