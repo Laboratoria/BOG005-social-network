@@ -1,0 +1,96 @@
+/* 
+pagina bienvenida */
+
+*{
+   
+    padding: 0%;
+    margin:0%;
+}
+
+img{
+    width: 80%;
+    height: 80%;
+    margin-top: 40%;
+    padding-left: 10%;
+   
+}
+p{
+    font-size: 85%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 15%;
+    text-align: center;
+}
+#explora{
+    width: 40%;
+    height: 2.5rem;
+    margin-top: 10%;
+    margin-left: 30%; 
+    background-color: #F55353;
+    font-size: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px black;
+
+}
+ 
+
+/* segunda pantalla Registro */
+ #registro{
+    width: 40%;
+    height: 2.5rem;
+    margin-top: 10%;
+    margin-left: 30%; 
+    background-color: #F55353;
+    font-size: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px black;
+
+}
+#correo{
+   width: 80%;
+    height: 2rem;
+    margin-top: 5%;
+    margin-left: 10%;;
+}
+#contraseña{
+    width: 80%;
+    height: 2rem;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+#logo{
+    width: 40%;
+    height: 20%;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+#textlogin{
+   font-size: 85%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10%;
+    text-align: center;  
+}
+
+#enlace{
+    font-size: 85%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 40%;
+    padding-right: 10%;
+    margin-top: 15%;
+    text-align: center;   
+}
+#formulario{
+  font-size: 85%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10%;
+    text-align: center;   
+}

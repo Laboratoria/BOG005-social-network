@@ -1,20 +1,20 @@
-import { bienvenida } from "./contenido/bienvenida.js";
-import { registro } from "./contenido/registro.js";
 
-const root = document.getElementById ('root')
-console.log(bienvenida);
-console.log('registro: ', registro);
+import { bienvenida } from './contenido/bienvenida.js';
+import { registro } from './contenido/registro.js';
+
+const root = document.getElementById('root');
 const routes = {
-    '/':bienvenida(),
-    '/registro':registro(),
+  '/': bienvenida(),
+  '/registro': registro(),
 };
 export const onNavigate = (pathname) => {
-    window.history.pushState (
-        {},
-        pathname,
-        window.location.origin + pathname,
-    );
-    root.appendChild(routes[pathname]);
+  window.history.pushState(
+    {},
+    pathname,
+    window.location.origin + pathname,
+  );
+  root.removeChild(root.firstChild);
+  root.appendChild(routes[pathname]);
 };
 const contenidoRuta = routes[window.location.pathname];
 root.appendChild(contenidoRuta);
