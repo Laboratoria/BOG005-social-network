@@ -1,0 +1,170 @@
+/*Estilos Globales*/
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-image: url("./imagenes/WelcomeBG.jpg");
+    background-repeat: no-repeat;
+    background-size: 120%;
+    font-family: 'Lexend Giga', sans-serif;
+    ;
+}
+
+body img {
+    height: 612px;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    font-size: 12px;
+}
+
+button {
+    margin: 10px;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 5px;
+    width: 118px;
+    background-color: #8B6767;
+    color: #FFFFFF;
+    font-family: 'Lexend Giga', sans-serif;
+    font-size: 12px;
+}
+
+/*Estilos para el header*/
+
+.header {
+    margin: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.title {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 26px;
+    margin-top: 16px;
+}
+
+.paragraph {
+    margin-top: 15px;
+    color: #8B6767;
+    font-weight: 100;
+    font-size: 15px;
+}
+
+.signIn {
+    margin-top: 15px;
+    color: #8B6767;
+    font-weight: 100;
+    font-size: 14px;
+    text-shadow: 2px 1px 14px #000000;
+}
+
+/*Estilos para section1*/
+
+.section1 {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 30px 30px;
+    padding: 10px;
+    align-items: center;
+}
+
+.section1 button {
+    align-items: center;
+}
+
+#emailLogin {
+    margin-top: 10px;
+    width: 100%;
+    padding: 6px 0px;
+    background-color: #D9D9D9;
+    border: none;
+}
+.section1 input::placeholder{
+    margin-left: 10px;
+}
+
+#passwordLogin {
+    margin-top: 10px;
+    width: 100%;
+    padding: 6px 0px;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.google {
+    padding: 5px 14px;
+    background-color: #D9D9D9;
+}
+
+.facebook {
+    margin-top: 10px;
+    padding: 5px 4px;
+    background-color: #D9D9D9;
+}
+
+.facebookImage {
+    background-image: url(/src/imagenes/facebook.png);
+}
+
+/*Estilos para section2*/
+
+.section2 {
+    display: flex;
+    align-content: center;
+    background-color: #ffffff;
+    margin: 0px 29px;
+    padding: 13px 5px;
+    justify-content: space-between;
+    border: solid 1px;
+}
+
+.account {
+    font-size: 12px;
+}
+
+
+/*Estilos de la sección Registrarse */
+
+.signUp {
+    margin-top: 15px;
+    color: #8B6767;
+    font-weight: 100;
+    font-size: 14px;
+    text-shadow: 2px 1px 14px #000000;
+}
+
+#name , #lastName , #password, #confirm-password {
+    margin-top: 10px;
+    width: 100%;
+    padding: 6px 0px;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.name-lastName-container {
+    display: flex;
+    gap: 10px;
+}
+
+.section2-Register{
+    align-content: center;
+    background-color: #ffffff;
+    margin: 0px 29px;
+    padding: 13px 5px;
+    border: solid 1px;
+    text-align: center;
+}
+.section2-Register a {
+    font-size: 14px;
+}
