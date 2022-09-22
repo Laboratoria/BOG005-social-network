@@ -10,24 +10,23 @@
     --titleSize: 1.5rem;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1400px) {
 
     /* vista del register */
-    .container {
+    .container { 
+        padding: auto;
         display: flex;
         position: absolute;
-        padding: auto;
-        width: 100%;
-        height: 100%;
         background-size: cover;
         background-position: center;
-        background-size: cover;
         background-image: url("img/Fondo2.PNG");
+        width: 100%;
+        height: 100vh;
         font-family: var(--fontFamily);
         flex-direction: column;
         text-align: center;
         align-content: center;
-    }
+    }       
 
     .titleR {
         text-align: center;
@@ -43,22 +42,22 @@
     }
 
     .input {
-        padding: 2vh;
+        padding: 3vh;
         position: relative;
-        width: 30vh;
+        width: 40vh;
         height: 5vh;
 
         background: rgba(217, 217, 217, 0.37);
         border: 1px solid #000000;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 15px;
+        border-radius: 10px;
     }
 
     #passwordRegister,
     #emailRegister,
     #inputName,
     #inputLastName {
-        margin-top: 6vh;
+    margin-top: 6vh;
     }
 
     .button {
@@ -70,8 +69,8 @@
         height: 5vh;
 
         background: rgba(241, 108, 164, 0.89);
-        border: 1px solid #53370C;
-        border-radius: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
         font-size: 2.5vh;
     }
 
@@ -114,16 +113,6 @@
 
     }
 
-    .container {
-        display: flex;
-        padding: auto;
-        width: 100%;
-        height: 90vh;
-        background-size: cover;
-        background-position: center center;
-        background-image: url("img/Fondo2.PNG");
-    }
-
     .img-register {
         align-content: center;
         display: flex;
@@ -131,6 +120,70 @@
         justify-content: center;
         flex-direction: column;
     }
+}
 
+/* vistas del landing */
+.img-login {
+    display: block;
+    margin: 0px auto;
+    position: relative;
+    text-align: center;
+    width: 180px;
+    height: 200px;
+}
+
+.titleL {
+    text-align: center;
+    /* margin-top: 2vh; */
+    font-size: var(--titleSize);
+}
+
+.buttonR {
+    display: block;
+    margin: 0px auto;
+    padding: 3vh;
+    text-align: center;
+
+    position: relative;
+    width: 40vh;
+    height: 5vh;
+    margin-top: 3.5vh;
+
+    background: rgba(235, 235, 235, 0.37);
+    border: 2px solid #bdb9b9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+#google {
+    font-size: 2.3vh;
+    text-align: center;
+    line-height: 0.5vh;
+}
+
+#e-mail {
+    font-size: 2.3vh;
+    text-align: center;
+    line-height: 0.5vh;
+}
+
+.question-l {
+    margin-top: 10vh;
+    justify-content: center;
+    font-size: 2.3vh;
+}
+
+.button {
+    display: block;
+    margin: 0px auto;
+    margin-top: 1.5vh;
+    position: relative;
+    width: 30vh;
+    height: 6.5vh;
+
+    background: rgba(241, 108, 164, 0.89);
+    border: 2px solid #a7a0a0;
+    border-radius: 10px;
+    font-size: 2.3vh;
 
 }
