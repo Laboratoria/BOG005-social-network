@@ -1,5 +1,19 @@
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
 import { onNavigate } from '../main.js';
 
+const firebaseConfig = {
+  apiKey: 'AIzaSyAHVluY138pnk8PKOw2nuTGMcEEkV4dpLY',
+  authDomain: 'social-network-d51cd.firebaseapp.com',
+  projectId: 'social-network-d51cd',
+  storageBucket: 'social-network-d51cd.appspot.com',
+  messagingSenderId: '447408493171',
+  appId: '1:447408493171:web:221c363b010259179b9006',
+  measurementId: 'G-19TVG0TJQD',
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 export const Welcome = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
   const div = document.createElement('div');
@@ -56,7 +70,20 @@ export const Welcome = () => {
   section2.append(account, linkRegister);
 
   buttonLogin.addEventListener('click', () => {
-    onNavigate('/wall');
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // eslint-disable-next-line no-unused-vars
+        const uid = user.uid;
+        onNavigate('/wall');
+        console.log('loggeado');
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        console.log('no loggeado');
+      }
+    });
   });
   linkRegister.addEventListener('click', () => {
     onNavigate('/register');
