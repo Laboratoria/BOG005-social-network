@@ -31,6 +31,7 @@ export const register = () => {
   // botones de registro y regresar
   const button = document.createElement('button');
   button.setAttribute('class', 'btn registration'); ///////////////***PREGUNTAR POR LA DIRERENCIA CON .classList.add(
+  button.setAttribute('id', 'btnRegistration');
   const buttonBack = document.createElement('button');
   buttonBack.classList.add('btn');
   buttonBack.setAttribute('class', 'buttonBack');
@@ -98,3 +99,4 @@ export const register = () => {
 
   return containRegister;
 };
+
