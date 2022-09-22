@@ -1,4 +1,19 @@
+import { getAuth, createUserWithEmailAndPassword } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
 import { onNavigate } from '../main.js';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAHVluY138pnk8PKOw2nuTGMcEEkV4dpLY',
+  authDomain: 'social-network-d51cd.firebaseapp.com',
+  projectId: 'social-network-d51cd',
+  storageBucket: 'social-network-d51cd.appspot.com',
+  messagingSenderId: '447408493171',
+  appId: '1:447408493171:web:221c363b010259179b9006',
+  measurementId: 'G-19TVG0TJQD',
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 export const Register = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
@@ -40,16 +55,19 @@ export const Register = () => {
   inputEmail.setAttribute('requiered', '');
   inputEmail.setAttribute('placeholder', 'Correo electrónico');
   inputEmail.setAttribute('id', 'emailLogin');
+  inputEmail.setAttribute('type', 'email');
 
   const inputPassword = document.createElement('input');
   inputPassword.setAttribute('requiered', '');
   inputPassword.setAttribute('placeholder', 'Contraseña');
   inputPassword.setAttribute('id', 'password');
+  inputPassword.setAttribute('type', 'password');
 
   const inputConfirmPassword = document.createElement('input');
   inputConfirmPassword.setAttribute('requiered', '');
   inputConfirmPassword.setAttribute('placeholder', 'Confirma tu Contraseña');
   inputConfirmPassword.setAttribute('id', 'confirm-password');
+  inputConfirmPassword.setAttribute('type', 'password');
 
   nameAndLastNameContainer.append(inputName, inputLastName);
 
@@ -88,8 +106,30 @@ export const Register = () => {
   section2.append(account, linkRegister);
 
   buttonSignUp.addEventListener('click', () => {
-    onNavigate('/wall');
+    const confirmedPassword = document.getElementById('confirm-password');
+    const createUsers = (email, password) => {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          onNavigate('/wall');
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          if (password !== confirmedPassword) {
+            alert(errorMessage);
+          } return errorMessage;
+          // ..
+        });
+    };
+
+    const email = document.getElementById('emailLogin').value;
+    const password = document.getElementById('password').value;
+    createUsers(email, password);
   });
+
   linkRegister.addEventListener('click', () => {
     onNavigate('/');
   });
