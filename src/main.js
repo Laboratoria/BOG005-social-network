@@ -6,8 +6,8 @@ import { wall } from './components/wall.js';
 const root = document.getElementById('root');
 
 const routes = {
-  '/': welcome, // clave y valor
-  '/login': login,
+  '/': login, // clave y valor
+  /* '/login': login, */
   '/register': register,
   '/wall': wall,
 };

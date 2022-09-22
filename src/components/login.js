@@ -35,11 +35,11 @@ export const login = () => {
   buttonBack.classList.add('btn');
   buttonBack.setAttribute('class', 'buttonBack');
   button.textContent = 'Ingresar';
-  buttonBack.textContent = 'Regresar';
+  buttonBack.textContent = 'Registrate';
 
   buttonBack.addEventListener('click', (e) => { // evento para regresar a inicio
     e.preventDefault();///// Evita que se recarge la pagina según el caso ////**PREGUNTAR */
-    onNavigate('/');
+    onNavigate('/register');
   });
 
   const errorText = document.createElement('p'); // imprimir errores en pantalla
