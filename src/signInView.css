@@ -41,6 +41,7 @@ img {
     text-align: center;
     color: #013b3b;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .btnSignIn {
@@ -67,7 +68,6 @@ img {
     align-items: center;
     justify-content: center;
     padding: 3%;
-    /* border: solid 2px black; */
 }
 
 .linkSign,
@@ -79,6 +79,15 @@ img {
 .optionSignIn hr {
     width: 30%;
     border: solid 0.3px #007878;
+}
+
+.btnSignIn:hover, .btnGoogle:hover {
+    background: #65C7C7;
+    color: #FBF6F0;
+}
+
+.btnSignIn:active, .btnGoogle:active {
+    border: 1px solid #FBF6F0;
 }
 
 @media all and (min-width:768px) {

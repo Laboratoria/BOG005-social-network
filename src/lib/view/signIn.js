@@ -1,5 +1,7 @@
-`
-  <main>
+export function signIn(){
+  document.getElementById("root").innerHTML =
+// export const signIn=
+`  
     <picture>
       <img id="logo" src="./images/logo2.png" alt="logo">
     </picture>
@@ -20,4 +22,5 @@
       </form>
       <a href="#" class="linkSign">No tienes una cuenta? Registrate</a>
     </div>
-  </main> `
+  `
+}
