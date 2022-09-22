@@ -30,25 +30,6 @@ body {
   height: 100vh;
 }
 
-/* REGISTER */
-
-.registercontent #headerregister {
-  padding-left: 8vh;
-}
-
-#headerregister img {
-  width: 37vh;
-  margin-top: 6vh;
-  /* margin-left: 9vw; */
-}
-#headerregister h1 {
-  text-align: center;
-  width: 37vh;
-  font-size: 4vh;
-  color: #cd8ba4;
-  /* margin-left: 10vw; */
-}
-
 a {
   cursor: pointer;
 }
@@ -188,7 +169,7 @@ a {
 
 .registerButton {
   font-family: "Manjari";
-  color: #5e376d;
+  color: #fff;
   display: flex;
   justify-content: center;
 }
@@ -203,7 +184,7 @@ a {
 
 .registerButton > h4::after {
   content: "";
-  background-color: #5e376d;
+  background-color: #fff;
   position: absolute;
   top: calc(100% + 4px);
   left: 0px;
@@ -228,11 +209,21 @@ a {
   justify-content: center;
   height: 30%;
   width: 100%;
+  position: relative;
 }
 
 .imgContainer > img {
-  width: auto;
-  height: 100%;
+  width: 320px;
+  height: 200px;
+  position: absolute;
+  bottom: 0px;
+}
+
+@media (min-width: 600px) {
+  .imgContainer > img {
+    width: 700px;
+    height: 420px;
+  }
 }
 
 /* responsive */
@@ -299,15 +290,16 @@ a {
   }
 
   .imgContainer {
-    width: 45%;
+    display: flex;
+    align-items: center;
+    width: 40%;
     height: 100%;
-    /* padding: 80px 0px; */
-    /* padding-right: clamp(5rem, -3.3333rem + 14.8148vw, 10rem); */
   }
 
   .imgContainer > img {
     width: 100%;
     height: auto;
+    position: relative;
   }
 }
 

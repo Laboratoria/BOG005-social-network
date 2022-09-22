@@ -1,4 +1,3 @@
-
 import { loginWithEmail, signInWithGoogle } from "../../auth.js";
 
 export default () => {
@@ -20,7 +19,13 @@ export default () => {
         </h2>
       </article>
       <form id="form">
-        <a class="googleButton">
+       
+
+        <input type="email" name="email" placeholder="Correo" class="inputMail" required/>
+        <input type="password" name="password" placeholder="Contraseña" class="inputPassword" required/>
+        
+        <button class="loginButton"><h4>Ingresar</h4></button>
+         <a class="googleButton">
           <img
             alt="Logo de google gmail"
             class="googleImg"
@@ -28,10 +33,6 @@ export default () => {
           />
           <h4 class="googleText">Ingresa con Google</h4>
         </a>
-
-        <input type="email" name="email" placeholder="Usuario/Email" class="inputMail" required/>
-        <input type="password" name="password" placeholder="Contraseña" class="inputPassword" required/>
-        <button class="loginButton"><h4>Ingresar</h4></button>
         <a href="#register" class="registerButton"><h4>Regístrate</h4></a>
       </form>
     </section>
