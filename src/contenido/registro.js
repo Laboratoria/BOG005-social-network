@@ -1,5 +1,5 @@
 // import { onNavigate } from "../main.js";
-
+import { crearUsuario} from "../lib/firebase.js";
 export const registro = () => {
     //Se crean las etiquetas
     const div = document.createElement('div');
@@ -11,10 +11,12 @@ export const registro = () => {
     const correoUsuario = document.createElement('input');
     const contraseñaUsuario = document.createElement('input');
     const buttonRegistro = document.createElement('button');
-    const enlaceGoogle = document.createElement('input type="image" ');
+    buttonRegistro.addEventListener('click',()=>{
+        crearUsuario(contraseñaUsuario.value,contraseñaUsuario.value)
+    })
     
     //Se muestran en pantalla 
-    textoLogin.textContent = "¿Ya tienes cuenta en Explora Colombia?"
+    textoLogin.textContent = "¿Ya tienes cuenta en Explora Colombia?";
     enlaceInicio.appendChild(login);
     enlaceInicio.title="Iniciar Sesión";
     enlaceInicio.href="https://developer.mozilla.org/es/docs/Web/API/Node/appendChild";
@@ -24,9 +26,9 @@ export const registro = () => {
     contraseñaUsuario.setAttribute ('placeholder',"Contraseña Usuario") ;
     buttonRegistro.textContent = "Regístrate";
     logo.src = '/imagenes/Recurso 1.png';
-    enlaceGoogle.img = '/imagenes/EnlaceG.png';
+    
     //Agregamos elementos a nuestro div
-    div.append(logo,textoLogin,enlaceInicio,formulario,correoUsuario,contraseñaUsuario,buttonRegistro,enlaceGoogle);
+    div.append(logo,textoLogin,enlaceInicio,formulario,correoUsuario,contraseñaUsuario,buttonRegistro);
     return div;
 
 };
