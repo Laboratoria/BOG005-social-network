@@ -6,22 +6,21 @@ export const welcome = () => {
 
   const title = document.createElement('h1');
   title.className = 'titleWelcome';
-  title.textContent = 'Enfiéstate todo el Año'
+  title.textContent = 'Enfiéstate todo el Año';
 
-  const mensage = document.createElement('h2')
+  const mensage = document.createElement('h2');
   mensage.className = 'description';
-  mensage.textContent = 'Disfruta de las diferentes festividades alrededor del mundo.'
+  mensage.textContent = 'Disfruta de las diferentes festividades alrededor del mundo.';
 
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
-  buttonStart.textContent = 'Inicia tu viaje'
-
+  buttonStart.textContent = 'Inicia tu viaje';
 
   buttonStart.addEventListener('click', () => {
     onNavigate('/landing');
-  })
+  });
 
-  sectionWelcome.append(title, mensage, buttonStart,)
+  sectionWelcome.append(title, mensage, buttonStart);
 
   return sectionWelcome;
 };
