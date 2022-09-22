@@ -28,8 +28,10 @@ const component = routes[window.location.pathname];
 // onpopstate, se dispara realizando una acción en el navegador como volver
 window.onpopstate = () => {
   root.removeChild(root.firstChild);// borrando el primer nodo
-  root.append(component());// insertando el nuevo nodo
+  //root.append(component());// insertando el nuevo nodo  *** ERROR
+  root.append(routes[window.location.pathname]());// insertando el nuevo nodo  
+
 };
 
-root.appendChild(component());
-console.log(component);
+root.appendChild(routes[window.location.pathname]());
+console.log(routes[window.location.pathname]());// PREGUNTAR POR QUE NO SE ACTUALIZA 
