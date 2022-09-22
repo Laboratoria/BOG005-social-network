@@ -1,3 +1,6 @@
+
+ import {  googleSignIn,saveUserInfo,loginUser } from '../lib/firebase/firebaseService.js';
+
 export const login = () => {
 	const sectionLogin = document.createElement('section');
 	sectionLogin.className = 'sectionLogin';
@@ -7,16 +10,32 @@ export const login = () => {
 			<img class="imgLogo" src="IMG/Explore-removebg-preview.png">
 			<figcaption>Leyenda de imágen del contenido de la pagina</figcaption>
 		</figure>
-		<form class="containerDatos">
-			<input type="text" name="" id="" class="camapoTexto" placeholder="Correo">
-			<input type="password" pattern=".{6,}" name="" id="" class="camapoTexto" placeholder="Contraseña">
-			<button class="buttonIniciar"><a href="#">Iniciar sesion</a></button>
-			<p class="inicioGogle"><a href="#">Iniciar con Gogle</a></p>
-			<p class="registrarse">¿No tienes cuenta?<a href="#register">Registrate</a></p>
+		<form class="formDatos">
+			<input type="text" name="" id="emailLogin" class="camapoTexto" placeholder="Correo">
+			<input type="password" pattern=".{6,}" name="" id="paswordLogin" class="camapoTexto" placeholder="Contraseña">
+			<p id="passwordhidden">las credenciales no coinciden</p>
+			<button class="buttonIniciar" type="submit">Iniciar sesion</button>
 		</form>
-	</div>
-   </section>`;
+		<button class="button googleLogin" "type="submit">Google</button>
+		<p class="registrarse">¿No tienes cuenta?<a href="#register">Registrate</a></p>
+
+
+	</div>;      
   
+   </section>`;
+
+   const googleButt = sectionLogin.querySelector('.googleLogin');
+   googleButt.addEventListener('click', () => {
+	 googleSignIn()
+	   .then((result) => {
+		 const user = result.user;
+		  window.location.hash = '#wall';
+		  saveUserInfo(user.email, user.email, user.uid);
+	   });
+   });
 	  return sectionLogin;
   
 	  }
+
+            
+   

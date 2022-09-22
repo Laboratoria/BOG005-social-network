@@ -4,18 +4,17 @@ import { login } from './components/login.js';
 import { wall } from './components/wall.js';
 
 
-
-const template = {
+const router = {
   '': welcome(),
   '#register': register(),
   '#login': login(),
-  '#estesadys': wall(),
+  '#wall': wall(),
 };
 
 export const showSection = () => {
   const root = document.getElementById('root');
   const hash = window.location.hash;
-  root.replaceChildren(template[hash]);
+  root.replaceChildren(router[hash]);
 };
 
 window.addEventListener('load', showSection);
