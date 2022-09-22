@@ -4,8 +4,8 @@ const root = document.getElementById ('root')
 console.log(bienvenida);
 console.log('registro: ', registro);
 const routes = {
-    '/':bienvenida(),
-    '/registro':registro(),
+  '/': bienvenida(),
+  '/registro': registro(),
 };
 export const onNavigate = (pathname) => {
     window.history.pushState (
