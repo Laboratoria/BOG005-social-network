@@ -1,6 +1,4 @@
-// export function signUp(){
-//     document.getElementById("root").innerHTML =
-    export const signUP= `
+export const signUp = `
     <picture>
       <img id="logo" src="./images/logo2.png" alt="logo">
     </picture>
@@ -13,5 +11,5 @@
         <button class="btnSignIn btnSignUp" id="btnSignUp" type="submit">Registrarse</button>
         
       </form>
-      <a href="#" class="linkSign">Ya tienes una cuenta? Inicia Sesión</a>
-    </div>`
+      <a href="/" class="linkSign" onclick="onNavigate('/signIn')">Ya tienes una cuenta? Inicia Sesión</a>
+    </div>`;
