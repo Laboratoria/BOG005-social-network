@@ -8,13 +8,18 @@ const eventButtonContinue = () => {
     const buttonContinue = document.getElementById('submitContinueButton');
     if (buttonContinue) {
       buttonContinue.addEventListener('click', () => {
-
         const dataForm = getFormData();
         const result = testCreate(auth, dataForm.email, dataForm.password);
         console.log(result);
         result.then((userCredential) => {
           if(userCredential) {
+          
             window.location.href = '#wall'
+            console.log('email ->', userCredential.email)
+            // let correo = userCredential.email;
+            // wall(correo)
+         
+           
           } 
         }).catch((error) => {
           console.error(error.message, 'no ok');

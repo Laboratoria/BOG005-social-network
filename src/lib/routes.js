@@ -3,9 +3,13 @@ import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
 import header from './templates/header.js';
 import getHash from './utils/getHash.js';
-import wall from './page/wall.js';
+import wall, { buttonP } from './page/wall.js';
 import { removeHashes, sendRoute } from './utils/clearHash.js';
 import eventButtonContinue from './utils/eventButtonContinue.js';
+import eventButtonGoogle from './utils/eventButtonGoogle.js';
+import { getPost } from '../firebase/firestoreFirebase.js';
+
+
 
 const containerPage = document.getElementById('contentPageId');
 
@@ -24,6 +28,9 @@ const router = () => {
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
   eventButtonContinue();
+  eventButtonGoogle();
+  buttonP();
+  getPost();
 };
 
 const handlerHistorial = () => {

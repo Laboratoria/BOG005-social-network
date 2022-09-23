@@ -38,7 +38,7 @@ const signIn = () => {
       </article>
 
   <p class="o">- O -</p>
-  <button type="button" class="googleSignIn">
+  <button type="button" class="googleSignIn" id="googleButton">
       <img src="img/logo_google.svg" alt="GoogleIcon" class="GoogleIcon">
       <span>Registrate con Google</span>
   </button>
