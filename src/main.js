@@ -31,9 +31,3 @@ rootDiv.innerHTML = routes[window.location.pathname];
 window.onpopstate = () => {
   rootDiv.innerHTML = routes[window.location.pathname];
 };
-
-// const btnSignUp = document.getElementById('btnSignUp');
-// btnSignUp.addEventListener('click', onNavigate('routes[window.location.pathname]'));
-
-// const btnSignIn = document.getElementById('btnSignIn');
-// btnSignIn.addEventListener('click', onNavigate('/principalPage'));

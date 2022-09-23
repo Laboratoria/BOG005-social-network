@@ -42,19 +42,20 @@ img {
     color: #013b3b;
     font-size: 1rem;
     cursor: pointer;
+    width: 50%;
 }
 
 .btnSignIn {
     margin-top: 15px;
-    width: 45%;
 }
 
 .btnGoogle {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 70%;
     margin-bottom: 5%;
+    background-color: transparent;
+    border: solid 2px #65C7C7;
 }
 
 .btnGoogle img {
@@ -136,5 +137,6 @@ img {
     .btnSignIn,
     .btnGoogle {
         font-size: 1.3rem;
+        width: 55%;
     }
 }
