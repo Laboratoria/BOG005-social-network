@@ -12,11 +12,13 @@ const routes = {
   '/login': login,
 };
 // funcion para trabajar la navegacion de la app anexando un registro al historial con .pushState
-export const onNavigate = (pathname) => {
+export const onNavigate = (pathname, objRoutes = routes) => {
+  const divRoot2 = document.getElementById('root');
   window.history.pushState({}, pathname, window.location.origin + pathname);
   //  remueve el primer nodo (evita que se superpongan las vistas)
-  divRoot.removeChild(divRoot.firstChild);
-  divRoot.appendChild(routes[pathname]());
+  // divRoot2.removeChild(divRoot.firstChild);
+  // divRoot2.appendChild(objRoutes[pathname]());
+  divRoot2.replaceChildren(objRoutes[pathname]());
 };
 
 const component = routes[window.location.pathname];
@@ -27,5 +29,7 @@ window.onpopstate = () => {
   divRoot.removeChild(divRoot.firstChild);
   divRoot.append(component());
 };
-
-divRoot.appendChild(component());
+window.addEventListener('load', () => {
+  onNavigate(window.location.pathname);
+});
+// divRoot.appendChild(component());
