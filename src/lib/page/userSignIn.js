@@ -11,7 +11,7 @@ const userSignIn = () => {
     <p>- O -</p>
     <a href="#">Registrate con Google</a>
     
-    <button type="submit" id="submitContinue">Continuar</button>
+    <button type="button" id="submitContinue">Continuar</button>
 
     <a href="#signIn" id="goToRegisterId" class="continue userRegister">¿No tienes una cuenta? Registrate</a>
   </form>`;
