@@ -14,7 +14,10 @@
     --w-red-light: #F56F6F;
     --w-red-intense: #EA4335;
     --letters: 'Noto Sans', sans-serif;
+    --Letters-logo-horizontal: 'Contrail One', cursive;
     --img-welcome: url("img/imagenFondo.png");
+    --img-wall: url("img/fondoMuroCelular.png");
+    
 
 
     /* Peso de Letras 
@@ -42,6 +45,13 @@ html {
     height: 100vh;
     background-color: var(--w-color-blue-medium);
 }
+
+.body-wall{
+    width: 100vw;
+    height: 100vh;
+    background-image: var(--img-wall);
+}
+
 /*Inicio Welcome*/
 .contentPage{
     width: 100%;
@@ -78,7 +88,7 @@ html {
 }
 
 .title {
-    font-family: 'Contrail One', cursive;
+    font-family: var(--Letters-logo-horizontal);
     color: var(--main-color-white);
     font-weight: 400;
     font-size: 1.5625rem;
@@ -178,7 +188,7 @@ html {
 
 .textLogo{
     color: var(--main-color-white);
-    font-family: 'Contrail One', cursive;
+    font-family: var(--Letters-logo-horizontal);
     font-size: 2.4rem;
     display: flex;
     align-items: center;
@@ -234,7 +244,6 @@ html {
     opacity: 0.2;
 }
 
-
 .o {
     color: var(--main-color-white);
     height: 5vh;
@@ -243,7 +252,6 @@ html {
 
 .GoogleIcon {
     width: 1.2rem;
-
 }
 
 .googleSignIn {
@@ -304,6 +312,110 @@ html {
   .errorMessage {
     visibility: hidden;
   }
+/*Fin página de registro*/
+
+  /*Estilos para el muro*/
+#bodyWallOffPost{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-color: none;
+
+}
+
+.fondoMuroCelular{
+    opacity: 0.9;
+}
+
+.logoWall{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    
+}
+
+.logoHorizontalWall{
+    width: 7.0625rem;
+    height: 7.0625rem;
+    
+}
+
+.textLogoWall{
+    color: var(--main-color-white);
+    font-family: var(--Letters-logo-horizontal);
+    font-size: 1.5rem;
+    transform: translateY(-72px);
+    margin-left: 6.25rem;
+  }
+
+.titleWall{
+    color: var(--main-color-white);
+    font-family: var(--Letters-logo-horizontal);
+    font-size: 1.1rem;
+    
+}
+
+.subtitulo{
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    font-size: 1rem;
+}
+
+#postsContainerId{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    border-color: var(--b-color-blue-dark);
+    border-radius: 0.5625rem;
+    border: solid 0.1025rem;
+}
+
+#headerPost{
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.fa-circle-user:before{
+    content: "\f2bd";
+    font-size: 2.3rem;
+    color: var(--b-color-blue-dark);
+}
+
+
+footer{
+    display: flex;
+    background-color: var(--b-color-blue-dark);
+    width: 100vw;
+    height: 10vh;
+    position:absolute; 
+    bottom:0; 
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.btnPost{
+    color: var(--w-color-blue-light-buttons);
+    font-size: 30px;
+    background-color: var(--b-color-blue-dark);
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#postButtonId{
+    background-color: var(--b-color-blue-dark);
+    border: none;
+}
+
+
+
+#menuBottom p{
+    color: var(--w-color-blue-light-buttons);
+    text-align: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
 /* Fin Mobile */
 
 /* Inicio tablet */
