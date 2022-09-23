@@ -31,6 +31,7 @@ const router = () => {
   eventButtonGoogle();
   buttonP();
   getPost();
+
 };
 
 const handlerHistorial = () => {

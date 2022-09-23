@@ -1,5 +1,4 @@
 import { router, handlerHistorial } from './lib/routes.js';
-import { getPost } from './firebase/firestoreFirebase.js'
 // import { app, analytics } from './firebase/configFirabese.js';
 // import { auth } from './firebase/authenticationFirebase.js';
 // import { getFirestore } from './firebase/firestoreFirebase.js';

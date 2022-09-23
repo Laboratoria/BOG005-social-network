@@ -1,4 +1,4 @@
-import {provider, signGoogle, dataUser } from '../../firebase/authenticationGoogle.js';
+import { signGoogle } from '../../firebase/authenticationGoogle.js';
 
 const eventButtonGoogle = () => {
     if (window.location.pathname === '/signIn') {

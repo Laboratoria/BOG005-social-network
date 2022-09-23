@@ -24,12 +24,16 @@ const wall = () => {
 };
 
 export const buttonP = () => {
+  const postForm = document.getElementById('postForm')
   const buttonP = document.getElementById('PostContentButton')
   if(buttonP){
     buttonP.addEventListener('click', ()=>{
     const contenido = document.getElementById('postContent').value;
     // console.log(contenido)
-    savePost(contenido);})}}
+    savePost(contenido);
+    postForm.reset();
+    // onGetPost();
+  })}}
 //     const allPosts = document.getElementById('allPosts');
 //    async () => {
 //     let html = ''

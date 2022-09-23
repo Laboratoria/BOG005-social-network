@@ -20,21 +20,49 @@ const getPost =  () => {
     if(contentedor){
   console.log('res: ', res);
   res.forEach((doc) => {
-    
+    // console.log('DOC',doc)
     contentedor.innerHTML +=`<p> ${doc.data().description}</p>`;
     // doc.data() is never undefined for query doc snapshots
     // console.log(doc.id, " =>***xyz ", doc.data());
     // console.log(doc.data().description);
-  });
+  })}
 }
+ })
 }
-})
 
-}
+// window.addEventListener('DOMContentLoaded', () => {
+//   getDocs(collection(db, "Posts")).then((res)=> {
+//   const onGetPost = (res)=> { onSnapshot(collection(db, 'Posts'), callback)
+// console.log('ongetpost',onGetPost)
+// const contentedor = document.getElementById('allPosts')
+//  contentedor = ''
+// if(contentedor){
+//   contentedor.innerHTML +=`<p> ${doc.data().description}</p>`;
+// }
+//  }
+// })})
+
+const onGetPost = ()=> {
+   onSnapshot(collection(db, 'Posts'), (querySanpshot)=>{
+    const contentedor = document.getElementById('allPosts')
+    if(contentedor){
+    querySanpshot.forEach((item)=>{
+      contentedor.innerHTML +=`<p> ${item.data().description}</p>`;
+    // console.log('item con data y description',item.data().description)
+    })
+  }
+    // console.log('QUERY',querySanpshot)
+  })
+  //  console.log(querySanpshot)
+  
+  };
+
+onGetPost();
+
 // db.collection("Posts").get().then((querySnapshot) => {
 //   querySnapshot.forEach((doc) => {
 //       console.log(`${doc.id} => ${doc.data()}`);
 //   });
 // });
 // getPost();
-export {  getFirestore, savePost, getPost  }
+export {getFirestore, savePost, getPost }
