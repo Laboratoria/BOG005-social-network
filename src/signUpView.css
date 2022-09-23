@@ -1,0 +1,13 @@
+.formTittle{
+    font-size: 1.3rem;
+    margin-bottom: 2%;
+}
+.btnSignUp{
+    margin-bottom: 5%;
+}
+
+@media all and (min-width:768px){
+    .formTittle{
+        font-size: 2rem;
+    }
+}
