@@ -2,8 +2,8 @@
 
 const userSignIn = () => {
   const viewUserSignIn = `<form>
-    <label for="userSi">Usuario</label>
-    <input type="text" id="userSi" placeholder="Escribe tu usuario">
+    <label for="userSi">Correo</label>
+    <input type="email" id="userSi" placeholder="Escribe tu usuario">
 
     <label for="passwordSi">Contraseña</label>
     <input type="password" id="passwordSi" placeholder="Escribe tu contraseña">

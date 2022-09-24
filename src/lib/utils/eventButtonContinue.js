@@ -13,7 +13,7 @@ const eventButtonContinue = () => {
             window.location.href = '#wall';
             localStorage.setItem('Username', `${dataForm.name}`);
             localStorage.setItem('User', `${dataForm.user}`);
-            return userCredential;
+            //return userCredential;
           }
         })
           .catch((error) => {

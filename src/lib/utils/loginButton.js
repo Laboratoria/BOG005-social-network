@@ -4,15 +4,20 @@ const eventLoginButton = () => {
   if (window.location.pathname === '/userSignIn') {
     const btnLogin = document.querySelector('#submitContinue');
     if (btnLogin) {
-      const email = document.querySelector('#userSi');
-      const password = document.querySelector('#passwordSi');
-      const result = loginUser(auth, email, password);
-      result.then((userCredential) => {
-          console.log(userCredential);
+      btnLogin.addEventListener('click', () => {
+        const email = document.querySelector('#userSi');
+        const password = document.querySelector('#passwordSi');
+        const result = loginUser(auth, email, password);
+        console.log(result)
+        console.log('Botón login');
       })
-      .catch((error) => {
-          console.log(error);
-        });
+     
+      // result.then((userCredential) => {
+      //     console.log(userCredential);
+      // })
+      // .catch((error) => {
+      //     console.log(error);
+      //   });
     }
   }
 };
