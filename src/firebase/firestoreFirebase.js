@@ -16,12 +16,26 @@ const savePost = ( description ) => {
 const getPost =  () => {
  getDocs(collection(db, "Posts")).then((res)=> {
   if( window.location.pathname === '/wall'){
-    const contentedor = document.getElementById('allPosts')
+    const contentedor = document.getElementById('postsContainerId')
     if(contentedor){
   console.log('res: ', res);
   res.forEach((doc) => {
     // console.log('DOC',doc)
-    contentedor.innerHTML +=`<p> ${doc.data().description}</p>`;
+    contentedor.innerHTML +=`
+    <section id="post postForm" class="postsCards"> 
+    <header id="headerPost">
+      <i class="fa-solid fa-circle-user" class="userIcon"></i>
+      <p>Usuario</p>
+      <p>Ubicación</p>
+    </header>
+    <article id="post">
+      <p class="contentPost" id="allPosts">${doc.data().description}</p>
+    </article>
+    <div id="like">
+      <i class="fa-solid fa-heart"></i>
+      <i class="fa-solid fa-comment-dots"></i>
+    </div>
+    </section>`;
     // doc.data() is never undefined for query doc snapshots
     // console.log(doc.id, " =>***xyz ", doc.data());
     // console.log(doc.data().description);
@@ -44,10 +58,24 @@ const getPost =  () => {
 
 const onGetPost = ()=> {
    onSnapshot(collection(db, 'Posts'), (querySanpshot)=>{
-    const contentedor = document.getElementById('allPosts')
+    const contentedor = document.getElementById('postsContainerId')
     if(contentedor){
     querySanpshot.forEach((item)=>{
-      contentedor.innerHTML +=`<p> ${item.data().description}</p>`;
+      contentedor.innerHTML +=`
+      <section id="post postForm" class="postsCards"> 
+      <header id="headerPost">
+        <i class="fa-solid fa-circle-user" class="userIcon"></i>
+        <p>Usuario</p>
+        <p>Ubicación</p>
+      </header>
+      <article id="post">
+        <p class="contentPost" id="allPosts">${item.data().description}</p>
+      </article>
+      <div id="like">
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-solid fa-comment-dots"></i>
+      </div>
+      </section>`;
     // console.log('item con data y description',item.data().description)
     })
   }

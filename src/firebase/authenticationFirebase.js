@@ -7,9 +7,9 @@ const testCreate = (auth, email, password) => {
 return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       //Signed in
-      const user = userCredential.user;
-      return user
       showSuccessfulResponse();
+      const user = userCredential.user;
+      return user;
     })
     .catch((error) => {
       const errorCode = error.code;

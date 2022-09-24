@@ -8,8 +8,7 @@ import { removeHashes, sendRoute } from './utils/clearHash.js';
 import eventButtonContinue from './utils/eventButtonContinue.js';
 import eventButtonGoogle from './utils/eventButtonGoogle.js';
 import { getPost } from '../firebase/firestoreFirebase.js';
-
-
+//import { changeConditionWall } from './utils/imgWall.js';
 
 const containerPage = document.getElementById('contentPageId');
 
@@ -19,6 +18,7 @@ const routes = {
   '/userSignIn': userSignIn,
   '/wall': wall,
 };
+
 
 const router = () => {
   containerPage.innerHTML = header();
@@ -31,7 +31,7 @@ const router = () => {
   eventButtonGoogle();
   buttonP();
   getPost();
-
+  //changeConditionWall();
 };
 
 const handlerHistorial = () => {
@@ -39,5 +39,7 @@ const handlerHistorial = () => {
   const render = routes[pathName] ? routes[pathName] : 'ERROR404';
   containerPage.innerHTML = render();
 };
+
+
 
 export { router, handlerHistorial };
