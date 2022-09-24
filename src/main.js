@@ -19,7 +19,7 @@ const routes = {
 const root = document.getElementById('content');
 root.innerHTML = routes[window.location.pathname];
 console.log(window.location);
-/*
+
 export const onNavigate = (pathname) => {
   window.history.pushState(
     {},
@@ -27,7 +27,7 @@ export const onNavigate = (pathname) => {
     window.location.origin + pathname,
   );
 };
-
+/*
 const component = routes[window.location.pathname];
 
 window.onpopstate = () => {
@@ -40,7 +40,7 @@ root.appendChild(component());
 /* BOTÓN ACCEDER A REGISTER*/
 let activeLogin = document.getElementById("logginButton");
 activeLogin.addEventListener("click", function () {
-//  history.pushState(null, "register", "/register")
+  history.pushState(null, "register", "/register")
   const root = document.getElementById('content');
   root.innerHTML = Register;
 }
@@ -49,8 +49,8 @@ activeLogin.addEventListener("click", function () {
 /*BOTÓN ACCEDER AL FEED*/
 let activeRegister = document.getElementById("signInButton");
 
-/*activeRegister.addEventListener("click", function () {
+activeRegister.addEventListener("click", function () {
   const root = document.getElementById('content');
   root.innerHTML = Feed;
 }
-);*/
+);
