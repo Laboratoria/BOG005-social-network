@@ -1,6 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { app } from './configFirabese.js';
 import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValidator.js';
+// import { wallAuthenticatedUser } from '../lib/utils/wallAuthenticatedUser.js';
 
 const auth = getAuth(app);
 const testCreate = (auth, email, password) => {
@@ -19,40 +20,40 @@ const testCreate = (auth, email, password) => {
 }
 
 const getUserData = (auth, userName) => {
-     return onAuthStateChanged(auth, (user) => {
-      if (user) {
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
         //const uid = user.uid;
         // console.log(uid);
-        document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Hola ${userName}!</h1>`;
-        document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Estás registrada con correo: ${user.email}</h1>`
-        
-        return user;
-      } else {
-        document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Hola USUARIO!</h1>`;
-        document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Aún no estás registrada en nuestra red</h1>`
-        //return 'el usuario Salió'
+        // wallAuthenticatedUser(user);
+        console.log(user);
+      // document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Hola ${userName}!</h1>`;
+      // document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Estás registrada con correo: ${user.email}</h1>`
+      return user;
+    } else {
+      // document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Hola USUARIO!</h1>`;
+      // document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Aún no estás registrada en nuestra red</h1>`
+       //return 'el usuario Salió'
           //console.log('salió')      
                 // User is signed out
                 // ...
-          }
-          });
-      
     }
-
+  });
+};
 
 const loginUser = (auth, email, password)=> {
-  return signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
     // Signed in 
-    const user = userCredential.user;
-    return user;
+      const user = userCredential.user;
+      return user;
     // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
-}
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+};
 
 const logOut = () => {
   return signOut(auth).then((userCredential) => {

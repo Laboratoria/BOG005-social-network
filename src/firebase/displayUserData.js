@@ -1,8 +1,5 @@
-import { getAuth } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-import { app } from './configFirabese.js';
-import { getUserData } from './authenticationFirebase.js';
+import { auth, getUserData } from './authenticationFirebase.js';
 
-const auth = getAuth(app);
 const displayUserData = () => {
   const getName = localStorage.getItem('Username');
   if (window.location.pathname === '/wall') {
@@ -11,3 +8,6 @@ const displayUserData = () => {
 };
 
 export { displayUserData };
+
+// document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Hola ${userName}!</h1>`;
+// document.querySelector('#wallOffPublication').innerHTML += `<h1 class="ejemplo">Estás registrada con correo: ${user.email}</h1>`;

@@ -8,6 +8,7 @@ import { removeHashes, sendRoute } from './utils/clearHash.js';
 import eventButtonContinue from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/displayUserData.js';
 import { eventSignOut } from '../firebase/signOut.js';
+import { eventLoginButton } from './utils/loginButton.js';
 
 const containerPage = document.getElementById('contentPageId');
 
@@ -27,6 +28,7 @@ const router = () => {
   containerPage.innerHTML = render();
   eventButtonContinue();
   eventSignOut();
+  eventLoginButton();
   displayUserData();
 };
 
