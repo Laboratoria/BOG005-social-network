@@ -336,9 +336,13 @@ p{
     
 }
 
+.brand{
+    height: 10vh;
+}
+
 .logoHorizontalWall{
-    width: 7.0625rem;
-    height: 7.0625rem;
+    width: 5rem;
+    height: 5rem;
     
 }
 
@@ -346,19 +350,29 @@ p{
     color: var(--main-color-white);
     font-family: var(--Letters-logo-horizontal);
     font-size: 1.5rem;
-    transform: translateY(-72px);
-    margin-left: 6.25rem;
+    transform: translateY(-59px);
+    margin-left: 4.25rem;
+    
   }
 
+.wallOfPublication{
+    width: 80vw;
+}
+.introUser{
+    display:flex;
+    flex-direction: column;
+    margin: 0.5rem 1.5rem;
+    color: var(--w-hight-color-yellow);
+}
+
 .titleWall{
-    color: var(--main-color-white);
     font-family: var(--Letters-logo-horizontal);
-    font-size: 1.1rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.08rem;
     
 }
 
 .subtitulo{
-    color: var(--main-color-white);
     font-family: var(--letters);
     font-size: 1rem;
 }
@@ -368,6 +382,7 @@ p{
     width: 100vw;
     height: 80vh;
     flex-direction: column;
+    align-items: center;
     overflow: scroll;
 }
 
@@ -376,26 +391,73 @@ p{
     flex-direction: column;
     width:80vw;
     height: 50vh;
-     /* justify-content: center;  */
     background-color: var(--main-color-white);
     border-radius: 0.5625rem;
-    /* border: solid 0.1025rem; */
     margin: 1rem;
+    padding: 0.8rem;
+  
 }
 
 
 #headerPost{
     display: flex;
-    width: 100%;
+    width:100%;
     justify-content: flex-start;
+}
+
+.contentUserPost{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.9rem;
+   
+}
+
+.userTitleName{
+    font-weight: bolder;
+    color: var(--b-main-color-blue);
+}
+
+.location{
+    font-size: 0.8rem;
+    color: var(--w-color-blue-medium);
+}
+
+#post{
+    color: var(--b-color-blue-dark);
+    width: 70vw;
+    /* height: 30vh; */
+    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+    word-break: break-all;
 }
 
 .fa-circle-user:before{
     content: "\f2bd";
     font-size: 2.3rem;
-    color: var(--b-color-blue-dark);
+    color: var(--b-main-color-blue);
 }
 
+.actionContainer{
+width: 20vw;
+display: flex;
+justify-content: space-between;
+align-items: baseline;
+}
+
+.like{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.like p{
+    color:var(--w-red-intense);
+}
+.fa-heart{
+color: #EA4335;
+}
+.fa-comment-dots{
+    color: var(--w-color-blue-medium);
+}
 
 footer{
     display: flex;

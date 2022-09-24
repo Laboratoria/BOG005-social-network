@@ -3,17 +3,15 @@ import { savePost } from "../../firebase/firestoreFirebase.js";
 const wall = () => {
   const wallOffPublication = `
     <section id="wallOffPublication">
-    <figure>
+    <figure class="brand">
       <img src="img/Logo.png" alt="LogoCICLAPP" class="logoHorizontalWall">
       <figcaption class="textLogoWall">CICLAPP</figcaption>
     </figure>
+    <aside class="introUser"> 
     <h1 class="titleWall" id="titleId"> ¡Hola, Usuario!</h1>
     <h2 class="subtitulo"> Mira lo que dice la comunidad</h2>
-    <form id="postForm">
-    <label>¿Quieres compartir algo?</label>
-    <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
-    <button type="button" id="PostContentButton"> Publicar </button>
-    </form>
+    </aside>
+   
 
     <section id="postsContainerId" class="postsContainer">
     </section>
@@ -97,3 +95,11 @@ export default wall;
 //   <i class="fa-solid fa-comment-dots"></i>
 // </footer>
 // </section>
+
+
+//FORMULARIO PARA ESCRIBIR COMENTARIO
+ // <form id="postForm">
+    // <label>¿Quieres compartir algo?</label>
+    // <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
+    // <button type="button" id="PostContentButton"> Publicar </button>
+    // </form>

@@ -25,15 +25,20 @@ const getPost =  () => {
     <section id="post postForm" class="postsCards"> 
     <header id="headerPost">
       <i class="fa-solid fa-circle-user" class="userIcon"></i>
-      <p>Usuario</p>
-      <p>Ubicación</p>
+      <div class="contentUserPost"> 
+      <p class="userTitleName">Usuario</p>
+      <p class="location">Ubicación</p>
+      </div>
     </header>
     <article id="post">
       <p class="contentPost" id="allPosts">${doc.data().description}</p>
     </article>
-    <div id="like">
-      <i class="fa-solid fa-heart"></i>
-      <i class="fa-solid fa-comment-dots"></i>
+    <div id="actionContainerId" class="actionContainer">
+      <div class="like">
+      <i class="fa-regular fa-heart" id="heart"></i>
+      <p>12</p>
+      </div>
+      <i class="fa-solid fa-comment-dots" id="commet"></i>
     </div>
     </section>`;
     // doc.data() is never undefined for query doc snapshots
@@ -43,6 +48,8 @@ const getPost =  () => {
 }
  })
 }
+
+
 
 // window.addEventListener('DOMContentLoaded', () => {
 //   getDocs(collection(db, "Posts")).then((res)=> {
@@ -65,15 +72,20 @@ const onGetPost = ()=> {
       <section id="post postForm" class="postsCards"> 
       <header id="headerPost">
         <i class="fa-solid fa-circle-user" class="userIcon"></i>
-        <p>Usuario</p>
-        <p>Ubicación</p>
+        <div class="contentUserPost"> 
+        <p class="userTitleName">Usuario</p>
+        <p class="location">Ubicación</p>
+        </div>
       </header>
       <article id="post">
         <p class="contentPost" id="allPosts">${item.data().description}</p>
       </article>
-      <div id="like">
-        <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-comment-dots"></i>
+      <div id="actionContainerId" class="actionContainer">
+      <div class="like">
+      <i class="fa-regular fa-heart" id="heart"></i>
+      <p>12</p>
+      </div>
+        <i class="fa-solid fa-comment-dots" id="commet"></i>
       </div>
       </section>`;
     // console.log('item con data y description',item.data().description)
@@ -94,3 +106,6 @@ onGetPost();
 // });
 // getPost();
 export {getFirestore, savePost, getPost }
+
+//ICONO CORAZON RELLENO
+// <i class="fa-solid fa-heart" id="heart"></i>
