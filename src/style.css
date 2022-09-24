@@ -40,6 +40,9 @@ html {
 }
 
 /* Mobile inicio */
+p{
+    font-family: var(--letters);
+}
 .body {
     width: 100vw;
     height: 100vh;
@@ -362,12 +365,24 @@ html {
 
 #postsContainerId{
     display: flex;
-    width: 60%;
-    justify-content: center;
-    border-color: var(--b-color-blue-dark);
-    border-radius: 0.5625rem;
-    border: solid 0.1025rem;
+    width: 100vw;
+    height: 80vh;
+    flex-direction: column;
+    overflow: scroll;
 }
+
+.postsCards{
+    display: flex;
+    flex-direction: column;
+    width:80vw;
+    height: 50vh;
+     /* justify-content: center;  */
+    background-color: var(--main-color-white);
+    border-radius: 0.5625rem;
+    /* border: solid 0.1025rem; */
+    margin: 1rem;
+}
+
 
 #headerPost{
     display: flex;
@@ -387,10 +402,12 @@ footer{
     background-color: var(--b-color-blue-dark);
     width: 100vw;
     height: 10vh;
-    position:absolute; 
+    /* position:absolute;  */
     bottom:0; 
     justify-content: center;
     flex-direction: column;
+    position: fixed;
+    bottom: 0;
 
 }
 
