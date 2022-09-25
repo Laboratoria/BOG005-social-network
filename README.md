@@ -145,15 +145,15 @@ Marcamos los objetivos que hemos alcanzado como equipo
 
 ## 5. Criterios de aceptación mínimos del proyecto
 
-### 5.1 [x] Boilerplate
+### 5.1 [x] **Boilerplate**
 
-### 5.2 [ ] Definición del producto
+### 5.2 [ ] **Definición del producto**
 
-### 5.3 [ ] Historias de usuario
+### 5.3 [ ] **Historias de usuario**
 
-### 5.4 [ ] Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
+### 5.4 [ ] **Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)**
 
-### 5.5 [ ] Responsive
+### 5.5 [ ] **Responsive**
 
 ### 5.6 Consideraciones del comportamiento de la interfaz de usuario (UI)
 
@@ -165,7 +165,7 @@ Marcamos los objetivos que hemos alcanzado como equipo
 
 - [ ] **Pruebas unitarias (unit tests)**
 
-### 5.8 [ ] Consideraciones técnicas UX
+### 5.8 [ ] **Consideraciones técnicas UX**
 
 ***
 
