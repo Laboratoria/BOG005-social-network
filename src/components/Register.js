@@ -50,6 +50,7 @@ export const Register = () => {
   inputLastName.setAttribute('requiered', '');
   inputLastName.setAttribute('placeholder', 'Apellido');
   inputLastName.setAttribute('id', 'lastName');
+  nameAndLastNameContainer.append(inputName, inputLastName);
 
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('requiered', '');
@@ -69,8 +70,6 @@ export const Register = () => {
   inputConfirmPassword.setAttribute('id', 'confirm-password');
   inputConfirmPassword.setAttribute('type', 'password');
 
-  nameAndLastNameContainer.append(inputName, inputLastName);
-
   const buttonSignUp = document.createElement('button');
   buttonSignUp.textContent = 'Registrate!';
 
@@ -79,22 +78,6 @@ export const Register = () => {
   google.textContent = 'Registrarse con google';
   google.className = 'google';
 
-  const facebook = document.createElement('a');
-  facebook.setAttribute('href', '');
-  facebook.textContent = 'Registrarse con facebook';
-  facebook.className = 'facebook';
-  section1.append(
-    inputEmail,
-    nameAndLastNameContainer,
-    inputEmail,
-    inputPassword,
-    inputConfirmPassword,
-    buttonSignUp,
-    google,
-    facebook,
-  ); // SECTION 1 APPEND//
-
-  // Se crea contendeor pra registrarse si no tiene una cuenta
   const section2 = document.createElement('section');
   section2.className = 'section2';
   const account = document.createElement('p');
@@ -102,9 +85,20 @@ export const Register = () => {
   account.className = 'account';
   const linkLogin = document.createElement('a');
   linkLogin.setAttribute('href', '');
-  linkLogin.textContent = ' Inicia Sesión';
+  linkLogin.textContent = 'Inicia Sesión';
   section2.append(account, linkLogin);
 
+  section1.append(
+    nameAndLastNameContainer,
+    inputEmail,
+    inputPassword,
+    inputConfirmPassword,
+    buttonSignUp,
+    google,
+    section2,
+  );
+
+  // Función registrarse
   buttonSignUp.addEventListener('click', () => {
     const confirmedPassword = document.getElementById('confirm-password');
     const createUsers = (email, password) => {
@@ -134,7 +128,7 @@ export const Register = () => {
     onNavigate('/');
   });
 
-  div.append(header, section1, section2);
+  div.append(header, section1);
 
   return div;
 };

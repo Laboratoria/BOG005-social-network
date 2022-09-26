@@ -36,29 +36,27 @@ export const Welcome = () => {
   // Se crea contenedor para inicio de sesión con correo, google y facebook
   const section1 = document.createElement('section');
   section1.className = 'section1';
+
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('requiered', '');
   inputEmail.setAttribute('placeholder', 'Correo electrónico');
   inputEmail.setAttribute('id', 'emailLogin');
   inputEmail.setAttribute('type', 'email');
+
   const inputPass = document.createElement('input');
   inputPass.setAttribute('requiered', '');
   inputPass.type = 'password';
   inputPass.setAttribute('placeholder', 'Contraseña');
   inputPass.setAttribute('id', 'passwordLogin');
+
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = 'Inicia Sesión';
+
   const google = document.createElement('a');
   google.setAttribute('href', '');
   google.textContent = 'Iniciar sesión con google';
   google.className = 'google';
-  const facebook = document.createElement('a');
-  facebook.setAttribute('href', '');
-  facebook.textContent = 'Iniciar sesión con facebook';
-  facebook.className = 'facebook';
-  section1.append(inputEmail, inputPass, buttonLogin, google, facebook);
 
-  // Se crea contendeor pra registrarse si no tien una cuenta
   const section2 = document.createElement('section');
   section2.className = 'section2';
   const account = document.createElement('p');
@@ -68,6 +66,8 @@ export const Welcome = () => {
   linkRegister.setAttribute('href', '');
   linkRegister.textContent = 'Regístrate';
   section2.append(account, linkRegister);
+
+  section1.append(inputEmail, inputPass, buttonLogin, google, section2);
 
   buttonLogin.addEventListener('click', () => {
     onAuthStateChanged(auth, (user) => {
@@ -89,7 +89,7 @@ export const Welcome = () => {
     onNavigate('/register');
   });
 
-  div.append(header, section1, section2);
+  div.append(header, section1);
 
   return div;
 };
