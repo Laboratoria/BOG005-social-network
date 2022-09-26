@@ -12,7 +12,14 @@ header {
 
 header img {
     height: 70px;
+    text-align: center;
 }
+
+header i {
+    height: 30px;
+    text-align:right;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -44,6 +51,10 @@ main video {
     height: 206px;
 }
 
+.sectionLogIn p{
+    display: none;
+}
+
 .sectionLogIn input{
     background-color:#F0F0F0 ;
     color: rgba(0, 0, 0, 0.207);
@@ -56,6 +67,7 @@ main video {
 
 .sectionLogIn input::placeholder{
     color: rgba(0, 0, 0, 0.265);
+    padding: 15px;
 }
 
 .sectionLogIn a{
@@ -78,17 +90,24 @@ main video {
     background-color:black ;
     cursor: pointer;
 }
-#registrarse {
+
+/* .sigInMobile p, a{
+    display: none;
+} */
+#sigInMobile {
     margin: 10px;
     display:flex;
     align-items: center;
     text-align: center;
     justify-content: center;
 }
-#registrarse p{
+
+#sigInMobile p{
     color: white;
 }
-#registrarse a{
+
+#sigInMobile a{
+    display: flex;
     color: #F37724;
     font-weight: bold;
 }
@@ -97,6 +116,11 @@ footer {
 }
 
 @media screen and (min-width: 768px) and (max-width:1023px){
+
+    .sigInMobile p, a{
+        display: none;
+    }
+
     footer {
         background-color:#D9D9D9;
         display: flex;
@@ -109,36 +133,80 @@ footer {
 }
 
 @media screen and (min-width:1024px) {
+    *{
+        margin: 0px;
+    }
+
     main{
         display: flex;
         flex-direction: column;
         justify-content:right;
         align-items:flex-end;
         margin-right: 50px;
-        margin-bottom: 5vh;
+        height: auto;
     }
 
     .sectionLogIn {
         background-color: #FFFFFF;
         border-radius: 20px;
-        margin-top: 10vh;
+        margin-top: 5vh;
         padding: 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 453px;
-        height: 469px;
+        width: 400px;
+        height: 410px;
     }
-
+    .sectionLogIn p{
+        display: flex;
+        color: #7989EC;
+        font-size: 28px;
+        margin: 25px;
+    }
     .sectionLogIn input{
         background-color:#F0F0F0 ;
         color: rgba(0, 0, 0, 0.207);
         border: none;
-        margin: 10px;
+        margin: 15px;
         border-radius: 27px;
         width: 368px;
         height: 57px;
+    }
+
+    .sectionLogIn button{
+        background-color:#A6D48A ;
+        color: white;
+        font-size: 22px;
+        margin-top: 20px;
+        width: 306px;
+        height: 64px;
+        font-weight: bold;
+    }
+
+    /* #sigInMobile p{
+        display: none;
+    }
+    #sigInMobile a{
+        display: none;
+    } */
+
+    .sectionLogIn #sigInMobile{
+        display:flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .sectionLogIn #sigInMobile p{
+        display: flex;
+        font-size: 18px;
+        color: black;
+    }
+    .sectionLogIn #sigInMobile a{
+        display: flex;
+        font-size: 18px;
+        color: rgb(228, 87, 0);
     }
 
     header {
@@ -161,4 +229,20 @@ footer {
         align-items: center;
         justify-content: center;
     }
+    .fa-js {
+        font-size: 10px;
+    }
+
+    .copyRightsContainer{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .copyRightsContainer i{
+        font-style: normal;
+        font-family: 'Montserrat', sans-serif;
+    }
+
 }
