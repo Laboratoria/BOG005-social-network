@@ -22,6 +22,11 @@ const wall = () => {
     <button type="button" id="PostContentButton"> Publicar </button>
     </form>
 
+    <div id="btn-back-to-top">
+      <a href="#">
+        <i class="fa-solid fa-circle-chevron-up"></i></a>
+    </div>
+
     <section id="postsContainerId" class="postsContainer">
     </section>
   <footer id="menuBottom">
@@ -52,3 +57,5 @@ export default wall;
     // <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
     // <button type="button" id="PostContentButton"> Publicar </button>
     // </form>
+
+

@@ -318,22 +318,9 @@ p{
 /*Fin página de registro*/
 
   /*Estilos para el muro*/
-/* #bodyWallOffPost{
-    position: absolute;
-    background-repeat: no-repeat;
-    background-color: none;
-
-} */
-
-/* .fondoMuroCelular{
-    opacity: 0.9;
-} */
 
 .wallPublication{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+     width: 100%;
 }
 
 .logoWall{
@@ -349,7 +336,9 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0.5rem 1.5rem;
 }
+
 .brand{
     display: flex;
     align-items: center;
@@ -364,7 +353,6 @@ p{
     color: var(--main-color-white);
     font-family: var(--Letters-logo-horizontal);
     font-size: 1.5rem;
-    /* transform: translateY(-59px); */
     margin-left: 0.25rem;
     
 }
@@ -374,15 +362,13 @@ p{
     font-size: 2rem;
 }
 
-
-
 .wallOfPublication{
     width: 80vw;
 }
 .introUser{
-    display:flex;
+    display: flex;
     flex-direction: column;
-    margin: 0.5rem 1.5rem;
+    margin: 0.7rem 2.6rem;
     color: var(--w-hight-color-yellow);
 }
 
@@ -390,7 +376,6 @@ p{
     font-family: var(--Letters-logo-horizontal);
     font-size: 1.5rem;
     letter-spacing: 0.08rem;
-    
 }
 
 .subtitulo{
@@ -479,6 +464,27 @@ color: #EA4335;
 .fa-comment-dots{
     color: var(--w-color-blue-medium);
 }
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+#btn-back-to-top i {
+    text-decoration: none;
+    color: var(--w-hight-color-yellow);
+    font-size: 50px;
+    opacity: 0.9;
+
+}
+
+#btn-back-to-top:active {
+    transform: scale(0.9);
+}
+
 
 footer{
     display: flex;
