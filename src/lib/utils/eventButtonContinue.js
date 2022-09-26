@@ -9,6 +9,7 @@ const eventButtonContinue = () => {
         const dataForm = getFormData();
         const result = testCreate(auth, dataForm.email, dataForm.password);
         result.then((userCredential) => {
+
           if (userCredential) {
             window.location.href = '#wall';
             localStorage.setItem('Username', `${dataForm.name}`);
@@ -22,6 +23,17 @@ const eventButtonContinue = () => {
           .catch((error) => {
             console.error(error.message, 'no ok');
           });
+
+          if(userCredential) {
+          
+            window.location.href = '#wall'
+            console.log('email ->', userCredential.email)
+          } 
+        }).catch((error) => {
+          console.error(error.message, 'no ok');
+        })
+          console.log('Evento botón continuar');
+
       });
     }
   }
