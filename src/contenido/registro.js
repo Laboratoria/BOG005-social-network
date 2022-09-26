@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-// import { onNavigate } from "../main.js";
-import { crearUsuario} from "../lib/firebase.js";
+import { onNavigate } from "../main.js";
+import { crearUsuario } from "../lib/firebase.js";
 export const registro = () => {
   // Se crean las etiquetas
   const div = document.createElement('div');
@@ -20,7 +20,33 @@ export const registro = () => {
   contraseñaUsuario.id = 'contraseña';
   const buttonRegistro = document.createElement('button');
   buttonRegistro.id = 'registro';
+  buttonRegistro.addEventListener('click', () => {
+    // 1er camino para cuando todo esta ok
+    // 2do camino cuando algo falta
+    if (correoUsuario.value.includes("@hotmail.com", "@yahoo.es", "@yahoo.com", "@outlook.com")) {
+      crearUsuario(correoUsuario.value, contraseñaUsuario.value).then(() => {
+        console.log("Usuario registrado")
+        //importar onNavigate
+        onNavigate("/login")
+      }).catch((error) => {
+        console.error(error.message)
+      })
+    }
+    else {
+      alert("Verifica tus datos")
+    }
+    // if (contraseñaUsuario.value.includes("/a-z//A-Z/||/0-9/")) {
+    //   crearContraseña(contraseñaUsuario.value,correoUsuario.value).then(()=>{
+        
+    //   }).catch((error) => {
+    //     console.error(error.message)
+    //   })
+    // }
+    // else if(contraseñaUsuario.length == 0 ) {
+    //    alert("Los campos de la password no pueden quedar vacios");
+    //  }
 
+  });
   // Se muestran en pantalla
   textoLogin.textContent = '¿Ya tienes cuenta en Explora Colombia?';
   enlaceInicio.appendChild(login);
@@ -30,8 +56,10 @@ export const registro = () => {
   formulario.innerHTML = '<b>Registrate</b> para conocer más de Colombia y guarda tus momentos inolvidables.';
   correoUsuario.setAttribute('placeholder', 'Correo Electronico');
   contraseñaUsuario.setAttribute('placeholder', 'Contraseña Usuario');
+  contraseñaUsuario.setAttribute("type","password");
   buttonRegistro.textContent = 'Regístrate';
   logo.src = '/imagenes/Recurso 1.png';
+  
 
   // Agregamos elementos a nuestro div
 
