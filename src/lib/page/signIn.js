@@ -1,5 +1,3 @@
-// import getFormData from '../utils/formValidator.js';
-
 const signIn = () => {
   const viewSignIn = `
   <header id="header" class="headerClassInsignIn">
