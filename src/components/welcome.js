@@ -1,16 +1,17 @@
 import { onNavigate } from '../main.js';
 
 export const welcome = () => {
-  const sectionWelcome = document.createElement('sectionWelcome');
+  const sectionWelcome = document.createElement('section');
   sectionWelcome.className = 'sectionWelcome';
 
-  const title = document.createElement('h1');
-  title.className = 'titleWelcome';
-  title.textContent = 'Enfiéstate todo el Año';
+  const imgWelcome = document.createElement('img');
+  imgWelcome.className = 'img-welcome';
+  imgWelcome.src = 'img/NomeLogo.png';
+  imgWelcome.alt = 'Name Logo';
 
-  const mensage = document.createElement('h2');
-  mensage.className = 'description';
-  mensage.textContent = 'Disfruta de las diferentes festividades alrededor del mundo.';
+  const message = document.createElement('h2');
+  message.className = 'description';
+  message.textContent = 'Disfruta de las diferentes festividades alrededor del mundo.';
 
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
@@ -20,7 +21,7 @@ export const welcome = () => {
     onNavigate('/landing');
   });
 
-  sectionWelcome.append(title, mensage, buttonStart);
+  sectionWelcome.append(imgWelcome, message, buttonStart);
 
   return sectionWelcome;
 };
