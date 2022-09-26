@@ -7,8 +7,6 @@ import wall from './page/wall.js';
 import { removeHashes, sendRoute } from './utils/clearHash.js';
 import eventButtonContinue from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/displayUserData.js';
-
-//import { eventSignOut } from '../firebase/signOut.js';
 import { eventLoginButton } from './utils/loginButton.js';
 
 const containerPage = document.getElementById('contentPageId');
@@ -28,7 +26,6 @@ const router = () => {
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
   eventButtonContinue();
-  // eventSignOut();
   eventLoginButton();
   displayUserData();
 };

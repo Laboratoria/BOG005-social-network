@@ -12,8 +12,11 @@ const eventButtonContinue = () => {
           if (userCredential) {
             window.location.href = '#wall';
             localStorage.setItem('Username', `${dataForm.name}`);
-            localStorage.setItem('User', `${dataForm.user}`);
-            //return userCredential;
+            const getName = localStorage.getItem('Username');
+            const contentPost = document.querySelector('#wallOffPublication');
+            if (contentPost) {
+              contentPost.innerHTML += `<h1 id="greetingUserId" class="greetingUser">Hola ${getName}!</h1>`;
+            }
           }
         })
           .catch((error) => {
