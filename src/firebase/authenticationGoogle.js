@@ -1,8 +1,6 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-import  wall  from '../lib/page/wall.js'
-// import { auth } from './authenticationFirebase.js';
+import { signInWithPopup, GoogleAuthProvider, onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
+import { auth } from './authenticationFirebase.js'
 
-const auth = getAuth();
 const provider = new GoogleAuthProvider();
 const signGoogle = ()=>{signInWithPopup(auth, provider)
   .then((result) => {
@@ -31,6 +29,7 @@ const signGoogle = ()=>{signInWithPopup(auth, provider)
   });
 } 
 
+// RESOLVER 
 const dataUser = () => {onAuthStateChanged(auth, (user) => {
     console.log('entra el usuario')
     if (user) {

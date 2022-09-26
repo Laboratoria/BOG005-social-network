@@ -1,7 +1,6 @@
 import { getFormData } from './formValidator.js';
 import { auth, testCreate } from '../../firebase/authenticationFirebase.js';
-import { getEmailUser , setNameUser } from './getEmailFirebase.js'
-import wall from '../page/wall.js'
+
 const eventButtonContinue = () => {
   if (window.location.pathname === '/signIn') {
 
@@ -16,10 +15,6 @@ const eventButtonContinue = () => {
           
             window.location.href = '#wall'
             console.log('email ->', userCredential.email)
-            // let correo = userCredential.email;
-            // wall(correo)
-         
-           
           } 
         }).catch((error) => {
           console.error(error.message, 'no ok');
