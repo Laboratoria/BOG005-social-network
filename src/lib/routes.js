@@ -6,6 +6,9 @@ import getHash from './utils/getHash.js';
 import wall, { buttonP } from './page/wall.js';
 import { removeHashes, sendRoute } from './utils/clearHash.js';
 import eventButtonContinue from './utils/eventButtonContinue.js';
+import { displayUserData } from '../firebase/authenticationFirebase.js';
+import { eventLoginButton } from '../firebase/authenticationFirebase.js';
+
 import eventButtonGoogle from './utils/eventButtonGoogle.js';
 import { getPost } from '../firebase/firestoreFirebase.js';
 //import { changeConditionWall } from './utils/imgWall.js';
@@ -28,6 +31,9 @@ const router = () => {
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
   eventButtonContinue();
+
+  eventLoginButton();
+  displayUserData();
   eventButtonGoogle();
   buttonP();
   getPost();
