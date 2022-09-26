@@ -4,7 +4,7 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-
+import{ app } from './lib/component/firebase.js';
 import { signIn } from './lib/component/signIn.js';
 import { signUp } from './lib/component/signUp.js';
 import { principalPage } from './lib/component/principalPage.js';

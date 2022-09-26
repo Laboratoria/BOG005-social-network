@@ -1,4 +1,8 @@
+import { createUser } from './firebase.js';
+
 // import { onNavigate } from '../../main.js';
+import{ app } from './lib/component/firebase.js';
+import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 export const signUp = `
     <picture>
       <img id="logo" src="./images/logo2.png" alt="logo">
@@ -9,9 +13,9 @@ export const signUp = `
         <input class="inputForm" type="text" placeholder="Nombre" id="inputName">
         <input class="inputForm" type="email" placeholder="Email" id="inputEmail">
         <input class="inputForm" type="password" placeholder="Contraseña" id="inputPassword">
-        <button class="btnSignIn btnSignUp" id="btnSignUp" type="submit" onclick="allData()">Registrarse</button>
         
       </form>
+      <button class="btnSignIn btnSignUp" id="btnSignUp"  type="submit" onclick="register()">Registrarse</button>
       <a href="/" class="linkSign" onclick="onNavigate('/signIn')">Ya tienes una cuenta? Inicia Sesión</a>
     </div>`;
 
@@ -20,4 +24,17 @@ export const signUp = `
 
 // window.allData = function () {
 //   onNavigate('/principalPage');
+  
 // };
+
+
+window.register =function (){
+  const name= document.getElementById('inputName').value;
+  const email= document.getElementById('inputEmail').value;
+  const pass= document.getElementById('inputPassword').value;
+  console.log('name', name)
+  createUser(email,pass)
+ 
+}
+
+
