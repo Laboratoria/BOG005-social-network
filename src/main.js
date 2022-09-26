@@ -1,56 +1,49 @@
-import { db } from './firestore/firestore.js';
-import {auth} from './auth/authentication.js'
-import { app } from './config/configFireBase.js';
 import { Feed } from "../pages/feed.js";
 import { Login } from "../pages/login.js";
 import { Register } from "../pages/register.js";
-
-
-
-console.log('db ', db, 'auth ', auth); 
+import { createEmail } from "./auth/authentication.js";
 
 const routes = {
   '/': Login,
-  //'/login': Login,
   '/register': Register,
   '/feed': Feed,
 };
 
-const root = document.getElementById('content');
+/* PERMITE QUE LAS RUTAS MANIPULEN EN DOM CON LOS LITERAL TEMPLATES GUARDADOS EN PAGES */
+const root = document.getElementById('root');
 root.innerHTML = routes[window.location.pathname];
-console.log(window.location);
+
+
+/* GENERAR RUTAS EN URLS*/
 
 export const onNavigate = (pathname) => {
   window.history.pushState(
     {},
-    pathname,
+    '',
     window.location.origin + pathname,
   );
 };
-/*
-const component = routes[window.location.pathname];
 
-window.onpopstate = () => {
-  root.removeChild(root.firstChild);
-  root.append(component());
-};
-
-root.appendChild(component()); 
-*/
-/* BOTÓN ACCEDER A REGISTER*/
 let activeLogin = document.getElementById("logginButton");
-activeLogin.addEventListener("click", function () {
-  history.pushState(null, "register", "/register")
-  const root = document.getElementById('content');
-  root.innerHTML = Register;
-}
-);
 
-/*BOTÓN ACCEDER AL FEED*/
-let activeRegister = document.getElementById("signInButton");
+/*ACCEDER A LA PÁGINA REGISTRATE*/
 
-activeRegister.addEventListener("click", function () {
-  const root = document.getElementById('content');
-  root.innerHTML = Feed;
+/*Botón regístrate*/
+let activeRegister = document.getElementById("linkRegister");
+if (activeRegister) {
+  activeRegister.addEventListener("click", () => {
+    history.pushState(null, "register", "/register");
+    root.innerHTML = Register;
+  });
 }
-);
+
+const inputEmail = document.getElementById("emailUser");
+const inputPass = document.getElementById("passWordUser");
+let bottonRegister = document.getElementById("bottonRegister");
+
+/*Botón para validar el registro*/
+if (bottonRegister) {
+  bottonRegister.addEventListener("click", () => {
+    createEmail(inputEmail.value, inputPass.value); /* Comando de Firebase para Autenticación */
+  });
+}
