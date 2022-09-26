@@ -29,3 +29,4 @@ export const signIn = `
 window.allData = function () {
   onNavigate('/principalPage');
 };
+ 
