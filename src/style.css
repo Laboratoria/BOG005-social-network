@@ -318,16 +318,16 @@ p{
 /*Fin página de registro*/
 
   /*Estilos para el muro*/
-#bodyWallOffPost{
+/* #bodyWallOffPost{
     position: absolute;
     background-repeat: no-repeat;
     background-color: none;
 
-}
+} */
 
-.fondoMuroCelular{
+/* .fondoMuroCelular{
     opacity: 0.9;
-}
+} */
 
 .logoWall{
     display: flex;
@@ -392,7 +392,7 @@ p{
     width:80vw;
     height: 50vh;
     background-color: var(--main-color-white);
-    border-radius: 0.5625rem;
+    border-radius: 0.6625rem;
     margin: 1rem;
     padding: 0.8rem;
   
@@ -463,9 +463,7 @@ footer{
     display: flex;
     background-color: var(--b-color-blue-dark);
     width: 100vw;
-    height: 10vh;
-    /* position:absolute;  */
-    bottom:0; 
+    height: 10vh; 
     justify-content: center;
     flex-direction: column;
     position: fixed;

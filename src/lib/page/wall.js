@@ -7,6 +7,7 @@ const wall = () => {
       <img src="img/Logo.png" alt="LogoCICLAPP" class="logoHorizontalWall">
       <figcaption class="textLogoWall">CICLAPP</figcaption>
     </figure>
+
     <aside class="introUser"> 
     <h1 class="titleWall" id="titleId"> ¡Hola, Usuario!</h1>
     <h2 class="subtitulo"> Mira lo que dice la comunidad</h2>
