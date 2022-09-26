@@ -22,6 +22,8 @@ export const wall = () => {
   buttonClose.addEventListener('click', () => {
     loginOut.then(() => {
       onNavigate('/');
+    }).catch((error) => {
+      console.log('there are an error: ' + error)
     });
   });
 
