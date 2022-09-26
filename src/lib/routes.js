@@ -7,7 +7,7 @@ import wall from './page/wall.js';
 import { removeHashes, sendRoute } from './utils/clearHash.js';
 import eventButtonContinue from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
-import { eventLoginButton } from '../firebase/authenticationFirebase.js';
+import { eventLoginButton } from './utils/loginButton.js';
 
 const containerPage = document.getElementById('contentPageId');
 
