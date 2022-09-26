@@ -1,8 +1,7 @@
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-import { app } from './configFirabese.js';
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, auth } from '../lib/firebaseIntermadiate/auth.js';
 import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValidator.js';
 
-const auth = getAuth(app);
+
 const testCreate = (auth, email, password) => {
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -18,6 +17,49 @@ const testCreate = (auth, email, password) => {
 
 }
 
+const displayUserData = () => {
+  if (window.location.pathname === '/wall') {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        localStorage.setItem('UserCredentialFb', JSON.stringify(user.email));
+        const contentGretting = document.querySelector('#wallOffPublication');
+        console.log(contentGretting);
+        if (contentGretting !== null) {
+          contentGretting.innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Usuario en sesión: ${user.email}</h1>`;
+          eventSignOut();
+        }
+      } else {
+        document.querySelector('#wallOffPublication').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola resgistrate en nuestra red social</h1>`;
+      }
+    });
+  }
+};
+
+const eventLoginButton = () => {
+  if (window.location.pathname === '/userSignIn') {
+    const btnLogin = document.querySelector('#submitContinue');
+    if (btnLogin) {
+      btnLogin.addEventListener('click', () => {
+        const email = document.querySelector('#userSi').value;
+        const password = document.querySelector('#passwordSi').value;
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            console.log(userCredential, 'se cumplió');
+            const greetingUser = document.getElementById('greetingUserId');
+            if (greetingUser) {
+              greetingUser.innerHTML = '';
+            }
+            window.location.href = '#wall';
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+          });
+      });
+    }
+  }
+};
+
 const logOut = () => {
   return signOut(auth).then(() => {
     auth.signOut();
@@ -32,7 +74,6 @@ const eventSignOut = () => {
   const btnExit = document.getElementById('exitButtonId');
   if (btnExit) {
     btnExit.addEventListener('click', () => {
-      // console.log('Estoy tratando de cerrar sesión:');
       const result = logOut(auth);
       result.then(() => {
         const getUserCredential = localStorage.getItem('UserCredentialFb');
@@ -45,7 +86,6 @@ const eventSignOut = () => {
         console.error(error);
       });
     });
-    // }
   }
 };
 
@@ -56,4 +96,6 @@ export {
   onAuthStateChanged,
   eventSignOut,
   logOut,
+  displayUserData,
+  eventLoginButton,
 };
