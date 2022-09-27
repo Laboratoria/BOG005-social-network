@@ -8,8 +8,8 @@ const userSignIn = () => {
 
   <form class="formSignIn">
   <article class="itemsInput">
-    <label for="user">Usuario</label>
-    <input type="text" id="user" placeholder="Ingresa tu usuario">
+    <label for="userSi">Correo</label>
+    <input type="text" id="userSi" placeholder="Ingresa tu correo">
   </article>
   <article class="itemsInput">
     <label for="password">Contraseña</label>
@@ -32,3 +32,7 @@ const userSignIn = () => {
 };
 
 export default userSignIn;
+
+/* <p>- O -</p>
+<a href="#">Registrate con Google</a>
+<button type="button" id="submitContinue">Continuar</button> */
