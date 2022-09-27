@@ -2,6 +2,7 @@ import { welcome } from './components/welcome.js';
 import { landing } from './components/landing.js';
 import { register } from './components/register.js';
 import { login } from './components/login.js';
+import { wall } from './components/wall.js';
 
 const divRoot = document.getElementById('root');
 
@@ -10,6 +11,7 @@ const routes = {
   '/landing': landing,
   '/register': register,
   '/login': login,
+  '/wall': wall,
 };
 // funcion para trabajar la navegacion de la app anexando un registro al historial con .pushState
 export const onNavigate = (pathname, objRoutes = routes) => {

@@ -53,13 +53,15 @@ export const register = () => {
   session.className = 'here';
 
   registerButton.addEventListener('click', () => {
+    const nameR = inputName.value;
     const emailR = registerEmail.value;
     const passR = registerPassword.value;
-    console.log(createUser(emailR, passR));
-    createUser(emailR, passR)
+    console.log(createUser(nameR, emailR, passR));
+
+    createUser(nameR, emailR, passR)
       .then(() => {
         console.log('dentroooo');
-        onNavigate('/login'); // si ya se registreo que entre a muro
+        onNavigate('/wall'); // si ya se registreo que entre a muro
       })
       .catch(() => {});
   });
@@ -67,9 +69,10 @@ export const register = () => {
   const errorText = document.createElement('p');
   errorText.addEventListener('submit', (e) => {
     e.preventDefault();
+    const nameR = inputName.value;
     const emailR = registerEmail.value;
     const passR = registerPassword.value;
-    createUser(emailR, passR)
+    createUser(nameR, emailR, passR)
       .then(() => {
         onNavigate('/');
       })
