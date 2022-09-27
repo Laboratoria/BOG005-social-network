@@ -44,10 +44,3 @@ export const buttonP = () => {
   })
 }}
 export default wall;
-
-//FORMULARIO PARA ESCRIBIR COMENTARIO
- // <form id="postForm">
-    // <label>¿Quieres compartir algo?</label>
-    // <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
-    // <button type="button" id="PostContentButton"> Publicar </button>
-    // </form>

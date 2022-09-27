@@ -3,7 +3,6 @@ import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValid
 
 
 const testCreate = (auth, email, password) => {
-
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       showSuccessfulResponse();
@@ -23,15 +22,19 @@ const displayUserData = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         localStorage.setItem('UserCredentialFb', JSON.stringify(user.email));
-        const contentGretting = document.querySelector('#wallOffPublication');
+        //const contentGretting = document.querySelector('#wallOffPublication');
+        const contentGretting = document.querySelector("#titleId")
         if (contentGretting !== null) {
-          contentGretting.innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Usuario en sesión: ${user.email}</h1>`;
+          contentGretting.textContent = `Hola: ${user.email}`
+          //contentGretting.innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Usuario en sesión: ${user.email}</h1>`;
          // eventSignOut();
         }
       } else {
         document.querySelector('#wallOffPublication').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola resgistrate en nuestra red social</h1>`;
       }
     });
+  }
+}
 
 const signIn = (auth, email, password) => {
   return signInWithEmailAndPassword(auth, email, password)

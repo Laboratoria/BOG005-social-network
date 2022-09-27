@@ -30,23 +30,23 @@ const signGoogle = ()=>{signInWithPopup(auth, provider)
 } 
 
 // RESOLVER 
-const dataUser = () => {onAuthStateChanged(auth, (user) => {
-    console.log('entra el usuario')
-    if (user) {
-        console.log(user)
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      const uid = user.uid;
-      // ...
-    } else {
-      // User is signed out
-      // ...
-    }
-  });
-};
+// const dataUser = () => {onAuthStateChanged(auth, (user) => {
+//     console.log('entra el usuario')
+//     if (user) {
+//         console.log(user)
+//       // User is signed in, see docs for a list of available properties
+//       // https://firebase.google.com/docs/reference/js/firebase.User
+//       const uid = user.uid;
+//       // ...
+//     } else {
+//       // User is signed out
+//       // ...
+//     }
+//   });
+// };
 
 
-export { provider, signGoogle, dataUser};
+export { provider, signGoogle, /*dataUser*/};
 
 
 
