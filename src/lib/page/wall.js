@@ -1,4 +1,5 @@
 import { savePost } from "../../firebase/firestoreFirebase.js";
+// import { buttonBackToTop } from "../utils/buttonBackToTop.js";
 
 const wall = () => {
   const wallOffPublication = `
@@ -22,10 +23,9 @@ const wall = () => {
     <button type="button" id="PostContentButton"> Publicar </button>
     </form>
 
-    <div id="btn-back-to-top">
-      <a href="#">
+    <button type="button" id="btn-back-to-top">
         <i class="fa-solid fa-circle-chevron-up"></i></a>
-    </div>
+    </button>
 
     <section id="postsContainerId" class="postsContainer">
     </section>
@@ -48,8 +48,32 @@ export const buttonP = () => {
     savePost(contenido);
     postForm.reset();
   })
-}}
+}};
 export default wall;
+
+const buttonBackToTop = document.getElementById("btn-back-to-top");
+
+window.onscroll = () => {
+   scrollFunction();
+}
+  
+  const scrollFunction = () => {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      buttonBackToTop.style.display = "block";
+    } else {
+      buttonBackToTop.style.display = "none";
+    }
+  };
+
+  // buttonBackToTop.addEventListener('click', backToTop());
+
+  const backToTop = () =>{
+    document.wall.scroll = 0;
+    document.documentElement.scrollTop = 0;
+    };
 
 //FORMULARIO PARA ESCRIBIR COMENTARIO
  // <form id="postForm">

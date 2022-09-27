@@ -463,6 +463,7 @@ align-items: baseline;
 .fa-heart{
 color: #EA4335;
 }
+
 .fa-comment-dots{
     color: var(--w-color-blue-medium);
 }
@@ -480,7 +481,6 @@ color: #EA4335;
     color: var(--w-hight-color-yellow);
     font-size: 50px;
     opacity: 0.9;
-
 }
 
 #btn-back-to-top:active {

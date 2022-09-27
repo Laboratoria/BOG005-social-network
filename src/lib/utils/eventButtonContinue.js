@@ -23,19 +23,8 @@ const eventButtonContinue = () => {
           .catch((error) => {
             console.error(error.message, 'no ok');
           });
-
-          if(userCredential) {
-          
-            window.location.href = '#wall'
-            console.log('email ->', userCredential.email)
-          } 
-        }).catch((error) => {
-          console.error(error.message, 'no ok');
-        })
-          console.log('Evento botón continuar');
-
       });
-    }
-  }
+    };
+  };
 };
 export default eventButtonContinue;
