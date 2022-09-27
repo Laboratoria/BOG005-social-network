@@ -359,6 +359,11 @@ p{
     
 }
 
+.exitButtonClass{
+    background-color: transparent;
+    border: none;
+}
+
 .ri-logout-box-r-fill{
     color: var(--w-color-blue-light-buttons);
     font-size: 2rem;

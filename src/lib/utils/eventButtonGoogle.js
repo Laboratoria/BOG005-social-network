@@ -18,4 +18,4 @@ const eventButtonGoogle = () => {
 };
 };
 
-export default eventButtonGoogle;
+export { eventButtonGoogle };
