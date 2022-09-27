@@ -8,6 +8,7 @@ import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventSignOut } from './utils/eventSignOut.js';
 import { getPost } from '../firebase/firestoreFirebase.js';
+
 //import { changeConditionWall } from './utils/imgWall.js';
 
 const containerPage = document.getElementById('contentPageId');
@@ -48,9 +49,6 @@ const router = (hash) => {
   eventSignOut();
   buttonP();
   getPost();
-  eventLoginButton();
-  displayUserData();
-  //changeConditionWall();
 };
 
 const handlerHistorial = () => {
