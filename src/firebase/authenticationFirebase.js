@@ -3,6 +3,7 @@ import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValid
 
 
 const testCreate = (auth, email, password) => {
+
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       showSuccessfulResponse();
@@ -31,8 +32,6 @@ const displayUserData = () => {
         document.querySelector('#wallOffPublication').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola resgistrate en nuestra red social</h1>`;
       }
     });
-  }
-};
 
 const signIn = (auth, email, password) => {
   return signInWithEmailAndPassword(auth, email, password)

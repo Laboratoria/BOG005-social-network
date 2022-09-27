@@ -1,5 +1,3 @@
-// import getFormData from '../utils/formValidator.js';
-
 const userSignIn = () => {
   const viewUserSignIn = `<form>
     <label for="userSi">Correo</label>

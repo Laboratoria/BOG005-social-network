@@ -1,3 +1,4 @@
+
 // const getEmailUser = (emailUser) => {
 //     // console.log("correo - getemailuser", emailUser.email)
 //     return emailUser.email
@@ -20,3 +21,4 @@ const getLogData = () => {
   };
 };
 export { getLogData };
+
