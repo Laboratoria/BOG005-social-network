@@ -15,10 +15,11 @@ const wall = () => {
     </figure>
 
     <aside class="introUser"> 
-    <h1 class="titleWall" id="titleId"> ¡Hola, Usuario!</h1>
+    <h1 class="titleWall" id="titleId"> </h1>
     <h2 class="subtitulo"> Mira lo que dice la comunidad</h2>
+    <a href="#signIn" class="loginButtonRegister" id="loginButtonIdWall" autofocus="autofocus">Registrate</a>
     </aside>
-   
+    
     <form id="postForm">
     <label>¿Quieres compartir algo?</label>
     <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
