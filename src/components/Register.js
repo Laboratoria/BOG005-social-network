@@ -3,24 +3,30 @@ import { createUser, popupGoogle } from '../lib/firebase.js';
 
 export const Register = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
+
   const div = document.createElement('div');
   div.className = 'container';
 
   // Header
+
   const header = document.createElement('header');
   header.className = 'header';
+
   const title = document.createElement('h1');
   title.className = 'title';
   title.textContent = 'Yummy Friends';
+
   const paragraph = document.createElement('h2');
   paragraph.className = 'paragraph';
   paragraph.textContent = 'Aquí encontrarás ese dulce que le hace falta a  tu vida.';
+
   const signUp = document.createElement('h2');
   signUp.className = 'signUp';
   signUp.textContent = 'Regístrate';
   header.append(title, paragraph, signUp);
 
   // Se crea contenedor para inicio de sesión con correo, google y facebook
+
   const section1 = document.createElement('section');
   section1.className = 'section1';
 
@@ -36,6 +42,7 @@ export const Register = () => {
   inputLastName.setAttribute('requiered', '');
   inputLastName.setAttribute('placeholder', 'Apellido');
   inputLastName.setAttribute('id', 'lastName');
+
   nameAndLastNameContainer.append(inputName, inputLastName);
 
   const inputEmail = document.createElement('input');
@@ -64,12 +71,15 @@ export const Register = () => {
 
   const section2 = document.createElement('section');
   section2.className = 'section2';
+
   const account = document.createElement('p');
   account.textContent = '¿Tienes Cuenta?';
   account.className = 'account';
+
   const linkLogin = document.createElement('a');
   linkLogin.setAttribute('href', '');
   linkLogin.textContent = 'Inicia Sesión';
+
   section2.append(account, linkLogin);
 
   const errorAdvice = document.createElement('p');
