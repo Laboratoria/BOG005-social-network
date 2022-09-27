@@ -4,10 +4,17 @@
 // import { myFunction } from './lib/index.js';
 
 // myFunction();
-import{ app } from './lib/component/firebase.js';
+// import{ app } from './lib/component/configFirebase.js';
+// eslint-disable-next-line import/no-cycle
 import { signIn } from './lib/component/signIn.js';
 import { signUp } from './lib/component/signUp.js';
 import { principalPage } from './lib/component/principalPage.js';
+// import { app } from './lib/component/configFirebase.js';
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+// import { firebaseConfig} from './lib/component/configFirebase.js';
+
+
+// export const app = initializeApp(firebaseConfig);
 
 const routes = {
   '/': signIn,
