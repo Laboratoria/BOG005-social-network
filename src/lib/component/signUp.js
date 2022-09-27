@@ -33,4 +33,4 @@ window.register = function () {
   const pass = document.getElementById('inputPassword').value;
   console.log('name', name);
   createUser(email, pass, name);
-}
+};

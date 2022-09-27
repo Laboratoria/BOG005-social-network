@@ -13,7 +13,6 @@ import { principalPage } from './lib/component/principalPage.js';
 // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
 // import { firebaseConfig} from './lib/component/configFirebase.js';
 
-
 // export const app = initializeApp(firebaseConfig);
 
 const routes = {
