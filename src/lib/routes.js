@@ -11,6 +11,7 @@ import { eventLoginButton } from './utils/loginButton.js';
 
 import eventButtonGoogle from './utils/eventButtonGoogle.js';
 import { getPost } from '../firebase/firestoreFirebase.js';
+
 //import { changeConditionWall } from './utils/imgWall.js';
 
 const containerPage = document.getElementById('contentPageId');
@@ -24,7 +25,7 @@ const routes = {
 
 
 const router = () => {
-  containerPage.innerHTML = header();
+  // containerPage.innerHTML = header();
   const hash = getHash();
   removeHashes(hash);
   const sendRoutes = sendRoute(hash);
