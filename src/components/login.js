@@ -31,7 +31,7 @@ export const login = () => {
   loginPassword.setAttribute('required', '');
 
   const loginButton = document.createElement('button');
-  loginButton.textContent = 'Regístrate';
+  loginButton.textContent = 'Ingresa';
   loginButton.setAttribute('class', 'button-login button');
 
   const question = document.createElement('h3');
@@ -41,16 +41,10 @@ export const login = () => {
   session.textContent = 'Inicia tu sesión';
 
   loginButton.addEventListener('click', () => {
-    onNavigate('/'); // Debería dirigir al Home, muro o perfil
+    onNavigate('/wall'); // Debería dirigir al Home, muro o perfil
   });
 
   const errorText = document.createElement('p');
-  errorText.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const emailL = loginEmail.value;
-    const passL = loginPassword.value;
-    signInUser(emailL, passL);
-  });
 
   containerLogin.append(
     title,
@@ -61,5 +55,16 @@ export const login = () => {
     question,
   );
 
+  containerLogin.querySelector('.button-login').addEventListener('click', (e) => {
+    console.log('se le dio click al botón');
+    e.preventDefault();
+    const emailL = loginEmail.value;
+    const passL = loginPassword.value;
+    signInUser(emailL, passL)
+    .then(()=>onNavigate('/wall'))
+    .catch((err)=>onNavigate('/login'))
+  });
+
+  
   return containerLogin;
 };
