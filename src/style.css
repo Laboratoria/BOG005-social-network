@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Lexend+Giga&display=swap");
+
 /*Estilos Globales*/
 * {
     margin: 0;
@@ -25,9 +26,9 @@ img {
 a {
     font-size: 14px;
     background-color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;   
-    border-radius: 5px;   
-    width: 215px;  
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 5px;
+    width: 215px;
 }
 
 button {
@@ -81,8 +82,8 @@ button {
     background-color: #C8BBBB;
     margin: 30px 30px;
     padding: 10px;
-    align-items: center;    
-    box-shadow: 2px 5px 5px  rgba(129, 122, 124, 0.5) inset;
+    align-items: center;
+    box-shadow: 2px 5px 5px rgba(129, 122, 124, 0.5) inset;
     border-radius: 10px;
 }
 
@@ -97,7 +98,8 @@ button {
     background-color: #ffffff;
     border: none;
 }
-.section1 input::placeholder{
+
+.section1 input::placeholder {
     margin-left: 10px;
 }
 
@@ -109,19 +111,19 @@ button {
     border: none;
 }
 
-.google {    
+.google {
     background-image: url('./imagenes/btn_google_signin_light_normal_web.png');
     width: 240px;
     height: 29px;
-    padding: 6px;   
+    padding: 6px;
     border-radius: 10px;
-    font-size: 14px;    
+    font-size: 14px;
     background-repeat: no-repeat;
     background-size: auto;
     background-position: center;
     border: none;
     background-color: white;
-    color: 0,0,0 (54%);
+    color: 0, 0, 0 (54%);
     margin-top: 10px;
     cursor: pointer;
 }
@@ -131,10 +133,10 @@ button {
 
 .section2 {
     display: flex;
-    align-content: center;    
+    align-content: center;
     margin-top: 10px;
     padding: 5px;
-    justify-content: space-between;    
+    justify-content: space-between;
     border-radius: 10px;
     background-color: #ffffff;
     width: 100%;
@@ -144,7 +146,7 @@ button {
 .account {
     font-size: 12px;
     padding: 5px;
-    
+
 }
 
 
@@ -158,7 +160,10 @@ button {
     text-shadow: 2px 1px 14px #000000;
 }
 
-#name , #lastName , #password, #confirm-password {
+#name,
+#lastName,
+#password,
+#confirm-password {
     margin-top: 10px;
     width: 100%;
     padding: 6px 0px;
@@ -174,8 +179,83 @@ button {
 
 /*Estilos de la sección Muro */
 
-.buttonBack{
+.buttonBack {
     background-color: #5A51C5;
     font-size: 12px;
     width: 50%;
+}
+
+
+/*Estilos Para Pc*/
+
+@media (min-width: 1300px) {
+    #root {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .container {
+        display: flex;
+        margin-top: 80px;
+        column-gap: 140px;
+    }
+
+    /*header*/
+    .header {
+        margin-left: 110px;
+    }
+    .title{
+        font-size: 50px;
+    }
+    .paragraph{
+        font-size: 25px;
+    }
+
+    .signIn{
+        display: none;
+    }
+
+    /*Section 1*/
+    
+    .section1 {
+        height: 396px;
+        width: 315px;
+        margin-left: 250px;
+        justify-content: center;
+        align-items: center;
+        background-color: #C8BBBB;
+        border: none;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+        box-sizing: border-box;
+        margin: 40px 0 0;
+        padding: 20px 0 28px;
+        width: 396px;
+    }
+
+    #emailLogin {
+        height: 40px;
+    }
+
+    #passwordLogin {
+        height: 40px;
+    }
+
+    /*Section 2*/
+
+    .section2{
+        width: 90%;
+    }
+
+    .account{
+       font-size: 15px;
+    }
+
+    .section2 a {
+        font-size: 20px;
+    }
+
+    .google {
+        width: 90%;
+    }
 }

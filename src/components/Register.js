@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { createUser, popupGoogle } from '../lib/firebase.js';
+import { createUser } from '../lib/firebase.js';
 
 export const Register = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
@@ -66,9 +66,6 @@ export const Register = () => {
   const buttonSignUp = document.createElement('button');
   buttonSignUp.textContent = 'Registrate!';
 
-  const google = document.createElement('button');
-  google.className = 'google';
-
   const section2 = document.createElement('section');
   section2.className = 'section2';
 
@@ -91,22 +88,12 @@ export const Register = () => {
     inputPass,
     inputConfirmPassword,
     buttonSignUp,
-    google,
     section2,
     errorAdvice,
   );
 
   linkLogin.addEventListener('click', () => {
     onNavigate('/');
-  });
-
-  // Escuchador boton google
-
-  google.addEventListener('click', () => {
-    popupGoogle()
-      .then(() => {
-        onNavigate('/wall');
-      });
   });
 
   // Escuchador boton Registrarse
