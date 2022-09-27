@@ -48,38 +48,5 @@ export const buttonP = () => {
     savePost(contenido);
     postForm.reset();
   })
-}};
+}}
 export default wall;
-
-const buttonBackToTop = document.getElementById("btn-back-to-top");
-
-window.onscroll = () => {
-   scrollFunction();
-}
-  
-  const scrollFunction = () => {
-    if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
-    ) {
-      buttonBackToTop.style.display = "block";
-    } else {
-      buttonBackToTop.style.display = "none";
-    }
-  };
-
-  // buttonBackToTop.addEventListener('click', backToTop());
-
-  const backToTop = () =>{
-    document.wall.scroll = 0;
-    document.documentElement.scrollTop = 0;
-    };
-
-//FORMULARIO PARA ESCRIBIR COMENTARIO
- // <form id="postForm">
-    // <label>¿Quieres compartir algo?</label>
-    // <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
-    // <button type="button" id="PostContentButton"> Publicar </button>
-    // </form>
-
-
