@@ -7,7 +7,6 @@ const eventButtonGoogle = () => {
         buttonGoogle.addEventListener('click', () => {
         // console.log(provider)
         // console.log(signGoogle)
-        signGoogle();
         window.location.href = '#wall';
 
     });
