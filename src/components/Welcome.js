@@ -1,19 +1,6 @@
-import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js';
 import { onNavigate } from '../main.js';
+import { signInUser, popupGoogle } from '../lib/firebase.js';
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyAHVluY138pnk8PKOw2nuTGMcEEkV4dpLY',
-  authDomain: 'social-network-d51cd.firebaseapp.com',
-  projectId: 'social-network-d51cd',
-  storageBucket: 'social-network-d51cd.appspot.com',
-  messagingSenderId: '447408493171',
-  appId: '1:447408493171:web:221c363b010259179b9006',
-  measurementId: 'G-19TVG0TJQD',
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
 export const Welcome = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
   const div = document.createElement('div');
@@ -52,9 +39,7 @@ export const Welcome = () => {
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = 'Inicia Sesión';
 
-  const google = document.createElement('a');
-  google.setAttribute('href', '');
-  google.textContent = 'Iniciar sesión con google';
+  const google = document.createElement('button');
   google.className = 'google';
 
   const section2 = document.createElement('section');
@@ -67,26 +52,44 @@ export const Welcome = () => {
   linkRegister.textContent = 'Regístrate';
   section2.append(account, linkRegister);
 
-  section1.append(inputEmail, inputPass, buttonLogin, google, section2);
+  const errorAdvice = document.createElement('p');
+  errorAdvice.setAttribute('id', 'errorApp');
 
-  buttonLogin.addEventListener('click', () => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // eslint-disable-next-line no-unused-vars
-        const uid = user.uid;
-        onNavigate('/wall');
-        console.log('loggeado');
-        // ...
-      } else {
-        // User is signed out
-        // ...
-        console.log('no loggeado');
-      }
-    });
-  });
+  section1.append(inputEmail, inputPass, buttonLogin, google, section2, errorAdvice);
+
   linkRegister.addEventListener('click', () => {
     onNavigate('/register');
+  });
+
+  // Escuchador boton google
+
+  google.addEventListener('click', () => {
+    popupGoogle()
+      .then(() => {
+        onNavigate('/wall');
+      });
+  });
+
+  // Escuchador boton Iniciar sesión
+
+  buttonLogin.addEventListener('click', (e) => {
+    e.preventDefault();
+    const loginEmail = inputEmail.value;
+    const loginPass = inputPass.value;
+    signInUser(loginEmail, loginPass)
+      .then(() => {
+        onNavigate('/wall');
+      })
+      .catch((error) => {
+        const invalidEmail = 'Correo inválido';
+        const passNone = 'Debe diligenciar una constraseña';
+
+        if (error.code === 'auth/invalid-email') {
+          errorAdvice.innerText = invalidEmail;
+        } else if (error.code === 'auth/internal-error') {
+          errorAdvice.innerText = passNone;
+        }
+      });
   });
 
   div.append(header, section1);
