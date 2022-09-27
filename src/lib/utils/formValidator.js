@@ -107,11 +107,11 @@ const formValidator = (name, user, email, password) => {
 
 const formValidExpretion = (email) => {
   console.log(regex.email.test(email));
-//   if (regex.name.test(name)){
-//  console.log("Expresion funciona")
-//   }else{
-//     console.log("no funcina")
-//   }
+  //   if (regex.name.test(name)){
+  //  console.log("Expresion funciona")
+  //   }else{
+  //     console.log("no funcina")
+  //   }
 
 };
 
