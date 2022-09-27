@@ -9,7 +9,9 @@ const wall = () => {
       <img src="img/logoapp.png" alt="LogoCICLAPP" class="logoHorizontalWall">
       <p class="textLogoWall">CICLAPP</p>
     </div>
-      <i class="ri-logout-box-r-fill"></i>
+    <button class="exitButtonClass" id="exitButtonId">
+    <i class="ri-logout-box-r-fill"></i>
+    </button>
     </figure>
 
     <aside class="introUser"> 
@@ -39,7 +41,7 @@ const wall = () => {
 return wallOffPublication;
 };
 
-export const buttonP = () => {
+const buttonP = () => {
   const postForm = document.getElementById('postForm')
   const buttonP = document.getElementById('PostContentButton')
   if(buttonP){
@@ -49,4 +51,5 @@ export const buttonP = () => {
     postForm.reset();
   })
 }}
-export default wall;
+export { wall, buttonP };
+
