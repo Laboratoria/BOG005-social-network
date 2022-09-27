@@ -29,10 +29,10 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
   }
 });
 
-export {
+/* export {
    createUser, singUser, singUserGoogle, GoogleAuthProvider, loginOut,
 };
-
-// export {
-//   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut,
-// };
+ */
+export {
+  initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut,
+};
