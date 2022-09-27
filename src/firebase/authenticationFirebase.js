@@ -3,7 +3,6 @@ import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValid
 
 
 const testCreate = (auth, email, password) => {
-
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       showSuccessfulResponse();
@@ -23,48 +22,36 @@ const displayUserData = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         localStorage.setItem('UserCredentialFb', JSON.stringify(user.email));
-        const contentGretting = document.querySelector('#wallOffPublication');
-        console.log(contentGretting);
+        //const contentGretting = document.querySelector('#wallOffPublication');
+        const contentGretting = document.querySelector("#titleId")
         if (contentGretting !== null) {
-          contentGretting.innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Usuario en sesión: ${user.email}</h1>`;
-          eventSignOut();
+          contentGretting.textContent = `Hola: ${user.email}`
+          //contentGretting.innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Usuario en sesión: ${user.email}</h1>`;
+         // eventSignOut();
         }
       } else {
         document.querySelector('#wallOffPublication').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola resgistrate en nuestra red social</h1>`;
       }
     });
-
-const eventLoginButton = () => {
-  if (window.location.pathname === '/userSignIn') {
-    const btnLogin = document.querySelector('#submitContinue');
-    if (btnLogin) {
-      btnLogin.addEventListener('click', () => {
-        const email = document.querySelector('#userSi').value;
-        const password = document.querySelector('#passwordSi').value;
-        signInWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-            console.log(userCredential, 'se cumplió');
-            const greetingUser = document.getElementById('greetingUserId');
-            if (greetingUser) {
-              greetingUser.innerHTML = '';
-            }
-            window.location.href = '#wall';
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-          });
-      });
-    }
   }
-};
+}
 
+const signIn = (auth, email, password) => {
+  return signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential;
+      console.log(user)      
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
+}
+  
 const logOut = () => {
   return signOut(auth).then(() => {
     auth.signOut();
-    console.log('Ha salido de la sesión');
-
-  }).catch((error) => {
+   }).catch((error) => {
     console.error('Ha ocurrido un error al intentar salir', error);
   });
 }
@@ -96,5 +83,5 @@ export {
   eventSignOut,
   logOut,
   displayUserData,
-  eventLoginButton,
+  signIn,
 };
