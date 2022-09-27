@@ -31,12 +31,11 @@ const router = () => {
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
   eventButtonContinue();
-
-  eventLoginButton();
-  displayUserData();
   eventButtonGoogle();
   buttonP();
   getPost();
+  eventLoginButton();
+  displayUserData();
   //changeConditionWall();
 };
 
