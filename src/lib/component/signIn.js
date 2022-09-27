@@ -9,6 +9,8 @@ export const signIn = `
         <form class="formContainer">
           <input class="inputForm" type="email" placeholder="Email" id="inputEmail">
           <input class="inputForm" type="password" placeholder="Contraseña" id="inputPassword">
+          </form>
+          <div>
           <button class="btnSignIn" id="btnSignIn" onclick="allData()" >Iniciar Sesión</button>
           
           <div class="optionSignIn">
@@ -19,7 +21,7 @@ export const signIn = `
           
           <button class="btnGoogle" id="btnGoogle" type="submit"><img src="./images/google.png">Continuar con
             Google</button>
-        </form>
+            </div>
         <a href="/signUp" class="linkSign" onclick="onNavigate()">No tienes una cuenta? Registrate</a>
       </div>`;
 
