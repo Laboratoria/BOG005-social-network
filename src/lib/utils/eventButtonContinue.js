@@ -1,5 +1,5 @@
 import { getFormData } from './formValidator.js';
-import { auth, testCreate } from '../../firebase/authenticationFirebase.js';
+import { auth, createUser } from '../../firebase/authenticationFirebase.js';
 
 const eventButtonContinue = () => {
   if (window.location.pathname === '/signIn') {
@@ -7,7 +7,7 @@ const eventButtonContinue = () => {
     if (buttonContinue) {
       buttonContinue.addEventListener('click', () => {
         const dataForm = getFormData();
-        const result = testCreate(auth, dataForm.email, dataForm.password);
+        const result = createUser(auth, dataForm.email, dataForm.password);
         result.then((userCredential) => {
 
           if (userCredential) {
@@ -24,7 +24,7 @@ const eventButtonContinue = () => {
             console.error(error.message, 'no ok');
           });
       });
-    }
-  }
+    };
+  };
 };
-export default eventButtonContinue;
+export { eventButtonContinue };

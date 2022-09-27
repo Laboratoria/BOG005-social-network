@@ -1,16 +1,14 @@
 import signIn from './page/signIn.js';
 import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
-import header from './templates/header.js';
-import getHash from './utils/getHash.js';
-import wall, { buttonP } from './page/wall.js';
-import { removeHashes, sendRoute } from './utils/clearHash.js';
-import eventButtonContinue from './utils/eventButtonContinue.js';
+import  { wall, buttonP } from './page/wall.js';
+import { eventButtonContinue } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
-import { eventLoginButton } from './utils/loginButton.js';
-
-import eventButtonGoogle from './utils/eventButtonGoogle.js';
+import { eventLoginButton } from './utils/eventLoginButton.js';
+import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
+import { eventSignOut } from './utils/eventSignOut.js';
 import { getPost } from '../firebase/firestoreFirebase.js';
+
 //import { changeConditionWall } from './utils/imgWall.js';
 
 const containerPage = document.getElementById('contentPageId');
@@ -22,12 +20,25 @@ const routes = {
   '/wall': wall,
 };
 
+const removeHashes = (hash) => {
+  if (hash === '#welcome') {
+    window.history.replaceState({}, '', '/');
+  } else if (hash === '#signIn') {
+    window.history.replaceState({}, '', '/signIn');
+  } else if (hash === '#userSignIn') {
+    window.history.replaceState({}, '', '/userSignIn');
+  } else if (hash === '#wall') {
+    window.history.replaceState({}, '', '/wall');
+  }
+};
 
-const router = () => {
-  containerPage.innerHTML = header();
-  const hash = getHash();
+
+const router = (hash) => {
   removeHashes(hash);
-  const sendRoutes = sendRoute(hash);
+  const changeHash = hash.slice(1).split('/')[1] || '/';
+  const getWord = hash.slice(1);
+  const route = `${changeHash}${getWord}`;
+  const sendRoutes = route === '/welcome' ? '/' : route;
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
   eventButtonContinue();
@@ -35,9 +46,9 @@ const router = () => {
   eventLoginButton();
   displayUserData();
   eventButtonGoogle();
+  eventSignOut();
   buttonP();
   getPost();
-  //changeConditionWall();
 };
 
 const handlerHistorial = () => {

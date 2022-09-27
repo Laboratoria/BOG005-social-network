@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValidator.js';
 
 
-const testCreate = (auth, email, password) => {
+const createUser = (auth, email, password) => {
   return createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       showSuccessfulResponse();
@@ -14,23 +14,25 @@ const testCreate = (auth, email, password) => {
       const errorMessage = error.message;
       showMessageError(errorCode);
     });
-
-}
+};
 
 const displayUserData = () => {
   if (window.location.pathname === '/wall') {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         localStorage.setItem('UserCredentialFb', JSON.stringify(user.email));
-        //const contentGretting = document.querySelector('#wallOffPublication');
         const contentGretting = document.querySelector("#titleId")
         if (contentGretting !== null) {
           contentGretting.textContent = `Hola: ${user.email}`
-          //contentGretting.innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Usuario en sesión: ${user.email}</h1>`;
-         // eventSignOut();
         }
       } else {
-        document.querySelector('#wallOffPublication').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola resgistrate en nuestra red social</h1>`;
+        const welcomeMessage = document.querySelector('#wallOffPublication')
+        const buttonExit = document.querySelector('#exitButtonId')
+        if(welcomeMessage !== null && buttonExit !== null){
+          document.querySelector('#wallOffPublication').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola resgistrate en nuestra red social</h1>`;
+          document.querySelector('#exitButtonId').style.display = "none"
+        }
+        
       }
     });
   }
@@ -56,31 +58,11 @@ const logOut = () => {
   });
 }
 
-const eventSignOut = () => {
-  const btnExit = document.getElementById('exitButtonId');
-  if (btnExit) {
-    btnExit.addEventListener('click', () => {
-      const result = logOut(auth);
-      result.then(() => {
-        const getUserCredential = localStorage.getItem('UserCredentialFb');
-        console.log(getUserCredential, 'Fuera de aquí');
-        localStorage.removeItem('UserCredentialFb');
-        localStorage.removeItem('User');
-        localStorage.removeItem('Username');
-        window.location.href = '#welcome';
-      }).catch((error) => {
-        console.error(error);
-      });
-    });
-  }
-};
-
 export {
   auth,
-  testCreate,
+  createUser,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  eventSignOut,
   logOut,
   displayUserData,
   signIn,
