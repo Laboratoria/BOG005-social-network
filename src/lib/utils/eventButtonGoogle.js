@@ -7,12 +7,15 @@ const eventButtonGoogle = () => {
         buttonGoogle.addEventListener('click', () => {
         // console.log(provider)
         // console.log(signGoogle)
-        signGoogle();
+         signGoogle();
+        //  const promesaGoogle =
+        // console.log('Promesa de google', promesaGoogle);
         window.location.href = '#wall';
 
     });
     };
     
-}}
+};
+};
 
 export { eventButtonGoogle };

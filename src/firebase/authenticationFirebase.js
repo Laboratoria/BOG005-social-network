@@ -14,8 +14,7 @@ const createUser = (auth, email, password) => {
       const errorMessage = error.message;
       showMessageError(errorCode);
     });
-
-}
+};
 
 const displayUserData = () => {
   if (window.location.pathname === '/wall') {

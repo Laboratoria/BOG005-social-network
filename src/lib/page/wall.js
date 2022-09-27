@@ -1,4 +1,5 @@
 import { savePost } from "../../firebase/firestoreFirebase.js";
+// import { buttonBackToTop } from "../utils/buttonBackToTop.js";
 
 const wall = () => {
   const wallOffPublication = `
@@ -12,6 +13,7 @@ const wall = () => {
     <i class="ri-logout-box-r-fill"></i>
     </button>
     </figure>
+
     <aside class="introUser"> 
     <h1 class="titleWall" id="titleId"> ¡Hola, Usuario!</h1>
     <h2 class="subtitulo"> Mira lo que dice la comunidad</h2>
@@ -22,6 +24,10 @@ const wall = () => {
     <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
     <button type="button" id="PostContentButton"> Publicar </button>
     </form>
+
+    <button type="button" id="btn-back-to-top">
+        <i class="fa-solid fa-circle-chevron-up"></i></a>
+    </button>
 
     <section id="postsContainerId" class="postsContainer">
     </section>
@@ -46,3 +52,4 @@ const buttonP = () => {
   })
 }}
 export { wall, buttonP };
+

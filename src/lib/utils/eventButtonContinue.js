@@ -24,7 +24,7 @@ const eventButtonContinue = () => {
             console.error(error.message, 'no ok');
           });
       });
-    }
-  }
+    };
+  };
 };
 export { eventButtonContinue };
