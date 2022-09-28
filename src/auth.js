@@ -4,12 +4,15 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  onAuthStateChanged,
+  signOut,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
 import { app } from "./firebase.js";
 import { saveData } from "./firestore.js";
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const user = auth.currentUser;
 
 export function registerWithEmail(email, password, name) {
   createUserWithEmailAndPassword(auth, email, password)
@@ -70,4 +73,25 @@ export function signInWithGoogle() {
       const email = error.customData.email;
       const credential = GoogleAuthProvider.credentialFromError(error);
     });
+}
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+  } else {
+    window.location.hash = "";
+  }
+});
+
+export function signOutUser() {
+  signOut(auth)
+    .then(() => {})
+    .catch((error) => {});
+}
+
+export async function getUser() {
+  const auth = await getAuth(app);
+  const user = auth.currentUser;
+  console.log(user);
+  return user;
 }
