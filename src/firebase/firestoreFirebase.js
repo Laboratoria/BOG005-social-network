@@ -1,5 +1,5 @@
 
-import { collection, addDoc, getDocs, onSnapshot, db } from '../lib/firebaseIntermadiate/firestore.js'
+import { collection, addDoc, getDocs, onSnapshot, db, deleteDoc, doc } from '../lib/firebaseIntermadiate/firestore.js'
 
 // colección crea la coleeción de datos
 const savePost = ( description ) => {
@@ -32,7 +32,17 @@ const getPost =  () => {
       <i class="fa-regular fa-heart" id="heart"></i>
       <p>12</p>
       </div>
+      <div>
       <i class="fa-solid fa-comment-dots" id="commet"></i>
+      </div>
+      <div class="delete">
+      <button class="deletePost" id="deletePostId" data-id='${doc.id}'>
+      <i class="fa-solid fa-trash-can"></i>
+      </button>
+      </div>
+      <div>
+      <i class="fa-regular fa-pen-to-square"></i>
+      </div>
     </div>
     </section>`;
     })}
@@ -58,11 +68,21 @@ const onGetPost = ()=> {
         <p class="contentPost" id="allPosts">${item.data().description}</p>
       </article>
       <div id="actionContainerId" class="actionContainer">
-      <div class="like">
-      <i class="fa-regular fa-heart" id="heart"></i>
-      <p>12</p>
-      </div>
+        <div class="like">
+        <i class="fa-regular fa-heart" id="heart"></i>
+        <p>12</p>
+        </div>
+        <div>
         <i class="fa-solid fa-comment-dots" id="commet"></i>
+        </div>
+        <div class="delete">
+        <button class="deletePost" id="deletePostId" data-id='${doc.id}'>
+        <i class="fa-solid fa-trash-can"></i>
+        </button>
+        </div>
+        <div>
+        <i class="fa-regular fa-pen-to-square"></i>
+        </div>
       </div>
       </section>`;
     // console.log('item con data y description',item.data().description)
@@ -75,7 +95,51 @@ const onGetPost = ()=> {
 
 onGetPost();
 
-export {savePost, getPost }
+const deletePost = () =>{
+  deletePost(deleteDoc(doc(db, 'Post', id)), {
+    const contentedor = document.getElementById('postsContainerId')
+    if(contentedor){
+      querySanpshot.forEach((doc)=>{
+        contentedor.innerHTML +=`
+        <section id="post postForm" class="postsCards"> 
+        <header id="headerPost">
+          <i class="fa-solid fa-circle-user" class="userIcon"></i>
+          <div class="contentUserPost"> 
+          <p class="userTitleName">Usuario</p>
+          <p class="location">Ubicación</p>
+          </div>
+        </header>
+        <article id="post">
+          <p class="contentPost" id="allPosts">${doc.data().description}</p>
+        </article>
+        <div id="actionContainerId" class="actionContainer">
+          <div class="like">
+          <i class="fa-regular fa-heart" id="heart"></i>
+          <p>12</p>
+          </div>
+          <div>
+          <i class="fa-solid fa-comment-dots" id="commet"></i>
+          </div>
+          <div class="delete">
+          <button class="deletePost" id="deletePostId" data-id='${doc.id}'>
+          <i class="fa-solid fa-trash-can"></i>
+          </button>
+          </div>
+          <div>
+          <i class="fa-regular fa-pen-to-square"></i>
+          </div>
+          </div>
+          </section>`
+      });
+    };
+  });
+};
+
+
+
+export {savePost, getPost, deletePost }
 
 //ICONO CORAZON RELLENO
 // <i class="fa-solid fa-heart" id="heart"></i>
+//<i class="fa-regular fa-pen-to-square"></i>
+//<i class="fa-solid fa-trash-can"></i>

@@ -1,7 +1,7 @@
 import signIn from './page/signIn.js';
 import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
-import  { wall, buttonP } from './page/wall.js';
+import  { wall, buttonP, buttonDelete } from './page/wall.js';
 import { eventButtonContinue } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
@@ -42,13 +42,13 @@ const router = (hash) => {
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
   eventButtonContinue();
-
   eventLoginButton();
   displayUserData();
   eventButtonGoogle();
   eventSignOut();
   buttonP();
   getPost();
+  buttonDelete();
 };
 
 const handlerHistorial = () => {

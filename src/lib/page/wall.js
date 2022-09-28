@@ -52,5 +52,18 @@ const buttonP = () => {
     postForm.reset();
   })
 }}
-export { wall, buttonP };
+
+const buttonDelete = () =>{
+ const getDeletePost = contentedor.querySelectorAll('.deletePost')
+ log(getDeletePost )
+if(buttonDelete){
+buttonClear.forEach(buttonD =>{
+  buttonD.addEventListener('click', ({target: {dataset }}) => {
+    console.log(dataset.id);
+  })
+})
+}
+};
+
+export { wall, buttonP, buttonDelete };
 
