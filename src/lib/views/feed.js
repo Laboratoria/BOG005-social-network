@@ -87,10 +87,10 @@ export default () => {
     signOutUser();
   });
 
-  const holaButton = feedSection.querySelector(".prueba");
-  holaButton.addEventListener("click", (e) => {
-    getUser();
-  });
+  // const holaButton = feedSection.querySelector(".prueba");
+  // holaButton.addEventListener("click", (e) => {
+  //   getUser();
+  // });
 
   return feedSection;
 };
