@@ -1,10 +1,10 @@
+ import { getFormData } from '../utils/formValidator.js';
+ import { auth, createUser } from '../../firebase/authenticationFirebase.js';
+
+
 const signIn = () => {
   const viewSignIn = `
-  <header id="header" class="headerClassInsignIn">
-  <figure class="figureWelcome"> 
-   <img src="img/Logo.png" alt="LogoCICLAPP" class="logo">
-  </figure>
-  </header> 
+ 
   <section class="viewSignIn" id="signIn">
   <figure class="logoSignIn">
       <img src="img/Logo.png" alt="LogoCICLAPP" class="logoHorizontal">
@@ -49,4 +49,4 @@ const signIn = () => {
   return viewSignIn;
 };
 
-export default signIn;
+export { signIn };

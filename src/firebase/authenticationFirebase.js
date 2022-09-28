@@ -14,8 +14,28 @@ const createUser = (auth, email, password) => {
       const errorMessage = error.message;
       showMessageError(errorCode);
     });
+};
 
+const register = () => {
+  const dataForm = getFormData();
+        const result = createUser(auth, dataForm.email, dataForm.password);
+        result.then((userCredential) => {
+
+          if (userCredential) {
+            window.location.href = '#wall';
+            localStorage.setItem('Username', `${dataForm.name}`);
+            const getName = localStorage.getItem('Username');
+            const contentPost = document.querySelector('#wallOffPublication');
+            if (contentPost) {
+              contentPost.innerHTML += `<h1 id="greetingUserId" class="greetingUser">Hola ${getName}!</h1>`;
+            }
+          }
+        })
+          .catch((error) => {
+            console.error(error.message, 'no ok');
+          });
 }
+
 
 const displayUserData = () => {
   if (window.location.pathname === '/wall') {
@@ -23,15 +43,22 @@ const displayUserData = () => {
       if (user) {
         localStorage.setItem('UserCredentialFb', JSON.stringify(user.email));
         const contentGretting = document.querySelector("#titleId")
-        if (contentGretting !== null) {
+        const buttonExit = document.querySelector('#exitButtonId')
+        const buttonRegister = document.getElementById("loginButtonIdWall")
+        if (contentGretting !== null && buttonExit !== null) {
           contentGretting.textContent = `Hola: ${user.email}`
+          document.querySelector('#exitButtonId').style.display = "block";
+          buttonRegister.style.display ="none"
         }
       } else {
-        const welcomeMessage = document.querySelector('#wallOffPublication')
+        const contentGretting = document.querySelector("#titleId")
+        // const welcomeMessage = document.querySelector('#wallOffPublication')
         const buttonExit = document.querySelector('#exitButtonId')
-        if(welcomeMessage !== null && buttonExit !== null){
-          document.querySelector('#wallOffPublication').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola resgistrate en nuestra red social</h1>`;
+        const buttonRegister = document.getElementById("loginButtonIdWall")
+        if(contentGretting !== null && buttonExit !== null){
+          document.querySelector('#titleId').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola, resgistrate en nuestra red social</h1>`;
           document.querySelector('#exitButtonId').style.display = "none"
+          buttonRegister.style.display ="block"
         }
         
       }

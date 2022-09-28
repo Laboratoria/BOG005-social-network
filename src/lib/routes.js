@@ -1,4 +1,4 @@
-import signIn from './page/signIn.js';
+import { signIn } from './page/signIn.js';
 import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
 import  { wall, buttonP } from './page/wall.js';
@@ -8,6 +8,7 @@ import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventSignOut } from './utils/eventSignOut.js';
 import { getPost } from '../firebase/firestoreFirebase.js';
+
 //import { changeConditionWall } from './utils/imgWall.js';
 
 const containerPage = document.getElementById('contentPageId');
@@ -40,22 +41,22 @@ const router = (hash) => {
   const sendRoutes = route === '/welcome' ? '/' : route;
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
-  eventButtonContinue();
-  eventLoginButton();
-  displayUserData();
-  eventButtonGoogle();
-  eventSignOut();
-  buttonP();
-  getPost();
-  //changeConditionWall();
 };
 
-const handlerHistorial = () => {
+const historyHandler = () => {
   const pathName = window.location.pathname;
   const render = routes[pathName] ? routes[pathName] : 'ERROR404';
   containerPage.innerHTML = render();
 };
 
+const eventHandler = () => {
+  eventButtonContinue();
+  eventButtonGoogle();
+  eventLoginButton();
+  displayUserData();
+  eventSignOut();
+  buttonP();
+  getPost();
+}
 
-
-export { router, handlerHistorial };
+export { router, historyHandler, eventHandler,  };

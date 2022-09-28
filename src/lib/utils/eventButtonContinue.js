@@ -1,12 +1,8 @@
 import { getFormData } from './formValidator.js';
 import { auth, createUser } from '../../firebase/authenticationFirebase.js';
 
-const eventButtonContinue = () => {
-  if (window.location.pathname === '/signIn') {
-    const buttonContinue = document.getElementById('submitContinueButton');
-    if (buttonContinue) {
-      buttonContinue.addEventListener('click', () => {
-        const dataForm = getFormData();
+const register = () => {
+  const dataForm = getFormData();
         const result = createUser(auth, dataForm.email, dataForm.password);
         result.then((userCredential) => {
 
@@ -23,8 +19,18 @@ const eventButtonContinue = () => {
           .catch((error) => {
             console.error(error.message, 'no ok');
           });
+}
+
+const eventButtonContinue = () => {
+  if (window.location.pathname === '/signIn') {
+    const buttonContinue = document.getElementById('submitContinueButton');
+    if (buttonContinue) {
+      buttonContinue.addEventListener('click', () => {
+        register();
       });
-    }
-  }
+    };
+  };
 };
+
+
 export { eventButtonContinue };
