@@ -1,6 +1,7 @@
-/* eslint-disable max-len */
+
 // import { onNavigate } from "../main.js";
-import { crearUsuario} from "../lib/firebase.js";
+import { crearUsuario } from '../lib/firebase.js';
+
 export const registro = () => {
   // Se crean las etiquetas
   const div = document.createElement('div');
