@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { onNavigate } from "../main.js";
-import { crearUsuario } from "../lib/firebase.js";
+import { crearUsuario, crearUsuarioConGoogle } from "../lib/firebase.js";
+
 export const registro = () => {
   // Se crean las etiquetas
   const div = document.createElement('div');
@@ -20,21 +21,22 @@ export const registro = () => {
   contraseñaUsuario.id = 'contraseña';
   const buttonRegistro = document.createElement('button');
   buttonRegistro.id = 'registro';
+  const buttonGoogle = document.createElement('button');
+  buttonGoogle.id = 'google';
   buttonRegistro.addEventListener('click', () => {
     // 1er camino para cuando todo esta ok
     // 2do camino cuando algo falta
-    if (correoUsuario.value.includes("@hotmail.com", "@yahoo.es", "@yahoo.com", "@outlook.com")) {
+    // if (correoUsuario.value.includes("@hotmail.com", "@yahoo.es", "@yahoo.com", "@outlook.com")) {
       crearUsuario(correoUsuario.value, contraseñaUsuario.value).then(() => {
-        console.log("Usuario registrado")
-        //importar onNavigate
-        onNavigate("/login")
+        console.log()
+      
       }).catch((error) => {
         console.error(error.message)
       })
-    }
-    else {
-      alert("Verifica tus datos")
-    }
+    // }
+    // else {
+    //   alert("Verifica tus datos")
+    // }
     // if (contraseñaUsuario.value.includes("/a-z//A-Z/||/0-9/")) {
     //   crearContraseña(contraseñaUsuario.value,correoUsuario.value).then(()=>{
         
@@ -58,11 +60,19 @@ export const registro = () => {
   contraseñaUsuario.setAttribute('placeholder', 'Contraseña Usuario');
   contraseñaUsuario.setAttribute("type","password");
   buttonRegistro.textContent = 'Regístrate';
+  buttonGoogle.textContent ='Google'
   logo.src = '/imagenes/Recurso 1.png';
-  
+  buttonGoogle.addEventListener ("click",()=> {
+    crearUsuarioConGoogle ().then( () => {
+      console.log("crearUsuarioConGoogle")
+    }).catch(()=>{
+      console.log("hay un error")
+    })
+    
+    });
 
   // Agregamos elementos a nuestro div
 
-  div.append(logo, textoLogin, enlaceInicio, formulario, correoUsuario, contraseñaUsuario, buttonRegistro);
+  div.append(logo, textoLogin, enlaceInicio, formulario, correoUsuario, contraseñaUsuario, buttonRegistro, buttonGoogle);
   return div;
 };
