@@ -91,13 +91,6 @@ a {
   padding: 10px 10px;
 }
 
-.singin input {
-  font-family: "Overpass", sans-serif;
-  font-size: 110%;
-  color: #1b262c;
-  display: block;
-}
-
 .googleButton {
   display: flex;
   justify-content: center;
@@ -301,7 +294,14 @@ a {
 }
 
 /*REGISTER*/
+
+.submitContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .singin {
+  display: flex;
   width: 80%;
   max-width: 30vw;
   min-width: 30vw;
@@ -313,7 +313,7 @@ a {
   display: block;
   font-family: "Overpass", sans-serif;
   font-size: 90%;
-  color: #3c4245;
+  color: #ffffff;
   margin-top: 15px;
 }
 

@@ -1,16 +1,18 @@
-export const changeRoute = (hash, components) => {
+import { COMPONENTS } from "./../index.js";
+
+export const changeRoute = (hash) => {
   const containerRoot = document.getElementById("content");
   containerRoot.innerHTML = "";
   switch (hash) {
     case "":
-      return containerRoot.appendChild(components.home());
+      return containerRoot.appendChild(COMPONENTS.home());
     case "#home":
-      return containerRoot.appendChild(components.home());
+      return containerRoot.appendChild(COMPONENTS.home());
     case "#register":
-      return containerRoot.appendChild(components.register());
+      return containerRoot.appendChild(COMPONENTS.register());
     case "#feed":
-      return containerRoot.appendChild(components.feed());
+      return containerRoot.appendChild(COMPONENTS.feed());
     default:
-      return containerRoot.appendChild(components.error404());
+      return containerRoot.appendChild(COMPONENTS.error404());
   }
 };

@@ -4,7 +4,7 @@ export default () => {
   const homeSection = document.createElement("div");
   homeSection.classList.add("background");
 
-  const viewHome = `<section class="container">
+  const viewHome = /*html*/ `<section class="container">
       <figure>
         <img
           alt="Logotipo de MovieManía"
