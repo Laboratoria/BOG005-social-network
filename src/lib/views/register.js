@@ -2,20 +2,18 @@ import { registerWithEmail } from "./../../auth.js";
 import { saveData } from "./../../firestore.js";
 export default () => {
   const registerSection = document.createElement("div");
-  registerSection.classList.add("background2");
+  registerSection.classList.add("background");
 
-  const viewRegister = /*html*/ `<main class="registerContent">
-      <section id="ContainerRegister">
-        <article id="headerregister">
-          <img src="/src/img/title.png" alt="" />
-          <h1 class="registerTitle">Regístrate</h1>
-          <h2>
-            ¡Comparte entre amigos tus <br />
-            doramas favoritos!
-          </h2>
-        </article>
-        <section id="singin">
-          <form id="singinform">
+  const viewRegister = /*html*/ `<section class="registerContent">
+    
+          <figure>
+          <img src="/src/img/title.png" alt="logo" />
+          </figure>
+          <article><h2>¡Únete! Comparte  lo que amas. <br> Conoce a otros. Vive la experiencia </h2></article>
+
+        <section class="singin">
+        <h1>Regístrate</h1>
+          <form id="singInForm">
             <label for="name">Nombre</label>
             <input
               id="name"
@@ -48,21 +46,22 @@ export default () => {
               name="password"
               required
             />
-            <button type="submit" title="enviar" name="SingIn">
-              Crear cuenta
-            </button>
-            <br />
-          </form>
-
+          <div class= "submitContainer">
+          <button type="submit" title="enviar" name="SingIn">
+          Crear cuenta
+        </button>
+        </div>
+        </form>
           <a href="">Ya tengo cuenta</a>
-          
-        </section>
       </section>
-    </main>`;
+
+    </section>`;
   registerSection.innerHTML = viewRegister;
 
-  const form = registerSection.querySelector("#singinform");
+  const form = registerSection.querySelector("#singInForm");
+
   form.addEventListener("submit", (e) => {
+    console.log("hola");
     e.preventDefault();
     const formData = new FormData(e.target);
     const email = formData.get("email");
