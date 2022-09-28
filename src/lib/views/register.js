@@ -14,15 +14,15 @@ export default () => {
         <section class="singin">
         <h1>Regístrate</h1>
           <form id="singInForm">
-            <label for="name">Nombre</label>
+            
             <input
               id="name"
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="Nombre"
               required
             />
-            <label for="correo">Correo electrónico</label>
+            
             <input
               id="correo"
               type="email"
@@ -30,7 +30,7 @@ export default () => {
               placeholder="Correo electrónico"
               required
             />
-            <label for="usuario">País</label>
+            
             <input
               id="usuario"
               type="text"
@@ -38,7 +38,7 @@ export default () => {
               placeholder="País"
               required
             />
-            <label for="password">Contraseña</label>
+           
             <input
               id="password"
               type="password"
