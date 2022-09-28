@@ -1,3 +1,5 @@
+import { signOutUser, getUser } from "../../auth.js";
+
 export default () => {
   const feedSection = document.createElement("div");
   feedSection.classList.add("feed");
