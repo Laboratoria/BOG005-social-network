@@ -96,12 +96,12 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #5e376d;
-  padding: clamp(0.3125rem, 0.0446rem + 1.3393vw, 1.25rem);
-  margin: 0px 40px;
+  background-color: #fff;
+  padding: clamp(0.625rem, -0.0647rem + 3.4483vw, 1.875rem);
+  margin: 0px 100px;
   border-radius: 10px;
   font-family: "Manjari";
-  color: #fff;
+  color: #3c4245;
   gap: clamp(0.3125rem, -0.0323rem + 1.7241vw, 0.9375rem);
 }
 
@@ -144,13 +144,13 @@ a {
 }
 
 .loginButton {
-  background-color: #5e376d;
-  margin: 0px 40px;
+  background-color: #ce8ca5;
+  margin: 0px 100px;
   padding: clamp(0.625rem, -0.0647rem + 3.4483vw, 1.875rem);
   border-radius: 10px;
   font-family: "Manjari";
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: #3c4245;
 }
 
 .loginButton > h4 {
@@ -321,7 +321,7 @@ a {
 .singin input {
   font-family: "Overpass", sans-serif;
   font-size: 110%;
-  color: #1b262c;
+  color: #2c1b1b;
   display: block;
   width: 100%;
   height: 40px;
@@ -339,17 +339,17 @@ a {
 
 .singin input::placeholder {
   font-family: "Overpass", sans-serif;
-  color: #e4e4e4;
+  color: #3c4245;
 }
 
 .singin button {
   font-family: "Overpass", sans-serif;
   font-size: 1rem;
-  color: #1b262c;
+  color: #3c4245;
   width: 47%;
   height: 40px;
   border: none;
-  border-radius: 12px;
+  border-radius: 10px;
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
   background-color: #ce8ca5;
@@ -364,15 +364,33 @@ a {
 }
 
 .registerContent a {
+  display: flex;
+  align-items: center;
   color: #f5e8da;
   text-align: center;
-  margin-top: 3vh;
   font-size: 2vh;
+  width: fit-content;
+  margin: 2vh auto;
+  position: relative;
+}
+
+.registerContent a::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0px;
+  height: 2px;
+  width: 100%;
 }
 
 .registerContent {
   width: 100%;
   height: 100%;
+}
+
+.registerContent > .singin > #singInForm > input {
+  margin-bottom: 2vh;
 }
 
 .registerContent > figure {
@@ -400,6 +418,7 @@ a {
   text-align: center;
   font-size: 1.5em;
   color: #cd8ba4;
+  margin-bottom: 2vh;
 }
 
 .registerContent .singin {
@@ -560,16 +579,27 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: linear-gradient(-225deg, #a8bfff 0%, #884d80 100%);
-  box-shadow: 0 4px 25px -22px purple;
+  /* background-image: linear-gradient(-225deg, #a8bfff 0%, #884d80 100%); */
+
   color: white;
   position: relative;
   z-index: 10;
 }
 
+#sectionFeed .navbar::after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0px;
+  height: 2px;
+
+  width: 100%;
+}
+
 #sectionFeed header .navbar .logo img {
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: 20%;
   margin-left: 10%;
 }
 
@@ -721,7 +751,7 @@ a {
 
 /* ESTILOS DEL CONTENIDO DEL MODAL */
 #sectionFeed .modal {
-  margin: 15% auto;
+  /* margin: 15% auto; */
   padding: 20px;
   width: 40%;
   height: 50%;
@@ -731,11 +761,25 @@ a {
   flex-direction: column;
   justify-content: space-evenly;
   position: absolute;
-  transition: transform 1s;
+
   border-radius: 10px;
-  top: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  opacity: 1;
+  animation: fade 1s linear;
+}
+
+@keyframes fade {
+  0% {
+    transform: translate(-100%);
+  }
+  /* 100% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(30px);
+  } */
 }
 
 #sectionFeed .modal img {
@@ -764,9 +808,9 @@ a {
   border-radius: 50%;
 }
 
-#sectionFeed .modal-close {
-  transform: translateY(-200%);
-}
+/* #sectionFeed .modal-close {
+  transform: translateY(-10%);
+} */
 
 #sectionFeed .modal-container img {
   height: 50%;
