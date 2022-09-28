@@ -4,11 +4,11 @@ export default () => {
   const registerSection = document.createElement("div");
   registerSection.classList.add("background2");
 
-  const viewRegister = `<main class="registerContent">
+  const viewRegister = /*html*/ `<main class="registerContent">
       <section id="ContainerRegister">
         <article id="headerregister">
           <img src="/src/img/title.png" alt="" />
-          <h1>Regístrate</h1>
+          <h1 class="registerTitle">Regístrate</h1>
           <h2>
             ¡Comparte entre amigos tus <br />
             doramas favoritos!
@@ -54,7 +54,7 @@ export default () => {
             <br />
           </form>
 
-          <a href="#home">Ya tengo cuenta</a>
+          <a href="">Ya tengo cuenta</a>
           
         </section>
       </section>
