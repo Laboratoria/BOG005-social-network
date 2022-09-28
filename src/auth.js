@@ -59,6 +59,11 @@ export function loginWithEmail(email, password) {
 export function signInWithGoogle() {
   signInWithPopup(auth, provider)
     .then((result) => {
+
+      // PRUEBA cargar foto de perfil de google al autenticarse.
+      //  $('#avatar').attr('src', result.user.photoURL)
+      // FIN PRUEBA
+
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
