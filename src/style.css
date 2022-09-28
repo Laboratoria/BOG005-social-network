@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Elsie:wght@900&family=Manjari:wght@700&display=swap");
 
-#content {
+/* #content {
   height: 100vh;
-}
+} */
 
 * {
   padding: 0;
@@ -12,9 +12,9 @@
   box-sizing: border-box;
 }
 
-* html body {
+/* * html body {
   max-width: 100vw;
-}
+} */
 
 button {
   text-align: center;
@@ -37,13 +37,10 @@ a {
 .background {
   display: flex;
   flex-direction: column;
-  background-color: #2b192e;
-  /* background-image: url("img/tvs.png"); */
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-  /* background-position: bottom; */
 }
 
 .container {
@@ -94,7 +91,7 @@ a {
   padding: 10px 10px;
 }
 
-#singin input {
+.singin input {
   font-family: "Overpass", sans-serif;
   font-size: 110%;
   color: #1b262c;
@@ -303,71 +300,24 @@ a {
   }
 }
 
-/* register view */
-
-.background2 {
-  display: flex;
-  background-color: #2b192e;
-  background-image: url("img/tvs.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  background-position: bottom;
-}
-
-.registerContent {
-  width: 100%;
-}
-
-#ContainerRegister {
-  height: 70%;
-}
-
-#headerregister img {
-  width: 100%;
-  padding: 10px 50px;
-}
-
-#headerregister h1 {
-  text-align: center;
-  width: 100%;
-  font-size: 4vh;
-  color: #5e376d;
-  font-family: "Manjari";
-}
-
-#headerregister h2 {
-  text-align: center;
-  width: 100%;
-  font-size: 2.5vh;
-  color: #f5e8da;
-  font-family: "Manjari";
-}
-
-.registercontent #contenedor {
-  display: inline-block;
-  padding: 2vw;
-  width: 100%;
-  height: 100%;
-}
-
-#singin {
-  width: 100%;
-  max-width: 320px;
-  min-width: 320px;
+/*REGISTER*/
+.singin {
+  width: 80%;
+  max-width: 30vw;
+  min-width: 30vw;
   padding-left: 10vh;
+  justify-content: center;
 }
 
-#singin label {
+.singin label {
   display: block;
   font-family: "Overpass", sans-serif;
-  font-size: 120%;
+  font-size: 90%;
   color: #3c4245;
   margin-top: 15px;
 }
 
-#singin input {
+.singin input {
   font-family: "Overpass", sans-serif;
   font-size: 110%;
   color: #1b262c;
@@ -386,40 +336,209 @@ a {
   -o-border-radius: 15px;
 }
 
-#singin input::placeholder {
+.singin input::placeholder {
   font-family: "Overpass", sans-serif;
   color: #e4e4e4;
 }
 
-#singin button {
+.singin button {
   font-family: "Overpass", sans-serif;
-  font-size: 110%;
+  font-size: 1rem;
   color: #1b262c;
-  width: 80%;
+  width: 47%;
   height: 40px;
   border: none;
   border-radius: 12px;
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
-  background-color: #5e376d;
+  background-color: #ce8ca5;
   margin-top: 10px;
-  margin-left: 6vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#singin button:hover {
+.singin button:hover {
   background-color: #3c4245;
   color: #dfcdc3;
 }
 
-#singin a {
+.registerContent a {
   color: #f5e8da;
   text-align: center;
-  display: inline-flex;
-  margin-left: 17vw;
-  margin-top: 1vh;
+  margin-top: 3vh;
+  font-size: 2vh;
 }
 
-.registercontent .imgLandinPage {
-  width: 65vw;
-  padding-right: 6vw;
+.registerContent {
+  width: 100%;
+  height: 100%;
 }
+
+.registerContent > figure {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 60px;
+}
+
+.registerContent > figure > img {
+  width: auto;
+  height: 100%;
+}
+
+.registerContent > article > h2 {
+  font-family: "Manjari";
+  font-size: 1em;
+  color: rgb(204, 148, 233);
+  margin: 0 5vw 2vw 6vw;
+  text-align: center;
+}
+
+.registerContent > .singin > h1 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #cd8ba4;
+}
+
+.registerContent .singin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60vw;
+  min-width: 30vw;
+}
+
+/* Responsive Register */
+
+@media (min-width: 930px) {
+  .registerContent {
+    width: 100%;
+    padding: 0px;
+    padding-left: 1vw;
+    height: 100%;
+  }
+
+  .registerContent > figure {
+    width: 70%;
+    height: 30%;
+    display: block;
+    padding: 20px 20px;
+  }
+
+  .registerContent > figure > img {
+    padding: 0px 2vw;
+  }
+
+  .registerContent > article > h2 {
+    width: fit-content;
+    height: fit-content;
+    font-family: "Manjari";
+    font-size: 15px;
+    color: rgb(204, 148, 233);
+    margin: 0 5vw 2vw 5vw;
+    text-align: justify;
+    letter-spacing: 0.3mm;
+  }
+
+  .registerContent .singin {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30vw;
+    min-width: 20vw;
+    justify-content: center;
+  }
+
+  .singin label {
+    display: block;
+    font-family: "Overpass", sans-serif;
+    font-size: 90%;
+    color: #3c4245;
+    margin-top: 15px;
+  }
+
+  .singin input {
+    font-family: "Overpass", sans-serif;
+    font-size: 110%;
+    color: #1b262c;
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 10px;
+    box-sizing: border-box;
+    border: solid;
+    border-color: #7c8082;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+
+  .singin input::placeholder {
+    font-family: "Overpass", sans-serif;
+    color: #e4e4e4;
+  }
+
+  .singin button {
+    font-family: "Overpass", sans-serif;
+    font-size: 1rem;
+    color: #1b262c;
+    width: 40%;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    background-color: #ce8ca5;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .singin button:hover {
+    background-color: #3c4245;
+    color: #dfcdc3;
+  }
+
+  .registerContent a {
+    text-align: center;
+    color: white;
+    font-size: 2vh;
+  }
+
+  .registerContent .singin h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #cd8ba4;
+  }
+
+  .imgBackgroundRegister {
+    display: flex;
+    align-items: center;
+    width: 4%;
+    height: 100%;
+  }
+
+  .imgBackgroundRegister > img {
+    width: 100%;
+    height: 40vw;
+    position: relative;
+  }
+  .registerContent > .singin > h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #cd8ba4;
+  }
+} ;

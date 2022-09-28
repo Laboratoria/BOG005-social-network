@@ -1,20 +1,18 @@
 import { registerWithEmail } from "./../../auth.js";
 import { saveData } from "./../../firestore.js";
 export default () => {
-  const registerSection = document.createElement("div");
-  registerSection.classList.add("background2");
+    const registerSection = document.createElement("div");
+    registerSection.classList.add("background");
 
-  const viewRegister = `<main class="registerContent">
-      <section id="ContainerRegister">
-        <article id="headerregister">
-          <img src="/src/img/title.png" alt="" />
-          <h1>Regístrate</h1>
-          <h2>
-            ¡Comparte entre amigos tus <br />
-            doramas favoritos!
-          </h2>
-        </article>
-        <section id="singin">
+    const viewRegister = `<section class="registerContent">
+    
+          <figure>
+          <img src="/src/img/title.png" alt="logo" />
+          </figure>
+          <article><h2>¡Únete! Comparte  lo que amas. <br> Conoce a otros. Vive la experiencia </h2></article>
+
+        <section class="singin">
+        <h1>Regístrate</h1>
           <form id="singinform">
             <label for="name">Nombre</label>
             <input
@@ -48,28 +46,25 @@ export default () => {
               name="password"
               required
             />
-            <button type="submit" title="enviar" name="SingIn">
-              Crear cuenta
-            </button>
-            <br />
           </form>
-
+          <button type="submit" title="enviar" name="SingIn">
+          Crear cuenta
+        </button>
           <a href="#home">Ya tengo cuenta</a>
-          
-        </section>
       </section>
-    </main>`;
-  registerSection.innerHTML = viewRegister;
 
-  const form = registerSection.querySelector("#singinform");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const name = formData.get("name");
-    registerWithEmail(email, password, name);
-  });
+    </section>`;
+    registerSection.innerHTML = viewRegister;
 
-  return registerSection;
+    const form = registerSection.querySelector("#singinform");
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const email = formData.get("email");
+        const password = formData.get("password");
+        const name = formData.get("name");
+        registerWithEmail(email, password, name);
+    });
+
+    return registerSection;
 };
