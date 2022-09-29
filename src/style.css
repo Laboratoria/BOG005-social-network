@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Elsie:wght@900&family=Manjari:wght@700&display=swap");
 
-#content {
+/* #content {
   height: 100vh;
-}
+} */
 
 * {
   padding: 0;
@@ -12,9 +12,9 @@
   box-sizing: border-box;
 }
 
-* html body {
+/* * html body {
   max-width: 100vw;
-}
+} */
 
 button {
   text-align: center;
@@ -38,13 +38,10 @@ a {
 .background {
   display: flex;
   flex-direction: column;
-  background-color: #2b192e;
-  /* background-image: url("img/tvs.png"); */
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
-  /* background-position: bottom; */
 }
 
 .container {
@@ -93,13 +90,6 @@ a {
   flex-direction: column;
   justify-content: space-between;
   padding: 10px 10px;
-}
-
-#singin input {
-  font-family: "Overpass", sans-serif;
-  font-size: 110%;
-  color: #1b262c;
-  display: block;
 }
 
 .googleButton {
@@ -304,71 +294,31 @@ a {
   }
 }
 
-/* register view */
+/*REGISTER*/
 
-.background2 {
+.submitContainer {
   display: flex;
-  background-color: #2b192e;
-  background-image: url("img/tvs.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100vh;
-  background-position: bottom;
+  justify-content: center;
 }
 
-.registerContent {
-  width: 100%;
-}
-
-#ContainerRegister {
-  height: 70%;
-}
-
-#headerregister img {
-  width: 100%;
-  padding: 10px 50px;
-}
-
-#headerregister h1 {
-  text-align: center;
-  width: 100%;
-  font-size: 4vh;
-  color: #5e376d;
-  font-family: "Manjari";
-}
-
-#headerregister h2 {
-  text-align: center;
-  width: 100%;
-  font-size: 2.5vh;
-  color: #f5e8da;
-  font-family: "Manjari";
-}
-
-.registercontent #contenedor {
-  display: inline-block;
-  padding: 2vw;
-  width: 100%;
-  height: 100%;
-}
-
-#singin {
-  width: 100%;
-  max-width: 320px;
-  min-width: 320px;
+.singin {
+  display: flex;
+  width: 80%;
+  max-width: 30vw;
+  min-width: 30vw;
   padding-left: 10vh;
+  justify-content: center;
 }
 
-#singin label {
+.singin label {
   display: block;
   font-family: "Overpass", sans-serif;
-  font-size: 120%;
-  color: #3c4245;
+  font-size: 90%;
+  color: #ffffff;
   margin-top: 15px;
 }
 
-#singin input {
+.singin input {
   font-family: "Overpass", sans-serif;
   font-size: 110%;
   color: #1b262c;
@@ -387,44 +337,212 @@ a {
   -o-border-radius: 15px;
 }
 
-#singin input::placeholder {
+.singin input::placeholder {
   font-family: "Overpass", sans-serif;
   color: #e4e4e4;
 }
 
-#singin button {
+.singin button {
   font-family: "Overpass", sans-serif;
-  font-size: 110%;
+  font-size: 1rem;
   color: #1b262c;
-  width: 80%;
+  width: 47%;
   height: 40px;
   border: none;
   border-radius: 12px;
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
-  background-color: #5e376d;
+  background-color: #ce8ca5;
   margin-top: 10px;
-  margin-left: 6vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#singin button:hover {
+.singin button:hover {
   background-color: #3c4245;
   color: #dfcdc3;
 }
 
-#singin a {
+.registerContent a {
   color: #f5e8da;
   text-align: center;
-  display: inline-flex;
-  margin-left: 17vw;
-  margin-top: 1vh;
+  margin-top: 3vh;
+  font-size: 2vh;
 }
 
-.registercontent .imgLandinPage {
-  width: 65vw;
-  padding-right: 6vw;
+.registerContent {
+  width: 100%;
+  height: 100%;
 }
 
+.registerContent > figure {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 60px;
+}
+
+.registerContent > figure > img {
+  width: auto;
+  height: 100%;
+}
+
+.registerContent > article > h2 {
+  font-family: "Manjari";
+  font-size: 1em;
+  color: rgb(204, 148, 233);
+  margin: 0 5vw 2vw 6vw;
+  text-align: center;
+}
+
+.registerContent > .singin > h1 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #cd8ba4;
+}
+
+.registerContent .singin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60vw;
+  min-width: 30vw;
+}
+
+/* Responsive Register */
+
+@media (min-width: 930px) {
+  .registerContent {
+    width: 100%;
+    padding: 0px;
+    padding-left: 1vw;
+    height: 100%;
+  }
+
+  .registerContent > figure {
+    width: 70%;
+    height: 30%;
+    display: block;
+    padding: 20px 20px;
+  }
+
+  .registerContent > figure > img {
+    padding: 0px 2vw;
+  }
+
+  .registerContent > article > h2 {
+    width: fit-content;
+    height: fit-content;
+    font-family: "Manjari";
+    font-size: 15px;
+    color: rgb(204, 148, 233);
+    margin: 0 5vw 2vw 5vw;
+    text-align: justify;
+    letter-spacing: 0.3mm;
+  }
+
+  .registerContent .singin {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30vw;
+    min-width: 20vw;
+    justify-content: center;
+  }
+
+  .singin label {
+    display: block;
+    font-family: "Overpass", sans-serif;
+    font-size: 90%;
+    color: #3c4245;
+    margin-top: 15px;
+  }
+
+  .singin input {
+    font-family: "Overpass", sans-serif;
+    font-size: 110%;
+    color: #1b262c;
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    padding: 5px 5px 5px 10px;
+    box-sizing: border-box;
+    border: solid;
+    border-color: #7c8082;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+
+  .singin input::placeholder {
+    font-family: "Overpass", sans-serif;
+    color: #e4e4e4;
+  }
+
+  .singin button {
+    font-family: "Overpass", sans-serif;
+    font-size: 1rem;
+    color: #1b262c;
+    width: 40%;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    background-color: #ce8ca5;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .singin button:hover {
+    background-color: #3c4245;
+    color: #dfcdc3;
+  }
+
+  .registerContent a {
+    text-align: center;
+    color: white;
+    font-size: 2vh;
+  }
+
+  .registerContent .singin h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #cd8ba4;
+  }
+
+  .imgBackgroundRegister {
+    display: flex;
+    align-items: center;
+    width: 4%;
+    height: 100%;
+  }
+
+  .imgBackgroundRegister > img {
+    width: 100%;
+    height: 40vw;
+    position: relative;
+  }
+  .registerContent > .singin > h1 {
+    text-align: center;
+    font-size: 2em;
+    color: #cd8ba4;
+  }
+}
 
 /*
 *************FEED*************
@@ -435,18 +553,18 @@ a {
 /* header */
 
 #sectionFeed {
-position: relative;
+  position: relative;
 }
 
 #sectionFeed .navbar {
-display: flex;
-justify-content: space-between;
-align-items: center;
-background-image: linear-gradient(-225deg, #A8BFFF 0%, #884D80 100%);
-box-shadow: 0 4px 25px -22px purple;
-color: white;
-position: relative;
-z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(-225deg, #a8bfff 0%, #884d80 100%);
+  box-shadow: 0 4px 25px -22px purple;
+  color: white;
+  position: relative;
+  z-index: 10;
 }
 
 #sectionFeed header .navbar .logo img {
@@ -455,11 +573,11 @@ z-index: 10;
   margin-left: 10%;
 }
 
-#sectionFeed .navbar .search-bar{
-right: 50%;
+#sectionFeed .navbar .search-bar {
+  right: 50%;
 }
 
-#sectionFeed .navbar-links ul{
+#sectionFeed .navbar-links ul {
   margin: 0;
   padding: 0;
   display: flex;
@@ -473,14 +591,14 @@ right: 50%;
   display: block;
 }
 
-#sectionFeed .navbar-links li:hover{
+#sectionFeed .navbar-links li:hover {
   background-color: #ce8ca5;
   border-radius: 20px;
 }
 
-#sectionFeed .toggle-button{
+#sectionFeed .toggle-button {
   position: absolute;
-  top: .75rem;
+  top: 0.75rem;
   right: 1rem;
   display: none;
   flex-direction: column;
@@ -489,14 +607,12 @@ right: 50%;
   height: 21px;
 }
 
-#sectionFeed .toggle-button .bar{
+#sectionFeed .toggle-button .bar {
   height: 3px;
   width: 100%;
   background-color: white;
   border-radius: 10px;
 }
-
-
 
 /* buscador */
 
@@ -517,11 +633,11 @@ right: 50%;
   display: none;
 }
 
-#sectionFeed .ctn-icon-search i:hover{
+#sectionFeed .ctn-icon-search i:hover {
   color: #b8a0c1;
 }
 
-#sectionFeed  .ctn-bars-search{
+#sectionFeed .ctn-bars-search {
   position: fixed;
   top: -10px;
   width: 100%;
@@ -531,16 +647,15 @@ right: 50%;
   transition: all 600ms;
 }
 
-#sectionFeed  .ctn-bars-search input{
+#sectionFeed .ctn-bars-search input {
   display: block;
   width: 1200px;
   margin: auto;
   padding: 10px;
   font-size: 18px;
-
 }
 
-#sectionFeed .cover-ctn-search{
+#sectionFeed .cover-ctn-search {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -550,16 +665,14 @@ right: 50%;
   display: none;
 }
 
-
 @media (max-width: 400px) {
   #sectionFeed .toggle-button {
     display: flex;
   }
 
-  #sectionFeed .navbar-links{
+  #sectionFeed .navbar-links {
     display: none;
     width: 100%;
-
   }
 
   #sectionFeed .navbar {
@@ -567,48 +680,47 @@ right: 50%;
     align-items: flex-start;
   }
 
-  #sectionFeed .navbar-links ul{
+  #sectionFeed .navbar-links ul {
     width: 100%;
     flex-direction: column;
   }
 
-  #sectionFeed .navbar-links li{
+  #sectionFeed .navbar-links li {
     text-align: center;
   }
 
-  #sectionFeed .navbar-links li a{
-    padding: .5rem 1rem;
+  #sectionFeed .navbar-links li a {
+    padding: 0.5rem 1rem;
   }
 
-  #sectionFeed .navbar-links.active{
+  #sectionFeed .navbar-links.active {
     display: flex;
   }
 }
 
 /* ESTILOS DEL MODAL CONTAINER */
-#sectionFeed .modal-container{
+#sectionFeed .modal-container {
   position: fixed;
   z-index: 1;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   display: none;
 }
 
 /* CHECKBOX */
-#sectionFeed .btn-modal{
+#sectionFeed .btn-modal {
   display: none;
 }
 
-#sectionFeed .btn-modal:checked ~ .modal-container{
+#sectionFeed .btn-modal:checked ~ .modal-container {
   display: flex;
 }
 
-
 /* ESTILOS DEL CONTENIDO DEL MODAL */
- #sectionFeed .modal{
+#sectionFeed .modal {
   margin: 15% auto;
   padding: 20px;
   width: 40%;
@@ -620,52 +732,50 @@ right: 50%;
   justify-content: space-evenly;
   position: absolute;
   transition: transform 1s;
-  border-radius: 10px; 
+  border-radius: 10px;
   top: 20%;
   left: 50%;
   transform: translate(-50%, -50%);
-} 
+}
 
-#sectionFeed .modal img{
+#sectionFeed .modal img {
   width: 10vw;
   height: 5vw;
   position: absolute;
   left: 5%;
 }
 
-
-
-#sectionFeed .modal-container p{
+#sectionFeed .modal i #sectionFeed .modal-container p {
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
 }
 
-#sectionFeed .close{
-position: absolute;
-top: 5px;
-right: 5px;
-display: inline-block;
-width: 25px;
-height: 25px;
-cursor: pointer;
-background: #ff85ea;
-color: #fff;
-line-height: 25px;
-border-radius: 50%;
+#sectionFeed .close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: #ff85ea;
+  color: #fff;
+  line-height: 25px;
+  border-radius: 50%;
 }
 
-#sectionFeed .modal-close{
+#sectionFeed .modal-close {
   transform: translateY(-200%);
 }
 
-#sectionFeed .modal-container img{
+#sectionFeed .modal-container img {
   height: 50%;
 }
 
 /* RESPONSIVE MODAL */
 
-@media screen and (max-width: 80px){
-  #sectionFeed .modal-container{
+@media screen and (max-width: 80px) {
+  #sectionFeed .modal-container {
     width: 90%;
   }
 }

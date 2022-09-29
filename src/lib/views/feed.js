@@ -1,8 +1,10 @@
+import { signOutUser, getUser } from "../../auth.js";
+
 export default () => {
   const feedSection = document.createElement("div");
   feedSection.classList.add("feed");
 
-  const viewFeed = ` 
+  const viewFeed = /*html*/ ` 
   <section id="sectionFeed"> 
   <header class="header">
   <nav class="navbar">
@@ -16,7 +18,7 @@ export default () => {
   <div class="navbar-links">
     <ul>
       <li><a class="cta">Nuevo Post</a></li>
-      <li><a href="">Cerrar Cesión</a></li>   
+      <li><a class="signOut">Cerrar Cesión</a></li>   
 </ul>
 </div>
 
@@ -80,7 +82,6 @@ export default () => {
     navbarLinks.classList.toggle("active");
   });
 
-
   // FUNCIONALIDAD DEL MODAL PARA ABRIR Y CERRAR
   const cerrar = feedSection.querySelector(".close");
   const abrir = feedSection.querySelector(".cta");
@@ -88,7 +89,7 @@ export default () => {
   const modalC = feedSection.querySelector(".modal-container");
 
   abrir.addEventListener("click", () => {
-    console.log ("click");
+    console.log("click");
     modalC.style.display = "block";
     modal.style.display = "block";
     modal.classList.toggle("modal-close");
@@ -99,6 +100,16 @@ export default () => {
     modalC.style.opacity = "0";
     modalC.style.visibility = "hidden";
   });
+
+  const signOutButton = feedSection.querySelector(".signOut");
+  signOutButton.addEventListener("click", (e) => {
+    signOutUser();
+  });
+
+  // const holaButton = feedSection.querySelector(".prueba");
+  // holaButton.addEventListener("click", (e) => {
+  //   getUser();
+  // });
 
   return feedSection;
 };

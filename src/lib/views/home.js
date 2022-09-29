@@ -4,7 +4,7 @@ export default () => {
   const homeSection = document.createElement("div");
   homeSection.classList.add("background");
 
-  const viewHome = `<section class="container">
+  const viewHome = /*html*/ `<section class="container">
       <figure>
         <img
           alt="Logotipo de MovieManía"
@@ -26,9 +26,8 @@ export default () => {
         
         <button class="loginButton"><h4>Ingresar</h4></button>
          <a class="googleButton">
-          <img
+          <img class="googleImg"
             alt="Logo de google gmail"
-            class="googleImg"
             src="img/google.png"
           />
           <h4 class="googleText">Ingresa con Google</h4>
