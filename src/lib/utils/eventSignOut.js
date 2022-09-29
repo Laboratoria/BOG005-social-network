@@ -12,7 +12,7 @@ const signOut = () => {
       }).catch((error) => {
         console.error(error);
       });
-};
+}
 
 const eventButtonSignOut = () => {
   const btnExit = document.getElementById('exitButtonId');

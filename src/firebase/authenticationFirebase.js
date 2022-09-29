@@ -26,7 +26,7 @@ const register = () => {
       console.log(errorCode)
       showMessageError(errorCode)
     });
-};
+}
 
 const registerGoogle = () => {
   const response = signGoogle(auth, provider)
@@ -87,7 +87,7 @@ const login = () => {
       console.log(errorCode)
       const errorMessage = error.message;
     });
-};
+}
 
 const logOut = () => {
   return signOut(auth).then(() => {

@@ -53,6 +53,7 @@ const eventHandler = () => {
   eventButtonSignOut();
   buttonP();
   getPost();
+<<<<<<< HEAD
 };
 
 export { router, historyHandler, eventHandler };
@@ -70,3 +71,8 @@ export { router, historyHandler, eventHandler };
 
 
 
+=======
+}
+
+export { router, historyHandler, eventHandler };
+>>>>>>> 48dc9d926736eb6c706b6b7fbefc0932fdf10463

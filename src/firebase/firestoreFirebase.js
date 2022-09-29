@@ -13,10 +13,10 @@ const getPost = () => {
         res.forEach((doc) => {
           // console.log('DOC',doc)
           contentedor.innerHTML += `
-    <section id="post postForm" class="postsCards"> 
+    <section id="post postForm" class="postsCards">
     <header id="headerPost">
       <i class="fa-solid fa-circle-user" class="userIcon"></i>
-      <div class="contentUserPost"> 
+      <div class="contentUserPost">
       <p class="userTitleName">Usuario</p>
       <p class="location">Ubicación</p>
       </div>
@@ -56,10 +56,10 @@ const onGetPost = () => {
       contenedor.innerHTML = '';
       querySanpshot.forEach((item) => {
         contenedor.innerHTML += `
-      <section id="post postForm" class="postsCards"> 
+      <section id="post postForm" class="postsCards">
       <header id="headerPost">
         <i class="fa-solid fa-circle-user" class="userIcon"></i>
-        <div class="contentUserPost"> 
+        <div class="contentUserPost">
         <p class="userTitleName">Usuario</p>
         <p class="location">Ubicación</p>
         </div>
@@ -92,12 +92,11 @@ const onGetPost = () => {
         deleteButton.addEventListener('click', (event) =>{
           deleteDoc(doc(db, 'Posts', event.currentTarget.getAttribute('data-id')))
         })
-      }) 
+      })
     }
   })
 };
 
 export { savePost, getPost, onGetPost }
-
 //ICONO CORAZON RELLENO
 // <i class="fa-solid fa-heart" id="heart"></i>

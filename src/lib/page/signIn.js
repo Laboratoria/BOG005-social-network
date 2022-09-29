@@ -1,7 +1,6 @@
 const signIn = () => {
   const viewSignIn = `
- 
-  <section class="viewSignIn" id="signIn">
+   <section class="viewSignIn" id="signIn">
   <figure class="logoSignIn">
       <img src="img/Logo.png" alt="LogoCICLAPP" class="logoHorizontal">
       <figcaption class="textLogo">CICLAPP</figcaption>
@@ -45,10 +44,7 @@ const signIn = () => {
   return viewSignIn;
 };
 
-export default signIn;
 
-/* <header id="header" class="headerClassInsignIn">
-<figure class="figureWelcome"> 
- <img src="img/Logo.png" alt="LogoCICLAPP" class="logo">
-</figure>
-</header>  */
+
+
+export { signIn };
