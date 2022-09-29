@@ -1,19 +1,45 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, auth } from '../lib/firebaseIntermadiate/auth.js';
+import { createUserWithEmailAndPassword, signInWithPopup, onAuthStateChanged, signInWithEmailAndPassword, signOut, auth, provider } from '../lib/firebaseIntermadiate/auth.js';
 import { showMessageError, showSuccessfulResponse } from '../lib/utils/formValidator.js';
 
+const createUser = (auth, email, password) => createUserWithEmailAndPassword(auth, email, password)
+const signGoogle = ()=> signInWithPopup(auth, provider)
+const signIn = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
 
-const createUser = (auth, email, password) => {
-  return createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      showSuccessfulResponse();
-      const user = userCredential.user;
-      return user;
-    })
+const register = () => {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const result = createUser(auth, email, password);
+  result.then((userCredential) => {
+    showSuccessfulResponse();
+    if (userCredential) {
+      window.location.href = '#wall';
+      localStorage.setItem('Username', `${dataForm.name}`);
+      const getName = localStorage.getItem('Username');
+      const contentPost = document.querySelector('#wallOffPublication');
+      if (contentPost) {
+        contentPost.innerHTML += `<h1 id="greetingUserId" class="greetingUser">Hola ${getName}!</h1>`;
+      }
+    }
+  })
     .catch((error) => {
       const errorCode = error.code;
-      const errorMessage = error.message;
-      showMessageError(errorCode);
+      console.log(errorCode)
+      showMessageError(errorCode)
     });
+}
+
+const registerGoogle = () => {
+  const response = signGoogle(auth, provider)
+  response.then((result) => {
+   if(result) {
+    window.location.href = '#wall';
+   }
+ })
+ .catch((error) => {
+   if (error) {
+    alert('!Ups hay un error')
+   }
+  });
 };
 
 const displayUserData = () => {
@@ -31,7 +57,6 @@ const displayUserData = () => {
         }
       } else {
         const contentGretting = document.querySelector("#titleId")
-        // const welcomeMessage = document.querySelector('#wallOffPublication')
         const buttonExit = document.querySelector('#exitButtonId')
         const buttonRegister = document.getElementById("loginButtonIdWall")
         if(contentGretting !== null && buttonExit !== null){
@@ -39,24 +64,31 @@ const displayUserData = () => {
           document.querySelector('#exitButtonId').style.display = "none"
           buttonRegister.style.display ="block"
         }
-        
       }
     });
   }
 }
 
-const signIn = (auth, email, password) => {
-  return signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential;
-      console.log(user)      
-    })
+const login = () => {
+  const email = document.querySelector('#userSi').value;
+  const password = document.querySelector('#password').value;
+  const result = signIn(auth, email, password)
+  result.then((userCredential) => {
+   if(userCredential) {
+    const greetingUser = document.getElementById('greetingUserId');
+    if (greetingUser) {
+      greetingUser.innerHTML = '';
+    }
+    window.location.href = '#wall';
+   }
+ })
     .catch((error) => {
       const errorCode = error.code;
+      console.log(errorCode)
       const errorMessage = error.message;
     });
 }
-  
+
 const logOut = () => {
   return signOut(auth).then(() => {
     auth.signOut();
@@ -67,10 +99,12 @@ const logOut = () => {
 
 export {
   auth,
-  createUser,
+  register,
   signInWithEmailAndPassword,
   onAuthStateChanged,
   logOut,
   displayUserData,
-  signIn,
+  login,
+  registerGoogle,
+  provider,
 };
