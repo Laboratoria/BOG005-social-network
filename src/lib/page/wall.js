@@ -1,5 +1,4 @@
 import { savePost } from "../../firebase/firestoreFirebase.js";
-// import { buttonBackToTop } from "../utils/buttonBackToTop.js";
 
 const wall = () => {
   const wallOffPublication = `
@@ -53,17 +52,5 @@ const buttonP = () => {
   })
 }}
 
-const buttonDelete = () =>{
- const getDeletePost = contentedor.querySelectorAll('.deletePost')
- log(getDeletePost )
-if(buttonDelete){
-buttonClear.forEach(buttonD =>{
-  buttonD.addEventListener('click', ({target: {dataset }}) => {
-    console.log(dataset.id);
-  })
-})
-}
-};
-
-export { wall, buttonP, buttonDelete };
+export { wall, buttonP };
 
