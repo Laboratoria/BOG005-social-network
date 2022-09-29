@@ -45,6 +45,23 @@ export default () => {
                   <div class="modal-textos">
                   <h2>Realiza una publicación</h2>
                   <p class="modal-textos-2">Publica un video, imagen o comentario</p>
+                  <span>Comparte ahora</span>
+                  <div class="col s12 m6 registro-formulario">
+                  <div class="input-field">
+                      <input id="tituloNewPost" type="text" maxlength="30" data-length="30" required />
+                      <label for="tituloNewPost">Titulo</label>
+                  </div>
+                  <div class="input-field">
+                      <textarea id="descripcionNewPost" type="text"  maxlength="200" data-length="200" class="materialize-textarea" required></textarea>
+                      <label for="descripcionNewPost">Descripción</label>
+                      </div>
+                      <div class="progress-panel">
+                          <label for="btnUploadFile">Imagen</label>
+                          <input type="file" value="upload" id="btnUploadFile" />
+                          <div class="progress">
+                              <div class="determinate" style="width: 0%"></div>
+                          </div>
+                      </div>
                   </div>
   </div>
 </div>
