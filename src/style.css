@@ -12,15 +12,14 @@ body {
     background-repeat: no-repeat;
     background-size: 120%;
     font-family: 'Lexend Giga', sans-serif;
-    ;
-}
-
-body img {
-    height: 612px;
 }
 
 img {
     width: 100%;
+}
+
+body img {
+    height: 612px;
 }
 
 a {
@@ -219,8 +218,6 @@ button {
     
     .section1 {
         height: 396px;
-        width: 315px;
-        margin-left: 250px;
         justify-content: center;
         align-items: center;
         background-color: #C8BBBB;
@@ -228,7 +225,8 @@ button {
         border-radius: 8px;
         box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
         box-sizing: border-box;
-        margin: 40px 0 0;
+        margin: 40px;
+        margin-left: 250px;
         padding: 20px 0 28px;
         width: 396px;
     }
