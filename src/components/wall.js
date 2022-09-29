@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginOut } from '../lib/index.js';
+import { loginOut, savePost, readPost } from '../lib/index.js';
 export const wall = () => {
   const wallContent = document.createElement('section');
   wallContent.setAttribute('id', 'wallContent');
@@ -29,8 +29,7 @@ export const wall = () => {
   const writer = document.createElement('h3');
   writer.textContent = 'pepito';
   writer.setAttribute('id', 'writer');
-  const written = document.createElement('h4');
-  written.textContent = 'Hola, les comparto el link de mi play list de trabajo...';
+  const written = document.createElement('textarea');/// imput user
   written.setAttribute('id', 'written');
 
   const imgLogomini = document.createElement('img');
@@ -47,6 +46,10 @@ export const wall = () => {
   buttonprofile.textContent = 'Perfil';
   buttonprofile.setAttribute('id', 'buttonprofile');
 
+  const buttonPost = document.createElement('button');// boton guardar post
+  buttonPost.textContent = 'guardar post';
+  buttonPost.setAttribute('id', 'buttonpost');
+
    buttonsingout.addEventListener('click', () => {
   
     loginOut().then(() => {
@@ -62,8 +65,10 @@ export const wall = () => {
   optionslist.append(option1, option2, option3);
   menu.append(optionslist);
   header.append(imgLogomini , menu);
-  post.append(writer, written);
+  post.append(writer, written,buttonPost);
   wallContent.append( header ,  post);
 
+savePost();
+readPost();
   return wallContent;
 };

@@ -45,7 +45,7 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
   }
 });
 ///// crear coleccion de usuarios ejemplo// se iba al catch 
-
+const savePost= ()=> {
  addDoc(collection(db, "usuarios3"), { //// funcion que guarda post con: funcion addDoc(especif colecc, agreg un objeconten)
     first: "Alan",
     middle: "Mathison",
@@ -57,7 +57,9 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
   }).catch ((e)=>{
     console.error("Error adding document: ", e);
   });// lo encuentra pero necesita await y entonces no renderiza
+}
 
+const readPost=()=>{
   getDocs(collection(db, "users"))// querySnapshot = mi array doscs tipo querySnapshot que es un
   .then((arrayDocs)=>{
     arrayDocs.forEach((doc) => {
@@ -66,7 +68,9 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
     }).catch((e)=>{console.error("Error adding document: ", e);}) 
 
   }); 
+}
 
 export {
-  initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut,
+  initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost, 
+  savePost
 };
