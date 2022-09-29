@@ -16,7 +16,7 @@ const routes = {
 
 // recibe la ruta, despues utiliza el objeto window.history y lanza el pushState
 
-export const onNavigate = (pathname) => {
+export const onNavigate = (pathname, paramRoutes = routes) => {
   window.history.pushState(
     {}, // estado
     pathname, // la ruta como parte del titulo
@@ -24,7 +24,7 @@ export const onNavigate = (pathname) => {
   );
 
   root.removeChild(root.firstChild); // Borra lo que hay e inserta lo nuevo
-  root.appendChild(routes[pathname]()); // Linea que inserta lo nuevo
+  root.appendChild(paramRoutes[pathname]); // Linea que inserta lo nuevo
 };
 
 // La ruta esta entrando a partir del window.location.pathname
