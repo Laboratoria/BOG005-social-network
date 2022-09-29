@@ -32,7 +32,7 @@ const getPost =  () => {
       <i class="fa-regular fa-heart" id="heart"></i>
       <p>12</p>
       </div>
-      <i class="fa-solid fa-comment-dots" id="commet"></i>
+      
     </div>
     </section>`;
     })}
@@ -62,7 +62,6 @@ const onGetPost = ()=> {
       <i class="fa-regular fa-heart" id="heart"></i>
       <p>12</p>
       </div>
-        <i class="fa-solid fa-comment-dots" id="commet"></i>
       </div>
       </section>`;
     // console.log('item con data y description',item.data().description)
@@ -79,3 +78,4 @@ export {savePost, getPost }
 
 //ICONO CORAZON RELLENO
 // <i class="fa-solid fa-heart" id="heart"></i>
+{/* <i class="fa-solid fa-comment-dots" id="commet"></i> */}
