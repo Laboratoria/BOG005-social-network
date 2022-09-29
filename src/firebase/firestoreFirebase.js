@@ -86,7 +86,6 @@ const onGetPost = () => {
       </div>
       </section>`;
       })
-
       const deletePostButtons = document.querySelectorAll('.deletePost')
       deletePostButtons.forEach((deleteButton) => {
         deleteButton.addEventListener('click', (event) =>{
@@ -96,20 +95,6 @@ const onGetPost = () => {
     }
   })
 };
-
 export { savePost, getPost, onGetPost }
 //ICONO CORAZON RELLENO
 // <i class="fa-solid fa-heart" id="heart"></i>
-
-
-
-
-
-
-
-
-
-
-
-
-

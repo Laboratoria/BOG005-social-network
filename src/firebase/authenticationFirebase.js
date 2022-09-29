@@ -67,7 +67,7 @@ const displayUserData = () => {
       }
     });
   }
-}
+};
 
 const login = () => {
   const email = document.querySelector('#userSi').value;
@@ -95,7 +95,7 @@ const logOut = () => {
    }).catch((error) => {
     console.error('Ha ocurrido un error al intentar salir', error);
   });
-}
+};
 
 export {
   auth,
