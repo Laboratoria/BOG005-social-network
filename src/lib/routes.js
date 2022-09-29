@@ -7,7 +7,7 @@ import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventButtonSignOut } from './utils/eventSignOut.js';
-import { getPost } from '../firebase/firestoreFirebase.js';
+import { getPost, onGetPost } from '../firebase/firestoreFirebase.js';
 
 const containerPage = document.getElementById('contentPageId');
 const routes = {
@@ -53,26 +53,7 @@ const eventHandler = () => {
   eventButtonSignOut();
   buttonP();
   getPost();
-<<<<<<< HEAD
+  onGetPost();
 };
 
 export { router, historyHandler, eventHandler };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-}
-
-export { router, historyHandler, eventHandler };
->>>>>>> 48dc9d926736eb6c706b6b7fbefc0932fdf10463
