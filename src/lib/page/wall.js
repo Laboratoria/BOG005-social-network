@@ -1,5 +1,4 @@
 import { savePost } from "../../firebase/firestoreFirebase.js";
-// import { buttonBackToTop } from "../utils/buttonBackToTop.js";
 
 const wall = () => {
   const wallOffPublication = `
@@ -52,5 +51,6 @@ const buttonP = () => {
     postForm.reset();
   })
 }}
+
 export { wall, buttonP };
 
