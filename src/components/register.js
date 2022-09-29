@@ -41,6 +41,8 @@ export const register = () => {
   registerPassword.setAttribute('required', '');
 
   const registerButton = document.createElement('button');
+  // otra forma de agregar atributos a un nodo
+  registerButton.id = 'registerButton';
   registerButton.textContent = 'Iniciar Sesión';
   registerButton.setAttribute('class', 'buttonRegister button');
 
@@ -53,15 +55,16 @@ export const register = () => {
   session.className = 'here';
 
   registerButton.addEventListener('click', () => {
-    const nameR = inputName.value;
     const emailR = registerEmail.value;
     const passR = registerPassword.value;
-    console.log(createUser(nameR, emailR, passR));
+    console.log(createUser(emailR, passR));
 
-    createUser(nameR, emailR, passR)
+    // TODO: validar que los inputs tengan algo con sentido
+
+    createUser(emailR, passR)
       .then(() => {
         console.log('dentroooo');
-        onNavigate('/wall'); // si ya se registreo que entre a muro
+        onNavigate('/wall'); // si ya se registró que entre a muro
       })
       .catch(() => {});
   });
@@ -69,10 +72,9 @@ export const register = () => {
   const errorText = document.createElement('p');
   errorText.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nameR = inputName.value;
     const emailR = registerEmail.value;
     const passR = registerPassword.value;
-    createUser(nameR, emailR, passR)
+    createUser(emailR, passR)
       .then(() => {
         onNavigate('/');
       })

@@ -33,13 +33,6 @@
         margin-top: 10vh;
         font-size: var(--titleSize);
     }
-/* 
-    .img-register {
-        display: block;
-        margin: 0px auto;
-        position: relative;
-        text-align: center;
-    } */
 
     .input {
         padding: 3vh;
@@ -74,6 +67,10 @@
         font-size: 2.5vh;
     }
 
+    #button-start {
+        margin-top: 80vh;
+    }
+
     .question {
         margin-top: 4vh;
         justify-content: center;
@@ -96,7 +93,7 @@
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-        display: inline-flex;
+        /* display: inline-flex; */
         flex-direction: column;
         justify-content: space-around;
         min-height: 850px;
@@ -106,6 +103,11 @@
     .titleWelcome {
         font-size: 30px;
         text-align: center;
+    }
+
+    .description {
+        text-align: center;
+        margin-top: 50vh;
     }
 
     /* .imgWelcome {
@@ -120,7 +122,7 @@
         justify-content: center;
         flex-direction: column;
     } */
-}
+
 
 /* vistas del landing */
 .img-login {
@@ -173,7 +175,7 @@
     font-size: 2.3vh;
 }
 
-.button {
+/* .button {
     display: block;
     margin: 0px auto;
     margin-top: 1.5vh;
@@ -184,6 +186,6 @@
     background: rgba(241, 108, 164, 0.89);
     border: 2px solid #a7a0a0;
     border-radius: 10px;
-    font-size: 2.3vh;
+    font-size: 2.3vh; */
 
 }

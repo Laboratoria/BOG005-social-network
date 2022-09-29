@@ -20,9 +20,9 @@ postForm.addEventListener('submit', (e) => {
 
   const titlePost = postForm['post-title']
   const post = postForm['post-form']
-  savePost(titlePost.value, description.value);
+  savePost(title.value, post.value);
 
   post.reset();
 
 })
-export { register, post };
+export { register };

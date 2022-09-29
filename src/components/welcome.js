@@ -4,10 +4,10 @@ export const welcome = () => {
   const sectionWelcome = document.createElement('section');
   sectionWelcome.className = 'sectionWelcome';
 
-  const imgWelcome = document.createElement('img');
-  imgWelcome.className = 'img-welcome';
-  imgWelcome.src = 'img/NomeLogo.png';
-  imgWelcome.alt = 'Name Logo';
+  // const imgWelcome = document.createElement('img');
+  // imgWelcome.className = 'img-welcome';
+  // imgWelcome.src = 'img/NomeLogo.png';
+  // imgWelcome.alt = 'Name Logo';
 
   const message = document.createElement('h2');
   message.className = 'description';
@@ -15,13 +15,14 @@ export const welcome = () => {
 
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
+  buttonStart.id = 'button-start';
   buttonStart.textContent = 'Inicia tu viaje';
 
   buttonStart.addEventListener('click', () => {
     onNavigate('/landing');
   });
 
-  sectionWelcome.append(imgWelcome, message, buttonStart);
+  sectionWelcome.append(message, buttonStart);
 
   return sectionWelcome;
 };
