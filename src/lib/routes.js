@@ -2,17 +2,14 @@ import { signIn } from './page/signIn.js';
 import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
 import  { wall, buttonP } from './page/wall.js';
-import { eventButtonContinue } from './utils/eventButtonContinue.js';
+import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
-import { eventSignOut } from './utils/eventSignOut.js';
+import { eventButtonSignOut } from './utils/eventSignOut.js';
 import { getPost } from '../firebase/firestoreFirebase.js';
 
-//import { changeConditionWall } from './utils/imgWall.js';
-
 const containerPage = document.getElementById('contentPageId');
-
 const routes = {
   '/': welcome,
   '/signIn': signIn,
@@ -32,7 +29,6 @@ const removeHashes = (hash) => {
   }
 };
 
-
 const router = (hash) => {
   removeHashes(hash);
   const changeHash = hash.slice(1).split('/')[1] || '/';
@@ -50,13 +46,13 @@ const historyHandler = () => {
 };
 
 const eventHandler = () => {
-  eventButtonContinue();
+  eventButtonCreateUser();
   eventButtonGoogle();
   eventLoginButton();
   displayUserData();
-  eventSignOut();
+  eventButtonSignOut();
   buttonP();
   getPost();
 }
 
-export { router, historyHandler, eventHandler,  };
+export { router, historyHandler, eventHandler };
