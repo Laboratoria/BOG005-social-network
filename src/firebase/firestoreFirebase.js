@@ -90,26 +90,13 @@ const onGetPost = () => {
       const deletePostButtons = document.querySelectorAll('.deletePost')
       deletePostButtons.forEach((deleteButton) => {
         deleteButton.addEventListener('click', (event) =>{
+          console.log()
           deleteDoc(doc(db, 'Posts', event.currentTarget.getAttribute('data-id')))
         })
       })
     }
   })
 };
-
 export { savePost, getPost, onGetPost }
 //ICONO CORAZON RELLENO
 // <i class="fa-solid fa-heart" id="heart"></i>
-
-
-
-
-
-
-
-
-
-
-
-
-
