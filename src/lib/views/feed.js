@@ -22,19 +22,12 @@ export default () => {
 </ul>
 </div>
 
-<div class="ctn-icon-search">
-       <i class="fa-solid fa-magnifying-glass" class="icon-search"></i>
-    </div>
+
 
 </nav>
 </header>
 
-<div class="ctn-bars-search">
-  <input type="text" class="inputSearch" placeholder="¿Qué deseas buscar?">
-</div>
 
-<div class="cover-ctn-search"> 
-</div>
 
 
 
@@ -92,13 +85,11 @@ export default () => {
     console.log("click");
     modalC.style.display = "block";
     modal.style.display = "block";
-    modal.classList.toggle("modal-close");
   });
 
   cerrar.addEventListener("click", () => {
-    modal.classList.toggle("modal-close");
-    modalC.style.opacity = "0";
-    modalC.style.visibility = "hidden";
+    modalC.style.display = "none";
+    modal.style.display = "none";
   });
 
   const signOutButton = feedSection.querySelector(".signOut");
