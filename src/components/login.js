@@ -24,24 +24,6 @@ export const login = () => {
 	</div>;      
   
    </section>`;
-<<<<<<< Updated upstream
-
-   const googleButt = sectionLogin.querySelector('.googleLogin');
-   googleButt.addEventListener('click', () => {
-	 googleSignIn()
-	   .then((result) => {
-		 const user = result.user;
-		  window.location.hash = '#wall';
-		  saveUserInfo(user.email, user.email, user.uid);
-	   });
-   });
-	  return sectionLogin;
-  
-	  }
-
-            
-   
-=======
   const invalidPasswor = sectionLogin.querySelector('#invalidPassword');
   const gmailNotFoun = sectionLogin.querySelector('#gmailNotFound');
   const loginForm = sectionLogin.querySelector('.formDatos');
@@ -81,4 +63,3 @@ export const login = () => {
 
   return sectionLogin;
 };
->>>>>>> Stashed changes
