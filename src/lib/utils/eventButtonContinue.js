@@ -12,7 +12,6 @@ const eventButtonCreateUser = () => {
         result.then((userCredential) => {
           showSuccessfulResponse();
           if (userCredential) {
-            
             window.location.href = '#wall';
             localStorage.setItem('Username', `${dataForm.name}`);
             const getName = localStorage.getItem('Username');

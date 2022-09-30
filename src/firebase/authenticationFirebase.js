@@ -34,7 +34,7 @@ const displayUserData = () => {
       }
     });
   }
-}
+};
 
 export {
   auth,
