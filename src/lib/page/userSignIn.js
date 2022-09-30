@@ -8,12 +8,12 @@ const userSignIn = () => {
 
   <form class="formSignIn">
   <article class="itemsInput">
-    <label for="userSi">Correo</label>
-    <input type="text" id="userSi" placeholder="Ingresa tu correo">
+    <label for="user">Correo</label>
+    <input type="text" id="user" placeholder="Ingresa tu correo">
   </article>
   <article class="itemsInput">
     <label for="password">Contraseña</label>
-    <input type="password" id="password" placeholder="ingresa tu contraseña">
+    <input type="password" id="password" placeholder="Ingresa tu contraseña">
     </article>
     <p class="o">- O -</p>
 

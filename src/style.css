@@ -401,6 +401,7 @@ p{
     flex-direction: column;
     margin: 0.7rem 2.6rem;
     color: var(--w-hight-color-yellow);
+    word-break: break-all;
 }
 
 .titleWall{
@@ -411,7 +412,7 @@ p{
 
 .subtitulo{
     font-family: var(--letters);
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 #postsContainerId{
@@ -644,6 +645,15 @@ footer{
 .headerClassSignIn{
     display: none;
 }
+
+/* Estilos muro */
+.introUser{
+    margin: 1rem 2.6rem;
+}
+
+.subtitulo{
+    font-size: 1rem;
+}
 }
 /* Fin tablet */
 
@@ -786,6 +796,13 @@ footer{
         color: var(--main-color-white);
         padding-left: 1rem;
     }
+
+    /* Estilos muro */
+.introUser{
+    font-size: 1.5rem;
+    margin: 1rem 4rem;
+}
+
 }
 /* Fin desktop-medio */
 
@@ -932,6 +949,13 @@ footer{
         color: var(--main-color-white);
         padding-left: 1rem;
     }
+
+    .introUser{
+        margin: 1rem 6rem;
+    }
+    .titleWall{
+        font-size: 1.5rem;
+    }
 }
 
 @media (min-width: 1501px) and (max-width: 4000px){
@@ -1009,7 +1033,7 @@ footer{
         height: 4rem;
      }
      
-     .errorMessage
+
     .signIn {
         font-size: 1.4rem;
         font-weight: 700;
@@ -1045,6 +1069,11 @@ footer{
         align-items: center;
     }
 
+    .viewUserSignIn {
+        width: 50%;
+        height: 80vh;
+    }
+
     .formSignIn {
         display: flex;
         flex-direction: column;
@@ -1078,5 +1107,33 @@ footer{
         font-size: 1rem;
         color: var(--main-color-white);
         padding-left: 1rem;
+    }
+
+    .introUser{
+        margin: 1rem 8rem;
+    }
+    .titleWall{
+        font-size: 2rem;
+    }
+
+    .wallPublication{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   }
+
+    .shareForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        justify-content: center;
+        width:70vw;
+        height: 30vh;
+        background-color: var(--b-main-color-blue);
+        border-radius: 0.6625rem;
+        margin: 1rem;
+        padding: 0.8rem;
     }
 }
