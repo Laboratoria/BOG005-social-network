@@ -2,7 +2,7 @@
 import { collection, addDoc, getDocs, onSnapshot, db, deleteDoc, doc, getDoc, updateDoc } from '../lib/firebaseIntermadiate/firestore.js'
 let idPost = '';
 let value= ' ';
-let status = false;
+let status = true;
 // colección crea la coleeción de datos
 const savePost = (description) => {
   addDoc(collection(db, 'Posts'), { description })
@@ -53,7 +53,8 @@ const getPost = () => {
 }
 
 const getOnePost = (dataid) => {
-  getDoc(doc(db, 'Posts', dataid)).then((res) => {
+  console.log(dataid)
+ return getDoc(doc(db, 'Posts', dataid)).then((res) => {
     // console.log('id del post', res.id)
     // console.log('se resuelve la promesa', res)
     //console.log('buscando el mensaje', res.data().description)
@@ -61,7 +62,7 @@ const getOnePost = (dataid) => {
     inputPost.value = res.data().description;
     value =res.data().description;
     const idPostEdit = res.id;
-    return idPostEdit;
+    // return idPostEdit;
   })
   // console.log('res editar: ', res);
   // console.log(getDoc(doc(db, 'Posts', dataid)));
@@ -116,10 +117,9 @@ const onGetPost = () => {
       editPostButtons.forEach((editButton) => {
         editButton.addEventListener('click', (event) => {
           // console.log('sirve el click', event);
-          
-          getOnePost(event.currentTarget.getAttribute('data-id'))
-          console.log(getOnePost(event.currentTarget.getAttribute('data-id')));
-         status = true;
+          getOnePost(event.currentTarget.getAttribute('data-id')).then(()=>console.log("ok gop")).catch(()=> console.log("Puras fallas gop"))
+          // console.log(getOnePost(event.currentTarget.getAttribute('data-id')));
+         status = false;
          idPost = event.currentTarget.getAttribute('data-id');
 
         })
@@ -129,31 +129,40 @@ const onGetPost = () => {
 };
 
 const updatePost = (id, newPost) => {
-  updateDoc(doc(db, 'Posts', id), newPost)
+  
+  console.log(newPost)
+ return updateDoc(doc(db, 'Posts', id), newPost)
 
 }
 
 const buttonP = () => {
-  const postForm = document.getElementById('postForm')
+ const postForm = document.getElementById('postForm')
   const buttonP = document.getElementById('PostContentButton')
+
   if (buttonP) {
+
     buttonP.addEventListener('click', () => {
       const contenido = document.getElementById('postContent').value;
-      
+      // console.log(buttonP.textContent);
+     console.log("Ok")
       if (status) {
         savePost(contenido);
     
        console.log(updatePost);
-      
+    status= true;
+
       } else {
         // console.log(idPost, 'PROBANDO EL ID');
         // console.log(value, 'VALOR DEL INPUT');
-        updatePost(idPost, {
-          description : value
-        })
-  
-        status= false;
+        const inputPost = document.getElementById('postContent')
+      updatePost(idPost, {
+        description : inputPost.value
+      }).then(()=>console.log("Se actulizooo")).catch(()=> console.log("Puras fallas"))
+
+    
+       
       }
+      
 
       postForm.reset();
     })
