@@ -1,5 +1,4 @@
-/* 
-pagina bienvenida */
+/* generales */
 
 *{
     padding: 0;
@@ -7,6 +6,11 @@ pagina bienvenida */
     box-sizing: border-box;
     align-content: center;
 }
+body{ 
+    display:flex;
+    flex-wrap: wrap; 
+}
+
 #root {
     width:90%;
     max-width: 1000px;
@@ -14,11 +18,21 @@ pagina bienvenida */
     overflow: hidden;
     height: 1200px;
     /* background-color:beige;  */
-    position: relative;
+    position: absolute;
+  
     
 }
 
-img{
+/*pagina bienvenida */
+
+#seccion-bienvenida{
+
+    
+    
+
+}
+
+#logo-bienvenida{
     width: 60%;
     height: auto;
     margin-top: 30rem;
@@ -26,15 +40,17 @@ img{
     display:flex;
     align-content: center;
     margin-left:10rem; 
+    margin-bottom: 0px;
+   
 }
-p{
+#texto-bienvenida{
     font-size: 2rem;
     font-family: 'Josefin Sans', sans-serif;
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 5%;
     text-align: center;
-    -ms-flex-align: center;
+    min-width: 250px; /*La propiedad min-widthse usa para determinar la anchura mínima de un elemento */
 }
 #explora{
     width: 15rem;
