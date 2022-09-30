@@ -19,7 +19,7 @@ const wall = () => {
     <a href="#signIn" class="loginButtonRegister" id="loginButtonIdWall" autofocus="autofocus">Registrate</a>
     </aside>
     
-    <form id="postForm">
+    <form id="postForm" class="shareForm">
     <label>¿Quieres compartir algo?</label>
     <textarea id="postContent" placeholder="¡Escribe y publica!"> </textarea>
     <button type="button" id="PostContentButton"> Publicar </button>
