@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { createUser } from '../firebase/connection.js';
+import { createRegister } from '../firebase/auth.js';
 
 export const register = () => {
   const containerRegister = document.createElement('section');
@@ -53,12 +53,11 @@ export const register = () => {
   session.className = 'here';
 
   registerButton.addEventListener('click', () => {
-    const nameR = inputName.value;
     const emailR = registerEmail.value;
     const passR = registerPassword.value;
-    console.log(createUser(nameR, emailR, passR));
+    console.log(createRegister(emailR, passR));
 
-    createUser(nameR, emailR, passR)
+    createRegister(emailR, passR)
       .then(() => {
         console.log('dentroooo');
         onNavigate('/wall'); // si ya se registreo que entre a muro
@@ -69,10 +68,9 @@ export const register = () => {
   const errorText = document.createElement('p');
   errorText.addEventListener('submit', (e) => {
     e.preventDefault();
-    const nameR = inputName.value;
-    const emailR = registerEmail.value;
-    const passR = registerPassword.value;
-    createUser(nameR, emailR, passR)
+    const emailRegister = registerEmail.value;
+    const passwordRegister = registerPassword.value;
+    createRegister(emailRegister, passwordRegister)
       .then(() => {
         onNavigate('/');
       })

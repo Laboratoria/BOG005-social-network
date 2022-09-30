@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { signInUser } from '../firebase/connection.js';
+// import { signInUser } from '../firebase/connection.js';
 
 export const login = () => {
   const containerLogin = document.createElement('section');

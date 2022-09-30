@@ -1,80 +1,64 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB5L_8-iWK_fcuTnIWV4peHFJMmOL8v7Qo",
   authDomain: "enjoy-the-world.firebaseapp.com",
+  databaseURL: "https://enjoy-the-world-default-rtdb.firebaseio.com",
   projectId: "enjoy-the-world",
   storageBucket: "enjoy-the-world.appspot.com",
   messagingSenderId: "976150175703",
-  appId: "1:976150175703:web:9812817e989a64db747592",
-  measurementId: "G-DWY854X4RL",
+  appId: "1:976150175703:web:009703b036b923ca747592",
+  measurementId: "G-R81NHVQFFX"
 };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
 
-// Creando una constante para cada servicio
-initializeApp(firebaseConfig);
-const auth = getAuth();
-const dataBase = getFirestore();
-
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
 const createUser = (email, password) => {
-  // console.log(email, password);}
-  createUserWithEmailAndPassword(auth, email, password)
-    .then(() => {
-      // console.log(userCredential);
-      // eslint-disable-next-line no-undef
-      swal({
-        title: "Genial!",
-        text: "Conseguiste registrarte!",
-        icon: "success",
-        button: "Inicia tu viaje!",
-      });
-    })
-    .catch((error) => {
-      // console.error(error.message)
-
-      const errorCode = error.code;
-      if (errorCode === "auth/email-already-in-use") {
-        // eslint-disable-next-line no-undef
-        swal({
-          title: "Verifica",
-          text: "El usuario ya existe",
-          icon: "error",
-        });
-        // errorText.textContent = 'El e-mail ingresado ya existe';
-      } else if (errorCode === "auth/weak-password") {
-        // errorText.textContent = 'Su contraseña debe tener al menos 6 caracteres';
-      } else if (errorCode === "auth/invalid-email") {
-        // errorText.textContent = 'No es un e-mail válido';
-      }
-    });
-};
-const signInUser = (email, password) => {
-  console.log('email: ', email, 'password: ', password);
-  return signInWithEmailAndPassword(auth, email, password)
-}
-  // const loginOut = signOut(auth);
-
-// Detectando el estado de autenticación
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    console.log("Firebase check");
-  } else {
-    console.log("No se encuentra el usuario");
-  }
-});
-
-const savePost = (title, post) => {
-  addDoc(collection(dataBase, "post"), { title: title, post: post });
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
 };
 
-export { createUser, signInUser, auth, savePost };
+// signInWithEmailAndPassword(auth, email, password)
+//   .then((userCredential) => {
+//     // Signed in
+//     const user = userCredential.user;
+//     // ...
+//   })
+//   .catch((error) => {
+//     const errorCode = error.code;
+//     const errorMessage = error.message;
+//   });
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
+
+export {auth, createUser};
+// ***1.Importar el código inicial provisto por Firebase (línea 1 y de 4 hasta 15 ) esa es la conexión con FBase y la id única de la App.
+// ***2.Importar el código de autenticación, el de crear usuario y el de loguear usuario línea y el del observador 2 (getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged) 
+// ese se puede encontrar en la documentación como: firebase/documentos/comenzar o primeros pasos.
+// ***3.Copiar el código con los métodos createUserWithEmailAndPassword y signInWithEmailAndPassword que se encuentran en esa misma página. (ambas son promesas)
+// las reconocen porque tienen un .then y un .catch. Línea de 20 hasta la 41 
+// ***4.Pegar el código de onAuthStateChanged que aparece en la misma página, es una condicional línea 44 a 54.
+// ***5.Crear variable con función flecha que crea al usuario y que engloba la promesa. se hace con el createUserWithEmailAndPassword y el signInWithEmailAndPassword.
+// ***6.Crearíamos un archivo .js para la autenticación... ir a auth.js.

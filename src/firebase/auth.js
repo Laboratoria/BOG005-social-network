@@ -1,28 +1,15 @@
-import { auth, createUser } from './connection.js';
-import { savePost } from './connection.js';
+import { createUser } from './connection.js';
 
-window.addEventListener('DOMContentLoaded', () => {
-
-});
-
-const register = async (email, password) => {
+const createRegister = async(email, password) => {
   try {
-    await createUser(auth, email, password);
-  } catch (error) {
-    throw error.message;
+    await createUser(email, password);
+  }
+  catch(error){
+    return error
   }
 };
 
-// Evento para enviar el post
-const postForm = document.getElementById('postWall');
-postForm.addEventListener('submit', (e) => {
-  e.preventDefault();
+export { createRegister };
 
-  const titlePost = postForm['post-title']
-  const post = postForm['post-form']
-  savePost(titlePost.value, description.value);
-
-  post.reset();
-
-})
-export { register, post };
+// ***7. (viene del connection)Se importa la variable creada -createUser- que contiene la promesa de registrar.
+// ***8. Se hace una función asíncrona que tome como parámetros el email y la contraseña. Esa función se exporta, la recibe el register.
