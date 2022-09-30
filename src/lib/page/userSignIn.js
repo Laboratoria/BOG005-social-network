@@ -9,11 +9,13 @@ const userSignIn = () => {
   <form class="formSignIn">
   <article class="itemsInput">
     <label for="user">Correo</label>
-    <input type="text" id="user" placeholder="Ingresa tu correo">
+    <input type="text" id="userSi" placeholder="Ingresa tu correo">
+    <span class="errorMessageEmail" id="errorMessageEmailId">Correo inválido</span>
   </article>
   <article class="itemsInput">
     <label for="password">Contraseña</label>
-    <input type="password" id="password" placeholder="Ingresa tu contraseña">
+    <input type="password" id="passwordSi" placeholder="Ingresa tu contraseña">
+    <span class="errorMessagePassword" id="errorMessagePasswordId">Password inválido</span>
     </article>
     <p class="o">- O -</p>
 

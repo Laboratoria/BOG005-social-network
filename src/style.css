@@ -338,8 +338,17 @@ p{
     text-align: center;
   }
   
-  .errorMessage {
-    visibility: hidden;
+  .errorMessageEmail {
+    color: #F56F6F;
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  .errorMessagePassword {
+    color: #F56F6F;
+    font-size: 0.9rem;
+    visibility: visible;
+    display: none;
   }
 /*Fin página de registro*/
 
