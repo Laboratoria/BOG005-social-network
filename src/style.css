@@ -1,8 +1,17 @@
-html {
-	height: 100%;
-	box-sizing: border-box;
-	font-family: sans-serif;
-
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: 0;
+}
+:root {
+	--alto--campoTexto: 35px ;
+	--ancho-campos-texto: 60%;
+	--border-campos-texto-botones:15px;
+	--ancho-botones:40%;
+	--alto-botones:35px;
+	--tamaño-letra:15px;
+	--color-boton: blue;
+	--color-letra-boton: white;
 }
 
 body {
@@ -27,11 +36,59 @@ figure {
 .imagenDescripcion {
 	text-align: center;
 }
+.imgLogo{
+	height: 200px;
+    width: 200px;
+}
+#registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30p;
+    height: auto;
+}
+.texField{
+	margin: 10px;
+    height: var(--alto--campoTexto);
+    width: var(--ancho-campos-texto);
+    border-radius: var(--border-campos-texto-botones);
+    text-align: center;
+	font-size: var(--tamaño-letra);
 
-.imgLogo {
-	margin-top: 0%;
-	width: 300px;
-	height: 300px;
+}
+#mailInSuso{
+	font-size: 15px;
+    background: aliceblue;
+    color: red;
+    width: 55%;
+    text-align: center;
+    margin-top: 0px;
+}
+.youAreMember{
+    margin-top: 20px;
+    font-size: 15px;
+	background-color: rgba(37, 37, 184, 0.45);
+	color: white;
+}
+.button{
+	height: var(--alto-botones);
+    width: var(--ancho-botones);
+    border-radius: var(--border-campos-texto-botones);
+	font-size: var(--tamaño-letra);
+	background-color:var(--color-boton);
+	color: var(--color-letra-boton);
+
+}
+hr{
+	margin: auto;
+	width: 20%;
+	height: 3px;
+	background-color:white;
+}
+.div{
+	height: 30px;
+	width: 30px;
+	background-color: black;
 	border-radius: 50%;
 
 }
@@ -64,24 +121,106 @@ figcaption {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: 15px;
-	box-shadow: 2px 15px 20px 10px rgb(61 60 60);
-	border: 2px solid cornsilk;
+	margin-top: 20px;
+}
+.registerText{
+	margin-top: 20px;
+    font-size: 20px;
+	background-color: rgba(37, 37, 184, 0.45);
+	color: white;
+   
+}
+.buttonStar{
+	height: var(--alto-botones);
+    width: var(--ancho-botones);
+    border-radius: var(--border-campos-texto-botones);
+	font-size: var(--tamaño-letra);
+	background-color: var(--color-boton);
+	color: var(--color-letra-boton);
 
 }
-
-.buttonIniciar {
-
-	width: 60%;
+.startWithGoogle{
+ margin-left: 5px;
+}
+.googleLogin{
+	height: var(--alto--campoTexto);
+    width: var(--ancho-campos-texto);
+    border-radius: var(--border-campos-texto-botones);
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+	
+}
+.imgGoogle{
 	height: 30px;
-	border-radius: 5px;
+    width: 30px;
+	
+}
+
+
+@media only screen and (min-width:768px) and (max-width:900px){
+	body {
+		overflow-y:hidden!important;
+	}
+	
+	:root {
+		--alto--campoTexto: 36px ;
+		--ancho-campos-texto: 40%;
+		--border-campos-texto-botones:20px;
+		--ancho-botones:20%;
+		--alto-botones: 36px;
+		--tamaño-letra:15px;
+	}
+	.imgLogo{
+		height: 225px;
+		width: 225px;
+	}
+
+	.texField{
+		height: var(--alto--campoTexto);
+		width: var(--ancho-campos-texto);
+		border-radius: var(--border-campos-texto-botones);
+		font-size:var(--tamaño-letra);
+	}
+	#mailInSuso{
+		width: 35%;
+		font-size: 13px;
+	}
+    .button{
+		height: var(--alto-botones);
+		width: var(	--ancho-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
+		}
+	.buttonStar{
+		height: var(--alto-botones);
+		width: var(--ancho-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
+	
+	}
+	.imgGoogle{
+		height: 30px;
+		width: 40px;
+	}
 
 }
 
 .inicioGogle {
 	height: auto;
 
-}
+	:root {
+		--alto--campoTexto: 40px ;
+		--ancho-campos-texto: 30%;
+		--ancho-botones:20%;
+		--alto-botones:40px;
+		--border-campos-texto-botones:30px;
+		--tamaño-letra:15px;
+	}
 
 .registrarse {
 
@@ -97,9 +236,26 @@ a {
 	.container{
 		display: flex;
 	}
-	
-	.imagenDescripcion {
-		font-size: 30px;
+	.imgLogo{
+		height: 235px;
+		width: 235px;
+	}
+	.texField{
+		height: var(--alto--campoTexto);
+		width: var(--ancho-campos-texto);
+		border-radius: var(--border-campos-texto-botones);
+		font-size:var(--tamaño-letra);
+	}
+	#mailInSuso{
+		width: 28%;
+	}
+    .button{
+		height: var(--alto-botones);
+		width: var(--ancho-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
 		
 	}
 	.imginInisioSesion {
@@ -107,10 +263,14 @@ a {
 		height: 500px;
 		
 	}
-	.camapoTexto{
-		height: 35px;
-		width: 70%;
-                     font-size: 13px;
+
+	.buttonStar{
+		height: var(--alto-botones);
+		width: var(--ancho-botones);
+		border-radius: var(--border-campos-texto-botones);
+		font-size: var(--tamaño-letra);
+		background-color: var(--color-boton);
+		color: var(--color-letra-boton);
 	}
 	.buttonIniciar {
 		width: 35%;
@@ -120,18 +280,11 @@ a {
     .inicioGogle{
 		font-size: 16px;
 	}
-	.registrarse {
-		font-size: 16px;
-	}
-
-}
-
-
-@media only screen and (min-width: 992px) {
-
-	.container{
-		display: flex;
-	}
+	.googleLogin{
+		height: var(--alto--campoTexto);
+		width: var(--ancho-campos-texto);
+		border-radius: var(--border-campos-texto-botones);
+		background-color: aliceblue;
 	
 	.imagenDescripcion {
 		font-size: 50px;
