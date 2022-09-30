@@ -1,4 +1,4 @@
-import { savePost } from "../../firebase/firestoreFirebase.js";
+// import { savePost, getOnePost, updatePost } from "../../firebase/firestoreFirebase.js";
 
 const wall = () => {
   const wallOffPublication = `
@@ -21,14 +21,9 @@ const wall = () => {
     
     <form id="postForm">
     <label>¿Quieres compartir algo?</label>
-    <textarea id="postContent" placeholder="Escribe y publica!"> </textarea>
+    <textarea id="postContent" placeholder="¡Escribe y publica!"> </textarea>
     <button type="button" id="PostContentButton"> Publicar </button>
     </form>
-
-    <button type="button" id="btn-back-to-top">
-        <i class="fa-solid fa-circle-chevron-up"></i></a>
-    </button>
-
     <section id="postsContainerId" class="postsContainer">
     </section>
   <footer id="menuBottom">
@@ -41,16 +36,28 @@ const wall = () => {
 return wallOffPublication;
 };
 
-const buttonP = () => {
-  const postForm = document.getElementById('postForm')
-  const buttonP = document.getElementById('PostContentButton')
-  if(buttonP){
-    buttonP.addEventListener('click', ()=>{
-    const contenido = document.getElementById('postContent').value;
-    savePost(contenido);
-    postForm.reset();
-  })
-}}
+// let status = true;
 
-export { wall, buttonP };
+// const buttonP = () => {
+//   const postForm = document.getElementById('postForm')
+//   const buttonP = document.getElementById('PostContentButton')
+//   if(buttonP){
+//     buttonP.addEventListener('click', ()=>{
+//     const contenido = document.getElementById('postContent').value;
+//     const id = getOnePost(event.currentTarget.getAttribute('data-id'))
+//       if(!status){
+//         savePost(contenido);
+//       }else{
+//         updatePost(id, contenido);
+//       }
 
+    
+      
+
+//     postForm.reset();
+//   })
+// }}
+
+export { wall };
+
+// se exportaa buttonP 
