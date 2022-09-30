@@ -1,0 +1,123 @@
+/* Estilos generales de la Página */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+}
+
+body {
+    background-color: white;
+}
+
+#contenedor-bienvenida {
+    background-color: aqua;
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow: visible;
+    height:100%;
+    flex-flow: row wrap;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+}
+
+#logo-bienvenida {
+    width: 90%;
+    height: 10rem;
+    margin-top: 5rem;
+    position: relative;
+
+}
+
+#texto-bienvenida {
+    font-size: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 60px; 
+    position: relative;
+    left: 35%; 
+    margin-right: 30%;
+    transform: translate(-30%, -30%);
+    text-align: center;
+} 
+
+#explora {
+    width: 8rem;
+    height: 3rem;
+    background-color: #F55353;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px black;
+    margin-top: 0.5rem;
+    margin-bottom: 50px;
+ 
+}
+
+
+/* segunda pantalla Registro */
+#registro,
+#google {
+    width: 40%;
+    height: 2.5rem;
+    margin-top: 10%;
+    margin-left: 30%;
+    background-color: #F55353;
+    font-size: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px black;
+
+}
+
+#correo {
+    width: 80%;
+    height: 2rem;
+    margin-top: 5%;
+    margin-left: 10%;
+    ;
+}
+
+#contraseña {
+    width: 80%;
+    height: 2rem;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+#logo {
+    width: 40%;
+    height: 20%;
+    margin-top: 15%;
+    margin-left: 15%;
+}
+
+#textlogin {
+    font-size: 85%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+#enlace {
+    font-size: 85%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 40%;
+    padding-right: 10%;
+    margin-top: 15%;
+    text-align: center;
+}
+
+#formulario {
+    font-size: 85%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10%;
+    text-align: center;
+}
