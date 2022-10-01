@@ -6,7 +6,7 @@ const wall = () => {
     <figure class="topBar">
      <div class="brand"> 
       <img src="img/logoapp.png" alt="LogoCICLAPP" class="logoHorizontalWall">
-      <p class="textLogoWall">CICLAPP</p>
+      <p class="textLogoWall" id="textLogoWallId">CICLAPP</p>
     </div>
     <button class="exitButtonClass" id="exitButtonId">
     <i class="ri-logout-box-r-fill"></i>

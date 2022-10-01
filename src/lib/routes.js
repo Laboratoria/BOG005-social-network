@@ -10,11 +10,12 @@ import { eventButtonSignOut } from './utils/eventSignOut.js';
 import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
 
 const containerPage = document.getElementById('contentPageId');
+
 const routes = {
-  '/': welcome,
-  '/signIn': signIn,
-  '/userSignIn': userSignIn,
-  '/wall': wall,
+  '/': welcome(),
+  '/signIn': signIn(),
+  '/userSignIn': userSignIn(),
+  '/wall': wall(),
 };
 
 const removeHashes = (hash) => {
@@ -36,13 +37,15 @@ const router = (hash) => {
   const route = `${changeHash}${getWord}`;
   const sendRoutes = route === '/welcome' ? '/' : route;
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
-  containerPage.innerHTML = render();
+  containerPage.innerHTML = render;
+  return render;
 };
+console.log(router('#wall'))
 
 const historyHandler = () => {
   const pathName = window.location.pathname;
   const render = routes[pathName] ? routes[pathName] : 'ERROR404';
-  containerPage.innerHTML = render();
+  containerPage.innerHTML = render;
 };
 
 const eventHandler = () => {
