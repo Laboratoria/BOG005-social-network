@@ -1,5 +1,5 @@
-
 import { collection, addDoc, getDocs, onSnapshot, db, deleteDoc, doc, getDoc, updateDoc } from '../lib/firebaseIntermadiate/firestore.js'
+
 let idPost = '';
 let value = ' ';
 let status = true;
