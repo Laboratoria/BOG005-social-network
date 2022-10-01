@@ -20,17 +20,20 @@ const eventLoginButton = () => {
         })
           .catch((error) => {
             const errorCode = error.code;
-            //console.log(errorCode)
             const errorMessageEmail = document.querySelector("#errorMessageEmailId")
             const errorPassWord = document.querySelector("#errorMessagePasswordId")
-            if(errorCode === 'auth/invalid-email'){
-              console.log('Correo inválido')
+            const contentInputEmail = document.querySelector("#contentPageId > section > form > article:nth-child(1)")
+            const contentInputPassword = document.querySelector("#contentPageId > section > form > article:nth-child(2)")
+            if (errorCode === 'auth/invalid-email'){
               errorMessageEmail.style.display = "block"
               errorPassWord.style.display = "none"
-            }else if (errorCode === 'auth/wrong-password'){
-              console.log('Password inválido')
+              contentInputEmail.style.color = "#F56F6F";
+              contentInputPassword.style.color = "#FFFFFF";
+            } else if (errorCode === 'auth/wrong-password'){
               errorPassWord.style.display = "block"
               errorMessageEmail.style.display = "none"
+              contentInputPassword.style.color = "#F56F6F";
+              contentInputEmail.style.color = "#FFFFFF";
             }
             const errorMessage = error.message;
           });
