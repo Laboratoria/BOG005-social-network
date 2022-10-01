@@ -16,6 +16,8 @@ const routes = {
   '/userSignIn': userSignIn,
   '/wall': wall,
 };
+// console.log(containerPage);
+// console.log(signIn());
 
 const removeHashes = (hash) => {
   if (hash === '#welcome') {
@@ -37,8 +39,9 @@ const router = (hash) => {
   const sendRoutes = route === '/welcome' ? '/' : route;
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
   containerPage.innerHTML = render();
+  return render();
 };
-
+//  console.log(router('#wall'));
 const historyHandler = () => {
   const pathName = window.location.pathname;
   const render = routes[pathName] ? routes[pathName] : 'ERROR404';

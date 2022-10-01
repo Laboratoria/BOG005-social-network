@@ -4,7 +4,7 @@ import { app } from './configFirabese.js';
 const db = getFirestore(app);
 
 let idPost = '';
-let value= ' ';
+let value= '';
 let status = true;
 // colección crea la coleeción de datos
 const savePost = (description) => {
