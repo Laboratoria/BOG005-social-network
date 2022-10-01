@@ -26,12 +26,7 @@ const wall = () => {
     </form>
     <section id="postsContainerId" class="postsContainer">
     </section>
-  <footer id="menuBottom">
-    <button type="button" class="postButton" id="postButtonId">
-    <i class="fa-solid fa-circle-plus btnPost"></i>
-    </button>
-    <p>Publicar</p>
-  </footer>
+  
 </section>`;
 return wallOffPublication;
 };
