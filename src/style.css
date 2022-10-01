@@ -251,7 +251,9 @@ p{
 
 #name,
 #user,
+#userSi,
 #email,
+#passwordSi,
 #password {
     border: none;
     border-bottom: solid 0.125rem var(--main-color-white);
@@ -338,8 +340,21 @@ p{
     text-align: center;
   }
   
-  .errorMessage {
-    visibility: hidden;
+  .errorMessageEmail {
+    color: #F56F6F;
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  .errorMessagePassword {
+    color: #F56F6F;
+    font-size: 0.9rem;
+    display: none;
+  }
+
+  .errorLabelInput{
+    color: #F56F6F;
+    font-size: 1.3rem;
   }
 /*Fin página de registro*/
 
