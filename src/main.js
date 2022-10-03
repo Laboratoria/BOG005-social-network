@@ -1,8 +1,9 @@
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 import { bienvenida } from "./contenido/bienvenida.js";
 import { muro} from "./contenido/muro.js";
-
 import { registro } from "./contenido/registro.js";
+import { login} from "./contenido/login.js";
+
 const root = document.getElementById ('root')
 console.log(bienvenida);
 console.log('registro: ', registro);
@@ -10,7 +11,9 @@ const routes = {
   '/': bienvenida(),
   '/registro': registro(),
   '/muro':muro(),
+  '/login':login(),
   };
+
 export const onNavigate = (pathname) => {
     window.history.pushState (
         {},

@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signOut, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
 
 
 const provider = new GoogleAuthProvider();
@@ -75,4 +75,16 @@ export const crearUsuarioConGoogle = () => {
     }).catch((error) => {
       // An error happened.
     });
-  }
+  }  
+  export const iniciarlogin = (email, password) => {
+   return signInWithEmailAndPassword(auth, email, password)
+   .then((userCredential) => {
+    // Signed in
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+}

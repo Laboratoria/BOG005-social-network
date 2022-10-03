@@ -6,35 +6,33 @@
     margin: 0
 }
 
-body {
-    background-color: white;
+body{
+    /* background-image: url(./Imagenes/Fondocolombia.jpg); */
+}
+
+html{
+    /* background-image: url(./Imagenes/); */
 }
 
 #contenedor-bienvenida {
-    background-color: aqua;
-    margin: 0 auto;
-    max-width: 1200px;
-    overflow: visible;
-    height:100%;
-    flex-flow: row wrap;
-    position: relative;
-    display: flex;
-    justify-content: center;
-
-}
+    margin: auto;
+    background-color: white; 
+    }
 
 #logo-bienvenida {
-    width: 90%;
-    height: 10rem;
+    width: 287px;
+    height: 122px;
+    margin-right: auto;
+    margin-left: auto;
     margin-top: 5rem;
-    position: relative;
-
+    display: block;
+   
 }
 
 #texto-bienvenida {
     font-size: 100%;
     font-family: 'Josefin Sans', sans-serif;
-    margin-top: 60px; 
+    margin-top: 120px; 
     position: relative;
     left: 35%; 
     margin-right: 30%;
@@ -43,21 +41,61 @@ body {
 } 
 
 #explora {
-    width: 8rem;
-    height: 3rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    height: 50px;
     background-color: #F55353;
     font-size: 25px;
     font-family: 'Josefin Sans', sans-serif;
     color: white;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px black;
-    margin-top: 0.5rem;
-    margin-bottom: 50px;
- 
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px; 
+    margin-top: 50px;
+    display: block; 
 }
+/* aqui empezaremos las @media*/
+@media (min-width:768px) and (max-width: 1080px) {
+         
+    #logo-bienvenida {
+        width: 574px;
+        height: 244px;
+        margin-top: 2rem;
+        
+        
+    }
+     #texto-bienvenida {
+        font-size: 200%;
+        margin-top: 120px; 
+        margin-right: 30%; 
+        
+     }
+     #explora {
+        width: 284px;
+        height: 50px;
+        margin-top: -8px;
+        
+    }
+   }
+/*segunsda pantalla login*/
+
+#contenedor-login {
+    margin: auto;
+     }
+
+#logologin {    
+     width: 100px;
+     height: 150px;
+     margin-right: auto;
+     margin-left: auto;
+     margin-top: 5rem;
+     display: block;
+
+    }
 
 
-/* segunda pantalla Registro */
+/* tercera pantalla Registro */
 #registro,
 #google {
     width: 40%;
