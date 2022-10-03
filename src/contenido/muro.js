@@ -9,6 +9,9 @@ export const muro = () => {
   salir.id = 'Salir';
   salir.textContent = "Cerrar Sesión"
 
+
+  
+
   // Crear la funcion salir en firebase.js
   // Devuelva la metodo de firebase signOut()
   //Importar en muro 
