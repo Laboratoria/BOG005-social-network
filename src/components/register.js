@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { createUser } from '../firebase/connection.js';
+import { createRegister } from '../firebase/auth.js';
 
 export const register = () => {
   const containerRegister = document.createElement('section');
@@ -57,13 +57,11 @@ export const register = () => {
   registerButton.addEventListener('click', () => {
     const emailR = registerEmail.value;
     const passR = registerPassword.value;
-    console.log(createUser(emailR, passR));
+    console.log(createRegister(emailR, passR));
 
-    // TODO: validar que los inputs tengan algo con sentido
-
-    createUser(emailR, passR)
+    createRegister(emailR, passR)
       .then(() => {
-        console.log('dentroooo');
+        // console.log('dentroooo');
         onNavigate('/wall'); // si ya se registró que entre a muro
       })
       .catch(() => {});
@@ -72,9 +70,10 @@ export const register = () => {
   const errorText = document.createElement('p');
   errorText.addEventListener('submit', (e) => {
     e.preventDefault();
-    const emailR = registerEmail.value;
-    const passR = registerPassword.value;
-    createUser(emailR, passR)
+    const emailRegister = registerEmail.value;
+    const passwordRegister = registerPassword.value;
+    
+    createRegister(emailRegister, passwordRegister)
       .then(() => {
         onNavigate('/');
       })

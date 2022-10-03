@@ -62,9 +62,10 @@ export const login = () => {
       e.preventDefault();
         const emailL = loginEmail.value;
         const passL = loginPassword.value;
+      
       signInUser(emailL, passL)
         .then(() => onNavigate('/wall'))
-        .catch(() => onNavigate('/login')); // se quita la declaracion de err por error de eslint
+        .catch((err) => onNavigate('/login')); // se quita la declaracion de err por error de eslint
     });
 
   return containerLogin;
