@@ -8,25 +8,24 @@ const wall = () => {
       <img src="img/logoapp.png" alt="LogoCICLAPP" class="logoHorizontalWall">
       <p class="textLogoWall" id="textLogoWallId">CICLAPP</p>
     </div>
+    <a href="#signIn" class="loginButtonRegister1" id="loginButtonIdWall" autofocus="autofocus">Regístrate</a>
     <button class="exitButtonClass" id="exitButtonId">
     <i class="ri-logout-box-r-fill"></i>
     </button>
     </figure>
-
+    <div class="scroll"> 
     <aside class="introUser"> 
     <h1 class="titleWall" id="titleId"> </h1>
-    <h2 class="subtitulo"> Mira lo que dice la comunidad</h2>
-    <a href="#signIn" class="loginButtonRegister" id="loginButtonIdWall" autofocus="autofocus">Registrate</a>
+    <h2 class="subtitulo">Mira lo que dice la comunidad.  </h2>
+   
     </aside>
-    
     <form id="postForm" class="shareForm">
-    <label>¿Quieres compartir algo?</label>
-    <textarea id="postContent" placeholder="¡Escribe y publica!"> </textarea>
-    <button type="button" id="PostContentButton"> Publicar </button>
+    <textarea id="postContent" class="textarea" placeholder="¿Quieres compartir algo?"></textarea>
+    <button type="button" id="PostContentButton" class="shareFormButton"> Publicar </button>
     </form>
     <section id="postsContainerId" class="postsContainer">
+    </div>
     </section>
-  
 </section>`;
 return wallOffPublication;
 };
@@ -56,3 +55,9 @@ return wallOffPublication;
 export { wall };
 
 // se exportaa buttonP 
+/* <footer id="menuBottom">
+<button type="button" class="postButton" id="postButtonId">
+<i class="fa-solid fa-circle-plus btnPost"></i>
+</button>
+<p>Publicar</p>
+</footer> */
