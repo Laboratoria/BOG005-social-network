@@ -15,6 +15,7 @@ describe('router', () => {
 describe('router', () => {
   it('Debe llevarte a logín', () => {
    document.body.innerHTML = '<div id="contentPageId"></div>'
+   
    const main = document.querySelector('#contentPageId')
     router('/userSignIn');
     expect(main.querySelector('#userSi').placeholder).toBe('Ingresa tu correo');
