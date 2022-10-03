@@ -50,7 +50,24 @@ export const wall = () => {
   buttonPost.textContent = 'guardar post';
   buttonPost.setAttribute('id', 'buttonpost');
 
-   buttonsingout.addEventListener('click', () => {
+  buttonPost.addEventListener('click', () => savePost(written.value));
+  
+  let contWall = document.createElement('section');/// contenedor de post
+  contWall.textContent= "";// parte vacia
+  
+  readPost().then((arrayDocs)=>{ // lea el post (en el embudo lo ejecuta)
+  arrayDocs.forEach((doc) => { // arraydocs es un array donde estan todos los post por cada elemento hacexxx en el for each
+  console.log(doc.data());
+  const post_n = document.createElement('article'); // cree un nodo seccition
+  post_n.setAttribute('id', `${doc.id}`);
+  post_n.textContent += doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
+  contWall.append(post_n);
+  //contWall.textContent += doc.data().first/*doc.data()*/ // coloque el contenido del post dentro del section
+  return contWall
+  })//.catch((e)=>{console.error("Error adding document: ", e);}) 
+  }); 
+
+   buttonsingout.addEventListener('click', () =>  {
   
     loginOut().then(() => {
       onNavigate('/');
@@ -65,10 +82,9 @@ export const wall = () => {
   optionslist.append(option1, option2, option3);
   menu.append(optionslist);
   header.append(imgLogomini , menu);
-  post.append(writer, written,buttonPost);
+  post.append(writer, written,buttonPost, contWall);
   wallContent.append( header ,  post);
 
-savePost();
-readPost();
+
   return wallContent;
 };
