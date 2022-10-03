@@ -45,10 +45,7 @@ const onGetPost = () => {
       <section id="post postForm" class="postsCards">
       <header id="headerPost">
         <i class="fa-solid fa-circle-user" class="userIcon"></i>
-        <div class="contentUserPost">
         <p class="userTitleName">Usuario</p>
-        <p class="location">Ubicación</p>
-        </div>
       </header>
       <article id="post">
         <p class="contentPost" id="allPosts">${item.data().description}</p>

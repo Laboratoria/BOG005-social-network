@@ -156,6 +156,22 @@ p{
     border: none;
 }
 
+.loginButtonRegister1{  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--letters);
+    background-color: var(--w-hight-color-yellow);
+    color: var(--w-color-blue-medium);
+    font-size: 1rem;
+    font-weight: 700;
+    width: 7.5rem;
+    height: 2.75rem;
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+    border: none;
+}
+
 .signIn {
     display: flex;
     justify-content: center;
@@ -205,16 +221,16 @@ p{
 }
 
 .logoHorizontal {
-    width:11.5rem;
+    width:8rem;
 }
 
 .textLogo{
     color: var(--main-color-white);
     font-family: var(--Letters-logo-horizontal);
-    font-size: 2.4rem;
+    font-size: 2rem;
     display: flex;
     align-items: center;
-    transform: translateX(-28px);
+    transform: translateX(-22px);
   }
 
 .viewSignIn {
@@ -245,6 +261,19 @@ p{
     font-family: var(--letters);
     width: 100vw;
     height: 70vh;
+    font-size: 1.3rem;
+    align-self: center;
+}
+
+.formUserSignIn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--main-color-white);
+    font-family: var(--letters);
+    width: 100vw;
+    height: 50vh;
     font-size: 1.3rem;
     align-self: center;
 }
@@ -360,8 +389,45 @@ p{
 
   /*Estilos para el muro*/
 
-.wallPublication{
-     width: 100%;
+  
+  .shareForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    justify-content: space-around;
+    margin: 1rem;
+    height: 30vh;
+}
+
+.textarea{
+background-color: var(--b-main-color-blue);
+color: var(--main-color-white);
+border-radius: 6px;
+border: none;
+height: 20vh;
+width: 80vw;
+}
+
+.textarea::placeholder{
+    color: var(--main-color-white);
+    font-size: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.shareFormButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--w-color-blue-medium);
+    border: none;
+    font-size: 1rem;
+    width: 16rem;
+    height: 2.75rem;
+    border-radius: 0.5625rem;
+    letter-spacing: 0.0625rem;
+    background-color: var(--w-hight-color-yellow);
 }
 
 .logoWall{
@@ -372,14 +438,20 @@ p{
 }
 
 .topBar{
-    width: 90%;
-    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0.5rem 1.5rem;
+    background-color: var(--w-color-blue-medium);
 }
 
+.scroll{
+    overflow: scroll;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .brand{
     display: flex;
     align-items: center;
@@ -436,21 +508,28 @@ p{
     height: 80vh;
     flex-direction: column;
     align-items: center;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .postsCards{
     display: flex;
     flex-direction: column;
     width:80vw;
-    height: 50vh;
+    height: auto;
     background-color: var(--main-color-white);
     border-radius: 0.6625rem;
     margin: 1rem;
     padding: 0.8rem;
+    align-items: flex-end;
   
 }
 
+::-webkit-scrollbar{
+    background: none;
+}
+::-webkit-scrollbar-corner{
+    background: none;
+}
 
 #headerPost{
     display: flex;
@@ -458,27 +537,17 @@ p{
     justify-content: flex-start;
 }
 
-.contentUserPost{
-    display: flex;
-    flex-direction: column;
-    margin-left: 0.9rem;
-   
-}
 
 .userTitleName{
     font-weight: bolder;
     color: var(--b-main-color-blue);
+    margin-left: 0.9rem;
 }
 
-.location{
-    font-size: 0.8rem;
-    color: var(--w-color-blue-medium);
-}
 
 #post{
     color: var(--b-color-blue-dark);
-    width: 70vw;
-    /* height: 30vh; */
+    width: 74vw;
     padding: 0.3rem 0.6rem 0.3rem 0.6rem;
     word-break: break-all;
 }
@@ -490,7 +559,7 @@ p{
 }
 
 .actionContainer{
-width: 20vw;
+width: 13vw;
 display: flex;
 justify-content: space-between;
 align-items: baseline;
@@ -567,6 +636,25 @@ footer{
     margin-bottom: 1rem;
 }
 
+.deletePost{
+    background-color:var(--main-color-white);
+    border: none;
+}
+
+.fa-trash-can{
+    color: var(--w-color-blue-medium);
+    font-size: 1rem;
+}
+
+.editPost{
+    background-color:var(--main-color-white);
+    border: none;
+}
+
+.fa-pen-to-square{
+    color: var(--w-color-blue-medium);
+    font-size: 1rem;
+}
 /* Fin Mobile */
 
 /* Inicio tablet */
@@ -662,12 +750,12 @@ footer{
 }
 
 /* Estilos muro */
-.introUser{
-    margin: 1rem 2.6rem;
-}
 
-.subtitulo{
-    font-size: 1rem;
+.actionContainer{
+width:6vw ;
+}
+.introUser{
+    width: 80vw;
 }
 }
 /* Fin tablet */
@@ -790,6 +878,11 @@ footer{
         align-self: center;
     }
 
+    .formUserSignIn {
+        width: 90vw;
+        height: 50vh;
+    }
+
     .itemsInput {
         height: 5.3125rem;
         width: 100%;
@@ -798,7 +891,12 @@ footer{
         justify-content: space-evenly;
     }
 
-    #name, #user, #email, #password {
+    #name,
+    #user,
+    #userSi,
+    #email,
+    #passwordSi,
+    #password{
         border: none;
         border-bottom: solid 0.125rem var(--main-color-white);
         width: 90%;
@@ -813,11 +911,12 @@ footer{
     }
 
     /* Estilos muro */
-.introUser{
-    font-size: 1.5rem;
-    margin: 1rem 4rem;
+    .actionContainer{
+        width:4vw ;
 }
-
+.introUser{
+    width: 80vw;
+}
 }
 /* Fin desktop-medio */
 
@@ -943,6 +1042,11 @@ footer{
         align-self: center;
     }
 
+    .formUserSignIn {
+        width: 50vw;
+        height: 50vh;
+    }
+
     .itemsInput {
         height: 5.3125rem;
         width: 100%;
@@ -951,7 +1055,12 @@ footer{
         justify-content: space-evenly;
     }
 
-    #name, #user, #email, #password {
+    #name,
+    #user,
+    #userSi,
+    #email,
+    #passwordSi,
+    #password {
         border: none;
         border-bottom: solid 0.125rem var(--main-color-white);
         width: 90%;
@@ -965,14 +1074,14 @@ footer{
         padding-left: 1rem;
     }
 
-    .introUser{
-        margin: 1rem 6rem;
-    }
-    .titleWall{
-        font-size: 1.5rem;
-    }
+    .actionContainer{
+        width:3vw ;
 }
 
+.introUser{
+    width: 80vw;
+}
+}
 @media (min-width: 1501px) and (max-width: 4000px){
     .contentPage{
         width: 100%;
@@ -1102,6 +1211,11 @@ footer{
         align-self: center;
     }
 
+    .formUserSignIn {
+        width: 90%;
+        height: 50vh;
+    }
+
     .itemsInput {
         height: 5.3125rem;
         width: 100%;
@@ -1110,10 +1224,15 @@ footer{
         justify-content: space-evenly;
     }
 
-    #name, #user, #email, #password {
+    #name,
+    #user,
+    #userSi,
+    #email,
+    #passwordSi,
+    #password {
         border: none;
         border-bottom: solid 0.125rem var(--main-color-white);
-        width: 90%;
+        width: 50vw;
         height: 2.5rem;
         display: flex;
         background-color: var(--w-color-blue-medium);
@@ -1124,31 +1243,39 @@ footer{
         padding-left: 1rem;
     }
 
+    .logoHorizontal {
+        width:10rem;
+    }
+    
+    .textLogo{
+        color: var(--main-color-white);
+        font-family: var(--Letters-logo-horizontal);
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        transform: translateX(-28px);
+      }
+
+      .topBar{
+        margin: 1.5rem 5.5rem;
+    }
+
+      .actionContainer{
+        width:2.5vw ;
+    }
+
     .introUser{
-        margin: 1rem 8rem;
+        width: 80vw;
     }
+
     .titleWall{
-        font-size: 2rem;
+        font-size: 2rem
     }
 
-    .wallPublication{
-        width: 90%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-   }
-
-    .shareForm{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        align-self: center;
-        justify-content: center;
-        width:70vw;
-        height: 30vh;
-        background-color: var(--b-main-color-blue);
-        border-radius: 0.6625rem;
-        margin: 1rem;
-        padding: 0.8rem;
+    .subtitulo{
+        font-size: 1.5rem;
+    }
+    #post{
+        width: 77vw;
     }
 }

@@ -25,10 +25,12 @@ const displayUserData = () => {
       } else {
         const contentGretting = document.querySelector("#titleId")
         const buttonExit = document.querySelector('#exitButtonId')
-        const buttonRegister = document.getElementById("loginButtonIdWall")
+        const form = document.querySelector('#postForm')
+        const buttonRegister = document.getElementById("#loginButtonIdWall")
         if (contentGretting !== null && buttonExit !== null) {
           document.querySelector('#titleId').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola, resgistrate en nuestra red social</h1>`;
           document.querySelector('#exitButtonId').style.display = "none"
+          form.style.display="none"
           buttonRegister.style.display = "block"
         }
       }
