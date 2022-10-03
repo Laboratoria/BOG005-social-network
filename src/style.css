@@ -93,36 +93,12 @@
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-        /* display: inline-flex; */
+        display: inline-flex;
         flex-direction: column;
         justify-content: space-around;
         min-height: 850px;
 
     }
-
-    .titleWelcome {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    .description {
-        text-align: center;
-        margin-top: 50vh;
-    }
-
-    /* .imgWelcome {
-        min-height: 50px;
-
-    } */
-
-    /* .img-register{
-        align-content: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    } */
-
 
 /* vistas del landing */
 .img-login {

@@ -62,9 +62,10 @@ const createUser = (email, password) => {
 };
 
 const signInUser = (email, password) => {
-signInWithEmailAndPassword(auth, email, password)
+  console.log('email: ', email, 'password: ', password);
+   return signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in
+   console.log(user, 'Signed in');
     const user = userCredential.user;
     swal("Llegaste a tu muro!", "Aquí comienza tu viaje", "success");
     // ...
@@ -72,6 +73,7 @@ signInWithEmailAndPassword(auth, email, password)
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    console.log(errorMessage);
     swal("Upps!", "Algo salió mal!", "error");
   });
 };

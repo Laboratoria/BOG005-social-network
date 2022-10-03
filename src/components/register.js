@@ -32,6 +32,7 @@ export const register = () => {
   registerEmail.setAttribute('id', 'emailRegister');
   registerEmail.setAttribute('placeholder', 'E-mail');
   registerEmail.setAttribute('required', '');
+  
 
   const registerPassword = document.createElement('input');
   registerPassword.classList.add('input');
@@ -39,7 +40,7 @@ export const register = () => {
   registerPassword.setAttribute('id', 'passwordRegister');
   registerPassword.setAttribute('placeholder', 'contraseña');
   registerPassword.setAttribute('required', '');
-
+  
   const registerButton = document.createElement('button');
   // otra forma de agregar atributos a un nodo
   registerButton.id = 'registerButton';
@@ -65,6 +66,7 @@ export const register = () => {
         onNavigate('/wall'); // si ya se registró que entre a muro
       })
       .catch(() => {});
+      onNavigate('/register');
   });
 
   const errorText = document.createElement('p');
@@ -75,14 +77,19 @@ export const register = () => {
     
     createRegister(emailRegister, passwordRegister)
       .then(() => {
-        onNavigate('/');
+        onNavigate('/wall');
       })
       .catch((error) => {
+        onNavigate('/register');
         const errorCode = error.code;
         if (errorCode === 'auth/email-already-in-use') {
+          onNavigate('/register');
           errorText.textContent = 'El e-mail ingresado ya existe';
+          onNavigate('/register');
         } else if (errorCode === 'auth/weak-password') {
+          onNavigate('/register');
           errorText.textContent = 'Su contraseña debe tener al menos 6 caracteres';
+          onNavigate('/register');
         } else if (errorCode === 'auth/invalid-email') {
           errorText.textContent = 'No es un e-mail válido';
         }

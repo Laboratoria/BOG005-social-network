@@ -55,9 +55,7 @@ export const login = () => {
     question
   );
 
-  containerLogin
-    .querySelector('.button-login')
-    .addEventListener('click', (e) => {
+  containerLogin.querySelector('.button-login').addEventListener('click', (e) => {
       console.log('se le dio click al botón');
       e.preventDefault();
         const emailL = loginEmail.value;
