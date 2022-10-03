@@ -7,8 +7,10 @@ import {
   onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js";
+
 import { app } from "./firebase.js";
 import { saveData } from "./firestore.js";
+
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
