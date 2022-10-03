@@ -32,6 +32,7 @@ export default () => {
 
 
 <h2>AQUI VAN LOS POST</h2>
+<div class="post"></div>
 <input type="checkbox" class="btn-modal">
 <div class="modal-container">
   <div class="modal modal-close">

@@ -98,7 +98,7 @@ a {
   align-items: center;
   background-color: #fff;
   padding: clamp(0.625rem, -0.0647rem + 3.4483vw, 1.875rem);
-  margin: 0px 100px;
+  margin: 0px 40px;
   border-radius: 10px;
   font-family: "Manjari";
   color: #3c4245;
@@ -145,7 +145,7 @@ a {
 
 .loginButton {
   background-color: #ce8ca5;
-  margin: 0px 100px;
+  margin: 0px 40px;
   padding: clamp(0.625rem, -0.0647rem + 3.4483vw, 1.875rem);
   border-radius: 10px;
   font-family: "Manjari";
@@ -244,6 +244,7 @@ a {
 
   .googleButton {
     padding: 10px;
+    margin: 0px 100px;
   }
 
   .googleImg {
@@ -269,6 +270,7 @@ a {
 
   .loginButton {
     padding: 13px;
+    margin: 0px 100px;
   }
 
   .loginButton > h4 {
@@ -767,7 +769,7 @@ a {
   left: 50%;
   transform: translate(-50%, -50%);
   opacity: 1;
-  animation: fade 1s linear;
+  animation: fade 1s ease;
 }
 
 @keyframes fade {
@@ -822,4 +824,12 @@ a {
   #sectionFeed .modal-container {
     width: 90%;
   }
+}
+
+/* post */
+
+.post {
+  width: 200px;
+  height: 200px;
+  background-color: #dfcdc3;
 }
