@@ -6,7 +6,7 @@ const userSignIn = () => {
   <figcaption class="textLogo">CICLAPP</figcaption>
   </figure>
 
-  <form class="formSignIn">
+  <form class="formUserSignIn">
   <article class="itemsInput">
     <label for="user" id="emailLabelSi">Correo</label>
     <input type="text" id="userSi" placeholder="Ingresa tu correo">

@@ -9,7 +9,7 @@ import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventButtonSignOut } from './utils/eventSignOut.js';
 import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
 
-const containerPage = document.getElementById('contentPageId');
+// const containerPage = document.getElementById('contentPageId');
 const routes = {
   '/': welcome,
   '/signIn': signIn,
@@ -38,8 +38,9 @@ const router = (hash) => {
   const route = `${changeHash}${getWord}`;
   const sendRoutes = route === '/welcome' ? '/' : route;
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
-  containerPage.innerHTML = render();
-  return render();
+  const containerPage = document.querySelector('#contentPageId');
+  return containerPage.innerHTML = render();
+  // return render();
 };
 //  console.log(router('#wall'));
 const historyHandler = () => {
