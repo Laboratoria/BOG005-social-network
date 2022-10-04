@@ -91,46 +91,26 @@ html{
      margin-left: auto;
      margin-top: 5rem;
      display: block;
+}
 
-    }
-
-
-/* tercera pantalla Registro */
-#registro,
-#google {
-    width: 40%;
+#correo-login {
+    width: 80%;
     height: 2.5rem;
     margin-top: 10%;
-    margin-left: 30%;
-    background-color: #F55353;
-    font-size: 100%;
-    font-family: 'Josefin Sans', sans-serif;
-    color: white;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px black;
-
+    margin-left: 10%;
+    border: 2px solid transparent;
+    border-color: #143F6B;
+    border-radius: 5px;
 }
 
-#correo {
+#contraseña-login {
     width: 80%;
-    height: 2rem;
+    height: 2.5rem;
     margin-top: 5%;
     margin-left: 10%;
-    ;
-}
-
-#contraseña {
-    width: 80%;
-    height: 2rem;
-    margin-top: 5%;
-    margin-left: 10%;
-}
-
-#logo {
-    width: 40%;
-    height: 20%;
-    margin-top: 15%;
-    margin-left: 15%;
+    border: 2px solid transparent;   
+    border-color: #143F6B;
+    border-radius: 5px;
 }
 
 #textlogin {
@@ -140,6 +120,48 @@ html{
     padding-right: 10%;
     margin-top: 10%;
     text-align: center;
+}
+
+#iniciarsesion-login {
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    height: 50px;
+    background-color: #FEB139;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px; 
+    margin-top: 30px;
+    display: block;  }
+
+ #iregistro-login {
+        margin-right: auto;
+        margin-left: auto;
+        width: 200px;
+        height: 50px;
+        background-color: #F55353;
+        font-size: 25px;
+        font-family: 'Josefin Sans', sans-serif;
+        color: white;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border: 1px solid transparent;
+        border-radius: 5px; 
+        margin-top: 20px;
+        display: block;  }
+
+
+
+
+/* tercera pantalla Registro */
+
+#contenedor-registro{
+    margin: auto;
+    height: 90rem;
+  
+     
 }
 
 #enlace {
@@ -159,3 +181,61 @@ html{
     margin-top: 10%;
     text-align: center;
 }
+
+#registro {
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    height: 50px;
+    background-color: #F55353;
+    font-size: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px; 
+    margin-top: 50px;
+    display: block; 
+     }
+
+#google,#Google {
+
+    margin-right: auto;
+    margin-left: auto;
+    width: 189px;
+    height: 50px;
+    margin-top: 2rem;
+    background-repeat: no-repeat;
+	background-size: cover;
+    background-image: url(./Imagenes/EnlaceG.png);
+    border: 1px solid transparent;   
+    border-radius: 5px;
+    display: block;
+   
+
+}
+
+#correo {
+    width: 80%;
+    height: 2rem;
+    margin-top: 5%;
+    margin-left: 10%;
+    ;
+}
+
+#contraseña {
+    width: 80%;
+    height: 2rem;
+    margin-top: 5%;
+    margin-left: 10%;
+}
+
+#logo {
+    width: 287px;
+    height: 122px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+    display: block;
+}
+

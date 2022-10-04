@@ -5,7 +5,7 @@ import { crearUsuario, crearUsuarioConGoogle } from "../lib/firebase.js";
 export const registro = () => {
   // Se crean las etiquetas
   const div = document.createElement('div');
-  div.class = 'contenedor-registro'
+  div.id = 'contenedor-registro'
   const logo = document.createElement('img');
   logo.id = 'logo';
   const enlaceInicio = document.createElement('a');
@@ -61,7 +61,7 @@ export const registro = () => {
   contraseñaUsuario.setAttribute('placeholder', 'Contraseña Usuario');
   contraseñaUsuario.setAttribute("type","password");
   buttonRegistro.textContent = 'Regístrate';
-  buttonGoogle.textContent ='Google';
+  buttonGoogle.textContent ='';
   logo.src = '/imagenes/Recurso 1.png';
   buttonGoogle.addEventListener ("click",()=> {
     crearUsuarioConGoogle ().then( () => {
