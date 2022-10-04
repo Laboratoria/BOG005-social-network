@@ -17,7 +17,11 @@ const welcome = () => {
   </article> 
   
 </section>`;
-  return view;
+
+const welcomeContainer = document.createElement('section')
+welcomeContainer.innerHTML = view
+console.log('Este es welcome', welcomeContainer)
+  return welcomeContainer;
 };
 
 // <button type="button" class="loginButton" id="loginButtonId">Registrate</button>

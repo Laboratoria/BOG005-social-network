@@ -1,5 +1,5 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-import { app } from './configFirabese.js';
+import { app } from './configFirebase.js';
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
@@ -41,8 +41,6 @@ const displayUserData = () => {
 export {
   auth,
   createUser,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
   logOut,
   displayUserData,
   signIn,
