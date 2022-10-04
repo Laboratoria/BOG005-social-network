@@ -41,24 +41,7 @@ export async function saveDataPosts(title, description) {
   }
 }
 
-let dataPosts;
-
-export function result() {
-  dataPosts;
-  console.log(dataPosts);
-}
-
-function getPosts() {
+export function getPosts() {
   const q = query(collection(db, "posts"));
-
-  getDocs(q).then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      const idPosts = doc.id;
-      dataPosts = doc.data();
-      result();
-      return dataPosts;
-    });
-  });
+  return getDocs(q);
 }
-
-getPosts();

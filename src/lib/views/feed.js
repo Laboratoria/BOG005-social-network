@@ -1,6 +1,6 @@
 import { signOutUser, getUser } from "../../auth.js";
 import { subirImagenAlFirebase } from "../../storage.js";
-import { saveDataPosts, result } from "./../../firestore.js";
+import { saveDataPosts, getPosts } from "./../../firestore.js";
 
 export default () => {
   const feedSection = document.createElement("div");
@@ -27,9 +27,8 @@ export default () => {
       </header>
 
       <h2>AQUI VAN LOS POST</h2>
-      <div class="post">
-      <h2>Woo</h2>
-      <h3>¿Ya vieron la nueva serie "Woo, una abogada extraordinaria?</h3>
+      <div class="postsContainer">
+      
       </div>
       <input type="file" class="btn-modal" />
       <div class="modal-container">
@@ -139,15 +138,51 @@ export default () => {
     saveDataPosts(title, description);
   });
 
+  function showPostsOnFeed() {
+    // Guardamos los datos de los posts en una variable
+    let documents = [];
+    getPosts().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        documents.push(doc.data());
+      });
+      let everyPosts = "";
+      for (let i = 0; i < documents.length; i++) {
+        everyPosts =
+          everyPosts +
+          `<div class="post">
+      <h2>${documents[i].title}</h2>
+      <h3>${documents[i].description}</h3>
+      </div>`;
+      }
+      feedSection.querySelector(".postsContainer").innerHTML = everyPosts;
+    });
+  }
+
+  showPostsOnFeed();
+
   // Ponemos un evento al botón de "subir archivo"
   const submitButton = feedSection.querySelector(".btnUploadImage");
   submitButton.addEventListener("click", showPosts);
 
   function showPosts() {
     // Guardamos los datos de los posts en una variable
-    let dataPosts = result();
-    console.log(dataPosts);
-    return dataPosts;
+    let documents = [];
+    getPosts().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        documents.push(doc.data());
+      });
+      let everyPosts = "";
+      console.log(everyPosts);
+      for (let i = 0; i < documents.length; i++) {
+        everyPosts =
+          everyPosts +
+          `<div class="post">
+      <h2>${documents[i].title}</h2>
+      <h3>${documents[i].description}</h3>
+      </div>`;
+      }
+      feedSection.querySelector(".postsContainer").innerHTML = everyPosts;
+    });
   }
 
   return feedSection;
