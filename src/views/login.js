@@ -4,9 +4,17 @@ import {
 } from '../lib/firebase.js';
 
 export const login = () => {
+  const sectionLogin = document.createElement('section');
+  sectionLogin.classList.add('sectionLogin');
+
+  const containWelcome = document.createElement('article');
+  containWelcome.classList.add('viewWelcome');
+  const imgWelcome = document.createElement('img');
+  imgWelcome.setAttribute('srcset', './image/imgWelcome.png');
+  imgWelcome.classList.add('imgWelcome');
+
   const containLogin = document.createElement('section');
   containLogin.classList.add('viewLogin');
-
   const imgLogo = document.createElement('img');
   imgLogo.setAttribute('srcset', './image/danaYogaLogo.png');
   imgLogo.classList.add('imgLogo');
@@ -58,7 +66,7 @@ export const login = () => {
     const passwordLogin = inputPass.value;
     singUser(emailLogin, passwordLogin)
       .then((userCredential) => { // Si el usuario se acredita, será dirigido al muro
-        onNavigate('/wall');
+        onNavigate('/profile');
       })
       .catch((error) => { // si hubo un error en el registro, retorna según el caso
         const errorCode = error.code;
@@ -72,6 +80,10 @@ export const login = () => {
       });
   });
 
+  const optionText = document.createElement('p'); // para conectarse con google o con correo
+  optionText.setAttribute('id', 'optionText');
+  optionText.textContent = ('- Ingresa con correo -')
+
   buttonGoogle.addEventListener('click', (e) => { // Botón para ingresar con google
     e.preventDefault();
     signInWithPopup(auth, provider)
@@ -81,7 +93,7 @@ export const login = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        onNavigate('/wall');
+        onNavigate('/profile');
       }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
@@ -93,9 +105,11 @@ export const login = () => {
       });
   });
 
-  containLogin.append(imgLogo, buttonGoogle, formlogin);
+  sectionLogin.append(containWelcome, containLogin);
+  containWelcome.append(imgWelcome);
+  containLogin.append(imgLogo, buttonGoogle, optionText, formlogin);
   containRegister.append(regisText, buttonRegis);
   formlogin.append(inputEmail, inputPass, errorText, button, containRegister);
 
-  return containLogin;
+  return sectionLogin;
 };

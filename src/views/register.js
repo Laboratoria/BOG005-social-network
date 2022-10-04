@@ -2,9 +2,17 @@ import { onNavigate } from '../main.js';
 import { createUser, auth, provider, signInWithPopup, GoogleAuthProvider } from '../lib/firebase.js';
 
 export const register = () => {
+  const sectionRegister = document.createElement('section');
+  sectionRegister.classList.add('sectionRegister');
+
+  const containWelcome = document.createElement('article');
+  containWelcome.classList.add('viewWelcome');
+  const imgWelcome = document.createElement('img');
+  imgWelcome.setAttribute('srcset', './image/imgWelcome.png');
+  imgWelcome.classList.add('imgWelcome');
+
   const containRegis = document.createElement('section');
   containRegis.classList.add('viewRegister');
-
   const imgLogo = document.createElement('img');
   imgLogo.setAttribute('srcset', './image/danaYogaLogo.png');
   imgLogo.classList.add('imgLogo');
@@ -30,7 +38,7 @@ export const register = () => {
   const imgLogoGoogle = document.createElement('img');
   imgLogoGoogle.classList.add('imgLogoGoogle');
   buttonGoogle.setAttribute('class', 'btnGoogle');
-  buttonGoogle.textContent = 'Registrarse con Google';
+  buttonGoogle.textContent = 'Ingresar con Google';
 
 
   const button = document.createElement('button');
@@ -55,7 +63,7 @@ export const register = () => {
     const password = inputPass.value;
     createUser(email, password)
       .then((userCredential) => { // Si el usuario se acredita, será dirigido al muro
-        onNavigate('/wall');
+        onNavigate('/profile');
       })
       .catch((error) => { // si hubo un error en el registro, retorna según el caso
         const errorCode = error.code;
@@ -78,7 +86,7 @@ export const register = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        onNavigate('/wall');
+        onNavigate('/profile');
       }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
@@ -90,8 +98,10 @@ export const register = () => {
       });
   });
 
+  sectionRegister.append(containWelcome, containRegis);
+  containWelcome.append(imgWelcome);
   containRegis.append(imgLogo, buttonGoogle, formRegister);
   formRegister.append(inputEmail, inputPass, errorText, button, buttonBack)
 
-  return containRegis;
+  return sectionRegister;
 };
