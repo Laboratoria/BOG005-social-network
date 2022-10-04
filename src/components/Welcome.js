@@ -92,7 +92,7 @@ export const Welcome = () => {
       })
       .catch((error) => {
         const invalidEmail = 'Correo inválido';
-        const passNone = 'Debe diligenciar una constraseña';
+        const passNone = 'Debe diligenciar una contraseña';
 
         if (error.code === 'auth/invalid-email') {
           errorAdvice.innerText = invalidEmail;

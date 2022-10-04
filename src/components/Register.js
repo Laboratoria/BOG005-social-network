@@ -30,20 +30,10 @@ export const Register = () => {
   const section1 = document.createElement('section');
   section1.className = 'section1';
 
-  const nameAndLastNameContainer = document.createElement('section');
-  nameAndLastNameContainer.className = 'name-lastName-container';
-
   const inputName = document.createElement('input');
   inputName.setAttribute('requiered', '');
   inputName.setAttribute('placeholder', 'Nombre');
   inputName.setAttribute('id', 'name');
-
-  const inputLastName = document.createElement('input');
-  inputLastName.setAttribute('requiered', '');
-  inputLastName.setAttribute('placeholder', 'Apellido');
-  inputLastName.setAttribute('id', 'lastName');
-
-  nameAndLastNameContainer.append(inputName, inputLastName);
 
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('requiered', '');
@@ -83,7 +73,7 @@ export const Register = () => {
   errorAdvice.setAttribute('id', 'errorApp');
 
   section1.append(
-    nameAndLastNameContainer,
+    inputName,
     inputEmail,
     inputPass,
     inputConfirmPassword,
@@ -104,7 +94,7 @@ export const Register = () => {
     const registerPass = inputPass.value;
     createUser(registerEmail, registerPass)
       .then(() => {
-        onNavigate('/wall');
+        onNavigate('/');
       })
       .catch((error) => {
         const usedEmail = 'Este email ya se encuentra en uso';
