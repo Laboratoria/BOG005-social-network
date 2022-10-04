@@ -10,6 +10,7 @@ const eventButtonCreateUser = () => {
         const password = document.getElementById('password').value;
         const result = createUser(auth, email, password);
         result.then((userCredential) => {
+          console.log('Se ejecuta then')
           showSuccessfulResponse();
           if (userCredential) {
             window.location.href = '#wall';
@@ -24,6 +25,7 @@ const eventButtonCreateUser = () => {
           .catch((error) => {
             const errorCode = error.code;
             console.log(errorCode)
+            console.log('Esto es un error')
             showMessageError(errorCode)
           });
       });
@@ -31,4 +33,4 @@ const eventButtonCreateUser = () => {
   };
 };
 
-export { eventButtonCreateUser };
+//export { eventButtonCreateUser };
