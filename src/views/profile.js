@@ -45,20 +45,24 @@ export const profile = () => {
     });
   });
 
+  // Contenedor general del perfil
+  const profilePageContainer = document.createElement('section');
+  profilePageContainer.classList.add('profilePageContainer');
+
   // sección de usuario
-  const infoUser = document.createElement('section');
-  infoUser.classList.add('sectionUser');
-  const infoUserProfile = document.createElement('div');
+  const infoUserProfile = document.createElement('section');
   infoUserProfile.classList.add('sectionProfileUser');
+  const infoUser = document.createElement('div');
+  infoUser.classList.add('sectionUser');
+  const nameEmailUser = document.createElement('div');
+  nameEmailUser.classList.add('nameEmailUser');
   const profileNameUser = document.createElement('h2');
   profileNameUser.textContent = auth.displayName;
   profileNameUser.setAttribute('id', 'nameUser');
   const emailUser = document.createElement('h3');
   emailUser.setAttribute('id', 'emailUser');
   emailUser.textContent = auth.email;
-  const imgUser = document.createElement('img');
-  imgUser.setAttribute('srcset', './image/foto-user.png');
-  imgUser.classList.add('imgUser');
+
 
   // sección de post
   const sectionPostProfile = document.createElement('section');
@@ -113,11 +117,15 @@ export const profile = () => {
       const cardPost = document.createElement('article');
       cardPost.classList.add('cardPost');
       cardPost.classList.add('id', 'containerPost');
-      const postNameUser = document.createElement('h2');
-      postNameUser.textContent = 'Usuario que Ingresa';
+      const postNameUser = document.createElement('h4');
+      postNameUser.textContent = doc.data().name;
       const postedUser = document.createElement('p');
       postedUser.textContent = doc.data().title;
       // console.log(doc)
+       
+      // Sección de botones
+      const sectionBtn = document.createElement('section');
+      sectionBtn.classList.add('sectionBtn');
       //botón de editar
       const buttonEdit = document.createElement('button');
       buttonEdit.setAttribute('id', 'buttonEdit');
@@ -130,9 +138,32 @@ export const profile = () => {
       buttonErase.setAttribute('data-id', doc.id);
       buttonErase.classList.add('btnErase');
       buttonErase.textContent = 'Borrar';
+      //botón de like
+      // const sectionBtnLike = document.createElement('section');
+      // sectionBtnLike.classList.add('sectionBtn');
+      const buttonLike = document.createElement('button');
+      buttonLike.setAttribute('id', 'buttonLike');
+      buttonLike.setAttribute('data', doc.id);
+      buttonLike.setAttribute('like', doc.data().like);
+      buttonLike.classList.add('btnLike');
+      buttonLike.textContent = 'Me gusta';
+      if (doc.data().like == true) {
+        buttonLike.style.backgroundColor = 'darksalmon';
+      }
 
-      cardPost.append(postNameUser, postedUser, buttonEdit, buttonErase);
+      sectionBtn.append(buttonErase, buttonEdit, buttonLike);
+      cardPost.append(postNameUser, postedUser, sectionBtn);
       sectionPost.append(cardPost);
+    });
+
+    // función para dar like a los post
+    const btnsLike = sectionPost.querySelectorAll('.btnLike');
+    btnsLike.forEach(btn => {
+      btn.addEventListener('click', async (event) => {
+        const id = event.target.attributes.data.value;
+        const like = event.target.attributes.like.value == "true" ? false : true;
+        updateDataPost(id, { like: like });
+      })
     });
 
     // función para borrar los post
@@ -167,13 +198,14 @@ export const profile = () => {
 
 
   const user = postUserProfile();
-  console.log('user', user);
+
   header.append(imgLogoProfile, navSection);
   navSection.append(buttonWall, buttonProfile, buttonExit)
-  infoUser.append(infoUserProfile, imgUser);
-  infoUserProfile.append(profileNameUser, emailUser);
-  sectionPostProfile.append(inputPost, buttonPost, sectionPost);
-  containProfile.append(header, infoUser, sectionPostProfile);
+  nameEmailUser.append(profileNameUser, emailUser);
+  infoUser.append(nameEmailUser);
+  infoUserProfile.append( infoUser, inputPost, buttonPost);
+  profilePageContainer.append(infoUserProfile, sectionPost)
+  containProfile.append(header, profilePageContainer);
 
   return containProfile;
 };

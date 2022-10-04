@@ -3,7 +3,7 @@ body{
     width: auto;
     margin: 0px;
     font-family: 'Poppins', sans-serif;
-    /* display: flex; */
+
 }
 
 .sectionLogin{
@@ -27,12 +27,18 @@ body{
     align-items: center;
     margin: 0px;
     padding-bottom: 10px;
+    background-color: white;
 }
 
 form{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.profilePageContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .imgLogo{
@@ -80,8 +86,11 @@ form{
 .viewProfile{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    background: rgb(246,246,246);
+    background: linear-gradient(180deg, rgba(246,246,246,1) 6%, rgba(255,255,255,1) 64%);
+    height: 100%;
 }
 
 .viewWall{
@@ -89,6 +98,7 @@ form{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: #F6F6F6;
 }
 
 .contRegist{
@@ -98,15 +108,98 @@ form{
 .sectionUser{
     display: flex;
     align-items: center;
-    margin: 24px;
+    margin: 24px 20px 24px 5px;
 }
-
-.sectionPost{
+.sectionProfileUser{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.sectionPost{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.cardPost{
+    width: 307px;
+    height: 148px;
+    margin: 10px;
+    display: flex;
+    padding: 16px 8px 8px 16px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    border-radius: 15px;
+    border: 1.5px solid #DFBBAB;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: white;
+}
+.sectionBtn{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 3fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: end;
 }
 
+.conteinerPost{
+    margin: 0px;
+}
+.btnEdit{
+    display: flex;
+    color: #BDB7AF;
+    margin: 5px;
+    font-size: medium;
+    border-radius: 10px;
+    align-items: center;
+    background-color: white;
+    border: white;
+    padding-right: 10px;
+    text-decoration: underline; 
+}
+.btnEdit:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin-right: 2px;
+    background-image: url('../image/iconEdit.png');
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-color: white;
+    background-size: 20px 20px;
+    background-position: center center;
+}
+
+.btnErase{
+    display: flex;
+    color: #BDB7AF;
+    margin: 5px;
+    font-size: medium;
+    border-radius: 10px;
+    align-items: center;
+    background-color: white;
+    border: white;
+    padding-right: 10px;
+    text-decoration: underline; 
+}
+
+.btnErase:before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    display: flex;
+    margin-right: 2px;
+    background-image: url('../image/iconErase.png');
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-color: white;
+    background-size: 20px 20px;
+    background-position: center center;
+    
+}
 .input{
     width: 250px;
     height: 37px;
@@ -128,9 +221,9 @@ form{
   }
 
 .inputPost{
-    width: 280px;
-    height: 100px;
-    margin: 10px;
+    width: 307px;
+    height: 105px;
+    margin: 5px;
     padding: 10px 10px 10px 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
@@ -145,7 +238,7 @@ form{
     padding: 10px 10px 10px 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 1.5px solid #DFBBAB;
 }
 
@@ -168,6 +261,7 @@ form{
     border-color: #F9965E;
     outline: 0;
 }
+
 
 .btn {
     width: 200px;
@@ -279,28 +373,29 @@ form{
 }
 
 .btnLike{
-    width: 150px;
-    height: 45px;
+    width: 93px;
+    height: 32px;
     color: white;
     margin: 5px;
-    font-size:large;
+    font-size: medium;
     border-radius: 10px;
     align-items: center;
-    background-color: #DFBBAB;
+    background-color: #BDB7AF;
     border: white;
     padding-right: 10px;
 }
 
  
  p{
-    margin: 5px;
+    margin: 0px;
     text-align: center;
     color: rgb(83, 83, 83);
  }
  
  h2{
     margin: 0px;
-    font-size: 20px;
+    font-size: 19px;
+    font-weight: bold;
     padding-right: 50px;
     color: rgb(59, 59, 59);
  }
@@ -308,6 +403,13 @@ form{
  h3{
     margin: 0px;
     font-size: 15px;
+    padding-right: 50px;
+    color: rgb(59, 59, 59);
+ }
+ h4{
+    margin: 0px;
+    font-size: 17px;
+    font-weight: bolder;
     padding-right: 50px;
     color: rgb(59, 59, 59);
  }
@@ -330,6 +432,7 @@ form{
     }
     .imgWelcome{
         width: 220px;
+        margin-top: 20px;
     }
     .imgLogo {
         margin-top: 10px;
@@ -348,6 +451,14 @@ form{
     }
     .btn.registration {
         margin-top: 20px;
+    }
+    .profilePageContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .sectionPost {
+        display: flex;
+        flex-direction: column;
     }
 }
 

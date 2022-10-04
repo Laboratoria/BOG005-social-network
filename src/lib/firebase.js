@@ -15,7 +15,7 @@ import config from './config.js'; // config es la llave de firebase
 // Creando una constante para cada servicio
 const firebaseApp = initializeApp(config);
 const auth = getAuth();
-console.log('auth', auth);
+// console.log('auth', auth);
 auth.languageCode = 'es';
 const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 const singUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
@@ -26,13 +26,18 @@ const profileUser = (user, displayName) => updateProfile(user, { displayName });
 //Conectando y guardando con firestore
 const db = getFirestore();
 const savePostFirestore = async(contentPost) => {
-  await addDoc(collection(db, 'posts'), {title: contentPost, like: false})
+  await addDoc(collection(db, 'posts'), 
+  {title: contentPost, 
+    like: false, 
+    name: auth.currentUser.displayName, 
+    email: auth.currentUser.email})
 };
 // Traer el post de firestore a muro
 const postUserProfile = () => query(collection(db, 'posts'));
-  console.log('postUserProfile', postUserProfile);
+
 // Traer la data de los post guardados
 const getDataPost = (id) => getDocs(doc(db,'posts', id));
+
 // Actualizando la data
 const updateDataPost = (id, newData) => updateDoc(doc(db,'posts', id), newData);
 const deletePost = (id) => deleteDoc(doc(db, 'posts', id));

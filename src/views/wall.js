@@ -1,7 +1,7 @@
 import { onNavigate } from '../main.js';
 import {
   loginOut, postUserProfile, onSnapshot,
-  updateDataPost, deletePost, 
+  updateDataPost, deletePost, auth, profileUser,
 } from '../lib/firebase.js';
 
 export const wall = () => {
@@ -58,9 +58,11 @@ export const wall = () => {
       const cardPost = document.createElement('article');
       cardPost.classList.add('cardPost');
       cardPost.classList.add('id', 'containerPost')
+      const postNameUser = document.createElement('h2');
+      postNameUser.textContent = doc.data().name;
       const postedUser = document.createElement('p');
       postedUser.textContent = doc.data().title;
-      console.log(doc.data())
+      // console.log(doc.data())
       //botón de like
       const buttonLike = document.createElement('button');
       buttonLike.setAttribute('id', 'buttonLike');
@@ -69,10 +71,10 @@ export const wall = () => {
       buttonLike.classList.add('btnLike');
       buttonLike.textContent = 'Me gusta';
       if (doc.data().like == true) {
-        buttonLike.style.backgroundColor = "green";
+        buttonLike.style.backgroundColor = 'darksalmon';
       }
 
-      cardPost.append(postedUser, buttonLike);
+      cardPost.append(postNameUser, postedUser, buttonLike);
       sectionPost.append(cardPost);
     });
 
