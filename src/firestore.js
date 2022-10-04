@@ -1,7 +1,12 @@
 import {
   getFirestore,
   collection,
+  doc,
   addDoc,
+  onSnapshot,
+  query,
+  where,
+  getDocs,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
 import { app } from "./firebase.js";
 
@@ -21,3 +26,39 @@ export async function saveData(email, password, name) {
     console.error("Error adding document: ", e);
   }
 }
+
+export async function saveDataPosts(title, description) {
+  try {
+    const docRef = await addDoc(collection(db, "posts"), {
+      title: title,
+      description: description,
+    });
+
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.log(e);
+    console.error("Error adding document: ", e);
+  }
+}
+
+let dataPosts;
+
+export function result() {
+  dataPosts;
+  console.log(dataPosts);
+}
+
+function getPosts() {
+  const q = query(collection(db, "posts"));
+
+  getDocs(q).then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const idPosts = doc.id;
+      dataPosts = doc.data();
+      result();
+      return dataPosts;
+    });
+  });
+}
+
+getPosts();
