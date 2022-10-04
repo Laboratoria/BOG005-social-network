@@ -1,5 +1,3 @@
-// import { savePost, getOnePost, updatePost } from "../../firebase/firestoreFirebase.js";
-
 const wall = () => {
   const wallOffPublication = `
     <section id="wallOffPublication" class="wallPublication">
@@ -53,11 +51,3 @@ return wallOffPublication;
 // }}
 
 export { wall };
-
-// se exportaa buttonP 
-/* <footer id="menuBottom">
-<button type="button" class="postButton" id="postButtonId">
-<i class="fa-solid fa-circle-plus btnPost"></i>
-</button>
-<p>Publicar</p>
-</footer> */
