@@ -10,12 +10,12 @@ const userSignIn = () => {
   <article class="itemsInput">
     <label for="user" id="emailLabelSi">Correo</label>
     <input type="text" id="userSi" placeholder="Ingresa tu correo">
-    <span class="errorMessageEmail" id="errorMessageEmailId">Correo inválido</span>
+    <p class="errorMessageEmail" id="errorMessageEmailId"></p>
   </article>
   <article class="itemsInput">
     <label for="password" id="passwordLabelSi" >Contraseña</label>
     <input type="password" id="passwordSi" placeholder="Ingresa tu contraseña">
-    <span class="errorMessagePassword" id="errorMessagePasswordId">Password inválido</span>
+    <p class="errorMessagePassword" id="errorMessagePasswordId"></p>
     </article>
     <p class="o">- O -</p>
 

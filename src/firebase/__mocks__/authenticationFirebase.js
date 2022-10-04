@@ -1,6 +1,11 @@
-export const signIn = jest.fn(() => {
+export const createUser = jest.fn(() => {
+    console.log('Estoy en mock')
     return Promise.reject({code : 'auth/invalid-email'})
 })
+
+// export const signIn = jest.fn(() => {
+//     return Promise.reject({code : 'auth/user-not-found'})
+// })
 
 // export const getAuth = () => Promise.resolve();
 // export const createUserWithEmailAndPassword = () => Promise.resolve();
