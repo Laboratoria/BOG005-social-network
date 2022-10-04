@@ -1,4 +1,5 @@
 import { onNavigate } from '../main.js';
+import { googleSignIn } from '../firebase/connection.js';
 
 export const landing = () => {
   const containerLanding = document.createElement('section');
@@ -33,7 +34,7 @@ export const landing = () => {
   buttonLogin.setAttribute('id', 'i-sesion');
 
   buttonRegisterG.addEventListener('click', () => {
-    onNavigate('/register');
+    googleSignIn();
   });
 
   buttonRegisterE.addEventListener('click', () => {

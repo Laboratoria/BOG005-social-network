@@ -40,12 +40,6 @@ export const login = () => {
   const session = document.createElement('h3');
   session.textContent = 'Inicia tu sesión';
 
-  loginButton.addEventListener('click', () => {
-    onNavigate('/wall'); // Debería dirigir al Home, muro o perfil
-  });
-
-  // const errorText = document.createElement('p'); se comenta porque sale error en eslint
-
   containerLogin.append(
     title,
     imgLogin,
@@ -58,12 +52,12 @@ export const login = () => {
   containerLogin.querySelector('.button-login').addEventListener('click', (e) => {
       console.log('se le dio click al botón');
       e.preventDefault();
-        const emailL = loginEmail.value;
-        const passL = loginPassword.value;
+        const emailLogin = loginEmail.value;
+        const passLogin = loginPassword.value;
       
-      signInUser(emailL, passL)
+      signInUser(emailLogin, passLogin)
         .then(() => onNavigate('/wall'))
-        .catch((err) => onNavigate('/login')); // se quita la declaracion de err por error de eslint
+        .catch(() => onNavigate('/login'));
     });
 
   return containerLogin;

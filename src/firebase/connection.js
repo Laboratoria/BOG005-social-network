@@ -4,6 +4,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
+  signInWithPopup, 
+  GoogleAuthProvider,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 
@@ -21,7 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-const createUser = (email, password) => {
+const createUser = (email, password) => 
   createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // signed in
@@ -34,6 +36,7 @@ const createUser = (email, password) => {
       icon: "success",
       button: "Inicia tu viaje!",
     });
+    
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -59,23 +62,24 @@ const createUser = (email, password) => {
         text: "Por favor usa más de seis caracteres",
         icon: "error",
       });
-    }       
+    }
   });
-};
 
 const signInUser = (email, password) => {
   console.log('email: ', email, 'password: ', password);
   return signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    console.log(user, 'Signed in');
+    
     // signed in
     const user = userCredential.user;
+    console.log(user, 'Signed in');
     //  ...
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     console.log(errorMessage);
+    console.log('nope, no entraste');
   });
 };
 
@@ -89,24 +93,19 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+const provider = new GoogleAuthProvider();
+const googleSignIn = () => signInWithPopup(auth, provider)
+  .then((result) => {
+    //la redirijo segun ejm main al wall
+    window.location.pathname = '/wall';
+  }).catch((error) => {
+  });
+
+// TODO: HACER UN BOTON DE SALIR
 // signOut(auth).then(() => {
 //   // signout successful.
 // }).catch((error) => {
 //   // An error happened.
 // });
 
-// const user = auth.currentUser;
-// if (user !== null) {
-//   // The user object has basic properties such as display name, email, etc.
-//   const displayName = user.displayName;
-//   const email = user.email;
-//   const photoURL = user.photoURL;
-//   const emailVerified = user.emailVerified;
-
-  // The user's ID, unique to the Firebase project. Do NOT use
-  // this value to authenticate with your backend server, if
-  // you have one. Use User.getToken() instead.
-//   const uid = user.uid;
-// }
-
-export { auth, createUser, signInUser };
+export { auth, createUser, signInUser, googleSignIn };

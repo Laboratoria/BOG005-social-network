@@ -9,8 +9,20 @@ export const register = () => {
   title.textContent = 'REGÍSTRATE';
   title.className = 'title';
 
+  const imgLogin = document.createElement('img');
+  imgLogin.className = 'img-login';
+  imgLogin.src = '/img/logo.png';
+  imgLogin.alt = 'logo';
+
   const registerForm = document.createElement('section');
   registerForm.classList.add('formRegister');
+
+  const userName = document.createElement('input');
+  userName.classList.add('input');
+  userName.setAttribute('type', 'text');
+  userName.setAttribute('id', 'userName');
+  userName.setAttribute('placeholder', 'Usuario');
+  userName.setAttribute('required', '');
 
   const registerEmail = document.createElement('input');
   registerEmail.classList.add('input');
@@ -41,30 +53,24 @@ export const register = () => {
     const emailRegister = registerEmail.value;
     const passRegister = registerPassword.value;
     console.log(emailRegister, passRegister);
-
-    const createRegister = async(email, password) => {;
-      try {
-        createUser(email, password);
-      }
-      catch(error){
-        return error;
-      }
-    };
   
-    createRegister(emailRegister, passRegister)
+    createUser(emailRegister, passRegister)
       .then(() => {
         console.log('dentroooo');
-        onNavigate('/wall'); // si ya se registró que entre a muro
+        onNavigate('/wall');
+
       })
       .catch(() => {
         console.log('fail');
-        onNavigate('/register')
       });
-    });
+      return createUser;
+  });
 
   containerRegister.append(registerForm);
   registerForm.append(
     title,
+    imgLogin,
+    userName,
     registerEmail,
     registerPassword,
     registerButton,
