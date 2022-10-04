@@ -4,7 +4,7 @@ import {
   getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';// servicion de inicio  de sesion con google
-import { addDoc, collection, getFirestore, getDocs, onSnapshot, doc, deleteDoc, query} from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
+import { addDoc, collection, getFirestore, getDocs, onSnapshot, doc, deleteDoc, query } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
 
 import config from './config.js'; // config es la llave de firebase
 
@@ -22,16 +22,7 @@ const singUser = (email, password) => signInWithEmailAndPassword(auth, email, pa
 const provider = new GoogleAuthProvider();
 const singUserGoogle = () => signInWithPopup(auth, provider);//////***no testear
 const loginOut = () => signOut(auth);
-///////FIRESTORE/////
-const db = /*() => */getFirestore(firebaseApp);
-
-//////// Crea coleccion para post///
-/* const toSavePost = (contenPost)=> {
-  addDoc(collection(fs,'Post3'),{contenPost});
-  console.log('auch'); */
-//}
-//console.log(fs);
-//const toGetPost = (toGet)=> onSnapshot(collection(fs,'Post'),{toGet});
+const db = /*() => */getFirestore(firebaseApp);///////FIRESTORE/////
 
 
 // Detectando el estado de autenticación
@@ -45,32 +36,43 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
   }
 });
 ///// crear coleccion de usuarios ejemplo// se iba al catch 
-const savePost= (input)=> {
+const savePost = (input) => {
   // console.log(input);
   addDoc(collection(db, "usuarios3"), { //// funcion que guarda post con: funcion addDoc(especif colecc, agreg un objeconten)
     first: input,
-  }).then((dos)=> {
+  }).then((dos) => {
     console.log("Document written with ID: ", dos.id);/// no reconoce id
     //console.log(dos);
-  }).catch ((e)=>{
+  }).catch((e) => {
     console.error("Error adding document: ", e);
   });// lo encuentra pero necesita await y entonces no renderiza
 }
 
 
-const readPost=()=>{
+const readPost = () => {
   const arrayDocs = getDocs(collection(db, "usuarios3"));// querySnapshot = mi array doscs tipo querySnapshot que es un
   return arrayDocs
 }
- const readPost2 = (querySnapshot)=>{ onSnapshot(collection(db, "usuarios3"), querySnapshot)}
+const readPost2 = (querySnapshot) => { onSnapshot(collection(db, "usuarios3"), querySnapshot)
 
-const deletePost = (id)=>{ deleteDoc(doc(db, "usuarios3", id)) /*.then(()=> {console.log("ahora borra");
-  }).catch((e)=>{
-    console.error("Error : ", e);
-  });*/
+}
+
+
+/* const readPost = () => {
+const arrayDocs_inic = getDocs(collection(db, "usuarios3"));// querySnapshot = mi array doscs tipo querySnapshot que es un
+//const arrayDocs_inic = onSnapshot(collection(db, "usuarios3"));
+//const arrayDocs=  onSnapshot(collection(db, "usuarios3"), arrayDocs_inic)
+console.log(arrayDocs_inic);
+//console.log(arrayDocs);
+return arrayDocs_inic
+} */
+
+
+const deletePost = (id) => {
+  deleteDoc(doc(db, "usuarios3", id))
 }
 
 export {
-  initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost, 
-  savePost, deletePost,readPost2
+  initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost,
+  savePost, deletePost, readPost2
 };

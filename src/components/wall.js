@@ -63,10 +63,27 @@ export const wall = () => {
   ///////////////////////////////////////////funciones//////////////////////////////////////////
   buttonPost.addEventListener('click', () => savePost(written.value));
   
-  contWall.textContent = "";// parte vacia
   readPost().then((arrayDocs) => { // lea el post (en el embudo lo ejecuta)
     arrayDocs.forEach((doc) => { // arraydocs es un array donde estan todos los post por cada elemento hacexxx en el for each
-      console.log('usar para una clase', doc.id, doc.data());
+     
+    })//.catch((e)=>{console.error("Error adding document: ", e);}) 
+
+  });
+  ///leer2/////
+/*   const arrayRead = readPost();
+  readPost2((elementos) => {
+    elementos.forEach((doc) => {
+      console.log(doc.data());
+    })
+  })
+  readPost2(arrayRead);
+ */
+
+  const arrayRead = readPost();
+  readPost2((elementos) => {
+    contWall.textContent = "";// parte vacia
+    elementos.forEach((doc) => {
+      console.log(doc.data());
       const post_n = document.createElement('article'); // cree un nodo seccition
       const buttonDelete = document.createElement('button');// boton guardar post
       buttonDelete.textContent = 'Eliminar post';
@@ -85,25 +102,13 @@ export const wall = () => {
           //const idGet =  ({ target: { dataset } }) => {console.log("AU");};
           console.log('event id: ', event.target.dataset.infoId);
           deletePost(event.target.dataset.infoId);
-
         });
-
-
       })
       return contWall
-    })//.catch((e)=>{console.error("Error adding document: ", e);}) 
-
-
-
-  });
-  ///leer2/////
-  const arrayRead = readPost();
-  readPost2((elementos) => {
-    elementos.forEach((doc) => {
-      console.log(doc.data());
     })
   })
   readPost2(arrayRead);
+
   ///////////////funcion cerrar sesión/////////////////////////////////
 
   buttonsingout.addEventListener('click', () => {
