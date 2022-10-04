@@ -2,6 +2,21 @@ import { onNavigate } from '../main.js';
 import { singUser, singUserGoogle, GoogleAuthProvider } from '../lib/index.js';
 
 export const login = () => {
+
+  const container = document.createElement('section')
+  container.setAttribute('class',('container'))
+
+  // contenedor hijo img
+
+  const containerImg =document.createElement('section')
+  containerImg.setAttribute('class',('containerImg'))
+
+  const imgWelcome = document.createElement('img');
+  imgWelcome.setAttribute('srcset', './image/teamWomen.png');
+  imgWelcome.classList.add('imgWelcome');
+
+  // contenedor hijo formlario
+
   const containLogin = document.createElement('section');
   containLogin.classList.add('viewLogin');
 
@@ -9,6 +24,11 @@ export const login = () => {
   imgLogo.setAttribute('srcset', './image/ladyCodeLogo.jpg');
   imgLogo.classList.add('imgLogo');
 
+  const separatorButtonGoogle =document.createElement('h4');
+  separatorButtonGoogle.classList.add('separatorButtonGoogle');
+  separatorButtonGoogle.textContent='------------- o -------------';
+
+  
   const buttonGoogle = document.createElement('button'); /// botono google
   buttonGoogle.setAttribute('id', 'buttonGoogle');
   buttonGoogle.textContent = 'iniciar con google';
@@ -92,10 +112,11 @@ export const login = () => {
 
         });
 });
-
-  containLogin.append(imgLogo, buttonGoogle, formLogin);
+  container.append(containerImg, containLogin)
+  containerImg.append(imgWelcome)
+  containLogin.append(imgLogo,  buttonGoogle, separatorButtonGoogle, formLogin);
   formLogin.append(inputEmail, inputPass, button, buttonBack, errorText);
 
 
-  return containLogin;
+  return container;
 };

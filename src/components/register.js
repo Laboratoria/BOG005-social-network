@@ -11,7 +11,7 @@ export const register = () => {
 
   const buttonGoogle = document.createElement('button'); /// botono google
   buttonGoogle.setAttribute('id', 'buttonGoogle');
-  buttonGoogle.textContent = 'iniciar con google';
+  buttonGoogle.textContent = 'Registrarse con google';
 
   const formRegister = document.createElement('form'); /// se debe envolver en formulario //***PREGUNTAR A YEIMY  
   // inputs de texto para mail y contraseña
@@ -99,4 +99,3 @@ export const register = () => {
 
   return containRegister;
 };
-
