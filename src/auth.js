@@ -11,7 +11,6 @@ import {
 import { app } from "./firebase.js";
 import { saveData } from "./firestore.js";
 
-
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const user = auth.currentUser;
@@ -64,7 +63,6 @@ export function loginWithEmail(email, password) {
 export function signInWithGoogle() {
   signInWithPopup(auth, provider)
     .then((result) => {
-
       // PRUEBA cargar foto de perfil de google al autenticarse.
       //  $('#avatar').attr('src', result.user.photoURL)
       // FIN PRUEBA

@@ -1,4 +1,4 @@
-import { loginWithEmail, signInWithGoogle } from "../../auth.js";
+import { getUser, loginWithEmail, signInWithGoogle } from "../../auth.js";
 
 export default () => {
   const homeSection = document.createElement("div");
@@ -54,6 +54,7 @@ export default () => {
   const googleButton = homeSection.querySelector(".googleButton");
   googleButton.addEventListener("click", (e) => {
     signInWithGoogle();
+    getUser();
   });
   return homeSection;
 };
