@@ -1,4 +1,4 @@
-import { auth, signIn } from '../../firebase/authenticationFirebase.js'
+import { auth, signIn as signInFirebase } from '../../firebase/authenticationFirebase.js'
 
 const eventLoginButton = () => {
   if (window.location.pathname === '/userSignIn') {
@@ -8,7 +8,7 @@ const eventLoginButton = () => {
         e.preventDefault()
         const email = document.querySelector('#userSi').value;
         const password = document.querySelector('#passwordSi').value;
-        const result = signIn(auth, email, password)
+        const result = signInFirebase(auth, email, password)
         result.then((userCredential) => {
           if (userCredential) {
             const greetingUser = document.getElementById('greetingUserId');

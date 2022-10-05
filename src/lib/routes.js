@@ -47,15 +47,41 @@ const historyHandler = () => {
   return containerPage.innerHTML = render;
 };
 
-const eventHandler = () => {
-  eventButtonCreateUser();
-  eventButtonGoogle();
-  eventLoginButton();
-  displayUserData();
-  eventButtonSignOut();
-  buttonP();
-  getPost();
-  onGetPost();
+// const eventHandler = () => {
+  
+//   eventButtonCreateUser();
+//   eventButtonGoogle();
+//   eventLoginButton();
+//   displayUserData();
+//   eventButtonSignOut();
+//   buttonP();
+//   getPost();
+//   onGetPost();
+// };
+
+
+const eventHandler = (path) => {
+  switch (path) {
+    case '/wall':
+      buttonP();
+      getPost();
+      onGetPost();
+      displayUserData();
+      eventButtonSignOut();
+      console.log('estas en wall')
+      break;
+    case '/signIn':
+      eventButtonCreateUser();
+      eventButtonGoogle();
+      console.log('estas en sigin')
+      break;
+    case '/userSignIn':
+      eventLoginButton();
+      console.log('estas en usersigin')
+      default:
+      break;
+  }
 };
+
 
 export { router, historyHandler, eventHandler };
