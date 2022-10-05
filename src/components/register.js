@@ -53,17 +53,16 @@ export const register = () => {
     const emailRegister = registerEmail.value;
     const passRegister = registerPassword.value;
     console.log(emailRegister, passRegister);
-  
+
     createUser(emailRegister, passRegister)
       .then(() => {
         console.log('dentroooo');
         onNavigate('/wall');
-
       })
       .catch(() => {
         console.log('fail');
       });
-      return createUser;
+    return createUser;
   });
 
   containerRegister.append(registerForm);

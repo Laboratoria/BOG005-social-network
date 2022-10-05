@@ -46,15 +46,17 @@ export const login = () => {
     loginEmail,
     loginPassword,
     loginButton,
-    question
+    question,
   );
 
-  containerLogin.querySelector('.button-login').addEventListener('click', (e) => {
+  containerLogin
+    .querySelector('.button-login')
+    .addEventListener('click', (e) => {
       console.log('se le dio click al botón');
       e.preventDefault();
-        const emailLogin = loginEmail.value;
-        const passLogin = loginPassword.value;
-      
+      const emailLogin = loginEmail.value;
+      const passLogin = loginPassword.value;
+
       signInUser(emailLogin, passLogin)
         .then(() => onNavigate('/wall'))
         .catch(() => onNavigate('/login'));
