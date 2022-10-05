@@ -1,6 +1,7 @@
 // importamos la funcion que vamos a testear
 import { onNavigate } from '../src/main.js';
 
+jest.mock('../src/lib/utils.js');
 const mockTemplateWelcome = () => {
   const loginContainer = document.createElement('div');
   loginContainer.innerHTML = '<h1>Mock Template Login 1</h1>';
