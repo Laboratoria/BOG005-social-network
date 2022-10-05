@@ -43,9 +43,5 @@ const signIn = () => {
     </section>`;
     return viewSignIn;
   };
-  
-  
-  
-  
   export { signIn };
     

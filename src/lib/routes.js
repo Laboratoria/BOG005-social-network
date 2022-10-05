@@ -47,19 +47,6 @@ const historyHandler = () => {
   return containerPage.innerHTML = render;
 };
 
-// const eventHandler = () => {
-  
-//   eventButtonCreateUser();
-//   eventButtonGoogle();
-//   eventLoginButton();
-//   displayUserData();
-//   eventButtonSignOut();
-//   buttonP();
-//   getPost();
-//   onGetPost();
-// };
-
-
 const eventHandler = (path) => {
   switch (path) {
     case '/wall':
@@ -81,7 +68,5 @@ const eventHandler = (path) => {
       default:
       break;
   }
-};
-
-
-export { router, historyHandler, eventHandler };
+}
+export { router, historyHandler, eventHandler }

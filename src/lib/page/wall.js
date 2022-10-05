@@ -1,5 +1,3 @@
-// import { savePost, getOnePost, updatePost } from "../../firebase/firestoreFirebase.js";
-
 const wall = () => {
   const wallOffPublication = `
     <section id="wallOffPublication" class="wallPublication">
@@ -30,34 +28,4 @@ const wall = () => {
 return wallOffPublication;
 };
 
-// let status = true;
-
-// const buttonP = () => {
-//   const postForm = document.getElementById('postForm')
-//   const buttonP = document.getElementById('PostContentButton')
-//   if(buttonP){
-//     buttonP.addEventListener('click', ()=>{
-//     const contenido = document.getElementById('postContent').value;
-//     const id = getOnePost(event.currentTarget.getAttribute('data-id'))
-//       if(!status){
-//         savePost(contenido);
-//       }else{
-//         updatePost(id, contenido);
-//       }
-
-    
-      
-
-//     postForm.reset();
-//   })
-// }}
-
 export { wall };
-
-// se exportaa buttonP 
-/* <footer id="menuBottom">
-<button type="button" class="postButton" id="postButtonId">
-<i class="fa-solid fa-circle-plus btnPost"></i>
-</button>
-<p>Publicar</p>
-</footer> */
