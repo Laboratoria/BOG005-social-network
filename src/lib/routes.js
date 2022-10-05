@@ -71,7 +71,7 @@ const eventHandler = (path) => {
       console.log('estas en wall')
       break;
     case '/signIn':
-      eventButtonCreateUser();
+      eventButtonCreateUser(path);
       eventButtonGoogle();
       console.log('estas en sigin')
       break;

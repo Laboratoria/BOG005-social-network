@@ -1,4 +1,4 @@
-import { auth, signIn as signInFirebase } from '../../firebase/authenticationFirebase.js'
+import { auth, signInFirebase } from '../../firebase/authenticationFirebase.js'
 
 const eventLoginButton = () => {
   if (window.location.pathname === '/userSignIn') {

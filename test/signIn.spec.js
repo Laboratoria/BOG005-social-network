@@ -15,7 +15,7 @@ describe('Testing view', ()=>{
         expect(document.getElementById('submitContinueButton')).toBeTruthy();
     });
     //funcionalidad de los botones
-    it('Debe responder con: Dato Incorrecto', () => {
+    it('Debe responder con: Dato Incorrecto', (done) => {
         // createUser(null, '', '').catch(()=>{
         //     console.log('Catch llamado directo')
         // })
@@ -23,6 +23,7 @@ describe('Testing view', ()=>{
         const main = document.querySelector('#contentPageId')
         main.innerHTML = signIn()
        eventHandler('/signIn') //si borras esta función igual corre el test 
+       
        //signIn()
         expect(document.querySelector('#emailContent')).not.toBeNull();
         expect(document.querySelector('#paragraph1')).toBe(null);

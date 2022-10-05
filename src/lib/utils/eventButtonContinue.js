@@ -1,8 +1,8 @@
 import { auth, createUser } from '../../firebase/authenticationFirebase.js';
 import { showMessageError, showSuccessfulResponse } from './formValidator.js';
 
-const eventButtonCreateUser = () => {
-  if (window.location.pathname === '/signIn') {
+const eventButtonCreateUser = (path) => {
+  if (path === '/signIn') {
     const buttonContinue = document.getElementById('submitContinueButton');
     if (buttonContinue) {
       buttonContinue.addEventListener('click', () => {
