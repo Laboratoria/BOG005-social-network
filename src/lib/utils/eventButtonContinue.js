@@ -33,4 +33,4 @@ const eventButtonCreateUser = (path) => {
   };
 };
 
-//export { eventButtonCreateUser };
+export { eventButtonCreateUser };
