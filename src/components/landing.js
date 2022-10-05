@@ -1,4 +1,5 @@
 import { onNavigate } from '../main.js';
+import { googleSignIn } from '../firebase/connection.js';
 
 export const landing = () => {
   const containerLanding = document.createElement('section');
@@ -14,26 +15,26 @@ export const landing = () => {
   title.className = 'titleL';
 
   const buttonRegisterG = document.createElement('button');
-  buttonRegisterG.textContent = 'Regístrate con Google';
-  buttonRegisterG.classList.add('buttonR');
+  // buttonRegisterG.textContent = 'Regístrate con Google';
+  buttonRegisterG.classList.add('buttonR1');
   buttonRegisterG.setAttribute('id', 'google');
 
   const buttonRegisterE = document.createElement('button');
-  buttonRegisterE.textContent = 'Regístrate con e-mail';
+  buttonRegisterE.textContent = 'Email Register';
   buttonRegisterE.classList.add('buttonR');
   buttonRegisterE.setAttribute('id', 'e-mail');
 
   const question = document.createElement('h3');
-  question.textContent = '¿Ya tienes una cuenta?';
+  question.textContent = '¿Do You have an account?';
   question.classList = 'question-l';
 
   const buttonLogin = document.createElement('button');
-  buttonLogin.textContent = 'Iniciar Sesión';
+  buttonLogin.textContent = 'Sign In';
   buttonLogin.classList.add('button');
   buttonLogin.setAttribute('id', 'i-sesion');
 
   buttonRegisterG.addEventListener('click', () => {
-    onNavigate('/register');
+    googleSignIn();
   });
 
   buttonRegisterE.addEventListener('click', () => {
@@ -44,6 +45,5 @@ export const landing = () => {
     onNavigate('/login');
   });
   containerLanding.append(imgLogin, title, buttonRegisterG, buttonRegisterE, question, buttonLogin);
-
   return containerLanding;
 };

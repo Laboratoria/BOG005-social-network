@@ -1,148 +1,109 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--fontFamily);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fontFamily);
+  width: 100%;
 }
 
 :root {
-    --fontFamily: 'Exo 2', sans-serif;
-    --titleSize: 1.5rem;
+  --fontFamily: "Exo 2", sans-serif;
+  --titleSize: 1.5rem;
+  /* linea 10 cambia tamaño de letra en landin=ENJOY THE WORDL
+    y en register =  REGISTRATE */
 }
 
+/*tamaño celular*/
+@media screen and (max-width: 800px) {
+  /*Imagen welcome*/
+  .img-welcome {
+    display: none;
+    max-width: 100%;
+  }
+  .sectionWelcome {
+    background-image: url("img/fondo1.PNG");
+  }
+  /* este h3 es del login Olvidaste tu contraseña  */
+  h3 {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #bdb9b9;
+  }
+}
 @media screen and (max-width: 1400px) {
-
-    /* vista del register */
-    .container { 
-        padding: auto;
-        display: flex;
-        position: absolute;
-        background-size: cover;
-        background-position: center;
-        background-image: url("img/Fondo2.PNG");
-        width: 100%;
-        height: 100vh;
-        font-family: var(--fontFamily);
-        flex-direction: column;
-        text-align: center;
-        align-content: center;
-    }       
-
-    .titleR {
-        text-align: center;
-        margin-top: 10vh;
-        font-size: var(--titleSize);
-    }
-/* 
-    .img-register {
-        display: block;
-        margin: 0px auto;
-        position: relative;
-        text-align: center;
-    } */
-
-    .input {
-        padding: 3vh;
-        position: relative;
-        width: 40vh;
-        height: 5vh;
-
-        background: rgba(217, 217, 217, 0.37);
-        border: 1px solid #000000;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-    }
-
-    #passwordRegister,
-    #emailRegister,
-    #inputName,
-    #inputLastName {
-    margin-top: 6vh;
-    }
-
-    .button {
-        display: block;
-        margin: 0px auto;
-        margin-top: 8vh;
-        position: relative;
-        width: 25vh;
-        height: 5vh;
-
-        background: rgba(241, 108, 164, 0.89);
-        border: 1px solid rgba(0, 0, 0, 0.25);
-        border-radius: 10px;
-        font-size: 2.5vh;
-    }
-
-    .question {
-        margin-top: 4vh;
-        justify-content: center;
-        font-size: 2vh;
-    }
-
-    .here {
-        justify-content: center;
-    }
-
-    /* vista del login */
-
-    /* vista welcome */
-    .sectionWelcome {
-        margin: 10px;
-        background: #FFF8EE;
-        opacity: 0.8;
-        background-image: url("img/fondo1.PNG");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: space-around;
-        min-height: 850px;
-
-    }
-
-    .titleWelcome {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    /* .imgWelcome {
-        min-height: 50px;
-
-    } */
-
-    /* .img-register{
-        align-content: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    } */
-}
-
-/* vistas del landing */
-.img-login {
-    display: block;
-    margin: 0px auto;
-    position: relative;
+  /* vista del register */
+  .container {
+    padding: auto;
+    display: flex;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-image: url("img/Fondo2.PNG");
+    width: 100%;
+    height: 100vh;
+    font-family: var(--fontFamily);
+    flex-direction: column;
     text-align: center;
-    width: 180px;
-    height: 200px;
-}
+    align-content: center;
+  }
 
-.titleL {
+  .titleR {
     text-align: center;
-    /* margin-top: 2vh; */
+    margin-top: 25px;
     font-size: var(--titleSize);
-}
+  }
 
-.buttonR {
+  .inputName {
+    margin: 0px auto;
+    text-align: center;
+    justify-content: center;
+    /* position: relative; */
+    width: 40vh;
+    height: 6.5vh;
+    margin-top: 1px;
+    background: rgba(235, 235, 235, 0.37);
+    border: 2px solid #bdb9b9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  .inputEmail {
+    /* margin: 0px auto; */
+    text-align: center;
+    justify-content: center;
+    /* position: relative; */
+    width: 40vh;
+    height: 6.5vh;
+    margin-top: 15px;
+    background: rgba(235, 235, 235, 0.37);
+    border: 2px solid #bdb9b9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  .inputPass {
+    /* margin: 0px auto; */
+    text-align: center;
+    justify-content: center;
+    /* position: relative; */
+    width: 40vh;
+    height: 6.5vh;
+    margin-top: 15px;
+    background: rgba(235, 235, 235, 0.37);
+    border: 2px solid #bdb9b9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+  #buttonStartRegister {
+    background-color: rgba(241, 108, 164, 0.89);
+    margin-top: 20px;
+  }
+
+  .inputL {
     display: block;
     margin: 0px auto;
     padding: 3vh;
-    text-align: center;
+    text-align: left;
 
     position: relative;
     width: 40vh;
@@ -153,37 +114,179 @@
     border: 2px solid #bdb9b9;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+  }
+  .inputE {
+    display: block;
+    margin: 0px auto;
+    padding: 3vh;
+    text-align: left;
+
+    position: relative;
+    width: 40vh;
+    height: 5vh;
+    margin-top: 3.5vh;
+
+    background: rgba(235, 235, 235, 0.37);
+    border: 2px solid #bdb9b9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+  }
+
+  #passwordRegister,
+  #emailRegister,
+  #inputName,
+  #inputLastName {
+    margin-top: 6vh;
+  }
+
+  .button {
+    display: block;
+    margin: 0px auto;
+    margin-top: 8vh;
+    position: relative;
+    width: 25vh;
+    height: 5vh;
+
+    background: rgba(241, 108, 164, 0.89);
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    /* border-radius: 10px; */
+    font-size: 2.5vh;
+  }
+
+  .question {
+    margin-top: 4vh;
+    justify-content: center;
+    font-size: 2vh;
+    text-align: center;
+    text-transform: none;
+    color: #cea3f1;
+  }
+
+  .here {
+    justify-content: center;
+    color: #bdb9b9;
+    font-size: 2vh;
+  }
+
+  /* vista del login */
+
+  .titleLo {
+    text-align: center;
+    margin-top: 10vh;
+    font-size: var(--titleSize);
+  }
+
+  /* vista welcome */
+
+  .sectionWelcome {
+    margin: 10px;
+    opacity: 0.8;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 850px;
+  }
+
+  .messageW {
+    text-align: center;
+    margin-top: 10vh;
+    font-size: var(--titleSize);
+  }
+
+  .description {
+    text-align: center;
+    margin-top: 250px;
+    margin-bottom: 25px;
+    align-items: center;
+    display: flex;
+  }
+}
+
+/* vistas del landing */
+.img-login {
+  display: block;
+  margin: 0px auto;
+  margin-top: 20px;
+  position: relative;
+  width: 180px;
+  height: 200px;
+}
+
+.info {
+  font-size: 10px;
+  color: #a79c93;
+  margin-top: 18px;
+  justify-content: center;
+  text-align: center;
+}
+.titleL {
+  text-align: center;
+  /* margin-top: 2vh; */
+  /* font-size: var(--titleSize); */
 }
 
 #google {
-    font-size: 2.3vh;
-    text-align: center;
-    line-height: 0.5vh;
+  margin: 0px auto;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  width: 40vh;
+  height: 6.5vh;
+  margin-top: 3.5vh;
+  background-image: url(img/button-Google.jpeg);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #bdb9b9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+#e-mail {
+  margin: 0px auto;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  width: 40vh;
+  height: 6.5vh;
+  margin-top: 3.5vh;
+  background: rgba(235, 235, 235, 0.37);
+  border: 2px solid #bdb9b9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
 }
 
-#e-mail {
+/* #google {
     font-size: 2.3vh;
     text-align: center;
     line-height: 0.5vh;
+} */
+
+#email-login {
+  font-size: 2.3vh;
+  text-align: left;
+  line-height: 0.5vh;
 }
 
 .question-l {
-    margin-top: 10vh;
-    justify-content: center;
-    font-size: 2.3vh;
+  margin-top: 10vh;
+  justify-content: center;
+  font-size: 2.3vh;
 }
 
 .button {
-    display: block;
-    margin: 0px auto;
-    margin-top: 1.5vh;
-    position: relative;
-    width: 30vh;
-    height: 6.5vh;
+  /* display: block; */
+  margin: 0px auto;
+  margin-top: 15px;
+  /* position: end; */
+  width: 30vh;
+  height: 6.5vh;
 
-    background: rgba(241, 108, 164, 0.89);
-    border: 2px solid #a7a0a0;
-    border-radius: 10px;
-    font-size: 2.3vh;
-
+  background: rgba(241, 108, 164, 0.89);
+  border: 2px solid #a7a0a0;
+  border-radius: 10px;
+  font-size: 2.3vh;
 }

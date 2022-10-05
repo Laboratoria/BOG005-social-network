@@ -1,8 +1,8 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-unused-vars */
-export const createUser = (email, password) => {
-  return Promise.resolve();
-};
+export const createUser = jest.fn((emailRegister, passRegister) => {
+  return Promise.resolve({});
+});
 
 export const signInUser = (email, password) => {
   return Promise.resolve();

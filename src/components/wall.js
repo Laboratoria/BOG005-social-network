@@ -22,8 +22,6 @@ export const wall = () => {
   postButton.textContent = 'Compartir';
   postButton.setAttribute('class', 'button-post button');
 
-  
-
   containerWall.append(title, wallPost, postButton);
 
   return containerWall;
