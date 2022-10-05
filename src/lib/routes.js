@@ -2,9 +2,9 @@ import { signIn } from './page/signIn.js';
 import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
 import  { wall } from './page/wall.js';
-//import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
+import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
-//import { eventLoginButton } from './utils/eventLoginButton.js';
+import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventButtonSignOut } from './utils/eventSignOut.js';
 import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
@@ -35,10 +35,8 @@ const router = (hash) => {
   const route = `${changeHash}${getWord}`;
   const sendRoutes = route === '/welcome' ? '/' : route;
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
-  console.log(render)
   const containerPage = document.getElementById('contentPageId');
-  //return containerPage.innerHTML = render;
-  return containerPage.append(render);
+  return containerPage.innerHTML = render;
 };
 //console.log(router('#wall'))
 
