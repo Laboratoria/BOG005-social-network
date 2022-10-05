@@ -1,11 +1,11 @@
 import { getAuth, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
-import { app } from './configFirabese.js';
+import { app } from './configFirebase.js';
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const createUser = (auth, email, password) => createUserWithEmailAndPassword(auth, email, password)
 const signGoogle = () => signInWithPopup(auth, provider)
-const signIn = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
+const signInFirebase = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
 const logOut = () => signOut(auth)
 
 
@@ -41,11 +41,9 @@ const displayUserData = () => {
 export {
   auth,
   createUser,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
   logOut,
   displayUserData,
-  signIn,
+  signInFirebase,
   signGoogle,
   provider,
 };

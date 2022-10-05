@@ -6,7 +6,7 @@ const wall = () => {
     <figure class="topBar">
      <div class="brand"> 
       <img src="img/logoapp.png" alt="LogoCICLAPP" class="logoHorizontalWall">
-      <p class="textLogoWall">CICLAPP</p>
+      <p class="textLogoWall" id="textLogoWallId">CICLAPP</p>
     </div>
     <a href="#signIn" class="loginButtonRegister1" id="loginButtonIdWall" autofocus="autofocus">Regístrate</a>
     <button class="exitButtonClass" id="exitButtonId">
@@ -26,7 +26,6 @@ const wall = () => {
     <section id="postsContainerId" class="postsContainer">
     </div>
     </section>
- 
 </section>`;
 return wallOffPublication;
 };

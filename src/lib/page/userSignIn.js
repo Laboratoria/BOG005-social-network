@@ -1,6 +1,5 @@
 const userSignIn = () => {
   const viewUserSignIn = `
-  <section class="viewUserSignIn"> 
   <figure class="logoSignIn">
   <img src="img/Logo.png" alt="LogoCICLAPP" class="logoHorizontal">
   <figcaption class="textLogo">CICLAPP</figcaption>
@@ -10,12 +9,12 @@ const userSignIn = () => {
   <article class="itemsInput">
     <label for="user" id="emailLabelSi">Correo</label>
     <input type="text" id="userSi" placeholder="Ingresa tu correo">
-    <span class="errorMessageEmail" id="errorMessageEmailId">Correo inválido</span>
+    <p class="errorMessageEmail" id="errorMessageEmailId"></p>
   </article>
   <article class="itemsInput">
     <label for="password" id="passwordLabelSi" >Contraseña</label>
     <input type="password" id="passwordSi" placeholder="Ingresa tu contraseña">
-    <span class="errorMessagePassword" id="errorMessagePasswordId">Password inválido</span>
+    <p class="errorMessagePassword" id="errorMessagePasswordId"></p>
     </article>
     <p class="o">- O -</p>
 
@@ -27,8 +26,7 @@ const userSignIn = () => {
     <button type="submit" id="submitContinue" class="submitSignIn">Continuar</button>
 
     <a href="#signIn" id="goToRegisterId" class="continue userRegister">¿No tienes una cuenta? Registrate</a>
-  </form>
-  </section>`;
+  </form>`;
 
   return viewUserSignIn;
 };

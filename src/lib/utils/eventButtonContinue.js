@@ -1,8 +1,8 @@
 import { auth, createUser } from '../../firebase/authenticationFirebase.js';
 import { showMessageError, showSuccessfulResponse } from './formValidator.js';
 
-const eventButtonCreateUser = () => {
-  if (window.location.pathname === '/signIn') {
+const eventButtonCreateUser = (path) => {
+  if (path === '/signIn') {
     const buttonContinue = document.getElementById('submitContinueButton');
     if (buttonContinue) {
       buttonContinue.addEventListener('click', () => {
@@ -10,6 +10,7 @@ const eventButtonCreateUser = () => {
         const password = document.getElementById('password').value;
         const result = createUser(auth, email, password);
         result.then((userCredential) => {
+          console.log('Se ejecuta then')
           showSuccessfulResponse();
           if (userCredential) {
             window.location.href = '#wall';
@@ -24,6 +25,7 @@ const eventButtonCreateUser = () => {
           .catch((error) => {
             const errorCode = error.code;
             console.log(errorCode)
+            console.log('Esto es un error')
             showMessageError(errorCode)
           });
       });

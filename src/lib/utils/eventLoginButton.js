@@ -1,4 +1,4 @@
-import { auth, signIn } from '../../firebase/authenticationFirebase.js'
+import { auth, signInFirebase } from '../../firebase/authenticationFirebase.js'
 
 const eventLoginButton = () => {
   if (window.location.pathname === '/userSignIn') {
@@ -8,7 +8,7 @@ const eventLoginButton = () => {
         e.preventDefault()
         const email = document.querySelector('#userSi').value;
         const password = document.querySelector('#passwordSi').value;
-        const result = signIn(auth, email, password)
+        const result = signInFirebase(auth, email, password)
         result.then((userCredential) => {
           if (userCredential) {
             const greetingUser = document.getElementById('greetingUserId');
@@ -20,17 +20,21 @@ const eventLoginButton = () => {
         })
           .catch((error) => {
             const errorCode = error.code;
+            console.log(errorCode)
             const errorMessageEmail = document.querySelector("#errorMessageEmailId")
             const errorPassWord = document.querySelector("#errorMessagePasswordId")
             const contentInputEmail = document.querySelector("#contentPageId > section > form > article:nth-child(1)")
             const contentInputPassword = document.querySelector("#contentPageId > section > form > article:nth-child(2)")
             if (errorCode === 'auth/invalid-email'){
-              errorMessageEmail.style.display = "block"
-              errorPassWord.style.display = "none"
+              errorMessageEmail.textContent = 'Correo inválido';
+              contentInputEmail.style.color = "#F56F6F";
+              contentInputPassword.style.color = "#FFFFFF";
+            } else if (errorCode === 'auth/user-not-found'){
+              errorMessageEmail.textContent = 'Correo no encontrado';
               contentInputEmail.style.color = "#F56F6F";
               contentInputPassword.style.color = "#FFFFFF";
             } else if (errorCode === 'auth/wrong-password'){
-              errorPassWord.style.display = "block"
+              errorPassWord.textContent = 'Error en password'
               errorMessageEmail.style.display = "none"
               contentInputPassword.style.color = "#F56F6F";
               contentInputEmail.style.color = "#FFFFFF";
@@ -44,5 +48,6 @@ const eventLoginButton = () => {
 
 export { eventLoginButton };
 
+//auth/user-not-found
 //auth/invalid-email
 //auth/wrong-password

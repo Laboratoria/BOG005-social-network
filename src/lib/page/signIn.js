@@ -1,7 +1,7 @@
 const signIn = () => {
-  const viewSignIn = `
-   <section class="viewSignIn" id="signIn">
-  <figure class="logoSignIn">
+    const viewSignIn = `
+    <section> 
+    <figure class="logoSignIn">
       <img src="img/Logo.png" alt="LogoCICLAPP" class="logoHorizontal">
       <figcaption class="textLogo">CICLAPP</figcaption>
   </figure>
@@ -40,11 +40,10 @@ const signIn = () => {
   <a href="#userSignIn" id="userRegisterId" class="continue userRegister">¿Ya tienes una cuenta? inicia sesión
   </a>
   </form>
-  </section>`;
-  return viewSignIn;
+  </section>`  ;
+
+return registerContainer
 };
-
-
 
 
 export { signIn };

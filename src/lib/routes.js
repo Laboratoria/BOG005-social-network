@@ -2,19 +2,18 @@ import { signIn } from './page/signIn.js';
 import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
 import  { wall } from './page/wall.js';
-import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
+//import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
-import { eventLoginButton } from './utils/eventLoginButton.js';
+//import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventButtonSignOut } from './utils/eventSignOut.js';
 import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
 
-const containerPage = document.getElementById('contentPageId');
 const routes = {
-  '/': welcome,
-  '/signIn': signIn,
-  '/userSignIn': userSignIn,
-  '/wall': wall,
+  '/': welcome(),
+  '/signIn': signIn(),
+  '/userSignIn': userSignIn(),
+  '/wall': wall(),
 };
 
 const removeHashes = (hash) => {
@@ -36,17 +35,21 @@ const router = (hash) => {
   const route = `${changeHash}${getWord}`;
   const sendRoutes = route === '/welcome' ? '/' : route;
   const render = routes[sendRoutes] ? routes[sendRoutes] : 'ERROR404';
-  containerPage.innerHTML = render();
+  console.log(render)
+  const containerPage = document.getElementById('contentPageId');
+  //return containerPage.innerHTML = render;
+  return containerPage.append(render);
 };
+//console.log(router('#wall'))
 
 const historyHandler = () => {
   const pathName = window.location.pathname;
   const render = routes[pathName] ? routes[pathName] : 'ERROR404';
-  containerPage.innerHTML = render();
+  const containerPage = document.getElementById('contentPageId');
+  return containerPage.innerHTML = render;
 };
 
-const eventHandler = () => {
-  const path = window.location.pathname;
+const eventHandler = (path) => {
   switch (path) {
     case '/wall':
       buttonP();
@@ -57,9 +60,8 @@ const eventHandler = () => {
       console.log('estas en wall')
       break;
     case '/signIn':
-      eventButtonCreateUser();
+      eventButtonCreateUser(path);
       eventButtonGoogle();
-      eventLoginButton();
       console.log('estas en sigin')
       break;
     case '/userSignIn':
@@ -68,7 +70,5 @@ const eventHandler = () => {
       default:
       break;
   }
-};
-
-
-export { router, historyHandler, eventHandler };
+}
+export { router, historyHandler, eventHandler }
