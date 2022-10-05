@@ -31,10 +31,10 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
     console.log(user);
     console.log('oh yeah');
     swal({
-      title: 'Genial!',
-      text: 'Conseguiste registrarte!',
+      title: 'Great!',
+      text: 'You had Success!',
       icon: 'success',
-      button: 'Inicia tu viaje!',
+      button: 'Start your Trip!',
     });
   })
   .catch((error) => {
@@ -43,22 +43,23 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
     console.log('ay no!');
     if (errorCode === 'auth/email-already-in-use') {
       swal({
-        title: 'Por favor verifica,',
-        text: 'El usuario ya existe',
+        title: 'Please check,',
+        text: 'User already exists',
         icon: 'error',
       });
     } else if (errorCode === 'auth/invalid-email') {
       swal({
-        title: 'Ingresa un email válido, por favor.',
-        text: 'debe tener formato de email',
+        title: 'Please Enter a Valid Email.',
+        text: 'it should have an email format',
         icon: 'error',
       });
     } else if (errorCode === 'auth/weak-password') {
       swal({
-        title: 'Tu contraseña es muy débil!,',
-        text: 'Por favor usa más de seis caracteres',
+        title: 'Your Password is weak!,',
+        text: 'Please use more than six characteres',
         icon: 'error',
       });
+      window.location.pathname = '/register';
     }
   });
 
@@ -72,6 +73,7 @@ const signInUser = (email, password) => {
     })
     .catch((error) => {
       // const errorCode = error.code;
+      window.location.pathname = '/login';
       const errorMessage = error.message;
       console.log(errorMessage);
       console.log('nope, no entraste');

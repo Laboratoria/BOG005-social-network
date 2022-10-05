@@ -5,18 +5,17 @@ export const welcome = () => {
   sectionWelcome.className = 'sectionWelcome';
 
   // const imgWelcome = document.createElement('img');
-  // imgWelcome.className = 'img-welcome';
-  // imgWelcome.src = 'img/NomeLogo.png';
-  // imgWelcome.alt = 'Name Logo';
+  // imgWelcome.className = 'FondoWelcome';
+  // imgWelcome.src = 'img/mundoverde.PNG';
+  // imgWelcome.alt = 'Name';
 
   const message = document.createElement('h2');
   message.className = 'description';
-  message.textContent = 'Disfruta de las diferentes festividades alrededor del mundo.';
+  message.textContent = 'Come and celebrate Holidays around the world with us.';
 
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
-  buttonStart.id = 'button-start';
-  buttonStart.textContent = 'Inicia tu viaje';
+  buttonStart.textContent = 'Start the Journey';
 
   buttonStart.addEventListener('click', () => {
     onNavigate('/landing');
