@@ -51,42 +51,6 @@ const historyHandler = () => {
   return containerPage.innerHTML = render;
 };
 
-<<<<<<< HEAD
-// const eventHandler = () => {
-  
-//   eventButtonCreateUser();
-//   eventButtonGoogle();
-//   eventLoginButton();
-//   displayUserData();
-//   eventButtonSignOut();
-//   buttonP();
-//   getPost();
-//   onGetPost();
-// };
-
-
-const eventHandler = (path) => {
-  switch (path) {
-    case '/wall':
-      buttonP();
-      getPost();
-      onGetPost();
-      displayUserData();
-      eventButtonSignOut();
-      console.log('estas en wall')
-      break;
-    case '/signIn':
-      eventButtonCreateUser(path);
-      eventButtonGoogle();
-      console.log('estas en sigin')
-      break;
-    case '/userSignIn':
-      eventLoginButton();
-      console.log('estas en usersigin')
-      default:
-      break;
-  }
-=======
 const eventHandler = () => {
   //eventButtonCreateUser();
   eventButtonGoogle();
@@ -96,7 +60,6 @@ const eventHandler = () => {
   buttonP();
   getPost();
   onGetPost();
->>>>>>> 9c524a06dd6405b2926e9259bd89959574531664
 };
 
 
