@@ -46,10 +46,10 @@ const historyHandler = () => {
   const pathName = window.location.pathname;
   const render = routes[pathName] ? routes[pathName] : 'ERROR404';
   const containerPage = document.getElementById('contentPageId');
-  return containerPage.innerHTML = render;
+  //return containerPage.innerHTML = render;
+  return containerPage.append(render);
 };
 
-<<<<<<< HEAD
 // const eventHandler = () => {
   
 //   eventButtonCreateUser();
@@ -84,17 +84,6 @@ const eventHandler = (path) => {
       default:
       break;
   }
-=======
-const eventHandler = () => {
-  //eventButtonCreateUser();
-  eventButtonGoogle();
-  //eventLoginButton();
-  displayUserData();
-  eventButtonSignOut();
-  buttonP();
-  getPost();
-  onGetPost();
->>>>>>> 9c524a06dd6405b2926e9259bd89959574531664
 };
 
 

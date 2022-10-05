@@ -1,4 +1,4 @@
-import { auth, signIn } from '../../firebase/authenticationFirebase.js';
+import { auth, signInFirebase } from '../../firebase/authenticationFirebase.js';
 
 const userSignIn = () => {
   const viewUserSignIn = `
@@ -39,7 +39,7 @@ const userSignIn = () => {
     e.preventDefault()
     const email = document.querySelector('#userSi').value;
     const password = document.querySelector('#passwordSi').value;
-    const result = signIn(auth, email, password)
+    const result = signInFirebase(auth, email, password)
     result.then((userCredential) => {
       if (userCredential) {
         const greetingUser = document.getElementById('greetingUserId');

@@ -1,7 +1,3 @@
-import { auth, createUser } from '../../firebase/authenticationFirebase.js';
-import { showMessageError, showSuccessfulResponse } from '../utils/formValidator.js';
-
-
 const signIn = () => {
     const viewSignIn = `
     <figure class="logoSignIn">
