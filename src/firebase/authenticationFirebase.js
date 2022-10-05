@@ -5,7 +5,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const createUser = (auth, email, password) => createUserWithEmailAndPassword(auth, email, password)
 const signGoogle = () => signInWithPopup(auth, provider)
-const signIn = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
+const signInFirebase = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
 const logOut = () => signOut(auth)
 
 
@@ -43,7 +43,7 @@ export {
   createUser,
   logOut,
   displayUserData,
-  signIn,
+  signInFirebase,
   signGoogle,
   provider,
 };
