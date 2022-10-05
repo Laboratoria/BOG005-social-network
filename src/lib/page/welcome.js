@@ -20,5 +20,4 @@ const welcome = () => {
   return view;
 };
 
-// <button type="button" class="loginButton" id="loginButtonId">Registrate</button>
 export default welcome;
