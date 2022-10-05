@@ -1,7 +1,6 @@
 import { login } from './views/login.js';
 import { register } from './views/register.js';
 import { wall } from './views/wall.js';
-import { profile } from './views/profile.js';
 import { auth, onAuthStateChanged } from './lib/firebase.js';
 
 const routes = {
@@ -9,7 +8,6 @@ const routes = {
   '/login': login(),
   '/register': register(),
   '/wall': wall(),
-  '/profile': profile(),
 };
 
 // función para anexar un registro al historial del navegador (.pushState)

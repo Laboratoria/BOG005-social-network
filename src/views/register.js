@@ -63,7 +63,7 @@ export const register = () => {
     const password = inputPass.value;
     createUser(email, password)
       .then((userCredential) => { // Si el usuario se acredita, será dirigido al muro
-        onNavigate('/profile');
+        onNavigate('/wall');
       })
       .catch((error) => { // si hubo un error en el registro, retorna según el caso
         const errorCode = error.code;
@@ -86,7 +86,7 @@ export const register = () => {
         const token = credential.accessToken;
         // The signed-in user info.
         const user = result.user;
-        onNavigate('/profile');
+        onNavigate('/wall');
       }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;

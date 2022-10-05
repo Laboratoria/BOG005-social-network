@@ -36,7 +36,7 @@ form{
     align-items: center;
 }
 
-.profilePageContainer{
+.wallPageContainer{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -45,13 +45,6 @@ form{
     height: 110px;
     margin-top: 50px;
     margin-bottom: 20px;
-}
-
-.imgLogoProfile{
-    display: flex;
-    width: 180px;
-    margin: 10px;
-    padding-right: 5px;
 }
 
 .imgLogoWall{
@@ -83,22 +76,14 @@ form{
     padding: 20px;
 }
 
-.viewProfile{
+.viewWall{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    height: 100%;
     background: rgb(246,246,246);
     background: linear-gradient(180deg, rgba(246,246,246,1) 6%, rgba(255,255,255,1) 64%);
-    height: 100%;
-}
-
-.viewWall{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #F6F6F6;
 }
 
 .contRegist{
@@ -110,7 +95,7 @@ form{
     align-items: center;
     margin: 24px 20px 24px 5px;
 }
-.sectionProfileUser{
+.sectionWallUser{
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -452,7 +437,7 @@ form{
     .btn.registration {
         margin-top: 20px;
     }
-    .profilePageContainer{
+    .wallPageContainer{
         display: flex;
         flex-direction: column;
     }
