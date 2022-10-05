@@ -114,11 +114,12 @@ form{
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     border-radius: 15px;
-    border: 1.5px solid #DFBBAB;
+    border: 1.2px solid #DFBBAB;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     background: white;
+    box-shadow: 0 2px 5px rgba(70, 70, 70, 0.12), 0 2px 4px rgba(112, 112, 112, 0.24);
 }
 .sectionBtn{
     display: grid;

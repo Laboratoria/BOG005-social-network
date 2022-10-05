@@ -66,7 +66,10 @@ export const login = () => {
     const passwordLogin = inputPass.value;
     singUser(emailLogin, passwordLogin)
       .then((userCredential) => { // Si el usuario se acredita, será dirigido al muro
+        inputEmail.value = '';
+        inputPass.value = '';
         onNavigate('/wall');
+        
       })
       .catch((error) => { // si hubo un error en el registro, retorna según el caso
         const errorCode = error.code;

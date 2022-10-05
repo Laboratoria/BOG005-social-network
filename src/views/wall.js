@@ -38,8 +38,10 @@ export const wall = () => {
     });
   });
 
+
   let editStatus = false;
   let id = '';
+  const user = postUserProfile();
   
   // Contenedor general del muro
   const wallPageContainer = document.createElement('section');
@@ -93,15 +95,13 @@ export const wall = () => {
   buttonPost.addEventListener('click', () => {
     const post = inputPost.value;
     console.log('post', post, editStatus);
-    if (!editStatus) {
-      console.log('entra')
+    if (!editStatus) { // Si no se está editando el post, guardalo! 
       savePost();
       savePostFirestore(post).then(() => {
-        console.log('texto guardado')
       }).catch((error) => {
         console.log(error.message)
       })
-    } else {
+    } else { //Si se edita, entonces actualiza la información
       getPost();
       updateDataPost(id, { title: post });
       editStatus = false;
@@ -112,7 +112,7 @@ export const wall = () => {
   // Colección de todos los post
   const sectionPost = document.createElement('section');
   sectionPost.classList.add('sectionPost');
-  // función para traer los post de firebase al muro
+  // función para traer los post de firestore al muro
   onSnapshot(postUserProfile(), (querySnapShot) => {
     if (sectionPost.hasChildNodes()) {
       sectionPost.innerHTML = "";
@@ -125,7 +125,6 @@ export const wall = () => {
       postNameUser.textContent = doc.data().name;
       const postedUser = document.createElement('p');
       postedUser.textContent = doc.data().title;
-      // console.log(doc)
        
       // Sección de botones
       const sectionBtn = document.createElement('section');
@@ -143,15 +142,13 @@ export const wall = () => {
       buttonErase.classList.add('btnErase');
       buttonErase.textContent = 'Borrar';
       //botón de like
-      // const sectionBtnLike = document.createElement('section');
-      // sectionBtnLike.classList.add('sectionBtn');
       const buttonLike = document.createElement('button');
       buttonLike.setAttribute('id', 'buttonLike');
       buttonLike.setAttribute('data', doc.id);
       buttonLike.setAttribute('like', doc.data().like);
       buttonLike.classList.add('btnLike');
       buttonLike.textContent = 'Me gusta';
-      if (doc.data().like == true) {
+      if (doc.data().like == true) { // CSS inline
         buttonLike.style.backgroundColor = 'darksalmon';
       }
 
@@ -190,9 +187,7 @@ export const wall = () => {
         })
       })
     });
-
-
-    
+ 
   })
 
   onAuthStateChanged(auth, (user) => {
@@ -202,8 +197,6 @@ export const wall = () => {
     }
   })
 
-
-  const user = postUserProfile();
 
   header.append(imgLogoWall, navSection);
   navSection.append(buttonWall, buttonExit)
