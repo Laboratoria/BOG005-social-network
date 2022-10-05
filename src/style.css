@@ -828,6 +828,14 @@ a {
 
 /* post */
 
+.postsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
 .post {
   width: 500px;
   height: 200px;

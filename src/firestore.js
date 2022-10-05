@@ -3,9 +3,8 @@ import {
   collection,
   doc,
   addDoc,
-  onSnapshot,
+  orderBy,
   query,
-  where,
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
 import { app } from "./firebase.js";
@@ -32,6 +31,7 @@ export async function saveDataPosts(title, description) {
     const docRef = await addDoc(collection(db, "posts"), {
       title: title,
       description: description,
+      date: new Date(),
     });
 
     console.log("Document written with ID: ", docRef.id);
@@ -42,6 +42,6 @@ export async function saveDataPosts(title, description) {
 }
 
 export function getPosts() {
-  const q = query(collection(db, "posts"));
+  const q = query(collection(db, "posts"), orderBy("date", "desc"));
   return getDocs(q);
 }

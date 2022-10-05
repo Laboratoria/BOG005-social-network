@@ -82,8 +82,10 @@ export function signInWithGoogle() {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
+    console.log(user);
     const uid = user.uid;
   } else {
+    console.log("No existe el usuario");
     window.location.hash = "";
   }
 });

@@ -136,6 +136,7 @@ export default () => {
     const title = formData.get("newPostTitle");
     const description = formData.get("newPostText");
     saveDataPosts(title, description);
+    cerrar.click();
   });
 
   function showPostsOnFeed() {
@@ -162,28 +163,7 @@ export default () => {
 
   // Ponemos un evento al botón de "subir archivo"
   const submitButton = feedSection.querySelector(".btnUploadImage");
-  submitButton.addEventListener("click", showPosts);
-
-  function showPosts() {
-    // Guardamos los datos de los posts en una variable
-    let documents = [];
-    getPosts().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        documents.push(doc.data());
-      });
-      let everyPosts = "";
-      console.log(everyPosts);
-      for (let i = 0; i < documents.length; i++) {
-        everyPosts =
-          everyPosts +
-          `<div class="post">
-      <h2>${documents[i].title}</h2>
-      <h3>${documents[i].description}</h3>
-      </div>`;
-      }
-      feedSection.querySelector(".postsContainer").innerHTML = everyPosts;
-    });
-  }
+  submitButton.addEventListener("click", showPostsOnFeed);
 
   return feedSection;
 };
