@@ -6,7 +6,7 @@ export const wall = () => {
 
 
   const post = document.createElement('article');
-  post.setAttribute('id', 'post');
+  post.setAttribute('id', 'post');  
   const header = document.createElement('header');
   header.setAttribute('id', 'header');
   const menu = document.createElement('nav');
@@ -26,12 +26,7 @@ export const wall = () => {
     const tosingout = document.createElement('a');
     tosingout.setAttribute('id', 'tosingout');
    */
-  const writer = document.createElement('h3');
-  writer.textContent = 'pepito';
-  writer.setAttribute('id', 'writer');
-  const written = document.createElement('textarea');/// imput user
-  written.setAttribute('id', 'written');
-
+ 
   const imgLogomini = document.createElement('img');
   imgLogomini.setAttribute('srcset', './image/ladyCodeLogo.jpg');
   imgLogomini.setAttribute('id', 'imgLogomini');
@@ -46,7 +41,13 @@ export const wall = () => {
   buttonprofile.textContent = 'Perfil';
   buttonprofile.setAttribute('id', 'buttonprofile');
 
+  const writer = document.createElement('h3');
+  writer.textContent = 'pepito';
+  writer.setAttribute('id', 'writer');
+  const written = document.createElement('textarea');/// imput user
+  written.setAttribute('id', 'written');
   const buttonPost = document.createElement('button');// boton guardar post
+  buttonPost.setAttribute('class', 'btn');
   buttonPost.textContent = 'guardar post';
   buttonPost.setAttribute('id', 'buttonpost');
   let contWall = document.createElement('section');/// contenedor de post
@@ -58,7 +59,7 @@ export const wall = () => {
   menu.append(optionslist);
   header.append(imgLogomini, menu);
   post.append(writer, written, buttonPost, contWall);
-  wallContent.append(header, post);
+  wallContent.append(header,  post );
 
   ///////////////////////////////////////////funciones//////////////////////////////////////////
   buttonPost.addEventListener('click', () => savePost(written.value));
@@ -85,16 +86,19 @@ export const wall = () => {
     elementos.forEach((doc) => {
       console.log(doc.data());
       const post_n = document.createElement('article'); // cree un nodo seccition
+      post_n.setAttribute('class', 'posts');
       const buttonDelete = document.createElement('button');// boton guardar post
       buttonDelete.textContent = 'Eliminar post';
-      buttonDelete.setAttribute('class', 'buttonDeleteclass');
+      buttonDelete.setAttribute('class', 'btnDelete');
       buttonDelete.setAttribute('data-info-id', `${doc.id}`)
       const buttonEdit = document.createElement('button');// boton guardar post
+      buttonEdit.setAttribute('class', 'btnEdit');
       buttonEdit.textContent = 'Editar post';
       post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
-      contWall.append(post_n, buttonDelete, buttonEdit);
+      post_n.append(buttonDelete, buttonEdit);
+      contWall.append(post_n);
       //console.log(contWall);
-      const buttonsDelete = document.querySelectorAll('.buttonDeleteclass')
+      const buttonsDelete = document.querySelectorAll('.btnDelete')
       // const btnDelete = document.querySelector(`#${doc.id}`)
       //// funcion eliminar post
       buttonsDelete.forEach((button_i) => {

@@ -59,7 +59,7 @@ form {
     outline: 7px;
 }
 
-.btn {
+.btn, .buttonDeleteclass {
     width: 200px;
     height: 45px;
     color: white;
@@ -122,19 +122,26 @@ p {
     background-size: 20px 20px;
     background-position: center center;
 }
-
+ul{
+    display: flex;
+}
 #wallContent {
 /*     display: flex;
     align-items: center;S
     justify-content: space-between; */
 }
 
-#post {
+ .posts {
+    display: flex;
     width: 328px;
-    height: 210px;
+    height: 58px;
     background: #FFFFFF;
     border: 1px solid #9697EF;
     border-radius: 19px;
+    
+}
+.post {
+    display: flex;
 }
 
 #imgLogomini {
@@ -145,7 +152,8 @@ p {
 
 #buttonsingout ,
 #buttonprofile,
-#buttonwall {
+#buttonwall,
+.buttonDeleteclass {
     width: 79px;
     height: 53px;
     font-family: 'Open Sans';
@@ -178,14 +186,14 @@ font-size: 16px;
 line-height: 22px;
 color: #000000;
 }
-#post{
-    display: block;
-}
+
 #menu{
     display: flex;
 }
-#header{
+#header, #nav {
  display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
 .container{
@@ -230,4 +238,20 @@ animation: move-vector 4s linear infinite;
 }
 .separatorButtonGoogle{
     color:#bbbaba;
+}
+
+li ::marker{
+marker: none;
+}
+.btnDelete{
+background-image: url('../image/delete.png');
+
+}
+.contWall{
+    display:flex;
+
+}
+li{
+    display: flex;
+    align-items: center;
 }

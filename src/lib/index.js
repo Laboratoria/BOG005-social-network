@@ -35,6 +35,17 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
     console.log('No se encuentra el usuario');
   }
 });
+
+//// creacion de objeto usuario///
+/* const loginUser = {}; // objeto usuario vacio
+const getloginUser = ()=>{ ///
+  onAuthStateChanged(auth, (user) => {
+    if (user != null) {
+      loginUser.email = user.email; /// añado atributos a objeto user
+    }
+  });
+}; */
+
 ///// crear coleccion de usuarios ejemplo// se iba al catch 
 const savePost = (input) => {
   // console.log(input);
@@ -74,5 +85,5 @@ const deletePost = (id) => {
 
 export {
   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost,
-  savePost, deletePost, readPost2
+  savePost, deletePost, readPost2/* , loginUser, getloginUser */
 };
