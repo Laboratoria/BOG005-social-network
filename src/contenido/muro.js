@@ -1,16 +1,27 @@
 import { cerrarSesion } from "../lib/firebase.js";
+import { onNavigate } from '../main.js';
 export const muro = () => {
   const div = document.createElement('div');
-  div.class = 'contenedor-muro'
+  div.class = 'contenedor-muro';
   const logo = document.createElement('img');
   logo.id = 'logo';
   logo.src = '/imagenes/Recurso 1.png';
-  const salir = document.createElement('button');
-  salir.id = 'Salir';
-  salir.textContent = "Cerrar Sesión"
-
-
   
+
+  const salir = document.createElement("button");
+  salir.class = "salir";
+  const casita = document.createElement("button");
+  casita.class = "casita";
+  const publicar = document.createElement("button");
+  publicar.class = "publicar";
+  const perfil = document.createElement("button");
+  perfil.class = "perfil";
+
+
+  salir.textContent = "Cerrar Sesión";
+  // casita.innerHTML = "<span class="material-icons"><p>Inicio</p></span>" ;
+  publicar.textContent = "Publicar";
+  perfil.textContent = "Perfil";
 
   // Crear la funcion salir en firebase.js
   // Devuelva la metodo de firebase signOut()
@@ -21,13 +32,14 @@ export const muro = () => {
   
   salir.addEventListener('click', () => {
       cerrarSesion().then(() => {
-        console.log("hola")
-      
-      }).catch((error) => {
+        }).catch((error) => {
         console.error(error.message)
       })
   });
-  div.append(logo, salir);
+publicar.addEventListener('click', () => {
+    onNavigate('/publicar');
+  });
+  div.append(logo, salir,casita,publicar,perfil);
 
   return div;
 };

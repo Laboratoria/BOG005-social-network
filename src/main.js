@@ -3,16 +3,18 @@ import { bienvenida } from "./contenido/bienvenida.js";
 import { muro} from "./contenido/muro.js";
 import { registro } from "./contenido/registro.js";
 import { login} from "./contenido/login.js";
+import { publicar } from "./contenido/publicar.js";
 
 const root = document.getElementById ('root')
 console.log(bienvenida);
 console.log('registro: ', registro);
 const routes = {
-  '/': bienvenida(),
-  '/registro': registro(),
-  '/muro':muro(),
-  '/login':login(),
-  };
+  "/": bienvenida(),
+  "/registro": registro(),
+  "/muro": muro(),
+  "/login": login(),
+  "/publicar": publicar(),
+};
 
 export const onNavigate = (pathname) => {
   window.history.pushState(
