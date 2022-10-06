@@ -46,9 +46,8 @@ const eventLoginButton = () => {
   }
 };
 
-//export { eventLoginButton };
+export { eventLoginButton };
 
 //auth/user-not-found
-
 //auth/invalid-email
 //auth/wrong-password

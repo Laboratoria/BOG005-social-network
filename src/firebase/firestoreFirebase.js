@@ -18,7 +18,6 @@ const getPost = () => {
       if (contentedor) {
         console.log('res: ', res);
         res.forEach((doc) => {
-          // console.log('DOC',doc)
           contentedor.innerHTML += `<article id="post">
           <p class="contentPost" id="allPosts">${doc.data().description}</p>
         </article>`
@@ -78,9 +77,7 @@ const onGetPost = () => {
       const editPostButtons = document.querySelectorAll('.editPost')
       editPostButtons.forEach((editButton) => {
         editButton.addEventListener('click', (event) => {
-          // console.log('sirve el click', event);
           getOnePost(event.currentTarget.getAttribute('data-id')).then(() => console.log("ok ogp")).catch(() => console.log("Error onp"))
-          // console.log(getOnePost(event.currentTarget.getAttribute('data-id')));
           status = false;
           idPost = event.currentTarget.getAttribute('data-id');
 
@@ -96,10 +93,10 @@ const updatePost = (id, newPost) => {
 
 const buttonP = () => {
   const postForm = document.getElementById('postForm')
-  const buttonP = document.getElementById('PostContentButton')
+  const buttonPost = document.getElementById('PostContentButton')
 
-  if (buttonP) {
-    buttonP.addEventListener('click', () => {
+  if (buttonPost) {
+    buttonPost.addEventListener('click', () => {
       const contenido = document.getElementById('postContent').value;
       if (status) {
         savePost(contenido);
@@ -116,10 +113,3 @@ const buttonP = () => {
 }
 
 export { savePost, getPost, onGetPost, getOnePost, updatePost, buttonP }
-//ICONO CORAZON RELLENO
-// <i class="fa-solid fa-heart" id="heart"></i>
-
-/* <div class="like">
-<i class="fa-regular fa-heart" id="heart"></i>
-<p>12</p>
-</div> */

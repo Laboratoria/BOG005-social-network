@@ -17,12 +17,7 @@ const welcome = () => {
   </article> 
   
 </section>`;
-
-const welcomeContainer = document.createElement('section')
-welcomeContainer.innerHTML = view
-console.log('Este es welcome', welcomeContainer)
-  return welcomeContainer;
+  return view;
 };
 
-// <button type="button" class="loginButton" id="loginButtonId">Registrate</button>
 export default welcome;
