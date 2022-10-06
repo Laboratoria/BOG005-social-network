@@ -1,6 +1,6 @@
 import { onNavigate } from '../main.js';
 import {
-  savePost, onGetPosts,
+  savePost, getPosts,
 } from '../lib/firebase.js';
 
 export const Wall = () => {
@@ -42,31 +42,11 @@ export const Wall = () => {
     onNavigate('/');
   });
 
-  const posts = document.createElement('section');
-  posts.className = 'posts';
-  const postDone = document.createElement('section');
-  postDone.className = 'postDone';
-
-  posts.append(postDone);
-
   // Escuchador boton Publicar
   window.addEventListener('DOMContentLoaded', async () => { // querySnapchot: los datos que existen en ese momento
-    onGetPosts((querySnapshot) => {
-      let html = '';
-
-      querySnapshot.forEach((doc) => {
-        const post = doc.data();
-        html += `
-              <div>
-                  <section class="postBox">
-                  <br>
-                  <section class="postear">
-                  <h3>${post.postArea}</h3>
-                  </section>                  
-              </div>
-           `;
-      });
-      postDone.innerHTML = html;
+    const querySnapchot = await getPosts();
+    querySnapchot.forEach((doc) => {
+      console.log(doc.data());
     });
   });
 
@@ -78,7 +58,7 @@ export const Wall = () => {
     postArea.value = '';
   });
 
-  div.append(header, postContainer, posts, buttonBack);
+  div.append(header, postContainer, buttonBack);
 
   return div;
 };

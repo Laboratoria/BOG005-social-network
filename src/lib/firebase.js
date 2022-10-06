@@ -16,7 +16,6 @@ import {
   onSnapshot,
   doc,
   getDoc,
-
 } from './utils.js';
 
 import { firebaseConfig } from '../components/config.js';
