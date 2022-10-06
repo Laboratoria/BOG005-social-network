@@ -4,7 +4,7 @@ import { app } from './configFirebase.js';
 const db = getFirestore(app);
 
 let idPost = '';
-let value = ' ';
+let value= '';
 let status = true;
 // colección crea la coleeción de datos
 const savePost = (description) => {
@@ -93,10 +93,10 @@ const updatePost = (id, newPost) => {
 
 const buttonP = () => {
   const postForm = document.getElementById('postForm')
-  const buttonP = document.getElementById('PostContentButton')
+  const buttonPost = document.getElementById('PostContentButton')
 
-  if (buttonP) {
-    buttonP.addEventListener('click', () => {
+  if (buttonPost) {
+    buttonPost.addEventListener('click', () => {
       const contenido = document.getElementById('postContent').value;
       if (status) {
         savePost(contenido);

@@ -14,3 +14,4 @@ export const deleteDoc = () => Promise.resolve();
 export const doc = () => Promise.resolve();
 export const getDoc = () => Promise.resolve();
 export const updateDoc = () => Promise.resolve();
+

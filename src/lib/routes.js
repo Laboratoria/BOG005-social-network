@@ -15,6 +15,8 @@ const routes = {
   '/userSignIn': userSignIn(),
   '/wall': wall(),
 };
+// console.log(containerPage);
+// console.log(signIn());
 
 const removeHashes = (hash) => {
   if (hash === '#welcome') {
