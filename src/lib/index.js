@@ -4,7 +4,7 @@ import {
   getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';// servicion de inicio  de sesion con google
-import { addDoc, collection, getFirestore, getDocs, onSnapshot, doc, deleteDoc, query } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
+import { addDoc, collection, getFirestore, getDocs, onSnapshot, doc, deleteDoc,  updateDoc, query } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
 
 import config from './config.js'; // config es la llave de firebase
 
@@ -90,7 +90,28 @@ const deletePost = (id) => {
   deleteDoc(doc(db, "usuarios3", id))
 }
 
+const editPostUpdate = (id, input)=> {
+  console.log(id);
+  console.log(input);
+  const editPost = doc(db, "usuarios3", id);
+   updateDoc(editPost, {
+    first: input,
+    //second : emailUser
+    /// va second?????
+  })
+}
+
+/* const likesPost = (id, likes)=> {
+  const editPost = doc(db, "usuarios3", id);
+   updateDoc(editPost, {
+    first: input,
+    //second : emailUser
+    /// va second?????
+  })
+}
+ */
+
 export {
   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost,
-  savePost, deletePost, readPost2, loginUser, /* getloginUser */
+  savePost, deletePost, readPost2, loginUser, editPostUpdate /* getloginUser */
 };

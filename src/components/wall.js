@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginOut, savePost, readPost, deletePost, readPost2 } from '../lib/index.js';
+import { loginOut, savePost, readPost, deletePost, readPost2, editPostUpdate } from '../lib/index.js';
 export const wall = () => {
   const wallContent = document.createElement('section');
   wallContent.setAttribute('id', 'wallContent');
@@ -94,15 +94,15 @@ export const wall = () => {
       buttonDelete.setAttribute('class', 'btnDelete');
       buttonDelete.setAttribute('data-info-id', `${doc.id}`)
       const buttonEdit = document.createElement('button');// boton guardar post
-      buttonEdit.setAttribute('class', 'btnEdit');
+      buttonEdit.setAttribute('class', 'buttonEdit');
       buttonEdit.textContent = 'Editar post';
+      buttonEdit.value = doc.id
       post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
       post_n.append(buttonDelete, buttonEdit);
       contWall.append(writer, post_n);
-      //console.log(contWall);
-      const buttonsDelete = document.querySelectorAll('.btnDelete')
-      // const btnDelete = document.querySelector(`#${doc.id}`)
+      
       //// funcion eliminar post
+      const buttonsDelete = document.querySelectorAll('.btnDelete')
       buttonsDelete.forEach((button_i) => {
         button_i.addEventListener('click', (event) => {
           //const idGet =  ({ target: { dataset } }) => {console.log("AU");};
@@ -110,6 +110,17 @@ export const wall = () => {
           deletePost(event.target.dataset.infoId);
         });
       })
+
+      /// funcion editar post////
+      const buttonsEdit = document.querySelectorAll('.buttonEdit')
+      //console.log(buttonsEdit);
+      buttonsEdit.forEach((btnEdit)=>{
+        btnEdit.addEventListener('click', (event) => {
+          //console.log(event)
+          editPostUpdate(btnEdit.value, "hola mundo") // id y texto que reemplaza
+        });
+      });
+
       return contWall
     })
   })
