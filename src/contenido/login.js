@@ -37,7 +37,7 @@ export const login = () => {
     contraseñaLogin.setAttribute("type","password");
     buttoniniciaSesion.textContent = 'Iniciar Sesión';
     botonRegistro.textContent = 'Registrate';
-    butonGoogle.textContent ='Google';  
+    butonGoogle.textContent ='';  
 
 
   //  para logiarce  con el boton de google
