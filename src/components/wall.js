@@ -41,9 +41,7 @@ export const wall = () => {
   buttonprofile.textContent = 'Perfil';
   buttonprofile.setAttribute('id', 'buttonprofile');
 
-  const writer = document.createElement('h3');
-  writer.textContent = 'pepito';
-  writer.setAttribute('id', 'writer');
+
   const written = document.createElement('textarea');/// imput user
   written.setAttribute('id', 'written');
   const buttonPost = document.createElement('button');// boton guardar post
@@ -58,7 +56,7 @@ export const wall = () => {
   optionslist.append(option1, option2, option3);
   menu.append(optionslist);
   header.append(imgLogomini, menu);
-  post.append(writer, written, buttonPost, contWall);
+  post.append( written, buttonPost, contWall);
   wallContent.append(header,  post );
 
   ///////////////////////////////////////////funciones//////////////////////////////////////////
@@ -80,11 +78,15 @@ export const wall = () => {
   readPost2(arrayRead);
  */
 
-  const arrayRead = readPost();
+  const arrayRead = readPost();// array de docs que contiene obj post y nombres
   readPost2((elementos) => {
     contWall.textContent = "";// parte vacia
     elementos.forEach((doc) => {
       console.log(doc.data());
+
+      const writer = document.createElement('h3');
+      writer.textContent = doc.data().second;
+      writer.setAttribute('id', 'writer');
       const post_n = document.createElement('article'); // cree un nodo seccition
       post_n.setAttribute('class', 'posts');
       const buttonDelete = document.createElement('button');// boton guardar post
@@ -96,7 +98,7 @@ export const wall = () => {
       buttonEdit.textContent = 'Editar post';
       post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
       post_n.append(buttonDelete, buttonEdit);
-      contWall.append(post_n);
+      contWall.append(writer, post_n);
       //console.log(contWall);
       const buttonsDelete = document.querySelectorAll('.btnDelete')
       // const btnDelete = document.querySelector(`#${doc.id}`)
