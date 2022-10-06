@@ -53,6 +53,7 @@ const onGetPost = () => {
         <p class="contentPost" id="allPosts">${item.data().description}</p>
       </article>
       <div id="actionContainerId" class="actionContainer">
+      <button class="likes" id="likesId">❤️​</button>
         <div class="delete">
         <button class="deletePost" id="deletePost${item.id}" data-id='${item.id}'>
         <i class="fa-solid fa-trash-can"></i>
@@ -111,5 +112,6 @@ const buttonP = () => {
     })
   }
 }
+
 
 export { savePost, getPost, onGetPost, getOnePost, updatePost, buttonP }

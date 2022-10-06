@@ -6,6 +6,7 @@ import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
+import { eventButtonGoogleUserSignIn } from './utils/eventUserSignInGoogle.js'
 import { eventButtonSignOut } from './utils/eventSignOut.js';
 import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
 
@@ -64,6 +65,7 @@ const eventHandler = (path) => {
       break;
     case '/userSignIn':
       eventLoginButton();
+      eventButtonGoogleUserSignIn();
       console.log('estas en usersigin')
       default:
       break;
