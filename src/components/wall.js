@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginOut, savePost, readPost, deletePost, readPost2, editPostUpdate } from '../lib/index.js';
+import { loginOut, savePost, readPost, deletePost, readPost2, editPostUpdate, likesPost } from '../lib/index.js';
 export const wall = () => {
   const wallContent = document.createElement('section');
   wallContent.setAttribute('id', 'wallContent');
@@ -60,7 +60,7 @@ export const wall = () => {
   wallContent.append(header, post);
 
   ///////////////////////////////////////////funciones//////////////////////////////////////////
-  buttonPost.addEventListener('click', () => savePost(written.value));
+  buttonPost.addEventListener('click', () => savePost(written.value, []));
 
 
 
@@ -91,7 +91,8 @@ export const wall = () => {
       const countLike = document.createElement('p');
       countLike.setAttribute('class', 'countBtnlike');
       countLike.setAttribute('data-info-id', `${doc.id}`)
-      countLike.textContent = '';
+      let userLikes= doc.data().likesCount;
+      countLike.textContent = userLikes.length;
 
       /****************************PRUEBA MODAL *****************************************/
       const a = document.createElement("a");
@@ -119,7 +120,7 @@ export const wall = () => {
       //   </section>
       // buttonEdit.value = doc.id
       post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
-      post_n.append(buttonDelete, a, buttonLike);
+      post_n.append(buttonDelete, a, buttonLike, countLike);
       contWall.append(writer, post_n);
 
       return contWall
@@ -145,10 +146,11 @@ export const wall = () => {
 
     //////////////////FUNCION LIKE/////
     const buttonslike = document.querySelectorAll('.btnlike')
-    console.log(buttonslike);
+    //console.log(buttonslike);
     buttonslike.forEach((btnlike) => {
       btnlike.addEventListener('click', (event) => {
         console.log("like");
+        likesPost(event.target.dataset.infoId);
 
       });
     });

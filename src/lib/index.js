@@ -4,7 +4,7 @@ import {
   getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut,
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';// servicion de inicio  de sesion con google
-import { addDoc, collection, getFirestore, getDocs, onSnapshot, doc, deleteDoc,  updateDoc, query } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
+import { addDoc, collection, getFirestore, getDoc, getDocs, onSnapshot, doc, deleteDoc, updateDoc, query, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
 
 import config from './config.js'; // config es la llave de firebase
 
@@ -38,6 +38,7 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
   }
 });
 
+
 //// creacion de objeto usuario///
 
 /* const getloginUser = ()=>{ ///
@@ -53,17 +54,17 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
 const savePost = (input, likes) => {
   if (loginUser) { // asigna al usuario que esté logeado la autoria
     const emailUser = loginUser.email;// si hay usuario guardeme su correo 
-  // console.log(input);
-  addDoc(collection(db, "usuarios3"), { //// funcion que guarda post con: funcion addDoc(especif colecc, agreg un objeconten)
-    first: input,
-    second : emailUser,
-    likesCount: likes
-  }).then((dos) => { /// opcional???
-    console.log("Document written with ID: ", dos.id);/// no reconoce id
-    //console.log(dos);
-  }).catch((e) => {
-    console.error("Error adding document: ", e);
-  });// lo encuentra pero necesita await y entonces no renderiza
+    // console.log(input);
+    addDoc(collection(db, "usuarios3"), { //// funcion que guarda post con: funcion addDoc(especif colecc, agreg un objeconten)
+      first: input,
+      second: emailUser,
+      likesCount: likes
+    }).then((dos) => { /// opcional???
+      console.log("Document written with ID: ", dos.id);/// no reconoce id
+      //console.log(dos);
+    }).catch((e) => {
+      console.error("Error adding document: ", e);
+    });// lo encuentra pero necesita await y entonces no renderiza
   }
 }
 
@@ -72,7 +73,8 @@ const readPost = () => {
   const arrayDocs = getDocs(collection(db, "usuarios3"));// querySnapshot = mi array doscs tipo querySnapshot que es un
   return arrayDocs
 }
-const readPost2 = (querySnapshot) => { onSnapshot(collection(db, "usuarios3"), querySnapshot)
+const readPost2 = (querySnapshot) => {
+  onSnapshot(collection(db, "usuarios3"), querySnapshot)
 
 }
 
@@ -91,28 +93,40 @@ const deletePost = (id) => {
   deleteDoc(doc(db, "usuarios3", id))
 }
 
-const editPostUpdate = (id, input)=> {
+const editPostUpdate = (id, input) => {
   console.log(id);
   console.log(input);
   const editPost = doc(db, "usuarios3", id);
-   updateDoc(editPost, {
+  updateDoc(editPost, {
     first: input,
     //second : emailUser
     /// va second?????
   })
 }
-
- const likesPost = (id, likes, userLike)=> {
+const getOnePost = (id) => getDoc(doc(db, "usuarios3", id)); // traemos un solo post doc es un post
+const likesPost = (id) => {
   const PostLike = doc(db, "usuarios3", id);
-   updateDoc(PostLike, { /// editar
-    countLike:likes,
-    userLike: "pendiente"
-    //second : emailUser
-    /// va second?????
-  })
+  getOnePost(id)
+    .then((doc) => {
+      let userLikes = doc.data().likesCount;
+      if (userLikes.includes(loginUser.email)) {
+        updateDoc(PostLike, {
+          likesCount: arrayRemove(loginUser.email),
+        })
+      }
+      else {
+        updateDoc(PostLike, {
+          likesCount: arrayUnion(loginUser.email),
+        })
+      }
+    })
 }
- 
+
+
+//console.log(loginUser.email);
+/* if (arrLikes.includes()){}
+  */
 export {
   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost,
-  savePost, deletePost, readPost2, loginUser, editPostUpdate /* getloginUser */
+  savePost, deletePost, readPost2, loginUser, editPostUpdate, likesPost /* getloginUser */
 };
