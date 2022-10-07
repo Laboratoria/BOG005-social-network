@@ -322,6 +322,7 @@
 .header {
   display: flex;
   padding: 2vh 3vh;
+  gap: 15vh;
 }
 
 #iconExit {
@@ -341,9 +342,10 @@
   right: 20px;
 }
 #titleWall {
-  text-align: right;
+  text-align: center;
   margin: 10px 10px;
-  padding: ;    
+  padding: 2vh;
+  margin-top: 16vh;    
 }
 
 .wallForm {
@@ -361,6 +363,27 @@
   position: relative;
   width: 5vh;
   height: 5vh;
-  left: 35vh;
-  bottom: 40px;
+  /* left: 35vh;
+  bottom: 30px; */
+  color: #FCAB2E;
+}
+
+#postIcon {
+  padding: 1vh;
+  border-radius: 20px 20px;
+  background-color: #FFF8EE;
+}
+
+/* estilo para los botones que contienen iconos */
+.buttonIcons {
+  width: 6vh;
+  height: 6vh;
+  justify-items: right;
+  background-color: transparent;   
+}
+
+#btnExit {
+  background-image: url('img/exit.png');
+  background-repeat: no-repeat;
+  justify-items: center; 
 }
