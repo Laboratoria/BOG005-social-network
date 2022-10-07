@@ -16,7 +16,7 @@ export const login = () => {
   const buttoniniciaSesion = document.createElement('button');
   buttoniniciaSesion.id = 'iniciarsesion-login';
   const botonRegistro = document.createElement('button');
-  botonRegistro.id = 'iregistro-login';
+  botonRegistro.id = 'registro-login';
   const butonGoogle = document.createElement('button');
   butonGoogle.id = 'Google';
 

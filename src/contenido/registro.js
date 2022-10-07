@@ -7,11 +7,7 @@ export const registro = () => {
   const div = document.createElement('div');
   div.id = 'contenedor-registro'
   const logo = document.createElement('img');
-  logo.id = 'logo';
-  const enlaceInicio = document.createElement('a');
-  enlaceInicio.id = 'enlace';
-  const textoLogin = document.createElement('p');
-  textoLogin.id = 'textlogin';
+  logo.id = 'logo-registro';
   const login = document.createTextNode('Iniciar Sesión');
   login.id = 'inicioSesion';
   const formulario = document.createElement('form');
@@ -51,11 +47,6 @@ export const registro = () => {
 
   });
   // Se muestran en pantalla
-  textoLogin.textContent = '¿Ya tienes cuenta en Explora Colombia?';
-  enlaceInicio.appendChild(login);
-  enlaceInicio.title = 'Iniciar Sesión';
-  enlaceInicio.href = 'https://developer.mozilla.org/es/docs/Web/API/Node/appendChild';
-  document.body.appendChild(enlaceInicio);
   formulario.innerHTML = '<b>Registrate</b> para conocer más de Colombia y guarda tus momentos inolvidables.';
   correoUsuario.setAttribute('placeholder', 'Correo Electronico');
   contraseñaUsuario.setAttribute('placeholder', 'Contraseña Usuario');
@@ -74,6 +65,6 @@ export const registro = () => {
 
   // Agregamos elementos a nuestro div
 
-  div.append(logo, textoLogin, enlaceInicio, formulario, correoUsuario, contraseñaUsuario, buttonRegistro, buttonGoogle);
+  div.append(logo, formulario, correoUsuario, contraseñaUsuario, buttonRegistro, buttonGoogle);
   return div;
 };
