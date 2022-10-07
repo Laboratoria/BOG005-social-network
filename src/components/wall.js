@@ -1,29 +1,22 @@
-// import { onNavigate } from '../main.js';
-
 export const wall = () => {
   const containerWall = document.createElement('section');
   containerWall.classList.add('container');
-
-  const header = document.createElement('header')
+  
+  const header = document.createElement('header');
   header.classList.add('header');
 
-  const buttonExit = document.createElement('button');
-  buttonExit.classList.add('buttonIcons');
-  buttonExit.id = 'btnExit';
-
-  // const iconExit = document.createElement('img');
-  // iconExit.src = 'img/exit.png';
-  // iconExit.alt = 'Exit';
-  // iconExit.id = 'iconExit';
+  const iconExit = document.createElement('img');
+  iconExit.src = 'https://img.icons8.com/external-prettycons-flat-prettycons/47/000000/external-exit-essentials-prettycons-flat-prettycons.png';
+  iconExit.id = 'iconExit';
 
   const imgTitle = document.createElement('img');
   imgTitle.src = 'img/other_enjoy-removebg-preview.png';
   imgTitle.alt = 'Logo';
   imgTitle.id = 'imgTitle';
 
-  // const title = document.createElement('h1');
-  // title.textContent = '¿Qué festividad se celebra hoy en tu ciudad?';
-  // title.id = 'titleWall';
+  const title = document.createElement('h1');
+  title.textContent = '¿Qué festividad se celebra hoy en tu ciudad?';
+  title.id = 'titleWall';
 
   const wallFormContainer = document.createElement('article');
   wallFormContainer.classList.add('wallForm');

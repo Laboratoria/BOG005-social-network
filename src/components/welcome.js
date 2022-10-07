@@ -5,8 +5,9 @@ export const welcome = () => {
   sectionWelcome.className = 'sectionWelcome';
 
   const imgWelcome = document.createElement('img');
-  imgWelcome.id = 'FondoWelcome';
-  imgWelcome.src = 'img/fondo1.png';
+
+  imgWelcome.className = 'FondoWelcome';
+  imgWelcome.src = 'img/fondo1.PNG';
   imgWelcome.alt = 'Name';
 
   const message = document.createElement('h2');
@@ -16,7 +17,6 @@ export const welcome = () => {
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
   buttonStart.textContent = 'Start the Journey';
-
   buttonStart.addEventListener('click', () => {
     onNavigate('/landing');
   });
