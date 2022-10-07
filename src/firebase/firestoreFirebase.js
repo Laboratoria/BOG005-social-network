@@ -98,7 +98,7 @@ const buttonP = (path) => {
 
     if (buttonPost) {
       buttonPost.addEventListener('click', () => {
-        console.log('soy el click')
+        console.log('soy el click2')
         const contenido = document.getElementById('postContent').value;
         if (status) {
           savePost(contenido);
