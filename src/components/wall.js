@@ -17,13 +17,13 @@ export const wall = () => {
   wallPost.setAttribute('id', 'postWall');
   wallPost.setAttribute('rows', '6');
   wallPost.setAttribute('placeholder', 'Tu post aquí');
-  // '<i class="fa-solid fa-paper-plane-top"></i>'
+  // '<i class='fa-solid fa-paper-plane-top'></i>'
   const icon = document.createElement('img');
   // icon.className = 'sendIcon';
   // icon.classList.add('fa-sharp', 'fa-solid', 'fa-paper-plane-top');
   // icon.alt = 'arrow';
-  // <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/000000/external-send-user-interface-kmg-design-glyph-kmg-design.png"/>
-  icon.src = 'https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/F16CA4/external-send-user-interface-kmg-design-glyph-kmg-design.png';
+  // <img src='https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/000000/external-send-user-interface-kmg-design-glyph-kmg-design.png'/>
+  icon.src = 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/FCAB2E/external-send-dating-app-flaticons-lineal-color-flat-icons.png';
 
   const postButton = document.createElement('button');
   postButton.textContent = 'Compartir';

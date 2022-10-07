@@ -179,16 +179,17 @@
   /* vista welcome */
 
   .sectionWelcome {
-    margin: 10px;
-    opacity: 0.8;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    padding: auto;
+    display: flex;
+    position: absolute;
     background-size: cover;
-    display: inline-flex;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--fontFamily);
     flex-direction: column;
-    justify-content: space-around;
-    min-height: 850px;
+    text-align: center;
+    align-content: center;
   }
 
   .messageW {
@@ -197,9 +198,10 @@
     font-size: var(--titleSize);
   }
 
-  .description {
+  #description {
+    font-size: 4.5vh;
     text-align: center;
-    margin-top: 250px;
+    margin-top: 360px;
     margin-bottom: 25px;
     align-items: center;
     display: flex;

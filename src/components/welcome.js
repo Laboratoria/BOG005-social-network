@@ -10,7 +10,7 @@ export const welcome = () => {
   // imgWelcome.alt = 'Name';
 
   const message = document.createElement('h2');
-  message.className = 'description';
+  message.id = 'description';
   message.textContent = 'Come and celebrate Holidays around the world with us.';
 
   const buttonStart = document.createElement('button');
