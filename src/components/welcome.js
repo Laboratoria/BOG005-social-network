@@ -16,7 +16,6 @@ export const welcome = () => {
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
   buttonStart.textContent = 'Start the Journey';
-
   buttonStart.addEventListener('click', () => {
     onNavigate('/landing');
   });

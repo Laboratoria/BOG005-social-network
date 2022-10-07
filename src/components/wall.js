@@ -17,12 +17,19 @@ export const wall = () => {
   wallPost.setAttribute('id', 'postWall');
   wallPost.setAttribute('rows', '6');
   wallPost.setAttribute('placeholder', 'Tu post aquí');
+  // '<i class="fa-solid fa-paper-plane-top"></i>'
+  const icon = document.createElement('img');
+  // icon.className = 'sendIcon';
+  // icon.classList.add('fa-sharp', 'fa-solid', 'fa-paper-plane-top');
+  // icon.alt = 'arrow';
+  // <img src="https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/000000/external-send-user-interface-kmg-design-glyph-kmg-design.png"/>
+  icon.src = 'https://img.icons8.com/external-kmg-design-glyph-kmg-design/32/F16CA4/external-send-user-interface-kmg-design-glyph-kmg-design.png';
 
   const postButton = document.createElement('button');
   postButton.textContent = 'Compartir';
   postButton.setAttribute('class', 'button-post button');
 
-  containerWall.append(title, wallPost, postButton);
+  containerWall.append(title, wallPost, postButton, icon);
 
   return containerWall;
 };

@@ -1,3 +1,7 @@
+import {
+  getAuth,
+  onAuthStateChanged,
+} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 import { welcome } from './components/welcome.js';
 import { landing } from './components/landing.js';
 import { register } from './components/register.js';
@@ -35,3 +39,13 @@ window.addEventListener('load', () => {
   onNavigate(window.location.pathname);
 });
 // divRoot.appendChild(component());
+
+onAuthStateChanged(getAuth(), (user) => {
+  if (user != null) {
+    console.log('In Firebase');
+    // const uid = user.uid;
+    onNavigate('/wall');
+  } else {
+    onNavigate('/');
+  }
+});
