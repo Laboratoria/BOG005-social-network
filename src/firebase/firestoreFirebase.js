@@ -7,34 +7,33 @@ let idPost = '';
 let value = '';
 let status = true;
 // colección crea la coleeción de datos
-const savePost = (description) => {
-  addDoc(collection(db, 'Posts'), { description })
-}
-// obtenemos los post y recoremos la respuesta de firestore
-const getPost = () => {
-  getDocs(collection(db, "Posts")).then((res) => {
-    if (window.location.pathname === '/wall') {
-      const contentedor = document.getElementById('postsContainerId')
-      if (contentedor) {
-        console.log('res: ', res);
-        res.forEach((doc) => {
-          contentedor.innerHTML += `<article id="post">
-          <p class="contentPost" id="allPosts">${doc.data().description}</p>
-        </article>`
-        })
-      }
+const savePost = (description) => addDoc(collection(db, 'Posts'), { description });
+const getPost = () => getDocs(collection(db, "Posts"));
+
+const printPost = () => {
+ getPost().then((res) => {
+  if (window.location.pathname === '/wall') {
+    const contentedor = document.getElementById('postsContainerId')
+    if (contentedor) {
+      console.log('res: ', res);
+      res.forEach((doc) => {
+        contentedor.innerHTML += `<article id="post">
+        <p class="contentPost" id="allPosts">${doc.data().description}</p>
+      </article>`
+      })
     }
-  })
+  }
+})
 }
 
 const getOnePost = (dataid) => {
-  console.log(dataid)
   return getDoc(doc(db, 'Posts', dataid)).then((res) => {
     const inputPost = document.getElementById('postContent')
     inputPost.value = res.data().description;
     value = res.data().description;
   })
 };
+
 
 // se muestran en pantalla al instante
 const onGetPost = () => {
@@ -115,4 +114,4 @@ const buttonP = (path) => {
   }
 }
 
-export { savePost, getPost, onGetPost, getOnePost, updatePost, buttonP }
+export { savePost, onGetPost, getOnePost, updatePost, buttonP, printPost }

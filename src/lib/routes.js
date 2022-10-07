@@ -7,7 +7,7 @@ import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventButtonSignOut } from './utils/eventSignOut.js';
-import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
+import { onGetPost, buttonP, printPost } from '../firebase/firestoreFirebase.js';
 
 const routes = {
   '/': welcome(),
@@ -53,8 +53,9 @@ const eventHandler = (path) => {
   switch (path) {
     case '/wall':
       buttonP(path);
-      getPost();
+      // getPost();
       onGetPost();
+      printPost();
       displayUserData();
       eventButtonSignOut();
       console.log('estas en wall')
