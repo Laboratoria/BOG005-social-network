@@ -112,14 +112,13 @@ button {
 }
 
 .google {
-    background-image: url('./imagenes/btn_google_signin_light_normal_web.png');
+    background-image: url('./imagenes/Inicie\ sesion\ con\ google.JPG');
     width: 240px;
     height: 29px;
     padding: 6px;
-    border-radius: 10px;
-    font-size: 14px;
+    border-radius: 10px;    
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 200px;
     background-position: center;
     border: none;
     background-color: white;

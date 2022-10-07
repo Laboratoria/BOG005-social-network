@@ -12,7 +12,7 @@ import {
 
 import {
   getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc,
-  doc, getDoc,
+  doc, getDoc, updateDoc,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 // Export Auth
@@ -26,5 +26,5 @@ export {
 
 // Export Firestore
 export {
-  getFirestore, collection, addDoc, getDocs, deleteDoc, onSnapshot, doc, getDoc,
+  getFirestore, collection, addDoc, getDocs, deleteDoc, onSnapshot, doc, getDoc, updateDoc,
 };

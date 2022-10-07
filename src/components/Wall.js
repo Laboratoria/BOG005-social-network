@@ -1,5 +1,7 @@
 import { onNavigate } from '../main.js';
-import { savePost, onGetPosts } from '../lib/firebase.js';
+import {
+  savePost, onGetPosts, deletePost, getPost, updatePost,
+} from '../lib/firebase.js';
 
 export const Wall = () => {
   // contenedor que almacenará los 2 botones y dará un solo return
@@ -18,7 +20,7 @@ export const Wall = () => {
   title.textContent = 'Yummy Friends';
   header.append(title);
 
-  const postContainer = document.createElement('header');
+  const postContainer = document.createElement('section');
   postContainer.setAttribute('id', 'postContainer');
   postContainer.className = 'postContainer';
 
@@ -44,6 +46,9 @@ export const Wall = () => {
     onNavigate('/');
   });
 
+  let editStatus = false;
+  let id = '';
+
   window.addEventListener('DOMContentLoaded', async () => {
     onGetPosts((querySnapshot) => {
       let html = '';
@@ -57,24 +62,50 @@ export const Wall = () => {
           <section class= "postBox">
           <h5>${task.postArea}</h5>
           </section>           
-          <button class="btn-borrar">Borrar</button>
+          <button class="btn-borrar" data-id="${doc.id}">Borrar</button>    
+          <button class="btn-editar" data-id="${doc.id}">Editar</button>      
           </section>       
         </div>
       `;
       });
 
       newPostContainer.innerHTML = html;
+      const btnsDelete = newPostContainer.querySelectorAll('.btn-borrar');
+      btnsDelete.forEach((btn) => {
+        btn.addEventListener('click', ({ target: { dataset } }) => {
+          deletePost(dataset.id);
+        });
+      });
+
+      const btnsEdit = newPostContainer.querySelectorAll('.btn-editar');
+
+      btnsEdit.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          const doc = await getPost(e.target.dataset.id);
+          const post = doc.data(); // Trae los datos de los posts
+          postArea.value = post.postArea;
+          editStatus = true;
+          id = doc.id;
+          buttonPublish.innerText = 'Editar';
+        });
+      });
     });
   });
 
   buttonPublish.addEventListener('click', (e) => {
     e.preventDefault();
 
-    savePost(postArea.value);
+    if (!editStatus) {
+      savePost(postArea.value);
+    } else {
+      updatePost(id, { postArea: postArea.value });
+      editStatus = false;
+    }
+
     postArea.value = '';
   });
 
-  div.append(header, buttonBack, postContainer, newPostContainer);
+  div.append(header, postContainer, newPostContainer, buttonBack);
 
   return div;
 };
