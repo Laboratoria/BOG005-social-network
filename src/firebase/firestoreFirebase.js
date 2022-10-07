@@ -5,7 +5,8 @@ import { app } from './configFirebase.js';
 const db = getFirestore(app);
 
 let idPost = '';
-let value = ' ';
+let value = '';
+let currentLike = 0
 let status = true;
 // colección crea la coleeción de datos
 const savePost = (description) => {
@@ -26,20 +27,16 @@ const updatePost = (id, newPost) => {
 //   })
 // };
 
-const getOnePost = (dataid, event) => {
+const getOnePost = (dataid/*, event*/) => {
   return getDoc(doc(db, 'Posts', dataid)).then((res) => {
-  //   console.log(res)
-  // console.log(res.data())
-  if(event.target.className === 'fa-regular fa-pen-to-square') {
+ // if(event.target.className === 'fa-regular fa-pen-to-square') {
     const inputPost = document.getElementById('postContent')
     inputPost.value = res.data().description;
     value = res.data().description;
     console.log('estoy editando')
-  }/*else if (event.target.id === event.target.dataset.id) {
-    console.log('Soy un like')
-    const contentLikes = document.getElementById('numberOfLikesId')
-    contentLikes.textContent = 'un like'
-  }*/
+  //}else  {
+   // value = res
+  //}
   
 })
 };
@@ -50,11 +47,15 @@ const getPost = () => {
   getDocs(collection(db, "Posts")).then((res) => {
     if (window.location.pathname === '/wall') {
       const contentedor = document.getElementById('postsContainerId')
+      
       if (contentedor) {
         res.forEach((doc) => {
+          // console.log(doc.id)
+          // console.log(doc.data().likes)
           contentedor.innerHTML += `<article id="post">
           <p class="contentPost" id="allPosts">${doc.data().description}</p>
         </article>`
+       
         })
       }
     }
@@ -62,9 +63,9 @@ const getPost = () => {
 }
 
 
-const giveALike = (idPost, likes, loggedInUser) => {
-  return updateDoc(doc(db, 'Posts', idPost), {numberOfLikes:likes, user:loggedInUser})
-}
+// const giveALike = (idPost, likes) => {
+//   return updateDoc(doc(db, 'Posts', idPost), likes)
+// }
 // se muestran en pantalla al instante
 const onGetPost = () => {
   onSnapshot(collection(db, 'Posts'), (querySanpshot) => {
@@ -81,45 +82,43 @@ const onGetPost = () => {
       <article id="post">
         <p class="contentPost" id="allPosts">${item.data().description}</p>
       </article>
-      <div id="actionContainerId" class="actionContainer">
+    <div id="actionContainerId" class="actionContainer">
       <div class="myLikes" id="myLikesId">
-      <button class="likes" id="like${item.id}" data-id='${item.id}'>🤍​​</button>
-      <p class="numberOfLikes" id="numberOfLikesId${item.id}"></p>
-       </div>
-       <div class="delete">
+        <button class="likes" id="like${item.id}" data-id='${item.id}' data-like='${item.data().likes}'>​​🧡​​</button>
+        <p class="numberOfLikes" id="numberOfLikesId${item.id}">${item.data().likes}</p>
+      </div>
+      <div class="delete">
         <button class="deletePost" id="deletePost${item.id}" data-id='${item.id}'>
         <i class="fa-solid fa-trash-can"></i>
         </button>
-        </div>
-        <div>
+      </div>
+      <div class="edit">
         <button class="editPost" id="editPost${item.id}" data-id='${item.id}'>
         <i class="fa-regular fa-pen-to-square"></i>
         </button>
-        </div>
       </div>
+    </div>
       </section>`;
 
       })
-      const btnLikes = document.querySelectorAll('.likes')
-      btnLikes.forEach((btnLike)=>{
+
+       const btnLikes = document.querySelectorAll('.likes')
+        btnLikes.forEach((btnLike)=>{
         btnLike.addEventListener('click', (event)=>{
           const idPostLike = event.target.dataset.id
-          const idUser = getLoggedInUser.uid
-          // console.log('Id del post',idPostLike )
-          // console.log('Id del usuario',idUser )
-          getOnePost(idPostLike, event)
-          .then(() => {
-            
-            const contentLikes = document.getElementById(`numberOfLikesId${idPostLike}`)
-            //console.log(contentLikes)
-            contentLikes.textContent = 'un like'
-            
-          })
-          .catch(() => console.log("Error en likes"))
+          let like = event.target.dataset.like
           
+          //const contentLikes = document.getElementById(`numberOfLikesId${idPostLike}`)
+          if(like == 1){
+            like--
+            updatePost(idPostLike, {likes:like}).then(() => console.log("Dislike")).catch(() => console.log("Error en dislike"))
+           
+          }else {
+            like ++
+            updatePost(idPostLike, {likes:like}).then(() => console.log("Se dió like")).catch(() => console.log("Error en like"))
+         }
         })
       })
-
 
 
     const deletePostButtons = document.querySelectorAll('.deletePost')
@@ -143,8 +142,6 @@ const onGetPost = () => {
   })
 };
 
-
-
 const buttonP = (path) => {
   if (path === '/wall') {
     const postForm = document.getElementById('postForm')
@@ -161,6 +158,7 @@ const buttonP = (path) => {
         updatePost(idPost, {
           description: inputPost.value
         }).then(() => console.log("Se actulizo")).catch(() => console.log("Error"))
+        status = false;
       }
       postForm.reset();
     })
