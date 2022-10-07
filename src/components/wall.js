@@ -6,7 +6,7 @@ export const wall = () => {
 
 
   const post = document.createElement('article');
-  post.setAttribute('id', 'post');  
+  post.setAttribute('id', 'post');
   const header = document.createElement('header');
   header.setAttribute('id', 'header');
   const menu = document.createElement('nav');
@@ -26,7 +26,7 @@ export const wall = () => {
     const tosingout = document.createElement('a');
     tosingout.setAttribute('id', 'tosingout');
    */
- 
+
   const imgLogomini = document.createElement('img');
   imgLogomini.setAttribute('srcset', './image/ladyCodeLogo.jpg');
   imgLogomini.setAttribute('id', 'imgLogomini');
@@ -56,27 +56,13 @@ export const wall = () => {
   optionslist.append(option1, option2, option3);
   menu.append(optionslist);
   header.append(imgLogomini, menu);
-  post.append( written, buttonPost, contWall);
-  wallContent.append(header,  post );
+  post.append(written, buttonPost, contWall);
+  wallContent.append(header, post);
 
   ///////////////////////////////////////////funciones//////////////////////////////////////////
   buttonPost.addEventListener('click', () => savePost(written.value));
-  
-  readPost().then((arrayDocs) => { // lea el post (en el embudo lo ejecuta)
-    arrayDocs.forEach((doc) => { // arraydocs es un array donde estan todos los post por cada elemento hacexxx en el for each
-     
-    })//.catch((e)=>{console.error("Error adding document: ", e);}) 
 
-  });
-  ///leer2/////
-/*   const arrayRead = readPost();
-  readPost2((elementos) => {
-    elementos.forEach((doc) => {
-      console.log(doc.data());
-    })
-  })
-  readPost2(arrayRead);
- */
+
 
   const arrayRead = readPost();// array de docs que contiene obj post y nombres
   readPost2((elementos) => {
@@ -93,36 +79,81 @@ export const wall = () => {
       buttonDelete.textContent = 'Eliminar post';
       buttonDelete.setAttribute('class', 'btnDelete');
       buttonDelete.setAttribute('data-info-id', `${doc.id}`)
-      const buttonEdit = document.createElement('button');// boton guardar post
-      buttonEdit.setAttribute('class', 'buttonEdit');
-      buttonEdit.textContent = 'Editar post';
-      buttonEdit.value = doc.id
-      post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
-      post_n.append(buttonDelete, buttonEdit);
-      contWall.append(writer, post_n);
-      
-      //// funcion eliminar post
-      const buttonsDelete = document.querySelectorAll('.btnDelete')
-      buttonsDelete.forEach((button_i) => {
-        button_i.addEventListener('click', (event) => {
-          //const idGet =  ({ target: { dataset } }) => {console.log("AU");};
-          console.log('event id: ', event.target.dataset.infoId);
-          deletePost(event.target.dataset.infoId);
-        });
-      })
+      // const buttonEdit = document.createElement('button');// boton guardar post
+      // buttonEdit.setAttribute('class', 'buttonEdit');
+      // buttonEdit.textContent = 'Editar post';
 
-      /// funcion editar post////
-      const buttonsEdit = document.querySelectorAll('.buttonEdit')
-      //console.log(buttonsEdit);
-      buttonsEdit.forEach((btnEdit)=>{
-        btnEdit.addEventListener('click', (event) => {
-          //console.log(event)
-          editPostUpdate(btnEdit.value, "hola mundo") // id y texto que reemplaza
-        });
-      });
+      /*********botoon me gusta */
+      const buttonLike = document.createElement('button');// boton guardar post
+      buttonLike.textContent = 'me gusta';
+      buttonLike.setAttribute('class', 'btnlike');
+      buttonLike.setAttribute('data-info-id', `${doc.id}`)
+      const countLike = document.createElement('p');
+      countLike.setAttribute('class', 'countBtnlike');
+      countLike.setAttribute('data-info-id', `${doc.id}`)
+      countLike.textContent = '';
+
+      /****************************PRUEBA MODAL *****************************************/
+      const a = document.createElement("a");
+      a.href = `${doc.id}`//doc.id
+      a.textContent = "Editar"
+      a.classList.add("ButtonModal")
+      const sectionEdit = document.createElement("section")
+      sectionEdit.id = doc.id
+      sectionEdit.classList.add("modalDialog")
+      const textAreaEdit = document.createElement("textarea")
+      const saveChangeEdit = document.createElement("button")
+
+      saveChangeEdit.textContent = "Guardar"
+      sectionEdit.append(textAreaEdit, saveChangeEdit)
+
+
+      // <a href="#${characters.id}" class="ButtonModal">Read more</a>
+      // </article>
+      // <section id="${characters.id}" class="modalDialog">
+      // <section>
+      //   <a href="#close" title="Close" class="close">X</a>
+      //   <section id="parrafosmodal">
+      //   <textarea></textarea>
+      //   <button></button>
+      //   </section>
+      // buttonEdit.value = doc.id
+      post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
+      post_n.append(buttonDelete, a, buttonLike);
+      contWall.append(writer, post_n);
 
       return contWall
     })
+    //// funcion eliminar post
+    const buttonsDelete = document.querySelectorAll('.btnDelete')
+    buttonsDelete.forEach((button_i) => {
+      button_i.addEventListener('click', (event) => {
+        //const idGet =  ({ target: { dataset } }) => {console.log("AU");};
+        deletePost(event.target.dataset.infoId);
+      });
+    })
+
+    // /// funcion editar post////
+    // const buttonsEdit = document.querySelectorAll('.buttonEdit')
+    // //console.log(buttonsEdit);
+    // buttonsEdit.forEach((btnEdit)=>{
+    //   btnEdit.addEventListener('click', (event) => {
+    //     //console.log(event)
+    //     editPostUpdate(btnEdit.value, "hola mundo") // id y texto que reemplaza
+    //   });
+    // });
+
+    //////////////////FUNCION LIKE/////
+    const buttonslike = document.querySelectorAll('.btnlike')
+    console.log(buttonslike);
+    buttonslike.forEach((btnlike) => {
+      btnlike.addEventListener('click', (event) => {
+        console.log("like");
+
+      });
+    });
+
+
   })
   readPost2(arrayRead);
 

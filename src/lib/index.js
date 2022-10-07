@@ -50,13 +50,14 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
 };  */
 
 ///// crear coleccion de usuarios ejemplo// se iba al catch 
-const savePost = (input) => {
+const savePost = (input, likes) => {
   if (loginUser) { // asigna al usuario que esté logeado la autoria
     const emailUser = loginUser.email;// si hay usuario guardeme su correo 
   // console.log(input);
   addDoc(collection(db, "usuarios3"), { //// funcion que guarda post con: funcion addDoc(especif colecc, agreg un objeconten)
     first: input,
     second : emailUser,
+    likesCount: likes
   }).then((dos) => { /// opcional???
     console.log("Document written with ID: ", dos.id);/// no reconoce id
     //console.log(dos);
@@ -101,16 +102,16 @@ const editPostUpdate = (id, input)=> {
   })
 }
 
-/* const likesPost = (id, likes)=> {
-  const editPost = doc(db, "usuarios3", id);
-   updateDoc(editPost, {
-    first: input,
+ const likesPost = (id, likes, userLike)=> {
+  const PostLike = doc(db, "usuarios3", id);
+   updateDoc(PostLike, { /// editar
+    countLike:likes,
+    userLike: "pendiente"
     //second : emailUser
     /// va second?????
   })
 }
- */
-
+ 
 export {
   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost,
   savePost, deletePost, readPost2, loginUser, editPostUpdate /* getloginUser */
