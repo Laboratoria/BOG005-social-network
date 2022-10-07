@@ -94,9 +94,10 @@ const updatePost = (id, newPost) => {
 const buttonP = () => {
   const postForm = document.getElementById('postForm')
   const buttonPost = document.getElementById('PostContentButton')
-
+ 
   if (buttonPost) {
     buttonPost.addEventListener('click', () => {
+      console.log('que estoy haciendo')
       const contenido = document.getElementById('postContent').value;
       if (status) {
         savePost(contenido);
