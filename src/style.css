@@ -20,9 +20,22 @@
     display: none;
     max-width: 100%;
   }
-  .sectionWelcome {
-    background-image: url("img/fondo1.PNG");
+
+  #FondoWelcome {
+    position: absolute;
+    top: 40px;
+    right: -190px;
+    width: 90vh;
+    height: 50vh;
   }
+
+  .sectionWelcome {
+    /* background-image: url("img/fondo1.PNG"); */
+    background: #fff9ef;
+    width: 100%;
+    height: 100vh;
+  }
+
   /* este h3 es del login Olvidaste tu contraseña  */
   h3 {
     margin-top: 10px;
@@ -30,6 +43,7 @@
     color: #bdb9b9;
   }
 }
+
 @media screen and (max-width: 1400px) {
   /* vista del register */
   .container {
@@ -94,8 +108,9 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
   }
+
   #buttonStartRegister {
-    background-color: rgba(241, 108, 164, 0.89);
+    background-color: #fcab2e;
     margin-top: 20px;
   }
 
@@ -115,6 +130,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
   }
+
   .inputE {
     display: block;
     margin: 0px auto;
@@ -147,7 +163,7 @@
     width: 25vh;
     height: 5vh;
 
-    background: rgba(241, 108, 164, 0.89);
+    background: #fcab2e;
     border: 1px solid rgba(0, 0, 0, 0.25);
     /* border-radius: 10px; */
     font-size: 2.5vh;
@@ -159,13 +175,13 @@
     font-size: 2vh;
     text-align: center;
     text-transform: none;
-    color: #cea3f1;
   }
 
   .here {
     justify-content: center;
     color: #bdb9b9;
     font-size: 2vh;
+    color: #fcab2e;
   }
 
   /* vista del login */
@@ -176,19 +192,24 @@
     font-size: var(--titleSize);
   }
 
+  .session {
+    color: #fcab2e;
+  }
+
   /* vista welcome */
 
   .sectionWelcome {
-    margin: 10px;
-    opacity: 0.8;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+    padding: auto;
+    display: flex;
+    position: absolute;
     background-size: cover;
-    display: inline-flex;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--fontFamily);
     flex-direction: column;
-    justify-content: space-around;
-    min-height: 850px;
+    text-align: center;
+    align-content: center;
   }
 
   .messageW {
@@ -197,9 +218,10 @@
     font-size: var(--titleSize);
   }
 
-  .description {
+  #description {
+    font-size: 4.5vh;
     text-align: center;
-    margin-top: 250px;
+    margin-top: 54vh;
     margin-bottom: 25px;
     align-items: center;
     display: flex;
@@ -223,6 +245,7 @@
   justify-content: center;
   text-align: center;
 }
+
 .titleL {
   text-align: center;
   /* margin-top: 2vh; */
@@ -245,6 +268,7 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 }
+
 #e-mail {
   margin: 0px auto;
   text-align: center;
@@ -285,8 +309,55 @@
   width: 30vh;
   height: 6.5vh;
 
-  background: rgba(241, 108, 164, 0.89);
+  background: #fcab2e;
   border: 2px solid #a7a0a0;
   border-radius: 10px;
   font-size: 2.3vh;
+}
+
+/* vista del wall */
+.header {
+  display: flex;
+  padding: 2vh 3vh;
+}
+
+#iconExit {
+  position: relative;
+  width: 5vh;
+  height: 5vh;
+  left: 20px;
+  top: 10px;
+}
+
+#imgTitle {
+  position: relative;
+  width: 18vh;
+  height: 13vh;
+  transform: rotate(-25deg);
+  top: 15px;
+  right: 20px;
+}
+#titleWall {
+  text-align: right;
+  margin: 10px 10px;
+  padding: 2vh;
+}
+
+.wallForm {
+  padding: 3vh;
+  margin-top: 5vh;
+}
+
+#postWall {
+  padding: 1vh;
+  border-radius: 20px 20px;
+  background-color: #fff8ee;
+}
+
+#iconSend {
+  position: relative;
+  width: 5vh;
+  height: 5vh;
+  left: 35vh;
+  bottom: 40px;
 }
