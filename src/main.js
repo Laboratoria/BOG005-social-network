@@ -4,12 +4,6 @@ import { Wall } from './components/Wall.js';
 
 // variable que acceda al nodo en HTML llamado root
 
-export function elementRoot() {
-  if (document.getElementById('root') == null) {
-    document.body.innerHTML = '<div id="root"> </div>';
-  }
-}
-elementRoot();
 const rootDiv = document.getElementById('root');
 
 // Variable que contendra un objeto que contiene la ruta y o que debe renderizar

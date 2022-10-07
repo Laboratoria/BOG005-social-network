@@ -1,7 +1,5 @@
 import { onNavigate } from '../main.js';
-import {
-  savePost, getPosts,
-} from '../lib/firebase.js';
+import { savePost, onGetPosts } from '../lib/firebase.js';
 
 export const Wall = () => {
   // contenedor que almacenará los 2 botones y dará un solo return
@@ -21,6 +19,7 @@ export const Wall = () => {
   header.append(title);
 
   const postContainer = document.createElement('header');
+  postContainer.setAttribute('id', 'postContainer');
   postContainer.className = 'postContainer';
 
   const postArea = document.createElement('textarea');
@@ -34,6 +33,9 @@ export const Wall = () => {
 
   postContainer.append(postArea, buttonPublish);
 
+  const newPostContainer = document.createElement('div');
+  newPostContainer.setAttribute('id', 'tasks-container');
+
   const buttonBack = document.createElement('button');
   buttonBack.textContent = 'Cerrar sesión';
   buttonBack.className = 'buttonBack';
@@ -42,11 +44,26 @@ export const Wall = () => {
     onNavigate('/');
   });
 
-  // Escuchador boton Publicar
-  window.addEventListener('DOMContentLoaded', async () => { // querySnapchot: los datos que existen en ese momento
-    const querySnapchot = await getPosts();
-    querySnapchot.forEach((doc) => {
-      console.log(doc.data());
+  window.addEventListener('DOMContentLoaded', async () => {
+    onGetPosts((querySnapshot) => {
+      let html = '';
+
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        html += `
+        <div>
+          <section class= "boxPost1">
+          <br>          
+          <section class= "postBox">
+          <h5>${task.postArea}</h5>
+          </section>           
+          <button class="btn-borrar">Borrar</button>
+          </section>       
+        </div>
+      `;
+      });
+
+      newPostContainer.innerHTML = html;
     });
   });
 
@@ -54,11 +71,10 @@ export const Wall = () => {
     e.preventDefault();
 
     savePost(postArea.value);
-
     postArea.value = '';
   });
 
-  div.append(header, postContainer, buttonBack);
+  div.append(header, buttonBack, postContainer, newPostContainer);
 
   return div;
 };
