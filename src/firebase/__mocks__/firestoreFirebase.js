@@ -1,4 +1,11 @@
-export const savePost = () => Promise.resolve();
+export const savePost = jest.fn(()=>{
+    console.log('Moqueando publicación')
+    return Promise.resolve({description:'Moqueando publicación'})
+})
+
+
+
+// export const savePost = () => Promise.resolve();
 export const getPost =  () => Promise.resolve();
 export const getOnePost = ()=> Promise.resolve();
 export const onGetPost = () => Promise.resolve();

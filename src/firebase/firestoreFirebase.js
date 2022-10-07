@@ -4,7 +4,7 @@ import { app } from './configFirebase.js';
 const db = getFirestore(app);
 
 let idPost = '';
-let value= '';
+let value = '';
 let status = true;
 // colección crea la coleeción de datos
 const savePost = (description) => {
@@ -91,24 +91,27 @@ const updatePost = (id, newPost) => {
   return updateDoc(doc(db, 'Posts', id), newPost)
 }
 
-const buttonP = () => {
-  const postForm = document.getElementById('postForm')
-  const buttonPost = document.getElementById('PostContentButton')
+const buttonP = (path) => {
+  if (path === '/wall') {
+    const postForm = document.getElementById('postForm')
+    const buttonPost = document.getElementById('PostContentButton')
 
-  if (buttonPost) {
-    buttonPost.addEventListener('click', () => {
-      const contenido = document.getElementById('postContent').value;
-      if (status) {
-        savePost(contenido);
-        status = true;
-      } else {
-        const inputPost = document.getElementById('postContent')
-        updatePost(idPost, {
-          description: inputPost.value
-        }).then(() => console.log("Se actulizo")).catch(() => console.log("Error"))
-      }
-      postForm.reset();
-    })
+    if (buttonPost) {
+      buttonPost.addEventListener('click', () => {
+        console.log('soy el click')
+        const contenido = document.getElementById('postContent').value;
+        if (status) {
+          savePost(contenido);
+          status = true;
+        } else {
+          const inputPost = document.getElementById('postContent')
+          updatePost(idPost, {
+            description: inputPost.value
+          }).then(() => console.log("Se actulizo")).catch(() => console.log("Error"))
+        }
+        postForm.reset();
+      })
+    }
   }
 }
 

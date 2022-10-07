@@ -52,7 +52,7 @@ const historyHandler = () => {
 const eventHandler = (path) => {
   switch (path) {
     case '/wall':
-      buttonP();
+      buttonP(path);
       getPost();
       onGetPost();
       displayUserData();
