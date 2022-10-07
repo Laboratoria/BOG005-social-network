@@ -1,44 +1,28 @@
 import { getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc, doc, getDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
-import { getLoggedInUser } from '../firebase/authenticationFirebase.js';
 import { app } from './configFirebase.js';
 
 const db = getFirestore(app);
 
 let idPost = '';
 let value = '';
-let currentLike = 0
 let status = true;
 // colección crea la coleeción de datos
-const savePost = (description) => {
-  addDoc(collection(db, 'Posts'), { description })
+const savePost = (description, likes) => {
+  addDoc(collection(db, 'Posts'), { description, likes })
 }
 
 const updatePost = (id, newPost) => {
   return updateDoc(doc(db, 'Posts', id), newPost)
 }
 
-// const getOnePost = (dataid) => {
-//     return getDoc(doc(db, 'Posts', dataid)).then((res) => {
-//       console.log(res)
-//     console.log(res.data())
-//     const inputPost = document.getElementById('postContent')
-//     inputPost.value = res.data().description;
-//     value = res.data().description;
-//   })
-// };
 
 const getOnePost = (dataid/*, event*/) => {
   return getDoc(doc(db, 'Posts', dataid)).then((res) => {
- // if(event.target.className === 'fa-regular fa-pen-to-square') {
     const inputPost = document.getElementById('postContent')
     inputPost.value = res.data().description;
     value = res.data().description;
     console.log('estoy editando')
-  //}else  {
-   // value = res
-  //}
-  
-})
+ })
 };
 
 
@@ -46,34 +30,34 @@ const getOnePost = (dataid/*, event*/) => {
 const getPost = () => {
   getDocs(collection(db, "Posts")).then((res) => {
     if (window.location.pathname === '/wall') {
-      const contentedor = document.getElementById('postsContainerId')
-      
-      if (contentedor) {
+      const content = document.getElementById('postsContainerId')
+      if (content) {
         res.forEach((doc) => {
-          // console.log(doc.id)
-          // console.log(doc.data().likes)
-          contentedor.innerHTML += `<article id="post">
+          console.log(doc.id)
+          const like = doc.data().likes
+          content.innerHTML += `<article id="post">
           <p class="contentPost" id="allPosts">${doc.data().description}</p>
-        </article>`
-       
+        </article>
+        <div class="myLikes" id="myLikesId">
+        <button class="likes" id="like${doc.id}" data-id='${doc.id}' data-like='${like}'>​​🧡​​</button>
+        <p class="numberOfLikes" id="numberOfLikesId${doc.id}">${like}</p>
+          </div>
+        `
         })
       }
     }
   })
 }
 
-
-// const giveALike = (idPost, likes) => {
-//   return updateDoc(doc(db, 'Posts', idPost), likes)
-// }
 // se muestran en pantalla al instante
 const onGetPost = () => {
   onSnapshot(collection(db, 'Posts'), (querySanpshot) => {
-    const contenedor = document.getElementById('postsContainerId');
-    if (contenedor) {
-      contenedor.innerHTML = '';
+    const content = document.getElementById('postsContainerId');
+    if (content) {
+      content.innerHTML = '';
       querySanpshot.forEach((item) => {
-        contenedor.innerHTML += `
+        const like = item.data().likes
+        content.innerHTML += `
       <section id="post postForm" class="postsCards">
       <header id="headerPost">
         <i class="fa-solid fa-circle-user" class="userIcon"></i>
@@ -84,8 +68,9 @@ const onGetPost = () => {
       </article>
     <div id="actionContainerId" class="actionContainer">
       <div class="myLikes" id="myLikesId">
-        <button class="likes" id="like${item.id}" data-id='${item.id}' data-like='${item.data().likes}'>​​🧡​​</button>
-        <p class="numberOfLikes" id="numberOfLikesId${item.id}">${item.data().likes}</p>
+        <button class="likes" id="like${item.id}" data-id='${item.id}' data-like='${like}'>​​🧡​​</button>
+        <p class="numberOfLikes" id="numberOfLikesId${item.id}">${like}</p>
+        
       </div>
       <div class="delete">
         <button class="deletePost" id="deletePost${item.id}" data-id='${item.id}'>
@@ -100,19 +85,16 @@ const onGetPost = () => {
     </div>
       </section>`;
 
+      console.log(item.data().likes)
       })
-
        const btnLikes = document.querySelectorAll('.likes')
         btnLikes.forEach((btnLike)=>{
         btnLike.addEventListener('click', (event)=>{
           const idPostLike = event.target.dataset.id
           let like = event.target.dataset.like
-          
-          //const contentLikes = document.getElementById(`numberOfLikesId${idPostLike}`)
-          if(like == 1){
+         if(like == 1){
             like--
             updatePost(idPostLike, {likes:like}).then(() => console.log("Dislike")).catch(() => console.log("Error en dislike"))
-           
           }else {
             like ++
             updatePost(idPostLike, {likes:like}).then(() => console.log("Se dió like")).catch(() => console.log("Error en like"))
@@ -120,14 +102,12 @@ const onGetPost = () => {
         })
       })
 
-
     const deletePostButtons = document.querySelectorAll('.deletePost')
       deletePostButtons.forEach((deleteButton) => {
         deleteButton.addEventListener('click', (event) => {
           deleteDoc(doc(db, 'Posts', event.currentTarget.getAttribute('data-id')))
         })
       })
-
       const editPostButtons = document.querySelectorAll('.editPost')
       editPostButtons.forEach((editButton) => {
         editButton.addEventListener('click', (event) => {
@@ -135,7 +115,6 @@ const onGetPost = () => {
           getOnePost(event.currentTarget.getAttribute('data-id'), event).then(() => console.log("ok ogp")).catch(() => console.log("Error onp"))
           status = false;
           idPost = event.currentTarget.getAttribute('data-id');
-
         })
       });
     }
@@ -151,7 +130,7 @@ const buttonP = (path) => {
       console.log('Tengo evento')
       const contenido = document.getElementById('postContent').value;
       if (status) {
-        savePost(contenido);
+        savePost(contenido, 0);
         status = true;
       } else {
         const inputPost = document.getElementById('postContent')
@@ -164,12 +143,5 @@ const buttonP = (path) => {
     })
   }
   }
-
 }
-
-
-
-
-
 export { savePost, getPost, onGetPost, getOnePost, updatePost, buttonP }
-// <button class="disLikes" data-id='${item.id}>💛​​</button>

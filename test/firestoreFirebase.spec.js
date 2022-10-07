@@ -11,7 +11,7 @@ describe('Publicar post', () => {
         document.body.innerHTML = '<div id="contentPageId"></div>';
         const main = document.querySelector('#contentPageId')
         main.innerHTML = wall();
-        eventHandler('/wall')
+        //eventHandler('/wall')
         
         expect(document.getElementById('postContent')).not.toBeNull()
         expect(document.getElementById('PostContentButton')).not.toBeNull()

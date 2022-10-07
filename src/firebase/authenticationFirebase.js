@@ -8,17 +8,7 @@ const signGoogle = () => signInWithPopup(auth, provider)
 const signInFirebase = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
 const logOut = () => signOut(auth)
 
-// const getLoggedInUser = {}
-// const displayUserData = () => {
-//   onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//       getLoggedInUser.email = user.email
-//       getLoggedInUser.uid = user.uid
-//     } else {
-      
-//     }
-//   });
-// }
+
 const getLoggedInUser = {}
 const displayUserData = () => {
   if (window.location.pathname === '/wall') {
@@ -50,7 +40,6 @@ const displayUserData = () => {
     });
   }
 };
-
 
 export {
   auth,
