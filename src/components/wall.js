@@ -1,7 +1,7 @@
 export const wall = () => {
   const containerWall = document.createElement('section');
   containerWall.classList.add('container');
-
+  
   const header = document.createElement('header');
   header.classList.add('header');
 
@@ -18,8 +18,8 @@ export const wall = () => {
   title.textContent = '¿Qué festividad se celebra hoy en tu ciudad?';
   title.id = 'titleWall';
 
-  const wallForm = document.createElement('article');
-  wallForm.classList.add('wallForm');
+  const wallFormContainer = document.createElement('article');
+  wallFormContainer.classList.add('wallForm');
 
   const wallPost = document.createElement('textarea');
   wallPost.classList.add('post');
@@ -28,13 +28,20 @@ export const wall = () => {
   wallPost.setAttribute('rows', '4');
   wallPost.setAttribute('placeholder', ' Tu post aquí');
 
-  const icon = document.createElement('img');
-  icon.src = 'https://img.icons8.com/external-inkubators-glyph-inkubators/25/FCAB2E/external-send-ecommerce-user-interface-inkubators-glyph-inkubators.png';
-  icon.id = 'iconSend';
+  const iconContainer = document.createElement('article');
+  iconContainer.setAttribute('id', 'postIcon');
 
-  header.append(imgTitle, title, iconExit);
-  wallForm.append(wallPost);
-  containerWall.append(header, wallForm, icon);
+  const iconForm = document.createElement('article');
+  iconForm.classList.add('iconForm');
+
+  const iconSend = document.createElement('img');
+  iconSend.src = 'img/send.png';
+  iconSend.id = 'iconSend';
+
+  header.append(imgTitle, buttonExit)
+  wallFormContainer.append(wallPost, iconContainer)
+  iconContainer.append(iconSend)
+  containerWall.append(header, wallFormContainer);
 
   return containerWall;
 };
