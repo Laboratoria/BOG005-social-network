@@ -87,4 +87,5 @@ export const crearUsuarioConGoogle = () => {
     const errorCode = error.code;
     const errorMessage = error.message;
   });
-}
+};
+
