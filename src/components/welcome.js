@@ -4,10 +4,10 @@ export const welcome = () => {
   const sectionWelcome = document.createElement('section');
   sectionWelcome.className = 'sectionWelcome';
 
-  // const imgWelcome = document.createElement('img');
-  // imgWelcome.className = 'FondoWelcome';
-  // imgWelcome.src = 'img/mundoverde.PNG';
-  // imgWelcome.alt = 'Name';
+  const imgWelcome = document.createElement('img');
+  imgWelcome.className = 'FondoWelcome';
+  imgWelcome.src = 'img/fondo1.PNG';
+  imgWelcome.alt = 'Name';
 
   const message = document.createElement('h2');
   message.id = 'description';
@@ -20,7 +20,7 @@ export const welcome = () => {
     onNavigate('/landing');
   });
 
-  sectionWelcome.append(message, buttonStart);
+  sectionWelcome.append(imgWelcome, message, buttonStart);
 
   return sectionWelcome;
 };

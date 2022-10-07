@@ -39,7 +39,7 @@ export const register = () => {
   registerPassword.setAttribute('required', '');
 
   const registerButton = document.createElement('button');
-  registerButton.textContent = 'Sign In';
+  registerButton.textContent = 'Send';
   registerButton.setAttribute('class', 'buttonRegister button');
   registerButton.setAttribute('id', 'buttonStartRegister');
 

@@ -40,6 +40,7 @@ export const login = () => {
 
   const session = document.createElement('h3');
   session.textContent = 'Click Here';
+  session.className = 'session';
 
   containerLogin.append(
     titleLo,
