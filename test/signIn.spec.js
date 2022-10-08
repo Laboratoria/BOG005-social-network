@@ -31,8 +31,8 @@ describe('Testing view', ()=>{
         expect(document.getElementById('submitContinueButton')).not.toBeNull();
         document.getElementById('submitContinueButton').click(); 
         setTimeout(()=>{ 
-            expect(document.querySelector('#paragraph1')).not.toBeNull();
-           done()
+        expect(document.querySelector('#paragraph1')).not.toBeNull();
+        done()
     },2000)
     })
 

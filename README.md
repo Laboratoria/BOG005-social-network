@@ -23,4 +23,3 @@ Ciclapp nace con el propósito de **generar una comunidad** de aficionados y pro
 * Totalmente Responsive
 * Realizada con  Vanilla JS
 * Usa Firebase y Cloud Firestore
-
