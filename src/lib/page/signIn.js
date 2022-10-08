@@ -33,7 +33,7 @@ const signIn = () => {
     <p class="o">- O -</p>
     <button type="button" class="googleSignIn" id="googleButton">
         <img src="img/logo_google.svg" alt="GoogleIcon" class="GoogleIcon">
-        <span>Registrate con Google</span>
+        <span id="registerGoogle">Registrate con Google</span>
     </button>
   
     <button type="button" class="submitSignIn" id="submitContinueButton">Continuar</button>

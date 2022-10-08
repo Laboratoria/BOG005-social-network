@@ -6,8 +6,9 @@ import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
+import { eventButtonGoogleUserSignIn } from './utils/eventUserSignInGoogle.js'
 import { eventButtonSignOut } from './utils/eventSignOut.js';
-import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
+import { onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
 
 const routes = {
   '/': welcome(),
@@ -52,8 +53,7 @@ const historyHandler = () => {
 const eventHandler = (path) => {
   switch (path) {
     case '/wall':
-      buttonP();
-      getPost();
+      buttonP(path);
       onGetPost();
       displayUserData();
       eventButtonSignOut();
@@ -61,12 +61,13 @@ const eventHandler = (path) => {
       break;
     case '/signIn':
       eventButtonCreateUser(path);
-      eventButtonGoogle();
-      console.log('estas en sigin')
+      eventButtonGoogle(path);
+      console.log('estas en signIn')
       break;
     case '/userSignIn':
       eventLoginButton();
-      console.log('estas en usersigin')
+      eventButtonGoogleUserSignIn();
+      console.log('estas en userSigIn')
       default:
       break;
   }

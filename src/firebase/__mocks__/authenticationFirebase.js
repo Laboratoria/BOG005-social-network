@@ -3,10 +3,11 @@ export const createUser = jest.fn(() => {
     return Promise.reject({code : 'auth/invalid-email'})
 })
 
-// export const signIn = jest.fn(() => {
-//     return Promise.reject({code : 'auth/user-not-found'})
-// })
+ export const signIn = jest.fn(() => {
+     return Promise.reject({code : 'auth/user-not-found'})
+ })
 
+export const signGoogle = () => Promise.resolve();
 export const getAuth = () => Promise.resolve();
 export const createUserWithEmailAndPassword = () => Promise.resolve();
 export const signInWithPopup = () => Promise.resolve();

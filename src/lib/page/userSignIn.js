@@ -19,7 +19,7 @@ const userSignIn = () => {
     </article>
     <p class="o">- O -</p>
 
-    <button type="button" class="googleSignIn" id="googleButtons">
+    <button type="button" class="googleSignIn" id="googleButtonUserSignIn">
     <img src="img/logo_google.svg" alt="GoogleIcon" class="GoogleIcon">
     <span>Inicia Sesion con Google</span>
     </button>
