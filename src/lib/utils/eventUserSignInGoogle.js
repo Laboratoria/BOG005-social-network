@@ -1,8 +1,8 @@
 import { auth, provider, signGoogle } from '../../firebase/authenticationFirebase.js';
 
-const eventButtonGoogle = (path) => {
-  if (path === '/signIn') {
-    const buttonGoogle = document.getElementById('googleButton');
+const eventButtonGoogleUserSignIn = () => {
+  if (window.location.pathname === '/userSignIn') {
+    const buttonGoogle = document.getElementById('googleButtonUserSignIn');
     if (buttonGoogle) {
       buttonGoogle.addEventListener('click', () => {
         signGoogle(auth, provider).then((result) => {
@@ -20,4 +20,4 @@ const eventButtonGoogle = (path) => {
   };
 };
 
-export { eventButtonGoogle };
+export { eventButtonGoogleUserSignIn };

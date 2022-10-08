@@ -6,6 +6,7 @@ import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
+import { eventButtonGoogleUserSignIn } from './utils/eventUserSignInGoogle.js'
 import { eventButtonSignOut } from './utils/eventSignOut.js';
 import { onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
 
@@ -52,7 +53,7 @@ const historyHandler = () => {
 const eventHandler = (path) => {
   switch (path) {
     case '/wall':
-      buttonP(path);
+      buttonP();
       onGetPost();
       displayUserData();
       eventButtonSignOut();
@@ -60,12 +61,13 @@ const eventHandler = (path) => {
       break;
     case '/signIn':
       eventButtonCreateUser(path);
-      eventButtonGoogle();
-      console.log('estas en sigin')
+      eventButtonGoogle(path);
+      console.log('estas en signIn')
       break;
     case '/userSignIn':
       eventLoginButton();
-      console.log('estas en usersigin')
+      eventButtonGoogleUserSignIn();
+      console.log('estas en userSigIn')
       default:
       break;
   }
