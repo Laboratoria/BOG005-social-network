@@ -8,23 +8,6 @@ let value = '';
 let status = true;
 // colección crea la coleeción de datos
 const savePost = (description) => addDoc(collection(db, 'Posts'), { description });
-const getPost = () => getDocs(collection(db, "Posts"));
-
-const printPost = () => {
- getPost().then((res) => {
-  if (window.location.pathname === '/wall') {
-    const contentedor = document.getElementById('postsContainerId')
-    if (contentedor) {
-      console.log('res: ', res);
-      res.forEach((doc) => {
-        contentedor.innerHTML += `<article id="post">
-        <p class="contentPost" id="allPosts">${doc.data().description}</p>
-      </article>`
-      })
-    }
-  }
-})
-}
 
 const getOnePost = (dataid) => {
   return getDoc(doc(db, 'Posts', dataid)).then((res) => {
@@ -43,7 +26,7 @@ const onGetPost = () => {
       contenedor.innerHTML = '';
       querySanpshot.forEach((item) => {
         contenedor.innerHTML += `
-      <section id="post postForm" class="postsCards">
+      <section id="postForm" class="postsCards">
       <header id="headerPost">
         <i class="fa-solid fa-circle-user" class="userIcon"></i>
         <p class="userTitleName">Usuario</p>
@@ -114,4 +97,4 @@ const buttonP = (path) => {
   }
 }
 
-export { savePost, onGetPost, getOnePost, updatePost, buttonP, printPost }
+export { savePost, onGetPost, getOnePost, updatePost, buttonP }

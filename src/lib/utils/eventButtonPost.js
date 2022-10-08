@@ -1,1 +1,0 @@
-const buttonPost = document.getElementById('PostContentButton')
