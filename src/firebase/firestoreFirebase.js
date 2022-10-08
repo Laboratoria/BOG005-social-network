@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc, doc, getDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
+import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, getDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js';
 import { app } from './configFirebase.js';
 
 const db = getFirestore(app);
@@ -7,16 +7,10 @@ let idPost = '';
 let value = '';
 let status = true;
 // colección crea la coleeción de datos
-const savePost = (description, likes) => {
-  addDoc(collection(db, 'Posts'), { description, likes })
-}
+const savePost = (description, likes) =>  addDoc(collection(db, 'Posts'), { description, likes })
+const updatePost = (id, newPost) => updateDoc(doc(db, 'Posts', id), newPost)
 
-const updatePost = (id, newPost) => {
-  return updateDoc(doc(db, 'Posts', id), newPost)
-}
-
-
-const getOnePost = (dataid/*, event*/) => {
+const getOnePost = (dataid) => {
   return getDoc(doc(db, 'Posts', dataid)).then((res) => {
     const inputPost = document.getElementById('postContent')
     inputPost.value = res.data().description;
@@ -26,28 +20,6 @@ const getOnePost = (dataid/*, event*/) => {
 };
 
 
-// obtenemos los post y recoremos la respuesta de firestore
-const getPost = () => {
-  getDocs(collection(db, "Posts")).then((res) => {
-    if (window.location.pathname === '/wall') {
-      const content = document.getElementById('postsContainerId')
-      if (content) {
-        res.forEach((doc) => {
-          console.log(doc.id)
-          const like = doc.data().likes
-          content.innerHTML += `<article id="post">
-          <p class="contentPost" id="allPosts">${doc.data().description}</p>
-        </article>
-        <div class="myLikes" id="myLikesId">
-        <button class="likes" id="like${doc.id}" data-id='${doc.id}' data-like='${like}'>​​🧡​​</button>
-        <p class="numberOfLikes" id="numberOfLikesId${doc.id}">${like}</p>
-          </div>
-        `
-        })
-      }
-    }
-  })
-}
 
 // se muestran en pantalla al instante
 const onGetPost = () => {
@@ -57,6 +29,7 @@ const onGetPost = () => {
       content.innerHTML = '';
       querySanpshot.forEach((item) => {
         const like = item.data().likes
+        const displayLike = isNaN(like) ? 0: like
         content.innerHTML += `
       <section id="post postForm" class="postsCards">
       <header id="headerPost">
@@ -68,9 +41,8 @@ const onGetPost = () => {
       </article>
     <div id="actionContainerId" class="actionContainer">
       <div class="myLikes" id="myLikesId">
-        <button class="likes" id="like${item.id}" data-id='${item.id}' data-like='${like}'>​​🧡​​</button>
-        <p class="numberOfLikes" id="numberOfLikesId${item.id}">${like}</p>
-        
+        <button class="likes" id="like${item.id}" data-id='${item.id}' data-like='${displayLike}'>​​🧡​​</button>
+        <p class="numberOfLikes" id="numberOfLikesId${item.id}">${displayLike}</p>
       </div>
       <div class="delete">
         <button class="deletePost" id="deletePost${item.id}" data-id='${item.id}'>
@@ -144,4 +116,5 @@ const buttonP = (path) => {
   }
   }
 }
-export { savePost, getPost, onGetPost, getOnePost, updatePost, buttonP }
+
+export { savePost, onGetPost, getOnePost, updatePost, buttonP }

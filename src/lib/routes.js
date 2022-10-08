@@ -8,7 +8,7 @@ import { eventLoginButton } from './utils/eventLoginButton.js';
 import { eventButtonGoogle } from './utils/eventButtonGoogle.js';
 import { eventButtonGoogleUserSignIn } from './utils/eventUserSignInGoogle.js'
 import { eventButtonSignOut } from './utils/eventSignOut.js';
-import { getPost, onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
+import { onGetPost, buttonP } from '../firebase/firestoreFirebase.js';
 
 const routes = {
   '/': welcome(),
@@ -16,6 +16,8 @@ const routes = {
   '/userSignIn': userSignIn(),
   '/wall': wall(),
 };
+// console.log(containerPage);
+// console.log(signIn());
 
 const removeHashes = (hash) => {
   if (hash === '#welcome') {
@@ -52,8 +54,9 @@ const eventHandler = (path) => {
   switch (path) {
     case '/wall':
       buttonP(path);
-      getPost();
+      // getPost();
       onGetPost();
+     
       displayUserData();
       eventButtonSignOut();
       console.log('estas en wall')
