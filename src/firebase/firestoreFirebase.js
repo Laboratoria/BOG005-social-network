@@ -19,8 +19,6 @@ const getOnePost = (dataid) => {
  })
 };
 
-
-
 // se muestran en pantalla al instante
 const onGetPost = () => {
   onSnapshot(collection(db, 'Posts'), (querySanpshot) => {
@@ -31,7 +29,7 @@ const onGetPost = () => {
         const like = item.data().likes
         const displayLike = isNaN(like) ? 0: like
         content.innerHTML += `
-      <section id="post postForm" class="postsCards">
+      <section id="postForm" class="postsCards">
       <header id="headerPost">
         <i class="fa-solid fa-circle-user" class="userIcon"></i>
         <p class="userTitleName">Usuario</p>

@@ -1,7 +1,5 @@
-//import { createUser } from '../src/firebase/authenticationFirebase.js';
 import { signIn } from '../src/lib/page/signIn.js';
 import { eventHandler } from '../src/lib/routes.js';
-//import { showMessageError } from '../src/lib/utils/formValidator.js';
 jest.mock('../src/firebase/authenticationFirebase.js');
 jest.mock('../src/firebase/firestoreFirebase.js');
 

@@ -4,7 +4,7 @@ import { app } from './configFirebase.js';
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const createUser = (auth, email, password) => createUserWithEmailAndPassword(auth, email, password)
-const signGoogle = () => signInWithPopup(auth, provider)
+const signGoogle = (auth, provider) => signInWithPopup(auth, provider)
 const signInFirebase = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
 const logOut = () => signOut(auth)
 

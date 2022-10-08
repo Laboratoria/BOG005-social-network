@@ -54,22 +54,20 @@ const eventHandler = (path) => {
   switch (path) {
     case '/wall':
       buttonP(path);
-      // getPost();
       onGetPost();
-     
       displayUserData();
       eventButtonSignOut();
       console.log('estas en wall')
       break;
     case '/signIn':
       eventButtonCreateUser(path);
-      eventButtonGoogle();
-      console.log('estas en sigin')
+      eventButtonGoogle(path);
+      console.log('estas en signIn')
       break;
     case '/userSignIn':
       eventLoginButton();
       eventButtonGoogleUserSignIn();
-      console.log('estas en usersigin')
+      console.log('estas en userSigIn')
       default:
       break;
   }
