@@ -1,7 +1,7 @@
 //import { describe } from 'yargs';
 //import { it } from 'jest-circus';
 import { wall } from '../src/lib/page/wall.js';
-import { eventHandler } from '../src/lib/routes.js';
+//import { eventHandler } from '../src/lib/routes.js';
 
 jest.mock('../src/firebase/firestoreFirebase.js');
 jest.mock('../src/firebase/authenticationFirebase.js');
