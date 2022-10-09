@@ -17,10 +17,10 @@
     --Letters-logo-horizontal: 'Contrail One', cursive;
     --img-welcome: url("img/imagenFondo.png");
     --img-wall: url("img/fondoMuroCelular.png");
-    
 
 
-/* Peso de Letras 
+
+    /* Peso de Letras 
 Titulos -> Bold
 Parrafos -> Regular
 */
@@ -40,9 +40,10 @@ html {
 }
 
 /* Mobile inicio */
-p{
+p {
     font-family: var(--letters);
 }
+
 .body {
     width: 100vw;
     height: 100vh;
@@ -50,7 +51,7 @@ p{
 }
 
 
-.body-wall{
+.body-wall {
     width: 100vw;
     height: 100vh;
     background-image: var(--img-wall);
@@ -58,20 +59,21 @@ p{
 
 
 /*Inicio Welcome*/
-.contentPage{
+.contentPage {
     width: 100%;
     height: 93%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 .logo {
     display: block;
     width: 7.0625rem;
     height: 7.0625rem;
 }
 
-.headerClass{
+.headerClass {
     background-image: var(--img-welcome);
     background-repeat: no-repeat;
     background-position: -100px -500px;
@@ -81,13 +83,14 @@ p{
     border-bottom-right-radius: 50% 20%;
 }
 
-.figureWelcome{
+.figureWelcome {
     width: 100%;
     display: block;
     justify-content: flex-end;
-    
+
 }
-.sectionWelcome{
+
+.sectionWelcome {
     width: 100vw;
     height: 39vh;
 }
@@ -111,9 +114,10 @@ p{
     text-align: center;
 }
 
-.anotherfigureWelcome{
+.anotherfigureWelcome {
     display: none;
 }
+
 .loginButton {
     display: flex;
     justify-content: center;
@@ -139,24 +143,22 @@ p{
     color: var(--main-color-white);
 }
 
-.loginButtonRegister{  
+.loginButtonRegister {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--letters);
-    /* text-align: center; */
     background-color: var(--w-hight-color-yellow);
     color: var(--w-color-blue-medium);
     font-size: 1rem;
     font-weight: 700;
-    /* width: 5rem; */
     height: 2.75rem;
     border-radius: 0.5625rem;
     letter-spacing: 0.0625rem;
     border: none;
 }
 
-.loginButtonRegister1{  
+.loginButtonRegister1 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,29 +211,30 @@ p{
     color: var(--color-gray-opacity-80);
 }
 
-.headerClassInsignIn{
+.headerClassInsignIn {
     display: none;
 }
+
 /*Fin welcome*/
 
 
 /* Estilos página de registro*/
-.logoSignIn{
+.logoSignIn {
     display: flex;
 }
 
 .logoHorizontal {
-    width:8rem;
+    width: 8rem;
 }
 
-.textLogo{
+.textLogo {
     color: var(--main-color-white);
     font-family: var(--Letters-logo-horizontal);
     font-size: 2rem;
     display: flex;
     align-items: center;
     transform: translateX(-22px);
-  }
+}
 
 .viewSignIn {
     height: 90vh;
@@ -248,9 +251,10 @@ p{
     flex-direction: column;
     align-items: center;
 }
-.headerClassSignIn{
-    display:none;
-} 
+
+.headerClassSignIn {
+    display: none;
+}
 
 .formSignIn {
     display: flex;
@@ -357,40 +361,39 @@ p{
     color: var(--main-color-white);
 }
 
-.itemsInput{
+.itemsInput {
     height: 5.3125rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-  }
+}
 
-  .userRegister{
+.userRegister {
     font-family: var(--letters);
     text-align: center;
-  }
-  
-  .errorMessageEmail {
+}
+
+.errorMessageEmail {
     color: #F56F6F;
     font-size: 0.9rem;
-    /* display: none; */
-  }
+}
 
-  .errorMessagePassword {
+.errorMessagePassword {
     color: #F56F6F;
     font-size: 0.9rem;
-    /* display: none; */
-  }
+}
 
-  .errorLabelInput{
+.errorLabelInput {
     color: #F56F6F;
     font-size: 1.3rem;
-  }
+}
+
 /*Fin página de registro*/
 
-  /*Estilos para el muro*/
 
-  
-  .shareForm{
+/*Estilos para el muro*/
+
+.shareForm {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -400,23 +403,23 @@ p{
     height: 30vh;
 }
 
-.textarea{
-background-color: var(--b-main-color-blue);
-color: var(--main-color-white);
-border-radius: 6px;
-border: none;
-height: 20vh;
-width: 80vw;
+.textarea {
+    background-color: var(--b-main-color-blue);
+    color: var(--main-color-white);
+    border-radius: 6px;
+    border: none;
+    height: 20vh;
+    width: 80vw;
 }
 
-.textarea::placeholder{
+.textarea::placeholder {
     color: var(--main-color-white);
     font-size: 1rem;
     padding-top: 1rem;
     padding-left: 1rem;
 }
 
-.shareFormButton{
+.shareFormButton {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -430,14 +433,14 @@ width: 80vw;
     background-color: var(--w-hight-color-yellow);
 }
 
-.logoWall{
+.logoWall {
     display: flex;
     width: 100%;
     justify-content: flex-start;
-    
+
 }
 
-.topBar{
+.topBar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -445,45 +448,47 @@ width: 80vw;
     background-color: var(--w-color-blue-medium);
 }
 
-.scroll{
+.scroll {
     overflow: scroll;
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.brand{
+
+.brand {
     display: flex;
     align-items: center;
 }
 
-.logoHorizontalWall{
+.logoHorizontalWall {
     width: 4rem;
     height: 4rem;
 }
 
-.textLogoWall{
+.textLogoWall {
     color: var(--main-color-white);
     font-family: var(--Letters-logo-horizontal);
     font-size: 1.5rem;
     margin-left: 0.25rem;
-    
+
 }
 
-.exitButtonClass{
+.exitButtonClass {
     background-color: transparent;
     border: none;
 }
 
-.ri-logout-box-r-fill{
+.ri-logout-box-r-fill {
     color: var(--w-color-blue-light-buttons);
     font-size: 2rem;
 }
 
-.wallOfPublication{
+.wallOfPublication {
     width: 80vw;
 }
-.introUser{
+
+.introUser {
     display: flex;
     flex-direction: column;
     margin: 0.7rem 2.6rem;
@@ -491,122 +496,103 @@ width: 80vw;
     word-break: break-all;
 }
 
-.titleWall{
+.titleWall {
     font-family: var(--Letters-logo-horizontal);
     font-size: 1.5rem;
     letter-spacing: 0.08rem;
 }
 
-.subtitulo{
+.subtitulo {
     font-family: var(--letters);
     font-size: 0.9rem;
 }
 
-#postsContainerId{
+#postsContainerId {
     display: flex;
     width: 100vw;
     height: 80vh;
     flex-direction: column;
     align-items: center;
-    /* overflow: scroll; */
 }
 
-.postsCards{
+.postsCards {
     display: flex;
     flex-direction: column;
-    width:80vw;
+    width: 80vw;
     height: auto;
     background-color: var(--main-color-white);
     border-radius: 0.6625rem;
     margin: 1rem;
     padding: 0.8rem;
     align-items: flex-end;
-  
+
 }
 
-::-webkit-scrollbar{
-    background: none;
-}
-::-webkit-scrollbar-corner{
+::-webkit-scrollbar {
     background: none;
 }
 
-#headerPost{
+::-webkit-scrollbar-corner {
+    background: none;
+}
+
+#headerPost {
     display: flex;
-    width:100%;
+    width: 100%;
     justify-content: flex-start;
 }
 
 
-.userTitleName{
+.userTitleName {
     font-weight: bolder;
     color: var(--b-main-color-blue);
     margin-left: 0.9rem;
 }
 
 
-#post{
+#post {
     color: var(--b-color-blue-dark);
     width: 74vw;
     padding: 0.3rem 0.6rem 0.3rem 0.6rem;
     word-break: break-all;
 }
 
-.fa-circle-user:before{
+.fa-circle-user:before {
     content: "\f2bd";
     font-size: 2.3rem;
     color: var(--b-main-color-blue);
 }
 
-.actionContainer{
-width: 13vw;
-display: flex;
-justify-content: space-between;
-align-items: baseline;
+.actionContainer {
+    width: 13vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
-.like{
+.like {
     display: flex;
     flex-direction: row;
     align-items: baseline;
 }
 
-.like p{
-    color:var(--w-red-intense);
-}
-.fa-heart{
-color: #EA4335;
+.like p {
+    color: var(--w-red-intense);
 }
 
-.fa-comment-dots{
+.fa-heart {
+    color: #EA4335;
+}
+
+.fa-comment-dots {
     color: var(--w-color-blue-medium);
 }
 
-#btn-back-to-top {
-    position: fixed;
-    bottom: 110px;
-    right: 20px;
-    display: none;
-    cursor: pointer;
-}
-
-#btn-back-to-top i {
-    text-decoration: none;
-    color: var(--w-hight-color-yellow);
-    font-size: 50px;
-    opacity: 0.9;
-}
-
-#btn-back-to-top:active {
-    transform: scale(0.9);
-}
-
-
-footer{
+footer {
     display: flex;
     background-color: var(--b-color-blue-dark);
     width: 100vw;
-    height: 10vh; 
+    height: 10vh;
     justify-content: center;
     flex-direction: column;
     position: fixed;
@@ -614,7 +600,7 @@ footer{
 
 }
 
-.btnPost{
+.btnPost {
     color: var(--w-color-blue-light-buttons);
     font-size: 30px;
     background-color: var(--b-color-blue-dark);
@@ -622,228 +608,231 @@ footer{
     margin-top: 1rem;
 }
 
-#postButtonId{
+#postButtonId {
     background-color: var(--b-color-blue-dark);
     border: none;
 }
 
 
-
-#menuBottom p{
+#menuBottom p {
     color: var(--w-color-blue-light-buttons);
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
 }
 
-.deletePost{
-    background-color:var(--main-color-white);
+.deletePost {
+    background-color: var(--main-color-white);
     border: none;
 }
 
-.fa-trash-can{
+.fa-trash-can {
     color: var(--w-color-blue-medium);
     font-size: 1rem;
 }
 
-.editPost{
-    background-color:var(--main-color-white);
+.editPost {
+    background-color: var(--main-color-white);
     border: none;
 }
 
-.fa-pen-to-square{
+.fa-pen-to-square {
     color: var(--w-color-blue-medium);
     font-size: 1rem;
 }
+
 /* Fin Mobile */
 
 /* Inicio tablet */
-     @media (min-width: 768px) and (max-width: 992px){ 
-.contentPage{
-   width: 100%;
-   height: 100%;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   background-color: var(--w-color-blue-medium); 
- }
+@media (min-width: 768px) and (max-width: 992px) {
+    .contentPage {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: var(--w-color-blue-medium);
+    }
 
- .headerClass{
-    background-position: -133px -185px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    clip-path: circle(67.8% at -23% 50%);
-    width: 50%;
-    height: 100%;
+    .headerClass {
+        background-position: -133px -185px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        clip-path: circle(67.8% at -23% 50%);
+        width: 50%;
+        height: 100%;
+    }
+
+    .figureWelcome {
+        display: none;
+    }
+
+    .logo {
+        width: 12rem;
+        height: 12rem;
+    }
+
+    .sectionWelcome {
+        width: 50%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .articleWelcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        color: var(--main-color-white);
+        font-family: var(--letters);
+        width: 100%;
+        height: 58%;
+        text-align: center;
+
+    }
+
+    .title {
+        font-family: 'Contrail One', cursive;
+        color: var(--main-color-white);
+        font-weight: 400;
+        font-size: 2.2rem;
+    }
+
+    .welcomeText {
+        font-size: 1.775rem;
+    }
+
+    .anotherfigureWelcome {
+        display: block;
+    }
+
+    .loginButton {
+        font-size: 1.125rem;
+        font-weight: 700;
+        width: 20.1875rem;
+        height: 3rem;
+    }
+
+    .signIn {
+        font-size: 1.125rem;
+        font-weight: 700;
+        width: 20.1875rem;
+        height: 3rem;
+    }
+
+    .continue {
+        letter-spacing: 0.0825rem;
+        font-size: 1.125rem;
+
+    }
+
+    /* Estilos página de registro*/
+
+    .headerClassSignIn {
+        display: none;
+    }
+
+    /* Estilos muro */
+
+    .actionContainer {
+        width: 6vw;
+    }
+
+    .introUser {
+        width: 80vw;
+    }
 }
 
-.figureWelcome{
-    display: none;
-}
-
-.logo {
-    width: 12rem;
-    height: 12rem;
-}
-
-.sectionWelcome{
-    width: 50%;
-    height: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-}
-
-.articleWelcome {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    color: var(--main-color-white);
-    font-family: var(--letters);
-    width: 100%;
-    height: 58%;
-    text-align: center;
-    
- }
-
- .title {
-    font-family: 'Contrail One', cursive;
-    color: var(--main-color-white);
-    font-weight: 400;
-    font-size: 2.2rem;
-}
-
-.welcomeText{
-    font-size: 1.775rem;
-}
-
-.anotherfigureWelcome{
-    display: block;
-}
-
-.loginButton {
-    font-size: 1.125rem;
-    font-weight: 700;
-    width: 20.1875rem;
-    height: 3rem;
-}
-
-.signIn {
-   font-size: 1.125rem;
-   font-weight: 700;
-   width: 20.1875rem;
-   height: 3rem;
-}
-
-.continue {
-    letter-spacing: 0.0825rem;
-    font-size: 1.125rem;
-
-}
-
-/* Estilos página de registro*/
-
-.headerClassSignIn{
-    display: none;
-}
-
-/* Estilos muro */
-
-.actionContainer{
-width:6vw ;
-}
-.introUser{
-    width: 80vw;
-}
-}
 /* Fin tablet */
 
 /* Inicio desktop-medio */
-@media (min-width: 993px) and (max-width: 1200px){
-   .contentPage{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: var(--w-color-blue-medium);
-    }
-     /*Inicio welcome*/
-    .headerClass {
-    background-position: -133px -185px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    clip-path: circle(67.8% at -8% 51%);
-    width: 50%;
-    height: 100vh;
-    }
-     
-    .figureWelcome{
-         width: 84vw;
-         height: 18.5rem;
-         display: flex;
-         align-items: flex-end;
-     }
-     
-     .logo {
-        width: 17rem;
-        height: 17rem;
-     }
-     
-     .sectionWelcome{
-         width: 50%;
-         height: 77%;
-         display: flex;
-         flex-direction: column;
-         justify-content: end;
-         align-items: center;
-     }
-     
-     .articleWelcome {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: space-around;
-         color: var(--main-color-white);
-         font-family: var(--letters);
-         width: 100%;
-         height: 50%;
-         text-align: center;
-         
-      }
-     
-      .title {
-        font-size: 3rem;
-     }
-     
-     .welcomeText{
-        font-size: 1.8rem;
-     }
-     
-     .anotherfigureWelcome{
-         display: block;
-     }
-     
-     .loginButton {
-        font-size: 1.4rem;
-        width: 25.171875rem;
-        height: 4rem;
-     }
-     
-     .signIn {
-        font-size: 1.4rem;
-        width: 25.171875rem;
-        height: 4rem;
-     }
-     
-     .continue {
-         letter-spacing: 0.0825rem;
-         font-size: 1.4rem;
+@media (min-width: 993px) and (max-width: 1200px) {
+    .contentPage {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: var(--w-color-blue-medium);
     }
 
-    .headerClassInsignIn{
+    /*Inicio welcome*/
+    .headerClass {
+        background-position: -133px -185px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        clip-path: circle(67.8% at -8% 51%);
+        width: 50%;
+        height: 100vh;
+    }
+
+    .figureWelcome {
+        width: 84vw;
+        height: 18.5rem;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .logo {
+        width: 17rem;
+        height: 17rem;
+    }
+
+    .sectionWelcome {
+        width: 50%;
+        height: 77%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .articleWelcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        color: var(--main-color-white);
+        font-family: var(--letters);
+        width: 100%;
+        height: 50%;
+        text-align: center;
+
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .welcomeText {
+        font-size: 1.8rem;
+    }
+
+    .anotherfigureWelcome {
+        display: block;
+    }
+
+    .loginButton {
+        font-size: 1.4rem;
+        width: 25.171875rem;
+        height: 4rem;
+    }
+
+    .signIn {
+        font-size: 1.4rem;
+        width: 25.171875rem;
+        height: 4rem;
+    }
+
+    .continue {
+        letter-spacing: 0.0825rem;
+        font-size: 1.4rem;
+    }
+
+    .headerClassInsignIn {
         display: block;
         background-image: var(--img-welcome);
         background-repeat: no-repeat;
@@ -896,7 +885,7 @@ width:6vw ;
     #userSi,
     #email,
     #passwordSi,
-    #password{
+    #password {
         border: none;
         border-bottom: solid 0.125rem var(--main-color-white);
         width: 90%;
@@ -911,27 +900,29 @@ width:6vw ;
     }
 
     /* Estilos muro */
-    .actionContainer{
-        width:4vw ;
+    .actionContainer {
+        width: 4vw;
+    }
+
+    .introUser {
+        width: 80vw;
+    }
 }
-.introUser{
-    width: 80vw;
-}
-}
+
 /* Fin desktop-medio */
 
 
 /* Inicio desktop-grande */
-@media (min-width: 1201px) and (max-width: 1500px){
-    .contentPage{
+@media (min-width: 1201px) and (max-width: 1500px) {
+    .contentPage {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        background-color: var(--w-color-blue-medium); 
+        background-color: var(--w-color-blue-medium);
     }
-     
+
     .headerClass {
         background-position: -133px -185px;
         border-bottom-left-radius: 0;
@@ -940,73 +931,73 @@ width:6vw ;
         width: 50%;
         height: 100vh;
     }
-    
-    .figureWelcome{
-         width: 84vw;
-         height: 18.5rem;
-         display: flex;
-         align-items: flex-end;
-     }
-     
-     .logo {
+
+    .figureWelcome {
+        width: 84vw;
+        height: 18.5rem;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .logo {
         width: 17rem;
         height: 17rem;
-     }
-     
-     .sectionWelcome{
-         width: 50%;
-         height: 77%;
-         display: flex;
-         flex-direction: column;
-         justify-content: end;
-         align-items: center;
-     }
-     
-     .articleWelcome {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: space-around;
-         color: var(--main-color-white);
-         font-family: var(--letters);
-         width: 100%;
-         height: 50%;
-         text-align: center;
     }
-     
+
+    .sectionWelcome {
+        width: 50%;
+        height: 77%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .articleWelcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        color: var(--main-color-white);
+        font-family: var(--letters);
+        width: 100%;
+        height: 50%;
+        text-align: center;
+    }
+
     .title {
-       font-size: 3rem;
-     }
-     
-    .welcomeText{
+        font-size: 3rem;
+    }
+
+    .welcomeText {
         font-size: 1.8rem;
-     }
-     
-    .anotherfigureWelcome{
-         display: block;
-     }
-     
+    }
+
+    .anotherfigureWelcome {
+        display: block;
+    }
+
     .loginButton {
         font-size: 1.4rem;
         font-weight: 700;
         width: 25.171875rem;
         height: 4rem;
-     }
-     
+    }
+
     .signIn {
         font-size: 1.4rem;
         font-weight: 700;
         width: 25.171875rem;
         height: 4rem;
-     }
-     
-    .continue {
-         letter-spacing: 0.0825rem;
-         font-size: 1.4rem;
-     
-     }
+    }
 
-    .headerClassInsignIn{
+    .continue {
+        letter-spacing: 0.0825rem;
+        font-size: 1.4rem;
+
+    }
+
+    .headerClassInsignIn {
         display: block;
         background-image: var(--img-welcome);
         background-repeat: no-repeat;
@@ -1074,24 +1065,25 @@ width:6vw ;
         padding-left: 1rem;
     }
 
-    .actionContainer{
-        width:3vw ;
+    .actionContainer {
+        width: 3vw;
+    }
+
+    .introUser {
+        width: 80vw;
+    }
 }
 
-.introUser{
-    width: 80vw;
-}
-}
-@media (min-width: 1501px) and (max-width: 4000px){
-    .contentPage{
+@media (min-width: 1501px) and (max-width: 4000px) {
+    .contentPage {
         width: 100%;
         height: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        background-color: var(--w-color-blue-medium); 
+        background-color: var(--w-color-blue-medium);
     }
-     
+
     .headerClass {
         background-position: -133px -185px;
         border-bottom-left-radius: 0;
@@ -1100,29 +1092,29 @@ width:6vw ;
         width: 50%;
         height: 100vh;
     }
-    
-     
-    .figureWelcome{
+
+
+    .figureWelcome {
         width: 84vw;
         height: 18.5rem;
         display: flex;
         align-items: flex-end;
-     }
-     
+    }
+
     .logo {
         width: 17rem;
         height: 17rem;
-     }
-     
-    .sectionWelcome{
+    }
+
+    .sectionWelcome {
         width: 50%;
         height: 77%;
         display: flex;
         flex-direction: column;
         justify-content: end;
         align-items: center;
-     }
-     
+    }
+
     .articleWelcome {
         display: flex;
         flex-direction: column;
@@ -1134,44 +1126,44 @@ width:6vw ;
         height: 50%;
         text-align: center;
     }
-     
+
     .title {
         font-family: 'Contrail One', cursive;
         color: var(--main-color-white);
         font-weight: 400;
         font-size: 3rem;
-     }
-     
-    .welcomeText{
+    }
+
+    .welcomeText {
         font-size: 1.8rem;
-     }
-     
-    .anotherfigureWelcome{
+    }
+
+    .anotherfigureWelcome {
         display: block;
-     }
-     
+    }
+
     .loginButton {
         font-size: 1.4rem;
         font-weight: 700;
         width: 25.171875rem;
         height: 4rem;
-     }
-     
+    }
+
 
     .signIn {
         font-size: 1.4rem;
         font-weight: 700;
         width: 25.171875rem;
         height: 4rem;
-     }
-     
+    }
+
     .continue {
         letter-spacing: 0.0825rem;
         font-size: 1.4rem;
-     
-     }
 
-    .headerClassInsignIn{
+    }
+
+    .headerClassInsignIn {
         display: block;
         background-image: var(--img-welcome);
         background-repeat: no-repeat;
@@ -1244,38 +1236,39 @@ width:6vw ;
     }
 
     .logoHorizontal {
-        width:10rem;
+        width: 10rem;
     }
-    
-    .textLogo{
+
+    .textLogo {
         color: var(--main-color-white);
         font-family: var(--Letters-logo-horizontal);
         font-size: 2.5rem;
         display: flex;
         align-items: center;
         transform: translateX(-28px);
-      }
+    }
 
-      .topBar{
+    .topBar {
         margin: 1.5rem 5.5rem;
     }
 
-      .actionContainer{
-        width:2.5vw ;
+    .actionContainer {
+        width: 2.5vw;
     }
 
-    .introUser{
+    .introUser {
         width: 80vw;
     }
 
-    .titleWall{
+    .titleWall {
         font-size: 2rem
     }
 
-    .subtitulo{
+    .subtitulo {
         font-size: 1.5rem;
     }
-    #post{
+
+    #post {
         width: 77vw;
     }
 }

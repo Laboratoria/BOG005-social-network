@@ -8,7 +8,6 @@ const signGoogle = (auth, provider) => signInWithPopup(auth, provider)
 const signInFirebase = (auth, email, password) => signInWithEmailAndPassword(auth, email, password)
 const logOut = () => signOut(auth)
 
-
 const getLoggedInUser = {}
 const displayUserData = () => {
   if (window.location.pathname === '/wall') {
@@ -31,7 +30,7 @@ const displayUserData = () => {
         const form = document.querySelector('#postForm')
         const buttonRegister = document.getElementById("#loginButtonIdWall")
         if (contentGretting !== null && buttonExit !== null) {
-          document.querySelector('#titleId').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola, resgistrate en nuestra red social</h1>`;
+          document.querySelector('#titleId').innerHTML += `<h1 id="showUserEmailId" class="greetingUser">Hola, resgístrate en nuestra red social</h1>`;
           document.querySelector('#exitButtonId').style.display = "none"
           form.style.display="none"
           buttonRegister.style.display = "block"

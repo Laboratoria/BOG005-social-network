@@ -10,7 +10,6 @@ const eventButtonCreateUser = (path) => {
         const password = document.getElementById('password').value;
         const result = createUser(auth, email, password);
         result.then((userCredential) => {
-          console.log('Se ejecuta then')
           showSuccessfulResponse();
           if (userCredential) {
             window.location.href = '#wall';

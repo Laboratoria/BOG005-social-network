@@ -15,7 +15,7 @@ describe('Continuar con Google', () => {
         expect(document.getElementById('googleButton')).not.toBeNull();
     })
 
-    it('Al hacer el click se llame a continuar con Google', (done) => {
+    it('Al hacer el click en continuar con Google se pasa a la pagina del muro', (done) => {
         document.body.innerHTML = '<div id="contentPageId"></div>'
         const main = document.querySelector('#contentPageId')
         main.innerHTML = signIn()

@@ -1,7 +1,7 @@
 import { signIn } from './page/signIn.js';
 import welcome from './page/welcome.js';
 import userSignIn from './page/userSignIn.js';
-import  { wall } from './page/wall.js';
+import { wall } from './page/wall.js';
 import { eventButtonCreateUser } from './utils/eventButtonContinue.js';
 import { displayUserData } from '../firebase/authenticationFirebase.js';
 import { eventLoginButton } from './utils/eventLoginButton.js';
@@ -16,8 +16,6 @@ const routes = {
   '/userSignIn': userSignIn(),
   '/wall': wall(),
 };
-// console.log(containerPage);
-// console.log(signIn());
 
 const removeHashes = (hash) => {
   if (hash === '#welcome') {
@@ -41,7 +39,6 @@ const router = (hash) => {
   const containerPage = document.getElementById('contentPageId');
   return containerPage.innerHTML = render;
 };
-//console.log(router('#wall'))
 
 const historyHandler = () => {
   const pathName = window.location.pathname;
@@ -68,7 +65,7 @@ const eventHandler = (path) => {
       eventLoginButton();
       eventButtonGoogleUserSignIn();
       console.log('estas en userSigIn')
-      default:
+    default:
       break;
   }
 }
