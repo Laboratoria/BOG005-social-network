@@ -6,8 +6,10 @@ const db = getFirestore(app);
 let idPost = '';
 let value = '';
 let status = true;
-// colección crea la coleeción de datos
+
+//Agrega la coleecion y le proporciona un id
 const savePost = (description, likes) =>  addDoc(collection(db, 'Posts'), { description, likes })
+//Actualiza el documento con base al id
 const updatePost = (id, newPost) => updateDoc(doc(db, 'Posts', id), newPost)
 
 const getOnePost = (dataid) => {
@@ -15,7 +17,6 @@ const getOnePost = (dataid) => {
     const inputPost = document.getElementById('postContent')
     inputPost.value = res.data().description;
     value = res.data().description;
-    console.log('estoy editando')
  })
 };
 
@@ -54,16 +55,15 @@ const onGetPost = () => {
       </div>
     </div>
       </section>`;
-
-      console.log(item.data().likes)
       })
+      
        const btnLikes = document.querySelectorAll('.likes')
         btnLikes.forEach((btnLike)=>{
         btnLike.addEventListener('click', (event)=>{
           const idPostLike = event.target.dataset.id
           let like = event.target.dataset.like
          if(like == 1){
-            like--
+            like --
             updatePost(idPostLike, {likes:like}).then(() => console.log("Dislike")).catch(() => console.log("Error en dislike"))
           }else {
             like ++
@@ -81,8 +81,7 @@ const onGetPost = () => {
       const editPostButtons = document.querySelectorAll('.editPost')
       editPostButtons.forEach((editButton) => {
         editButton.addEventListener('click', (event) => {
-          console.log(event.target.className)
-          getOnePost(event.currentTarget.getAttribute('data-id'), event).then(() => console.log("ok ogp")).catch(() => console.log("Error onp"))
+          getOnePost(event.currentTarget.getAttribute('data-id'), event).then(() => console.log("ok, edito")).catch(() => console.log("Error en editar"))
           status = false;
           idPost = event.currentTarget.getAttribute('data-id');
         })
@@ -97,7 +96,6 @@ const buttonP = (path) => {
     const buttonPublic = document.getElementById('PostContentButton')
   if (buttonPublic) {
     buttonPublic.addEventListener('click', () => {
-      console.log('Tengo evento')
       const contenido = document.getElementById('postContent').value;
       if (status) {
         savePost(contenido, 0);

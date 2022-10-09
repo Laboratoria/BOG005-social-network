@@ -21,12 +21,12 @@ const userSignIn = () => {
 
     <button type="button" class="googleSignIn" id="googleButtonUserSignIn">
     <img src="img/logo_google.svg" alt="GoogleIcon" class="GoogleIcon">
-    <span>Inicia Sesion con Google</span>
+    <span>Inicia Sesión con Google</span>
     </button>
 
     <button type="submit" id="submitContinue" class="submitSignIn">Continuar</button>
 
-    <a href="#signIn" id="goToRegisterId" class="continue userRegister">¿No tienes una cuenta? Registrate</a>
+    <a href="#signIn" id="goToRegisterId" class="continue userRegister">¿No tienes una cuenta? Regístrate</a>
   </form>
   </section>`;
 

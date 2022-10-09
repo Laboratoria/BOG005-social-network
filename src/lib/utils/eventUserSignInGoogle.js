@@ -12,7 +12,7 @@ const eventButtonGoogleUserSignIn = () => {
         })
           .catch((error) => {
             if (error) {
-              alert('!Ups hay un error')
+              alert('¡Ups hay un error!')
             }
           });
       });
