@@ -1,5 +1,3 @@
-// import { onNavigate } from '../main.js';
-
 export const wall = () => {
   const containerWall = document.createElement('section');
   containerWall.classList.add('container');

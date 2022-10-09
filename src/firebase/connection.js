@@ -4,7 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  onAuthStateChanged,
+  // onAuthStateChanged,
   signInWithPopup,
   GoogleAuthProvider,
   // signOut,
@@ -81,14 +81,14 @@ const signInUser = (email, password) => {
 };
 
 // Detectando el estado de autenticación
-onAuthStateChanged(auth, (user) => {
-  if (user != null) {
-    console.log('In Firebase');
-    // const uid = user.uid;
-  } else {
-    console.log('Not in Firebase');
-  }
-});
+// onAuthStateChanged(auth, (user) => {
+//   if (user != null) {
+//     console.log('In Firebase');
+//     // const uid = user.uid;
+//   } else {
+//     console.log('Not in Firebase');
+//   }
+// });
 
 const provider = new GoogleAuthProvider();
 const googleSignIn = () => signInWithPopup(auth, provider)
