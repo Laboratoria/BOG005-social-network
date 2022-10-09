@@ -49,7 +49,6 @@
 
   /* vista del register */
   .container {
-    padding: auto;
     display: flex;
     position: absolute;
     background-size: cover;
@@ -69,47 +68,7 @@
     font-size: var(--titleSize);
   }
 
-  .inputName {
-    margin: 0px auto;
-    text-align: center;
-    justify-content: center;
-    /* position: relative; */
-    width: 40vh;
-    height: 6.5vh;
-    margin-top: 1px;
-    background: rgba(235, 235, 235, 0.37);
-    border: 2px solid #bdb9b9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-  }
 
-  .inputEmail {
-    /* margin: 0px auto; */
-    text-align: center;
-    justify-content: center;
-    /* position: relative; */
-    width: 40vh;
-    height: 6.5vh;
-    margin-top: 15px;
-    background: rgba(235, 235, 235, 0.37);
-    border: 2px solid #bdb9b9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-  }
-
-  .inputPass {
-    /* margin: 0px auto; */
-    text-align: center;
-    justify-content: center;
-    /* position: relative; */
-    width: 40vh;
-    height: 6.5vh;
-    margin-top: 15px;
-    background: rgba(235, 235, 235, 0.37);
-    border: 2px solid #bdb9b9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-  }
 
   #buttonStartRegister {
     background-color: #FCAB2E;
@@ -150,11 +109,18 @@
     border-radius: 10px;
   }
 
-  #passwordRegister,
-  #emailRegister,
-  #inputName,
-  #inputLastName {
-    margin-top: 6vh;
+  .inputName,
+  .inputEmail,
+  .inputPass {
+    margin: 3vh;
+    text-align: center;
+    width: 40vh;
+    height: 6.5vh;
+    margin-top: 15px;
+    background: rgba(235, 235, 235, 0.37);
+    border: 2px solid #bdb9b9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
   }
 
   .button {
@@ -164,7 +130,6 @@
     position: relative;
     width: 25vh;
     height: 5vh;
-
     background: #FCAB2E;
     border: 1px solid rgba(0, 0, 0, 0.25);
     /* border-radius: 10px; */
@@ -173,16 +138,13 @@
 
   .question {
     margin-top: 4vh;
-    justify-content: center;
     font-size: 2vh;
     text-align: center;
     text-transform: none;
-    
   }
 
-  .here {
-    justify-content: center;
-    color: #bdb9b9;
+  .session {
+    text-align: center;
     font-size: 2vh;
     color: #FCAB2E;
   }
@@ -195,8 +157,15 @@
     font-size: var(--titleSize);
   }
 
-  .session {
+  .here {
+    justify-content: center;
+    font-size: 2vh;
     color: #FCAB2E;
+  }
+
+  #questionPassword {
+    font-size: 2.5vh;
+    margin-top: 4vh;
   }
 
   /* vista welcome */
@@ -222,12 +191,14 @@
   }
 
   #description {
-    font-size: 4.5vh;
+    font-size: 4vh;
     text-align: center;
     margin-top: 54vh;
     margin-bottom: 25px;
     align-items: center;
     display: flex;
+    padding-left: 2vh;
+    padding-right: 2vh;
   }
 }
 
@@ -237,8 +208,8 @@
   margin: 0px auto;
   margin-top: 20px;
   position: relative;
-  width: 180px;
-  height: 200px;
+  width: 220px;
+  height: 250px;
 }
 
 .info {
@@ -251,25 +222,22 @@
 
 .titleL {
   text-align: center;
-  /* margin-top: 2vh; */
-  /* font-size: var(--titleSize); */
 }
 
 #google {
   margin: 0px auto;
-  text-align: center;
-  justify-content: center;
   position: relative;
   width: 40vh;
   height: 6.5vh;
-  margin-top: 3.5vh;
-  background-image: url(img/button-Google.jpeg);
-  background-color: white;
+  margin-top: 4vh;
+  background-image: url(img/button-Google.png);
+  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   border: 2px solid #bdb9b9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  font-size: 2vh;
 }
 
 #e-mail {
@@ -279,36 +247,41 @@
   position: relative;
   width: 40vh;
   height: 6.5vh;
-  margin-top: 3.5vh;
-  background: rgba(235, 235, 235, 0.37);
+  margin-top: 4vh;
+  background: transparent;
   border: 2px solid #bdb9b9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  font-size: 2vh;
 }
 
-/* #google {
-    font-size: 2.3vh;
-    text-align: center;
-    line-height: 0.5vh;
-} */
+input {
+  font-size: 2vh;
+  color: #a79c93;
+}
+
+input:focus,
+#google:focus {
+  border-color: #FCAB2E;
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255, 144, 0, 0.6);
+  outline: 0 none;
+}
 
 #email-login {
-  font-size: 2.3vh;
   text-align: left;
   line-height: 0.5vh;
+  color: #a79c93;
 }
 
 .question-l {
-  margin-top: 10vh;
+  margin-top: 6vh;
   justify-content: center;
   font-size: 2.3vh;
 }
 
 .button {
-  /* display: block; */
   margin: 0px auto;
-  margin-top: 15px;
-  /* position: end; */
+  margin-top: 3vh;
   width: 30vh;
   height: 6.5vh;
 
@@ -325,65 +298,101 @@
   gap: 15vh;
 }
 
-#iconExit {
-  position: relative;
-  width: 5vh;
-  height: 5vh;
-  left: 20px;
-  top: 10px;
-}
-
 #imgTitle {
   position: relative;
-  width: 18vh;
-  height: 13vh;
+  width: 16vh;
+  height: 11vh;
   transform: rotate(-25deg);
-  top:15px;
+  top: 15px;
   right: 20px;
 }
+
 #titleWall {
   text-align: center;
   margin: 10px 10px;
-  padding: 2vh;
-  margin-top: 16vh;    
+  padding-right: 3vh;
+  margin-top: 3vh;
 }
 
 .wallForm {
-  padding: 3vh;
-  margin-top: 5vh;
-  }
+  padding: 0 3vh 3vh 3vh;
+}
 
 #postWall {
   padding: 1vh;
-  border-radius: 20px 20px;
-  background-color: #FFF8EE;  
-}
-
-#iconSend {
-  position: relative;
-  width: 5vh;
-  height: 5vh;
-  /* left: 35vh;
-  bottom: 30px; */
-  color: #FCAB2E;
-}
-
-#postIcon {
-  padding: 1vh;
-  border-radius: 20px 20px;
+  border-radius: 20px 20px 0 0;
   background-color: #FFF8EE;
+  border-color: #bdb9b9;
+}
+
+#postWall:focus {
+  border-color: #FCAB2E;
+  box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255, 144, 0, 0.6);
+  outline: 0 none;
+}
+
+#iconContainer {
+  padding: 0.5vh;
+  border-radius: 0 0 20px 20px;
+  background-color: #FFF8EE;
+  height: 5vh;  
+}
+
+#postZoneContainer {
+  margin: 3vh 3vh;
+  margin-right: 6vh;
+  /* padding: 2vh; */
+  position: relative;
+  border-radius: 20px;
+  background-color: #FFF8EE;
+  width: 40vh;
+  height: 15vh; 
 }
 
 /* estilo para los botones que contienen iconos */
 .buttonIcons {
-  width: 6vh;
+  width: 4vh;
   height: 6vh;
   justify-items: right;
-  background-color: transparent;   
+  background-color: transparent;
+  /* border: transparent; */
 }
 
 #btnExit {
   background-image: url('img/exit.png');
   background-repeat: no-repeat;
-  justify-items: center; 
+}
+
+#btnSend {
+  background-image: url('img/send.png');
+  background-repeat: no-repeat;
+  height: 4vh;
+  margin-bottom: 1vh;
+  margin-left: 35vh;
+}
+
+#btnTrash {
+  background-image: url('img/trash.png');
+  background-repeat: no-repeat;
+  height: 4vh;
+  position: absolute;
+  left: 35vh;  
+}
+
+#btnHeart {
+  background-image: url('img/heart.png');
+  background-repeat: no-repeat;
+  height: 4vh;
+  position: absolute;
+  bottom: 1vh;
+  right: 1vh;
+}
+
+#btnEdit {
+  background-image: url('img/edit.png');
+  background-repeat: no-repeat;
+  height: 4vh;
+  position: absolute;
+  bottom: 1vh;
+  right: 35vh;
 }

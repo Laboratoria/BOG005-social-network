@@ -15,21 +15,21 @@ export const landing = () => {
   title.className = 'titleL';
 
   const buttonRegisterG = document.createElement('button');
-  // buttonRegisterG.textContent = 'Regístrate con Google';
+  buttonRegisterG.textContent = '   Registrarse con Google';
   buttonRegisterG.classList.add('buttonR1');
   buttonRegisterG.setAttribute('id', 'google');
 
   const buttonRegisterE = document.createElement('button');
-  buttonRegisterE.textContent = 'Email Register';
+  buttonRegisterE.textContent = 'Registrarse con E-mail';
   buttonRegisterE.classList.add('buttonR');
   buttonRegisterE.setAttribute('id', 'e-mail');
 
   const question = document.createElement('h3');
-  question.textContent = '¿Do You have an account?';
+  question.textContent = '¿Ya tienes una cuenta?';
   question.classList = 'question-l';
 
   const buttonLogin = document.createElement('button');
-  buttonLogin.textContent = 'Sign In';
+  buttonLogin.textContent = 'Inicia Sesión';
   buttonLogin.classList.add('button');
   buttonLogin.setAttribute('id', 'i-sesion');
 

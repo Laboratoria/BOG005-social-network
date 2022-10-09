@@ -21,26 +21,27 @@ export const login = () => {
   loginEmail.classList.add('inputE');
   loginEmail.setAttribute('type', 'email');
   loginEmail.setAttribute('id', 'email-login');
-  loginEmail.setAttribute('placeholder', 'E-mail');
+  loginEmail.setAttribute('placeholder', 'Email');
   loginEmail.setAttribute('required', '');
 
   const loginPassword = document.createElement('input');
   loginPassword.classList.add('inputL');
   loginPassword.setAttribute('type', 'password');
   loginPassword.setAttribute('id', 'password-login');
-  loginPassword.setAttribute('placeholder', 'Password');
+  loginPassword.setAttribute('placeholder', 'Contraseña');
   loginPassword.setAttribute('required', '');
 
   const loginButton = document.createElement('button');
-  loginButton.textContent = 'Sign In';
+  loginButton.textContent = 'Iniciar Sesión';
   loginButton.setAttribute('class', 'button-login button');
 
   const question = document.createElement('h3');
-  question.textContent = 'Did You Forget Your Password?';
+  question.textContent = '¿Olvidaste tu contraseña?';
+  question.id = 'questionPassword';
 
   const session = document.createElement('h3');
-  session.textContent = 'Click Here';
-  session.className = 'session';
+  session.textContent = 'Haz clic aquí';
+  session.className = 'here';
 
   containerLogin.append(
     titleLo,

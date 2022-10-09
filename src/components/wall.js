@@ -4,26 +4,21 @@ export const wall = () => {
   const containerWall = document.createElement('section');
   containerWall.classList.add('container');
 
-  const header = document.createElement('header')
+  const header = document.createElement('header');
   header.classList.add('header');
 
   const buttonExit = document.createElement('button');
   buttonExit.classList.add('buttonIcons');
   buttonExit.id = 'btnExit';
 
-  // const iconExit = document.createElement('img');
-  // iconExit.src = 'img/exit.png';
-  // iconExit.alt = 'Exit';
-  // iconExit.id = 'iconExit';
-
   const imgTitle = document.createElement('img');
-  imgTitle.src = 'img/other_enjoy-removebg-preview.png';
+  imgTitle.src = 'img/nameLogo.png';
   imgTitle.alt = 'Logo';
   imgTitle.id = 'imgTitle';
 
-  // const title = document.createElement('h1');
-  // title.textContent = '¿Qué festividad se celebra hoy en tu ciudad?';
-  // title.id = 'titleWall';
+  const title = document.createElement('h1');
+  title.textContent = '¿Qué festividad se celebra hoy en tu ciudad?';
+  title.id = 'titleWall';
 
   const wallFormContainer = document.createElement('article');
   wallFormContainer.classList.add('wallForm');
@@ -36,19 +31,32 @@ export const wall = () => {
   wallPost.setAttribute('placeholder', ' Tu post aquí');
 
   const iconContainer = document.createElement('article');
-  iconContainer.setAttribute('id', 'postIcon');
+  iconContainer.setAttribute('id', 'iconContainer');
 
-  const iconForm = document.createElement('article');
-  iconForm.classList.add('iconForm');
+  const buttonSend = document.createElement('button');
+  buttonSend.classList.add('buttonIcons');
+  buttonSend.id = 'btnSend';
 
-  const iconSend = document.createElement('img');
-  iconSend.src = 'img/send.png';
-  iconSend.id = 'iconSend';
+  const postZoneContainer = document.createElement('article');
+  postZoneContainer.setAttribute('id', 'postZoneContainer');
 
-  header.append(imgTitle, buttonExit)
-  wallFormContainer.append(wallPost, iconContainer)
-  iconContainer.append(iconSend)
-  containerWall.append(header, wallFormContainer);
+  const buttonTrash = document.createElement('button');
+  buttonTrash.classList.add('buttonIcons');
+  buttonTrash.id = 'btnTrash';
+
+  const buttonEdit = document.createElement('button');
+  buttonEdit.classList.add('buttonIcons');
+  buttonEdit.id = 'btnEdit';
+
+  const buttonHeart = document.createElement('button');
+  buttonHeart.classList.add('buttonIcons');
+  buttonHeart.id = 'btnHeart';
+
+  header.append(imgTitle, buttonExit);
+  wallFormContainer.append(wallPost, iconContainer);
+  iconContainer.append(buttonSend);
+  postZoneContainer.append(buttonTrash, buttonHeart, buttonEdit);
+  containerWall.append(header, title, wallFormContainer, postZoneContainer);
 
   return containerWall;
 };

@@ -11,7 +11,7 @@ export const register = () => {
   imgLogin.alt = 'logo';
 
   const title = document.createElement('h1');
-  title.textContent = 'REGISTER';
+  title.textContent = 'REGISTRATE';
   title.className = 'titleR';
 
   const registerForm = document.createElement('section');
@@ -20,36 +20,33 @@ export const register = () => {
   const userName = document.createElement('input');
   userName.classList.add('inputName');
   userName.setAttribute('type', 'text');
-  // userName.setAttribute('id', 'userName');
-  userName.setAttribute('placeholder', 'Nickname');
+  userName.setAttribute('placeholder', 'Usuario');
   userName.setAttribute('required', '');
 
   const registerEmail = document.createElement('input');
   registerEmail.classList.add('inputEmail');
   registerEmail.setAttribute('type', 'email');
-  // registerEmail.setAttribute('id', 'emailRegister');
-  registerEmail.setAttribute('placeholder', 'E-mail');
+  registerEmail.setAttribute('placeholder', 'Email');
   registerEmail.setAttribute('required', '');
 
   const registerPassword = document.createElement('input');
   registerPassword.classList.add('inputPass');
   registerPassword.setAttribute('type', 'password');
-  // registerPassword.setAttribute('id', 'passwordRegister');
-  registerPassword.setAttribute('placeholder', 'Password');
+  registerPassword.setAttribute('placeholder', 'Contraseña');
   registerPassword.setAttribute('required', '');
 
   const registerButton = document.createElement('button');
-  registerButton.textContent = 'Send';
+  registerButton.textContent = 'Enviar';
   registerButton.setAttribute('class', 'buttonRegister button');
   registerButton.setAttribute('id', 'buttonStartRegister');
 
   const question = document.createElement('h3');
-  question.textContent = 'Already a member?';
+  question.textContent = '¿Ya eres miembro?';
   question.classList = 'question';
 
   const session = document.createElement('h3');
-  session.textContent = 'Sign In';
-  session.className = 'here';
+  session.textContent = 'Inicia Sesión';
+  session.className = 'session';
 
   registerButton.addEventListener('click', () => {
     const emailRegister = registerEmail.value;
