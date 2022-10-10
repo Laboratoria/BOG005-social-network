@@ -16,6 +16,7 @@ import {
   onSnapshot,
   doc,
   getDoc,
+  updateDoc,
 } from './utils.js';
 
 import { firebaseConfig } from '../components/config.js';
@@ -37,8 +38,9 @@ export const popupGoogle = () => signInWithPopup(auth, provider);
 // Inicializa Cloud Firestore
 export const db = getFirestore(app); // la conexión a la base de datos
 
-export const savePost = (textPost) => addDoc(collection(db, 'posts'), { textPost });
-export const getPosts = () => getDocs(collection(db, 'posts'));
+export const savePost = (postArea) => addDoc(collection(db, 'post'), { postArea });
+export const getPosts = () => getDocs(collection(db, 'post'));
 export const onGetPosts = (callback) => onSnapshot(collection(db, 'post'), callback);
-export const deletePost = (id) => deleteDoc(doc(db, 'posts', id));
-export const getPost = (id) => getDoc(doc(db, 'posts', id));
+export const deletePost = (id) => deleteDoc(doc(db, 'post', id));
+export const getPost = (id) => getDoc(doc(db, 'post', id));
+export const updatePost = (id, newFields) => updateDoc(doc(db, 'post', id), newFields);

@@ -1,360 +1,406 @@
+/*Estilos Globales*/
 @import url("https://fonts.googleapis.com/css2?family=Abel&family=Bebas+Neue&family=Lexend+Giga&display=swap");
 
-/*Estilos Globales*/
 * {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
 }
 
 body {
-    background-image: url("./imagenes/WelcomeBG.jpg");
-    background-repeat: no-repeat;
-    background-size: 120%;
-    font-family: 'Lexend Giga', sans-serif;
+  background-image: url('./imagenes/WelcomeBG.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Lexend Giga', sans-serif;
 }
 
 img {
-    width: 100%;
+  width: 100%;
 }
 
 body img {
-    height: 612px;
+  height: 612px;
 }
 
 a {
-    font-size: 14px;
-    background-color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    border-radius: 5px;
-    width: 215px;
+  font-size: 14px;
+  background-color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  border-radius: 5px;
+  width: 215px;
 }
 
 button {
-    margin: 10px;
-    justify-content: center;
-    border-radius: 5px;
-    padding: 5px;
-    width: 245px;
-    background-color: #A3445D;
-    color: #FFFFFF;
-    font-family: 'Lexend Giga', sans-serif;
-    font-size: 12px;
+  margin: 10px;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 5px;
+  width: 245px;
+  background-color: #a3445d;
+  color: #ffffff;
+  font-family: 'Lexend Giga', sans-serif;
+  font-size: 12px;
 }
 
 /*Estilos para el header*/
 
 .header {
-    margin: 15px;
-    margin-top: 40px;
-    text-align: center;
+  margin: 15px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .title {
-    color: #FFFFFF;
-    text-transform: uppercase;
-    font-size: 26px;
-    margin-top: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 26px;
+  margin-top: 16px;
 }
 
 .paragraph {
-    margin-top: 15px;
-    color: #8B6767;
-    font-weight: 100;
-    font-size: 15px;
+  margin-top: 15px;
+  color: #8b6767;
+  font-weight: 100;
+  font-size: 15px;
 }
 
 .signIn {
-    margin-top: 15px;
-    color: #8B6767;
-    font-weight: 100;
-    font-size: 14px;
-    text-shadow: 2px 1px 14px #000000;
+  margin-top: 15px;
+  color: #8b6767;
+  font-weight: 100;
+  font-size: 14px;
+  text-shadow: 2px 1px 14px #000000;
 }
 
 /*Estilos para section1*/
 
 .section1 {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    background-color: #C8BBBB;
-    margin: 30px 30px;
-    padding: 10px;
-    align-items: center;
-    box-shadow: 2px 5px 5px rgba(129, 122, 124, 0.5) inset;
-    border-radius: 10px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  background-color: #c8bbbb;
+  margin: 30px 30px;
+  padding: 10px;
+  align-items: center;
+  box-shadow: 2px 5px 5px rgba(129, 122, 124, 0.5) inset;
+  border-radius: 10px;
 }
 
 .section1 button {
-    align-items: center;
+  align-items: center;
 }
 
 #emailLogin {
-    margin-top: 10px;
-    width: 90%;
-    padding: 6px 0px;
-    background-color: #ffffff;
-    border: none;
+  margin-top: 10px;
+  width: 90%;
+  padding: 6px 0px;
+  background-color: #ffffff;
+  border: none;
 }
 
 .section1 input::placeholder {
-    text-align: center;
-    margin-left: 10px;
+  text-align: center;
+  margin-left: 10px;
 }
 
 #passwordLogin {
-    margin-top: 10px;
-    width: 90%;
-    padding: 6px 0px;
-    background-color: #ffffff;
-    border: none;
+  margin-top: 10px;
+  width: 90%;
+  padding: 6px 0px;
+  background-color: #ffffff;
+  border: none;
 }
 
 .google {
-    background-image: url('./imagenes/btn_google_signin_light_normal_web.png');
-    width: 240px;
-    height: 29px;
-    padding: 6px;
-    border-radius: 10px;
-    font-size: 14px;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-position: center;
-    border: none;
-    background-color: white;
-    color: 0, 0, 0 (54%);
-    margin-top: 10px;
-    cursor: pointer;
+  background-image: url('./imagenes/Inicie\ sesion\ con\ google.JPG');
+  width: 240px;
+  height: 29px;
+  padding: 6px;
+  border-radius: 10px;
+  font-size: 14px;
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: center;
+  border: none;
+  background-color: white;
+  color: 0, 0, 0 (54%);
+  margin-top: 10px;
+  cursor: pointer;
 }
-
 
 /*Estilos para section2*/
 
 .section2 {
-    display: flex;
-    align-content: center;
-    margin-top: 10px;
-    padding: 5px;
-    justify-content: space-between;
-    border-radius: 10px;
-    background-color: #ffffff;
-    width: 100%;
-    align-items: center;
+  display: flex;
+  align-content: center;
+  margin-top: 10px;
+  padding: 5px;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #ffffff;
+  width: 100%;
+  align-items: center;
 }
 
 .account {
-    font-size: 12px;
-    padding: 5px;
+  font-size: 12px;
+  padding: 5px;
 }
-
 
 /*Estilos de la sección Registrarse */
 
 .signUp {
-    margin-top: 15px;
-    color: #8B6767;
-    font-weight: 100;
-    font-size: 14px;
-    text-shadow: 2px 1px 14px #000000;
+  margin-top: 15px;
+  color: #8b6767;
+  font-weight: 100;
+
+  font-size: 14px;
+  text-shadow: 2px 1px 14px #000000;
 }
 
 #name,
 #emailLogin,
 #password,
 #confirm-password {
-    margin-top: 10px;
-    width: 90%;
-    padding: 6px 0px;
-    background-color: #ffffff;
-    border: none;
+  margin-top: 10px;
+  width: 90%;
+  padding: 6px 0px;
+  background-color: #ffffff;
+  border: none;
 }
 
 .name-lastName-container {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
 }
-
 
 /*Estilos de la sección Muro */
 
 .postContainer {
-    margin: 20px;    
-    display: flex;
-    text-align: center;
-    flex-direction: column;    
-    align-items: center;     
-    background-color: #C8BBBB; 
-    width: 90%; 
-    box-shadow: 2px 5px 5px rgba(129, 122, 124, 0.5) inset;
-    border-radius: 10px; 
+  margin: 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c8bbbb;
+  width: 90%;
+  box-shadow: 2px 5px 5px rgba(129, 122, 124, 0.5) inset;
+  border-radius: 10px;
 }
 
 .postArea {
-    margin: 20px 10px 5px 10px;
-    width: 90%;
-    height: 100px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    text-align: justify;  
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;      
+  margin: 20px 10px 5px 10px;
+  width: 90%;
+  height: 100px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  text-align: justify;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-left: 12px;
+  padding-top: 12px;
 }
 
 .postArea::-webkit-input-placeholder {
-    text-align:left;
-    line-height: 40px;
-    padding-left: 10px;    
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
-  
-  
-.buttonBack {
-    background-color: #5A51C5;
-    font-size: 12px;
-    width: 50%; 
-    margin: 30px 90px;      
-    display: flex;
-    text-align: center;
-    flex-direction: column;    
-    align-items: center;    
+  text-align: left;
+  line-height: 40px;
+  padding-left: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 30px;
+  padding-left: 16px;
 }
 
+.postBox {
+  padding: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 15px;
+  box-shadow: inset 2px 1px 1px 1px rgb(176, 169, 168);
+}
+
+.boxPost1 {
+  background-color: #c8bbbb;
+  margin-top: 15px;
+  margin-left: 21px;
+  margin-right: 15px;
+  border-radius: 11px;
+  margin-block-end: 10px;
+  width: 90%;
+}
+
+.deleteAndEditContainer {
+  margin-left: 10px;
+}
+
+.buttonBack {
+  background-color: #5a51c5;
+  font-size: 12px;
+  width: 50%;
+  margin: 30px 90px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 /*Estilos Para PC*/
 
 @media (min-width: 1024px) {
-
-    body {
-        background-image: url("./imagenes/fondo\ pc.jpg");        
-    }
-
-    #root {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .container {
-        display: flex;
-        margin-top: 80px;
-        column-gap: 50px;
-    }
-
-    /*header*/
-    .header {
-        margin-left: 35px;        
-        margin-top: -50px;
-    }
-
-    .title{
-        font-size: 40px;
-        color: #C28787;    
-        margin-right: 10px;    
-    }
-
-    .paragraph{
-        font-size: 20px;
-        margin-top: 25px;
-        margin-right: 50px;
-    }
-
-    .signIn{
-        display: none;
-    }
-
-    /*Section 1*/
-    
-    .section1 {
-        height: 396px;
-        justify-content: center;
-        align-items: center;
-        background-color: #C8BBBB;
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-        box-sizing: border-box;
-        margin: 40px;
-        margin-left: 122px;
-        padding: 20px 0 28px;
-        width: 396px;
-    }
-
-    .section1 button {
-        align-items: center;
-        height: 40px;
-        margin-top: 20px;
-        margin-bottom: 18px;
-    }
+  body {
+    background-image: url('./imagenes/fondo\ pc.jpg');
+  }
 
 
-    #emailLogin , #passwordLogin {
-        height: 40px;
-        width: 92%;
-        border-radius: 8px;
-    }
-    
+  .container {
+    margin-top: 80px;
+    column-gap: 50px;
+  }
 
-    /*Section 2*/
+  /*header*/
 
-    .section2{
-        width: 90%;
-        margin:0;
-    }
+  .header {
+    margin-left: -60%;
+    margin-top: 131px;
+  }
 
-    .account{
-       font-size: 15px;
-    }
+  .title {
+    font-size: 40px;
+    color: #c28787;
+    margin-right: 10px;
+  }
 
-    .section2 a {
-        font-size: 20px;
-    }
+  .paragraph {
+    font-size: 18px;
+    margin-top: 25px;
+    margin-right: 50px;
+    margin-left: 20px;
+  }
 
-    .google {
-        width: 90%;
-    }
+  .signIn {
+    display: none;
+  }
 
-    /*Register*/
+  /*Section 1*/
 
-    .signUp {
-        display: none;
-    }
+  .section1 {
+    height: 396px;
+    justify-content: center;
+    align-items: center;
+    background-color: #c8bbbb;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    box-sizing: border-box;
+    margin-left: 58%;
+    margin-top: -84px;
+    padding: 20px 0 28px;
+    width: 396px;
+  }
 
-    #name, #emailLogin, #password, #confirm-password {
-        height: 32px;
-        border-radius: 8px;
-    }
-    
-        
-    
-    /*inputs*/
-    
-    .section1 input::placeholder{
-        text-align: center;
-        font-size: 15px;
-    }
-        
-    #password , #confirm-password {
-        width: 90%;
-        border-radius: 8px;
-    }
+  .section1 button {
+    align-items: center;
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 18px;
+  }
 
-    /*Estilos de la sección Muro */
+  #emailLogin,
+  #passwordLogin {
+    height: 40px;
+    width: 92%;
+    border-radius: 8px;
+  }
 
-    .postContainer {
-        margin-top: 100px;
-        margin-left: 170px;
-        width: 70%;
-        position: absolute;                
-    }
-    
+  /*Section 2*/
 
-    .postArea::-webkit-input-placeholder {
-        font-size: 20px;
-      }
+  .section2 {
+    width: 90%;
 
-    .buttonBack {        
-        width: 20%;    
-        margin-left: 170px;       
-    }
-    
-    
+    margin: 0;
+  }
+
+  .account {
+    font-size: 15px;
+  }
+
+  .section2 a {
+    font-size: 20px;
+  }
+
+  .google {
+    width: 90%;
+  }
+
+  /*Register*/
+
+  .signUp {
+    display: none;
+  }
+
+  #name,
+  #emailLogin,
+  #password,
+  #confirm-password {
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  /*inputs*/
+
+  .section1 input::placeholder {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  #password,
+  #confirm-password {
+    width: 90%;
+    border-radius: 8px;
+  }
+
+  /*Estilos de la sección Muro */
+
+  .postContainer {
+    margin-top: 100px;
+    margin-left: 19%;
+    width: 60%;
+  }
+
+  .postArea {
+    padding: 20px;
+    font-size: 30px;
+  }
+
+  .postArea::-webkit-input-placeholder {
+    font-size: 20px;
+  }
+
+  .buttonBack {
+    width: 20%;
+    margin-left: 38%;
+  }
+
+  .deleteAndEditContainer {
+    display: flex;
+    justify-content: center;
+  }
+
+  .postText {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  #tasks-container {
+    display: block;
+    margin-left: 18%;
+  }
+
+  .boxPost1 {
+    width: 73%;
+  }
 }

@@ -2,6 +2,14 @@
 import { onNavigate } from '../src/main.js';
 
 jest.mock('../src/lib/utils.js');
+
+function elementRoot() {
+  if (document.getElementById('root') == null) {
+    document.body.innerHTML = '<div id="root"> </div>';
+  }
+}
+elementRoot();
+
 const mockTemplateWelcome = () => {
   const loginContainer = document.createElement('div');
   loginContainer.innerHTML = '<h1>Mock Template Login 1</h1>';

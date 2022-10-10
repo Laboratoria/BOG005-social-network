@@ -1,6 +1,6 @@
 import { onNavigate } from '../main.js';
 import {
-  savePost, getPosts,
+  savePost, onGetPosts, deletePost, getPost, updatePost,
 } from '../lib/firebase.js';
 
 export const Wall = () => {
@@ -20,7 +20,8 @@ export const Wall = () => {
   title.textContent = 'Yummy Friends';
   header.append(title);
 
-  const postContainer = document.createElement('header');
+  const postContainer = document.createElement('section');
+  postContainer.setAttribute('id', 'postContainer');
   postContainer.className = 'postContainer';
 
   const postArea = document.createElement('textarea');
@@ -34,6 +35,9 @@ export const Wall = () => {
 
   postContainer.append(postArea, buttonPublish);
 
+  const newPostContainer = document.createElement('div');
+  newPostContainer.setAttribute('id', 'tasks-container');
+
   const buttonBack = document.createElement('button');
   buttonBack.textContent = 'Cerrar sesión';
   buttonBack.className = 'buttonBack';
@@ -42,23 +46,67 @@ export const Wall = () => {
     onNavigate('/');
   });
 
-  // Escuchador boton Publicar
-  window.addEventListener('DOMContentLoaded', async () => { // querySnapchot: los datos que existen en ese momento
-    const querySnapchot = await getPosts();
-    querySnapchot.forEach((doc) => {
-      console.log(doc.data());
+  let editStatus = false;
+  let id = '';
+
+  window.addEventListener('DOMContentLoaded', async () => {
+    onGetPosts((querySnapshot) => {
+      let html = '';
+
+      querySnapshot.forEach((doc) => {
+        const task = doc.data();
+        html += `
+        <div>
+          <section class= "boxPost1">
+          <br>          
+          <section class= "postBox">
+          <h5>${task.postArea}</h5>
+          </section>           
+          <button class="btn-borrar" data-id="${doc.id}">Borrar</button>    
+          <button class="btn-editar" data-id="${doc.id}">Editar</button>      
+          </section>       
+        </div>
+      `;
+      });
+
+      newPostContainer.innerHTML = html;
+      const btnsDelete = newPostContainer.querySelectorAll('.btn-borrar');
+      btnsDelete.forEach((btn) => {
+        btn.addEventListener('click', ({ target: { dataset } }) => {
+          deletePost(dataset.id);
+        });
+      });
+
+      const btnsEdit = newPostContainer.querySelectorAll('.btn-editar');
+
+      btnsEdit.forEach((btn) => {
+        btn.addEventListener('click', async (e) => {
+          const doc = await getPost(e.target.dataset.id);
+          const post = doc.data(); // Trae los datos de los posts
+          postArea.value = post.postArea;
+          editStatus = true;
+          id = doc.id;
+          buttonPublish.innerText = 'Editar';
+        });
+      });
     });
   });
 
   buttonPublish.addEventListener('click', (e) => {
     e.preventDefault();
 
-    savePost(postArea.value);
+    if (!editStatus) {
+      savePost(postArea.value);
+    } else {
+      updatePost(id, { postArea: postArea.value });
+      editStatus = false;
+    }
 
     postArea.value = '';
+    buttonPublish.innerText = 'Publicar';
   });
 
-  div.append(header, postContainer, buttonBack);
+  div.append(header, postContainer, newPostContainer, buttonBack);
 
   return div;
 };
