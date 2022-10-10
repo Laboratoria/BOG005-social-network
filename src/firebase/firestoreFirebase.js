@@ -105,7 +105,7 @@ const buttonP = (path) => {
         updatePost(idPost, {
           description: inputPost.value
         }).then(() => console.log("Se actulizo")).catch(() => console.log("Error"))
-        status = false;
+        status = true;
       }
       postForm.reset();
     })

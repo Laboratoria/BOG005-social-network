@@ -588,39 +588,6 @@ p {
     color: var(--w-color-blue-medium);
 }
 
-footer {
-    display: flex;
-    background-color: var(--b-color-blue-dark);
-    width: 100vw;
-    height: 10vh;
-    justify-content: center;
-    flex-direction: column;
-    position: fixed;
-    bottom: 0;
-
-}
-
-.btnPost {
-    color: var(--w-color-blue-light-buttons);
-    font-size: 30px;
-    background-color: var(--b-color-blue-dark);
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-#postButtonId {
-    background-color: var(--b-color-blue-dark);
-    border: none;
-}
-
-
-#menuBottom p {
-    color: var(--w-color-blue-light-buttons);
-    text-align: center;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-
 .deletePost {
     background-color: var(--main-color-white);
     border: none;
