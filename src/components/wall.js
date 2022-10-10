@@ -35,12 +35,13 @@ export const wall = () => {
   buttonprofile.textContent = 'Perfil';
   buttonprofile.setAttribute('id', 'buttonprofile');
 
-
+  
+  wallContent.setAttribute('id', 'wallContent');
   const written = document.createElement('textarea');/// imput user
   written.setAttribute('id', 'written');
   const buttonPost = document.createElement('button');// boton guardar post
   buttonPost.setAttribute('class', 'btn');
-  buttonPost.textContent = 'guardar post';
+  buttonPost.textContent = '';
   buttonPost.setAttribute('id', 'buttonpost');
   let contWall = document.createElement('section');/// contenedor de post
   contWall.setAttribute('class', 'contWall');
@@ -51,6 +52,7 @@ export const wall = () => {
   optionslist.append(option1, option2, option3);
   menu.append(optionslist);
   header.append(imgLogomini, menu);
+  
   post.append(written, buttonPost, contWall);
   wallContent.append(header, post);
 
@@ -96,6 +98,8 @@ export const wall = () => {
       countLike.setAttribute('data-info-id', `${doc.id}`)
       let userLikes = doc.data().likesCount;
       countLike.textContent = userLikes.length;
+      console.log(userLikes);
+      console.log(typeof userLikes, 'este es el console');
 
       /**************************** MODAL *****************************************/
       const a = document.createElement("a");
@@ -107,7 +111,7 @@ export const wall = () => {
       sectionEdit.classList.add("modalDialog");
 
       const close = document.createElement("a")
-      close.textContent = "X"
+      close.textContent = ""
       close.classList.add("close")
       close.href = "#close"
 
@@ -118,7 +122,7 @@ export const wall = () => {
 
       const saveChangeEdit = document.createElement("button")
       saveChangeEdit.setAttribute('class', 'buttonEdit');
-      saveChangeEdit.textContent = "Guardar"
+      saveChangeEdit.textContent = "";
       saveChangeEdit.value = doc.id
 
       sectionEdit.append(close, textAreaEdit, saveChangeEdit)

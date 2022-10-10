@@ -130,6 +130,8 @@ ul{
 
 }
 
+
+
  .postOne {
     display: flex;
     background: #FFFFFF;
@@ -138,7 +140,8 @@ ul{
     flex-direction: column;
     align-items: flex-start;
     width: 90%;
-    /* padding:5% ; */
+    padding:5% ;
+    margin-bottom: 10px;
     
 }
 
@@ -180,10 +183,14 @@ ul{
     mix-blend-mode: normal;
     margin:auto
 }
-.btnDelete, .btnlike, .ButtonModal{
-    font-family: 'Open Sans';
-    font-style: normal;
-    /* margin: auto; */
+
+#buttonpost{
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/save.png);
+    background-size: cover;
 }
 .ButtonModal{
     border: none;
@@ -214,6 +221,14 @@ ul{
     background-size: cover;
 }
 
+.buttonEdit{
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    background: url(../image/enviar.png);
+    background-size: cover;
+}
 
 
 #writer{
@@ -223,19 +238,25 @@ ul{
     font-size: 18px;
     line-height: 25px;
     
-    color: #000000;
+    color: #47086b;
     
 }
 
-#written{
+
+
+#written, .textAreaEdit{
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 300;
 font-size: 16px;
 line-height: 22px;
 color: #7d17a5;
-width: 100%;
+width: 88%;
+background: #FFFFFF;
+border: 1px solid #9697EF;
+border-radius: 19px;
 }
+
 
 #menu{
     display: flex;
@@ -308,3 +329,61 @@ li{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
+
+
+
+
+/*************************modal*************************/
+
+  .modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+  }
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+/*   .modalDialog > section {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin:  auto;
+    padding: 20px;
+    border-radius: 3px;
+    background: #fff;
+  } */
+  .close {
+    position: absolute;
+    right: 12px;
+    text-align: center;
+    top: 10px;
+    width: 34px;
+    height: 34px;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    padding-top: 5px;
+    background: url(../image/cerrar.png);
+    background-size: cover;
+  }
