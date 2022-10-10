@@ -38,6 +38,7 @@ export const wall = () => {
   
   wallContent.setAttribute('id', 'wallContent');
   const written = document.createElement('textarea');/// imput user
+  written.setAttribute('placeholder', '¿Que estás pensando?');
   written.setAttribute('id', 'written');
   const buttonPost = document.createElement('button');// boton guardar post
   buttonPost.setAttribute('class', 'btn');
@@ -116,6 +117,7 @@ export const wall = () => {
       close.href = "#close"
 
       const textAreaEdit = document.createElement("textarea")
+    
       textAreaEdit.value = doc.data().first
       textAreaEdit.setAttribute('class', 'textAreaEdit');
       //textAreaEdit.value = doc.id
@@ -148,8 +150,10 @@ export const wall = () => {
     const buttonsEdit = document.querySelectorAll('.buttonEdit')
     buttonsEdit.forEach((btnEdit)=>{
       btnEdit.addEventListener('click', (event) => {
-        
-        editPostUpdate(btnEdit.value, "hola" ) // id y texto que reemplaza
+        const s =document.getElementById(`${event.target.value}`);// seccion de modal
+        const t =s.querySelector('textarea');
+        console.log(s, t.value); /// obtengo un id
+        editPostUpdate(btnEdit.value, t.value ) // id y texto que reemplaza
       });
     });
 
