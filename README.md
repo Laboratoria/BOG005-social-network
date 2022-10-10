@@ -61,6 +61,7 @@ Ciclapp nace con el propósito de **generar una comunidad** de aficionados y pro
 * ##### `npm start` Para ejecutar el proyecto
 * ##### `npm test` Para ejecutar el pruebas unitarias
 * El despliegue se ralizó en gitHub page 
+[Haz click para mira la página web](https://soreyc.github.io/BOG005-social-network/src/)
 
 ## 5. Readme Laboratoria
 * [Readme proporcionado por Laboratoria](https://github.com/Laboratoria/BOG005-social-network/blob/main/README.md)
