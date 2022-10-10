@@ -103,6 +103,7 @@ export const Wall = () => {
     }
 
     postArea.value = '';
+    buttonPublish.innerText = 'Publicar';
   });
 
   div.append(header, postContainer, newPostContainer, buttonBack);

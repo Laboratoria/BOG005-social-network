@@ -93,8 +93,10 @@ export const Register = () => {
     const registerEmail = inputEmail.value;
     const registerPass = inputPass.value;
     createUser(registerEmail, registerPass)
-      .then(() => {
-        onNavigate('/');
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert('Usuario creado');
+        onNavigate('/wall');
       })
       .catch((error) => {
         const usedEmail = 'Este email ya se encuentra en uso';
