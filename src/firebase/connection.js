@@ -7,8 +7,9 @@ import {
   // onAuthStateChanged,
   signInWithPopup,
   GoogleAuthProvider,
-  // signOut,
+  signOut,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
+import { collection, addDoc, getFirestore } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB5L_8-iWK_fcuTnIWV4peHFJMmOL8v7Qo',
@@ -23,7 +24,9 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore();
 
+// función crear usuario con email
 const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // signed in
@@ -63,6 +66,7 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
     }
   });
 
+// función de ingresar usuario
 const signInUser = (email, password) => {
   console.log('email: ', email, 'password: ', password);
   return signInWithEmailAndPassword(auth, email, password)
@@ -90,16 +94,7 @@ const signInUser = (email, password) => {
     });
 };
 
-// Detectando el estado de autenticación
-// onAuthStateChanged(auth, (user) => {
-//   if (user != null) {
-//     console.log('In Firebase');
-//     // const uid = user.uid;
-//   } else {
-//     console.log('Not in Firebase');
-//   }
-// });
-
+// función de ingreso con google
 const provider = new GoogleAuthProvider();
 const googleSignIn = () => signInWithPopup(auth, provider)
   .then(() => {
@@ -107,13 +102,16 @@ const googleSignIn = () => signInWithPopup(auth, provider)
   })
   .catch(() => { });
 
-// TODO: HACER UN BOTON DE SALIR
-// signOut(auth).then(() => {
-//   // signout successful.
-// }).catch((error) => {
-//   // An error happened.
-// });
+// función de cerrar cesión
+const signOff = () => signOut(auth);
+
+// funcion asincrona para crear el post y enviarlo a firestore
+const createPost = async (text) => {
+  await addDoc(collection(db, 'Posts'), {
+    post: text,
+  });
+};
 
 export {
-  auth, createUser, signInUser, googleSignIn,
+  auth, createUser, signInUser, googleSignIn, signOff, createPost,
 };

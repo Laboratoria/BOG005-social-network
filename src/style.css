@@ -16,25 +16,19 @@
 /*tamaño celular*/
 @media screen and (max-width: 800px) {
 
-  /*Imagen welcome*/
-  .img-welcome {
-    display: none;
-    max-width: 100%;
-  }
-
-  #FondoWelcome {
-    position: absolute;
-    top: 40px;
-    right: -190px;
+  .backgroundWelcome {
+    position: absolute;    
     width: 90vh;
     height: 50vh;
+    left: -22vh;
   }
 
   .sectionWelcome {
     /* background-image: url("img/fondo1.PNG"); */
-    background: #FFF9EF;
+    background: #FFF8EE;
     width: 100%;
     height: 100vh;
+    padding: 1vh;
   }
 
   /* este h3 es del login Olvidaste tu contraseña  */
@@ -67,8 +61,6 @@
     margin-top: 25px;
     font-size: var(--titleSize);
   }
-
-
 
   #buttonStartRegister {
     background-color: #FCAB2E;
@@ -184,7 +176,7 @@
     align-content: center;
   }
 
-  .messageW {
+  .message {
     text-align: center;
     margin-top: 10vh;
     font-size: var(--titleSize);
@@ -335,7 +327,7 @@ input:focus,
   padding: 0.5vh;
   border-radius: 0 0 20px 20px;
   background-color: #FFF8EE;
-  height: 5vh;  
+  height: 5vh;
 }
 
 #postZoneContainer {
@@ -346,7 +338,7 @@ input:focus,
   border-radius: 20px;
   background-color: #FFF8EE;
   width: 40vh;
-  height: 15vh; 
+  height: 15vh;
 }
 
 /* estilo para los botones que contienen iconos */
@@ -376,7 +368,7 @@ input:focus,
   background-repeat: no-repeat;
   height: 4vh;
   position: absolute;
-  left: 35vh;  
+  left: 35vh;
 }
 
 #btnHeart {
