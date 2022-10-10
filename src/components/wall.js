@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginOut, savePost, readPost, deletePost, readPost2, editPostUpdate, likesPost } from '../lib/index.js';
+import { loginOut, savePost, readPost, deletePost, readPost2, editPostUpdate, likesPost, VerificSingin } from '../lib/index.js';
 export const wall = () => {
   const wallContent = document.createElement('section');
   wallContent.setAttribute('id', 'wallContent');
@@ -43,6 +43,7 @@ export const wall = () => {
   buttonPost.textContent = 'guardar post';
   buttonPost.setAttribute('id', 'buttonpost');
   let contWall = document.createElement('section');/// contenedor de post
+  contWall.setAttribute('class', 'contWall');
   /////////////////////anidar////////////////
   option1.append(buttonwall);
   option2.append(buttonprofile);
@@ -54,7 +55,15 @@ export const wall = () => {
   wallContent.append(header, post);
 
   ///////////////////////////////////////////funciones//////////////////////////////////////////
-  buttonPost.addEventListener('click', () => savePost(written.value, []));
+  buttonPost.addEventListener('click', () => {
+    if(written.value == ""){
+      alert('por favor colocar una entrada válida')
+    }
+    else {
+      savePost(written.value, [])
+    }
+  
+  });
 
   const arrayRead = readPost();// array de docs que contiene obj post y nombres
   readPost2((elementos) => {
@@ -62,22 +71,24 @@ export const wall = () => {
     elementos.forEach((doc) => {
       console.log(doc.data());
 
-      const writer = document.createElement('h3');
+      const writer = document.createElement('h4');
       writer.textContent = doc.data().second;
       writer.setAttribute('id', 'writer');
-      const post_n = document.createElement('article'); // cree un nodo seccition
+      const postOne = document.createElement('article'); // cree un nodo seccition todo el post
+      postOne.setAttribute('class', 'postOne');
+      const postOneButtons = document.createElement('article'); // cree un nodo seccition escrito del post
+      postOneButtons.setAttribute('class', 'postOneButtons');
+      const post_n = document.createElement('article'); // cree un nodo seccition escrito del post
       post_n.setAttribute('class', 'posts');
       const buttonDelete = document.createElement('button');// boton guardar post
-      buttonDelete.textContent = 'Eliminar post';
+      buttonDelete.textContent = '';
       buttonDelete.setAttribute('class', 'btnDelete');
       buttonDelete.setAttribute('data-info-id', `${doc.id}`)
-      // const buttonEdit = document.createElement('button');// boton guardar post
-      // buttonEdit.setAttribute('class', 'buttonEdit');
-      // buttonEdit.textContent = 'Editar post';
 
-      /*********botoon me gusta */
+
+      /*********botoon me gusta **************************************************/
       const buttonLike = document.createElement('button');// boton guardar post
-      buttonLike.textContent = 'me gusta';
+      buttonLike.textContent = '';
       buttonLike.setAttribute('class', 'btnlike');
       buttonLike.setAttribute('data-info-id', `${doc.id}`)
       const countLike = document.createElement('p');
@@ -89,7 +100,7 @@ export const wall = () => {
       /**************************** MODAL *****************************************/
       const a = document.createElement("a");
       a.href = `#${doc.id}`//doc.id
-      a.textContent = "Editar";
+      a.textContent = " ";
       a.classList.add("ButtonModal");
       const sectionEdit = document.createElement("section");
       sectionEdit.id = doc.id
@@ -102,35 +113,43 @@ export const wall = () => {
 
       const textAreaEdit = document.createElement("textarea")
       textAreaEdit.value = doc.data().first
+      textAreaEdit.setAttribute('class', 'textAreaEdit');
+      //textAreaEdit.value = doc.id
+
       const saveChangeEdit = document.createElement("button")
+      saveChangeEdit.setAttribute('class', 'buttonEdit');
       saveChangeEdit.textContent = "Guardar"
+      saveChangeEdit.value = doc.id
+
       sectionEdit.append(close, textAreaEdit, saveChangeEdit)
-
       post_n.textContent = doc.data().first // coloque el contenido del post dentro del section
-      post_n.append(buttonDelete, a, buttonLike, countLike);
-      contWall.append(writer, post_n, sectionEdit);
-
+      postOneButtons.append(buttonDelete, a, buttonLike, countLike);
+      postOne.append(writer, post_n, postOneButtons);
+      contWall.append( postOne, sectionEdit);
+/////**********************finaliza modal******************************* */
       return contWall
     })
-    //// funcion eliminar post
+    //////////////////////funcion eliminar post////////////////
     const buttonsDelete = document.querySelectorAll('.btnDelete')
     buttonsDelete.forEach((button_i) => {
       button_i.addEventListener('click', (event) => {
-        deletePost(event.target.dataset.infoId);
+        if (confirm('¿Deseas eliminar el post?')) {
+          deletePost(event.target.dataset.infoId);
+        }
+        
       });
     })
 
-    ///// funcion editar post//// descomentar
-    // const buttonsEdit = document.querySelectorAll('.buttonEdit')
-    // //console.log(buttonsEdit);
-    // buttonsEdit.forEach((btnEdit)=>{
-    //   btnEdit.addEventListener('click', (event) => {
-    //     //console.log(event)
-    //     editPostUpdate(btnEdit.value, "hola mundo") // id y texto que reemplaza
-    //   });
-    // });
+    ////////////////////// funcion editar post////////////
+    const buttonsEdit = document.querySelectorAll('.buttonEdit')
+    buttonsEdit.forEach((btnEdit)=>{
+      btnEdit.addEventListener('click', (event) => {
+        
+        editPostUpdate(btnEdit.value, "hola" ) // id y texto que reemplaza
+      });
+    });
 
-    //////////////////FUNCION LIKE//////////
+    //////////////////////FUNCION LIKE//////////
     const buttonslike = document.querySelectorAll('.btnlike')
     buttonslike.forEach((btnlike) => {
       btnlike.addEventListener('click', (event) => {
@@ -143,11 +162,23 @@ export const wall = () => {
 
   ///////////////funcion cerrar sesión/////////////////////////////////
   buttonsingout.addEventListener('click', () => {
+    if (confirm('¿Deseas cerrar sesión?')) {
     loginOut().then(() => {
       onNavigate('/');
     }).catch((error) => {
       console.log("there are an error: " + error)
     });
+  }
+
   });
+
+  // if(!emailUser){   ////VerificSingin()
+  //   return wallContent;
+  // }
+  // else {
+  //   alert('Por favor ingrese su usuario y credenciales o registrese en caso de no tener una cuenta')
+  // }
+  
   return wallContent;
+  
 };

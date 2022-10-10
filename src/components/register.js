@@ -14,7 +14,7 @@ export const register = () => {
   buttonGoogle.textContent = 'Registrarse con google';
 
   const formRegister = document.createElement('form'); /// se debe envolver en formulario //***PREGUNTAR A YEIMY  
-  // inputs de texto para mail y contraseña
+
   const inputEmail = document.createElement('input');
   inputEmail.classList.add('input');
   inputEmail.setAttribute('type', 'email'); // para validar que sea un mail
@@ -69,30 +69,23 @@ export const register = () => {
   buttonGoogle.addEventListener('click', (e) => {
 
     singUserGoogle() /// de firebase docs
-        .then((result) => {
-            // This gives you a Google Access Token. You can use it to access the Google API.
-            const credential = GoogleAuthProvider.credentialFromResult(result);
-            const token = credential.accessToken;
-            // The signed-in user info.
-            const user = result.user;
-            onNavigate('/wall');
-            // ...
-        }).catch((error) => {
-            // Handle Errors here.
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            // The email of the user's account used.
-            //const email = error.customData.email;
-            console.log(error);
-            // The AuthCredential type that was used.
-            //const credential = GoogleAuthProvider.credentialFromError(error);
-            // ...
-            if (errorCode == error.code){ console.log("upsi, hay error de " + error)}
-            if (errorCode == error.message){ console.log("upsi, hay error de " + error)}
-            //if (errorCode == error.customData.email){ console.log("upsi, hay error de " + error)}
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        onNavigate('/wall');
+        // ...
+      }).catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error);
+        if (errorCode == error.code) { console.log("upsi, hay error de " + error) }
+        if (errorCode == error.message) { console.log("upsi, hay error de " + error) }
 
-        });
       });
+  });
 
   containRegister.append(imgLogo, buttonGoogle, formRegister);
   formRegister.append(inputEmail, inputPass, button, buttonBack, errorText);

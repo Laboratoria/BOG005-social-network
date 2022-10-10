@@ -19,6 +19,7 @@ const provider = new GoogleAuthProvider();
 const singUserGoogle = () => signInWithPopup(auth, provider);//////***no testear
 const loginOut = () => signOut(auth);
 const db = /*() => */getFirestore(firebaseApp);///////FIRESTORE/////
+const VerificSingin = () => onAuthStateChanged(auth);
 
 
 // Detectando el estado de autenticación
@@ -28,16 +29,18 @@ onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNT
     console.log('Usuario Conectado');
     loginUser.email = user.email; /// añado atributos a objeto user
     console.log(loginUser);
+    
   } else {
     console.log('No se encuentra el usuario');
   }
+  
 });
 
 
 ///// crear post en coleccion////
 const savePost = (input, likes) => {
   if (loginUser) { // asigna al usuario que esté logeado la autoria
-    const emailUser = loginUser.email;// si hay usuario guardeme su correo 
+     const emailUser = loginUser.email;// si hay usuario guardeme su correo 
     addDoc(collection(db, "usuarios3"), { //// funcion que guarda post con: funcion addDoc(especif colecc, agreg un objeconten)
       first: input,
       second: emailUser,
@@ -96,5 +99,5 @@ const likesPost = (id) => {
 
 export {
   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost,
-  savePost, deletePost, readPost2, loginUser, editPostUpdate, likesPost /* getloginUser */
+  savePost, deletePost, readPost2, loginUser, editPostUpdate, likesPost, VerificSingin /* getloginUser */
 };

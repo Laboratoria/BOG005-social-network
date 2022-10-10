@@ -7,3 +7,12 @@ export const signInWithPopup = jest.fn(() => Promise.resolve({}));
 export const GoogleAuthProvider = jest.fn(() => Promise.resolve({}));
 export const loginOut= jest.fn(() => Promise.resolve({}));
 
+
+export const readPost  = jest.fn((callback) => {
+    callback([{
+        id: 'nepgelgmp',
+        data: () => ({
+            id: 'ferfregbrt', email: 'alissonredondo@example.com', post: 'Hola',
+        }),
+    }]);
+});

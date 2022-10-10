@@ -67,7 +67,7 @@ form {
     font-size: large;
     border-radius: 10px;
     align-items: center;
-    background-color: #9697EF;
+    background-color: /* #C46BFF   */   #B76BFF ;
     border: white;
     padding-right: 10px;
 }
@@ -77,7 +77,7 @@ form {
 }
 
 .btn:hover {
-    background-color: #F9965E;
+    background-color: #A170FF;
 }
 
 .buttonBack{
@@ -126,20 +126,32 @@ ul{
     display: flex;
 }
 #wallContent {
-/*     display: flex;
-    align-items: center;S
-    justify-content: space-between; */
+    /* background: rgb(184, 76, 226); */
+
 }
 
- .posts {
+ .postOne {
     display: flex;
-    width: 328px;
-    height: 58px;
     background: #FFFFFF;
     border: 1px solid #9697EF;
     border-radius: 19px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    /* padding:5% ; */
     
 }
+
+.postOneButtons {
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #bb10ad;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: flex-end; 
+}
+
 .post {
     display: flex;
 }
@@ -153,7 +165,7 @@ ul{
 #buttonsingout ,
 #buttonprofile,
 #buttonwall,
-.buttonDeleteclass {
+.buttonDelete {
     width: 79px;
     height: 53px;
     font-family: 'Open Sans';
@@ -166,7 +178,44 @@ ul{
     color: #555555;
     border:none;
     mix-blend-mode: normal;
+    margin:auto
 }
+.btnDelete, .btnlike, .ButtonModal{
+    font-family: 'Open Sans';
+    font-style: normal;
+    /* margin: auto; */
+}
+.ButtonModal{
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/editar.png);
+    background-size: cover;
+}
+.btnDelete{
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/trash.png);
+    background-size: cover;
+}
+.btnlike {
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/like.png);
+    background-size: cover;
+}
+.btnlike:hover {
+    background: url(../image/heart.png);
+    background-size: cover;
+}
+
+
+
 #writer{
     font-family: 'Open Sans';
     font-style: normal;
@@ -184,7 +233,8 @@ font-style: normal;
 font-weight: 300;
 font-size: 16px;
 line-height: 22px;
-color: #000000;
+color: #7d17a5;
+width: 100%;
 }
 
 #menu{
@@ -243,15 +293,18 @@ animation: move-vector 4s linear infinite;
 li ::marker{
 marker: none;
 }
-.btnDelete{
-background-image: url('../image/delete.png');
 
-}
 .contWall{
     display:flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 li{
     display: flex;
     align-items: center;
+}
+#writer{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
