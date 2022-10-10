@@ -19,13 +19,7 @@ export const wall = () => {
   option2.setAttribute('id', 'option2');
   const option3 = document.createElement('li');
   option3.setAttribute('id', 'option3');
-  /*   const towall = document.createElement('a');
-    towall.setAttribute('id', 'towall');
-    const toprofile = document.createElement('a');
-    toprofile.setAttribute('id', 'toprofile');
-    const tosingout = document.createElement('a');
-    tosingout.setAttribute('id', 'tosingout');
-   */
+
 
   const imgLogomini = document.createElement('img');
   imgLogomini.setAttribute('srcset', './image/ladyCodeLogo.jpg');
@@ -62,8 +56,6 @@ export const wall = () => {
   ///////////////////////////////////////////funciones//////////////////////////////////////////
   buttonPost.addEventListener('click', () => savePost(written.value, []));
 
-
-
   const arrayRead = readPost();// array de docs que contiene obj post y nombres
   readPost2((elementos) => {
     contWall.textContent = "";// parte vacia
@@ -91,12 +83,12 @@ export const wall = () => {
       const countLike = document.createElement('p');
       countLike.setAttribute('class', 'countBtnlike');
       countLike.setAttribute('data-info-id', `${doc.id}`)
-      let userLikes= doc.data().likesCount;
+      let userLikes = doc.data().likesCount;
       countLike.textContent = userLikes.length;
 
-      /****************************PRUEBA MODAL *****************************************/
+      /**************************** MODAL *****************************************/
       const a = document.createElement("a");
-      a.href= `#${doc.id}`//doc.id
+      a.href = `#${doc.id}`//doc.id
       a.textContent = "Editar";
       a.classList.add("ButtonModal");
       const sectionEdit = document.createElement("section");
@@ -112,20 +104,9 @@ export const wall = () => {
       textAreaEdit.value = doc.data().first
       const saveChangeEdit = document.createElement("button")
       saveChangeEdit.textContent = "Guardar"
-      sectionEdit.append(close,textAreaEdit,saveChangeEdit)
+      sectionEdit.append(close, textAreaEdit, saveChangeEdit)
 
-
-      // <a href="#${characters.id}" class="ButtonModal">Read more</a>
-      // </article>
-      // <section id="${characters.id}" class="modalDialog">
-      // <section>
-      //   <a href="#close" title="Close" class="close">X</a>
-      //   <section id="parrafosmodal">
-      //   <textarea></textarea>
-      //   <button></button>
-      //   </section>
-      // buttonEdit.value = doc.id
-      post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
+      post_n.textContent = doc.data().first // coloque el contenido del post dentro del section
       post_n.append(buttonDelete, a, buttonLike, countLike);
       contWall.append(writer, post_n, sectionEdit);
 
@@ -135,12 +116,11 @@ export const wall = () => {
     const buttonsDelete = document.querySelectorAll('.btnDelete')
     buttonsDelete.forEach((button_i) => {
       button_i.addEventListener('click', (event) => {
-        //const idGet =  ({ target: { dataset } }) => {console.log("AU");};
         deletePost(event.target.dataset.infoId);
       });
     })
 
-    // /// funcion editar post////
+    ///// funcion editar post//// descomentar
     // const buttonsEdit = document.querySelectorAll('.buttonEdit')
     // //console.log(buttonsEdit);
     // buttonsEdit.forEach((btnEdit)=>{
@@ -150,23 +130,18 @@ export const wall = () => {
     //   });
     // });
 
-    //////////////////FUNCION LIKE/////
+    //////////////////FUNCION LIKE//////////
     const buttonslike = document.querySelectorAll('.btnlike')
-    //console.log(buttonslike);
     buttonslike.forEach((btnlike) => {
       btnlike.addEventListener('click', (event) => {
         console.log("like");
         likesPost(event.target.dataset.infoId);
-
       });
     });
-
-
   })
   readPost2(arrayRead);
 
   ///////////////funcion cerrar sesión/////////////////////////////////
-
   buttonsingout.addEventListener('click', () => {
     loginOut().then(() => {
       onNavigate('/');
@@ -174,8 +149,5 @@ export const wall = () => {
       console.log("there are an error: " + error)
     });
   });
-
-
-
   return wallContent;
 };
