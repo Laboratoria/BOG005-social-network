@@ -1,22 +1,30 @@
 import { cerrarSesion } from "../lib/firebase.js";
 import { onSnapshot, pubRef } from "../lib/firestore.js";
 import { onNavigate } from '../main.js';
+import { guardarPublicaciones } from "../lib/firestore.js"
+
 export const muro = () => {
-  onSnapshot(pubRef(),  (querySnapshot) => {
+  onSnapshot(pubRef(), (querySnapshot) => {
     // console.log(querySnapshot)
     querySnapshot.forEach((element) => {
       console.log(element)
     });
-    
+
   })
+  //Creacion de elementos o nodos en el muro
   const div = document.createElement('div');
   div.id = 'contenedor-muro';
-  const ctnPublicacion = document.createElement('section');
-  div.id = 'ctnPublicacion';
   const logo = document.createElement('img');
   logo.id = 'logo';
   logo.src = '/imagenes/Recurso 1.png';
-  
+  const tituloP = document.createElement("p");
+  tituloP.id = "texto-publicar";
+  const crearPublicacion = document.createElement("textarea");
+  crearPublicacion.id = "contenido-publicar";
+  const buttonPublicar = document.createElement("button");
+  buttonPublicar.id = "cerrar-publicar";
+  const buttonX = document.createElement("button");
+  buttonX.id = "cerrar-publicar";
 
   const salir = document.createElement("button");
   salir.class = "salir";
@@ -32,25 +40,36 @@ export const muro = () => {
   // casita.innerHTML = "<span class="material-icons"><p>Inicio</p></span>" ;
   publicar.textContent = "Publicar";
   perfil.textContent = "Perfil";
+  tituloP.textContent = "Crear publicación";
+  crearPublicacion.setAttribute('placeholder', "¿Que has conocido hoy de Colombia?");
+  buttonPublicar.textContent = "Publicar";
 
- 
   // Crear la funcion salir en firebase.js
   // Devuelva la metodo de firebase signOut()
   //Importar en muro 
   // añadir un manejador de eventos al boton salir
   // Dentro de la funcion del addEventListener llamar a la funcion salir
-  
-  
+
+  const likes = []
+
+  buttonPublicar.addEventListener('click', () => {
+    console.log('valor del input: ', crearPublicacion.value);
+    guardarPublicaciones(crearPublicacion.value, likes, "xyz123")
+      .then(() => onNavigate("/muro"))
+      .catch((error) => console.error(error.message))
+
+  })
   salir.addEventListener('click', () => {
-      cerrarSesion().then(() => {
-        }).catch((error) => {
-        console.error(error.message)
-      })
+    cerrarSesion().then(() => {
+    }).catch((error) => {
+      console.error(error.message)
+    })
   });
-publicar.addEventListener('click', () => {
-    onNavigate('/publicar');
-  });
-  div.append(logo, salir,casita,publicar,perfil,ctnPublicacion);
+  // publicar.addEventListener('click', () => {
+  //   onNavigate('/publicar');
+  // });
+
+  div.append(logo, salir, casita, publicar, perfil, tituloP, buttonX, crearPublicacion, buttonPublicar);
 
   return div;
 };
