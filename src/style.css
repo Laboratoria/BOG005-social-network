@@ -937,8 +937,11 @@ a {
 
 .likeImg {
   width: 25px;
+  display: none;
 }
-
+.unlikeImg {
+  width: 27px;
+}
 .otherIcons {
   font-size: 22px;
   display: flex;
