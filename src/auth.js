@@ -82,10 +82,11 @@ export function signInWithGoogle() {
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
+    localStorage.setItem("user", user);
     console.log(user);
     const uid = user.uid;
   } else {
-    console.log("No existe el usuario");
+    localStorage.removeItem("user");
     window.location.hash = "";
   }
 });

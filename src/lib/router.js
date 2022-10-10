@@ -11,7 +11,11 @@ export const changeRoute = (hash) => {
     case "#register":
       return containerRoot.appendChild(COMPONENTS.register());
     case "#feed":
-      return containerRoot.appendChild(COMPONENTS.feed());
+      if (localStorage.getItem("user")) {
+        return containerRoot.appendChild(COMPONENTS.feed());
+      } else {
+        return containerRoot.appendChild(COMPONENTS.home());
+      }
     default:
       return containerRoot.appendChild(COMPONENTS.error404());
   }

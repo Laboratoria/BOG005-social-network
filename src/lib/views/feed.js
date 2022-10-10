@@ -1,4 +1,4 @@
-import { signOutUser, getUser } from "../../auth.js";
+import { signOutUser } from "../../auth.js";
 import { subirImagenAlFirebase } from "../../storage.js";
 import { saveDataPosts, getPosts } from "./../../firestore.js";
 
@@ -22,11 +22,18 @@ export default () => {
               <li><a class="cta">Nuevo Post</a></li>
               <li><a class="signOut">Cerrar Cesión</a></li>
             </ul>
+            <figure class="imgUserNavC">
+                <img
+                 alt="Foto del usuario"
+                 class="imgUserNav"
+                 src="img/dany.webp"
+                />
+               </figure>
           </div>
         </nav>
       </header>
 
-      <h2>AQUI VAN LOS POST</h2>
+      
       <div class="postsContainer">
       
       </div>
@@ -151,8 +158,41 @@ export default () => {
         everyPosts =
           everyPosts +
           `<div class="post">
-      <h2>${documents[i].title}</h2>
-      <h3>${documents[i].description}</h3>
+            <div class="headPost">
+              <figure class="imgUser">
+                <img
+                 alt="Foto del usuario"
+                 class="ImgU"
+                 src="img/dany.webp"
+                />
+              </figure>
+              <h1 class="nameUser">María</h1>
+           </div>
+           <div class="postText">
+               <h2>${documents[i].title}</h2>
+               <figure class="postImgC">
+                <img
+                 alt="Foto del usuario"
+                 class="postImg"
+                 src="img/dany.webp"
+                />
+               </figure>
+               <p>${documents[i].description}</p>
+           </div>
+          <div class="postIcons">
+           <div class="like">
+            <img
+             alt="Like"
+             class="likeImg"
+             src="img/logoheart.png"
+             />
+             <h2>2 likes</h2>
+           </div>
+           <div class="otherIcons">
+            <i class="fi fi-rr-pencil"></i>
+            <i class="fi fi-rs-trash"></i>
+           </div>
+          </div>
       </div>`;
       }
       feedSection.querySelector(".postsContainer").innerHTML = everyPosts;
