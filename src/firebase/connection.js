@@ -7,7 +7,7 @@ import {
   // onAuthStateChanged,
   signInWithPopup,
   GoogleAuthProvider,
-  // signOut,
+  signOut,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 
 const firebaseConfig = {
@@ -24,9 +24,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// CreateUser function
 const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // signed in
     const user = userCredential.user;
     console.log(user);
     console.log('oh yeah');
@@ -39,7 +39,6 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
   })
   .catch((error) => {
     const errorCode = error.code;
-    // const errorMessage = error.message;
     console.log('ay no!');
     if (errorCode === 'auth/email-already-in-use') {
       swal({
@@ -63,6 +62,7 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
     }
   });
 
+// Email signIn function
 const signInUser = (email, password) => {
   console.log('email: ', email, 'password: ', password);
   return signInWithEmailAndPassword(auth, email, password)
@@ -77,7 +77,6 @@ const signInUser = (email, password) => {
       });
     })
     .catch((error) => {
-      // const errorCode = error.code;
       window.location.pathname = '/login';
       const errorMessage = error.message;
       console.log(errorMessage);
@@ -90,16 +89,7 @@ const signInUser = (email, password) => {
     });
 };
 
-// Detectando el estado de autenticación
-// onAuthStateChanged(auth, (user) => {
-//   if (user != null) {
-//     console.log('In Firebase');
-//     // const uid = user.uid;
-//   } else {
-//     console.log('Not in Firebase');
-//   }
-// });
-
+// Google signIn function
 const provider = new GoogleAuthProvider();
 const googleSignIn = () => signInWithPopup(auth, provider)
   .then(() => {
@@ -107,13 +97,9 @@ const googleSignIn = () => signInWithPopup(auth, provider)
   })
   .catch(() => { });
 
-// TODO: HACER UN BOTON DE SALIR
-// signOut(auth).then(() => {
-//   // signout successful.
-// }).catch((error) => {
-//   // An error happened.
-// });
+// signOff function
+const signOff = () => signOut(auth);
 
 export {
-  auth, createUser, signInUser, googleSignIn,
+  auth, createUser, signInUser, googleSignIn, signOff,
 };

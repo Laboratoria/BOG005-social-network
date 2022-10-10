@@ -1,3 +1,6 @@
+import { onNavigate } from '../main.js';
+import { signOff } from '../firebase/connection.js';
+
 export const wall = () => {
   const containerWall = document.createElement('section');
   containerWall.classList.add('container');
@@ -49,6 +52,14 @@ export const wall = () => {
   const buttonHeart = document.createElement('button');
   buttonHeart.classList.add('buttonIcons');
   buttonHeart.id = 'btnHeart';
+
+  buttonExit.addEventListener('click', () => {
+    signOff().then(() => {
+      onNavigate('/');
+    }).catch((error) => {
+      console.log(error, 'Algo pasó');
+    });
+  });
 
   header.append(imgTitle, buttonExit);
   wallFormContainer.append(wallPost, iconContainer);
