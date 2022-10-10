@@ -3,8 +3,8 @@ import home from "./lib/views/home.js";
 import { changeRoute } from "./lib/router.js";
 
 const init = () => {
-  document.getElementById("content").appendChild(home());
-  // changeRoute(window.location.hash, COMPONENTS);
+  // document.getElementById("content").appendChild(home());
+  changeRoute(window.location.hash);
   window.addEventListener("hashchange", () => {
     changeRoute(window.location.hash);
   });
