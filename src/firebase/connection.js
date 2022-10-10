@@ -9,6 +9,7 @@ import {
   GoogleAuthProvider,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
+import { collection, addDoc, getFirestore } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB5L_8-iWK_fcuTnIWV4peHFJMmOL8v7Qo',
@@ -23,10 +24,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const db = getFirestore();
 
-// CreateUser function
+// función crear usuario con email
 const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
+    // signed in
     const user = userCredential.user;
     console.log(user);
     console.log('oh yeah');
@@ -39,6 +42,7 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
   })
   .catch((error) => {
     const errorCode = error.code;
+    // const errorMessage = error.message;
     console.log('ay no!');
     if (errorCode === 'auth/email-already-in-use') {
       swal({
@@ -62,7 +66,7 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
     }
   });
 
-// Email signIn function
+// función de ingresar usuario
 const signInUser = (email, password) => {
   console.log('email: ', email, 'password: ', password);
   return signInWithEmailAndPassword(auth, email, password)
@@ -77,6 +81,7 @@ const signInUser = (email, password) => {
       });
     })
     .catch((error) => {
+      // const errorCode = error.code;
       window.location.pathname = '/login';
       const errorMessage = error.message;
       console.log(errorMessage);
@@ -89,7 +94,7 @@ const signInUser = (email, password) => {
     });
 };
 
-// Google signIn function
+// función de ingreso con google
 const provider = new GoogleAuthProvider();
 const googleSignIn = () => signInWithPopup(auth, provider)
   .then(() => {
@@ -97,9 +102,16 @@ const googleSignIn = () => signInWithPopup(auth, provider)
   })
   .catch(() => { });
 
-// signOff function
+// función de cerrar cesión
 const signOff = () => signOut(auth);
 
+// funcion asincrona para crear el post y enviarlo a firestore
+const createPost = async (text) => {
+  await addDoc(collection(db, 'Posts'), {
+    post: text,
+  });
+};
+
 export {
-  auth, createUser, signInUser, googleSignIn, signOff,
+  auth, createUser, signInUser, googleSignIn, signOff, createPost,
 };

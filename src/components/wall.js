@@ -1,5 +1,6 @@
+/* eslint-disable brace-style */
 import { onNavigate } from '../main.js';
-import { signOff } from '../firebase/connection.js';
+import { createPost, signOff } from '../firebase/connection.js';
 
 export const wall = () => {
   const containerWall = document.createElement('section');
@@ -59,6 +60,15 @@ export const wall = () => {
     }).catch((error) => {
       console.log(error, 'Algo pasó');
     });
+  });
+
+  buttonSend.addEventListener('click', () => {
+    const post = wallPost.value;
+    console.log(post);
+    createPost(post)
+      .then(() => { console.log('guardado');
+        wallPost.value = '';
+      }).catch(() => console.log('no se guardo'));
   });
 
   header.append(imgTitle, buttonExit);
