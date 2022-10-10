@@ -96,17 +96,23 @@ export const wall = () => {
 
       /****************************PRUEBA MODAL *****************************************/
       const a = document.createElement("a");
-      a.href = `${doc.id}`//doc.id
-      a.textContent = "Editar"
-      a.classList.add("ButtonModal")
-      const sectionEdit = document.createElement("section")
+      a.href= `#${doc.id}`//doc.id
+      a.textContent = "Editar";
+      a.classList.add("ButtonModal");
+      const sectionEdit = document.createElement("section");
       sectionEdit.id = doc.id
-      sectionEdit.classList.add("modalDialog")
-      const textAreaEdit = document.createElement("textarea")
-      const saveChangeEdit = document.createElement("button")
+      sectionEdit.classList.add("modalDialog");
 
+      const close = document.createElement("a")
+      close.textContent = "X"
+      close.classList.add("close")
+      close.href = "#close"
+
+      const textAreaEdit = document.createElement("textarea")
+      textAreaEdit.value = doc.data().first
+      const saveChangeEdit = document.createElement("button")
       saveChangeEdit.textContent = "Guardar"
-      sectionEdit.append(textAreaEdit, saveChangeEdit)
+      sectionEdit.append(close,textAreaEdit,saveChangeEdit)
 
 
       // <a href="#${characters.id}" class="ButtonModal">Read more</a>
@@ -121,7 +127,7 @@ export const wall = () => {
       // buttonEdit.value = doc.id
       post_n.textContent = doc.data().first /*doc.data()*/ // coloque el contenido del post dentro del section
       post_n.append(buttonDelete, a, buttonLike, countLike);
-      contWall.append(writer, post_n);
+      contWall.append(writer, post_n, sectionEdit);
 
       return contWall
     })

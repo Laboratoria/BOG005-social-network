@@ -103,6 +103,7 @@ const editPostUpdate = (id, input) => {
     /// va second?????
   })
 }
+// getDoc
 const getOnePost = (id) => getDoc(doc(db, "usuarios3", id)); // traemos un solo post doc es un post
 const likesPost = (id) => {
   const PostLike = doc(db, "usuarios3", id);
