@@ -1,8 +1,18 @@
 import { cerrarSesion } from "../lib/firebase.js";
+import { onSnapshot, pubRef } from "../lib/firestore.js";
 import { onNavigate } from '../main.js';
 export const muro = () => {
+  onSnapshot(pubRef(),  (querySnapshot) => {
+    // console.log(querySnapshot)
+    querySnapshot.forEach((element) => {
+      console.log(element)
+    });
+    
+  })
   const div = document.createElement('div');
-  div.class = 'contenedor-muro';
+  div.id = 'contenedor-muro';
+  const ctnPublicacion = document.createElement('section');
+  div.id = 'ctnPublicacion';
   const logo = document.createElement('img');
   logo.id = 'logo';
   logo.src = '/imagenes/Recurso 1.png';
@@ -23,6 +33,7 @@ export const muro = () => {
   publicar.textContent = "Publicar";
   perfil.textContent = "Perfil";
 
+ 
   // Crear la funcion salir en firebase.js
   // Devuelva la metodo de firebase signOut()
   //Importar en muro 
@@ -39,7 +50,7 @@ export const muro = () => {
 publicar.addEventListener('click', () => {
     onNavigate('/publicar');
   });
-  div.append(logo, salir,casita,publicar,perfil);
+  div.append(logo, salir,casita,publicar,perfil,ctnPublicacion);
 
   return div;
 };

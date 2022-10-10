@@ -6,8 +6,8 @@ import { login} from "./contenido/login.js";
 import { publicar } from "./contenido/publicar.js";
 
 const root = document.getElementById ('root')
-console.log(bienvenida);
-console.log('registro: ', registro);
+// console.log(bienvenida);
+// console.log('registro: ', registro);
 const routes = {
   "/": bienvenida(),
   "/registro": registro(),
@@ -33,7 +33,7 @@ onNavigate(window.location.pathname);
 //metodo de firebase ¿que hace onAuthStateChanged?
 onAuthStateChanged(getAuth(),user => {
   if (user) {
-    console.log(user)
+    // console.log(user)
    onNavigate("/muro")
   } else {
    onNavigate("/")
