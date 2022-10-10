@@ -12,11 +12,11 @@ export const welcome = () => {
 
   const message = document.createElement('h2');
   message.id = 'description';
-  message.textContent = 'Come and celebrate Holidays around the world with us.';
+  message.textContent = 'Disfruta de las diferentes festividades alrededor del mundo';
 
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
-  buttonStart.textContent = 'Start the Journey';
+  buttonStart.textContent = 'Inicia tu Viaje';
   buttonStart.addEventListener('click', () => {
     onNavigate('/landing');
   });

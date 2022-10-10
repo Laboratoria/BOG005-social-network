@@ -31,10 +31,10 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
     console.log(user);
     console.log('oh yeah');
     swal({
-      title: 'Great!',
-      text: 'You had Success!',
+      title: 'Genial!',
+      text: 'Registro Exitoso!',
       icon: 'success',
-      button: 'Start your Trip!',
+      button: 'Inicia tu viaje!',
     });
   })
   .catch((error) => {
@@ -43,20 +43,20 @@ const createUser = (email, password) => createUserWithEmailAndPassword(auth, ema
     console.log('ay no!');
     if (errorCode === 'auth/email-already-in-use') {
       swal({
-        title: 'Please check,',
-        text: 'User already exists',
+        title: 'Por favor revisa,',
+        text: 'Ese usuario ya existe',
         icon: 'error',
       });
     } else if (errorCode === 'auth/invalid-email') {
       swal({
-        title: 'Please Enter a Valid Email.',
-        text: 'it should have an email format',
+        title: 'Por favor ingresa un email válido.',
+        text: 'Debería tener formato de email',
         icon: 'error',
       });
     } else if (errorCode === 'auth/weak-password') {
       swal({
-        title: 'Your Password is weak!,',
-        text: 'Please use more than six characteres',
+        title: 'Tu contraseña es muy corta!,',
+        text: 'Por favor usa más de seis caracteres',
         icon: 'error',
       });
       window.location.pathname = '/register';
@@ -70,6 +70,11 @@ const signInUser = (email, password) => {
       // signed in
       const user = userCredential.user;
       console.log(user, 'Signed in');
+      swal({
+        title: 'Bienvenido a Enjoy the World,',
+        text: 'Puedes comenzar a postear',
+        icon: 'success',
+      });
     })
     .catch((error) => {
       // const errorCode = error.code;
@@ -77,6 +82,11 @@ const signInUser = (email, password) => {
       const errorMessage = error.message;
       console.log(errorMessage);
       console.log('nope, no entraste');
+      swal({
+        title: 'Algo sucedió, no fue posible loguearte',
+        text: 'Revisa tus credenciales',
+        icon: 'error',
+      });
     });
 };
 
@@ -95,7 +105,7 @@ const googleSignIn = () => signInWithPopup(auth, provider)
   .then(() => {
     window.location.pathname = '/wall';
   })
-  .catch(() => {});
+  .catch(() => { });
 
 // TODO: HACER UN BOTON DE SALIR
 // signOut(auth).then(() => {

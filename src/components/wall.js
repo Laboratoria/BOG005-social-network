@@ -1,16 +1,16 @@
 export const wall = () => {
   const containerWall = document.createElement('section');
   containerWall.classList.add('container');
-  
+
   const header = document.createElement('header');
   header.classList.add('header');
 
-  const iconExit = document.createElement('img');
-  iconExit.src = 'https://img.icons8.com/external-prettycons-flat-prettycons/47/000000/external-exit-essentials-prettycons-flat-prettycons.png';
-  iconExit.id = 'iconExit';
+  const buttonExit = document.createElement('button');
+  buttonExit.classList.add('buttonIcons');
+  buttonExit.id = 'btnExit';
 
   const imgTitle = document.createElement('img');
-  imgTitle.src = 'img/other_enjoy-removebg-preview.png';
+  imgTitle.src = 'img/nameLogo.png';
   imgTitle.alt = 'Logo';
   imgTitle.id = 'imgTitle';
 
@@ -29,19 +29,32 @@ export const wall = () => {
   wallPost.setAttribute('placeholder', ' Tu post aquí');
 
   const iconContainer = document.createElement('article');
-  iconContainer.setAttribute('id', 'postIcon');
+  iconContainer.setAttribute('id', 'iconContainer');
 
-  const iconForm = document.createElement('article');
-  iconForm.classList.add('iconForm');
+  const buttonSend = document.createElement('button');
+  buttonSend.classList.add('buttonIcons');
+  buttonSend.id = 'btnSend';
 
-  const iconSend = document.createElement('img');
-  iconSend.src = 'img/send.png';
-  iconSend.id = 'iconSend';
+  const postZoneContainer = document.createElement('article');
+  postZoneContainer.setAttribute('id', 'postZoneContainer');
 
-  header.append(imgTitle, buttonExit)
-  wallFormContainer.append(wallPost, iconContainer)
-  iconContainer.append(iconSend)
-  containerWall.append(header, wallFormContainer);
+  const buttonTrash = document.createElement('button');
+  buttonTrash.classList.add('buttonIcons');
+  buttonTrash.id = 'btnTrash';
+
+  const buttonEdit = document.createElement('button');
+  buttonEdit.classList.add('buttonIcons');
+  buttonEdit.id = 'btnEdit';
+
+  const buttonHeart = document.createElement('button');
+  buttonHeart.classList.add('buttonIcons');
+  buttonHeart.id = 'btnHeart';
+
+  header.append(imgTitle, buttonExit);
+  wallFormContainer.append(wallPost, iconContainer);
+  iconContainer.append(buttonSend);
+  postZoneContainer.append(buttonTrash, buttonHeart, buttonEdit);
+  containerWall.append(header, title, wallFormContainer, postZoneContainer);
 
   return containerWall;
 };
