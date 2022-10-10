@@ -15,3 +15,7 @@ export const getAuth = () => {
 export const register = (email, password) => {
   return Promise.resolve();
 };
+
+export const signOff = () => {
+  return Promise.resolve();
+};

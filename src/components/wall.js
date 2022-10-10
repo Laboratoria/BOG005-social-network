@@ -1,3 +1,7 @@
+/* eslint-disable brace-style */
+import { onNavigate } from '../main.js';
+import { createPost, signOff } from '../firebase/connection.js';
+
 export const wall = () => {
   const containerWall = document.createElement('section');
   containerWall.classList.add('container');
@@ -49,6 +53,23 @@ export const wall = () => {
   const buttonHeart = document.createElement('button');
   buttonHeart.classList.add('buttonIcons');
   buttonHeart.id = 'btnHeart';
+
+  buttonExit.addEventListener('click', () => {
+    signOff().then(() => {
+      onNavigate('/');
+    }).catch((error) => {
+      console.log(error, 'Algo pasó');
+    });
+  });
+
+  buttonSend.addEventListener('click', () => {
+    const post = wallPost.value;
+    console.log(post);
+    createPost(post)
+      .then(() => { console.log('guardado');
+        wallPost.value = '';
+      }).catch(() => console.log('no se guardo'));
+  });
 
   header.append(imgTitle, buttonExit);
   wallFormContainer.append(wallPost, iconContainer);
