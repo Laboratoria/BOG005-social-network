@@ -11,7 +11,7 @@ import {
 import { app } from "./firebase.js";
 import { saveData } from "./firestore.js";
 
-const auth = getAuth(app);
+export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const user = auth.currentUser;
 

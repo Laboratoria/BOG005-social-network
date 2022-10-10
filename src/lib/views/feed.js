@@ -1,4 +1,4 @@
-import { signOutUser } from "../../auth.js";
+import { signOutUser, auth } from "../../auth.js";
 import { subirImagenAlFirebase } from "../../storage.js";
 import { saveDataPosts, getPosts } from "./../../firestore.js";
 
@@ -28,7 +28,7 @@ export default () => {
                  class="imgUserNav"
                  src="img/dany.webp"
                 />
-               </figure>
+            </figure>
           </div>
         </nav>
       </header>
@@ -149,12 +149,16 @@ export default () => {
   function showPostsOnFeed() {
     // Guardamos los datos de los posts en una variable
     let documents = [];
+
     getPosts().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         documents.push(doc.data());
       });
       let everyPosts = "";
+      console.log(documents);
       for (let i = 0; i < documents.length; i++) {
+        const idUsers = documents[i].idUsers ?? [];
+        console.log(idUsers);
         everyPosts =
           everyPosts +
           `<div class="post">
@@ -183,9 +187,19 @@ export default () => {
            <div class="like">
             <img
              alt="Like"
-             class="likeImg"
-             src="img/logoheart.png"
+             class="${
+               idUsers.indexOf(auth.currentUser.id) !== -1
+                 ? "likeImg"
+                 : "unlikeImg"
+             }"
+             src="${
+               idUsers.indexOf(auth.currentUser.id) !== -1
+                 ? "img/logoheart.png"
+                 : "img/likeGris.png"
+             }"
+             
              />
+             
              <h2>2 likes</h2>
            </div>
            <div class="otherIcons">
@@ -196,6 +210,26 @@ export default () => {
       </div>`;
       }
       feedSection.querySelector(".postsContainer").innerHTML = everyPosts;
+
+      //     const grayButtons = feedSection.querySelectorAll(".unlikeImg");
+      //     const pinkButtons = feedSection.querySelectorAll(".likeImg");
+
+      //     for (let grayButton of grayButtons) {
+      //       grayButton.addEventListener("click", toggle);
+      //     }
+
+      //     function toggle() {
+      //       pinkButtons.style.display = "block";
+      //       grayButton.style.display = "none";
+      //     }
+
+      //     for (let pinkButton of pinkButtons) {
+      //       pinkButton.addEventListener("click", toggle2);
+      //     }
+      //     function toggle2() {
+      //       grayButtons.style.display = "block";
+      //       pinkButtons.style.display = "none";
+      //     }
     });
   }
 

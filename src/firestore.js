@@ -9,6 +9,8 @@ import {
 import { app } from "./firebase.js";
 
 const db = getFirestore(app);
+// const auth = getAuth(app);
+// const user = auth.currentUser;
 
 export async function saveData(email, password, name) {
   try {
@@ -31,6 +33,7 @@ export async function saveDataPosts(title, description) {
       title: title,
       description: description,
       date: new Date(),
+      idUsers: id,
     });
 
     console.log("Document written with ID: ", docRef.id);
