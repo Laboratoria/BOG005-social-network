@@ -2,19 +2,25 @@ import { cerrarSesion } from "../lib/firebase.js";
 import { pubRef } from "../lib/firestore.js";
 import { guardarPublicaciones } from "../lib/firestore.js";
 
-export const muro = () => {
 
-  onSnapshot(pubRef(), (querySnapshot) => {
-    // console.log(querySnapshot)
-    querySnapshot.forEach((element) => {
-      console.log(element);
-    });
+
+  // onSnapshot(pubRef(), (querySnapshot) => {
+  //   // console.log(querySnapshot)
+  //   querySnapshot.forEach((element) => {
+  //     console.log(element);
+  //   });
 
 
 //Creacion de elementos o nodos en el muro
 export const muro = () => {
 const div = document.createElement('div');
 div.id = 'contenedor-muro';
+const header = document.createElement ('header');
+header.id = 'header-muro';
+const comentario = document.createElement('div');
+comentario.id = 'comentario'
+const footer =document.createElement ('footer')
+footer.id ="footer"
 const logo = document.createElement('img');
 logo.id = 'muro-logo';
 logo.src = '/imagenes/Recurso 1.png';
@@ -72,6 +78,9 @@ salir.addEventListener('click', () => {
     })
 })
 
-div.append(logo, salir, casita, perfil, tituloP, buttonX, crearPublicacion, buttonPublicar);
-return div
+header.append(logo,salir);
+comentario.append(crearPublicacion,tituloP,buttonX, crearPublicacion,buttonPublicar);
+div.append(header, comentario,footer);
+footer.append(casita,perfil)
+return div             
 };

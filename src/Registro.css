@@ -10,15 +10,14 @@ body{
     align-items: center;
     height: 100vh;
 }
-#root {
+/* #root {
     background-color: blueviolet;
     margin:auto;
-}
+} */
 #contenedor-registro {
     margin: auto;
     background-color: white; 
     max-width: max-content;
-    
     
 }
 

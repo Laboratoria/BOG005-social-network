@@ -3,6 +3,11 @@
     padding: 0;
     margin: 0
 }
+#header-muro{
+    background-color:#FEB139;
+    height: 100px;
+    width: 100%;
+}
 
 body{
     display: flex;
@@ -10,16 +15,42 @@ body{
     align-items: center;
     height: 100vh;
 }
+#comentario {
+    background-color: beige;
+    height: 390px;
+    width:100% ;
+}
 #contenedor-muro {
     background-color: blue;
     height: 500px;
     width: 800px;
 }
 #muro-logo {
-    
-    height: 30px;
+    height: 65px;
     max-width: 100%;
+    align-items: center;
+    margin-left: 30px;
 }
 #contenido-publicar {
-    height: 300px;
+    height: 100px;
+    width: 60%;
+    margin-left: 140px;
+    margin-right: auto;
+}
+#salir {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px; 
+    width: clamp(8rem,10vw,20rem);
+    height: clamp(2rem,3vw,7rem);
+    background-color: #143F6B;
+    margin-left: 30rem;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+#footer {
+    background-color: rosybrown;
+    height: 25px;
+    width: 100%;
 }
