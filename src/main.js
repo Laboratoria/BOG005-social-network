@@ -5,9 +5,6 @@ import { registro } from "./contenido/registro.js";
 import { login} from "./contenido/login.js";
 
 
-const root = document.getElementById ('root')
-// console.log(bienvenida);
-// console.log('registro: ', registro);
 const routes = {
   "/": bienvenida(),
   "/registro": registro(),

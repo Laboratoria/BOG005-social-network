@@ -1,10 +1,9 @@
 // eslint-disable-next-line import/no-cycle
 import { onNavigate } from '../main.js';
+
 export const bienvenida = () => {
-
   const div = document.createElement('div');
-  div.id ='contenedor-bienvenida';
-
+  div.id = 'contenedor-bienvenida'
   const titulo = document.createElement('p');
   titulo.id = 'texto-bienvenida';
 

@@ -5,6 +5,7 @@ import { iniciarlogin, crearUsuarioConGoogle } from "../lib/firebase.js";
 export const login = () => {
   const div = document.createElement('div');
   div.id = 'contenedor-login'
+  const rootLogin = document.getElementById ('root') 
   const logoLogin = document.createElement('img');
   logoLogin.id = 'logologin';
   const formularioLogin = document.createElement('form');
@@ -51,6 +52,6 @@ export const login = () => {
       
       });
 
-  div.append(formularioLogin, logoLogin, correoLogin, contraseñaLogin, buttoniniciaSesion, botonRegistro, butonGoogle);
+      div.append(formularioLogin, logoLogin, correoLogin, contraseñaLogin, buttoniniciaSesion, botonRegistro, butonGoogle);
   return div;
 };

@@ -3,6 +3,7 @@ import { onSnapshot, pubRef } from "../lib/firestore.js";
 import { guardarPublicaciones } from "../lib/firestore.js"
 
 export const muro = () => {
+
   onSnapshot(pubRef(), (querySnapshot) => {
     // console.log(querySnapshot)
     querySnapshot.forEach((element) => {
