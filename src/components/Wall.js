@@ -72,8 +72,12 @@ export const Wall = () => {
       newPostContainer.innerHTML = html;
       const btnsDelete = newPostContainer.querySelectorAll('.btn-borrar');
       btnsDelete.forEach((btn) => {
-        btn.addEventListener('click', ({ target: { dataset } }) => {
-          deletePost(dataset.id);
+        btn.addEventListener('click', async (e) => {
+          // eslint-disable-next-line no-restricted-globals
+          const result = confirm('¿Quieres borrar esta publicación?');
+          if (result === true) {
+            await deletePost(e.target.dataset.id);
+          }
         });
       });
 

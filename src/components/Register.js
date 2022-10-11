@@ -25,7 +25,7 @@ export const Register = () => {
   signUp.textContent = 'Regístrate';
   header.append(title, paragraph, signUp);
 
-  // Se crea contenedor para inicio de sesión con correo, google y facebook
+  // Se crea contenedor para inicio de sesión con correo y google
 
   const section1 = document.createElement('section');
   section1.className = 'section1';
