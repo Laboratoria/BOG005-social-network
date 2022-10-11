@@ -10,3 +10,16 @@ body{
     align-items: center;
     height: 100vh;
 }
+#contenedor-muro {
+    background-color: blue;
+    height: 500px;
+    width: 800px;
+}
+#muro-logo {
+    
+    height: 30px;
+    max-width: 100%;
+}
+#contenido-publicar {
+    height: 300px;
+}
