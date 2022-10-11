@@ -80,8 +80,8 @@ export const Welcome = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         onNavigate('/wall');
-        // const uid = user.uid;
-        // const userName = user.displayName;
+        /*   const uid = user.uid;
+        const userName = user.displayName; */
         alert('Usuario Loggeado!');
       }
     });
