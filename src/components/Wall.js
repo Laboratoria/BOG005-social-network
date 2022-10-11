@@ -1,6 +1,6 @@
 import { onNavigate } from '../main.js';
 import {
-  savePost, onGetPosts, deletePost, getPost, updatePost, auth,
+  savePost, onGetPosts, deletePost, getPost, updatePost, auth, addLikes,
 } from '../lib/firebase.js';
 
 export const Wall = () => {
@@ -53,6 +53,8 @@ export const Wall = () => {
   let editStatus = false;
   let id = '';
 
+  const likes = [];
+
   window.addEventListener('DOMContentLoaded', async () => {
     onGetPosts((querySnapshot) => {
       let html = '';
@@ -67,7 +69,8 @@ export const Wall = () => {
           <h5>${task.postArea}</h5>
           </section>           
           <button class="btn-borrar" data-id="${doc.id}">Borrar</button>    
-          <button class="btn-editar" data-id="${doc.id}">Editar</button>      
+          <button class="btn-editar" data-id="${doc.id}">Editar</button> 
+          <button class="btn-like" data-id="${doc.id}">Me gusta</button>        
           </section>       
         </div>
       `;
@@ -86,7 +89,6 @@ export const Wall = () => {
       });
 
       const btnsEdit = newPostContainer.querySelectorAll('.btn-editar');
-
       btnsEdit.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
           const doc = await getPost(e.target.dataset.id);
@@ -97,6 +99,14 @@ export const Wall = () => {
           buttonPublish.innerText = 'Editar';
         });
       });
+
+      const btnsLikes = newPostContainer.querySelectorAll('.btn-like');
+      btnsLikes.forEach((btn) => {
+        btn.addEventListener('click', async ({ target: { dataset } }) => {
+          await addLikes(dataset.id, likes);
+          console.log(addLikes);
+        });
+      });
     });
   });
 
@@ -104,7 +114,7 @@ export const Wall = () => {
     e.preventDefault();
 
     if (!editStatus) {
-      savePost(postArea.value);
+      savePost(postArea.value, likes);
     } else {
       updatePost(id, { postArea: postArea.value });
       editStatus = false;

@@ -8,6 +8,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
   getFirestore,
   collection,
   addDoc,
@@ -27,20 +28,32 @@ import { firebaseConfig } from '../components/config.js';
 // Initializa Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export const user = () => getAuth(app).createUser;
+// export const user = () => getAuth(app).createUser;
 
 // Inicializa Firebase Authentication y obtiene una referencia al servicio
 export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 export const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 export const provider = new GoogleAuthProvider();
 export const popupGoogle = () => signInWithPopup(auth, provider);
+export const outhUser = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      window.location.pathname = '/wall';
+    }
+  });
+};
+export const getUser = () => {
+  outhUser();
+  return auth.currentUser;
+};
 
 // Inicializa Cloud Firestore
 export const db = getFirestore(app); // la conexión a la base de datos
 
-export const savePost = (postArea) => addDoc(collection(db, 'post'), { postArea });
+export const savePost = (postArea, likes) => addDoc(collection(db, 'post'), { postArea, likes });
 export const getPosts = () => getDocs(collection(db, 'post'));
 export const onGetPosts = (callback) => onSnapshot(collection(db, 'post'), callback);
 export const deletePost = (id) => deleteDoc(doc(db, 'post', id));
 export const getPost = (id) => getDoc(doc(db, 'post', id));
 export const updatePost = (id, newFields) => updateDoc(doc(db, 'post', id), newFields);
+export const addLikes = (id, likes) => getDoc(doc(db, 'post', id), likes);
