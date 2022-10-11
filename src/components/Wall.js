@@ -1,6 +1,6 @@
 import { onNavigate } from '../main.js';
 import {
-  savePost, onGetPosts, deletePost, getPost, updatePost,
+  savePost, onGetPosts, deletePost, getPost, updatePost, auth,
 } from '../lib/firebase.js';
 
 export const Wall = () => {
@@ -42,8 +42,12 @@ export const Wall = () => {
   buttonBack.textContent = 'Cerrar sesión';
   buttonBack.className = 'buttonBack';
 
-  buttonBack.addEventListener('click', () => {
-    onNavigate('/');
+  buttonBack.addEventListener('click', (e) => {
+    e.preventDefault();
+    auth.signOut().then(() => {
+      console.log('log Out');
+      onNavigate('/');
+    });
   });
 
   let editStatus = false;

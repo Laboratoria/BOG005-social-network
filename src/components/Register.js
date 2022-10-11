@@ -95,6 +95,7 @@ export const Register = () => {
     createUser(registerEmail, registerPass)
       .then((userCredential) => {
         const user = userCredential.user;
+        console.log(user); // esto es un console.log para no ver el error
         alert('Usuario creado');
         onNavigate('/wall');
       })
