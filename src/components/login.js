@@ -71,6 +71,8 @@ export const login = () => {
     const password = inputPass.value;
     singUser(email, password)
       .then((userCredential) => { // Si el usuario se acredita, será dirigido al muro
+        const user = userCredential.user;
+        console.log(user, "este es el objeto usuario")
         onNavigate('/wall');
       })
       .catch((error) => { // si hubo un error en el registro, retorna según el caso

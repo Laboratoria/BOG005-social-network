@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { createUser, singUserGoogle, GoogleAuthProvider } from '../lib/index.js';
+import { createUser, singUserGoogle, GoogleAuthProvider, profileUser } from '../lib/index.js';
 
 export const register = () => {
   const containRegister = document.createElement('section');
@@ -52,6 +52,8 @@ export const register = () => {
     const password = inputPass.value;
     createUser(email, password)
       .then((userCredential) => { // Si el usuario se acredita, será dirigido al muro
+        const user = userCredential.user;
+        console.log(user, "este es el usuario")
         onNavigate('/wall');
       })
       .catch((error) => { // si hubo un error en el registro, retorna según el caso

@@ -1,7 +1,7 @@
 // importando los servicios de firebase
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js';
 import {
-  getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut,
+  getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile
 } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';
 import { signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-auth.js';// servicion de inicio  de sesion con google
 import { addDoc, collection, getFirestore, getDoc, getDocs, onSnapshot, doc, deleteDoc, updateDoc, query, arrayUnion, arrayRemove } from 'https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js'
@@ -20,6 +20,7 @@ const singUserGoogle = () => signInWithPopup(auth, provider);//////***no testear
 const loginOut = () => signOut(auth);
 const db = /*() => */getFirestore(firebaseApp);///////FIRESTORE/////
 const VerificSingin = () => onAuthStateChanged(auth);
+const profileUser =(user, displayName )=>updateProfile(user, { displayName });
 
 
 // Detectando el estado de autenticación
@@ -99,5 +100,5 @@ const likesPost = (id) => {
 
 export {
   initializeApp, createUserWithEmailAndPassword, auth, createUser, singUser, singUserGoogle, signInWithPopup, GoogleAuthProvider, loginOut, readPost,
-  savePost, deletePost, readPost2, loginUser, editPostUpdate, likesPost, VerificSingin /* getloginUser */
+  savePost, profileUser,  deletePost, readPost2, loginUser, editPostUpdate, likesPost, VerificSingin, onAuthStateChanged /* getloginUser */
 };

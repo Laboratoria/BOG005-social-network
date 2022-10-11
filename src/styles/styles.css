@@ -4,6 +4,13 @@
     }
 }
 
+/* 
+RGB : 3, 202, 223  ///// azul  #0ecce1
+RGB : 138, 79, 233 ////morado osc #8c4fec
+RGB : 144, 86, 238 /// morado claro #965cf2
+RGB : 215, 231, 255 /// azul claro 2rio ///#d7e7ff
+
+ */
 body {
     height: auto;
     width: auto;
@@ -13,6 +20,9 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    background-color: rgb(215, 231, 255);
+    background: url(../image/fondo1.jpg);
+    background-size: cover;
 }
 
 form {
@@ -126,7 +136,7 @@ ul{
     display: flex;
 }
 #wallContent {
-    /* background: rgb(184, 76, 226); */
+    /* background: rgb(3, 202, 223); */
 
 }
 

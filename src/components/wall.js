@@ -1,5 +1,5 @@
 import { onNavigate } from '../main.js';
-import { loginOut, savePost, readPost, deletePost, readPost2, editPostUpdate, likesPost, VerificSingin } from '../lib/index.js';
+import { loginOut, savePost, readPost, deletePost, readPost2, editPostUpdate, likesPost, /* onAuthStateChanged, auth */} from '../lib/index.js';
 export const wall = () => {
   const wallContent = document.createElement('section');
   wallContent.setAttribute('id', 'wallContent');
@@ -180,6 +180,22 @@ export const wall = () => {
 
   });
 
+/*   onAuthStateChanged(auth, (user) => { /// dice si estamos conectados///// PREGUNTAR!!!!!
+    if (user != null) {
+      console.log(user, 'Usuario Conectado detectado en wall' );
+    } else {
+      console.log('No se encuentra el usuario detectado en wall');
+    }
+    
+  }); */
+
+  //VerificSingin()/* .then((user) => { /// dice si estamos conectados///// PREGUNTAR!!!!!
+     // console.log(user,'Usuario detectado en wall');
+      //loginUser.email = user.email; /// añado atributos a objeto user */
+/* }) *//* .catch ({
+  console.log('Usuario Conectado');
+
+  }) */
   // if(!emailUser){   ////VerificSingin()
   //   return wallContent;
   // }
@@ -190,3 +206,4 @@ export const wall = () => {
   return wallContent;
   
 };
+
