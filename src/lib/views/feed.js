@@ -1,4 +1,4 @@
-import { signOutUser, auth } from "../../auth.js";
+import { signOutUser, auth, auth2 } from "../../auth.js";
 import { subirImagenAlFirebase } from "../../storage.js";
 import { saveDataPosts, getPosts } from "./../../firestore.js";
 
@@ -151,6 +151,7 @@ export default () => {
     let documents = [];
 
     getPosts().then((querySnapshot) => {
+      console.log(auth2.currentUser.uid);
       querySnapshot.forEach((doc) => {
         documents.push(doc.data());
       });
@@ -188,12 +189,12 @@ export default () => {
             <img
              alt="Like"
              class="${
-               idUsers.indexOf(auth.currentUser.id) !== -1
+               idUsers.indexOf(auth.currentUser.uid) !== 0
                  ? "likeImg"
                  : "unlikeImg"
              }"
              src="${
-               idUsers.indexOf(auth.currentUser.id) !== -1
+               idUsers.indexOf(auth.currentUser.uid) !== 0
                  ? "img/logoheart.png"
                  : "img/likeGris.png"
              }"

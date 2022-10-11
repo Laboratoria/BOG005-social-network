@@ -6,6 +6,7 @@ import {
   query,
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-firestore.js";
+import { auth } from "./auth.js";
 import { app } from "./firebase.js";
 
 const db = getFirestore(app);
@@ -33,7 +34,7 @@ export async function saveDataPosts(title, description) {
       title: title,
       description: description,
       date: new Date(),
-      idUsers: id,
+      idUsers: auth.currentUser.uid,
     });
 
     console.log("Document written with ID: ", docRef.id);
