@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 
 // Firebase
@@ -22,6 +23,7 @@ export {
   GoogleAuthProvider,
   signInWithPopup,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 };
 
 // Export Firestore

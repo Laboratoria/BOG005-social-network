@@ -1,9 +1,11 @@
 import { onNavigate } from '../main.js';
-import { signInUser, popupGoogle } from '../lib/firebase.js';
+import {
+  signInUser, popupGoogle, auth,
+} from '../lib/firebase.js';
+import { onAuthStateChanged } from '../lib/utils.js';
 
 export const Welcome = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
-
   const div = document.createElement('div');
 
   div.className = 'container';
@@ -74,10 +76,15 @@ export const Welcome = () => {
   // Escuchador boton google
 
   google.addEventListener('click', () => {
-    popupGoogle()
-      .then(() => {
+    popupGoogle();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
         onNavigate('/wall');
-      });
+        // const uid = user.uid;
+        // const userName = user.displayName;
+        alert('Usuario Loggeado!');
+      }
+    });
   });
 
   // Escuchador boton Iniciar sesión
@@ -88,6 +95,7 @@ export const Welcome = () => {
     const loginPass = inputPass.value;
     signInUser(loginEmail, loginPass)
       .then(() => {
+        alert('usuario loggeado');
         onNavigate('/wall');
       })
       .catch((error) => {
