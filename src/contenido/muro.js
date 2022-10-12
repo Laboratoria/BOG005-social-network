@@ -1,5 +1,5 @@
 import { cerrarSesion } from "../lib/firebase.js";
-import { obtpost } from "../lib/firestore.js";
+import { obtpost,borrarPost } from "../lib/firestore.js";
 import { guardarPublicaciones } from "../lib/firestore.js";
 
 
@@ -68,10 +68,18 @@ buttonPublicar.addEventListener('click', async () => {
     elementosPost += `
         <div> 
           <div>${info.post}</div>
+          <button class="btn-Borrar" data-id="${doc.id}">Borrar</button>
         </div>
     `
   })
   comentario.innerHTML = elementosPost
+  const btnsBorrar=comentario.querySelectorAll('.btn-Borrar');
+  btnsBorrar.forEach(btn =>{
+    btn.addEventListener("click",({target:{dataset}})=>{
+      borrarPost(dataset.id)
+    })
+  }
+    )
 }))
 })
 
