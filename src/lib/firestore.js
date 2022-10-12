@@ -13,4 +13,4 @@ export const guardarPublicaciones = (post, likes, currentUser) => {
    }
 export const pubRef = () => getDocs (collection(db,'publicaciones'))
 
-
+export const obtPublicaciones = 
