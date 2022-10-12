@@ -1,5 +1,5 @@
 import { cerrarSesion } from "../lib/firebase.js";
-import { pubRef } from "../lib/firestore.js";
+import { obtpost } from "../lib/firestore.js";
 import { guardarPublicaciones } from "../lib/firestore.js";
 
 
@@ -60,7 +60,8 @@ const likes = [];
 buttonPublicar.addEventListener('click', async () => {
   console.log('valor del input: ', crearPublicacion.value);
   guardarPublicaciones(crearPublicacion.value, likes, "xyz123")
-   const querySnapshot = await pubRef()
+ obtpost((querySnapshot => {
+   
    let elementosPost = ''
    querySnapshot.forEach(doc => {
     const info = doc.data()
@@ -70,8 +71,8 @@ buttonPublicar.addEventListener('click', async () => {
         </div>
     `
   })
-  
   comentario.innerHTML = elementosPost
+}))
 })
 
 
