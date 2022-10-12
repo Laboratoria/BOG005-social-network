@@ -9,7 +9,9 @@ import {
   GoogleAuthProvider,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
-import { collection, addDoc, getFirestore } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
+import {
+  collection, addDoc, getFirestore, onSnapshot,
+} from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyB5L_8-iWK_fcuTnIWV4peHFJMmOL8v7Qo',
@@ -112,6 +114,9 @@ const createPost = async (text) => {
   });
 };
 
+// Se crea la constante que nos permitirá postear
+const onGetPosts = (callback) => onSnapshot(collection(db, 'Posts'), callback);
+
 export {
-  auth, createUser, signInUser, googleSignIn, signOff, createPost,
+  auth, createUser, signInUser, googleSignIn, signOff, createPost, onGetPosts,
 };
