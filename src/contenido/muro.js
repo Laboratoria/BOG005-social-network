@@ -19,6 +19,8 @@ const header = document.createElement ('header');
 header.id = 'header-muro';
 const comentario = document.createElement('div');
 comentario.id = 'comentario'
+const divPost = document.createElement ('div');
+divPost.id = 'divPost'
 const footer =document.createElement ('footer')
 footer.id ="footer"
 const logo = document.createElement('img');
@@ -58,17 +60,22 @@ const likes = [];
 buttonPublicar.addEventListener('click', async () => {
   console.log('valor del input: ', crearPublicacion.value);
   guardarPublicaciones(crearPublicacion.value, likes, "xyz123")
-  
    const querySnapshot = await pubRef()
-  // querySnapshot.forEach( (doc) => {
-  console.log(querySnapshot)
+   let elementosPost = ''
+   querySnapshot.forEach(doc => {
+    const info = doc.data()
+    elementosPost += `
+        <div> 
+          <div>${info.post}</div>
+        </div>
+    `
+  })
+  
+  comentario.innerHTML = elementosPost
 })
-//   .then(() => onSnapshot(pubRef(), (querySnapshot) => {
-//     
-//       .catch((error) => console.error(error.message))
-//     })
-//   }))
-// })
+
+
+
 
 salir.addEventListener('click', () => {
   cerrarSesion().then(() => {
@@ -78,9 +85,16 @@ salir.addEventListener('click', () => {
     })
 })
 
+
+
+
+
+
+
+
 header.append(logo,salir);
-comentario.append(crearPublicacion,tituloP,buttonX, crearPublicacion,buttonPublicar);
-div.append(header, comentario,footer);
-footer.append(casita,perfil)
+comentario.append(crearPublicacion,tituloP,buttonX, crearPublicacion,buttonPublicar,divPost);
+div.append(header,comentario,footer);
+footer.append(casita,perfil);
 return div             
 };
