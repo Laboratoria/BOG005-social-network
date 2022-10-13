@@ -93,20 +93,21 @@ export const Register = () => {
     const registerEmail = inputEmail.value;
     const registerPass = inputPass.value;
     createUser(registerEmail, registerPass)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user); // esto es un console.log para no ver el error
+      .then(() => {
         alert('Usuario creado');
         onNavigate('/wall');
       })
       .catch((error) => {
-        const usedEmail = 'Este email ya se encuentra en uso';
+        const usedEmail = 'Este email ya se encuentra registrado';
         const invalidEmail = 'Este email no es válido';
+        const lengthPass = 'La constraseña debe contener mínimo 6 carcateres';
 
         if (error.code === 'auth/email-alredy-in-use') {
           errorAdvice.innerText = usedEmail;
         } else if (error.code === 'auth/invalid-email') {
           errorAdvice.innerText = invalidEmail;
+        } else if (error.code === 'auth/weak-password') {
+          errorAdvice.innerText = lengthPass;
         }
       });
   });

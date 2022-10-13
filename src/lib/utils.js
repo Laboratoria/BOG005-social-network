@@ -13,7 +13,7 @@ import {
 
 import {
   getFirestore, collection, addDoc, getDocs, onSnapshot, deleteDoc,
-  doc, getDoc, updateDoc,
+  doc, getDoc, updateDoc, arrayUnion,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 // Export Auth
@@ -28,5 +28,6 @@ export {
 
 // Export Firestore
 export {
-  getFirestore, collection, addDoc, getDocs, deleteDoc, onSnapshot, doc, getDoc, updateDoc,
+  // eslint-disable-next-line max-len
+  getFirestore, collection, addDoc, getDocs, deleteDoc, onSnapshot, doc, getDoc, updateDoc, arrayUnion,
 };
