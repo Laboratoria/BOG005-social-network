@@ -1,6 +1,9 @@
 /* eslint-disable brace-style */
 import { onNavigate } from '../main.js';
-import { createPost, signOff } from '../firebase/connection.js';
+import {
+  createPost,
+  signOff, onGetPosts,
+} from '../firebase/connection.js';
 
 export const wall = () => {
   const containerWall = document.createElement('section');
@@ -42,17 +45,35 @@ export const wall = () => {
   const postZoneContainer = document.createElement('article');
   postZoneContainer.setAttribute('id', 'postZoneContainer');
 
-  const buttonTrash = document.createElement('button');
-  buttonTrash.classList.add('buttonIcons');
-  buttonTrash.id = 'btnTrash';
+  // window.addEventListener('DOMContentLoaded', async () => {
+  onGetPosts((querySnapshot) => {
+    postZoneContainer.innerHTML = '';
+    querySnapshot.forEach((doc) => {
+      // crea un p donde quedara el post
+      const postBox = document.createElement('p');
+      postBox.className = 'textPost';
+      postBox.textContent = doc.data().post;
 
-  const buttonEdit = document.createElement('button');
-  buttonEdit.classList.add('buttonIcons');
-  buttonEdit.id = 'btnEdit';
+      // boton de eliminar post
+      const buttonTrash = document.createElement('button');
+      buttonTrash.classList.add('buttonIcons');
+      buttonTrash.id = 'btnTrash';
 
-  const buttonHeart = document.createElement('button');
-  buttonHeart.classList.add('buttonIcons');
-  buttonHeart.id = 'btnHeart';
+      // boton de editar el post
+      const buttonEdit = document.createElement('button');
+      buttonEdit.classList.add('buttonIcons');
+      buttonEdit.id = 'btnEdit';
+
+      // boton de dar like al post
+      const buttonHeart = document.createElement('button');
+      buttonHeart.classList.add('buttonIcons');
+      buttonHeart.id = 'btnHeart';
+
+      // se pinta el post junto botones de eliminar, editar, like
+      postZoneContainer.append(postBox, buttonTrash, buttonHeart, buttonEdit);
+    });
+  });
+  // });
 
   buttonExit.addEventListener('click', () => {
     signOff().then(() => {
@@ -66,7 +87,8 @@ export const wall = () => {
     const post = wallPost.value;
     console.log(post);
     createPost(post)
-      .then(() => { console.log('guardado');
+      .then(() => {
+        console.log('guardado');
         wallPost.value = '';
       }).catch(() => console.log('no se guardo'));
   });
@@ -74,7 +96,6 @@ export const wall = () => {
   header.append(imgTitle, buttonExit);
   wallFormContainer.append(wallPost, iconContainer);
   iconContainer.append(buttonSend);
-  postZoneContainer.append(buttonTrash, buttonHeart, buttonEdit);
   containerWall.append(header, title, wallFormContainer, postZoneContainer);
 
   return containerWall;

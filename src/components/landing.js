@@ -6,27 +6,27 @@ export const landing = () => {
   containerLanding.classList.add('container');
 
   const imgLogin = document.createElement('img');
-  imgLogin.className = 'img-login';
+  imgLogin.className = 'img-world';
   imgLogin.src = '/img/logo.png';
   imgLogin.alt = 'logo';
 
   const title = document.createElement('h1');
-  title.textContent = 'ENJOY THE WORLD';
-  title.className = 'titleL';
+  title.textContent = 'REGÍSTRATE';
+  title.className = 'title1';
 
   const buttonRegisterG = document.createElement('button');
   buttonRegisterG.textContent = '   Registrarse con Google';
-  buttonRegisterG.classList.add('buttonR1');
-  buttonRegisterG.setAttribute('id', 'google');
+  buttonRegisterG.classList.add('buttons-register');
+  buttonRegisterG.setAttribute('id', 'btn-google');
 
   const buttonRegisterE = document.createElement('button');
   buttonRegisterE.textContent = 'Registrarse con E-mail';
-  buttonRegisterE.classList.add('buttonR');
-  buttonRegisterE.setAttribute('id', 'e-mail');
+  buttonRegisterE.classList.add('buttons-register');
+  buttonRegisterE.setAttribute('id', 'btn-email');
 
   const question = document.createElement('h3');
-  question.textContent = '¿Ya tienes una cuenta?';
-  question.classList = 'question-l';
+  question.textContent = '¿Ya tienes cuenta? usa el botón:';
+  question.classList = 'question-landing';
 
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = 'Inicia Sesión';

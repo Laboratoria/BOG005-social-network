@@ -10,9 +10,13 @@ export const welcome = () => {
   imgWelcome.src = 'img/fondo1.PNG';
   imgWelcome.alt = 'Name';
 
+  const title = document.createElement('h1');
+  title.textContent = 'ENJOY THE WORLD';
+  title.id = 'mainTitle';
+
   const message = document.createElement('h2');
   message.id = 'description';
-  message.textContent = 'Disfruta de las diferentes festividades alrededor del mundo';
+  message.textContent = 'Comparte con todo el mundo las festividades de tu ciudad y entérate de lo que pasa en otros lugares';
 
   const buttonStart = document.createElement('button');
   buttonStart.className = 'button';
@@ -21,7 +25,7 @@ export const welcome = () => {
     onNavigate('/landing');
   });
 
-  sectionWelcome.append(imgWelcome, message, buttonStart);
+  sectionWelcome.append(imgWelcome, title, message, buttonStart);
 
   return sectionWelcome;
 };
