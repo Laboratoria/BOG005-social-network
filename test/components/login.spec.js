@@ -50,11 +50,16 @@ test('readPost is a Function', () => { //// testea funcion auth
   expect(typeof auth).toBe('function')
 })
 
-/////////////////////////////////////////test de reject promesas/////////////////////////////////
 
-const singUserMock = jest.fn((email) => {
-//console.log(email);
-if (email === '' || email === 'sinarroba') {     ///////////email no valido
-  return Promise.reject({ code: 'auth/invalid-email' });
-} 
-});
+/////////////////////
+test('test login real de login a registrarse ', () => { ///// testeo lo que renderiza luego de ....
+  document.body.innerHTML = `<section id='root'></section>`
+  onNavigate('/');
+  const ppal = document.getElementById('root');
+  expect(ppal.querySelector(".buttonBack").textContent).toEqual('Registrate');
+  const buttonBack = ppal.querySelector(".buttonBack");
+  ///window.confirm = () => true; /// ensayo
+  buttonBack.dispatchEvent(new Event("click"))
+  expect(ppal.querySelector('#btnRegistration')).toBeTruthy();
+  
+})

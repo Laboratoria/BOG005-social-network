@@ -170,6 +170,7 @@ export const wall = () => {
 
   ///////////////funcion cerrar sesión/////////////////////////////////
   buttonsingout.addEventListener('click', () => {
+
     if (confirm('¿Deseas cerrar sesión?')) {
     loginOut().then(() => {
       onNavigate('/');

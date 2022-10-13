@@ -1,6 +1,5 @@
-//import { wall } from '../../src/components/wall.js';
+// import { wall } from '../../src/components/wall.js';
 //import { auth } from '../../src/lib/firebase.js';
-
 import { onNavigate } from '../../src/main.js'; /// funcion de la vista register
 
 jest.mock('../../src/lib/index.js');      
@@ -22,23 +21,32 @@ const mockWall = ()=> {/// mock de funcion Wall
   }
   
   
-  describe ('', ()=> {
-    it('',()=> {
+  describe ('test wall', ()=> {
+    it('test ruteo wall h1',()=> {
       document.body.innerHTML = `<div id="root"></div>`; // contenedor general en un berfore ALL???
       onNavigate('/Wall', mockRoutes);
       const ppal = document.getElementById('root');
       expect(ppal.querySelector("h1").textContent).toEqual('Hola Wall');
-    })
-  });
-  
-  describe('test button Wall', () => {
-    it('Wall Button', () => {
-        document.body.innerHTML = `<section id='root'></section>`
-        onNavigate('/Wall', mockRoutes);
-        const ppal = document.getElementById('root');
-        expect(ppal.querySelector("button").textContent).toEqual('guardar post');
-        expect(document.getElementById('root').textContent).toBeDefined();
-        expect(mockWall).not.toBeNull();
-    })
+      expect(ppal.querySelector("button").textContent).toEqual('guardar post');
+      expect(document.getElementById('root').textContent).toBeDefined();
+      expect(mockWall).not.toBeNull();
   })
+   
+
+/*     it('test button likes wall ', () => { ///// testeo lo que renderiza luego de ....
+        document.body.innerHTML = `<section id='root'></section>`
+        onNavigate('/wall');
+        const ppal = document.getElementById('root');
+        expect(ppal.querySelector("#buttonwall").textContent).toEqual('Muro');
+        const botonGuardar = ppal.querySelector("#buttonpost");
+        ///window.confirm = () => true; /// ensayo
+        botonGuardar.dispatchEvent(new Event("click"))
+        expect(ppal.querySelector(".textAreaEdit")).toBeTruthy();
+        
+    }) */
+    
+  }) 
+
+  
+
 
