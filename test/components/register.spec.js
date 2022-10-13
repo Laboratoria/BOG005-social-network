@@ -1,4 +1,4 @@
-import { register } from '../../src/components/register.js';
+//import { register } from '../../src/components/register.js';
 import { onNavigate } from '../../src/main.js'; /// funcion de la vista register
 
 //import { createUser } from '../../src/lib/index.js';
@@ -24,7 +24,8 @@ describe ('', ()=> {
   it('',()=> {
     document.body.innerHTML = `<div id="root"></div>`; // contenedor general en un berfore ALL???
     onNavigate('/register', mockRoutes);
-    expect(document.getElementById('root').textContent).toEqual('Hola Registro');
+    const ppal = document.getElementById('root');
+    expect(ppal.querySelector("h1").textContent).toEqual('Hola Registro');
   })
 });
 
@@ -32,8 +33,9 @@ describe('test button Register', () => {
   it('Register Button', () => {
       document.body.innerHTML = `<section id='root'></section>`
       onNavigate('/register', mockRoutes);
-      expect(document.getElementById('root').textContent).toEqual('Registrarse');
+      const ppal = document.getElementById('root');
+      expect(ppal.querySelector(".buttonEnter").textContent).toEqual('Registrarse');
       expect(document.getElementById('root').textContent).toBeDefined();
-      expect(mockRouteRegister).not.toBeNull();
+      expect(mockRegister).not.toBeNull();
   })
 })

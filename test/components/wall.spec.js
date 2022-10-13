@@ -1,5 +1,6 @@
-import { wall } from '../../src/components/wall.js';
-import { readPost } from '../../src/lib/firebase.js';
+//import { wall } from '../../src/components/wall.js';
+//import { readPost } from '../../src/lib/firebase.js';
+import { onNavigate } from '../../src/main.js'; /// funcion de la vista register
 
 jest.mock('../../src/lib/index.js');               /// mock que reemplaza a funcion alias basada en firebase solo para testear
 
@@ -23,7 +24,8 @@ const mockWall = ()=> {/// mock de funcion Wall
     it('',()=> {
       document.body.innerHTML = `<div id="root"></div>`; // contenedor general en un berfore ALL???
       onNavigate('/Wall', mockRoutes);
-      expect(document.getElementById('root').textContent).toEqual('Hola Wall');
+      const ppal = document.getElementById('root');
+      expect(ppal.querySelector("h1").textContent).toEqual('Hola Wall');
     })
   });
   
@@ -31,17 +33,18 @@ const mockWall = ()=> {/// mock de funcion Wall
     it('Wall Button', () => {
         document.body.innerHTML = `<section id='root'></section>`
         onNavigate('/Wall', mockRoutes);
-        expect(document.getElementById('root').textContent).toEqual('guardarPost');
+        const ppal = document.getElementById('root');
+        expect(ppal.querySelector("button").textContent).toEqual('guardar post');
         expect(document.getElementById('root').textContent).toBeDefined();
-        expect(mockRouteRegister).not.toBeNull();
+        expect(mockWall).not.toBeNull();
     })
   })
 
 
-test('readPost is not Null', () => {
+/* test('readPost is not Null', () => {
     expect(readPost).not.toBeNull();
 })
 
 test('readPost is a Function', () => {
     expect(typeof readPost).toBe('function')
-})
+}) */
