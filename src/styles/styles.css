@@ -1,7 +1,7 @@
-@media (max-width: 600px) {
-    body {
-        flex-direction: column;
-    }
+@media (max-width: 864px) {
+    .containerImg{
+      display: none
+        }
 }
 
 /* 
@@ -11,18 +11,63 @@ RGB : 144, 86, 238 /// morado claro #965cf2
 RGB : 215, 231, 255 /// azul claro 2rio ///#d7e7ff
 
  */
-body {
-    height: auto;
-    width: auto;
+body, html {
+    /* height: auto; */
     font-family: 'Poppins', sans-serif;
+    margin: 0%;
+    padding: 0%;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    height: 100vh;
+    background-repeat:no-repeat;
+
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+
+}
+
+.container{ /*contenedor de login gral */
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+/*     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    align-items: center;
+    /* gap:1rem */ 
+}
+
+.containerImg{
+/*     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    margin-top: 100px;
+    padding: 20px; */
+}
+
+.imgWelcome{
+/* flex-grow: -0.5; */
+max-width: 500px;
+min-width: 300px;
+height: auto;
+}
+.viewLogin {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: rgb(215, 231, 255);
-    background: url(../image/fondo1.jpg);
-    background-size: cover;
+/*     margin: 20px;
+    margin-top: 100px; */
+    padding: 20px;
+    border: 1px solid #c2bfbf;
+    
 }
 
 form {
@@ -36,15 +81,25 @@ form {
 
 }
 
+.registerView{  /*contenedor de register gral */
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    max-width: 1200px;
+    min-height: 100vh;
+}
 .viewRegister {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     margin: 20px;
     margin-top: 100px;
     padding: 20px;
+    border: 1px solid #c2bfbf;
 }
 
 
@@ -93,8 +148,8 @@ form {
 .buttonBack{
     margin-top: 20px;
     color: rgb(127, 127, 127);
-    border: white;
-    background-color: white;
+    border: none;
+    background-color: transparent;
     font-size: medium;
     text-decoration: underline;  
 }
@@ -132,15 +187,15 @@ p {
     background-size: 20px 20px;
     background-position: center center;
 }
+
+/***********estilos wall**************/
 ul{
     display: flex;
 }
 #wallContent {
     /* background: rgb(3, 202, 223); */
-
+    /* width: 50%; */
 }
-
-
 
  .postOne {
     display: flex;
@@ -150,15 +205,23 @@ ul{
     flex-direction: column;
     align-items: flex-start;
     width: 90%;
-    padding:5% ;
+    padding-top:5% ;
+    padding-left: 5%;
+    padding-right:5% ;
     margin-bottom: 10px;
     
+}
+
+.posts {
+    border: 1px solid #9697EF;
+    border-radius: 19px;
+    width:100% ;
 }
 
 .postOneButtons {
     display: flex;
     background: #FFFFFF;
-    border: 1px solid #bb10ad;
+    /* border: 1px solid #bb10ad; */
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
@@ -179,6 +242,7 @@ ul{
 #buttonprofile,
 #buttonwall,
 .buttonDelete {
+    background-color: transparent;
     width: 79px;
     height: 53px;
     font-family: 'Open Sans';
@@ -187,8 +251,7 @@ ul{
     font-size: 20px;
     line-height: 27px;
     text-align: center;
-    background-color: #ffffff;
-    color: #555555;
+    color: #363636;
     border:none;
     mix-blend-mode: normal;
     margin:auto
@@ -201,6 +264,7 @@ ul{
     height: 25px;
     background: url(../image/save.png);
     background-size: cover;
+    margin: auto;
 }
 .ButtonModal{
     border: none;
@@ -209,6 +273,7 @@ ul{
     height: 25px;
     background: url(../image/editar.png);
     background-size: cover;
+    margin: auto;
 }
 .btnDelete{
     border: none;
@@ -217,6 +282,7 @@ ul{
     height: 25px;
     background: url(../image/trash.png);
     background-size: cover;
+    margin: auto;
 }
 .btnlike {
     border: none;
@@ -225,6 +291,7 @@ ul{
     height: 25px;
     background: url(../image/like.png);
     background-size: cover;
+    margin: auto;
 }
 .btnlike:hover {
     background: url(../image/heart.png);
@@ -277,34 +344,13 @@ border-radius: 19px;
  justify-content: center;
 }
 
-.container{
-    display: flex;
-    align-items: center;
-}
 
-.containerImg{
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px;
-    margin-top: 100px;
-    padding: 20px;
-}
 
-.viewLogin {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
-    margin-top: 100px;
-    padding: 20px;
-    border: 1px solid #c2bfbf;
-}
 
-.imgWelcome{
+
+
+/* .imgWelcome{
 animation: move-vector 4s linear infinite;
 }
 
@@ -316,7 +362,7 @@ animation: move-vector 4s linear infinite;
     }100%{
         transform: translateY(15px);
     }
-}
+} */
 .separatorButtonGoogle{
     color:#bbbaba;
 }

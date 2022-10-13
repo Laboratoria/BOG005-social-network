@@ -48,9 +48,9 @@ const savePost = (input, likes) => {
       likesCount: likes
     }).then((dos) => { /// opcional???
       console.log("Document written with ID: ", dos.id);/// no reconoce id
-    }).catch((e) => {
+    })/* .catch((e) => {
       console.error("Error adding document: ", e);
-    });
+    }); */
   }
 }
 

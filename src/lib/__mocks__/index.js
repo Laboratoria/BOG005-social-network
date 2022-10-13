@@ -6,13 +6,17 @@ export const singUserGoogle = jest.fn(() => Promise.resolve({}));
 export const signInWithPopup = jest.fn(() => Promise.resolve({}));
 export const GoogleAuthProvider = jest.fn(() => Promise.resolve({}));
 export const loginOut= jest.fn(() => Promise.resolve({}));
-
-
-export const readPost  = jest.fn((callback) => {
-    callback([{
-        id: 'nepgelgmp',
-        data: () => ({
-            id: 'ferfregbrt', email: 'alissonredondo@example.com', post: 'Hola',
-        }),
-    }]);
-});
+export const savePost = jest.fn(() => Promise.resolve({})); 
+export const readPost = jest.fn(() => Promise.resolve({}));
+export const deletePost = jest.fn(() => Promise.resolve({}));
+export const readPost2 = jest.fn(() => Promise.resolve({}));
+export const editPostUpdate = jest.fn(() => Promise.resolve({}));
+export const likesPost = jest.fn(() => Promise.resolve({}));
+// export const readPost  = jest.fn((callback) => {
+//     callback([{
+// /*         id: 'nepgelgmp',
+//         data: () => ({
+//             id: 'ferfregbrt', email: 'alissonredondo@example.com', post: 'Hola',
+//         }), */
+//     }]);
+// });

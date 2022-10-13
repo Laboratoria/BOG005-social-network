@@ -22,7 +22,7 @@ export const wall = () => {
 
 
   const imgLogomini = document.createElement('img');
-  imgLogomini.setAttribute('srcset', './image/ladyCodeLogo.jpg');
+  imgLogomini.setAttribute('srcset', './image/LogoLady.png');
   imgLogomini.setAttribute('id', 'imgLogomini');
 
   const buttonwall = document.createElement('button');

@@ -12,7 +12,7 @@ export const login = () => {
   containerImg.setAttribute('class', ('containerImg'))
 
   const imgWelcome = document.createElement('img');
-  imgWelcome.setAttribute('srcset', './image/girlCodeInicio.png');
+  imgWelcome.setAttribute('srcset', './image/imagenLogin.png');
   imgWelcome.classList.add('imgWelcome');
 
   // contenedor hijo formlario
@@ -21,7 +21,7 @@ export const login = () => {
   containLogin.classList.add('viewLogin');
 
   const imgLogo = document.createElement('img');
-  imgLogo.setAttribute('srcset', './image/ladyCodeLogo.jpg');
+  imgLogo.setAttribute('srcset', './image/logoLady.png');
   imgLogo.classList.add('imgLogo');
 
   const separatorButtonGoogle = document.createElement('h4');

@@ -2,11 +2,13 @@ import { onNavigate } from '../main.js';
 import { createUser, singUserGoogle, GoogleAuthProvider, profileUser } from '../lib/index.js';
 
 export const register = () => {
+  const registerView = document.createElement('section');
+  registerView.classList.add('registerView');
   const containRegister = document.createElement('section');
   containRegister.classList.add('viewRegister');
 
   const imgLogo = document.createElement('img');
-  imgLogo.setAttribute('srcset', './image/ladyCodeLogo.jpg');
+  imgLogo.setAttribute('srcset', './image/logoLady.png');
   imgLogo.classList.add('imgLogo');
 
   const buttonGoogle = document.createElement('button'); /// botono google
@@ -88,9 +90,9 @@ export const register = () => {
 
       });
   });
-
+  registerView.append(containRegister);
   containRegister.append(imgLogo, buttonGoogle, formRegister);
   formRegister.append(inputEmail, inputPass, button, buttonBack, errorText);
 
-  return containRegister;
+  return registerView;
 };
