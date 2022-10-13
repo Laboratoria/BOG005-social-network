@@ -51,7 +51,7 @@ test('readPost is a Function', () => { //// testea funcion auth
 })
 
 
-/////////////////////
+/////////////////////test//////////////
 test('test login real de login a registrarse ', () => { ///// testeo lo que renderiza luego de ....
   document.body.innerHTML = `<section id='root'></section>`
   onNavigate('/');

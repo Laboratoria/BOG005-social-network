@@ -58,3 +58,15 @@ if (email === '' || email === 'sinarroba') {     ///////////email no valido
 } 
 });
 
+/////////////////////////////test interaccion////////////////////
+test('test login real de login a registrarse ', () => { ///// testeo lo que renderiza luego de ....
+  document.body.innerHTML = `<section id='root'></section>`
+  onNavigate('/register');
+  const ppal = document.getElementById('root');
+  expect(ppal.querySelector(".buttonBack").textContent).toEqual('Regresar');
+  const buttonBack = ppal.querySelector(".buttonBack");
+  ///window.confirm = () => true; /// ensayo
+  buttonBack.dispatchEvent(new Event("click"))
+  expect(ppal.querySelector('.buttonBack')).toBeTruthy();
+  
+})
