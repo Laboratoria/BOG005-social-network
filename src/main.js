@@ -10,7 +10,7 @@ const routes = {
   '/wall': wall(),
 };
 
-// función para anexar un registro al historial del navegador (.pushState)
+// función para anexar un registro al historial del navegador (.pushState)  
 export const onNavigate = (pathname, routesList = routes) => {
   const root = document.getElementById('root');
   window.history.pushState(/// historial de rutas a alas que ha entrado

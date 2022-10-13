@@ -1,9 +1,11 @@
 //import { wall } from '../../src/components/wall.js';
-//import { readPost } from '../../src/lib/firebase.js';
+//import { auth } from '../../src/lib/firebase.js';
+
 import { onNavigate } from '../../src/main.js'; /// funcion de la vista register
 
-jest.mock('../../src/lib/index.js');               /// mock que reemplaza a funcion alias basada en firebase solo para testear
+jest.mock('../../src/lib/index.js');      
 
+////////////////test de renderizacion de funcion////////////////////////////
 const mockWall = ()=> {/// mock de funcion Wall
     const containWall = document.createElement('section');
     const textWall = document.createElement('h1');
@@ -40,11 +42,3 @@ const mockWall = ()=> {/// mock de funcion Wall
     })
   })
 
-
-/* test('readPost is not Null', () => {
-    expect(readPost).not.toBeNull();
-})
-
-test('readPost is a Function', () => {
-    expect(typeof readPost).toBe('function')
-}) */

@@ -1,8 +1,10 @@
 //import { login } from '../../src/components/login.js';
 import { onNavigate } from '../../src/main.js'; /// funcion de la vista register
+import { auth } from '../../src/lib/index.js';
 
-jest.mock('../../src/lib/index.js');               /// mock que reemplaza a funcion alias basada en firebase solo para testear
+jest.mock('../../src/lib/index.js');               
 
+////////////////test de renderizacion de funcion////////////////////////////
 const mockLogin = ()=> {/// mock de funcion Login
   const containLogin = document.createElement('section');
   const textLogin = document.createElement('h1');
@@ -38,3 +40,21 @@ describe('test button Login', () => {
       expect(mockLogin).not.toBeNull();
   })
 })
+
+///////////////////////////////////////////test de resolve promesas//////////////////
+test('readPost is not Null', () => { //// testea funcion auth
+  expect(auth).not.toBeNull();
+})
+
+test('readPost is a Function', () => { //// testea funcion auth
+  expect(typeof auth).toBe('function')
+})
+
+/////////////////////////////////////////test de reject promesas/////////////////////////////////
+
+const singUserMock = jest.fn((email) => {
+//console.log(email);
+if (email === '' || email === 'sinarroba') {     ///////////email no valido
+  return Promise.reject({ code: 'auth/invalid-email' });
+} 
+});

@@ -1,9 +1,10 @@
 //import { register } from '../../src/components/register.js';
+import { auth } from '../../src/lib/index.js';
 import { onNavigate } from '../../src/main.js'; /// funcion de la vista register
 
-//import { createUser } from '../../src/lib/index.js';
-jest.mock('../../src/lib/index.js');               /// mock que reemplaza a funcion alias basada en firebase solo para testear
+jest.mock('../../src/lib/index.js');               
 
+////////////////test de renderizacion de funcion////////////////////////////
 const mockRegister = ()=> {/// mock de funcion register
   const containRegis = document.createElement('section');
   const textRegis = document.createElement('h1');
@@ -18,7 +19,6 @@ const mockRegister = ()=> {/// mock de funcion register
 const mockRoutes ={/// mock de objeto rutas
   '/register': mockRegister(),
 }
-
 
 describe ('', ()=> {
   it('',()=> {
@@ -39,3 +39,22 @@ describe('test button Register', () => {
       expect(mockRegister).not.toBeNull();
   })
 })
+
+///////////////////////////////////////////test de resolve promesas//////////////////
+test('readPost is not Null', () => { //// testea funcion auth
+  expect(auth).not.toBeNull();
+})
+
+test('readPost is a Function', () => { //// testea funcion auth
+  expect(typeof auth).toBe('function')
+})
+
+/////////////////////////////////////////test de reject promesas/////////////////////////////////
+
+const createUserMock = jest.fn((email) => {
+//console.log(email);
+if (email === '' || email === 'sinarroba') {     ///////////email no valido
+  return Promise.reject({ code: 'auth/invalid-email' });
+} 
+});
+
