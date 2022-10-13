@@ -1,13 +1,11 @@
 import { onNavigate } from '../main.js';
 import {
-  signInUser, popupGoogle, auth,
+  signInUser, popupGoogle,
 } from '../lib/firebase.js';
-import { onAuthStateChanged } from '../lib/utils.js';
 
 export const Welcome = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
   const div = document.createElement('div');
-
   div.className = 'container';
 
   // Header
@@ -76,14 +74,9 @@ export const Welcome = () => {
   // Escuchador boton google
 
   google.addEventListener('click', () => {
-    popupGoogle();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        onNavigate('/wall');
-        /*   const uid = user.uid;
-        const userName = user.displayName; */
-        alert('Usuario Loggeado!');
-      }
+    popupGoogle().then(() => {
+      alert('Usuario Loggeado!');
+      onNavigate('/wall');
     });
   });
 
@@ -100,12 +93,15 @@ export const Welcome = () => {
       })
       .catch((error) => {
         const invalidEmail = 'Correo inválido';
-        const passNone = 'Debe diligenciar una contraseña';
+        const passNone = 'Ingrese una contraseña';
+        const passWrong = 'Contraseña incorrecta';
 
         if (error.code === 'auth/invalid-email') {
           errorAdvice.innerText = invalidEmail;
         } else if (error.code === 'auth/internal-error') {
           errorAdvice.innerText = passNone;
+        } else if (error.code === 'auth/wrong-password') {
+          errorAdvice.innerText = passWrong;
         }
       });
   });
