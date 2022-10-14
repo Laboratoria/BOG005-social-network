@@ -64,8 +64,8 @@ El feedback que recibimos por parte de nuestros usuarios fue el siguiente:
 * En el escritorio la página inicial solo con el formulario hace que se vea mucho espacio vacío, sugerimos la implementación de una imagen alusiva a la temática que permita llamar la atención.
 * En el muro Se evidencia bastante espacio vacío. Se sugiere expandir las casillas de los post de acuerdo al tamaño de la pantalla.
  
-## **6. Ttabajos futuros**
+## **6. Trabajos futuros**
 
-Se espera que en un futuro la aplicación permita técnicamente crear grupos de trabajo en la base de datos.
-Se espera que el usuario al registrarse pueda llenar campos con información referente a su perfil de manera que otras personas puedan saber sus intereses profesionales
-Se espera que al escribir un post se puedan manejar etiquetas de manera que los demas usurios sepan si es una pregunta, una idea, una presentación o un requerimiento.
+* Se espera que en un futuro la aplicación permita técnicamente crear grupos de trabajo en la base de datos.
+* Se espera que el usuario al registrarse pueda llenar campos con información referente a su perfil de manera que otras     personas puedan saber sus intereses profesionales
+* Se espera que al escribir un post se puedan manejar etiquetas de manera que los demas usurios sepan si es una pregunta, una idea, una presentación o un requerimiento.
