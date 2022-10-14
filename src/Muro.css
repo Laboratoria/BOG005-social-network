@@ -15,14 +15,7 @@ body{
     align-items: center;
     height: 100vh;
 }
-#comentario {
-    background-color: #f3f3f3;
-    height: 300px;
-    margin-left: 60px;
-    margin-right: 90px;
-    width:85% ;
 
-}
 #texto-publicar{
     font-size: clamp(0.2rem,2vw,3.1rem);
     font-family: 'Josefin Sans', sans-serif;
@@ -35,7 +28,7 @@ body{
     
 }
 #contenedor-muro {
-   
+   background-color: maroon;
     height: 500px;
     width: 800px;
 }
@@ -45,13 +38,7 @@ body{
     align-items: center;
     margin-left: 30px;
 }
-#contenido-publicar {
-    height: 100px;
-    width: 45%;
-    margin-left: 145px;
-    margin-right: auto;
-    margin-top: 30px;
-}
+
 #creacionPublicar{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid transparent;
@@ -63,6 +50,7 @@ body{
     font-size: 15px;
     color: white;
     text-align: center;
+   
 }
 #salir {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -80,4 +68,73 @@ body{
     background-color: #143F6B;
     height: 95px;
     width: 100%;
+}
+#crearPublicacion {
+/* margin-left: 13rem; */
+margin-left: 12rem;
+margin-right: auto;
+margin-top: 10px;
+border-radius: 8px;
+height: 7rem;
+width: 25rem;
+padding-top: 3rem;
+padding-left: 2rem;
+font-size: 16px;
+border-color: #143F6B;
+Border-width:3px;
+}
+#texto-publicar {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
+#pubRecientes {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    margin-left: 50px;
+}
+#creacionPublicar{
+    margin-top: 15px;
+}
+.input{
+    background-color: #FEB139;
+    margin-top: 30px;
+    margin-left: 10rem;
+    border-radius: 8px;
+    height: 7rem;
+    width: 25rem;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    font-size: 16px;
+    border-color: #143F6B;
+    Border-width: 3px;
+}
+.btn-Borrar, .btn-Editar, .btn-Guardar {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px; 
+    width: clamp(7rem,10vw,15rem);
+    height: clamp(2rem,3vw,7rem);
+    background-color: #143F6B;
+    margin-left: 20rem;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    /* flex-wrap: wrap-reverse; */
+    /* justify-content:space-evenly; */
+    /* flex-direction: row-reverse; */
+    margin-top: 1rem;
+    /* display: inline; */
+    display: inline-block
+    
+}
+#comentario{
+    background-color: aqua;
+     height: 1200px;
+     margin-top: 0%;
+    
+}
+#pubRecientes {
+
 }

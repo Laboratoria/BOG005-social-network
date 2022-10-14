@@ -25,6 +25,8 @@ export const muro = () => {
   crearPublicacion.id = "crearPublicacion";
   const buttonPublicar = document.createElement("button");
   buttonPublicar.id = "creacionPublicar";
+  const pubRecientes = document.createElement("p");
+  pubRecientes.id = "pubRecientes";
   const buttonX = document.createElement("button");
   buttonX.id = "cerrar-publicar";
   const salir = document.createElement("button");
@@ -41,6 +43,7 @@ export const muro = () => {
   tituloP.textContent = "Crear publicación";
   crearPublicacion.setAttribute('placeholder', "¿Que has conocido hoy de Colombia?");
   buttonPublicar.textContent = "Publicar";
+  pubRecientes.textContent = "Publicaciones Recientes";
 
   // Crear la funcion salir en firebase.js
   // Devuelva la metodo de firebase signOut()
@@ -62,7 +65,7 @@ export const muro = () => {
         //Contiene el caja para editar, borrar y guardar el post
         elementosPost += `
         <div> 
-          <input id='id-${doc.id}' value="${info.post}" disabled/>
+          <input class="input" id='id-${doc.id}' value="${info.post}" disabled/>
           <button class="btn-Borrar" data-id="${doc.id}">Borrar</button>
           <button class="btn-Editar" data-id="${doc.id}">Editar</button>
           <button class="btn-Guardar" data-id="${doc.id}">Guardar</button>
@@ -79,7 +82,6 @@ export const muro = () => {
         borrarPost(dataset.id)
       })
     })
-
 
 //Funcion Editar Post
     const btnsEditar = comentario.querySelectorAll('.btn-Editar');
@@ -100,7 +102,6 @@ export const muro = () => {
     btnsGuardar.forEach(btn => {
       
       btn.addEventListener("click", (event) => {
-      //  const pos = inputEditar.value;
       const inputEditar = comentario.querySelector(`#id-${event.target.dataset.id}`) 
       console.log(inputEditar)
        if (editEstatus) {
@@ -109,31 +110,14 @@ export const muro = () => {
           post: inputEditar.value
         })
       }  
-        
-      
-      
-      //  inputEditar.disabled = false
-        
-        
-    
-        //     savePostFirestore(post).then(() => {
-        //     }).catch((error) => {
-        //       console.log(error.message)
-        //     })
-        //   } else { //Si se edita, entonces actualiza la información
-        //     getPost();
-        //     updateDataPost(id, { title: post });
-        //     editStatus = false;
-        //   }
-        //   inputPost.value = '';
-        // });
+
       })
     })
   })
     })
     
 
-      // comentario.reset();
+     
 
     salir.addEventListener('click', () => {
       cerrarSesion().then(() => {
@@ -147,8 +131,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 //Agregando elementos al div padre
     header.append(logo, salir);
-    comentario.append(buttonX);
-    div.append(header, tituloP, crearPublicacion, buttonPublicar, comentario, footer);
+    comentario.append(pubRecientes);
+    div.append(header, tituloP, crearPublicacion, buttonPublicar,comentario, footer);
     footer.append(casita, perfil);
     return div
 }
