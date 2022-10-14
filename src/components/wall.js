@@ -2,7 +2,9 @@
 import { onNavigate } from '../main.js';
 import {
   createPost,
-  signOff, onGetPosts,
+  signOff,
+  onGetPosts,
+  deletePost,
 } from '../firebase/connection.js';
 
 export const wall = () => {
@@ -46,18 +48,25 @@ export const wall = () => {
   postZoneContainer.setAttribute('id', 'postZoneContainer');
 
   // window.addEventListener('DOMContentLoaded', async () => {
+
   onGetPosts((querySnapshot) => {
     postZoneContainer.innerHTML = '';
+
     querySnapshot.forEach((doc) => {
-      // crea un p donde quedara el post
+      // crea un p donde quedará el post
       const postBox = document.createElement('p');
       postBox.className = 'textPost';
       postBox.textContent = doc.data().post;
 
       // boton de eliminar post
       const buttonTrash = document.createElement('button');
+      buttonTrash.setAttribute('data-id', doc.id);
       buttonTrash.classList.add('buttonIcons');
       buttonTrash.id = 'btnTrash';
+
+      buttonTrash.addEventListener('click', ({ target: { dataset } }) => {
+        deletePost(dataset.id);
+      });
 
       // boton de editar el post
       const buttonEdit = document.createElement('button');

@@ -9,9 +9,14 @@ import {
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 import {
+  getFirestore,
   collection,
   addDoc,
-  getFirestore,
+  doc,
+  // getDoc,
+  // getDocs,
+  deleteDoc,
+  // updateDoc,
   onSnapshot,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
@@ -119,6 +124,9 @@ const createPost = async (text) => {
 // Se crea la constante que nos permitirá postear
 const onGetPosts = (callback) => onSnapshot(collection(db, 'Posts'), callback);
 
+// función para borrar posts
+const deletePost = (id) => deleteDoc(doc(db, 'Posts', id));
+
 export {
-  auth, createUser, signInUser, googleSignIn, signOff, createPost, onGetPosts,
+  auth, createUser, signInUser, googleSignIn, signOff, createPost, onGetPosts, deletePost,
 };

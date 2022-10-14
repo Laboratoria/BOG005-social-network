@@ -239,7 +239,8 @@ h3 {
   }
 
   .textPost {
-    margin: 5vh 2vh;
+    margin: 0 2vh 5vh 0;
+    font-size: 0.8rem;
   }
 
   /* estilo para los botones que contienen iconos */
