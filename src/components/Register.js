@@ -30,11 +30,6 @@ export const Register = () => {
   const section1 = document.createElement('section');
   section1.className = 'section1';
 
-  const inputName = document.createElement('input');
-  inputName.setAttribute('requiered', '');
-  inputName.setAttribute('placeholder', 'Nombre');
-  inputName.setAttribute('id', 'name');
-
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('requiered', '');
   inputEmail.setAttribute('placeholder', 'Correo electrónico');
@@ -46,12 +41,6 @@ export const Register = () => {
   inputPass.setAttribute('placeholder', 'Contraseña');
   inputPass.setAttribute('id', 'password');
   inputPass.setAttribute('type', 'password');
-
-  const inputConfirmPassword = document.createElement('input');
-  inputConfirmPassword.setAttribute('requiered', '');
-  inputConfirmPassword.setAttribute('placeholder', 'Confirma tu Contraseña');
-  inputConfirmPassword.setAttribute('id', 'confirm-password');
-  inputConfirmPassword.setAttribute('type', 'password');
 
   const buttonSignUp = document.createElement('button');
   buttonSignUp.textContent = 'Registrate!';
@@ -73,10 +62,8 @@ export const Register = () => {
   errorAdvice.setAttribute('id', 'errorApp');
 
   section1.append(
-    inputName,
     inputEmail,
     inputPass,
-    inputConfirmPassword,
     buttonSignUp,
     section2,
     errorAdvice,
@@ -100,12 +87,13 @@ export const Register = () => {
       .catch((error) => {
         const usedEmail = 'Este email ya se encuentra registrado';
         const invalidEmail = 'Este email no es válido';
-        const lengthPass = 'La constraseña debe contener mínimo 6 carcateres';
+        const lengthPass = 'La contraseña debe contener mínimo 6 carácteres';
 
-        if (error.code === 'auth/email-alredy-in-use') {
-          errorAdvice.innerText = usedEmail;
-        } else if (error.code === 'auth/invalid-email') {
+        if (error.code === 'auth/invalid-email') {
           errorAdvice.innerText = invalidEmail;
+        } else if (error.code === 'auth/email-alredy-in-use'
+        ) {
+          errorAdvice.innerText = usedEmail;
         } else if (error.code === 'auth/weak-password') {
           errorAdvice.innerText = lengthPass;
         }

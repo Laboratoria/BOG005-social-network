@@ -5,6 +5,13 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -41,6 +48,13 @@ button {
   color: #ffffff;
   font-family: 'Lexend Giga', sans-serif;
   font-size: 12px;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  width: 100%;
+  font-family: 'Lexend Giga', sans-serif;
 }
 
 /*Estilos para el header*/
@@ -219,8 +233,12 @@ button {
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  margin-top: 15px;
   box-shadow: inset 2px 1px 1px 1px rgb(176, 169, 168);
+}
+
+.userName {
+  padding-top: 18px;
+  padding-left: 15px;
 }
 
 .boxPost1 {
@@ -231,6 +249,7 @@ button {
   border-radius: 11px;
   margin-block-end: 10px;
   width: 90%;
+  height: 208px;
 }
 
 .deleteAndEditContainer {
@@ -246,6 +265,31 @@ button {
   text-align: center;
   flex-direction: column;
   align-items: center;
+}
+
+.btn-like {
+  border: 2px solid #c7c7c7;
+  border-radius: 40px;
+  padding: 0.45rem 0.75rem;
+  color: #faf6f6;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.icono {
+  margin-right: 10px;
+}
+
+.counter-likes {
+  margin-left: 10px;
+}
+
+.editAndDele {
+  display: flex;
 }
 
 /*Estilos Para PC*/
@@ -403,4 +447,14 @@ button {
   .boxPost1 {
     width: 73%;
   }
+
+  .editAndDele {
+    align-items: center;
+    margin-top: 18px;
+  }
+
+  .btn-borrar {
+    margin-left: 180px;
+  }
+
 }
