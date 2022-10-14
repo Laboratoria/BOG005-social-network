@@ -1,5 +1,6 @@
 import { onNavigate } from '../main.js';
 import { createUser } from '../lib/firebase.js';
+import { showMessage } from '../lib/showMessage.js';
 
 export const Register = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
@@ -69,9 +70,6 @@ export const Register = () => {
 
   section2.append(account, linkLogin);
 
-  const errorAdvice = document.createElement('p');
-  errorAdvice.setAttribute('id', 'errorApp');
-
   section1.append(
     inputName,
     inputEmail,
@@ -79,7 +77,6 @@ export const Register = () => {
     inputConfirmPassword,
     buttonSignUp,
     section2,
-    errorAdvice,
   );
 
   linkLogin.addEventListener('click', () => {
@@ -94,23 +91,22 @@ export const Register = () => {
     const registerPass = inputPass.value;
     createUser(registerEmail, registerPass)
       .then(() => {
-        alert('Usuario creado');
+        showMessage('Usuario creado. Bienvenid@');
         onNavigate('/wall');
       })
       .catch((error) => {
-        const usedEmail = 'Este email ya se encuentra registrado';
-        const invalidEmail = 'Este email no es válido';
-        const lengthPass = 'La constraseña debe contener mínimo 6 carcateres';
-
-        if (error.code === 'auth/email-alredy-in-use') {
-          errorAdvice.innerText = usedEmail;
+        if (error.code === 'auth/email-already-in-use') {
+          showMessage('Email ya en uso', 'error');
         } else if (error.code === 'auth/invalid-email') {
-          errorAdvice.innerText = invalidEmail;
+          showMessage('Email inválido', 'error');
         } else if (error.code === 'auth/weak-password') {
-          errorAdvice.innerText = lengthPass;
+          showMessage('La contraseña es demasiado débil. Como mínimo debe tener 6 caracteres', 'error');
+        } else if (error.code) {
+          showMessage(error.message, 'error');
         }
       });
   });
+
   div.append(header, section1);
 
   return div;

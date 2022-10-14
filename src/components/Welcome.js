@@ -2,6 +2,7 @@ import { onNavigate } from '../main.js';
 import {
   signInUser, popupGoogle,
 } from '../lib/firebase.js';
+import { showMessage } from '../lib/showMessage.js';
 
 export const Welcome = () => {
   // contenedor que almacenará header, las 2 secciones y dará un solo return
@@ -62,10 +63,7 @@ export const Welcome = () => {
 
   section2.append(account, linkRegister);
 
-  const errorAdvice = document.createElement('p');
-  errorAdvice.setAttribute('id', 'errorApp');
-
-  section1.append(inputEmail, inputPass, buttonLogin, google, section2, errorAdvice);
+  section1.append(inputEmail, inputPass, buttonLogin, google, section2);
 
   linkRegister.addEventListener('click', () => {
     onNavigate('/register');
@@ -75,7 +73,7 @@ export const Welcome = () => {
 
   google.addEventListener('click', () => {
     popupGoogle().then(() => {
-      alert('Usuario Loggeado!');
+      showMessage('Bienvenid@');
       onNavigate('/wall');
     });
   });
@@ -88,20 +86,16 @@ export const Welcome = () => {
     const loginPass = inputPass.value;
     signInUser(loginEmail, loginPass)
       .then(() => {
-        alert('usuario loggeado');
+        showMessage('Bienvenid@');
         onNavigate('/wall');
       })
       .catch((error) => {
-        const invalidEmail = 'Correo inválido';
-        const passNone = 'Ingrese una contraseña';
-        const passWrong = 'Contraseña incorrecta';
-
         if (error.code === 'auth/invalid-email') {
-          errorAdvice.innerText = invalidEmail;
+          showMessage('Email inválido', 'error');
         } else if (error.code === 'auth/internal-error') {
-          errorAdvice.innerText = passNone;
+          showMessage('Ingrese una contraseña', 'error');
         } else if (error.code === 'auth/wrong-password') {
-          errorAdvice.innerText = passWrong;
+          showMessage('Contraseña incorrecta', 'error');
         }
       });
   });

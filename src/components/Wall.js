@@ -81,7 +81,7 @@ export const Wall = () => {
 
     const btnsEdit = newPostContainer.querySelectorAll('.btn-editar');
     const btnsDelete = newPostContainer.querySelectorAll('.btn-borrar');
-    console.log(btnsDelete);
+    /*  console.log(btnsDelete); */
     const btnsLikes = newPostContainer.querySelectorAll('.btn-like');
     const counterLikes = newPostContainer.querySelectorAll('.counter-likes');
 

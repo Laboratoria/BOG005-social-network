@@ -26,7 +26,7 @@ import { firebaseConfig } from '../components/config.js';
 
 // Initializa Firebase
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
+export const auth = getAuth(app);
 // export const user = () => getAuth(app).createUser;
 
 // Inicializa Firebase Authentication y obtiene una referencia al servicio
@@ -50,6 +50,7 @@ export const getUser = () => {
 export const db = getFirestore(app); // la conexión a la base de datos
 
 export const savePost = (postArea, email) => addDoc(collection(db, 'post'), { postArea, likes: [], email });
+/* export const savePost = (postArea, email) => addDoc(collection(db, 'post'), { postArea, likes: [], email }); */
 export const getPosts = () => getDocs(collection(db, 'post'));
 export const onGetPosts = (callback) => onSnapshot(collection(db, 'post'), callback);
 export const deletePost = (id) => deleteDoc(doc(db, 'post', id));
