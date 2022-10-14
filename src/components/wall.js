@@ -1,3 +1,5 @@
+/* eslint-disable space-before-blocks */
+/* eslint-disable no-console */
 /* eslint-disable brace-style */
 import { onNavigate } from '../main.js';
 import {
@@ -6,6 +8,7 @@ import {
   onGetPosts,
   deletePost,
   editPosts,
+  updatePost,
 } from '../firebase/connection.js';
 
 export const wall = () => {
@@ -48,7 +51,8 @@ export const wall = () => {
   const postZoneContainer = document.createElement('article');
   postZoneContainer.setAttribute('id', 'postZoneContainer');
 
-  // window.addEventListener('DOMContentLoaded', async () => {
+  let editStatus = false;
+  let id = '';
 
   onGetPosts((querySnapshot) => {
     postZoneContainer.innerHTML = '';
@@ -75,9 +79,14 @@ export const wall = () => {
       buttonEdit.classList.add('buttonIcons');
       buttonEdit.id = 'btnEdit';
 
-      buttonEdit.addEventListener('click', (e) => {
-        editPosts(e.target.dataset.id);
-        console.log(e.target.dataset.id);
+      buttonEdit.addEventListener('click', async (e) => {
+        const docId = await editPosts(e.target.dataset.id);
+        const postText = docId.data();
+
+        wallPost.value = postText.post;
+
+        editStatus = true;
+        id = e.target.dataset.id;
       });
 
       // boton de dar like al post
@@ -107,6 +116,14 @@ export const wall = () => {
         console.log('guardado');
         wallPost.value = '';
       }).catch(() => console.log('no se guardo'));
+
+    if (!editStatus){
+      createPost(post);
+    } else {
+      updatePost(id, { post });
+      deletePost(id, { post });
+      editStatus = false;
+    }
   });
 
   header.append(imgTitle, buttonExit);

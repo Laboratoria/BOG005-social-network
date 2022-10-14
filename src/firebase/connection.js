@@ -15,7 +15,7 @@ import {
   doc,
   getDoc,
   deleteDoc,
-  // updateDoc,
+  updateDoc,
   onSnapshot,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
@@ -129,6 +129,9 @@ const editPosts = (id) => getDoc(doc(db, 'Posts', id));
 // función para borrar posts
 const deletePost = (id) => deleteDoc(doc(db, 'Posts', id));
 
+// función para actualizar los posts al editarlos
+const updatePost = (id, newText) => updateDoc(doc(db, 'Posts', id), newText);
+
 export {
   auth,
   createUser,
@@ -139,4 +142,5 @@ export {
   onGetPosts,
   deletePost,
   editPosts,
+  updatePost,
 };
