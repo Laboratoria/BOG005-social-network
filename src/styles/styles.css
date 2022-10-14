@@ -193,9 +193,7 @@ ul{
     display: flex;
 }
 #wallContent {
-    /* background: rgb(3, 202, 223); */
-    /* width: 50%; */
-    border: solid black;
+    
     min-width: 50%;
     max-width: 70%;
 }
