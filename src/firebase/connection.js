@@ -4,13 +4,19 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  // onAuthStateChanged,
   signInWithPopup,
   GoogleAuthProvider,
   signOut,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js';
 import {
-  collection, addDoc, getFirestore, onSnapshot,
+  getFirestore,
+  collection,
+  addDoc,
+  doc,
+  getDoc,
+  deleteDoc,
+  updateDoc,
+  onSnapshot,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 
 const firebaseConfig = {
@@ -117,6 +123,24 @@ const createPost = async (text) => {
 // Se crea la constante que nos permitirá postear
 const onGetPosts = (callback) => onSnapshot(collection(db, 'Posts'), callback);
 
+// Función para editar posts
+const editPosts = (id) => getDoc(doc(db, 'Posts', id));
+
+// función para borrar posts
+const deletePost = (id) => deleteDoc(doc(db, 'Posts', id));
+
+// función para actualizar los posts al editarlos
+const updatePost = (id, newText) => updateDoc(doc(db, 'Posts', id), newText);
+
 export {
-  auth, createUser, signInUser, googleSignIn, signOff, createPost, onGetPosts,
+  auth,
+  createUser,
+  signInUser,
+  googleSignIn,
+  signOff,
+  createPost,
+  onGetPosts,
+  deletePost,
+  editPosts,
+  updatePost,
 };

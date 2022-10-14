@@ -1,7 +1,14 @@
+/* eslint-disable space-before-blocks */
+/* eslint-disable no-console */
 /* eslint-disable brace-style */
 import { onNavigate } from '../main.js';
 import {
-  createPost, signOff, onGetPosts,
+  createPost,
+  signOff,
+  onGetPosts,
+  deletePost,
+  editPosts,
+  updatePost,
 } from '../firebase/connection.js';
 
 export const wall = () => {
@@ -44,24 +51,43 @@ export const wall = () => {
   const postZoneContainer = document.createElement('article');
   postZoneContainer.setAttribute('id', 'postZoneContainer');
 
-  // window.addEventListener('DOMContentLoaded', async () => {
+  let editStatus = false;
+  let id = '';
+
   onGetPosts((querySnapshot) => {
     postZoneContainer.innerHTML = '';
+
     querySnapshot.forEach((doc) => {
-      // crea un p donde quedara el post
+      // crea un p donde quedará el post
       const postBox = document.createElement('p');
       postBox.className = 'textPost';
       postBox.textContent = doc.data().post;
 
       // boton de eliminar post
       const buttonTrash = document.createElement('button');
+      buttonTrash.setAttribute('data-id', doc.id);
       buttonTrash.classList.add('buttonIcons');
       buttonTrash.id = 'btnTrash';
 
+      buttonTrash.addEventListener('click', ({ target: { dataset } }) => {
+        deletePost(dataset.id);
+      });
+
       // boton de editar el post
       const buttonEdit = document.createElement('button');
+      buttonEdit.setAttribute('data-id', doc.id);
       buttonEdit.classList.add('buttonIcons');
       buttonEdit.id = 'btnEdit';
+
+      buttonEdit.addEventListener('click', async (e) => {
+        const docId = await editPosts(e.target.dataset.id);
+        const postText = docId.data();
+
+        wallPost.value = postText.post;
+
+        editStatus = true;
+        id = e.target.dataset.id;
+      });
 
       // boton de dar like al post
       const buttonHeart = document.createElement('button');
@@ -90,6 +116,14 @@ export const wall = () => {
         console.log('guardado');
         wallPost.value = '';
       }).catch(() => console.log('no se guardo'));
+
+    if (!editStatus){
+      createPost(post);
+    } else {
+      updatePost(id, { post });
+      deletePost(id, { post });
+      editStatus = false;
+    }
   });
 
   header.append(imgTitle, buttonExit);

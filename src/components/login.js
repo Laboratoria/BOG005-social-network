@@ -6,11 +6,11 @@ export const login = () => {
   containerLogin.classList.add('container');
 
   const titleLo = document.createElement('h1');
-  titleLo.textContent = 'ENJOY THE WORLD';
-  titleLo.className = 'titleLo';
+  titleLo.textContent = 'INICIA SESIÓN';
+  titleLo.className = 'title1';
 
   const imgLogin = document.createElement('img');
-  imgLogin.className = 'img-login';
+  imgLogin.className = 'img-world';
   imgLogin.src = '/img/logo.png';
   imgLogin.alt = 'logo';
 
@@ -18,14 +18,14 @@ export const login = () => {
   loginForm.classList.add('form-login');
 
   const loginEmail = document.createElement('input');
-  loginEmail.classList.add('inputE');
+  loginEmail.classList.add('input');
   loginEmail.setAttribute('type', 'email');
   loginEmail.setAttribute('id', 'email-login');
   loginEmail.setAttribute('placeholder', 'Email');
   loginEmail.setAttribute('required', '');
 
   const loginPassword = document.createElement('input');
-  loginPassword.classList.add('inputL');
+  loginPassword.classList.add('input');
   loginPassword.setAttribute('type', 'password');
   loginPassword.setAttribute('id', 'password-login');
   loginPassword.setAttribute('placeholder', 'Contraseña');
