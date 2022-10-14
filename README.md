@@ -1,4 +1,4 @@
-# Creando una Red Social
+# Red Social Explora Colombia
 
 ## Índice
 
@@ -28,7 +28,7 @@ más comentado.
 
 ## 2. Resumen del proyecto
 
-En este proyecto construirás una Red Social sobre lo que decidan tú y tu equipo.
+En este proyecto construimos  una Red Social sobre .
 Podría ser, por ejemplo, sobre alimentación saludable, feminismo, educación,
 salud, energías renovables, amantes de las [Empanadas](https://es.wikipedia.org/wiki/Empanada)
 o de los [Tacos de Canasta](https://es.wikipedia.org/wiki/Taco), de la
