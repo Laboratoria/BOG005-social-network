@@ -1,0 +1,455 @@
+@media (max-width: 864px) {
+    .containerImg{
+      display: none
+        }
+}
+
+/* 
+RGB : 3, 202, 223  ///// azul  #0ecce1
+RGB : 138, 79, 233 ////morado osc #8c4fec
+RGB : 144, 86, 238 /// morado claro #965cf2
+RGB : 215, 231, 255 /// azul claro 2rio ///#d7e7ff
+
+ */
+body, html {
+    /* height: auto; */
+    font-family: 'Poppins', sans-serif;
+    margin: 0%;
+    padding: 0%;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    height: 200vh;
+    background-repeat:no-repeat;
+
+}
+
+#root{
+    display: flex;
+    justify-content: center;
+
+}
+
+.container{ /*contenedor de login gral */
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+/*     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    align-items: center;
+    /* gap:1rem */ 
+}
+
+.containerImg{
+/*     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    margin-top: 100px;
+    padding: 20px; */
+}
+
+.imgWelcome{
+/* flex-grow: -0.5; */
+max-width: 500px;
+min-width: 300px;
+height: auto;
+}
+.viewLogin {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+/*     margin: 20px;
+    margin-top: 100px; */
+    padding: 20px;
+    border: 1px solid #c2bfbf;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgLogo {
+    height: 180px;
+
+}
+
+.registerView{  /*contenedor de register gral */
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    max-width: 1200px;
+    min-height: 100vh;
+}
+.viewRegister {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #c2bfbf;
+}
+
+
+.input {
+    width: 250px;
+    height: 37px;
+    margin: 10px;
+    padding: 5px;
+    color: rgb(93, 92, 92);
+    font-size: medium;
+    text-align: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: rgb(167, 167, 167);
+}
+
+.input::placeholder {
+    color: rgb(197, 196, 196);
+}
+.input:focus {
+    border-color: #F9965E;
+    outline: 7px;
+}
+
+.btn, .buttonDeleteclass {
+    width: 200px;
+    height: 45px;
+    color: white;
+    margin: 5px;
+    font-size: large;
+    border-radius: 10px;
+    align-items: center;
+    background-color: /* #C46BFF   */   #B76BFF ;
+    border: white;
+    padding-right: 10px;
+}
+
+.btn.registration, button {
+    margin-top: 40px;
+}
+
+.btn:hover {
+    background-color: #A170FF;
+}
+
+.buttonBack{
+    margin-top: 20px;
+    color: rgb(127, 127, 127);
+    border: none;
+    background-color: transparent;
+    font-size: medium;
+    text-decoration: underline;  
+}
+
+p {
+    text-align: center;
+}
+
+#buttonGoogle {
+    height: 45px;
+    font-family: 'Roboto';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0px 10px 0px 3px;
+    font-size: medium;
+    color: rgb(93, 93, 93);
+    border-radius: 5px;
+    border-color: white;
+    border-style: solid;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+}
+#buttonGoogle:before{
+    content: '';
+    width: 35px;
+    height: 35px;
+    display: flex;
+    margin-right: 10px;
+    background-image: url('../image/imgLogoGoogle.png');
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    background-color: white;
+    background-size: 20px 20px;
+    background-position: center center;
+}
+
+/***********estilos wall**************/
+ul{
+    display: flex;
+}
+#wallContent {
+    
+    min-width: 50%;
+    max-width: 70%;
+}
+
+ .postOne {
+    display: flex;
+    background: #FFFFFF;
+    border: 1px solid #9697EF;
+    border-radius: 19px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90%;
+    padding-top:5% ;
+    padding-left: 5%;
+    padding-right:5% ;
+    margin-bottom: 10px;
+    
+}
+
+.posts {
+    border: 1px solid #9697EF;
+    border-radius: 19px;
+    width:100% ;
+}
+
+.postOneButtons {
+    display: flex;
+    background: #FFFFFF;
+    /* border: 1px solid #bb10ad; */
+    flex-direction: row;
+    align-items: flex-start;
+    width: 30%;
+    justify-content: flex-end; 
+}
+
+.post {
+    display: flex;
+}
+
+#imgLogomini {
+    width: 93px;
+    max-width: 130px;
+    height: auto;
+    flex-grow: 1
+
+}
+
+#buttonsingout ,
+#buttonprofile,
+#buttonwall,
+.buttonDelete {
+    background-color: transparent;
+    width: 79px;
+    height: 53px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #363636;
+    border:none;
+    mix-blend-mode: normal;
+    margin:auto
+}
+
+#buttonpost{
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/save.png);
+    background-size: cover;
+    margin: auto;
+}
+.ButtonModal{
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/editar.png);
+    background-size: cover;
+    margin: auto;
+}
+.btnDelete{
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/trash.png);
+    background-size: cover;
+    margin: auto;
+}
+.btnlike {
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background: url(../image/like.png);
+    background-size: cover;
+    margin: auto;
+}
+.btnlike:hover {
+    background: url(../image/heart.png);
+    background-size: cover;
+}
+
+.buttonEdit{
+    border: none;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    background: url(../image/enviar.png);
+    background-size: cover;
+}
+
+
+#writer{
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    
+    color: #47086b;
+    
+}
+
+
+
+#written, .textAreaEdit{
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 22px;
+color: #7d17a5;
+width: 88%;
+background: #FFFFFF;
+border: 1px solid #9697EF;
+border-radius: 19px;
+}
+
+
+#menu{
+    display: flex;
+}
+#header, #nav {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-wrap: wrap;
+ 
+}
+
+#header{
+ 
+    min-width: 50%;
+   
+}
+
+
+
+
+
+
+/* .imgWelcome{
+animation: move-vector 4s linear infinite;
+}
+
+@keyframes move-vector {
+    0%{
+        transform: translateY(15px);
+    }50%{
+        transform: translateY(0px);
+    }100%{
+        transform: translateY(15px);
+    }
+} */
+.separatorButtonGoogle{
+    color:#bbbaba;
+}
+
+li ::marker{
+marker: none;
+}
+
+.contWall{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+li{
+    display: flex;
+    align-items: center;
+}
+#writer{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+
+
+
+/*************************modal*************************/
+
+  .modalDialog {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 100ms ease-in;
+    -moz-transition: opacity 100ms ease-in;
+    transition: opacity 100ms ease-in;
+    pointer-events: none;
+  }
+  .modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+/*   .modalDialog > section {
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    margin:  auto;
+    padding: 20px;
+    border-radius: 3px;
+    background: #fff;
+  } */
+  .close {
+    position: absolute;
+    right: 12px;
+    text-align: center;
+    top: 10px;
+    width: 34px;
+    height: 34px;
+    font-weight: bold;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+    padding-top: 5px;
+    background: url(../image/cerrar.png);
+    background-size: cover;
+  }
