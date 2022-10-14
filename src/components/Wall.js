@@ -110,8 +110,6 @@ export const Wall = () => {
 
     btnsLikes.forEach((btn) => {
       btn.addEventListener('click', ({ target: { dataset } }) => {
-        /* console.log(auth.currentUser.email);
-        console.log('like'); */
         updatePost(dataset.id, { likes: arrayUnion(auth.currentUser.email) });
         counterLikes.innerHTML = '';
         // eslint-disable-next-line no-plusplus

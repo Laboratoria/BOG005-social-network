@@ -27,24 +27,12 @@ import { firebaseConfig } from '../components/config.js';
 // Initializa Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
-// export const user = () => getAuth(app).createUser;
 
 // Inicializa Firebase Authentication y obtiene una referencia al servicio
 export const createUser = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 export const signInUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 export const provider = new GoogleAuthProvider();
 export const popupGoogle = () => signInWithPopup(auth, provider);
-/* export const outhUser = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      window.location.pathname = '/wall';
-    }
-  });
-};
-export const getUser = () => {
-  outhUser();
-  return auth.currentUser;
-}; */
 
 // Inicializa Cloud Firestore
 export const db = getFirestore(app); // la conexión a la base de datos
