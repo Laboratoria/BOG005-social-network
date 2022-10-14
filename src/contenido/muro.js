@@ -1,13 +1,13 @@
 
 import { cerrarSesion } from "../lib/firebase.js";
-import { obtpost, borrarPost, editarPost,guardarPost } from "../lib/firestore.js";
+import { obtpost, borrarPost, editarPost, guardarPost, actualizarPost } from "../lib/firestore.js";
 import { guardarPublicaciones } from "../lib/firestore.js";
- 
+
 
 
 //Creacion de elementos o nodos en el muro
 export const muro = () => {
-  
+
   const div = document.createElement('div');
   div.id = 'contenedor-muro';
   const header = document.createElement('header');
@@ -33,7 +33,7 @@ export const muro = () => {
   casita.class = "casita";
   const perfil = document.createElement("button");
   perfil.class = "perfil";
-  
+
 
   salir.textContent = "Cerrar Sesión";
   // casita.innerHTML = "<span class="material-icons"><p>Inicio</p></span>" ;
@@ -48,14 +48,14 @@ export const muro = () => {
   // añadir un manejador de eventos al boton salir
   // Dentro de la funcion del addEventListener llamar a la funcion salir
   let editEstatus = false
-  const doc = "";
+  let docId = "";
   const likes = [];
 
   buttonPublicar.addEventListener('click', async () => {
     console.log('valor del input: ', crearPublicacion.value);
-    guardarPublicaciones(crearPublicacion.value, likes, "xyz123")
-    obtpost((querySnapshot => {
-      
+    guardarPublicaciones(crearPublicacion.value, likes)
+    obtpost(querySnapshot => {
+
       let elementosPost = ''
       querySnapshot.forEach(doc => {
         const info = doc.data()
@@ -67,67 +67,88 @@ export const muro = () => {
           <button class="btn-Editar" data-id="${doc.id}">Editar</button>
           <button class="btn-Guardar" data-id="${doc.id}">Guardar</button>
         </div>
-     `
+       `
       })
-    //Funcion Borrar Post 
-      comentario.innerHTML = elementosPost
-      const btnsBorrar = comentario.querySelectorAll('.btn-Borrar');
-      btnsBorrar.forEach(btn => {
-        btn.addEventListener("click", ({ target: { dataset } }) => {
-          borrarPost(dataset.id)
-        })
+      //limpiar textArea
+      crearPublicacion.value = '';
+      //Funcion Borrar Post 
+    comentario.innerHTML = elementosPost
+    const btnsBorrar = comentario.querySelectorAll('.btn-Borrar');
+    btnsBorrar.forEach(btn => {
+      btn.addEventListener("click", ({ target: { dataset } }) => {
+        borrarPost(dataset.id)
       })
+    })
+
+
 //Funcion Editar Post
-      const btnsEditar = comentario.querySelectorAll('.btn-Editar');
-      btnsEditar.forEach(btn => {
-        btn.addEventListener("click", async(event) => {
-          const doc = await editarPost(event.target.dataset.id)
-          const inf = doc.data()
-          // console.log('sasa: ', );
-          const inputEditar= comentario.querySelector(`#id-${event.target.dataset.id}`)
-          inputEditar.disabled = false
-          // comentario['crearPublicacion'].value = inf.post
-          editEstatus = true;
-        }
-        )
+    const btnsEditar = comentario.querySelectorAll('.btn-Editar');
+    btnsEditar.forEach(btn => {
+      btn.addEventListener("click", async (event) => {
+        docId = event.target.dataset.id
+        const doc = await editarPost(docId)
+        
+        const inputEditar = comentario.querySelector(`#id-${docId}`)
+        console.log(inputEditar)
+        inputEditar.disabled = false
+        editEstatus = true;
       })
+    })
 //Funcion Guardar Post
+
+    const btnsGuardar = comentario.querySelectorAll('.btn-Guardar');
+    btnsGuardar.forEach(btn => {
       
-    }))
-    comentario.addEventListener("submit",(e)=>{
-      e.preventDefault();
-      const guardarComentario = comentario["crearPublicacion"];
-      guardarPublicaciones(post.value);
-      comentario.reset();
-    })
-  })
-
-
-
-
-
-
-  salir.addEventListener('click', () => {
-    cerrarSesion().then(() => {
-    })
-      .catch((error) => {
-        console.error(error.message)
+      btn.addEventListener("click", (event) => {
+      //  const pos = inputEditar.value;
+      const inputEditar = comentario.querySelector(`#id-${event.target.dataset.id}`) 
+      console.log(inputEditar)
+       if (editEstatus) {
+        editEstatus = false;
+        actualizarPost(docId, {
+          post: inputEditar.value
+        })
+      }  
+        
+      
+      
+      //  inputEditar.disabled = false
+        
+        
+    
+        //     savePostFirestore(post).then(() => {
+        //     }).catch((error) => {
+        //       console.log(error.message)
+        //     })
+        //   } else { //Si se edita, entonces actualiza la información
+        //     getPost();
+        //     updateDataPost(id, { title: post });
+        //     editStatus = false;
+        //   }
+        //   inputPost.value = '';
+        // });
       })
+    })
+  })
+    })
+    
+
+      // comentario.reset();
+
+    salir.addEventListener('click', () => {
+      cerrarSesion().then(() => {
+      })
+        .catch((error) => {
+          console.error(error.message)
+        })
+    })
+window.addEventListener('DOMContentLoaded', () => {
   })
 
-window.addEventListener('DOMContentLoaded',() => {
-
-})
-
-
-
-
-
-
-
-header.append(logo, salir);
-comentario.append(crearPublicacion, tituloP, buttonX, buttonPublicar);
-div.append(header, comentario, footer);
-footer.append(casita, perfil);
-return div
-};
+//Agregando elementos al div padre
+    header.append(logo, salir);
+    comentario.append(buttonX);
+    div.append(header, tituloP, crearPublicacion, buttonPublicar, comentario, footer);
+    footer.append(casita, perfil);
+    return div
+}
