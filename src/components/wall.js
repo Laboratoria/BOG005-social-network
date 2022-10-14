@@ -5,6 +5,7 @@ import {
   signOff,
   onGetPosts,
   deletePost,
+  editPosts,
 } from '../firebase/connection.js';
 
 export const wall = () => {
@@ -70,8 +71,14 @@ export const wall = () => {
 
       // boton de editar el post
       const buttonEdit = document.createElement('button');
+      buttonEdit.setAttribute('data-id', doc.id);
       buttonEdit.classList.add('buttonIcons');
       buttonEdit.id = 'btnEdit';
+
+      buttonEdit.addEventListener('click', (e) => {
+        editPosts(e.target.dataset.id);
+        console.log(e.target.dataset.id);
+      });
 
       // boton de dar like al post
       const buttonHeart = document.createElement('button');

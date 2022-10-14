@@ -13,8 +13,7 @@ import {
   collection,
   addDoc,
   doc,
-  // getDoc,
-  // getDocs,
+  getDoc,
   deleteDoc,
   // updateDoc,
   onSnapshot,
@@ -124,9 +123,20 @@ const createPost = async (text) => {
 // Se crea la constante que nos permitirá postear
 const onGetPosts = (callback) => onSnapshot(collection(db, 'Posts'), callback);
 
+// Función para editar posts
+const editPosts = (id) => getDoc(doc(db, 'Posts', id));
+
 // función para borrar posts
 const deletePost = (id) => deleteDoc(doc(db, 'Posts', id));
 
 export {
-  auth, createUser, signInUser, googleSignIn, signOff, createPost, onGetPosts, deletePost,
+  auth,
+  createUser,
+  signInUser,
+  googleSignIn,
+  signOff,
+  createPost,
+  onGetPosts,
+  deletePost,
+  editPosts,
 };

@@ -278,8 +278,8 @@ h3 {
     background-repeat: no-repeat;
     height: 4vh;
     position: absolute;
-    bottom: 1vh;
-    right: 1vh;
+    /* bottom: 1vh; */
+    right: 35vh;
   }
 
   #btnEdit {
@@ -287,8 +287,8 @@ h3 {
     background-repeat: no-repeat;
     height: 4vh;
     position: absolute;
-    bottom: 1vh;
-    right: 35vh;
+    /* bottom: 1vh; */
+    right: 15vh;
   }
 }
 
