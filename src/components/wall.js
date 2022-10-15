@@ -1,71 +1,77 @@
 import { onNavigate } from '../main.js';
 import {
-  createPost,
+  createPosts,
   signOff,
   onGetPosts,
-  deletePost,
+  deletePosts,
   editPosts,
-  updatePost,
+  updatePosts,
 } from '../firebase/connection.js';
 
 export const wall = () => {
-  const containerWall = document.createElement('section');
-  containerWall.classList.add('container');
+  const containerWall = document.createElement('section'); // Main container
+  containerWall.class = 'container';
 
+  // HEADER CONTAINER
   const header = document.createElement('header');
   header.classList.add('header');
 
-  const buttonExit = document.createElement('button');
-  buttonExit.classList.add('buttonIcons');
-  buttonExit.id = 'btnExit';
-
-  const imgTitle = document.createElement('img');
+  const imgTitle = document.createElement('img'); // Title image or logo
   imgTitle.src = 'img/nameLogo.png';
   imgTitle.alt = 'Logo';
   imgTitle.id = 'imgTitle';
 
-  const title = document.createElement('h1');
+  const title = document.createElement('h1'); // Title
   title.textContent = '¿Qué festividad se celebra hoy en tu ciudad?';
   title.id = 'titleWall';
 
+  const buttonExit = document.createElement('button'); // Buton icon exit
+  buttonExit.classList.add('buttonIcons');
+  buttonExit.id = 'btnExit';
+
+  // TEXTAREA AND SEND ICON CONTAINER
   const wallFormContainer = document.createElement('article');
   wallFormContainer.classList.add('wallForm');
 
-  const wallPost = document.createElement('textarea');
+  const wallPost = document.createElement('textarea'); // Textarea
   wallPost.classList.add('post');
   wallPost.setAttribute('type', 'text');
   wallPost.setAttribute('id', 'postWall');
   wallPost.setAttribute('rows', '4');
   wallPost.setAttribute('placeholder', ' Tu post aquí');
 
-  const iconContainer = document.createElement('article');
+  const iconContainer = document.createElement('article'); // container for send icon
   iconContainer.setAttribute('id', 'iconContainer');
 
-  const buttonSend = document.createElement('button');
+  const buttonSend = document.createElement('button'); // send button icon
   buttonSend.classList.add('buttonIcons');
   buttonSend.id = 'btnSend';
 
-  const postZoneContainer = document.createElement('article');
+  const postZoneContainer = document.createElement('article'); // container for the post print
   postZoneContainer.setAttribute('id', 'postZoneContainer');
-
-  // ***** NEW NODES FOR POST PRINTING AND CRUD ICONS
-  const printPost = document.createElement('article'); // contenedor de los posts, hijo de postZoneContainer
-  printPost.id = 'printPost';
-
-  const crudIcons = document.createElement('article'); // contenedor de los iconos del crud, hijo de postZoneContainer
-  crudIcons.id = 'crudIcons';
 
   let editStatus = false;
   let id = '';
 
   onGetPosts((querySnapshot) => {
-    printPost.innerHTML = '';
+    postZoneContainer.innerHTML = '';
 
     querySnapshot.forEach((doc) => {
-      // crea un p donde quedará el post
-      const postBox = document.createElement('p');
+      // crea un elemento p donde quedará el post
+      const postBox = document.createElement('p'); // here lives the post after print
       postBox.className = 'textPost';
       postBox.textContent = doc.data().post;
+
+      // boton de dar like al post
+      const buttonHeart = document.createElement('button');
+      buttonHeart.classList.add('buttonIcons');
+      buttonHeart.id = 'btnHeart';
+
+      // boton de editar el post
+      const buttonEdit = document.createElement('button');
+      buttonEdit.setAttribute('data-id', doc.id);
+      buttonEdit.classList.add('buttonIcons');
+      buttonEdit.id = 'btnEdit';
 
       // boton de eliminar post
       const buttonTrash = document.createElement('button');
@@ -73,15 +79,8 @@ export const wall = () => {
       buttonTrash.classList.add('buttonIcons');
       buttonTrash.id = 'btnTrash';
 
-      buttonTrash.addEventListener('click', ({ target: { dataset } }) => {
-        deletePost(dataset.id);
-      });
-
-      // boton de editar el post
-      const buttonEdit = document.createElement('button');
-      buttonEdit.setAttribute('data-id', doc.id);
-      buttonEdit.classList.add('buttonIcons');
-      buttonEdit.id = 'btnEdit';
+      // se pinta el post junto botones de eliminar, editar, like
+      postZoneContainer.append(postBox, buttonHeart, buttonEdit, buttonTrash);
 
       buttonEdit.addEventListener('click', async (e) => {
         const docId = await editPosts(e.target.dataset.id);
@@ -93,15 +92,9 @@ export const wall = () => {
         id = e.target.dataset.id;
       });
 
-      // boton de dar like al post
-      const buttonHeart = document.createElement('button');
-      buttonHeart.classList.add('buttonIcons');
-      buttonHeart.id = 'btnHeart';
-
-      // se pinta el post junto botones de eliminar, editar, like
-      postZoneContainer.append(printPost);
-      printPost.append(postBox, crudIcons);
-      crudIcons.append(buttonHeart, buttonEdit, buttonTrash);
+      buttonTrash.addEventListener('click', ({ target: { dataset } }) => {
+        deletePosts(dataset.id);
+      });
     });
   });
 
@@ -117,25 +110,25 @@ export const wall = () => {
     const post = wallPost.value;
     console.log(post);
 
-    createPost(post)
+    createPosts(post)
       .then(() => {
         console.log('guardado');
         wallPost.value = '';
       }).catch(() => console.log('no se guardo'));
 
     if (!editStatus) {
-      createPost(post);
+      createPosts(post);
     } else {
-      updatePost(id, { post });
-      deletePost(id, { post });
+      updatePosts(id, { post });
+      deletePosts(id, { post });
       editStatus = false;
     }
   });
 
-  header.append(imgTitle, buttonExit);
+  containerWall.append(header, wallFormContainer, postZoneContainer);
+  header.append(imgTitle, title, buttonExit);
   wallFormContainer.append(wallPost, iconContainer);
   iconContainer.append(buttonSend);
-  containerWall.append(header, title, wallFormContainer, postZoneContainer);
 
   return containerWall;
 };
