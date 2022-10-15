@@ -22,7 +22,7 @@
 .title1 {
   text-align: center;
   margin-top: 25px;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 h3 {
@@ -34,14 +34,14 @@ h3 {
 .button {
   display: block;
   margin: 0px auto;
-  margin-top: 10vh;
+  margin-top: 5vh;
   position: relative;
   width: 25vh;
   height: 5vh;
   background: #FCAB2E;
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-size: 2.5vh;
+  font-size: 1.5rem;
 }
 
 .img-world {
@@ -56,7 +56,7 @@ h3 {
 .input {
   display: block;
   margin: 0 auto;
-  font-size: 2vh;
+  font-size: 1.5rem;
   color: #a79c93;
   text-align: center;
   width: 40vh;
@@ -97,7 +97,7 @@ h3 {
   #mainTitle {
     text-align: center;
     margin-top: 5vh;
-    font-size: 2rem;
+    font-size: 3rem;
     text-shadow: 2px 2px 5px #FCAB2E;
   }
 
@@ -113,11 +113,7 @@ h3 {
   }
 
   /* vista del register */
-  #buttonStartRegister {
-    margin-top: 20px;
-  }
-
-  .question {
+   .question {
     margin-top: 4vh;
     font-size: 2vh;
     text-align: center;
@@ -144,12 +140,8 @@ h3 {
 
   /* vistas del landing */
 
-  .info {
-    font-size: 10px;
-    color: #a79c93;
-    margin-top: 18px;
-    justify-content: center;
-    text-align: center;
+  #buttonStartRegister {
+    margin-top: 20px;
   }
 
   #btn-google {
@@ -181,9 +173,11 @@ h3 {
 
   /* vista del wall */
   .header {
-    display: flex;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto;
     padding: 2vh 3vh;
-    gap: 15vh;
+    /* gap: 15vh; */
   }
 
   #imgTitle {
@@ -196,6 +190,8 @@ h3 {
   }
 
   #titleWall {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 5px #FCAB2E;
     text-align: center;
     margin: 10px 10px;
     padding-right: 3vh;
@@ -221,38 +217,35 @@ h3 {
   }
 
   #iconContainer {
+    display: flex;
+    justify-content: right;
     padding: 0.5vh;
     border-radius: 0 0 20px 20px;
     background-color: #FFF8EE;
-    height: 5vh;
+    height: 7vh;
   }
 
   #postZoneContainer {
-    margin: 3vh 3vh;
-    margin-right: 6vh;
-    padding-bottom: 12vh;
+    /* padding-bottom: 12vh; */
+    /* padding-left: 10vh; */
+    padding-right: 10vh;
     position: relative;
     border-radius: 20px;
-    /* background-color: #FFF8EE; */
-    width: 40vh;
+    width: 100vh;
     height: auto;
-  }
-
-  .textPost {
-    margin: 0 2vh 5vh 0;
-    font-size: 0.8rem;
   }
 
   /* estilo para los botones que contienen iconos */
   .buttonIcons {
-    width: 4vh;
+    width: 6vh;
     height: 6vh;
-    justify-items: right;
+    /* justify-items: right; */
     background-color: transparent;
     border: transparent;
   }
 
   #btnExit {
+    grid-column: 3 / span 1;
     background-image: url('img/exit.png');
     background-repeat: no-repeat;
   }
@@ -260,37 +253,246 @@ h3 {
   #btnSend {
     background-image: url('img/send.png');
     background-repeat: no-repeat;
-    height: 4vh;
     margin-bottom: 1vh;
     margin-left: 35vh;
   }
 
-  #btnTrash {
-    background-image: url('img/trash.png');
+  .textPost {
+    /* margin: 0 2vh 5vh 0; */
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  #crudIcons {
+    display: flex;
+    gap: 10%;
+    justify-content: center;
     background-repeat: no-repeat;
-    height: 4vh;
-    position: absolute;
-    left: 35vh;
   }
 
   #btnHeart {
     background-image: url('img/heart.png');
     background-repeat: no-repeat;
-    height: 4vh;
-    position: absolute;
+    /* position: absolute; */
     /* bottom: 1vh; */
-    right: 35vh;
+    /* right: 35vh; */
   }
 
   #btnEdit {
     background-image: url('img/edit.png');
     background-repeat: no-repeat;
-    height: 4vh;
-    position: absolute;
+    /* position: absolute; */
     /* bottom: 1vh; */
-    right: 15vh;
+    /* right: 15vh; */
+  }
+
+  #btnTrash {
+    background-image: url('img/trash.png');
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    /* left: 35vh; */
   }
 }
 
-/* @media screen and (max-width: 1400px) { */
+@media screen and (min-width: 1025px) {
+/* welcome */
+  .sectionWelcome {
+    /* display: flex;
+    flex-direction: row; */
+    background: #FFF8EE;
+    height: 100vh;
+    padding-top: 2vh;
+  }
+
+  .img-background-welcome {
+    display: flex;
+    margin: 0 15vh;
+    height: 100%;
+    max-width: 200%;
+    width: 200%;
+    justify-content: center;
+  }
+
+  #mainTitle {
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 4rem;
+    text-shadow: 2px 2px 10px #FCAB2E;
+  }
+  
+  #description {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 8vh;
+    color:#515050
+  }
+
+  /* Landing */
+  #btn-google {
+    background-image: url(img/button-Google.png);
+    background-position-y: center;
+    background-repeat: no-repeat;
+  }
+
+  .buttons-register {
+    margin: 0px auto;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    width: 40vh;
+    height: 6.5vh;
+    margin-top: 4vh;
+    background: transparent;
+    border: 2px solid #bdb9b9;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    font-size: 1.3rem;
+  }
+
+  .question-landing {
+    margin-top: 10vh;
+    justify-content: center;
+    font-size: 4vh;
+  }
+  
+  /* Register */
+  #buttonStartRegister {
+    margin-top: 20px;
+  }
+
+  .question {
+    margin-top: 4vh;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: none;
+  }
+
+  .link {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #fa9805;
+  }
+
+  /* vista del wall */
+  .header {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto;
+    padding: 2vh 3vh;
+    /* gap: 170vh; */
+    
+  }
+
+  #imgTitle {
+    position: relative;
+    width: 28vh;
+    height: 23vh;
+    transform: rotate(-25deg);
+    top: 20px;
+    left: 18px;
+  }
+
+  #titleWall {
+    text-align: center;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 5px #FCAB2E;
+  }
+
+  .wallForm {
+    padding: 3vh;
+  }
+
+  #postWall {
+    padding: 1vh;
+    border-radius: 20px 20px 0 0;
+    background-color: #FFF8EE;
+    border-color: #bdb9b9;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  #postWall:focus {
+    border-color: #FCAB2E;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255, 144, 0, 0.6);
+    outline: 0 none;
+  }
+
+  #iconContainer {
+    display: flex;
+    justify-content: right;
+    padding: 0.5vh;
+    border-radius: 0 0 20px 20px;
+    background-color: #FFF8EE;
+    height: 7vh;
+  }
+
+  #postZoneContainer {
+    margin: 3vh 3vh;
+    padding-bottom: 10vh;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  /* estilo para los botones que contienen iconos */
+  .buttonIcons {
+    width: 6vh;
+    height: 6vh;
+    background-color: transparent;
+    border: transparent;
+  }
+
+  #btnExit {
+    grid-column: 3 / span 1;
+    background-image: url('img/exit.png');
+    background-repeat: no-repeat;
+    margin-top: 5vh;
+  }
+
+  #btnSend {
+    background-image: url('img/send.png');
+    background-repeat: no-repeat;
+
+    /* margin-bottom: 1vh; */
+    /* margin-left: 35vh; */
+  }
+
+  .textPost {
+    /* margin: 0 2vh 5vh 0; */
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  #crudIcons {
+    display: flex;
+    gap: 20%;
+    justify-content: center;
+  }
+
+  #btnHeart {
+    background-image: url('img/heart.png');
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    /* bottom: 1vh; */
+    /* right: 35vh; */
+  }
+
+  #btnEdit {
+    background-image: url('img/edit.png');
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    /* bottom: 1vh; */
+    /* right: 15vh; */
+  }
+
+  #btnTrash {
+    background-image: url('img/trash.png');
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    /* left: 35vh; */
+  }
+}
   
