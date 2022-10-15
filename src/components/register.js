@@ -12,7 +12,7 @@ export const register = () => {
   imgLogin.alt = 'logo';
 
   const title = document.createElement('h1');
-  title.textContent = 'REGISTRATE';
+  title.textContent = 'REGÍSTRATE';
   title.className = 'title1';
 
   const registerForm = document.createElement('section');
@@ -49,7 +49,6 @@ export const register = () => {
   session.classList.add('link');
   session.setAttribute('href', '#');
   session.textContent = 'Inicia Sesión';
-  // session.className = 'session';
 
   registerButton.addEventListener('click', () => {
     const emailRegister = registerEmail.value;

@@ -468,7 +468,7 @@ h3 {
 
   #crudIcons {
     display: flex;
-    gap: 20%;
+    /* gap: 20%; */
     justify-content: center;
   }
 

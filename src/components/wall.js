@@ -1,6 +1,3 @@
-/* eslint-disable space-before-blocks */
-/* eslint-disable no-console */
-/* eslint-disable brace-style */
 import { onNavigate } from '../main.js';
 import {
   createPost,
@@ -51,11 +48,18 @@ export const wall = () => {
   const postZoneContainer = document.createElement('article');
   postZoneContainer.setAttribute('id', 'postZoneContainer');
 
+  // ***** NEW NODES FOR POST PRINTING AND CRUD ICONS
+  const printPost = document.createElement('article'); // contenedor de los posts, hijo de postZoneContainer
+  printPost.id = 'printPost';
+
+  const crudIcons = document.createElement('article'); // contenedor de los iconos del crud, hijo de postZoneContainer
+  crudIcons.id = 'crudIcons';
+
   let editStatus = false;
   let id = '';
 
   onGetPosts((querySnapshot) => {
-    postZoneContainer.innerHTML = '';
+    printPost.innerHTML = '';
 
     querySnapshot.forEach((doc) => {
       // crea un p donde quedará el post
@@ -95,10 +99,11 @@ export const wall = () => {
       buttonHeart.id = 'btnHeart';
 
       // se pinta el post junto botones de eliminar, editar, like
-      postZoneContainer.append(postBox, buttonTrash, buttonHeart, buttonEdit);
+      postZoneContainer.append(printPost);
+      printPost.append(postBox, crudIcons);
+      crudIcons.append(buttonHeart, buttonEdit, buttonTrash);
     });
   });
-  // });
 
   buttonExit.addEventListener('click', () => {
     signOff().then(() => {
@@ -111,13 +116,14 @@ export const wall = () => {
   buttonSend.addEventListener('click', () => {
     const post = wallPost.value;
     console.log(post);
+
     createPost(post)
       .then(() => {
         console.log('guardado');
         wallPost.value = '';
       }).catch(() => console.log('no se guardo'));
 
-    if (!editStatus){
+    if (!editStatus) {
       createPost(post);
     } else {
       updatePost(id, { post });

@@ -37,11 +37,11 @@ export const login = () => {
 
   const question = document.createElement('h3');
   question.textContent = '¿Olvidaste tu contraseña?';
-  question.id = 'questionPassword';
+  question.classList.add('question');
 
   const session = document.createElement('h3');
   session.textContent = 'Haz clic aquí';
-  session.className = 'here';
+  session.className = 'link';
 
   containerLogin.append(
     titleLo,
