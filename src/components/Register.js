@@ -31,11 +31,6 @@ export const Register = () => {
   const section1 = document.createElement('section');
   section1.className = 'section1';
 
-  const inputName = document.createElement('input');
-  inputName.setAttribute('requiered', '');
-  inputName.setAttribute('placeholder', 'Nombre');
-  inputName.setAttribute('id', 'name');
-
   const inputEmail = document.createElement('input');
   inputEmail.setAttribute('requiered', '');
   inputEmail.setAttribute('placeholder', 'Correo electrónico');
@@ -47,12 +42,6 @@ export const Register = () => {
   inputPass.setAttribute('placeholder', 'Contraseña');
   inputPass.setAttribute('id', 'password');
   inputPass.setAttribute('type', 'password');
-
-  const inputConfirmPassword = document.createElement('input');
-  inputConfirmPassword.setAttribute('requiered', '');
-  inputConfirmPassword.setAttribute('placeholder', 'Confirma tu Contraseña');
-  inputConfirmPassword.setAttribute('id', 'confirm-password');
-  inputConfirmPassword.setAttribute('type', 'password');
 
   const buttonSignUp = document.createElement('button');
   buttonSignUp.textContent = 'Registrate!';
@@ -71,10 +60,8 @@ export const Register = () => {
   section2.append(account, linkLogin);
 
   section1.append(
-    inputName,
     inputEmail,
     inputPass,
-    inputConfirmPassword,
     buttonSignUp,
     section2,
   );
@@ -91,7 +78,7 @@ export const Register = () => {
     const registerPass = inputPass.value;
     createUser(registerEmail, registerPass)
       .then(() => {
-        showMessage('Usuario creado. Bienvenid@');
+        showMessage('Registro exitoso. Bienvenid@');
         onNavigate('/wall');
       })
       .catch((error) => {

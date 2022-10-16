@@ -1,6 +1,7 @@
 export const initializeApp = () => Promise.resolve({});
 export const getAuth = () => Promise.resolve({});
 export class GoogleAuthProvider { constructor() { this.name = 'google'; }}
+/* export class getFirestore { constructor () Promise.resolve({});} */
 
 /* // Export Auth
 export {
@@ -12,4 +13,4 @@ export {
   // Export Firestore
   export {
     getFirestore, collection, addDoc, getDocs, deleteDoc, onSnapshot, doc, getDoc,
-  }; */
+  };  */

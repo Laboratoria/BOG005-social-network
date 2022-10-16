@@ -3,6 +3,7 @@ import {
   savePost, onGetPosts, deletePost, getPost, updatePost, auth,
 } from '../lib/firebase.js';
 import { arrayUnion } from '../lib/utils.js';
+import { showMessage } from '../lib/showMessage.js';
 
 export const Wall = () => {
   // contenedor que almacenará los 2 botones y dará un solo return
@@ -63,15 +64,17 @@ export const Wall = () => {
       html += `
         <div>
           <section class= "boxPost1">
-          <h3 By>${task.email}</h3>
+          <h4 class="userName" By>${task.email}</h4>
           <br>                     
           <section class= "postBox">          
-          <h5>${task.postArea}</h5>
+          <textarea readonly="readonly">${task.postArea}</textarea>
           </section>    
-          <p class ="counter-likes">${task.likes.length}</p>
-          <button class="btn-like" data-id="${doc.id}">Me gusta</button>               
+          
+          <section class="editAndDele"> 
+          <button class="btn-like"  data-id="${doc.id}" > <i class="fa-solid fa-heart icono"></i> <p class ="counter-likes">${task.likes.length}</p> </button>             
           <button style="visibility:${task.email === auth.currentUser.email ? 'visible' : 'hidden'}"class="btn-borrar" data-id="${doc.id}">Borrar</button>     
-          <button style="visibility:${task.email === auth.currentUser.email ? 'visible' : 'hidden'}"class="btn-editar" data-id="${doc.id}">Editar</button>                          
+          <button style="visibility:${task.email === auth.currentUser.email ? 'visible' : 'hidden'}"class="btn-editar" data-id="${doc.id}">Editar</button>   
+          </section>                        
           </section>       
         </div>
       `;
@@ -108,10 +111,9 @@ export const Wall = () => {
 
     btnsLikes.forEach((btn) => {
       btn.addEventListener('click', ({ target: { dataset } }) => {
-        /* console.log(auth.currentUser.email);
-        console.log('like'); */
         updatePost(dataset.id, { likes: arrayUnion(auth.currentUser.email) });
         counterLikes.innerHTML = '';
+        // eslint-disable-next-line no-plusplus
         counterLike++;
         counterLikes.innerHTML = `${counterLike}`;
       });
@@ -120,6 +122,12 @@ export const Wall = () => {
 
   buttonPublish.addEventListener('click', (e) => {
     e.preventDefault();
+
+    if (postArea.value === '') {
+      showMessage('No has escrito un post aún', 'error');
+      // eslint-disable-next-line no-import-assign
+      savePost = false;
+    }
 
     if (!editStatus) {
       savePost(postArea.value, auth.currentUser.email);
@@ -132,7 +140,7 @@ export const Wall = () => {
     buttonPublish.innerText = 'Publicar';
   });
 
-  div.append(header, postContainer, newPostContainer, buttonBack);
+  div.append(header, buttonBack, postContainer, newPostContainer);
 
   return div;
 };

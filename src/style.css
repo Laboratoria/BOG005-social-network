@@ -5,7 +5,14 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  box-sizing: border-box;
 }
+
+ *,
+*:before,
+*:after {
+  box-sizing: inherit;
+} 
 
 body {
   background-image: url('./imagenes/WelcomeBG.jpg');
@@ -36,11 +43,18 @@ button {
   justify-content: center;
   border-radius: 5px;
   padding: 5px;
-  width: 245px;
+  width: 90%;
   background-color: #a3445d;
   color: #ffffff;
   font-family: 'Lexend Giga', sans-serif;
   font-size: 12px;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  width: 100%;
+  font-family: 'Lexend Giga', sans-serif;
 }
 
 /*Estilos para el header*/
@@ -114,13 +128,13 @@ button {
 
 .google {
   background-image: url('./imagenes/Inicie\ sesion\ con\ google.JPG');
-  width: 240px;
+  width: 90%;
   height: 29px;
   padding: 6px;
   border-radius: 10px;
   font-size: 14px;
   background-repeat: no-repeat;
-  background-size: 200px;
+  background-size: 80%;
   background-position: center;
   border: none;
   background-color: white;
@@ -139,7 +153,7 @@ button {
   justify-content: space-between;
   border-radius: 10px;
   background-color: #ffffff;
-  width: 100%;
+  width: 90%;
   align-items: center;
 }
 
@@ -159,20 +173,13 @@ button {
   text-shadow: 2px 1px 14px #000000;
 }
 
-#name,
 #emailLogin,
-#password,
-#confirm-password {
+#password {
   margin-top: 10px;
   width: 90%;
   padding: 6px 0px;
   background-color: #ffffff;
   border: none;
-}
-
-.name-lastName-container {
-  display: flex;
-  gap: 10px;
 }
 
 /*Estilos de la sección Muro */
@@ -205,11 +212,10 @@ button {
 .postArea::-webkit-input-placeholder {
   text-align: left;
   line-height: 40px;
-  padding-left: 10px;
+  padding-left: 16px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 30px;
-  padding-left: 16px;
+  font-size: 30px;  
 }
 
 .postBox {
@@ -219,8 +225,12 @@ button {
   border-radius: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  margin-top: 15px;
   box-shadow: inset 2px 1px 1px 1px rgb(176, 169, 168);
+}
+
+.userName {
+  padding-top: 18px;
+  padding-left: 15px;
 }
 
 .boxPost1 {
@@ -231,31 +241,69 @@ button {
   border-radius: 11px;
   margin-block-end: 10px;
   width: 90%;
+  height: 208px;
 }
 
 .deleteAndEditContainer {
   margin-left: 10px;
 }
 
+.buttonPublish{
+  width: 30%;
+}
+
 .buttonBack {
   background-color: #5a51c5;
   font-size: 12px;
-  width: 50%;
-  margin: 30px 90px;
+  width: 150px;
+  margin: 30px 140px;
   display: flex;
   text-align: center;
   flex-direction: column;
   align-items: center;
 }
 
+.btn-like {
+  border: 2px solid #c7c7c7;
+  border-radius: 40px;
+  padding: 0.45rem 0.75rem;
+  color: #faf6f6;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  width: auto;
+  cursor: pointer;
+}
+
+.icono {
+  margin-right: 10px;
+}
+
+
+.editAndDele {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .container {
+    margin-left: 40px;    
+  }
+
+  .buttonBack {
+    width: 20%;
+    margin-left: 510px;
+  }
+  .google {
+    background-size: 50%;
+  }
+}
 /*Estilos Para PC*/
 
 @media (min-width: 1024px) {
   body {
     background-image: url('./imagenes/fondo\ pc.jpg');
   }
-
-
   .container {
     margin-top: 80px;
     column-gap: 50px;
@@ -264,21 +312,22 @@ button {
   /*header*/
 
   .header {
-    margin-left: -60%;
-    margin-top: 131px;
+    margin-right: 560px;
+    margin-top: -25px;
   }
 
   .title {
-    font-size: 40px;
+    font-size: 30px;
     color: #c28787;
-    margin-right: 10px;
+    margin-right: 83px;
+    margin-left: -57px;
   }
 
   .paragraph {
     font-size: 18px;
     margin-top: 25px;
-    margin-right: 50px;
-    margin-left: 20px;
+    margin-right: 86px;
+    margin-left: -48px;
   }
 
   .signIn {
@@ -288,7 +337,7 @@ button {
   /*Section 1*/
 
   .section1 {
-    height: 396px;
+    height: 350px;
     justify-content: center;
     align-items: center;
     background-color: #c8bbbb;
@@ -296,7 +345,7 @@ button {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
     box-sizing: border-box;
-    margin-left: 58%;
+    margin-left: 500px;
     margin-top: -84px;
     padding: 20px 0 28px;
     width: 396px;
@@ -320,7 +369,6 @@ button {
 
   .section2 {
     width: 90%;
-
     margin: 0;
   }
 
@@ -334,7 +382,9 @@ button {
 
   .google {
     width: 90%;
+    background-size: 70%;
   }
+
 
   /*Register*/
 
@@ -342,11 +392,9 @@ button {
     display: none;
   }
 
-  #name,
   #emailLogin,
-  #password,
-  #confirm-password {
-    height: 32px;
+  #password {
+    height: 45px;
     border-radius: 8px;
   }
 
@@ -357,8 +405,7 @@ button {
     font-size: 15px;
   }
 
-  #password,
-  #confirm-password {
+  #password {
     width: 90%;
     border-radius: 8px;
   }
@@ -366,7 +413,7 @@ button {
   /*Estilos de la sección Muro */
 
   .postContainer {
-    margin-top: 100px;
+    margin-top: 40px;
     margin-left: 19%;
     width: 60%;
   }
@@ -379,10 +426,10 @@ button {
   .postArea::-webkit-input-placeholder {
     font-size: 20px;
   }
-
+  
   .buttonBack {
-    width: 20%;
-    margin-left: 38%;
+    width: 150px;
+    margin-left: 610px;
   }
 
   .deleteAndEditContainer {
@@ -402,5 +449,46 @@ button {
 
   .boxPost1 {
     width: 73%;
+  }
+
+  .editAndDele {
+    align-items: center;
+    margin-top: 18px;
+  }
+
+  .btn-borrar {
+    margin-left: 180px;
+  }
+
+}
+
+@media (min-width: 1429px) {
+  .container {
+    margin-top: 80px; 
+    margin-right: 50px;   
+  }
+
+  /*header*/
+
+  .header {
+    margin-right: 870px;
+    margin-top: 144px;
+  }
+
+  .title {    
+    margin-right: 130px;    
+  }
+
+  .paragraph {
+    margin-right: 140px;    
+  }
+
+  .section1 {    
+    margin-left: 820px;    
+  }
+
+  .buttonBack {    
+    margin-left: 880px;
+    width: 150px;
   }
 }
