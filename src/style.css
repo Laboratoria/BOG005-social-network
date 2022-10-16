@@ -19,16 +19,16 @@
   align-content: center;
 }
 
+#containerWall {
+  margin: 5vh 5vh;
+  background-image: url("img/Fondo2.PNG");
+  background-size: cover;
+}
+
 .title1 {
   text-align: center;
   margin-top: 25px;
   font-size: 2.5rem;
-}
-
-h3 {
-  margin-top: 10px;
-  font-size: 12px;
-  color: #515050;
 }
 
 .button {
@@ -41,7 +41,7 @@ h3 {
   background: #FCAB2E;
   border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .img-world {
@@ -66,6 +66,28 @@ h3 {
   border: 2px solid #bdb9b9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+}
+
+#btn-google {
+  background-image: url(img/button-Google.png);
+  background-size: contain;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+.buttons-register {
+  margin: 0px auto;
+  text-align: center;
+  justify-content: center;
+  position: relative;
+  width: 40vh;
+  height: 6.5vh;
+  margin-top: 4vh;
+  background: transparent;
+  border: 2px solid #bdb9b9;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  font-size: 1rem;
 }
 
 .input:focus,
@@ -102,7 +124,7 @@ h3 {
   }
 
   #description {
-    font-size: 2.5vh;
+    font-size: 1.5rem;
     text-align: center;
     margin-top: 10vh;
     margin-bottom: 8vh;
@@ -115,60 +137,22 @@ h3 {
   /* vista del register */
    .question {
     margin-top: 4vh;
-    font-size: 2vh;
+    font-size: 1rem;
     text-align: center;
     text-transform: none;
   }
 
-  .session {
-    text-align: center;
-    font-size: 2vh;
-    color: #FCAB2E;
-  }
-
   /* vista del login */
-  .here {
-    justify-content: center;
-    font-size: 2vh;
-    color: #FCAB2E;
-  }
 
-  #questionPassword {
-    font-size: 2.5vh;
-    margin-top: 4vh;
+  .link {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #050dfa;
   }
 
   /* vistas del landing */
-
   #buttonStartRegister {
     margin-top: 20px;
-  }
-
-  #btn-google {
-    background-image: url(img/button-Google.png);
-    background-position-y: center;
-    background-repeat: no-repeat;
-  }
-
-  .buttons-register {
-    margin: 0px auto;
-    text-align: center;
-    justify-content: center;
-    position: relative;
-    width: 40vh;
-    height: 6.5vh;
-    margin-top: 4vh;
-    background: transparent;
-    border: 2px solid #bdb9b9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    font-size: 2vh;
-  }
-
-  .question-landing {
-    margin-top: 10vh;
-    justify-content: center;
-    font-size: 2.3vh;
   }
 
   /* vista del wall */
@@ -327,34 +311,6 @@ h3 {
     margin-bottom: 8vh;
     color:#515050
   }
-
-  /* Landing */
-  #btn-google {
-    background-image: url(img/button-Google.png);
-    background-position-y: center;
-    background-repeat: no-repeat;
-  }
-
-  .buttons-register {
-    margin: 0px auto;
-    text-align: center;
-    justify-content: center;
-    position: relative;
-    width: 40vh;
-    height: 6.5vh;
-    margin-top: 4vh;
-    background: transparent;
-    border: 2px solid #bdb9b9;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    font-size: 1.3rem;
-  }
-
-  .question-landing {
-    margin-top: 10vh;
-    justify-content: center;
-    font-size: 4vh;
-  }
   
   /* Register */
   #buttonStartRegister {
@@ -363,15 +319,15 @@ h3 {
 
   .question {
     margin-top: 4vh;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     text-align: center;
     text-transform: none;
   }
 
   .link {
     text-align: center;
-    font-size: 1.5rem;
-    color: #fa9805;
+    font-size: 1.2rem;
+    color: #2605fa;
   }
 
   /* vista del wall */
@@ -468,7 +424,7 @@ h3 {
 
   #crudIcons {
     display: flex;
-    gap: 20%;
+    /* gap: 20%; */
     justify-content: center;
   }
 

@@ -26,7 +26,7 @@ export const landing = () => {
 
   const question = document.createElement('h3');
   question.textContent = '¿Ya tienes cuenta? usa el botón:';
-  question.classList = 'question-landing';
+  question.classList = 'question';
 
   const buttonLogin = document.createElement('button');
   buttonLogin.textContent = 'Inicia Sesión';

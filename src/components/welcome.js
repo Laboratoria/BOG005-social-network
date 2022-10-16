@@ -5,7 +5,6 @@ export const welcome = () => {
   sectionWelcome.className = 'sectionWelcome';
 
   const imgWelcome = document.createElement('img');
-
   imgWelcome.className = 'backgroundWelcome';
   imgWelcome.src = 'img/fondo1.PNG';
   imgWelcome.alt = 'Name';
