@@ -11,6 +11,7 @@ import {
 export const wall = () => {
   const containerWall = document.createElement('section'); // Main container
   containerWall.class = 'container';
+  containerWall.id = 'containerWall';
 
   // HEADER CONTAINER
   const header = document.createElement('header');

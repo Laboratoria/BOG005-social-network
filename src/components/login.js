@@ -39,9 +39,14 @@ export const login = () => {
   question.textContent = '¿Olvidaste tu contraseña?';
   question.classList.add('question');
 
-  const session = document.createElement('h3');
+  const session = document.createElement('a');
+  session.setAttribute('href', '#');
   session.textContent = 'Haz clic aquí';
   session.className = 'link';
+
+  session.addEventListener('click', () => {
+    onNavigate('/');
+  });
 
   containerLogin.append(
     titleLo,
