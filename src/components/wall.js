@@ -5,7 +5,7 @@ import {
   onGetPosts,
   deletePosts,
   editPosts,
-  updatePosts,
+  // updatePosts,
 } from '../firebase/connection.js';
 
 export const wall = () => {
@@ -30,6 +30,10 @@ export const wall = () => {
   buttonExit.classList.add('buttonIcons');
   buttonExit.id = 'btnExit';
 
+  // CONTENEDOR DEL MAIN DE LA PAGINA
+  const mainWall = document.createElement('section');
+  mainWall.className = 'main-wall';
+
   // TEXTAREA AND SEND ICON CONTAINER
   const wallFormContainer = document.createElement('article');
   wallFormContainer.classList.add('wallForm');
@@ -52,7 +56,7 @@ export const wall = () => {
   postZoneContainer.setAttribute('id', 'postZoneContainer');
 
   let editStatus = false;
-  let id = '';
+  // let id = '';
 
   onGetPosts((querySnapshot) => {
     postZoneContainer.innerHTML = '';
@@ -90,7 +94,8 @@ export const wall = () => {
         wallPost.value = postText.post;
 
         editStatus = true;
-        id = e.target.dataset.id;
+        const id = e.target.dataset.id;
+        console.log(id);
       });
 
       buttonTrash.addEventListener('click', ({ target: { dataset } }) => {
@@ -118,16 +123,17 @@ export const wall = () => {
       }).catch(() => console.log('no se guardo'));
 
     if (!editStatus) {
-      createPosts(post);
-    } else {
-      updatePosts(id, { post });
-      deletePosts(id, { post });
+    //   createPosts(post);
+    // } else {
+    //   updatePosts(id, { post });
+    //   deletePosts(id, { post });
       editStatus = false;
     }
   });
 
-  containerWall.append(header, wallFormContainer, postZoneContainer);
+  containerWall.append(header, mainWall);
   header.append(imgTitle, title, buttonExit);
+  mainWall.append(wallFormContainer, postZoneContainer);
   wallFormContainer.append(wallPost, iconContainer);
   iconContainer.append(buttonSend);
 
