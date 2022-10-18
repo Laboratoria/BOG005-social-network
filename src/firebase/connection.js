@@ -18,6 +18,8 @@ import {
   deleteDoc,
   updateDoc,
   onSnapshot,
+  arrayUnion,
+  arrayRemove,
 } from 'https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js';
 import { onNavigate } from '../main.js';
 
@@ -88,6 +90,12 @@ onAuthStateChanged(auth, (user) => {
   }
 });
 
+// Función para agregar likes a un post
+const addLikes = (id, userId) => updateDoc(doc(db, 'Posts', id), { likes: arrayUnion(userId) });
+
+// Función para retirar likes a un post
+const removeLikes = (id, userId) => updateDoc(doc(db, 'Posts', id), { likes: arrayRemove(userId) });
+
 export {
   auth,
   createUser,
@@ -100,5 +108,7 @@ export {
   editPosts,
   deletePosts,
   updatePosts,
-  onAuthStateChanged,
+  addLikes,
+  removeLikes,
+  // onAuthStateChanged,
 };
