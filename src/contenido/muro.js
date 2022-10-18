@@ -54,13 +54,15 @@ export const muro = () => {
   let docId = "";
   const likes = [];
 
+
   buttonPublicar.addEventListener('click', async () => {
     console.log('valor del input: ', crearPublicacion.value);
-    guardarPublicaciones(crearPublicacion.value, likes)
+    guardarPublicaciones(crearPublicacion.value,likes)
     obtpost(querySnapshot => {
-
+      
       let elementosPost = ''
       querySnapshot.forEach(doc => {
+        
         const info = doc.data()
         //Contiene el caja para editar, borrar y guardar el post
         elementosPost += `
@@ -69,70 +71,92 @@ export const muro = () => {
           <button class="btn-Borrar" data-id="${doc.id}">Borrar</button>
           <button class="btn-Editar" data-id="${doc.id}">Editar</button>
           <button class="btn-Guardar" data-id="${doc.id}">Guardar</button>
-        </div>
+          <button class="btn-Like" data-id="${doc.id}">Like</button>
+          </div>
        `
       })
       //limpiar textArea
       crearPublicacion.value = '';
       //Funcion Borrar Post 
-    comentario.innerHTML = elementosPost
-    const btnsBorrar = comentario.querySelectorAll('.btn-Borrar');
-    btnsBorrar.forEach(btn => {
-      btn.addEventListener("click", ({ target: { dataset } }) => {
-        borrarPost(dataset.id)
-      })
-    })
-
-//Funcion Editar Post
-    const btnsEditar = comentario.querySelectorAll('.btn-Editar');
-    btnsEditar.forEach(btn => {
-      btn.addEventListener("click", async (event) => {
-        docId = event.target.dataset.id
-        const doc = await editarPost(docId)
-        
-        const inputEditar = comentario.querySelector(`#id-${docId}`)
-        console.log(inputEditar)
-        inputEditar.disabled = false
-        editEstatus = true;
-      })
-    })
-//Funcion Guardar Post
-
-    const btnsGuardar = comentario.querySelectorAll('.btn-Guardar');
-    btnsGuardar.forEach(btn => {
-      
-      btn.addEventListener("click", (event) => {
-      const inputEditar = comentario.querySelector(`#id-${event.target.dataset.id}`) 
-      console.log(inputEditar)
-       if (editEstatus) {
-        editEstatus = false;
-        actualizarPost(docId, {
-          post: inputEditar.value
+      comentario.innerHTML = elementosPost
+      const btnsBorrar = comentario.querySelectorAll('.btn-Borrar');
+      btnsBorrar.forEach(btn => {
+        btn.addEventListener("click", ({ target: { dataset } }) => {
+          borrarPost(dataset.id)
         })
-      }  
+      })
+      //likes
+      const btnlikes = comentario.querySelectorAll('.btn-Like');
+      
+      btnlikes.forEach((btn) => {
+        btn.addEventListener("click", (event) => {
+          const idPostLike = comentario.querySelector(`#id-${event.target.dataset.id}`)
+          const likeD =doc.id.data().like.value
+          console.log(data());
+          let like = event.target.dataset.like
+          if(like == 1) {
+            like --
+            guardarPost(idPostLike,{like:likeD}).then(() => console.log("Dislike")).catch(() => console.log("Error en dislike"))
+          }else {
+            like ++
+            guardarPost(idPostLike, {like:likeD}).then(() => console.log("Se dió like")).catch(() => console.log("Error en like"))
+          }
+        
+        })
 
       })
-    })
-  })
-    })
     
 
-     
+      //Funcion Editar Post
+      const btnsEditar = comentario.querySelectorAll('.btn-Editar');
+      btnsEditar.forEach(btn => {
+        btn.addEventListener("click", async (event) => {
+          docId = event.target.dataset.id
+          const doc = await editarPost(docId)
 
-    salir.addEventListener('click', () => {
-      cerrarSesion().then(() => {
-      })
-        .catch((error) => {
-          console.error(error.message)
+          const inputEditar = comentario.querySelector(`#id-${docId}`)
+          console.log(inputEditar)
+          inputEditar.disabled = false
+          editEstatus = true;
         })
+      })
+      //Funcion Guardar Post
+
+      const btnsGuardar = comentario.querySelectorAll('.btn-Guardar');
+      btnsGuardar.forEach(btn => {
+
+        btn.addEventListener("click", (event) => {
+          const inputEditar = comentario.querySelector(`#id-${event.target.dataset.id}`)
+          console.log(inputEditar)
+          if (editEstatus) {
+            editEstatus = false;
+            actualizarPost(docId, {
+              post: inputEditar.value
+            })
+          }
+
+        })
+      })
     })
-window.addEventListener('DOMContentLoaded', () => {
   })
 
-//Agregando elementos al div padre
-    header.append(logo, salir);
-    comentario.append(pubRecientes);
-    div.append(header, tituloP, crearPublicacion, buttonPublicar,comentario, footer);
-    footer.append(casita, perfil);
-    return div
+
+
+
+  salir.addEventListener('click', () => {
+    cerrarSesion().then(() => {
+    })
+      .catch((error) => {
+        console.error(error.message)
+      })
+  })
+  window.addEventListener('DOMContentLoaded', () => {
+  })
+
+  //Agregando elementos al div padre
+  header.append(logo, salir);
+  comentario.append(pubRecientes);
+  div.append(header, tituloP, crearPublicacion, buttonPublicar, comentario, footer);
+  footer.append(casita, perfil);
+  return div
 }
