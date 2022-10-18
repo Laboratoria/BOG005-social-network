@@ -88,6 +88,19 @@ export const crearUsuarioConGoogle = () => {
     const errorMessage = error.message;
   });
 };
+// Get current user
+export const currentUser = {};
+
+export const getCurrentUser = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      currentUser.email = user.email;
+      currentUser.uid = user.uid;
+     
+    }
+    
+  });
+};
 
 
 
