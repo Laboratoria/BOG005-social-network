@@ -1,5 +1,5 @@
 import { cerrarSesion,getCurrentUser } from "../lib/firebase.js";
-import { obtpost, borrarPost, editarPost, actualizarPost, addLike,guardarPublicaciones } from "../lib/firestore.js";
+import { obtpost, borrarPost, editarPost, actualizarPost, addLike, removeLike, guardarPublicaciones } from "../lib/firestore.js";
 
 
 //Creacion de elementos o nodos en el muro
@@ -61,13 +61,14 @@ export const muro = () => {
 
         const info = doc.data()
         //Contiene el caja para editar, borrar y guardar el post
+        let arrayString = info.likes.toString()
         elementosPost += `
         <div> 
           <input class="input" id='id-${doc.id}' value="${info.post}" disabled/>
           <button class="btn-Borrar" data-id="${doc.id}">Borrar</button>
           <button class="btn-Editar" data-id="${doc.id}">Editar</button>
           <button class="btn-Guardar" data-id="${doc.id}">Guardar</button>
-          <button class="btn-Like" data-id="${doc.id}">Like</button>
+          <button class="btn-Like" data-id="${doc.id}" data-like=${arrayString}>Like</button>
           <span>${info.likes.length}</span>
           </div>
        `
@@ -89,8 +90,15 @@ export const muro = () => {
         btn.addEventListener("click", (e) => {
           console.log('id del usuario: ', getCurrentUser().uid);
           const userId = getCurrentUser().uid;
-          console.log('id del documento: ', e.target.dataset.id);
-          addLike(e.target.dataset.id, userId);
+          //id de usuarios agregado al array likes, pero convertidos en string
+          const userIdsLikes =  e.target.dataset.like
+          if (!userIdsLikes.includes(userId)) { 
+            addLike(e.target.dataset.id, userId);
+          } else{ 
+            removeLike(e.target.dataset.id, userId);
+          }          
+
+          
         });
       });  //ok
     
