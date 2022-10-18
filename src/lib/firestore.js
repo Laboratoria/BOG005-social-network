@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, getDocs, onSnapshot,deleteDoc,doc,getDoc,updateDoc } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, onSnapshot,deleteDoc,doc,getDoc,updateDoc} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js";
 
 
 //enlace publicacion
