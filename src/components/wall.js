@@ -58,7 +58,7 @@ export const wall = () => {
   postZoneContainer.setAttribute('id', 'postZoneContainer');
 
   let editStatus = false;
-  const id = '';
+  let idPost = '';
 
   onGetPosts((querySnapshot) => {
     postZoneContainer.innerHTML = '';
@@ -97,7 +97,7 @@ export const wall = () => {
       buttonEdit.addEventListener('click', async (e) => {
         const docId = await editPosts(e.target.dataset.id);
         const postText = docId.data();
-
+        idPost = doc.id;
         wallPost.value = postText.post;
 
         editStatus = true;
@@ -142,8 +142,8 @@ export const wall = () => {
     if (!editStatus) {
       createPosts(post);
     } else {
-      updatePosts(id, { post });
-      deletePosts(id, { post });
+      updatePosts(idPost, { post });
+      deletePosts(idPost, { post });
       editStatus = false;
     }
   });
