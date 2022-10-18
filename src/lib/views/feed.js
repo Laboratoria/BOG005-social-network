@@ -119,15 +119,7 @@ export default () => {
           const modalC = feedSection.querySelector(".modal-container");
           const formModal = feedSection.querySelector(".modal-textos");
 
-          abrir.addEventListener("click", () => {
-            console.log("click");
-            modalC.style.display = "block";
-            modal.style.display = "block";
-            formModal['tituloNewPost'].value ='';
-            formModal['descripcionNewPost'].value = '';
-            formModal['btnUploadImage'].innerHTML="Up"
 
-          });
 
           cerrar.addEventListener("click", () => {
             modalC.style.display = "none";
@@ -139,11 +131,11 @@ export default () => {
 
 
   function  showPostsOnFeed () {
-    onGetPost().then((querySnapshot =>{
-      querySnapshot.forEach((doc=>{
-        console.log(doc);
-      }))
-    }))
+    // onGetPost().then((querySnapshot =>{
+    //   querySnapshot.forEach((doc=>{
+    //     console.log(doc);
+    //   }))
+    // }))
     // Guardamos los datos de los posts en una variable
     let documents = [];
     getPosts().then((querySnapshot) => {
@@ -155,7 +147,7 @@ export default () => {
           uid: auth2.currentUser.uid,
           name: auth2.currentUser.displayName,
         });
-        console.log(auth2);
+        console.log(documents);
 // console.log(auth2.currentUser);
 // console.log(documents[0].data.uid);
 // console.log(auth2.currentUser.displayName);
@@ -217,6 +209,18 @@ export default () => {
       // postSection = everyPosts.querySelectorAll(".post")
       // postDescription = feedSection.querySelectorAll(".postDescription")
 
+        abrir.addEventListener("click", () => {
+        console.log("click");
+        modalC.style.display = "block";
+        modal.style.display = "block";
+        formModal['tituloNewPost'].value ='';
+        formModal['descripcionNewPost'].value = '';
+        formModal['btnUploadImage'].innerHTML="Up";
+        editStatus=false;
+        console.log('editar:',editStatus);
+
+      });
+
       //EDIT POSTS
       //CREAR LISTA DE BOTONES
       const buttonEdit = feedSection.querySelectorAll(".btn-edit")
@@ -238,11 +242,11 @@ export default () => {
           modalC.style.display = "block";
           modal.style.display = "block";
 
-          formModal['tituloNewPost'].value = post.title
-          formModal['descripcionNewPost'].value = post.description
+          formModal['tituloNewPost'].value = post.title;
+          formModal['descripcionNewPost'].value = post.description;
           editStatus = true;
           id= e.target.dataset.id
-          console.log('editSTATUS', editStatus);
+          console.log('Edit Satatus:', editStatus);
           formModal['btnUploadImage'].innerText='Update'
           // postSection['postText'].value = post.title
           // postSection['postDescription'].value = post.description
@@ -280,8 +284,6 @@ export default () => {
         title: title,
         description:description,
       })
-
-
     }else{
       saveDataPosts(title, description);
       editStatus = false;

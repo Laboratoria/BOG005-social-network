@@ -36,16 +36,16 @@ export async function saveData(email, password, name) {
 }
 export const googleSignIn = () => signInWithPopup(auth, provider);
 
-export const getCurrentUser = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      currentUser.displayName = user.displayName;
-      currentUser.email = user.email;
-      currentUser.uid = user.uid;
-      currentUser.photoURL = user.photoURL;
-    }
-  });
-};
+// export const getCurrentUser = () => {
+//   onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       currentUser.displayName = user.displayName;
+//       currentUser.email = user.email;
+//       currentUser.uid = user.uid;
+//       currentUser.photoURL = user.photoURL;
+//     }
+//   });
+// };
 
 
 
