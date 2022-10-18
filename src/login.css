@@ -15,23 +15,30 @@ body {
 #contenedor-login {
     margin: auto; 
     max-width: max-content;
-    height: 550px;
+    height: 100%;
+    width: 100%;
     margin-top: 3rem;
     
+}   
+#correo-login, #contraseña-login {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    /* color: black; */
+
 }
 
 #logologin {    
-     width:  clamp(7rem,7vw,15rem);
-     height: 150px;
+     width:  clamp(6rem,15vw,20rem);
+     height: clamp(15rem,12vw,20rem);
      margin-right: auto;
      margin-left: auto;
      display: block; 
-     margin-top: 8px;
+     margin-top: 2px;
     
-}
+}  
 
 #correo-login, #contraseña-login {
-    width: clamp(15rem,30vw,40rem);
+    width: clamp(20rem,40vw,50rem);
     height:clamp(3rem,4vw,10rem);
     margin-top: 10px; 
     border: 2px solid transparent;
@@ -86,6 +93,3 @@ body {
     border-radius: 5px;
     display: block;
  }
-
-
-

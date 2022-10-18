@@ -21,7 +21,7 @@ export const guardarPublicaciones = (post, likes) => {
    });
 }
 export const pubRef = () => getDocs(collection(db,'publicaciones'));
-
+// export const likesPub = njkn;
 export const obtpost = (collback) => onSnapshot(collection(db, "publicaciones"),collback);
 export const guardarPost =  (post) => addDoc(collection(db,"publicaciones"),{post});
 export const borrarPost = id => deleteDoc(doc(db,'publicaciones',id));
