@@ -1,4 +1,4 @@
-# YUMMY FRIENDS - Red Social 🍡🍨🍰🎂🧁🍩
+# YUMMY FRIENDS - Social Network 🍡🍨🍰🎂🧁🍩
 
 ## Índice
 
@@ -36,7 +36,7 @@
 
   ![Alt](/src/imagenes/HU1.JPG)
 
-  **Criterios de aceptación:**
+    **Criterios de aceptación:**
     * El usuario encontrará un formulario donde debe ingresar: Nombre, correo electrónico, Crear una contraseña y confirmarla. Finalmente dar click en botón "Regístrate"
     * Si el usuario ingresa un correo que ya ha sido registrado previamente, se mostrara un mensaje "Email ya en uso"
     * Si el usuario no nos da un correo válido (que no agrega el @ o el .com), se mostrara un mensaje "Email inválido"
@@ -44,8 +44,8 @@
     * Al dar click en el botón "Regístrate" el usuario es llevado a la página del Muro con un mensaje "Registro exitoso. Bienvenid@"
     
 
-  **Definición de terminado:**
-  Cumplimiento de condiciones: Single-page Application (SPA), responsive (móvil, Tablet, PC), testeo manual para búsqueda de errores e imperfecciones simples, pruebas de usabilidad e incorporaron el feedback de los usuarios como mejoras.
+    **Definición de terminado:**
+    Cumplimiento de condiciones: Single-page Application (SPA), responsive (móvil, Tablet, PC), testeo manual para búsqueda de errores e imperfecciones simples, pruebas de usabilidad e incorporaron el feedback de los usuarios como mejoras.
 
   - **Hisotria de usuario 2**
 
@@ -86,7 +86,7 @@
     * El usuario al dar click en el botón "Borrar" primero observará un mensaje de confirmación para la eliminación de la publicación; si el usuario da click en "Aceptar", la publicación será eliminada.
 
     **Criterios de aceptación 3.4:**
-    * El usuario verá tanto en sus publicaciones asi como en las de otros usuarios un botón en forma de 🤍 donde podrá dar "like" o me gusta una sola vez por publicación.
+    * El usuario verá tanto en sus publicaciones así como en las de otros usuarios un botón en forma de 🤍 donde podrá dar "like" o me gusta una sola vez por publicación.
 
 
     **Definición de terminado:**
@@ -120,6 +120,6 @@
 
   **Test de Usabilidad**
 
-  ![Test de Usabilidad - Maze app](https://app.maze.co/report/Test-usabilidad-HU1/7beqail8dmuu2w/intro)
+  [Test de Usabilidad - Maze app](https://app.maze.co/report/Test-usabilidad-HU1/7beqail8dmuu2w/intro)
   
   Con base en los resutados obtenidos en el test de usabilidad, se decidieron realizar ajustes en cuanto a: Eliminiar los campos de nombre y apellido del formulario de registro con correo electrónico, eliminar registro con Google ya que con era suficiente con el que estuviera en el inicio de sesión y adecuar las opciones de "Like", "Borrar" y "Editar" en forma de botones.  
