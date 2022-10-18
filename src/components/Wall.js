@@ -71,7 +71,7 @@ export const Wall = () => {
           </section>    
           
           <section class="editAndDele"> 
-          <button class="btn-like"  data-id="${doc.id}" > <i class="fa-solid fa-heart icono"></i> <p class ="counter-likes">${task.likes.length}</p> </button>             
+          <button class="btn-like"  data-id="${doc.id}"><p class ="counter-likes">${task.likes.length}</p> </button>             
           <button style="visibility:${task.email === auth.currentUser.email ? 'visible' : 'hidden'}"class="btn-borrar" data-id="${doc.id}">Borrar</button>     
           <button style="visibility:${task.email === auth.currentUser.email ? 'visible' : 'hidden'}"class="btn-editar" data-id="${doc.id}">Editar</button>   
           </section>                        
