@@ -3,6 +3,7 @@ import {
   savePost, onGetPosts, deletePost, getPost, updatePost, auth,
 } from '../lib/firebase.js';
 import { arrayUnion } from '../lib/utils.js';
+import { showMessage } from '../lib/showMessage.js';
 
 export const Wall = () => {
   // contenedor que almacenará los 2 botones y dará un solo return
@@ -63,7 +64,7 @@ export const Wall = () => {
       html += `
         <div>
           <section class= "boxPost1">
-          <h3 class="userName" By>${task.email}</h3>
+          <h4 class="userName" By>${task.email}</h4>
           <br>                     
           <section class= "postBox">          
           <textarea readonly="readonly">${task.postArea}</textarea>
@@ -83,7 +84,7 @@ export const Wall = () => {
 
     const btnsEdit = newPostContainer.querySelectorAll('.btn-editar');
     const btnsDelete = newPostContainer.querySelectorAll('.btn-borrar');
-    console.log(btnsDelete);
+    /*  console.log(btnsDelete); */
     const btnsLikes = newPostContainer.querySelectorAll('.btn-like');
     const counterLikes = newPostContainer.querySelectorAll('.counter-likes');
 
@@ -121,6 +122,12 @@ export const Wall = () => {
 
   buttonPublish.addEventListener('click', (e) => {
     e.preventDefault();
+
+    if (postArea.value === '') {
+      showMessage('No has escrito un post aún', 'error');
+      // eslint-disable-next-line no-import-assign
+      savePost = false;
+    }
 
     if (!editStatus) {
       savePost(postArea.value, auth.currentUser.email);
