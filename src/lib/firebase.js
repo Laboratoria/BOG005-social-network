@@ -3,7 +3,7 @@ import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider, signInWithP
 
 
 const provider = new GoogleAuthProvider();
-
+export const getCurrentUser = () => getAuth().currentUser;
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBviox7Zp3nx-sGoaoDa9mk8LWTflaBhTk',
@@ -88,17 +88,7 @@ export const crearUsuarioConGoogle = () => {
     const errorMessage = error.message;
   });
 };
-// Get current user
-export const currentUser = {};
 
-export const getCurrentUser = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      currentUser.email = user.email;
-      currentUser.uid = user.uid;
-     
-    }
-    
-  });
-};
+
+
 
