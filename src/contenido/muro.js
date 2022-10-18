@@ -1,5 +1,5 @@
 
-import { cerrarSesion } from "../lib/firebase.js";
+import { cerrarSesion,getCurrentUser  } from "../lib/firebase.js";
 import { obtpost, borrarPost, editarPost, guardarPost, actualizarPost } from "../lib/firestore.js";
 import { guardarPublicaciones } from "../lib/firestore.js";
 
@@ -69,8 +69,9 @@ export const muro = () => {
           <button class="btn-Borrar" data-id="${doc.id}">Borrar</button>
           <button class="btn-Editar" data-id="${doc.id}">Editar</button>
           <button class="btn-Guardar" data-id="${doc.id}">Guardar</button>
+          <button class="btn-like" data-id="${doc.id}">Like</button>
         </div>
-       `
+       `;
       })
       //limpiar textArea
       crearPublicacion.value = '';
@@ -113,6 +114,8 @@ export const muro = () => {
 
       })
     })
+
+ 
   })
     })
     
@@ -136,3 +139,4 @@ window.addEventListener('DOMContentLoaded', () => {
     footer.append(casita, perfil);
     return div
 }
+
