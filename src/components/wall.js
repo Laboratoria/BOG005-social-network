@@ -151,7 +151,6 @@ export const wall = () => {
       createPosts(post, userLikes);
     } else {
       updatePosts(idPost, { post });
-      deletePosts(idPost, { post });
       editStatus = false;
     }
   });
