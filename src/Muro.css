@@ -45,7 +45,7 @@ body{
     border-radius: 5px; 
     width: clamp(7rem,10vw,15rem);
     height: clamp(2rem,3vw,7rem);
-    background-color: #143F6B;
+    background-color:#FEB139;
     margin-left: 20rem;
     font-size: 15px;
     color: white;
@@ -71,12 +71,12 @@ body{
 }
 #crearPublicacion {
 /* margin-left: 13rem; */
-margin-left: 12rem;
+margin-left: auto;
 margin-right: auto;
 margin-top: 10px;
-border-radius: 8px;
-height: 7rem;
-width: 25rem;
+border-radius: 3px;
+height: 17rem;
+width: 45rem;
 padding-top: 3rem;
 padding-left: 2rem;
 font-size: 16px;
@@ -96,6 +96,7 @@ Border-width:3px;
 }
 #creacionPublicar{
     margin-top: 15px;
+
 }
 .input{
     background-color: #FEB139;
@@ -135,6 +136,9 @@ Border-width:3px;
      margin-top: 0%;
     
 }
-#pubRecientes {
-
+#footer {
+background-color:#143F6B;
+font-weight: bold;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+display: flex;
 }
