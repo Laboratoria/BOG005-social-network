@@ -1,5 +1,5 @@
 // import { onNavigate } from '../main.js';
-import { createUser } from '../firebase/connection.js';
+import { createUser, userProfile } from '../firebase/connection.js';
 import { onNavigate } from '../main.js';
 
 export const register = () => {
@@ -23,6 +23,7 @@ export const register = () => {
   userName.setAttribute('type', 'text');
   userName.setAttribute('placeholder', 'Usuario');
   userName.setAttribute('required', '');
+  userName.id = 'userName';
 
   const registerEmail = document.createElement('input');
   registerEmail.classList.add('input');
@@ -53,10 +54,13 @@ export const register = () => {
   registerButton.addEventListener('click', () => {
     const emailRegister = registerEmail.value;
     const passRegister = registerPassword.value;
-    console.log(emailRegister, passRegister);
+    const userRegister = userName.value;
+    console.log(emailRegister, passRegister, userRegister);
 
     createUser(emailRegister, passRegister)
-      .then(() => {
+      .then((credential) => {
+        const user = credential.user;
+        userProfile(user, userRegister);
         console.log('dentroooo');
         // onNavigate('/wall');
       })
