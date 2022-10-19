@@ -7,7 +7,7 @@ import {
   editPosts,
   updatePosts,
   addLikes,
-  // removeLikes,
+  removeLikes,
 } from '../firebase/connection.js';
 
 export const wall = () => {
@@ -59,6 +59,7 @@ export const wall = () => {
 
   let editStatus = false;
   let idPost = '';
+  const userLikes = [];
 
   onGetPosts((querySnapshot) => {
     postZoneContainer.innerHTML = '';
@@ -75,6 +76,10 @@ export const wall = () => {
       buttonHeart.setAttribute('data-id', window.user.uid);
       buttonHeart.classList.add('buttonIcons');
       buttonHeart.id = 'btnHeart';
+
+      const counterLikes = document.createElement('span');
+      counterLikes.setAttribute('data-likes', 2);
+      counterLikes.textContent = doc.data().likes.length;
       // console.log(window.user.uid);
       // console.log(doc.id);
 
@@ -91,7 +96,7 @@ export const wall = () => {
       buttonTrash.id = 'btnTrash';
 
       // se pinta el post junto botones de eliminar, editar, like
-      postZoneContainer.append(postBox, buttonHeart, buttonEdit, buttonTrash);
+      postZoneContainer.append(postBox, buttonHeart, counterLikes, buttonEdit, buttonTrash);
 
       // Click para editar
       buttonEdit.addEventListener('click', async (e) => {
@@ -112,7 +117,13 @@ export const wall = () => {
 
       // Click para dar like
       buttonHeart.addEventListener('click', () => {
-        addLikes(doc.id, window.user.uid);
+        // console.log('esto es el array', doc.data().likes);
+        const arrayLikes = doc.data().likes;
+        if (!arrayLikes.includes(window.user.uid)) {
+          addLikes(doc.id, window.user.uid);
+        } else {
+          removeLikes(doc.id, window.user.uid);
+        }
         console.log('postId: ', doc.id);
         console.log('uid: ', window.user.uid);
       });
@@ -133,14 +144,11 @@ export const wall = () => {
     const post = wallPost.value;
     console.log(wallPost.value);
 
-    createPosts(post)
-      .then(() => {
-        console.log('guardado');
-        wallPost.value = '';
-      }).catch(() => console.log('no se guardo'));
+    console.log('guardado');
+    wallPost.value = '';
 
     if (!editStatus) {
-      createPosts(post);
+      createPosts(post, userLikes);
     } else {
       updatePosts(idPost, { post });
       deletePosts(idPost, { post });

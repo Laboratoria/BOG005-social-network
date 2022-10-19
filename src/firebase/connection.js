@@ -60,9 +60,10 @@ console.log(userProfile);
 const signOff = () => signOut(auth);
 
 // funcion asíncrona para crear el post y enviarlo a firestore
-const createPosts = async (text) => {
-  await addDoc(collection(db, 'Posts'), {
-    post: text,
+const createPosts = (post, likes) => {
+  addDoc(collection(db, 'Posts'), {
+    post,
+    likes,
   });
 };
 
