@@ -28,7 +28,7 @@ body{
     
 }
 #contenedor-muro {
-   background-color: maroon;
+   /* background-color: maroon; */
     height: 500px;
     width: 800px;
 }
@@ -130,7 +130,7 @@ Border-width:3px;
     
 }
 #comentario{
-    background-color: aqua;
+    /* background-color: aqua; */
      height: 1200px;
      margin-top: 0%;
     

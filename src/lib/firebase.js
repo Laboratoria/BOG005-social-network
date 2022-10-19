@@ -19,8 +19,7 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const auth = getAuth();
 export const crearUsuario = (email,password) => { 
-   // console.log(email, password)
-    
+//Creamos usuario con correo electronico y contraseña    
    return createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in
