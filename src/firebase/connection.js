@@ -111,5 +111,5 @@ export {
   updatePosts,
   addLikes,
   removeLikes,
-  // onAuthStateChanged,
+  onAuthStateChanged,
 };
