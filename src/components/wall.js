@@ -167,8 +167,8 @@ export const wall = () => {
   });
 
   containerWall.append(header, mainWall);
-  header.append(imgTitle, title, profileName, buttonExit);
-  mainWall.append(wallFormContainer, postZoneContainer);
+  header.append(imgTitle, title, buttonExit);
+  mainWall.append(profileName, wallFormContainer, postZoneContainer);
   wallFormContainer.append(wallPost, iconContainer);
   iconContainer.append(buttonSend);
 
