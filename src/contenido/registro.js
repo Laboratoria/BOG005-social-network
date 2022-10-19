@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-import { onNavigate } from "../main.js";
 import { crearUsuario, crearUsuarioConGoogle } from "../lib/firebase.js";
 
 export const registro = () => {
