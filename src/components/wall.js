@@ -8,8 +8,6 @@ import {
   updatePosts,
   addLikes,
   removeLikes,
-  onAuthStateChanged,
-  auth,
 } from '../firebase/connection.js';
 
 export const wall = () => {
@@ -25,10 +23,6 @@ export const wall = () => {
   imgTitle.src = 'img/nameLogo.png';
   imgTitle.alt = 'Logo';
   imgTitle.id = 'imgTitle';
-
-  // NODO PARA EL USERNAME
-  const profileName = document.createElement('h1');
-  profileName.className = 'userProfile';
 
   const title = document.createElement('h1'); // Title
   title.textContent = '¿Qué festividad se celebra hoy en tu ciudad?';
@@ -157,20 +151,15 @@ export const wall = () => {
       createPosts(post, userLikes);
     } else {
       updatePosts(idPost, { post });
+      // deletePosts(idPost, { post });
       editStatus = false;
     }
   });
 
-  onAuthStateChanged(auth, (user) => {
-    if (user != null) {
-      profileName.textContent = user.displayName;
-    }
-  });
-
   containerWall.append(header, mainWall);
-  header.append(imgTitle, profileName, buttonExit);
+  header.append(imgTitle, title, buttonExit);
   mainWall.append(wallFormContainer, postZoneContainer);
-  wallFormContainer.append(title, wallPost, iconContainer);
+  wallFormContainer.append(wallPost, iconContainer);
   iconContainer.append(buttonSend);
 
   return containerWall;

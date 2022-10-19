@@ -58,10 +58,10 @@ export const register = () => {
     console.log(emailRegister, passRegister, userRegister);
 
     createUser(emailRegister, passRegister)
-      .then((credential) => {
-        const user = credential.user;
-        userProfile(user, userRegister);
-        console.log('dentroooo');
+      .then(() => {
+        // const user = credential.user;
+        userProfile(userRegister);
+        // console.log(credential.user);
         // onNavigate('/wall');
       })
       .catch(() => {
