@@ -34,13 +34,18 @@ export const crearUsuario = (email,password) => {
     if(errorCode == "auth/weak-password"){
       swal({
         title: "Verifica tus datos!",
-        text: "tu contraseña debe tener minimo seis digitos",
+        text: "Tu contraseña debe tener mínimo seis dígitos",
+        icon: "error",
+      });      
+    
+    };
+
+    if( errorCode == "auth/invalid-email"){
+      swal({
+        title: "¡Verifica tu correo!",
+        text: "Tu correo no es válido",
         icon: "error",
       });
-     // alert("Verifica que tu contraseña tenga minimo seis digitos")
-    }
-    if( errorCode == "auth/invalid-email"){
-      alert("Verifica que tu correo")
     }
     const errorMessage = error.message;
     // ..
