@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-import { onNavigate } from "../main.js";
 import { crearUsuario, crearUsuarioConGoogle } from "../lib/firebase.js";
 
 export const registro = () => {
@@ -25,24 +23,35 @@ export const registro = () => {
     // 2do camino cuando algo falta
     // if (correoUsuario.value.includes("@hotmail.com", "@yahoo.es", "@yahoo.com", "@outlook.com")) {
       crearUsuario(correoUsuario.value, contraseñaUsuario.value).then(() => {
-        console.log()
+        if (contraseñaUsuario.value == '' ){
+          swal({
+            title: "¡Escribe tu contraseña!",
+            text: "Tu contraseña debe tener mínimo seis dígitos",
+            icon: "error",
+          });
+        }
+        if (correoUsuario.value == '' ){
+          swal({
+            title: "¡Escribe tu correo!",
+            text: "Debes escribir un correo para registrarte",
+            icon: "error",
+          });
+        }
       
       }).catch((error) => {
-        console.error(error.message)
-      })
+             })
     // }
     // else {
     //   alert("Verifica tus datos")
     // }
-    // if (contraseñaUsuario.value.includes("/a-z//A-Z/||/0-9/")) {
-    //   crearContraseña(contraseñaUsuario.value,correoUsuario.value).then(()=>{
+    
         
     //   }).catch((error) => {
     //     console.error(error.message)
     //   })
     // }
     // else if(contraseñaUsuario.length == 0 ) {
-    //    alert("Los campos de la password no pueden quedar vacios");
+    //    
     //  }
 
   });
