@@ -12,7 +12,7 @@ export default () => {
           <article><h2>¡Únete! Comparte  lo que amas. <br> Conoce a otros. Vive la experiencia </h2></article>
 
         <section class="singin">
-        <h1>Regístrate</h1>
+        <h1 class="registerTitle">Regístrate</h1>
           <form id="singInForm">
             
             <input
@@ -52,7 +52,7 @@ export default () => {
         </button>
         </div>
         </form>
-          <a href="">Ya tengo cuenta</a>
+          <a href="" class="createBtn">Ya tengo cuenta</a>
       </section>
 
     </section>`;
