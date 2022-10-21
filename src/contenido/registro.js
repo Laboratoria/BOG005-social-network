@@ -62,7 +62,7 @@ export const registro = () => {
   contraseñaUsuario.setAttribute("type","password");
   buttonRegistro.textContent = 'Regístrate';
   buttonGoogle.textContent ='';
-  logo.src = '/imagenes/Recurso 1.png';
+  logo.src = '/imagenes/Recurso1.png';
   buttonGoogle.addEventListener ("click",()=> {
     crearUsuarioConGoogle ().then( () => {
       console.log("crearUsuarioConGoogle")

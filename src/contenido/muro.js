@@ -13,7 +13,7 @@ export const muro = () => {
 
   const logo = document.createElement("img");
   logo.id = "muro-logo";
-  logo.src = "/imagenes/Recurso 1.png";
+  logo.src = "/imagenes/Recurso1.png";
   const tituloP = document.createElement("p");
   tituloP.id = "texto-publicar";
   const crearPublicacion = document.createElement("textarea");

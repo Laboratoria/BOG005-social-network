@@ -11,7 +11,7 @@ export const bienvenida = () => {
   botonInicio.id = 'explora';
 
   const logo = document.createElement('img');
-  logo.src = '/imagenes/Recurso 1.png';
+  logo.src = '/imagenes/Recurso1.png';
 
   logo.id = 'logo-bienvenida';
   titulo.innerHTML = '<b>Atrévete</b> a explorar el realismo mágico de nuestra <b> geografía Colombiana.</b> <br> <b>Guarda tus memorias</b> y haz que mas personas se animen a conocerlas';

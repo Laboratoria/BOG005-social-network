@@ -15,12 +15,12 @@ elementRoot();
 
 const mockBienvenida = () => {
   const contenedorBienvenida = document.createElement('div');
-  contenedorBienvenida.innerHTML = '/imagenes/Recurso 1.png';
+  contenedorBienvenida.innerHTML = '/imagenes/Recurso1.png';
   return contenedorBienvenida;
 };
 const contenedorLogin = () => {
   const contenedorLogin = document.createElement('div');
-  contenedorLogin.innerHTML = '/imagenes/Recurso 22.png';
+  contenedorLogin.innerHTML = '/imagenes/Recurso22.png';
   return contenedorLogin;
 };
 
@@ -49,7 +49,7 @@ describe('onNavigate', () => {
     console.log(div);
     onNavigate('/', mockRoutes1);
     expect(document.getElementById('root').textContent).toEqual(
-      '/imagenes/Recurso 1.png',
+      '/imagenes/Recurso1.png',
      );
   });
 
@@ -58,7 +58,7 @@ describe('onNavigate', () => {
     console.log(div);
     onNavigate('/login', mockRoutes1);
     expect(document.getElementById('root').textContent).toEqual(
-      '/imagenes/Recurso 22.png',
+      '/imagenes/Recurso22.png',
      );
   }); 
 
