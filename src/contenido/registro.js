@@ -2,8 +2,8 @@ import { crearUsuario, crearUsuarioConGoogle } from "../lib/firebase.js";
 
 export const registro = () => {
   // Se crean las etiquetas
-  const div = document.createElement('div');
-  div.id = 'contenedor-registro'
+  const contenedorRegistro = document.createElement('div');
+  contenedorRegistro.id = 'contenedor-registro'
   const logo = document.createElement('img');
   logo.id = 'logo-registro';
   const login = document.createTextNode('Iniciar Sesión');
@@ -74,6 +74,6 @@ export const registro = () => {
 
   // Agregamos elementos a nuestro div
 
-  div.append(logo, formulario, correoUsuario, contraseñaUsuario, buttonRegistro, buttonGoogle);
-  return div;
+  contenedorRegistro.append(logo, formulario, correoUsuario, contraseñaUsuario, buttonRegistro, buttonGoogle);
+  return contenedorRegistro;
 };

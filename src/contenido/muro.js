@@ -4,8 +4,8 @@ import { obtpost, borrarPost, editarPost, actualizarPost, addLike, removeLike, g
 
 //Creacion de elementos o nodos en el muro
 export const muro = () => {
-  const div = document.createElement("div");
-  div.id = "contenedor-muro";
+  const contenedorMuro = document.createElement("div");
+  contenedorMuro .id = "contenedor-muro";
   const header = document.createElement("header");
   header.id = "header-muro";
   const comentario = document.createElement("div");
@@ -143,7 +143,7 @@ export const muro = () => {
   //Agregando elementos al div padre
   header.append(logo, salir);
   comentario.append(pubRecientes);
-  div.append(
+  contenedorMuro .append(
     header,
     tituloP,
     crearPublicacion,
@@ -151,6 +151,6 @@ export const muro = () => {
     comentario,
   );
  
-  return div;
+  return contenedorMuro;
 };
 

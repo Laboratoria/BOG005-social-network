@@ -2,8 +2,8 @@
 import { onNavigate } from '../main.js';
 
 export const bienvenida = () => {
-  const div = document.createElement('div');
-  div.id = 'contenedor-bienvenida'
+  const contenedorBienvenida = document.createElement('div');
+  contenedorBienvenida.id = 'contenedor-bienvenida'
   const titulo = document.createElement('p');
   titulo.id = 'texto-bienvenida';
 
@@ -20,6 +20,6 @@ export const bienvenida = () => {
     onNavigate('/login');
   });
 
-  div.append( logo, titulo, botonInicio);
-  return div;
+  contenedorBienvenida.append( logo, titulo, botonInicio);
+  return contenedorBienvenida;
 };

@@ -1,6 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword,GoogleAuthProvider, signInWithPopup,signOut, signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
-
+import { getAuth,
+   createUserWithEmailAndPassword,
+   GoogleAuthProvider, signInWithPopup,signOut,
+   signInWithEmailAndPassword, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js";
+import {onNavigate} from "../main.js"
 
 const provider = new GoogleAuthProvider();
 export const getCurrentUser = () => getAuth().currentUser;
@@ -92,6 +95,17 @@ export const crearUsuarioConGoogle = () => {
     const errorMessage = error.message;
   });
 };
+
+// metodo de firebase ¿que hace onAuthStateChanged?
+export const usuariosR = onAuthStateChanged(getAuth(),user => {
+  if (user) {
+   onNavigate("/muro")
+   } else {
+  onNavigate("/")
+   }
+  });
+ 
+ 
 
 
 
