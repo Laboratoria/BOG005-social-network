@@ -93,6 +93,11 @@ export const crearUsuarioConGoogle = () => {
   });
 };
 
+export {
+getAuth,
+onAuthStateChanged
+}
+
 
 
 
