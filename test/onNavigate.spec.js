@@ -1,35 +1,84 @@
-// Testearemos el ruteo
+/**
+ * @jest-environment jsdom
+ */
 import { onNavigate } from '../src/main.js';
 
 jest.mock('../src/lib/firebase.js');
 jest.mock('../src/lib/firestore.js');
 
+function elementRoot() {
+  if (document.getElementById('root') == null) {
+    document.body.innerHTML = '<div id="root"> </div>';
+  }
+}
+elementRoot();
+
 const mockBienvenida = () => {
-  const div = document.createElement('div');
-  div.innerHTML = '<b>Atrévete</b> a explorar el realismo mágico de nuestra <b> geografía Colombiana.</b> <br> <b>Guarda tus memorias</b> y haz que mas personas se animen a conocerlas';
-  return div;
+  const contenedorBienvenida = document.createElement('div');
+  contenedorBienvenida.innerHTML = '/imagenes/Recurso 1.png';
+  return contenedorBienvenida;
 };
+const contenedorLogin = () => {
+  const contenedorLogin = document.createElement('div');
+  contenedorLogin.innerHTML = '/imagenes/Recurso 22.png';
+  return contenedorLogin;
+};
+
+const contenedorRegistro = () => {
+  const contenedorRegistro = document.createElement('div');
+  contenedorRegistro.innerHTML = 'Regístrate';
+  return contenedorRegistro;
+};
+
+const contenedorMuro = () => {
+  const contenedorMuro = document.createElement('div');
+  contenedorMuro.innerHTML = "Crear publicación";
+  return contenedorMuro;
+};
+
 const mockRoutes1 = {
-  '/': mockBienvenida,
-};
+  '/': mockBienvenida(),
+  '/login': contenedorLogin(),
+  '/registro': contenedorRegistro(),
+  '/muro': contenedorMuro(),
+  };
+
 
 describe('onNavigate', () => {
   it('pintar bienvenida', () => {
-    document.innerHTML = '<div id="root"></div>';
+    const div = '<div id="root"></div>';
+    console.log(div);
     onNavigate('/', mockRoutes1);
-    console.log('button: ', document.getElementById('root').textContent);
     expect(document.getElementById('root').textContent).toEqual(
-      '<b>Atrévete</b> a explorar el realismo mágico de nuestra <b> geografía Colombiana.</b> <br> <b>Guarda tus memorias</b> y haz que mas personas se animen a conocerlas',
-    );
+      '/imagenes/Recurso 1.png',
+     );
   });
+
+  it('pintar login', () => {
+    const div = '<div id="root"></div>';
+    console.log(div);
+    onNavigate('/login', mockRoutes1);
+    expect(document.getElementById('root').textContent).toEqual(
+      '/imagenes/Recurso 22.png',
+     );
+  }); 
+
+  it('pintar registro', () => {
+    const div = '<div id="root"></div>';
+    console.log(div);
+    onNavigate('/registro', mockRoutes1);
+    expect(document.getElementById('root').textContent).toEqual(
+      'Regístrate',
+     );
+  }); 
+
+  it('pintar muro', () => {
+    const div = '<div id="root"></div>';
+    console.log(div);
+    onNavigate('/muro', mockRoutes1);
+       expect(document.getElementById('root').textContent).toEqual(
+        "Crear publicación",
+     );
+  }); 
 });
 
-//   it("test de onNavigate", () => {
-//     document.body.innerHTML = '<div id="root"></div>';
-//     onNavigate("/login", mockroutes);
-//     console.log("contenido: ", document.getElementById("root").textContent);
-//     expect(document.getElementById("root").textContent.trim()).toEqual(
-//       "mock login 1"
-//     );
-//   });
-// });
