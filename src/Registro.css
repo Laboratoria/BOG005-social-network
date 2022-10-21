@@ -1,24 +1,7 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-/* #root {
-    background-color: blueviolet;
-    margin:auto;
-} */
 #contenedor-registro {
     margin: auto;
     background-color: white; 
     max-width: max-content;
-    
 }
 
 #logo-registro {

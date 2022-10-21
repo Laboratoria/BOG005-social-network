@@ -32,7 +32,7 @@ export const login = () => {
        botonRegistro.addEventListener('click', () => {
         onNavigate('/registro');
     });
-    logoLogin.src = '/imagenes/Recurso 22.png';
+    logoLogin.src = '/imagenes/Recurso22.png';
     correoLogin.setAttribute('placeholder', 'Correo Electronico');
     contraseñaLogin.setAttribute('placeholder', 'Contraseña Usuario');
     contraseñaLogin.setAttribute("type","password");

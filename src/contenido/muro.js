@@ -143,7 +143,7 @@ export const muro = () => {
   //Agregando elementos al div padre
   header.append(logo, salir);
   comentario.append(pubRecientes);
-  contenedorMuro .append(
+  contenedorMuro.append(
     header,
     tituloP,
     crearPublicacion,
