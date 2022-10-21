@@ -37,12 +37,11 @@ const contenedorMuro = () => {
 };
 
 const mockRoutes1 = {
-  '/': mockBienvenida(),
-  '/login': contenedorLogin(),
-  '/registro': contenedorRegistro(),
-  '/muro': contenedorMuro(),
+  '/': mockBienvenida,
+  '/login': contenedorLogin,
+  '/registro': contenedorRegistro,
+  '/muro': contenedorMuro,
   };
-
 
 describe('onNavigate', () => {
   it('pintar bienvenida', () => {
