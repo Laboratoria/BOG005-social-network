@@ -4,12 +4,10 @@
     margin: 0
 }
 
-body{
+/* body{
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-}
+} */
 
 #contenedor-bienvenida {
     margin: auto;
@@ -76,7 +74,6 @@ body{
         height: 50px;
         margin-top: -8px;
         
-    } */
-   } 
-/*segunsda pantalla login*/
+    }
+   };
 
