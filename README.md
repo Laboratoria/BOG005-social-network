@@ -8,9 +8,8 @@
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Hacker edition](#6-hacker-edition)
-* [7. Entrega](#7-entrega)
-* [8. Pistas, tips y lecturas complementarias](#8-pistas-tips-y-lecturas-complementarias)
+
+* [6. Trbajo Equipo](#6-Trbajo-Equipo)
 
 ## 1. Presentación
 
@@ -316,16 +315,14 @@ una de tus Historias de Usuario debe tener:
 
 ### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
-Debes definir cuál será el flujo que seguirá el usuario dentro de tu aplicación
-y, con eso, diseña la Interfaz de Usuario (UI por sus siglas en inglés) que
-siga este flujo.
+[prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/1662994782511.jpg)
+[prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/1662994837222.jpg)
+[prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/IMG_20220912_095130.jpg)
 
-### 5.5 Responsive
+### 5.4 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-Debe verse bien en dispositivos de pantallas grandes
-(computadoras/es, laptops, etc.) y pequeñas (_tablets_, celulares, etc.). Te
-sugerimos seguir la técnica de _`mobile first`_ (más detalles sobre esta técnica
-al final).
+[prototipo de alta fidelidad ](../BOG005-social-network/src/Imagenes/proto.PNG)
+[prototipo de alta fidelidad ](../BOG005-social-network/src/Imagenes/figproto.PNG)
 
 ### 5.6 Consideraciones del comportamiento de la interfaz de usuario (UI)
 
@@ -379,15 +376,7 @@ tus H.U.:
 
 
 
-### 5.8 Consideraciones técnicas UX
+### 8 Trbajo Equipo
 
-* Hacer al menos 2 entrevistas con usuarios.
-* Hacer un  prototipo de baja fidelidad.
-* Asegurarte de que la implementación en código siga los lineamientos del
-  diseño.
-* Hacer sesiones de _testing de usabilidad_ con el producto en HTML.
-
-
-
-
+* Como equipo aprendimos a utilizar los tiempos, en los que nos pudiéramos reunirnos, para sacarle mejor provecho y así poder avanzar en los objetivos propuestos ,de esta manera logramos conocernos, compartir conocimientos y reforzar otros  ,aprendimos a escuchar y ser escuchadas ,prevaleciendo la comprensión y ayuda mutua por hacer de nuestro trabajo el mejor ,hicimos de los pequeños logros  la motivación perfecta para continuar hasta el final. 
 
