@@ -80,7 +80,29 @@ export const muro = () => {
     const btnsBorrar = comentario.querySelectorAll(".btn-Borrar");
     btnsBorrar.forEach((btn) => {
       btn.addEventListener("click", ({ target: { dataset } }) => {
-        borrarPost(dataset.id);
+        // borrarPost(dataset.id);){
+       swal("A wild Pikachu appeared! What do you want to do?", {
+         buttons: {
+           cancel: "Cancelar!",
+           catch: {
+             text: "Confirmar!",
+             value: "catch",
+           },
+        
+         },
+       }).then((value) => {
+         switch (value) {
+        
+
+           case "catch":
+            borrarPost(dataset.id)
+             swal("Entendodo!", "Tu comentario fue Borrado!", "success");
+             break;
+
+           default:
+             swal("Entendido!");
+         }
+       });
       });
     }); //ok
     //likes
@@ -105,9 +127,7 @@ export const muro = () => {
       btn.addEventListener("click", async (event) => {
         docId = event.target.dataset.id;
         const doc = await editarPost(docId);
-
         const inputEditar = comentario.querySelector(`#id-${docId}`);
-        console.log(inputEditar);
         inputEditar.disabled = false;
         editEstatus = true;
       });
