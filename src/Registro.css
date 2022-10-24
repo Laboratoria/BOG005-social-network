@@ -35,7 +35,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid transparent;
     border-radius: 5px; 
-    margin-top: 10px;
+    margin-top: 40px;
     display: block; 
      }
 
@@ -43,9 +43,9 @@
 
     margin-right: auto;
     margin-left: auto;
-    width: clamp(9rem,7vw,15rem);
-    height: 30px;
-    margin-top: 0.5rem;
+    width: clamp(15rem,7vw,15rem);
+    height: 63px;
+    margin-top: 2rem;
     background-repeat: no-repeat;
 	background-size: cover;
     background-image: url(./Imagenes/EnlaceG.png);

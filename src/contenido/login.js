@@ -10,6 +10,10 @@ export const login = () => {
   logoLogin.id = 'logologin';
   const formularioLogin = document.createElement('form');
   formularioLogin.id = 'formulario-login';
+  const msjExplicacion = document.createElement("p");
+  msjExplicacion.id = "msj-Explicacion";
+  const msjRegistra = document.createElement("p");
+  msjRegistra.id = "msj-Registra";
   const correoLogin = document.createElement('input');
   correoLogin.id = 'correo-login';
   const contraseñaLogin = document.createElement('input');
@@ -39,6 +43,8 @@ export const login = () => {
     buttoniniciaSesion.textContent = 'Iniciar Sesión';
     botonRegistro.textContent = 'Registrate';
     butonGoogle.textContent ='';  
+    msjExplicacion.textContent = "Iniciar sesión";
+    msjRegistra.textContent = "¿No tienes cuenta? Regístrate";
 
 
   //  para logiarce  con el boton de google
@@ -52,6 +58,6 @@ export const login = () => {
       
       });
 
-      contenedorLogin.append(formularioLogin, logoLogin, correoLogin, contraseñaLogin, buttoniniciaSesion, botonRegistro, butonGoogle);
+      contenedorLogin.append(formularioLogin, logoLogin, msjExplicacion, correoLogin, contraseñaLogin, buttoniniciaSesion, msjRegistra, botonRegistro, butonGoogle);
   return contenedorLogin;
 };
