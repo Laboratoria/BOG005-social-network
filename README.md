@@ -163,4 +163,4 @@ Usuario que representa todo lo que necesitabamos para hacer/ver en la Red Social
 
 ### 7 Trabajo Equipo
 
-Como equipo aprendimos planear estrategicamente las actividades para avanzar en los objetivos propuestos en el proyecto y mediante el trabajo colaborativo logramos conocernos, compartir conocimientos y reforzar los anteriores. Además, aprendimos a comunicarnos de manera asertiva, prevaleciendo la comprensión y ayuda mutua por hacer de nuestro trabajo el mejor. Los pequeños logros se convirtieron en la motivación perfecta para continuar hasta el final. 
+Como equipo aprendimos planear estrategicamente las actividades para avanzar en los objetivos propuestos en el proyecto y mediante el trabajo colaborativo logramos conocernos, compartir conocimientos y reforzar los anteriores. Además, aprendimos a comunicarnos de manera asertiva, prevaleciendo la comprensión y ayuda mutua por hacer de nuestro trabajo el mejor. Los pequeños logros se convirtieron en la motivación perfecta para continuar hasta el final.                                                   
