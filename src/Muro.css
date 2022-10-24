@@ -4,88 +4,93 @@
 
 #header-muro {
     background-color: #FEB139;
-    width: clamp(150rem,45vw,71rem);
-    height: clamp(8rem,20vw,40rem);
-    padding-left: 3px;
-    padding-right: 3px;
-    justify-content: space-around;
-    
-}
-
-#texto-publicar {
-    font-size: clamp(0.2rem, 2vw, 3.1rem);
-    font-family: 'Josefin Sans', sans-serif;
-    margin-top: 2.5rem;
-    position: relative;
-    left: 30%;
-    margin-right: 30%;
-    transform: translate(-25%, -25%);
-    text-align: center;
-
-}
-
-#contenedor-muro {
+    width: clamp(20rem,100vw,100rem);
+    height: clamp(7rem,1vw,40rem);
     display: flex;
-    /* background-color: maroon; */
-    height: 500px;
-    width: 800px;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #muro-logo {
-    max-width: 148px;
-    align-items: center;
-    margin-left: 38px;
-    margin-top: 0.5rem;
+    max-width: 246px;
+    margin-left: 10px;
+    width: clamp(8rem, 44vw, 14rem);
+    height: clamp(4rem, 22vw, 7rem);
+}
+
+#salir {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    width: clamp(8rem, 9vw, 9rem);
+    height: clamp(2rem, 2vw, 2rem);
+    background-color: #143F6B;
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    margin-right: 30px;     
+}
+
+#contenedor-muro {
+    width: clamp(20rem,100vw,100rem);    
+    }
+
+#texto-publicar {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around 
+}
+
+#crearPublicacion {
+    border-radius: 9px;
+    width: clamp(20rem,80vw,90rem);
+    height: clamp(7rem,1vw,40rem);
+    padding-top: 1rem;
+    padding-left: 1rem;
+    font-size: 16px;
+    border-color: #143F6B;
+    Border-width: 4px;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;    
+    display: block;
 }
 
 #creacionPublicar {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid transparent;
     border-radius: 5px;
-    width: clamp(7rem, 10vw, 15rem);
-    height: clamp(2rem, 3vw, 7rem);
-    background-color: #FEB139;
-    margin-left: 20rem;
-    font-size: 15px;
-    color: white;
-    text-align: center;
-
+    width: clamp(20rem, 80vw, 90rem);
+    height: clamp(3rem, 3vw, 7rem);
+    background-color: #F55353;
+    margin-top: 1rem;
+    font-size: 25px;
+    color: white; 
+    margin-right: auto;
+    margin-left: auto;    
+    display: block;
 }
 
-#salir {
-    
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: 1px solid transparent;
-    border-radius: 5px;
-    width: clamp(8rem, 10vw, 20rem);
-    height: clamp(2rem, 3vw, 7rem);
-    background-color: #143F6B;
-    margin-left: 30rem;
-    font-size: 15px;
-    color: white;
-    text-align: center;
+.input {
+    border-radius: 9px;
+    width: clamp(20rem,80vw,90rem);
+    height: clamp(7rem,1vw,40rem);
+    background-color: #E0E0E0;
+    margin-top: 18px;    
+    font-size: 16px;
+    border-color: #143F6B;
+    Border-width: 3px;
+    margin-right: auto;
+    margin-left: auto;    
+    display: block;    
+
 }
 
 #footer {
     background-color: #143F6B;
     height: 95px;
     width: 100%;
-}
-
-#crearPublicacion {
-    /* margin-left: 13rem; */
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    border-radius: 3px;
-    height: 17rem;
-    width: 45rem;
-    padding-top: 3rem;
-    padding-left: 2rem;
-    font-size: 16px;
-    border-color: #143F6B;
-    Border-width: 3px;
 }
 
 #texto-publicar {
@@ -98,26 +103,32 @@
     font-size: 18px;
     color: black;
     font-weight: bold;
-    margin-left: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around 
 }
 
-#creacionPublicar {
-    margin-top: 15px;
+#comentario {
+    display: flex;
+    height: 1200px;
+    margin-top: 0%;
+    flex-direction: column;
+    display: flex;
 
-}
+} 
 
-.input {
-    background-color: #FEB139;
-    margin-top: 30px;
-    margin-left: 10rem;
-    border-radius: 8px;
-    height: 7rem;
-    width: 25rem;
-    padding-top: 3rem;
-    padding-left: 2rem;
-    font-size: 16px;
-    border-color: #143F6B;
-    Border-width: 3px;
+.elementosPost{
+    align-content: flex-end;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto; 
+       }  
+
+#pubRecientes{
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
 }
 
 .btn-Borrar,
@@ -127,31 +138,34 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: 1px solid transparent;
     border-radius: 5px;
-    width: clamp(7rem, 10vw, 15rem);
-    height: clamp(2rem, 3vw, 7rem);
+    /* width: clamp(7rem, 10vw, 15rem);
+    height: clamp(2rem, 3vw, 7rem); */
+    width: 100px;
+    height: 30px;
     background-color: #143F6B;
-    margin-left: 20rem;
-    font-size: 15px;
+    font-size: 20px;
+    padding: 2px 2px 2px 4px;
     color: white;
     text-align: center;
-    /* flex-wrap: wrap-reverse; */
-    /* justify-content:space-evenly; */
-    /* flex-direction: row-reverse; */
     margin-top: 1rem;
-    display: inline-block;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-grow: 0.5;    
+    margin-right: auto;
+    margin-left: auto;  
 }
 
-#comentario {
-    display: flex;
-    height: 1200px;
-    margin-top: 0%;
-    flex-direction: column;
-
+.contador-Like {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: #F55353;
+    padding: 2px 15px 2px 15px;
+    font-size: 20px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;  
 }
+
 
 #footer {
     background-color: #143F6B;

@@ -5,20 +5,24 @@ export const login = () => {
   const contenedorLogin = document.createElement("div");
   contenedorLogin.id = "contenedor-login";
 
-  const logoLogin = document.createElement("img");
-  logoLogin.id = "logologin";
-  const formularioLogin = document.createElement("form");
-  formularioLogin.id = "formulario-login";
-  const correoLogin = document.createElement("input");
-  correoLogin.id = "correo-login";
-  const contraseñaLogin = document.createElement("input");
-  contraseñaLogin.id = "contraseña-login";
-  const buttoniniciaSesion = document.createElement("button");
-  buttoniniciaSesion.id = "iniciarsesion-login";
-  const botonRegistro = document.createElement("button");
-  botonRegistro.id = "registro-login";
-  const butonGoogle = document.createElement("button");
-  butonGoogle.id = "Google";
+  const logoLogin = document.createElement('img');
+  logoLogin.id = 'logologin';
+  const formularioLogin = document.createElement('form');
+  formularioLogin.id = 'formulario-login';
+  const msjExplicacion = document.createElement("p");
+  msjExplicacion.id = "msj-Explicacion";
+  const msjRegistra = document.createElement("p");
+  msjRegistra.id = "msj-Registra";
+  const correoLogin = document.createElement('input');
+  correoLogin.id = 'correo-login';
+  const contraseñaLogin = document.createElement('input');
+  contraseñaLogin.id = 'contraseña-login';
+  const buttoniniciaSesion = document.createElement('button');
+  buttoniniciaSesion.id = 'iniciarsesion-login';
+  const botonRegistro = document.createElement('button');
+  botonRegistro.id = 'registro-login';
+  const butonGoogle = document.createElement('button');
+  butonGoogle.id = 'Google';
 
   buttoniniciaSesion.addEventListener("click", () => {
     iniciarlogin(correoLogin.value, contraseñaLogin.value)
@@ -67,14 +71,6 @@ export const login = () => {
       });
   });
 
-  contenedorLogin.append(
-    formularioLogin,
-    logoLogin,
-    correoLogin,
-    contraseñaLogin,
-    buttoniniciaSesion,
-    botonRegistro,
-    butonGoogle
-  );
+      contenedorLogin.append(formularioLogin, logoLogin, msjExplicacion, correoLogin, contraseñaLogin, buttoniniciaSesion, msjRegistra, botonRegistro, butonGoogle);
   return contenedorLogin;
 };

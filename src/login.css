@@ -14,8 +14,8 @@
 }
 
 #logologin {    
-     width:  clamp(6rem,15vw,20rem);
-     height: clamp(15rem,12vw,20rem);
+    width: clamp(1rem,11vw,20rem);
+    height: clamp(11rem,12vw,20rem);
      margin-right: auto;
      margin-left: auto;
      display: block; 
@@ -69,8 +69,8 @@
  #Google {
     margin-right: auto;
     margin-left: auto;
-    width: clamp(9rem,7vw,15rem);
-    height: 30px;
+    width: clamp(15rem,7vw,15rem);
+    height: 63px;
     margin-top: 2rem;
     background-repeat: no-repeat;
 	background-size: cover;
@@ -78,4 +78,15 @@
     border: 1px solid transparent;   
     border-radius: 5px;
     display: block;
+ }
+
+ #msj-Explicacion, #msj-Registra {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around 
+
  }
