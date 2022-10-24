@@ -8,7 +8,7 @@
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Trbajo Equipo](#6-Trbajo-Equipo)
+* [6. Trabajo en Equipo](#6-Trbajo-Equipo)
 
 ## 1. Presentación
 
@@ -115,7 +115,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [x] **Crear prototipos de alta fidelidad que incluyan interacciones**
 
-- [x] [**Seguir los principios básicos de diseño visual**](https://coda.io/d/Bootcamp-UX-Contenido_dqkqk2rV9Z2/Reglas-basicas-de-diseno-visual_suVcO#_lueiZ )
+- [x] [**Seguir los principios básicos de diseño visual**
 
 ### research
 
@@ -147,7 +147,7 @@ Usuario que representa todo lo que necesitabamos para hacer/ver en la Red Social
 
 ### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
-[prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/1662994782511.jpg)
+![prototipo de baja fidelidad ]( ./src/Imagenes/1662994782511.jpg)
 [prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/1662994837222.jpg)
 [prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/IMG_20220912_095130.jpg)
 
