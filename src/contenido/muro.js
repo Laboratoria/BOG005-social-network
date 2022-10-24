@@ -86,7 +86,7 @@ export const muro = () => {
     btnsBorrar.forEach((btn) => {
       btn.addEventListener("click", ({ target: { dataset } }) => {
         // borrarPost(dataset.id);){
-       swal("A wild Pikachu appeared! What do you want to do?", {
+       swal("¿Seguro quieres borrar tu comentario?", {
          buttons: {
            cancel: "Cancelar!",
            catch: {
