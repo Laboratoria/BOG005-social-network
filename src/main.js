@@ -1,9 +1,7 @@
-
 import { bienvenida } from './contenido/bienvenida.js';
 import { muro } from './contenido/muro.js';
 import { registro } from './contenido/registro.js';
 import { login } from './contenido/login.js';
-
 
 // const root = document.getElementById("root");
 const routes = {
