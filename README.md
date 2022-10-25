@@ -1,5 +1,5 @@
 # Red Social Explora Colombia
-![adem-ay-Tk9m_HP4rgQ-unsplash](https://user-images.githubusercontent.com/110297/135544666-4efa54f1-4ff6-4c4c-b398-6df04ef56117.jpg)
+![Logo](src/Imagenes/Recurso1.png)
 
 ## Índice
 
@@ -8,9 +8,10 @@
 * [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
-* [6. Trbajo Equipo](#6-Trbajo-Equipo)
+* [6. Trabajo en Equipo](#6-Trbajo-Equipo)
 
 ## 1. Presentación
+![Logo](src/Imagenes/Fondocolombia.jpg)
 
 "Explora Colombia" es una red social pensada en fortalecer e impulsar la cultura y turismo de Colombia, busca conocer y guardar las memorias de los viajeros, teniendo en la  tecnología como la  herramienta perfecta que nos une más, la experiencia de los viajeros despertara la curiosidad de los internautas para conocer  las maravillas de nuestro país, conociendo la flora ,fauna y gastronomía que pertenecen a cada región. 
 
@@ -115,7 +116,7 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
 
 - [x] **Crear prototipos de alta fidelidad que incluyan interacciones**
 
-- [x] [**Seguir los principios básicos de diseño visual**](https://coda.io/d/Bootcamp-UX-Contenido_dqkqk2rV9Z2/Reglas-basicas-de-diseno-visual_suVcO#_lueiZ )
+- [x] [**Seguir los principios básicos de diseño visual**
 
 ### research
 
@@ -135,32 +136,32 @@ Entendiendo las necesidades de los usuarios, escribimos cuatro (4) Historias de
 Usuario que representa todo lo que necesitabamos para hacer/ver en la Red Social. 
 
 ### Historia de usuario 1
-[historia de usuario1]()
+![Historia de usuario1](src/Imagenes/Usuario1_Mesa%20de%20trabajo%201.jpg)
 ### Historia de usuario 2
-[historia de usuario1]()
+![historia de usuario2](src/Imagenes/Usuario1-02.jpg)
 ### Historia de usuario 3
-[historia de usuario1]()
+![historia de usuario3](src/Imagenes/Usuario1-03.jpg)
 ### Historia de usuario 4
-[historia de usuario1]()
+![historia de usuario4](src/Imagenes/Usuario1-04.jpg)
 
 
 
 ### 5.4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 
-[prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/1662994782511.jpg)
-[prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/1662994837222.jpg)
-[prototipo de baja fidelidad ]( ../BOG005-social-network/src/Imagenes/IMG_20220912_095130.jpg)
+![prototipo de baja fidelidad](src/Imagenes/1662994782511.jpg)
+![prototipo de baja fidelidad](src/Imagenes/1662994837222.jpg)
+![prototipo de baja fidelidad](src/Imagenes/IMG_20220912_095130.jpg)
 
 ### 5.4 Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
 
-[prototipo de alta fidelidad ](../BOG005-social-network/src/Imagenes/proto.PNG)
-[prototipo de alta fidelidad ](../BOG005-social-network/src/Imagenes/figproto.PNG)
+![prototipo de alta fidelidad](src/Imagenes/proto.PNG)
+![prototipo de alta fidelidad](src/Imagenes/figproto.PNG)
 
 
 #### 6 Pruebas unitarias (unit tests)
-
+En este proyecto se realizó test de ruteo a la funcion OnNavigate, obteniendo un margen aceptado para las rutas usadas en lsa diferentes vistas.
 
 
 ### 7 Trabajo Equipo
 
-Como equipo aprendimos planear estrategicamente las actividades para avanzar en los objetivos propuestos en el proyecto y mediante el trabajo colaborativo logramos conocernos, compartir conocimientos y reforzar los anteriores. Además, aprendimos a comunicarnos de manera asertiva, prevaleciendo la comprensión y ayuda mutua por hacer de nuestro trabajo el mejor. Los pequeños logros se convirtieron en la motivación perfecta para continuar hasta el final. 
+Como equipo aprendimos planear estrategicamente las actividades para avanzar en los objetivos propuestos en el proyecto y mediante el trabajo colaborativo logramos conocernos, compartir conocimientos y reforzar los anteriores. Además, aprendimos a comunicarnos de manera asertiva, prevaleciendo la comprensión y ayuda mutua por hacer de nuestro trabajo el mejor. Los pequeños logros se convirtieron en la motivación perfecta para continuar hasta el final.                                                   
