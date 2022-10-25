@@ -61,3 +61,4 @@ export const login = () => {
       contenedorLogin.append(formularioLogin, logoLogin, msjExplicacion, correoLogin, contraseñaLogin, buttoniniciaSesion, msjRegistra, botonRegistro, butonGoogle);
   return contenedorLogin;
 };
+//  terminado
