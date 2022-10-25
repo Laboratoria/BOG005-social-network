@@ -148,10 +148,10 @@
     padding: 2px 2px 2px 4px;
     color: white;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     flex-grow: 0.5;    
     margin-right: auto;
-    margin-left: auto;  
+    margin-left: 10%; 
 }
 
 .contador-Like {
