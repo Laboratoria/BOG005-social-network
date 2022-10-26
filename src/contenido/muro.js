@@ -84,9 +84,9 @@ export const muro = () => {
         // borrarPost(dataset.id);){
         swal('¿Seguro quieres borrar tu comentario?', {
           buttons: {
-            cancel: 'Cancelar!',
+            cancel: '¡Cancelar!',
             catch: {
-              text: 'Confirmar!',
+              text: '¡Confirmar!',
               value: 'catch',
             },
 
@@ -95,7 +95,7 @@ export const muro = () => {
           switch (value) {
             case 'catch':
               borrarPost(dataset.id);
-              swal('Entendodo!', 'Tu comentario fue Borrado!', 'success');
+             swal('Entendido!', 'Tu comentario fue Borrado!', 'success');
               break;
 
             default:
