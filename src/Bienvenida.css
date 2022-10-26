@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0
+}
+
+/* body{
+    display: flex;
+    height: 100vh;
+} */
+
+#contenedor-bienvenida {
+    margin: auto;
+    background-color: white; 
+    max-width: max-content;
+}
+
+
+#logo-bienvenida {
+    width: clamp(15rem,35vw,55rem);
+    height: clamp(8rem,20vw,40rem);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5rem;
+    display: block;
+   
+}
+
+#texto-bienvenida {
+    font-size: clamp(1rem,2vw,3.5rem);
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 5rem; 
+    position: relative;
+    left: 35%; 
+    margin-right: 30%;
+    transform: translate(-30%, -30%);
+    text-align: center;
+} 
+
+#explora {
+    margin-right: auto;
+    margin-left: auto;
+    width: clamp(12rem,16vw,28rem);
+    height: clamp(2.5rem,5vw,10rem);
+    background-color: #F55353;
+    font-size: clamp(1rem,3vw,4.5rem);
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid transparent;
+    border-radius: 5px; 
+    margin-top: 0.5rem;
+    display: block; 
+    
+}
+/* aqui empezaremos las @media*/
+@media (min-width:768px) and (max-width: 1280px) {
+         
+    #logo-bienvenida {
+        width: 600px;
+        height: 300px;
+        margin-top: 2rem;
+        
+        
+    }
+      #texto-bienvenida {
+        font-size: 200%;
+        margin-top: 120px; 
+        margin-right: 30%; 
+        
+     }
+     #explora {
+        width: 284px;
+        height: 50px;
+        margin-top: -8px;
+        
+    }
+   };
+

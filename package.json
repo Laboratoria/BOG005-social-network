@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Social Network @ Laboratoria",
   "main": "src/index.html",
+  "jest": {
+    "verbose": true
+  },
   "keywords": [
     "javascript",
     "firebase",
@@ -13,8 +16,8 @@
     "htmlhint": "htmlhint dist/*.html ",
     "eslint": "eslint --ext .js src/ test/",
     "stylelint": "stylelint --aei src/**/*.css",
-    "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
-    "test": "jest --coverage",
+    "pretest.aut": "npm run htmlhint && npm run eslint && npm run stylelint",
+    "test": "jest --coverage --env=jsdom",
     "start": "serve -s src/"
   },
   "devDependencies": {
@@ -27,12 +30,16 @@
     "eslint-plugin-jest": "^25.3.0",
     "htmlhint": "^1.0.0",
     "jest": "^27.0.1",
+    "lite-server": "^2.6.1",
     "regenerator-runtime": "^0.13.1",
-    "serve": "^13.0.2",
+    "serve": "^6.5.8",
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0"
   },
   "engines": {
     "node": ">=14"
+  },
+  "dependencies": {
+    "firebase": "^9.10.0"
   }
 }

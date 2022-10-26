@@ -1,5 +1,20 @@
-// Este es el punto de entrada de tu aplicacion
+import { bienvenida } from './contenido/bienvenida.js';
+import { muro } from './contenido/muro.js';
+import { registro } from './contenido/registro.js';
+import { login } from './contenido/login.js';
 
-import { myFunction } from './lib/index.js';
+// const root = document.getElementById("root");
+const routes = {
+  '/': bienvenida,
+  '/registro': registro,
+  '/muro': muro,
+  '/login': login,
+};
 
-myFunction();
+export const onNavigate = (pathname, paramRoutes = routes) => {
+  const root = document.getElementById('root');
+  root.replaceChildren(paramRoutes[pathname]());
+};
+window.addEventListener('load', () => {
+  onNavigate(window.location.pathname);
+});
